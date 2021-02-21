@@ -2,7 +2,7 @@
 DSA 5 MapTool Regelsatz v1.0
 ----------------------------------------
 
-Entwickelt mit MapTool v1.7
+Entwickelt mit MapTool v1.8.3
 
 -------------------
 Inhalt dieser Datei
@@ -40,7 +40,7 @@ Einige Features
 MapTool Kompatibilität
 ----------------------
 
-Das Framework wurde erstellt und getestet mit MapTool v1.7.
+Das Framework wurde erstellt und getestet mit MapTool v1.8.3.
 
 ----------
 Ladezeiten
