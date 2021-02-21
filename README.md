@@ -26,7 +26,7 @@ Einige Features
 - Vorteile & Sonderfertigkeiten werden bei vielen Aktionen automatisch einberechnet (z. B. bei Attacke, Regeneration, etc.).
 - Viele Modifkatoren können mit nur einem Mausklick automatisch in Proben einberechnet werden (z. B. Modifikationen bei Zaubern).
 - Zonensystem für Rüstungen
-- Einige optionale Regelmechanismen können vom Spielleiter aktiviert oder deaktiviert werden. (z.B. Wundeffekte)
+- Optionale Regelmechanismen können vom Spielleiter aktiviert oder deaktiviert werden. (z.B. Wundeffekte)
 - Attribute lassen sich temporär erhöhen oder senken und werden farblich markiert im Charakterbogen angezeigt.
 - Flexibel in der Bedienung damit auch Hausregeln angewendet werden können.
 - Tokeneditor zum schnellen Anpassen der Charakterwerte
@@ -54,7 +54,7 @@ Einberechnung von Vorteilen, Sonderfertigkeiten, etc.
 
 Bitte Beachte: Kampfmanöver werden in der Version 1.0 leider noch nicht direkt unterstützt. Du kannst dies aber durch manuelle Eingabe der Erschwernisse abbilden.
 
-Das Framework beachtet folgende Vorteile/Nachteile und SFs automatisch:
+Folgende Vorteile/Nachteile und SFs berechnet das Framework jedoch automatisch:
 
 - Kampf generell: Belastungsgewöhnung, Waffenbegabung, Dunkelsicht, Nachtblind, Blindkampf, Kampf im Wasser, Unterwasserkampf
 - Nahkampf: Beidhändig, SF Beidhändiger Kampf
@@ -87,5 +87,5 @@ Vielen Dank an alle krativen Köpfe die ihre Grafik-Arbeiten kostenlos zur Verf�
 Ashiroxzer, Ravenmore (http://dycha.net), Lamoot, TRaK, StumpyStrust, game-icons.net, CoveredInFish, yd, Silver Style Studios GmbH (Heldenatelier Fanpaket), Ulisses
 
 Weiterhin Dank an:
-Farlon - Entwickler des Frameworks für DSA 4.1 auf dessen Arbeit ich aufsetzten durfte
-EvS - Der viel der Vorarbeit geleistet hat Farlons Framework zu portieren
+- Farlon - Entwickler des Frameworks für DSA 4.1 auf dessen Arbeit ich aufsetzten durfte
+- EvS - Der viel der Vorarbeit geleistet hat Farlons Framework zu portieren
