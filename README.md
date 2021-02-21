@@ -1,5 +1,5 @@
 ----------------------------------------
-DSA 5 MapTool Regelsatz v1.0
+DSA 5 MapTool Regelsatz v1.0.0
 ----------------------------------------
 
 Entwickelt mit MapTool v1.8.3
@@ -22,7 +22,7 @@ Einige Features
 
 - Eigene Bereiche für Kampf, Magie, Karmales etc.
 - Inventarsystem & Geldbeutel
-- Status und Zustände werden automatisch berechnet und im Charakerbogen sowie am Token angezeigt (z. B. Schmerz, Belastung, Liegend...)
+- Status und Zustände werden automatisch berechnet, visualisiert und bei Proben beachtet (z. B. Schmerz, Belastung, Liegend...)
 - Vorteile & Sonderfertigkeiten werden bei vielen Aktionen automatisch einberechnet (z. B. bei Attacke, Regeneration, etc.).
 - Viele Modifkatoren können mit nur einem Mausklick automatisch in Proben einberechnet werden (z. B. Modifikationen bei Zaubern).
 - Zonensystem für Rüstungen
@@ -75,7 +75,8 @@ Der Optolith Heldengenerator wird in einer zukünftigen Version eine Exportfunkt
 Kritik & Feedback
 -----------------
 
-Bei Fragen, Problemen oder Vorschlägen sucht mich im Forum auf "www.drachenzwinge.de" (Anmeldung nötig). Dort einfach eine Nachricht an den Nutzer "Lector" schicken oder im entsprechenden Thread zum Framework im MapTool-Bereich posten.
+Bei Fragen, Problemen oder Vorschlägen könnt ihr euch im github melden https://github.com/Lector/DSA5maptool
+Oder ihr sucht mich im Forum auf "www.drachenzwinge.de" (Anmeldung nötig). Dort einfach eine Nachricht an den Nutzer "Lector" schicken oder im entsprechenden Thread zum Framework im MapTool-Bereich posten.
 
 Wenn ihr einen Fehler im Framework gefunden habt und mir diesen mitteilen wollt, beschreibt möglichst ausführlich an welcher Stelle und unter welchen Umständen der Fehler aufgetreten ist. Wenn der Fehler mit einem Token zusammenhängt, schickt den Token am besten mit.
 
