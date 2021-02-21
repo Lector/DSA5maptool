@@ -56,14 +56,14 @@ Bitte Beachte: Kampfmanöver werden in der Version 1.0 leider noch nicht direkt 
 
 Das Framework beachtet folgende Vorteile/Nachteile und SFs automatisch:
 
-Kampf generell: Belastungsgewöhnung, Waffenbegabung, Dunkelsicht, Nachtblind, Blindkampf, Kampf im Wasser, Unterwasserkampf
-Nahkampf: Beidhändig, SF Beidhändiger Kampf
-Fernkampf: Entfernungssinn, Scharfschütze, Berittener Schütze
-Wundeffekte: Eisern, Zerbrechlich, Hart im Nehmen, Verweichlicht
-Regeneration: Verbesserte Regeneration, Schlechte Regeneration, Magische Regeneration, Karmale Regeneration, Meisterliche Regeneration, Stabile Regeneration
-Talente: Richtungssinn, Unfähig
-Magie und Karmal: Improvisationszauberei (Formel/Geste), Improvisierte Liturgie (Gebet/Geste), Parallelzauberei, Routinierte Zauberwiderholung/Liturgiewiderholung, Schwacher Astralkörper, Lästige Mindergeister
-Sonstiges: Krankheitsanfällig/resistenz, Giftanfällig/resistenz
+- Kampf generell: Belastungsgewöhnung, Waffenbegabung, Dunkelsicht, Nachtblind, Blindkampf, Kampf im Wasser, Unterwasserkampf
+- Nahkampf: Beidhändig, SF Beidhändiger Kampf
+- Fernkampf: Entfernungssinn, Scharfschütze, Berittener Schütze
+- Wundeffekte: Eisern, Zerbrechlich, Hart im Nehmen, Verweichlicht
+- Regeneration: Verbesserte Regeneration, Schlechte Regeneration, Magische Regeneration, Karmale Regeneration, Meisterliche Regeneration, Stabile Regeneration
+- Talente: Richtungssinn, Unfähig
+- Magie und Karmal: Improvisationszauberei (Formel/Geste), Improvisierte Liturgie (Gebet/Geste), Parallelzauberei, Routinierte Zauberwiderholung/Liturgiewiderholung, Schwacher Astralkörper, Lästige Mindergeister
+- Sonstiges: Krankheitsanfällig/resistenz, Giftanfällig/resistenz
 
 -------------------------------
 Optolith MapTool-Exporter
