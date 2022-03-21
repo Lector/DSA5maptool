@@ -1,18 +1,27 @@
 ----------------------------------------
-DSA 5 MapTool Regelsatz v1.1.0
+DSA 5 MapTool Regelsatz v1.2.0
 ----------------------------------------
 
 -------------------
 Inhalt dieser Datei
 -------------------
 
-1. Einige Features
-2. Ladezeiten
-3. Kampfsystem
-4. Einberechnung von Vorteilen, Sonderfertigkeiten, etc.
-5. Optolith MapTool-Exporter
-6. Kritik & Feedback
-7. Credits
+1. Video-Tutorial
+2. Einige Features
+3. Ladezeiten
+4. Kampfsystem
+5. Einberechnung von Vorteilen, Sonderfertigkeiten, etc.
+6. Optolith MapTool-Exporter
+7. Kritik & Feedback
+8. Credits
+
+--------------
+Video-Tutorial
+--------------
+
+Um sich einen Überblick über den Funktionsumfang zu verschaffen gibt es hier ein umfangreiches Video-Tutorial
+
+https://www.youtube.com/watch?v=1GhtRMBgSWY
 
 ---------------
 Einige Features
@@ -44,7 +53,9 @@ Dieses Framework nutzt große Makros und viele Grafiken, die größtenteils erst
 Kampfsystem
 -----------
 
-Seit der Version 1.1 wurde das Kampfsystem um ein Zielsystem ergänzt um einen Schlagabtausch schneller abzuhandeln. Wenn man ein Token verkörpert ist es nun möglich ein weiteres Token als Ziel auszuwählen um dieses zu attackieren. Viele Modifikationen (AT von Hinten?, Entfernung im Fernkampf, Reichweitenunterschied von Nahkampfwaffen) werden somit automatisch erkannt und in die Eingabemaske eingetragen.
+Seit der Version 1.1 wurde das Kampfsystem um ein Zielsystem ergänzt um einen Schlagabtausch schneller abzuhandeln. Wenn man ein Token verkörpert ist es nun möglich ein weiteres Token als Ziel auszuwählen um dieses zu attackieren. Viele Modifikationen (AT von Hinten?, Entfernung im Fernkampf, Reichweitenunterschied von Nahkampfwaffen) werden somit automatisch erkannt und in die Eingabemaske eingetragen. Als Spielleiter verkörpert man mit dem Durchschalten durch die Initiative nun automatisch den aktuellen NPC.
+
+Seit Version 1.2 wird nun auch das Eintragen von Lichtquellen unterstützt. Ist die Sichtweite der Karte auf "Nacht" gesetzt wird beim anvisieren eines Token automatisch die korrekte Sichterschwernis eingetragen, je nachdem wie stark das anvisierte Token beleuchtet wird. Lichtquellen kann man mit Kerzen-Button zuweisen.
 
 -----------------------------------------------------
 Einberechnung von Vorteilen, Sonderfertigkeiten, etc.
@@ -66,15 +77,23 @@ Folgende Vorteile/Nachteile und SFs berechnet das Framework automatisch:
 Optolith MapTool-Exporter
 -------------------------------
 
-Der Optolith Heldengenerator wird in der kommenden Version (Stand August 2021) eine Exportfunktion anbieten um eure Helden direkt ins Framework importieren zu können.
+Der Optolith Heldengenerator bietet eine Exportfunktion an um eure Helden direkt ins Framework importieren zu können.
 Diese Datei kann einfach per Drag & Drop auf die Karte gezogen werden und ist sofort einsatzbereit.
 
 -----------------
 Kritik & Feedback
 -----------------
 
-Bei Fragen, Problemen oder Vorschlägen könnt ihr euch im github melden https://github.com/Lector/DSA5maptool
+Bei Fragen, Problemen oder Vorschlägen könnt ihr euch im github melden oder einen Kommentar auf orkenspalter hinterlassen
+https://github.com/Lector/DSA5maptool
+https://www.orkenspalter.de/filebase/index.php?file/2736-dsa5-regelsatz-f%C3%BCr-maptool/#overview
+
 Dessweiteren bin ich sowohl auf "www.drachenzwinge.de" (Anmeldung nötig), als auch auf "www.orkenspalter.de" unter dem Usernamen "Lector" erreichbar.
+
+Auf beiden Foren gibt es auch einen Diskussions-Thread über das Thema:
+
+https://www.drachenzwinge.de/forum/index.php?topic=157842.0
+https://www.orkenspalter.de/index.php?thread/33098-vtt-dsa5-erweiterung-f%C3%BCr-maptool/
 
 Wenn ihr einen Fehler im Framework gefunden habt und mir diesen mitteilen wollt, beschreibt möglichst ausführlich an welcher Stelle und unter welchen Umständen der Fehler aufgetreten ist. Wenn der Fehler mit einem Token zusammenhängt, schickt den Token am besten mit.
 
