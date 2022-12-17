@@ -1,5 +1,5 @@
 ----------------------------------------
-DSA 5 MapTool Regelsatz v1.2.0
+DSA 5 MapTool Regelsatz v1.3.0
 ----------------------------------------
 
 -------------------
@@ -11,9 +11,10 @@ Inhalt dieser Datei
 3. Ladezeiten
 4. Kampfsystem
 5. Einberechnung von Vorteilen, Sonderfertigkeiten, etc.
-6. Optolith MapTool-Exporter
-7. Kritik & Feedback
-8. Credits
+6. Jagd und Pflanzensuche
+7. Optolith MapTool-Exporter
+8. Kritik & Feedback
+9. Credits
 
 --------------
 Video-Tutorial
@@ -55,7 +56,7 @@ Kampfsystem
 
 Seit der Version 1.1 wurde das Kampfsystem um ein Zielsystem ergänzt um einen Schlagabtausch schneller abzuhandeln. Wenn man ein Token verkörpert ist es nun möglich ein weiteres Token als Ziel auszuwählen um dieses zu attackieren. Viele Modifikationen (AT von Hinten?, Entfernung im Fernkampf, Reichweitenunterschied von Nahkampfwaffen) werden somit automatisch erkannt und in die Eingabemaske eingetragen. Als Spielleiter verkörpert man mit dem Durchschalten durch die Initiative nun automatisch den aktuellen NPC.
 
-Seit Version 1.2 wird nun auch das Eintragen von Lichtquellen unterstützt. Ist die Sichtweite der Karte auf "Nacht" gesetzt wird beim anvisieren eines Token automatisch die korrekte Sichterschwernis eingetragen, je nachdem wie stark das anvisierte Token beleuchtet wird. Lichtquellen kann man mit Kerzen-Button zuweisen.
+Seit Version 1.2 wird nun auch das Eintragen von Lichtquellen unterstützt. Ist die Sichtweite der Karte auf "Nacht" oder "Tag" gesetzt wird beim anvisieren eines Token automatisch die korrekte Sichterschwernis eingetragen, je nachdem wie stark das anvisierte Token beleuchtet wird. Lichtquellen kann man mit Kerzen-Button zuweisen. Die Sichtweite der Karte kann der SL unter Karte->Sichtweite einstellen.
 
 -----------------------------------------------------
 Einberechnung von Vorteilen, Sonderfertigkeiten, etc.
@@ -64,7 +65,7 @@ Einberechnung von Vorteilen, Sonderfertigkeiten, etc.
 Folgende Vorteile/Nachteile und SFs berechnet das Framework automatisch:
 
 - Kampf generell: Belastungsgewöhnung, Waffenbegabung, Dunkelsicht, Nachtblind, Blindkampf, Kampf im Wasser, Unterwasserkampf
-- Kampfmanöver aus Basisregelwerk und Kompendium I. Andere Manöver können durch manuelle Eingabe von Erschwernissen abgebildet werden.
+- Kampfmanöver aus Basisregelwerk, Kompendium I und viele weitere (Betäubungsschlag, Eisenhagel, Festnageln, Herunterstoßen, Klingensturm, Sprungtritt). Andere Manöver können durch manuelle Eingabe von Erschwernissen abgebildet werden.
 - Nahkampf: Beidhändig, SF Beidhändiger Kampf
 - Fernkampf: Entfernungssinn, Scharfschütze, Berittener Schütze
 - Wundeffekte: Eisern, Zerbrechlich, Hart im Nehmen, Verweichlicht
@@ -72,6 +73,18 @@ Folgende Vorteile/Nachteile und SFs berechnet das Framework automatisch:
 - Talente: Richtungssinn, Unfähig
 - Magie und Karmal: Improvisationszauberei (Formel/Geste), Improvisierte Liturgie (Gebet/Geste), Parallelzauberei, Routinierte Zauberwiderholung/Liturgiewiderholung, Schwacher Astralkörper, Lästige Mindergeister, alle SFs die bei bestimmten Merkmalen +1 FP geben
 - Sonstiges: Krankheitsanfällig/resistenz, Giftanfällig/resistenz
+
+-------------------------------
+Jagd und Pflanzensuche
+-------------------------------
+
+Im Charakterbogen findet man nun unter Natur Funktionen für die Jagd und Pflanzensuche.
+
+Um als Spielleiter neue Pflanzen und Tiere für diese Funktion einzupflegen geht man wie folgt vor.
+Für Tiere kann man einfach ein normales Token anlegen. Im Charakter-/Tokeneditor findet man nun einen Bereich für "Jagdwerte". Dort kann man alle relevanten Daten für ein zu bejagendes Tier eintragen.
+Für Pflanzen legt man ebenfalls ein Token an und macht einen Doppelklick auf das Token. Unter Konfiguration stellt man hier jedoch die Eigenschaften auf "Kraut". Nun kann man ebenfalls mit dem Charakter-/Tokeneditor die nötigen Daten eintragen.
+
+Bitte beachte dass die Spieler bei der Jagd und Pflanzensuche immer alle Tokens auf der aktuellen Karte UND dem Spieltisch finden. Mit einer Option in den SL-Einstellungen lassen sich die Tokens auf dem Spieltisch aber explizit ausschließen so dass nur Tokens auf der aktuellen Karte mit einbezogen werden.
 
 -------------------------------
 Optolith MapTool-Exporter
