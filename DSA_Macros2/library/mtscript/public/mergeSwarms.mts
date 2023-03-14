@@ -2,7 +2,7 @@
 
 [h,if(listCount(tokens) < 2),Code:
 {
-	[h,macro("inputFail@lib:com.github.naxos.Macros"): "multipleSwarms"]
+	[h,macro("inputFail@lib:com.github.naxos84.Macros"): "multipleSwarms"]
 };{}]
 
 [h: first = ""]
@@ -13,7 +13,7 @@
 }]
 [h,if(first == ""),Code:
 {
-	[h,macro("inputFail@lib:com.github.naxos.Macros") : "swarmMergeInfoMissing"]
+	[h,macro("inputFail@lib:com.github.naxos84.Macros") : "swarmMergeInfoMissing"]
 }]
 
 [h: switchToken(first)]
@@ -36,14 +36,14 @@
 	[h,if(compareProps == 0||
 	(SchwarmEinzelLeP != singleLife && SchwarmEinzelLeP != "")||
 	(SchwarmGG != gg && SchwarmGG != "")), Code:{
-		[h,macro("inputFail@lib:com.github.naxos.Macros"): "swarmsDifferent"]
+		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "swarmsDifferent"]
 	}]
 }]
 
 [h: switchToken(first)]
 [h: num = ceil(maxLife / singleLife)]
 [h,if(num < gg),Code:{
-	[h,macro("inputFail@lib:com.github.naxos.Macros"): "swarmTooSmallToMerge"]
+	[h,macro("inputFail@lib:com.github.naxos84.Macros"): "swarmTooSmallToMerge"]
 }]
 [h: x = x / listCount(tokens)]
 [h: y = y / listCount(tokens)]
@@ -52,5 +52,5 @@
 [h: Schwarm = 1]
 [h: SchwarmAnzahl = num]
 [h: moveToken(round(x), round(y))]
-[h,macro("checkZustand@lib:com.github.naxos.Macros"): first]
+[h,macro("checkZustand@lib:com.github.naxos84.Macros"): first]
 [h,foreach(toDelete, tokens), if(toDelete != first): removeToken(toDelete)]

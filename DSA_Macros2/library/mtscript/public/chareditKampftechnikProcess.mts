@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.naxos.Macros"): "gmSelectFail"]
+				[h,macro("inputFail@lib:com.github.naxos84.Macros"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -27,17 +27,17 @@
 		[if(tWert == ""): tWert = 6]
 		[if(tName == ""), Code:
 			{
-				[h,macro("inputFail@lib:com.github.naxos.Macros"): "noInput"]
+				[h,macro("inputFail@lib:com.github.naxos84.Macros"): "noInput"]
 			};{}
 		]
 		[if(isNumber(tWert) == 0), Code:
 			{
-				[h,macro("inputFail@lib:com.github.naxos.Macros"): "numText"]
+				[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numText"]
 			};{}
 		]
 		[if(tWert != round(tWert)), Code:
 			{
-				[h,macro("inputFail@lib:com.github.naxos.Macros"): "numInteger"]
+				[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numInteger"]
 			};{}
 		]
 		[h: leit = json.append("[]", tE1)]
@@ -52,5 +52,5 @@
 
 [h: Kampftechniken = json.sort(tList, "asc", "Name")]
 
-[h,macro("noticeSelf@lib:com.github.naxos.Macros"): "chareditKampftechnik"]
-[h,macro("refreshFrame@lib:com.github.naxos.Macros"): ""]
+[h,macro("noticeSelf@lib:com.github.naxos84.Macros"): "chareditKampftechnik"]
+[h,macro("refreshFrame@lib:com.github.naxos84.Macros"): ""]

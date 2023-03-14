@@ -3,7 +3,7 @@
 [h: options = getLibProperty("KalenderOpt", "this")]
 [h,if(getStrProp(options, "kalender") == 0), code: 
 	{
-		[h,macro("inputFail@lib:com.github.naxos.Macros"): "kalender"]
+		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "kalender"]
 	};{}
 ]
 

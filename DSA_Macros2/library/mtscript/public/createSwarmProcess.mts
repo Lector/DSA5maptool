@@ -5,15 +5,15 @@
 
 [h,if(isNumber(cnt) == 0 || isNumber(gg) == 0), Code:
 {
-	[h,macro("inputFail@lib:com.github.naxos.Macros"): "numText"]
+	[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numText"]
 };{}]
 [h,if(cnt != round(cnt) || gg != round(gg)), Code:
 {
-	[h,macro("inputFail@lib:com.github.naxos.Macros"): "numInteger"]
+	[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numInteger"]
 };{}]
 [h,if(cnt <= 0 || gg <= 0), Code:
 {
-	[h,macro("inputFail@lib:com.github.naxos.Macros"): "numNegative"]
+	[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numNegative"]
 };{}]
 
 [h: closeDialog("createSwarm")]
@@ -33,5 +33,5 @@
 	[h: SchwarmEinzelLeP = lepPerCreature]
 	[h: MaxLeP = lePPerCreature * cnt]
 	[h: LeP = MaxLeP]
-	[h,macro("checkZustand@lib:com.github.naxos.Macros") : newToken]
+	[h,macro("checkZustand@lib:com.github.naxos84.Macros") : newToken]
 };{}]

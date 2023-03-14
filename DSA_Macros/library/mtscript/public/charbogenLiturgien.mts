@@ -24,7 +24,7 @@
 	<body style="background-image: url('[r: tblImage("mainTheme",66)]'); font-size: 12pt; font-weight: bold; color: #eee5c8;">
 		<div style="background-image: url('[r: tblImage("mainTheme",1)]'); background-repeat: no-repeat; height: 122; margin: 0px;" width="500">
 			<div style='margin-top: 18px; font-size: 22pt; text-align: center;' width='500'>
-				<span style='color: #eee5c8; text-decoration: none;' title='Zum Charaktertoken wechseln'>[r: macroLink(getName(), "gotoToken@lib:com.github.naxos.Macros2", "", currentToken())]</span>
+				<span style='color: #eee5c8; text-decoration: none;' title='Zum Charaktertoken wechseln'>[r: macroLink(getName(), "gotoToken@lib:com.github.naxos84.Macros2", "", currentToken())]</span>
 			</div>
 			<table style='border-spacing: 0px; margin-top: 3px;' width='500'>
 				<tr>

@@ -104,7 +104,7 @@
 [h: defineFunction("skillRollTitle", "skillRollTitle@this")]
 [h: defineFunction("modReason", "modReason@this")]
 
-[h: defineFunction("scatter", "scatter@lib:com.github.naxos.Macros2")]
+[h: defineFunction("scatter", "scatter@lib:com.github.naxos84.Macros2")]
 
 [h: defineFunction("getRandomHerbs", "getRandomHerbs@lib:com.github.naxos.Wildnis")]
 

@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.naxos.Macros"): "gmSelectFail"]
+				[h,macro("inputFail@lib:com.github.naxos84.Macros"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -20,22 +20,22 @@
 
 [h,if(isNumber(iAnzahl) == 0 || isNumber(iGewicht) == 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos.Macros"): "numText"]
+		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numText"]
 	};{}
 ]
 [h,if(iAnzahl != round(iAnzahl)), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos.Macros"): "numInteger"]
+		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numInteger"]
 	};{}
 ]
 [h,if(iAnzahl < 0 || iGewicht < 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos.Macros"): "numNegative"]
+		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numNegative"]
 	};{}
 ]
 [h,if(iGegenstand == ""), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos.Macros"): "noInput"]
+		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "noInput"]
 	};{}
 ]
 [h: closeDialog("inventarAdd")]

@@ -13,9 +13,9 @@
 ]
 [h: setLibProperty("Weblinks", newList, "this")]
 
-[h,if(isFrameVisible("meisterbogen") == 1 && getLibProperty("SLframe", "lib:com.github.naxos.Macros") == 6), Code:
+[h,if(isFrameVisible("meisterbogen") == 1 && getLibProperty("SLframe", "lib:com.github.naxos84.Macros") == 6), Code:
 	{
-		[h,macro("meisterbogenTools@lib:com.github.naxos.Macros2"): ""]
+		[h,macro("meisterbogenTools@lib:com.github.naxos84.Macros2"): ""]
 	};{}
 ]
 

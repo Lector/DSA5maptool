@@ -1,7 +1,7 @@
 [h,if(isGM() == 1 && hasImpersonated() == 0): selectID = getSelected(); selectID = getImpersonated()]
 [if(listCount(selectID) != 1), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos.Macros"): "copyTokenDataSelect"]
+		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "copyTokenDataSelect"]
 	};{}
 ]
 

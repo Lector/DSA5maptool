@@ -18,22 +18,22 @@
 
 [h,if(listCount(qToken) != 1), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos.Macros"): "copyTokenDataSelect"]
+		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "copyTokenDataSelect"]
 	};{}
 ]
 [h,if(qToken == zToken), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos.Macros"): "copyTokenDataEqual"]
+		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "copyTokenDataEqual"]
 	};{}
 ]
 [h,if(isOwner(playerName, qToken) == 0 && isGM() == 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos.Macros"): "copyTokenDataOwner"]
+		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "copyTokenDataOwner"]
 	};{}
 ]
 [h,if(cTokenbilder != 1 && cInventar != 1 && cNotizen != 1 && cOptions != 1 && cEnergie != 1 && cNahkampf != 1 && cFernkampf != 1 && cRuestung != 1 && cTemp != 1 && cStatus != 1), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos.Macros"): "copyTokenDataOption"]
+		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "copyTokenDataOption"]
 	};{}
 ]
 
@@ -185,7 +185,7 @@
 ]
 [h,if(cEnergie == 1 || cStatus == 1),Code:
 {
-	[h,macro("checkZustand@lib:com.github.naxos.Macros"): zToken]
+	[h,macro("checkZustand@lib:com.github.naxos84.Macros"): zToken]
 };{}]
 
 [h: ausgabe = strformat("

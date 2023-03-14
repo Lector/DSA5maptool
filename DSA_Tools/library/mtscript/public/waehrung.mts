@@ -8,17 +8,17 @@
 
 [h,if(isNumber(anzahl) == 0 || isNumber(gebuehr) == 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos.Macros"): "numText"]
+		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numText"]
 	};{}
 ]
 [h,if(gebuehr != round(gebuehr)), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos.Macros"): "numInteger"]
+		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numInteger"]
 	};{}
 ]
 [h,if(anzahl < 0 || gebuehr < 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos.Macros"): "numNegative"]
+		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numNegative"]
 	};{}
 ]
 

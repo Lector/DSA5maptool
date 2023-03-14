@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.naxos.Macros"): "gmSelectFail"]
+				[h,macro("inputFail@lib:com.github.naxos84.Macros"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -25,24 +25,24 @@
 	{
 		[if(json.get(tDaten, "Talent") == tName), Code:
 			{
-				[h,macro("inputFail@lib:com.github.naxos.Macros"): "zauberDouble"]
+				[h,macro("inputFail@lib:com.github.naxos84.Macros"): "zauberDouble"]
 			}
 		]
 	}
 ]
 [h,if(tName == ""), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos.Macros"): "noInput"]
+		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "noInput"]
 	};{}
 ]
 [h,if(isNumber(tWert) == 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos.Macros"): "numText"]
+		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numText"]
 	};{}
 ]
 [h,if(tWert != round(tWert)), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos.Macros"): "numInteger"]
+		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numInteger"]
 	};{}
 ]
 [h: closeDialog("chareditLiturgieAdd")]
@@ -53,5 +53,5 @@
 [h: Liturgien = json.append(Liturgien, newTalent)]
 [h: Liturgien = json.sort(Liturgien, "asc", "Talent")]
 
-[h,macro("noticeSelf@lib:com.github.naxos.Macros"): "chareditLiturgieAdd"]
-[h,macro("refreshFrame@lib:com.github.naxos.Macros"): ""]
+[h,macro("noticeSelf@lib:com.github.naxos84.Macros"): "chareditLiturgieAdd"]
+[h,macro("refreshFrame@lib:com.github.naxos84.Macros"): ""]

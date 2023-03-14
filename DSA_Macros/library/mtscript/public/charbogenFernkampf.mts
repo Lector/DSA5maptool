@@ -58,7 +58,7 @@
 					[h: wFK = json.get(waffe, "FK")]
 					<tr style='font-weight: normal; text-align: center; border-top: 1px solid #eee5c8;'>
 						<td style='text-align: left;'>
-							<span style='color: #eee5c8; text-decoration: none;' title='Diese Waffe editieren'>[r: macroLink(wName, "quickeditFernkampfwaffe@lib:com.github.naxos.Macros2", "", wID)]</span>
+							<span style='color: #eee5c8; text-decoration: none;' title='Diese Waffe editieren'>[r: macroLink(wName, "quickeditFernkampfwaffe@lib:com.github.naxos84.Macros2", "", wID)]</span>
 						</td>
 						<td>
 							<span style='text-decoration: none;'>[r: wRW]</span>

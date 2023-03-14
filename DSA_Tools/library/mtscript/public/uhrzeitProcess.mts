@@ -5,7 +5,7 @@
 
 [h,if(getStrProp(options, "uhr") == 0), code: 
 	{
-		[h,macro("inputFail@lib:com.github.naxos.Macros"): "uhrzeit"]
+		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "uhrzeit"]
 	};{}
 ]
 
@@ -174,7 +174,7 @@
 
 [h,if(getStrProp(options, "uhrChat") == 1), code:
 	{
-		[h,macro("sendToPublic@lib:com.github.naxos.Macros"): ausgabe]
+		[h,macro("sendToPublic@lib:com.github.naxos84.Macros"): ausgabe]
 	};{}
 ]
 [h,if(isFrameVisible("kalender") == 1), code:

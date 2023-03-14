@@ -10,12 +10,12 @@
 [h: hTitle = getLabel()]
 [h: hNum = substring(hTokenName, lastIndexOf(hTokenName, " ")+1, length(hTokenName))]
 
-[h: hShared = getLibProperty("SharedHandouts", "lib:com.github.naxos.Macros")]
+[h: hShared = getLibProperty("SharedHandouts", "lib:com.github.naxos84.Macros")]
 [h: hItem = listFind(hShared, hNum)]
 [h,if(hItem != -1), Code:
 	{
 		[hShared = listDelete(hShared, hItem)]
-		[setLibProperty("SharedHandouts", hShared, "lib:com.github.naxos.Macros")]
+		[setLibProperty("SharedHandouts", hShared, "lib:com.github.naxos84.Macros")]
 		[chatNotice = 1]
 		[chatTextTitle = "Handout gesperrt"]
 		[chatText = "Der Spielleiter hat ein Handout gesperrt:"]

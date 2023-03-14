@@ -168,7 +168,7 @@
 					[h: rINI = json.get(ruestung, "INI")]
 					[h: rGS = json.get(ruestung, "GS")]
 					[h: rID = json.get(ruestung, "ID")]
-					[h: editMacroLink = macroLink(rName, "quickeditRS@lib:com.github.naxos.Macros2", "", rID)]
+					[h: editMacroLink = macroLink(rName, "quickeditRS@lib:com.github.naxos84.Macros2", "", rID)]
 
 					<tr style='font-weight: normal; text-align: center; border-top: 1px solid #eee5c8;'>
 						[h: ausgabe = "<span style='color: #eee5c8; text-decoration: none;' title='Diese Ruestung editieren'>" + editMacroLink + "</span>"]

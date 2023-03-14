@@ -1,7 +1,7 @@
 [h: idList = getSelected()]
 [h,if(idList == ""), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos.Macros"): "noTokensSelected"]
+		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "noTokensSelected"]
 	};{}
 ]
 

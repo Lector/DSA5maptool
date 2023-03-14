@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.naxos.Macros"): "gmSelectFail"]
+				[h,macro("inputFail@lib:com.github.naxos84.Macros"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -29,7 +29,7 @@
 						<td>
 							<table class="probe">
 								<tr>
-									[r,macro("probeMod@lib:com.github.naxos.Macros"): ""]
+									[r,macro("probeMod@lib:com.github.naxos84.Macros"): ""]
 								</tr>
 							</table>
 						</td>
@@ -42,7 +42,7 @@
 					</tr>
 				</table>
 
-				[r,macro("probeChat@lib:com.github.naxos.Macros"): currentToken()]
+				[r,macro("probeChat@lib:com.github.naxos84.Macros"): currentToken()]
 				<hr/>
 
 				<table style='border-spacing: 0px; margin: 0px auto 0px auto;'>
@@ -53,16 +53,16 @@
 							</div>
 						</td>
 						<td valign=top style="white-space: nowrap;">
-							[r,macro("probeInfo@lib:com.github.naxos.Macros"): json.append(currentToken(), "Fischen & Angeln")]
+							[r,macro("probeInfo@lib:com.github.naxos84.Macros"): json.append(currentToken(), "Fischen & Angeln")]
 						</td>
 						<td width=20>&nbsp;</td>
 						
 						<td valign=top style="white-space: nowrap;">
 							<table><tr>
-							[r,macro("probeBelastung@lib:com.github.naxos.Macros"): "Fischen & Angeln"]
-							[r,macro("probeParalyse@lib:com.github.naxos.Macros"): json.append("Natur", "Fischen & Angeln")]
-							[r,macro("probeMirakel@lib:com.github.naxos.Macros"): "Fischen & Angeln"]
-							[r,macro("probeGottgefaellig@lib:com.github.naxos.Macros"): "Fischen & Angeln"]
+							[r,macro("probeBelastung@lib:com.github.naxos84.Macros"): "Fischen & Angeln"]
+							[r,macro("probeParalyse@lib:com.github.naxos84.Macros"): json.append("Natur", "Fischen & Angeln")]
+							[r,macro("probeMirakel@lib:com.github.naxos84.Macros"): "Fischen & Angeln"]
+							[r,macro("probeGottgefaellig@lib:com.github.naxos84.Macros"): "Fischen & Angeln"]
 							</tr></table>
 						</td>
 					</tr>
@@ -78,16 +78,16 @@
 							</div>
 						</td>
 						<td valign=top style="white-space: nowrap;">
-							[r,macro("probeInfo@lib:com.github.naxos.Macros"): json.append(currentToken(), "Verbergen")]
+							[r,macro("probeInfo@lib:com.github.naxos84.Macros"): json.append(currentToken(), "Verbergen")]
 						</td>
 						<td width=20>&nbsp;</td>
 						
 						<td valign=top style="white-space: nowrap;">
 							<table><tr>
-							[r,macro("probeBelastung@lib:com.github.naxos.Macros"): "Verbergen"]
-							[r,macro("probeParalyse@lib:com.github.naxos.Macros"): json.append("Koerper", "Verbergen")]
-							[r,macro("probeMirakel@lib:com.github.naxos.Macros"): "Verbergen"]
-							[r,macro("probeGottgefaellig@lib:com.github.naxos.Macros"): "Verbergen"]
+							[r,macro("probeBelastung@lib:com.github.naxos84.Macros"): "Verbergen"]
+							[r,macro("probeParalyse@lib:com.github.naxos84.Macros"): json.append("Koerper", "Verbergen")]
+							[r,macro("probeMirakel@lib:com.github.naxos84.Macros"): "Verbergen"]
+							[r,macro("probeGottgefaellig@lib:com.github.naxos84.Macros"): "Verbergen"]
 							</tr></table>
 						</td>
 					</tr>

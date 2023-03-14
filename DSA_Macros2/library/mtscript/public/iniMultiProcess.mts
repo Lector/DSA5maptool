@@ -8,23 +8,23 @@
 
 [h,if(isNumber(bonus) == 0 || isNumber(malus) == 0 || isNumber(wert) == 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos.Macros"): "numText"]
+		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numText"]
 	};{}
 ]
 [h,if(bonus != round(bonus) || malus != round(malus) || wert != round(wert)), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos.Macros"): "numInteger"]
+		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numInteger"]
 	};{}
 ]
 [h,if(bonus < 0 || malus < 0 || wert < 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos.Macros"): "numNegative"]
+		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numNegative"]
 	};{}
 ]
 [h: closeDialog("iniMulti")]
 [h,if(idList == ""), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos.Macros"): "noTokensSelected"]
+		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "noTokensSelected"]
 	};{}
 ]
 
@@ -59,4 +59,4 @@
 ]
 
 [h: sortInitiative()]
-[h,macro("noticeSelf@lib:com.github.naxos.Macros"): "multiINI"]
+[h,macro("noticeSelf@lib:com.github.naxos84.Macros"): "multiINI"]

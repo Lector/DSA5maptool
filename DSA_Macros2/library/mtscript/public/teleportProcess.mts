@@ -57,7 +57,7 @@
 ]
 [h,if(moveTokenList == ""), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos.Macros"): "noTokensSelected"]
+		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "noTokensSelected"]
 	};{}
 ]
 

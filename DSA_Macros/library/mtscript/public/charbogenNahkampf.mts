@@ -95,7 +95,7 @@
 					[h: wPA = json.get(waffe, "PA")]
 					<tr style='font-weight: normal; text-align: center; border-top: 1px solid #eee5c8;'>
 						<td style='text-align: left;'>
-							[h: namefield = macroLink(wName, "quickeditNahkampfwaffe@lib:com.github.naxos.Macros2", "", wID)]
+							[h: namefield = macroLink(wName, "quickeditNahkampfwaffe@lib:com.github.naxos84.Macros2", "", wID)]
 							<span style='color: #eee5c8; text-decoration: none;' title='Diese Waffe editieren'>[r: namefield]</span>
 						</td>
 						<td>
