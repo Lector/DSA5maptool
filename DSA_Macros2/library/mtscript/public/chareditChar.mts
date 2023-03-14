@@ -12,7 +12,7 @@
 [h: linkWissen = macroLink('Wissensfertigkeiten', 'chareditTalent@Lib:macros2', '', 'Wissen')]
 [h: linkHandwerk = macroLink('Handwerkliche Fertigkeiten', 'chareditTalent@Lib:macros2', '', 'Handwerk')]
 [h: linkCopyTokenData =  macroLink('Tokendaten von anderem<br>Token &uuml;bertragen', 'copyTokenData@Lib:tools', '')]
-[h: linkJagd = macroLink('Jagdwerte', 'editTier@Lib:Wildnis', '', currentToken())]
+[h: linkJagd = macroLink('Jagdwerte', 'editTier@lib:com.github.naxos.Wildnis', '', currentToken())]
 [h: linkEditKampf = macroLink('Kampftechniken editieren', 'chareditKampftechnik@Lib:macros2', '', '')]
 [h: linkSFKampf = macroLink('Kampfsonderfertigkeiten', 'chareditTrait@Lib:macros2', '', 'KampfSF')]
 [h: linkAddNK =  macroLink('Nahkampfwaffe hinzuf&uuml;gen', 'chareditNahkampfwaffeAdd@Lib:macros2', '')]

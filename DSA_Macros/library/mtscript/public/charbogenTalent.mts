@@ -101,10 +101,10 @@
 				<td colspan=8>
 					[h: linkOpen1 = "
 					<span style='color: #eee5c8; text-decoration: none; vertical-align: middle;' title='Heil-, Gift- und Nutzpflanzen suchen'>
-					<a href='"+ macroLinkText("probeKraeutersuche@Lib:Wildnis", "", "") +"'>"]
+					<a href='"+ macroLinkText("probeKraeutersuche@lib:com.github.naxos.Wildnis", "", "") +"'>"]
 					[h: linkOpen2 = "
 					<span style='color: #eee5c8; text-decoration: none; vertical-align: middle;' title='Nahrung suchen'>
-					<a href='"+ macroLinkText("probeNahrungssuche@Lib:Wildnis", "", "") +"'>"]
+					<a href='"+ macroLinkText("probeNahrungssuche@lib:com.github.naxos.Wildnis", "", "") +"'>"]
 					[h: linkClose = "</a></span>"]
 					<table>
 						<tr>
@@ -123,13 +123,13 @@
 				<td colspan=8>
 					[h: linkOpen1 = "
 					<span style='color: #eee5c8; text-decoration: none; vertical-align: middle;' title='Auf die Jagd nach Wild gehen'>
-					<a href='"+ macroLinkText("probeJagd@Lib:Wildnis", "", "Ansitzjagd") +"'>"]
+					<a href='"+ macroLinkText("probeJagd@lib:com.github.naxos.Wildnis", "", "Ansitzjagd") +"'>"]
 					[h: linkOpen2 = "
 					<span style='color: #eee5c8; text-decoration: none; vertical-align: middle;' title='Auf die Jagd nach Wild gehen'>
-					<a href='"+ macroLinkText("probeJagd@Lib:Wildnis", "", "Pirschjagd") +"'>"]
+					<a href='"+ macroLinkText("probeJagd@lib:com.github.naxos.Wildnis", "", "Pirschjagd") +"'>"]
 					[h: linkOpen3 = "
 					<span style='color: #eee5c8; text-decoration: none; vertical-align: middle;' title='Auf die Jagd nach Wild gehen'>
-					<a href='"+ macroLinkText("probeJagd@Lib:Wildnis", "", "Fallenjagd") +"'>"]
+					<a href='"+ macroLinkText("probeJagd@lib:com.github.naxos.Wildnis", "", "Fallenjagd") +"'>"]
 					[h: linkClose = "</a></span>"]
 					[h: link = strformat("
 					%{linkOpen1}Ansitzjagd%{linkClose} &middot; %{linkOpen2}Pirschjagd%{linkClose} &middot; %{linkOpen3}Fallenjagd%{linkClose}"
@@ -151,7 +151,7 @@
 				<td colspan=8>
 					[h: linkOpen = "
 					<span style='color: #eee5c8; text-decoration: none; vertical-align: middle;' title='Fischen / Angeln gehen'>
-					<a href='"+ macroLinkText("probeJagd@Lib:Wildnis", "", "Angeln") +"'>"]
+					<a href='"+ macroLinkText("probeJagd@lib:com.github.naxos.Wildnis", "", "Angeln") +"'>"]
 					[h: linkClose = "</a></span>"]
 					<table>
 						<tr>
