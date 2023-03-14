@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -190,7 +190,7 @@
 						[h,if(rID == RuestungAktiv): bg = "bgcolor='#eee5c8'"; bg = ""]
 						[h,if(rID == RuestungAktiv): fc = "#3d1919"; fc = "#eee5c8"]
 						[h,if(rID == RuestungAktiv): linkTitle = "title='Diese Ruestung ist angelegt.'"; linkTitle = "title='Diese Ruestung anlegen.'"]
-						[h,if(rID == RuestungAktiv): link = "&#10003;"; link = macroLink("&#10063;", "changeRS@Lib:macros", "", rID)]
+						[h,if(rID == RuestungAktiv): link = "&#10003;"; link = macroLink("&#10063;", "changeRS@this", "", rID)]
 						<td [r: bg]>
 							<span style='color: [r: fc]; text-decoration: none;' [r: linkTitle]>[r: link]</span>
 						</td>

@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -17,7 +17,7 @@
 
 [h: wuerfel = 1]
 
-[h: actionLink = macroLinkText("probeINIProcess@Lib:macros", "")]
+[h: actionLink = macroLinkText("probeINIProcess@this", "")]
 [dialog5("probeINI", "width=587; height=360; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

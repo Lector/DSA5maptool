@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -33,11 +33,11 @@
 					</td>
 					<td width='383'>
 						<image src='[r: tableImage("mainTheme", 5)]'></image>
-						<a href="[r: macroLinkText("charbogenKampf@Lib:macros")]"><image src='[r: tableImage("mainTheme", 6)]' border="0" alt="Kampfbogen aufrufen"></image></a>
-						<a href="[r: macroLinkText("charbogenTalente@Lib:macros", "", "Koerper")]"><image src='[r: tableImage("mainTheme", 8)]' border="0" alt="Talentbogen aufrufen"></image></a>
-						<a href="[r: macroLinkText("charbogenZauber@Lib:macros")]"><image src='[r: tableImage("mainTheme", 10)]' border="0" alt="Zauberbogen aufrufen"></image></a>
-						<a href="[r: macroLinkText("charbogenLiturgien@Lib:macros")]"><image src='[r: tableImage("mainTheme", 12)]' border="0" alt="Liturgiebogen aufrufen"></image></a>
-						<a href="[r: macroLinkText("charbogenNotizen@Lib:macros")]"><image src='[r: tableImage("mainTheme", 14)]' border="0" alt="Notizen &amp; Handouts aufrufen"></image></a>
+						<a href="[r: macroLinkText("charbogenKampf@this")]"><image src='[r: tableImage("mainTheme", 6)]' border="0" alt="Kampfbogen aufrufen"></image></a>
+						<a href="[r: macroLinkText("charbogenTalente@this", "", "Koerper")]"><image src='[r: tableImage("mainTheme", 8)]' border="0" alt="Talentbogen aufrufen"></image></a>
+						<a href="[r: macroLinkText("charbogenZauber@this")]"><image src='[r: tableImage("mainTheme", 10)]' border="0" alt="Zauberbogen aufrufen"></image></a>
+						<a href="[r: macroLinkText("charbogenLiturgien@this")]"><image src='[r: tableImage("mainTheme", 12)]' border="0" alt="Liturgiebogen aufrufen"></image></a>
+						<a href="[r: macroLinkText("charbogenNotizen@this")]"><image src='[r: tableImage("mainTheme", 14)]' border="0" alt="Notizen &amp; Handouts aufrufen"></image></a>
 					</td>
 					<td width='59'>
 						&nbsp;
@@ -53,7 +53,7 @@
 						&nbsp;
 					</td>
 					<td style="background-image: url('[r: tblImage("mainTheme",21)]'); background-repeat: no-repeat; height: 90;" width='471'>
-						[r,macro("eigLeiste@Lib:macros"): ""]
+						[r,macro("eigLeiste@this"): ""]
 					</td>
 					<td>
 						&nbsp;
@@ -92,14 +92,14 @@
 											</td>
 											<td width='55'>
 												[h: wID = getStrProp(PlayerOpt, "atWeapon")]
-												<span style='color: #eee5c8; text-decoration: none;' title='Initiative ermitteln'>[r: macroLink("INI", "probeINI@Lib:macros", "", wID)]</span>
+												<span style='color: #eee5c8; text-decoration: none;' title='Initiative ermitteln'>[r: macroLink("INI", "probeINI@this", "", wID)]</span>
 												<span style='font-weight: normal; font-size: 9pt;'>(+W6)</span>:
 											</td>
 											<td style='text-align: center;' width='22'>
 												[h: aktINI = getINI()]
 												[h,if(aktINI < INI): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 												[h,if(aktINI > INI): eigColor = "#0099ff"]
-												<span style='color: [r: eigColor]; text-decoration: none;' title='Initiative ermitteln'>[r: macroLink(aktINI, "probeINI@Lib:macros", "", wID)]</span>
+												<span style='color: [r: eigColor]; text-decoration: none;' title='Initiative ermitteln'>[r: macroLink(aktINI, "probeINI@this", "", wID)]</span>
 											</td>
 										</tr>
 										<tr>
@@ -146,13 +146,13 @@
 										</tr>
 										<tr>
 											<td>
-												<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;Ausweichen&quot; ablegen'>[r: macroLink("Ausweichen:", "probeAW@Lib:macros", "", "")]</span>
+												<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;Ausweichen&quot; ablegen'>[r: macroLink("Ausweichen:", "probeAW@this", "", "")]</span>
 											</td>
 											<td style='padding-left: 4px;'>
 												[h: aktAW = AW + getStrProp(TempMod, "aw")]												
 												[h,if(aktAW < AW): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 												[h,if(aktAW > AW): eigColor = "#0099ff"]
-												<span style='color: [r: eigColor]; text-decoration: none;' title='Probe auf &quot;Ausweichen&quot; ablegen'>[r: macroLink(aktAW, "probeAW@Lib:macros", "", "")]</span>
+												<span style='color: [r: eigColor]; text-decoration: none;' title='Probe auf &quot;Ausweichen&quot; ablegen'>[r: macroLink(aktAW, "probeAW@this", "", "")]</span>
 											</td>
 										</tr>
 										<tr>
@@ -205,9 +205,9 @@
 								</td>
 								<td style='padding: 0px; text-align: center;' width='40'>		
 									[r: LeP]/[r: MaxLeP]<br>
-									<span style='color: #eee5c8; text-decoration: none;' title='LeP addieren'>[r: macroLink(plus, "changeEnergie@Lib:macros", "", "lePlus")]</span>
+									<span style='color: #eee5c8; text-decoration: none;' title='LeP addieren'>[r: macroLink(plus, "changeEnergie@this", "", "lePlus")]</span>
 									&nbsp;
-									<span style='color: #eee5c8; text-decoration: none;' title='LeP subtrahieren'>[r: macroLink(minus, "changeEnergie@Lib:macros", "", "leMinus")]</span>
+									<span style='color: #eee5c8; text-decoration: none;' title='LeP subtrahieren'>[r: macroLink(minus, "changeEnergie@this", "", "leMinus")]</span>
 								</td>
 								<td width='152'>
 									<table style="background-image: url('[r: tblImage("mainTheme",39)]'); background-repeat: no-repeat; border-spacing: 0px;" width='152'>
@@ -232,9 +232,9 @@
 								</td>
 								<td style='padding: 0px; text-align: center;' width='40'>		
 									[r: AsP]/[r: MaxAsP]<br>
-									<span style='color: #eee5c8; text-decoration: none;' title='AsP addieren'>[r: macroLink(plus, "changeEnergie@Lib:macros", "", "aePlus")]</span>
+									<span style='color: #eee5c8; text-decoration: none;' title='AsP addieren'>[r: macroLink(plus, "changeEnergie@this", "", "aePlus")]</span>
 									&nbsp;
-									<span style='color: #eee5c8; text-decoration: none;' title='AsP subtrahieren'>[r: macroLink(minus, "changeEnergie@Lib:macros", "", "aeMinus")]</span>
+									<span style='color: #eee5c8; text-decoration: none;' title='AsP subtrahieren'>[r: macroLink(minus, "changeEnergie@this", "", "aeMinus")]</span>
 									
 								</td>
 								<td width='152'>
@@ -260,9 +260,9 @@
 								</td>
 								<td style='padding: 0px; text-align: center;' width='40'>		
 									[r: KaP]/[r: MaxKaP]<br>
-									<span style='color: #eee5c8; text-decoration: none;' title='KE addieren'>[r: macroLink(plus, "changeEnergie@Lib:macros", "", "kePlus")]</span>
+									<span style='color: #eee5c8; text-decoration: none;' title='KE addieren'>[r: macroLink(plus, "changeEnergie@this", "", "kePlus")]</span>
 									&nbsp;
-									<span style='color: #eee5c8; text-decoration: none;' title='KE subtrahieren'>[r: macroLink(minus, "changeEnergie@Lib:macros", "", "keMinus")]</span>
+									<span style='color: #eee5c8; text-decoration: none;' title='KE subtrahieren'>[r: macroLink(minus, "changeEnergie@this", "", "keMinus")]</span>
 								</td>
 								<td width='152'>
 									<table style="background-image: url('[r: tblImage("mainTheme",39)]'); background-repeat: no-repeat; border-spacing: 0px;" width='152'>
@@ -302,17 +302,17 @@
 									<div style='border-top: 1px solid #eee5c8; border-bottom: 1px solid #eee5c8; padding: 3px 0px 3px 3px;' width='405'>
 										<image src='[r: tableImage("mainTheme", 51)]'></image>
 									</div>
-									[r,macro("charbogenTraits@Lib:macros"): Vorteile]
+									[r,macro("charbogenTraits@this"): Vorteile]
 									<br><br>
 									<div style='border-top: 1px solid #eee5c8; border-bottom: 1px solid #eee5c8; padding: 3px 0px 3px 3px;' width='405'>
 										<image src='[r: tableImage("mainTheme", 52)]'></image>
 									</div>
-									[r,macro("charbogenTraits@Lib:macros"): Nachteile]
+									[r,macro("charbogenTraits@this"): Nachteile]
 									<br><br>
 									<div style='border-top: 1px solid #eee5c8; border-bottom: 1px solid #eee5c8; padding: 3px 0px 3px 3px;' width='405'>
 										<image src='[r: tableImage("mainTheme", 53)]'></image>
 									</div>
-									[r,macro("charbogenTraits@Lib:macros"): AllgemeineSF]
+									[r,macro("charbogenTraits@this"): AllgemeineSF]
 								</td>
 							</tr>
 							<tr>

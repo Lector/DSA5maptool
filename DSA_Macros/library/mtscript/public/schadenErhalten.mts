@@ -1,16 +1,16 @@
-[h,macro("abfrageImpersonate@Lib:macros"): ""]
+[h,macro("abfrageImpersonate@this"): ""]
 
 [h,if(isGM() == 1 && hasImpersonated() == 0), Code:
 {
 	[selectID = getSelected()]
 	[if(listCount(selectID) != 1), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+		[h,macro("inputFail@this"): "gmSelectFail"]
 	};{}]
 	[switchToken(selectID)]
 };{}]
 
-[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "Lib:macros") == 1), Code:
+[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "this") == 1), Code:
 	{
 		[ausgabeSL = "checked='checked'"]
 		[ausgabePublic = ""]
@@ -52,7 +52,7 @@
 [h,if(tModRS == 8): ausgabeTempRSp8 = "selected='selected'"; ausgabeTempRSp8 = ""]
 [h,if(tModRS == 9): ausgabeTempRSp9 = "selected='selected'"; ausgabeTempRSp9 = ""]
 
-[h: actionLink = macroLinkText("schadenErhaltenProcess@Lib:macros", "")]
+[h: actionLink = macroLinkText("schadenErhaltenProcess@this", "")]
 [dialog5("schadenErhalten", "width=548; height=486; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
@@ -157,11 +157,11 @@
 						</td>
 					</tr>
 				</table>
-				[r,macro("probeChat@Lib:macros"): currentToken()]
+				[r,macro("probeChat@this"): currentToken()]
 				<hr/>
 				<table style='margin: 0px auto 0px auto;'>
 					<tr>
-						[r,macro("schadensart@Lib:macros"): uebergabe]
+						[r,macro("schadensart@this"): uebergabe]
 					</tr>
 				</table>
 				<input type="hidden" name="wundschwelle" value="0">

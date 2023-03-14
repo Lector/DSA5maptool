@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@lib:com.github.naxos.Macros"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -16,7 +16,7 @@
 [h: bonus = 0]
 [h: modtext = ""]
 
-[h,macro("probeATMods@Lib:macros"): uebergabe]
+[h,macro("probeATMods@lib:com.github.naxos.Macros"): uebergabe]
 
 [h: mod = json.get(macro.return, "mod")]
 [h: bonus = json.get(macro.return, "bonus")]

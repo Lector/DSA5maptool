@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -19,7 +19,7 @@
 
 [h,if(e1 == "--" || e2 == "--" || e3 == "--"), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "3W20Fail"]
+		[h,macro("inputFail@this"): "3W20Fail"]
 	};{}
 ]
 
@@ -33,18 +33,18 @@
 <!-- Charaktere im Blutrausch können laut Regeln nur Körpertalente und Einschuechtern -->
 [h,if(getState("Blutrausch") == 1 && gruppe != "Koerper" && tname != "Einschüchtern"),Code:
 {
-	[h,macro("inputFail@Lib:macros"): "blutrausch"]
+	[h,macro("inputFail@this"): "blutrausch"]
 };{}]
 
 <!-- Es werden die aktuellen Eigenschaften ermittelt. Durch temporaere Effekte oder Zustaende koennen sie geaendert sein -->
-[h,macro("probeGetAktWert@Lib:macros"): e1]
+[h,macro("probeGetAktWert@this"): e1]
 [h: aktE1wert = macro.return]
-[h,macro("probeGetAktWert@Lib:macros"): e2]
+[h,macro("probeGetAktWert@this"): e2]
 [h: aktE2wert = macro.return]
-[h,macro("probeGetAktWert@Lib:macros"): e3]
+[h,macro("probeGetAktWert@this"): e3]
 [h: aktE3wert = macro.return]
 
-[h: actionLink = macroLinkText("probe3w20Process@Lib:macros", "")]
+[h: actionLink = macroLinkText("probe3w20Process@this", "")]
 [dialog5("probe", "width=750; height=476; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
@@ -60,7 +60,7 @@
 				</div>
 				<table style='border-spacing: 0px; padding: 5px; margin: 0px auto 0px auto;'>
 					<tr>
-						[r,macro("probeMod@Lib:macros"): ""]
+						[r,macro("probeMod@this"): ""]
 						<td width='10px'>
 							&nbsp;
 						</td>
@@ -72,7 +72,7 @@
 						</td>
 					</tr>
 				</table>
-				[r,macro("probeChat@Lib:macros"): currentToken()]
+				[r,macro("probeChat@this"): currentToken()]
 				<hr/>
 				<table style='border-spacing: 0px; margin: 0px auto 5px auto;'>
 					<tr>
@@ -127,13 +127,13 @@
 						</td>
 						<td valign='top'>
 							<table>
-								[r,macro("probeFWPlus@Lib:macros"): json.append(currentToken(), tname)]
-								[r,macro("probeSpezialisierung@Lib:macros"): tname]
-								[r,macro("probeBelastung@Lib:macros"): tname]
-								[r,macro("probeParalyse@Lib:macros"): json.append(gruppe, tname)]
-								[r,macro("probeSozialerStand@Lib:macros"): tname]
-								[r,macro("probeMirakel@Lib:macros"): tname]
-								[r,macro("probeGottgefaellig@Lib:macros"): tname]
+								[r,macro("probeFWPlus@this"): json.append(currentToken(), tname)]
+								[r,macro("probeSpezialisierung@this"): tname]
+								[r,macro("probeBelastung@this"): tname]
+								[r,macro("probeParalyse@this"): json.append(gruppe, tname)]
+								[r,macro("probeSozialerStand@this"): tname]
+								[r,macro("probeMirakel@this"): tname]
+								[r,macro("probeGottgefaellig@this"): tname]
 							</table>
 						</td>
 					</tr>
@@ -145,7 +145,7 @@
 				<input type="hidden" name="E2" value="[r: e2]"/>
 				<input type="hidden" name="E3" value="[r: e3]"/>
 				<input type="hidden" name="image" value="3"/>
-				<input type="hidden" name="modMacro" value="probeTalentMods@Lib:macros"/>
+				<input type="hidden" name="modMacro" value="probeTalentMods@this"/>
 				<input type="hidden" name="gruppe" value="[r: gruppe]"/>
 				<!-- Bei einer Unfaehigkeit wird der beste Wuerfel neu gerollt.
 				Eine Begabung wird momentan nicht beachtet da hier eine Nutzereingabe erforderlich waere.

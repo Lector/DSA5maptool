@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -141,7 +141,7 @@
 			</td>
 		</tr>
 		[r,if(arkan == 1),Code:{
-			[r,macro("probeEisen@Lib:macros"): currentToken()]
+			[r,macro("probeEisen@this"): currentToken()]
 		};{}]
 		[r,if(bezeichnung == "Zauber" || bezeichnung == "Ritual"),Code:{
 	</table>

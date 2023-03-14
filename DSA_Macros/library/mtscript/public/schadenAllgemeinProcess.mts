@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -23,17 +23,17 @@
 
 [h,if(isNumber(schadenEingabe) == 0 || isNumber(wBonus) == 0 || isNumber(wMalus) == 0), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "numText"]
+		[h,macro("inputFail@this"): "numText"]
 	};{}
 ]
 [h,if(schadenEingabe != round(schadenEingabe) || wBonus != round(wBonus) || wMalus != round(wMalus)), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "numInteger"]
+		[h,macro("inputFail@this"): "numInteger"]
 	};{}
 ]
 [h,if(schadenEingabe < 0 || wBonus < 0 || wMalus < 0), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "numNegative"]
+		[h,macro("inputFail@this"): "numNegative"]
 	};{}
 ]
 [h: closeDialog("schadenAllgemein")]
@@ -62,7 +62,7 @@
 [h,if(tZone == 99), Code:
 	{
 		[h: zoneList = "0, 0, 0, 0"]
-		[h,macro("trefferzone@Lib:macros"): zoneList]
+		[h,macro("trefferzone@this"): zoneList]
 		[h: zone = macro.return]
 	};
 	{
@@ -145,12 +145,12 @@
 
 [h,switch(chat), Code:
 	case "1": {
-			[h,macro("sendToPublic@Lib:macros"): ausgabe]
+			[h,macro("sendToPublic@this"): ausgabe]
 		};
 	case "2": {
-			[h,macro("sendToGM@Lib:macros"): ausgabe]
+			[h,macro("sendToGM@this"): ausgabe]
 		};
 	case "3": {
-			[h,macro("sendToSelfGM@Lib:macros"): ausgabe]
+			[h,macro("sendToSelfGM@this"): ausgabe]
 		}
 ]

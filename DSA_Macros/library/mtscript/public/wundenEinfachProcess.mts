@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -15,9 +15,9 @@
 [h: chat = getStrProp(uebergabe, "chat")]
 [h: hWunden = getStrProp(uebergabe, "wZahl")]
 
-[h,if(getLibProperty("OptWunden", "Lib:macros") != 1), Code:
+[h,if(getLibProperty("OptWunden", "this") != 1), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "wundenSystem"]
+		[h,macro("inputFail@this"): "wundenSystem"]
 	};
 	{
 		[if(getStrProp(uebergabe, "wAction") == 1), Code:
@@ -92,14 +92,14 @@
 
 [h,switch(chat), Code:
 	case "1": {
-			[h,macro("sendToPublic@Lib:macros"): ausgabe]
+			[h,macro("sendToPublic@this"): ausgabe]
 		};
 	case "2": {
-			[h,macro("sendToGM@Lib:macros"): ausgabe]
+			[h,macro("sendToGM@this"): ausgabe]
 		};
 	case "3": {
-			[h,macro("sendToSelfGM@Lib:macros"): ausgabe]
+			[h,macro("sendToSelfGM@this"): ausgabe]
 		}
 ]
-[h,macro("checkStatusWunden@Lib:macros"): ""]
-[h,macro("refreshFrame@Lib:macros"): ""]
+[h,macro("checkStatusWunden@this"): ""]
+[h,macro("refreshFrame@this"): ""]

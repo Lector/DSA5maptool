@@ -1,6 +1,6 @@
 [h,if(isFrameVisible("meisterbogen") == 1), Code:
 {
-	[frame = getLibProperty("SLframe", "Lib:macros")]
+	[frame = getLibProperty("SLframe", "this")]
 	[switch(frame), code:
 		case "1": {
 			[h,macro("meisterbogen1@lib:com.github.naxos.Macros2"): "pc"]
@@ -42,12 +42,12 @@
 		[h: charbogenMacro = ""]
 		[h: params = tFrame]
 		[switch(frame):
-			case "1": charbogenMacro = "charbogenEigenschaften@Lib:macros";
-			case "2": charbogenMacro = "charbogenKampf@Lib:macros";
-			case "3": charbogenMacro = "charbogenTalente@Lib:macros";
-			case "4": charbogenMacro = "charbogenZauber@Lib:macros";
-			case "5": charbogenMacro = "charbogenLiturgien@Lib:macros";
-			case "6": charbogenMacro = "charbogenNotizen@Lib:macros"
+			case "1": charbogenMacro = "charbogenEigenschaften@this";
+			case "2": charbogenMacro = "charbogenKampf@this";
+			case "3": charbogenMacro = "charbogenTalente@this";
+			case "4": charbogenMacro = "charbogenZauber@this";
+			case "5": charbogenMacro = "charbogenLiturgien@this";
+			case "6": charbogenMacro = "charbogenNotizen@this"
 		]
 		[h,macro(charbogenMacro): params]
 	}]
@@ -59,7 +59,7 @@
 	{
 		[h: closeFrame("charbogenMini")]
 	};{
-		[h,macro("charbogenMini@Lib:macros"): ""]
+		[h,macro("charbogenMini@this"): ""]
 	}]
 };{}]
 

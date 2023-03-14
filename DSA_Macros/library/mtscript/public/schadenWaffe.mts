@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -13,7 +13,7 @@
 [h: typ = getStrProp(uebergabe, "typ")]
 [h: id = getStrProp(uebergabe, "id")]
 
-[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "Lib:macros") == 1), Code:
+[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "this") == 1), Code:
 	{
 		[ausgabeSL = "checked='checked'"]
 		[ausgabePublic = ""]
@@ -26,7 +26,7 @@
 
 [h,if(typ == "nk"): height = 422; height = 480]
 
-[h: actionLink = macroLinkText("schadenWaffeProcess@Lib:macros", "")]
+[h: actionLink = macroLinkText("schadenWaffeProcess@this", "")]
 [dialog5("schadenWaffe", "width=568; height=" + height + "; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
@@ -58,7 +58,7 @@
 						<td valign='middle'>
 							<table style='border-spacing: 0px;'>
 								<tr>
-									[r,macro("probeSchadenMod@Lib:macros"): ""]
+									[r,macro("probeSchadenMod@this"): ""]
 								</tr>
 							</table>
 						</td>
@@ -73,7 +73,7 @@
 						</td>
 					</tr>
 				</table>
-				[r,macro("probeChat@Lib:macros"): currentToken()]
+				[r,macro("probeChat@this"): currentToken()]
 				<hr/>
 				<table style='border-spacing: 0px; margin: 0px auto 5px auto;'>
 					<tr>

@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -42,7 +42,7 @@
 [h: wName = json.get(waffe, "Name")]
 [h,if(wName != "Waffenlos"): manName = manName + " mit " + wName; manName = manName + " (waffenlos) "]
 [h,if(target != ""),Code: {
-	[h: link = macroLinkText("selectToken@Lib:macros", "none", target)]
+	[h: link = macroLinkText("selectToken@this", "none", target)]
 	[h: targetName = getName(target)]
 	[h: manName = strformat("%{manName} auf <a style='color: #441e13' href='%s'>%s</a>", link, targetName)]
 }]

@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@lib:com.github.naxos.Macros"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -42,11 +42,11 @@ tableImage("chat", 77), wertColor, wert)]
 
 [h: ausgabe = border(titel, ausgabe)]
 
-[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "Lib:macros") == 1), Code:
+[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "lib:com.github.naxos.Macros") == 1), Code:
 	{
-		[h,macro("sendToGM@Lib:macros"): ausgabe]
+		[h,macro("sendToGM@lib:com.github.naxos.Macros"): ausgabe]
 	};
 	{
-		[h,macro("sendToPublic@Lib:macros"): ausgabe]
+		[h,macro("sendToPublic@lib:com.github.naxos.Macros"): ausgabe]
 	}
 ]

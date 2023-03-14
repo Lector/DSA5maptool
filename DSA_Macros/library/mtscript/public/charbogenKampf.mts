@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -32,12 +32,12 @@
 						&nbsp;
 					</td>
 					<td width='383'>
-						<a href="[r: macroLinkText("charbogenEigenschaften@Lib:macros")]"><image src='[r: tableImage("mainTheme", 4)]' border="0" alt="Eigenschaftsbogen aufrufen"></image></a>
+						<a href="[r: macroLinkText("charbogenEigenschaften@this")]"><image src='[r: tableImage("mainTheme", 4)]' border="0" alt="Eigenschaftsbogen aufrufen"></image></a>
 						<image src='[r: tableImage("mainTheme", 7)]'></image>
-						<a href="[r: macroLinkText("charbogenTalente@Lib:macros", "", "Koerper")]"><image src='[r: tableImage("mainTheme", 8)]' border="0" alt="Talentbogen aufrufen"></image></a>
-						<a href="[r: macroLinkText("charbogenZauber@Lib:macros")]"><image src='[r: tableImage("mainTheme", 10)]' border="0" alt="Zauberbogen aufrufen"></image></a>
-						<a href="[r: macroLinkText("charbogenLiturgien@Lib:macros")]"><image src='[r: tableImage("mainTheme", 12)]' border="0" alt="Liturgiebogen aufrufen"></image></a>
-						<a href="[r: macroLinkText("charbogenNotizen@Lib:macros")]"><image src='[r: tableImage("mainTheme", 14)]' border="0" alt="Notizen &amp; Handouts aufrufen"></image></a>
+						<a href="[r: macroLinkText("charbogenTalente@this", "", "Koerper")]"><image src='[r: tableImage("mainTheme", 8)]' border="0" alt="Talentbogen aufrufen"></image></a>
+						<a href="[r: macroLinkText("charbogenZauber@this")]"><image src='[r: tableImage("mainTheme", 10)]' border="0" alt="Zauberbogen aufrufen"></image></a>
+						<a href="[r: macroLinkText("charbogenLiturgien@this")]"><image src='[r: tableImage("mainTheme", 12)]' border="0" alt="Liturgiebogen aufrufen"></image></a>
+						<a href="[r: macroLinkText("charbogenNotizen@this")]"><image src='[r: tableImage("mainTheme", 14)]' border="0" alt="Notizen &amp; Handouts aufrufen"></image></a>
 					</td>
 					<td width='59'>
 						&nbsp;
@@ -52,7 +52,7 @@
 						&nbsp;
 					</td>
 					<td style="background-image: url('[r: tblImage("mainTheme",21)]'); background-repeat: no-repeat; height: 90;" width='471'>
-						[r,macro("eigLeiste@Lib:macros"): ""]
+						[r,macro("eigLeiste@this"): ""]
 					</td>
 					<td>
 						&nbsp;
@@ -69,9 +69,9 @@
 					</td>
 					<td style='padding: 0px; text-align: center;' width='40'>		
 						[r: LeP]/[r: MaxLeP]<br>
-						<span style='color: #eee5c8; text-decoration: none;' title='LeP addieren'>[r: macroLink(plus, "changeEnergie@Lib:macros", "", "lePlus")]</span>
+						<span style='color: #eee5c8; text-decoration: none;' title='LeP addieren'>[r: macroLink(plus, "changeEnergie@this", "", "lePlus")]</span>
 						&nbsp;
-						<span style='color: #eee5c8; text-decoration: none;' title='LeP subtrahieren'>[r: macroLink(minus, "changeEnergie@Lib:macros", "", "leMinus")]</span>
+						<span style='color: #eee5c8; text-decoration: none;' title='LeP subtrahieren'>[r: macroLink(minus, "changeEnergie@this", "", "leMinus")]</span>
 					</td>
 					<td width='152'>
 						<table style="background-image: url('[r: tblImage("mainTheme",39)]'); background-repeat: no-repeat; border-spacing: 0px;" width='152'>
@@ -91,11 +91,11 @@
 					</td>
 				</tr>
 			</table>	
-			[r,macro("charbogenRuestung@Lib:macros"): ""]
-			[r,macro("charbogenNahkampf@Lib:macros"): ""]
+			[r,macro("charbogenRuestung@this"): ""]
+			[r,macro("charbogenNahkampf@this"): ""]
 			[r,if(json.length(Fernkampfwaffen) > 0),Code:
 			{
-				[macro("charbogenFernkampf@Lib:macros"): ""]
+				[macro("charbogenFernkampf@this"): ""]
 			}]
 			<table style='border-spacing: 0px; margin-top: 13px;' width='500'>
 				<tr>
@@ -113,7 +113,7 @@
 									<div style='border-top: 1px solid #eee5c8; border-bottom: 1px solid #eee5c8; padding: 3px 0px 3px 3px;' width='417'>
 										KAMPFSONDERFERTIGKEITEN
 									</div>
-									[r,macro("charbogenTraits@Lib:macros"): KampfSF]
+									[r,macro("charbogenTraits@this"): KampfSF]
 								</td>
 							</tr>
 							<tr>
@@ -129,7 +129,7 @@
 			</table>
 			[r,if(TrefferzonenModell == 0),Code:
 			{
-				[r,macro("charbogenMount@Lib:macros"): currentToken()]	
+				[r,macro("charbogenMount@this"): currentToken()]	
 			}]	
 		</div>
 		<div style="background-image: url('[r: tblImage("mainTheme",3)]'); background-repeat: no-repeat; height: 34; margin: 0px;" width="500">

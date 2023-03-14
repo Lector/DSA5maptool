@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@lib:com.github.naxos.Macros"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -51,10 +51,10 @@
 </div>
 ", tableImage("chat", 41), tableImage("chat", 42), tableImage("chat", 28), tokenName, tableImage("chat", 43))]
 
-[h,macro("noticeSelf@Lib:macros"): "notizSLEdit"]
+[h,macro("noticeSelf@lib:com.github.naxos.Macros"): "notizSLEdit"]
 [h,if(isGM() == 0), Code:
 	{
-		[h,macro("sendToGM@Lib:macros"): ausgabe]
+		[h,macro("sendToGM@lib:com.github.naxos.Macros"): ausgabe]
 	};{}
 ]
-[h,macro("refreshFrame@Lib:macros"): ""]
+[h,macro("refreshFrame@lib:com.github.naxos.Macros"): ""]

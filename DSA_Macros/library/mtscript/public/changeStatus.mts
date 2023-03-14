@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -13,4 +13,4 @@
 [h: uebergabe = macro.args]
 [h: status = getState(uebergabe)]
 [h,if(status == 1): setState(uebergabe, 0); setState(uebergabe, 1)]
-[h,macro("refreshFrame@Lib:macros"): ""]
+[h,macro("refreshFrame@this"): ""]

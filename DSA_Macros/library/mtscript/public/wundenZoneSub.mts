@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -11,9 +11,9 @@
 ]
 
 [h: zone = macro.args]
-[h,if(getLibProperty("OptWunden", "Lib:macros") != 2), Code:
+[h,if(getLibProperty("OptWunden", "this") != 2), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "wundenSystem"]
+		[h,macro("inputFail@this"): "wundenSystem"]
 	};{}
 ]
 [h: closeDialog("wundenZone")]
@@ -142,13 +142,13 @@
 </div>
 ", tableImage("chat", 50), tableImage("chat", 51), tableImage("chat", 70), text, tableImage("chat", 52))]
 
-[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "Lib:macros") == 1), Code:
+[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "this") == 1), Code:
 	{
-		[h,macro("sendToGM@Lib:macros"): ausgabe]
+		[h,macro("sendToGM@this"): ausgabe]
 	};
 	{
-		[h,macro("sendToPublic@Lib:macros"): ausgabe]
+		[h,macro("sendToPublic@this"): ausgabe]
 	}
 ]
-[h,macro("checkStatusWunden@Lib:macros"): ""]
-[h,macro("refreshFrame@Lib:macros"): ""]
+[h,macro("checkStatusWunden@this"): ""]
+[h,macro("refreshFrame@this"): ""]

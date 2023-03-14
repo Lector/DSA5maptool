@@ -4,10 +4,10 @@
 
 [h,if(listCount(otherMaps) == 0),Code:
 {
-	[h,macro("inputFail@Lib:macros"): "noOtherMaps"]
+	[h,macro("inputFail@this"): "noOtherMaps"]
 }]
 
-[h: actionLink = macroLinkText("moveTokensProcess@Lib:macros", "")]
+[h: actionLink = macroLinkText("moveTokensProcess@this", "")]
 [dialog5("moveTokens", "width=425; height=510; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -18,4 +18,4 @@
 [h: uebergabe = json.set(uebergabe, "E2", value)]
 [h: uebergabe = json.set(uebergabe, "E3", value)]
 
-[h,macro("probe3w20Process@Lib:macros"): uebergabe]
+[h,macro("probe3w20Process@this"): uebergabe]

@@ -2,10 +2,10 @@
 
 [h,if(arg(0) == "pc"),Code:{
 	[h: tokenList = getTokens("json", json.set(conditions, "npc", 0, "pc", 1))]
-	[h: setLibProperty("SLframe", 3, "Lib:macros")]
+	[h: setLibProperty("SLframe", 3, "lib:com.github.naxos.Macros")]
 };{
 	[h: tokenList = getTokens("json", json.set(conditions, "npc", 1, "pc", 0))]
-	[h: setLibProperty("SLframe", 4, "Lib:macros")]
+	[h: setLibProperty("SLframe", 4, "lib:com.github.naxos.Macros")]
 }]
 
 [h: fTokenList = "[]"]

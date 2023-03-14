@@ -1,4 +1,4 @@
-[h: setLibProperty("SLframe", 6, "Lib:macros")]
+[h: setLibProperty("SLframe", 6, "lib:com.github.naxos.Macros")]
 
 [frame("meisterbogen", "width=528; height=500; temporary=1; input=0; noframe=0"):{
 <html>

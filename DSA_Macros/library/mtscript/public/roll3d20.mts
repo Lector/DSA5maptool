@@ -28,7 +28,7 @@ Es werden auch die aktuellen Eigenschaften ermittelt. Durch temporaere Effekte o
 	[h: aktE1wert = e1]
 };{
 	[h: e1wert = getProperty(e1, arg(0), map)]
-	[h,macro("probeGetAktWert@Lib:macros"): json.append(e1, arg(0))]
+	[h,macro("probeGetAktWert@this"): json.append(e1, arg(0))]
 	[h: aktE1wert = macro.return]
 }]
 [h,if(isNumber(e2)),Code:{
@@ -36,7 +36,7 @@ Es werden auch die aktuellen Eigenschaften ermittelt. Durch temporaere Effekte o
 	[h: aktE2wert = e2]
 };{
 	[h: e2wert = getProperty(e2, arg(0), map)]
-	[h,macro("probeGetAktWert@Lib:macros"): json.append(e2, arg(0))]
+	[h,macro("probeGetAktWert@this"): json.append(e2, arg(0))]
 	[h: aktE2wert = macro.return]
 }]
 [h,if(isNumber(e3)),Code:{
@@ -44,7 +44,7 @@ Es werden auch die aktuellen Eigenschaften ermittelt. Durch temporaere Effekte o
 	[h: aktE3wert = e3]
 };{
 	[h: e3wert = getProperty(e3, arg(0), map)]
-	[h,macro("probeGetAktWert@Lib:macros"): json.append(e3, arg(0))]
+	[h,macro("probeGetAktWert@this"): json.append(e3, arg(0))]
 	[h: aktE3wert = macro.return]
 }]
 

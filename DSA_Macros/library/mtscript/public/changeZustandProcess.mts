@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -25,5 +25,5 @@
 
 [h: closeDialog("changeZustand")]
 
-[h,macro("checkZustand@Lib:macros"): currentToken()]
-[h,macro("noticeSelf@Lib:macros"): "zustand"]
+[h,macro("checkZustand@this"): currentToken()]
+[h,macro("noticeSelf@this"): "zustand"]

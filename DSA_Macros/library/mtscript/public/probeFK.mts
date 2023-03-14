@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -12,7 +12,7 @@
 
 [h,if(getState("Blutrausch") == 1),Code:
 {
-	[h,macro("inputFail@Lib:macros"): "blutrausch"]
+	[h,macro("inputFail@this"): "blutrausch"]
 };{}]
 
 [h: waffe = resolveFK(getFernkampfwaffe(arg(0)))]
@@ -54,7 +54,7 @@
 	[h,if(distance > rw3): cZuWeit = "checked='checked'"]
 };{}]
 
-[h: actionLink = macroLinkText("probeFKProcess@Lib:macros", "")]
+[h: actionLink = macroLinkText("probeFKProcess@this", "")]
 [dialog5("probe", "width=1345; height=710; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
@@ -73,10 +73,10 @@
 						<td>
 							<table class="probe">
 								<tr>
-									[r,macro("probeMod@Lib:macros"): ""]
+									[r,macro("probeMod@this"): ""]
 								</tr>
 								<tr>
-									[r,macro("probeSchadenMod@Lib:macros"): ""]
+									[r,macro("probeSchadenMod@this"): ""]
 								</tr>
 							</table>
 						</td>
@@ -91,7 +91,7 @@
 						</td>
 					</tr>
 				</table>
-				[r,macro("probeChat@Lib:macros"): currentToken()]
+				[r,macro("probeChat@this"): currentToken()]
 				<hr/>
 				<table style='border-spacing: 0px; margin: 0px auto 0px auto;'>
 					<tr>
@@ -210,7 +210,7 @@
 						<td width='20'>
 							&nbsp;
 						</td>
-						[r,macro("probeZielgroesseFK@Lib:macros"): target]
+						[r,macro("probeZielgroesseFK@this"): target]
 						<td width='20'>
 							&nbsp;
 						</td>
@@ -287,7 +287,7 @@
 				<hr/>
 				<table style='border-spacing: 0px; margin: 0px auto 0px auto;'>
 					<tr>
-						[r,macro("probeSicht@Lib:macros"): "fk"]
+						[r,macro("probeSicht@this"): "fk"]
 						<td width='20'>
 							&nbsp;
 						</td>
@@ -400,7 +400,7 @@
 										Kampfget&uuml;mmel (-2)
 									</td>
 								</tr>
-								[r,macro("probeGottgefaellig@Lib:macros"): ""]
+								[r,macro("probeGottgefaellig@this"): ""]
 							</table>
 						</td>
 					</tr>
@@ -408,7 +408,7 @@
 				<input type="hidden" name="Wert" value="[r: wert]">
 				<input type="hidden" name="Name" value="mit [r: wname]">
 				<input type="hidden" name="patzerTabelle" value="patzerFernkampf"/>
-				<input type="hidden" name="modMacro" value="probeFKMods@Lib:macros"/>
+				<input type="hidden" name="modMacro" value="probeFKMods@this"/>
 				<input type="hidden" name="target" value="[r: target]"/>
 			</form>
 		</div<

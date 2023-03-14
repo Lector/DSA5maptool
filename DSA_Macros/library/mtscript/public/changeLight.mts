@@ -1,11 +1,11 @@
-[h,macro("abfrageImpersonate@Lib:macros"): ""]
+[h,macro("abfrageImpersonate@this"): ""]
 
 [h,if(isGM() == 1 && hasImpersonated() == 0), Code:
 	{
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -46,7 +46,7 @@
 }]
 [h: lights = json.sort(lights, "ascending", "name")]
 
-[h: actionLink = macroLinkText("changeLightProcess@Lib:macros", "")]
+[h: actionLink = macroLinkText("changeLightProcess@this", "")]
 [dialog5("changeLight", "width=425; height=622; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

@@ -1,4 +1,4 @@
-[h,macro("abfrageImpersonate@Lib:macros"): ""]
+[h,macro("abfrageImpersonate@this"): ""]
 [h,if(isGM() == 1 && hasImpersonated() == 0), Code:
 	{
 		[selectID = getSelected()]
@@ -7,9 +7,9 @@
 ]
 [h,if(MaxAsP <= 0), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "aeChange"]
+		[h,macro("inputFail@this"): "aeChange"]
 	};
 	{
-		[h,macro("changeEnergie@Lib:macros"): "aeMinus"]
+		[h,macro("changeEnergie@this"): "aeMinus"]
 	}
 ]

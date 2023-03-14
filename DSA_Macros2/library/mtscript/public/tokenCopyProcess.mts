@@ -5,22 +5,22 @@
 
 [h,if(copyNum == ""), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "noInput"]
+		[h,macro("inputFail@lib:com.github.naxos.Macros"): "noInput"]
 	};{}
 ]
 [h,if(isNumber(copyNum) == 0), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "numText"]
+		[h,macro("inputFail@lib:com.github.naxos.Macros"): "numText"]
 	};{}
 ]
 [h,if(copyNum != round(copyNum)), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "numInteger"]
+		[h,macro("inputFail@lib:com.github.naxos.Macros"): "numInteger"]
 	};{}
 ]
 [h,if(copyNum < 0), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "numNegative"]
+		[h,macro("inputFail@lib:com.github.naxos.Macros"): "numNegative"]
 	};{}
 ]
 [h: closeDialog("tokenCopy")]
@@ -31,5 +31,5 @@
 [h: cloneNum = 0]
 [h: copyToken(tID, copyNum, "", updates)]
 
-[h,macro("noticeSelf@Lib:macros"): "tokenCopy"]
-[h,macro("refreshFrame@Lib:macros"): ""]
+[h,macro("noticeSelf@lib:com.github.naxos.Macros"): "tokenCopy"]
+[h,macro("refreshFrame@lib:com.github.naxos.Macros"): ""]

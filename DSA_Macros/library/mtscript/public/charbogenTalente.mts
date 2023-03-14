@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -32,12 +32,12 @@
 						&nbsp;
 					</td>
 					<td width='383'>
-						<a href="[r: macroLinkText("charbogenEigenschaften@Lib:macros")]"><image src='[r: tableImage("mainTheme", 4)]' border="0" alt="Eigenschaftsbogen aufrufen"></image></a>
-						<a href="[r: macroLinkText("charbogenKampf@Lib:macros")]"><image src='[r: tableImage("mainTheme", 6)]' border="0" alt="Kampfbogen aufrufen"></image></a>
+						<a href="[r: macroLinkText("charbogenEigenschaften@this")]"><image src='[r: tableImage("mainTheme", 4)]' border="0" alt="Eigenschaftsbogen aufrufen"></image></a>
+						<a href="[r: macroLinkText("charbogenKampf@this")]"><image src='[r: tableImage("mainTheme", 6)]' border="0" alt="Kampfbogen aufrufen"></image></a>
 						<image src='[r: tableImage("mainTheme", 9)]'></image>
-						<a href="[r: macroLinkText("charbogenZauber@Lib:macros")]"><image src='[r: tableImage("mainTheme", 10)]' border="0" alt="Zauberbogen aufrufen"></image></a>
-						<a href="[r: macroLinkText("charbogenLiturgien@Lib:macros")]"><image src='[r: tableImage("mainTheme", 12)]' border="0" alt="Liturgiebogen aufrufen"></image></a>
-						<a href="[r: macroLinkText("charbogenNotizen@Lib:macros")]"><image src='[r: tableImage("mainTheme", 14)]' border="0" alt="Notizen &amp; Handouts aufrufen"></image></a>
+						<a href="[r: macroLinkText("charbogenZauber@this")]"><image src='[r: tableImage("mainTheme", 10)]' border="0" alt="Zauberbogen aufrufen"></image></a>
+						<a href="[r: macroLinkText("charbogenLiturgien@this")]"><image src='[r: tableImage("mainTheme", 12)]' border="0" alt="Liturgiebogen aufrufen"></image></a>
+						<a href="[r: macroLinkText("charbogenNotizen@this")]"><image src='[r: tableImage("mainTheme", 14)]' border="0" alt="Notizen &amp; Handouts aufrufen"></image></a>
 					</td>
 					<td width='59'>
 						&nbsp;
@@ -52,7 +52,7 @@
 						&nbsp;
 					</td>
 					<td style="background-image: url('[r: tblImage("mainTheme",21)]'); background-repeat: no-repeat; height: 90;" width='471'>
-						[r,macro("eigLeiste@Lib:macros"): ""]
+						[r,macro("eigLeiste@this"): ""]
 					</td>
 					<td>
 						&nbsp;
@@ -80,7 +80,7 @@
 														<span style='color: #bbbbba;'>K&ouml;rper</span>
 													};
 													{
-														<span style='color: #eee5c8; text-decoration: none;' title='K&ouml;rpertalente aufrufen'>[r: macroLink("K&ouml;rper", "charbogenTalente@Lib:macros", "", "Koerper")]</span>				
+														<span style='color: #eee5c8; text-decoration: none;' title='K&ouml;rpertalente aufrufen'>[r: macroLink("K&ouml;rper", "charbogenTalente@this", "", "Koerper")]</span>				
 													}
 												]
 												&middot; 
@@ -89,7 +89,7 @@
 														<span style='color: #bbbbba;'>Gesellschaft</span>
 													};
 													{
-														<span style='color: #eee5c8; text-decoration: none;' title='Gesellschaftstalente aufrufen'>[r: macroLink("Gesellschaft", "charbogenTalente@Lib:macros", "", "Gesellschaft")]</span>				
+														<span style='color: #eee5c8; text-decoration: none;' title='Gesellschaftstalente aufrufen'>[r: macroLink("Gesellschaft", "charbogenTalente@this", "", "Gesellschaft")]</span>				
 													}	
 												]
 												&middot; 
@@ -98,7 +98,7 @@
 														<span style='color: #bbbbba;'>Natur</span>
 													};
 													{
-														<span style='color: #eee5c8; text-decoration: none;' title='Naturtalente aufrufen'>[r: macroLink("Natur", "charbogenTalente@Lib:macros", "", "Natur")]</span>				
+														<span style='color: #eee5c8; text-decoration: none;' title='Naturtalente aufrufen'>[r: macroLink("Natur", "charbogenTalente@this", "", "Natur")]</span>				
 													}	
 												]
 												&middot; 
@@ -107,7 +107,7 @@
 														<span style='color: #bbbbba;'>Wissen</span>
 													};
 													{
-														<span style='color: #eee5c8; text-decoration: none;' title='Wissenstalente aufrufen'>[r: macroLink("Wissen", "charbogenTalente@Lib:macros", "", "Wissen")]</span>				
+														<span style='color: #eee5c8; text-decoration: none;' title='Wissenstalente aufrufen'>[r: macroLink("Wissen", "charbogenTalente@this", "", "Wissen")]</span>				
 													}	
 												]
 											</td>
@@ -119,7 +119,7 @@
 														<span style='color: #bbbbba;'>Handwerk</span>
 													};
 													{
-														<span style='color: #eee5c8; text-decoration: none;' title='Handwerkstalente aufrufen'>[r: macroLink("Handwerk", "charbogenTalente@Lib:macros", "", "Handwerk")]</span>				
+														<span style='color: #eee5c8; text-decoration: none;' title='Handwerkstalente aufrufen'>[r: macroLink("Handwerk", "charbogenTalente@this", "", "Handwerk")]</span>				
 													}
 												]
 												&middot; 
@@ -128,18 +128,18 @@
 														<span style='color: #bbbbba;'>Kampf</span>
 													};
 													{
-														<span style='color: #eee5c8; text-decoration: none;' title='Kampftalente aufrufen'>[r: macroLink("Kampf", "charbogenTalente@Lib:macros", "", "Kampftechniken")]</span>				
+														<span style='color: #eee5c8; text-decoration: none;' title='Kampftalente aufrufen'>[r: macroLink("Kampf", "charbogenTalente@this", "", "Kampftechniken")]</span>				
 													}	
 												]
 												&middot;
-												<span style='color: #eee5c8; text-decoration: none;' title='Universelle Fertigkeitsprobe würfeln'>[r: macroLink("Univ. Probe", "probeUni@Lib:macros")]</span>
+												<span style='color: #eee5c8; text-decoration: none;' title='Universelle Fertigkeitsprobe würfeln'>[r: macroLink("Univ. Probe", "probeUni@this")]</span>
 												<!--
 												[r,if(gruppe == "Gaben"), Code:
 													{
 														<span style='color: #bbbbba;'>Gaben</span>
 													};
 													{
-														<span style='color: #eee5c8; text-decoration: none;' title='Gaben aufrufen'>[r: macroLink("Gaben", "charbogenTalente@Lib:macros", "", "Gaben")]</span>				
+														<span style='color: #eee5c8; text-decoration: none;' title='Gaben aufrufen'>[r: macroLink("Gaben", "charbogenTalente@this", "", "Gaben")]</span>				
 													}	
 												]
 												-->
@@ -160,11 +160,11 @@
 				[r,switch(uebergabe),Code:
 				case "Kampftechniken":
 				{
-					[r,macro("charbogenKampftechnik@Lib:macros"): uebergabe]
+					[r,macro("charbogenKampftechnik@this"): uebergabe]
 				};
 				default:
 				{
-					[r,macro("charbogenTalent@Lib:macros"): uebergabe]
+					[r,macro("charbogenTalent@this"): uebergabe]
 				}]
 				<tr>
 					<td width='25'>

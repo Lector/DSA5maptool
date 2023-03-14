@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -17,17 +17,17 @@
 
 [h,if(isNumber(bonus) == 0 || isNumber(malus) == 0), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "numText"]
+		[h,macro("inputFail@this"): "numText"]
 	};{}
 ]
 [h,if(bonus != round(bonus) || malus != round(malus)), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "numInteger"]
+		[h,macro("inputFail@this"): "numInteger"]
 	};{}
 ]
 [h,if(bonus < 0 || malus < 0), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "numNegative"]
+		[h,macro("inputFail@this"): "numNegative"]
 	};{}
 ]
 [h: closeDialog("probeINI")]
@@ -108,12 +108,12 @@
 	</table>",
 tableImage("chat", 62), iniColor, aktWert, modColor, modOutput, 1, resultDice, result))] 
 
-[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "Lib:macros") == 1), Code:
+[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "this") == 1), Code:
 	{
-		[h,macro("sendToGM@Lib:macros"): ausgabe]
+		[h,macro("sendToGM@this"): ausgabe]
 	};
 	{
-		[h,macro("sendToPublic@Lib:macros"): ausgabe]
+		[h,macro("sendToPublic@this"): ausgabe]
 	}
 ]
 [h: addToINI = result + (INI / 100)]

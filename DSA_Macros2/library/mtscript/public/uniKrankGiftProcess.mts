@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@lib:com.github.naxos.Macros"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -20,12 +20,12 @@
 
 [h,if(isNumber(tWert) == 0), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "numText"]
+		[h,macro("inputFail@lib:com.github.naxos.Macros"): "numText"]
 	};{}
 ]
 [h,if(tWert != round(tWert)), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "numInteger"]
+		[h,macro("inputFail@lib:com.github.naxos.Macros"): "numInteger"]
 	};{}
 ]
 [h: closeDialog("uniKrankGift")]
@@ -267,15 +267,15 @@
 
 [h,switch(chat), Code:
 	case "1": {
-			[h,macro("sendToPublic@Lib:macros"): ausgabe]
+			[h,macro("sendToPublic@lib:com.github.naxos.Macros"): ausgabe]
 		};
 	case "2": {
-			[h,macro("sendToGM@Lib:macros"): ausgabe]
+			[h,macro("sendToGM@lib:com.github.naxos.Macros"): ausgabe]
 		};
 	case "3": {
-			[h,macro("sendToSelfGM@Lib:macros"): ausgabe]
+			[h,macro("sendToSelfGM@lib:com.github.naxos.Macros"): ausgabe]
 		};
 	case "4": {
-			[h,macro("sendToSelf@Lib:macros"): ausgabe]
+			[h,macro("sendToSelf@lib:com.github.naxos.Macros"): ausgabe]
 		}
 ]

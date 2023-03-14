@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -40,16 +40,16 @@
 						Quicklinks:
 					</td>
 					<td style='text-align: center;'>
-						<span style='color: #eee5c8; text-decoration: underline;' title='Talentbogen aufrufen'>[r: macroLink("Talente", "charbogenTalente@Lib:macros", "", "koerper")]</span>
+						<span style='color: #eee5c8; text-decoration: underline;' title='Talentbogen aufrufen'>[r: macroLink("Talente", "charbogenTalente@this", "", "koerper")]</span>
 					</td>
 					<td style='text-align: center;'>
-						<span style='color: #eee5c8; text-decoration: underline;' title='Zauberbogen aufrufen'>[r: macroLink("Zauber", "charbogenZauber@Lib:macros", "")]</span>
+						<span style='color: #eee5c8; text-decoration: underline;' title='Zauberbogen aufrufen'>[r: macroLink("Zauber", "charbogenZauber@this", "")]</span>
 					</td>
 					<td style='text-align: center;'>
-						<span style='color: #eee5c8; text-decoration: underline;' title='Liturgiebogen aufrufen'>[r: macroLink("Liturgien", "charbogenLiturgien@Lib:macros", "")]</span>
+						<span style='color: #eee5c8; text-decoration: underline;' title='Liturgiebogen aufrufen'>[r: macroLink("Liturgien", "charbogenLiturgien@this", "")]</span>
 					</td>
 					<td style='text-align: center;'>
-						<span style='color: #eee5c8; text-decoration: underline;' title='Notizen &amp; Handouts aufrufen'>[r: macroLink("Notizen", "charbogenNotizen@Lib:macros", "")]</span>
+						<span style='color: #eee5c8; text-decoration: underline;' title='Notizen &amp; Handouts aufrufen'>[r: macroLink("Notizen", "charbogenNotizen@this", "")]</span>
 					</td>
 				</tr>
 			</table>
@@ -60,89 +60,89 @@
 							<tr>
 								<td>
 									[h: aktMU = getMU()]
-									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;Mut&quot; ablegen'>[r: macroLink("MU: ", "probeEig@Lib:macros", "", "MU")]</span>
+									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;Mut&quot; ablegen'>[r: macroLink("MU: ", "probeEig@this", "", "MU")]</span>
 								</td>
 								<td style='text-align: right;' width='17'>
 									[h,if(aktMU < MU): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 									[h,if(aktMU > MU): eigColor = "#0099ff"]
-									<span style='color: [r: eigColor]; text-decoration: none;' title='Probe auf &quot;Mut&quot; ablegen'>[r: macroLink(aktMU, "probeEig@Lib:macros", "", "MU")]</span>
+									<span style='color: [r: eigColor]; text-decoration: none;' title='Probe auf &quot;Mut&quot; ablegen'>[r: macroLink(aktMU, "probeEig@this", "", "MU")]</span>
 								</td>
 							</tr>
 							<tr>
 								<td>
 									[h: aktKL = getKL()]
-									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;Klugheit&quot; ablegen'>[r: macroLink("KL: ", "probeEig@Lib:macros", "", "KL")]</span>
+									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;Klugheit&quot; ablegen'>[r: macroLink("KL: ", "probeEig@this", "", "KL")]</span>
 								</td>
 								<td style='text-align: right;'>
 									[h,if(aktKL < KL): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 									[h,if(aktKL > KL): eigColor = "#0099ff"]
-									<span style='color: [r: eigColor]; text-decoration: none;' title='Probe auf &quot;Klugheit&quot; ablegen'>[r: macroLink(aktKL, "probeEig@Lib:macros", "", "KL")]</span>
+									<span style='color: [r: eigColor]; text-decoration: none;' title='Probe auf &quot;Klugheit&quot; ablegen'>[r: macroLink(aktKL, "probeEig@this", "", "KL")]</span>
 								</td>
 							</tr>
 							<tr>
 								<td>
 									[h: aktIN = getIN()]
-									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;Intuition&quot; ablegen'>[r: macroLink("IN: ", "probeEig@Lib:macros", "", "IN")]</span>
+									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;Intuition&quot; ablegen'>[r: macroLink("IN: ", "probeEig@this", "", "IN")]</span>
 								</td>
 								<td style='text-align: right;'>
 									[h,if(aktIN < IN): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 									[h,if(aktIN > IN): eigColor = "#0099ff"]
-									<span style='color: [r: eigColor]; text-decoration: none;' title='Probe auf &quot;Intuition&quot; ablegen'>[r: macroLink(aktIN, "probeEig@Lib:macros", "", "IN")]</span>
+									<span style='color: [r: eigColor]; text-decoration: none;' title='Probe auf &quot;Intuition&quot; ablegen'>[r: macroLink(aktIN, "probeEig@this", "", "IN")]</span>
 								</td>
 							</tr>
 							<tr>
 								<td>
 									[h: aktCH = getCH()]
-									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;Charisma&quot; ablegen'>[r: macroLink("CH: ", "probeEig@Lib:macros", "", "CH")]</span>
+									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;Charisma&quot; ablegen'>[r: macroLink("CH: ", "probeEig@this", "", "CH")]</span>
 								</td>
 								<td style='text-align: right;'>
 									[h,if(aktCH < CH): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 									[h,if(aktCH > CH): eigColor = "#0099ff"]
-									<span style='color: [r: eigColor]; text-decoration: none;' title='Probe auf &quot;Charisma&quot; ablegen'>[r: macroLink(aktCH, "probeEig@Lib:macros", "", "CH")]</span>
+									<span style='color: [r: eigColor]; text-decoration: none;' title='Probe auf &quot;Charisma&quot; ablegen'>[r: macroLink(aktCH, "probeEig@this", "", "CH")]</span>
 								</td>
 							</tr>
 							<tr>
 								<td>
 									[h: aktFF = getFF()]
-									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;Fingerfertigkeit&quot; ablegen'>[r: macroLink("FF: ", "probeEig@Lib:macros", "", "FF")]</span>
+									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;Fingerfertigkeit&quot; ablegen'>[r: macroLink("FF: ", "probeEig@this", "", "FF")]</span>
 								</td>
 								<td style='text-align: right;'>
 									[h,if(aktFF < FF): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 									[h,if(aktFF > FF): eigColor = "#0099ff"]
-									<span style='color: [r: eigColor]; text-decoration: none;' title='Probe auf &quot;Fingerfertigkeit&quot; ablegen'>[r: macroLink(aktFF, "probeEig@Lib:macros", "", "FF")]</span>
+									<span style='color: [r: eigColor]; text-decoration: none;' title='Probe auf &quot;Fingerfertigkeit&quot; ablegen'>[r: macroLink(aktFF, "probeEig@this", "", "FF")]</span>
 								</td>
 							</tr>
 							<tr>
 								<td>
 									[h: aktGE = getGE()]
-									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;Gewandheit&quot; ablegen'>[r: macroLink("GE: ", "probeEig@Lib:macros", "", "GE")]</span>
+									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;Gewandheit&quot; ablegen'>[r: macroLink("GE: ", "probeEig@this", "", "GE")]</span>
 								</td>
 								<td style='text-align: right;'>
 									[h,if(aktGE < GE): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 									[h,if(aktGE > GE): eigColor = "#0099ff"]
-									<span style='color: [r: eigColor]; text-decoration: none;' title='Probe auf &quot;Gewandheit&quot; ablegen'>[r: macroLink(aktGE, "probeEig@Lib:macros", "", "GE")]</span>
+									<span style='color: [r: eigColor]; text-decoration: none;' title='Probe auf &quot;Gewandheit&quot; ablegen'>[r: macroLink(aktGE, "probeEig@this", "", "GE")]</span>
 								</td>
 							</tr>
 							<tr>
 								<td>
 									[h: aktKO = getKO()]
-									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;Konstitution&quot; ablegen'>[r: macroLink("KO: ", "probeEig@Lib:macros", "", "KO")]</span>
+									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;Konstitution&quot; ablegen'>[r: macroLink("KO: ", "probeEig@this", "", "KO")]</span>
 								</td>
 								<td style='text-align: right;'>
 									[h,if(aktKO < KO): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 									[h,if(aktKO > KO): eigColor = "#0099ff"]
-									<span style='color: [r: eigColor]; text-decoration: none;' title='Probe auf &quot;Konstitution&quot; ablegen'>[r: macroLink(aktKO, "probeEig@Lib:macros", "", "KO")]</span>
+									<span style='color: [r: eigColor]; text-decoration: none;' title='Probe auf &quot;Konstitution&quot; ablegen'>[r: macroLink(aktKO, "probeEig@this", "", "KO")]</span>
 								</td>
 							</tr>
 							<tr>
 								<td>
 									[h: aktKK = getKK()]
-									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;K&ouml;rperkraft&quot; ablegen'>[r: macroLink("KK: ", "probeEig@Lib:macros", "", "KK")]</span>
+									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;K&ouml;rperkraft&quot; ablegen'>[r: macroLink("KK: ", "probeEig@this", "", "KK")]</span>
 								</td>
 								<td style='text-align: right;'>
 									[h,if(aktKK < KK): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 									[h,if(aktKK > KK): eigColor = "#0099ff"]
-									<span style='color: [r: eigColor]; text-decoration: none;' title='Probe auf &quot;K&ouml;rperkraft&quot; ablegen'>[r: macroLink(aktKK, "probeEig@Lib:macros", "", "KK")]</span>
+									<span style='color: [r: eigColor]; text-decoration: none;' title='Probe auf &quot;K&ouml;rperkraft&quot; ablegen'>[r: macroLink(aktKK, "probeEig@this", "", "KK")]</span>
 								</td>
 							</tr>
 						</table>
@@ -198,13 +198,13 @@
 							</tr>
 							<tr>
 								<td>
-									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;Ausweichen&quot; ablegen'>[r: macroLink("AW:", "probeAW@Lib:macros", "")]</span>
+									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;Ausweichen&quot; ablegen'>[r: macroLink("AW:", "probeAW@this", "")]</span>
 								</td>
 								<td style='text-align: right;'>
 									[h: aktAW = getAW()]
 									[h,if(aktAW < AW): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 									[h,if(aktAW > AW): eigColor = "#0099ff"]
-									<span style='color: [r: eigColor]; text-decoration: none;' title='Probe auf &quot;Ausweichen&quot; ablegen'>[r: macroLink(aktAW, "probeAW@Lib:macros", "")]</span>
+									<span style='color: [r: eigColor]; text-decoration: none;' title='Probe auf &quot;Ausweichen&quot; ablegen'>[r: macroLink(aktAW, "probeAW@this", "")]</span>
 								</td>
 							</tr>
 							<tr>

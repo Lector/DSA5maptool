@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -32,12 +32,12 @@
 						&nbsp;
 					</td>
 					<td width='383'>
-						<a href="[r: macroLinkText("charbogenEigenschaften@Lib:macros")]"><image src='[r: tableImage("mainTheme", 4)]' border="0" alt="Eigenschaftsbogen aufrufen"></image></a>
-						<a href="[r: macroLinkText("charbogenKampf@Lib:macros")]"><image src='[r: tableImage("mainTheme", 6)]' border="0" alt="Kampfbogen aufrufen"></image></a>
-						<a href="[r: macroLinkText("charbogenTalente@Lib:macros", "", "Koerper")]"><image src='[r: tableImage("mainTheme", 8)]' border="0" alt="Talentbogen aufrufen"></image></a>
-						<a href="[r: macroLinkText("charbogenZauber@Lib:macros")]"><image src='[r: tableImage("mainTheme", 10)]' border="0" alt="Zauberbogen aufrufen"></image></a>
+						<a href="[r: macroLinkText("charbogenEigenschaften@this")]"><image src='[r: tableImage("mainTheme", 4)]' border="0" alt="Eigenschaftsbogen aufrufen"></image></a>
+						<a href="[r: macroLinkText("charbogenKampf@this")]"><image src='[r: tableImage("mainTheme", 6)]' border="0" alt="Kampfbogen aufrufen"></image></a>
+						<a href="[r: macroLinkText("charbogenTalente@this", "", "Koerper")]"><image src='[r: tableImage("mainTheme", 8)]' border="0" alt="Talentbogen aufrufen"></image></a>
+						<a href="[r: macroLinkText("charbogenZauber@this")]"><image src='[r: tableImage("mainTheme", 10)]' border="0" alt="Zauberbogen aufrufen"></image></a>
 						<image src='[r: tableImage("mainTheme", 13)]'></image>
-						<a href="[r: macroLinkText("charbogenNotizen@Lib:macros")]"><image src='[r: tableImage("mainTheme", 14)]' border="0" alt="Notizen &amp; Handouts aufrufen"></image></a>
+						<a href="[r: macroLinkText("charbogenNotizen@this")]"><image src='[r: tableImage("mainTheme", 14)]' border="0" alt="Notizen &amp; Handouts aufrufen"></image></a>
 					</td>
 					<td width='59'>
 						&nbsp;
@@ -52,7 +52,7 @@
 						&nbsp;
 					</td>
 					<td style="background-image: url('[r: tblImage("mainTheme",21)]'); background-repeat: no-repeat; height: 90;" width='471'>
-						[r,macro("eigLeiste@Lib:macros"): ""]
+						[r,macro("eigLeiste@this"): ""]
 					</td>
 					<td>
 						&nbsp;
@@ -69,9 +69,9 @@
 					</td>
 					<td style='padding: 0px; text-align: center;' width='40'>		
 						[r: LeP]/[r: MaxLeP]<br>
-						<span style='color: #eee5c8; text-decoration: none;' title='LeP addieren'>[r: macroLink(plus, "changeEnergie@Lib:macros", "", "lePlus")]</span>
+						<span style='color: #eee5c8; text-decoration: none;' title='LeP addieren'>[r: macroLink(plus, "changeEnergie@this", "", "lePlus")]</span>
 						&nbsp;
-						<span style='color: #eee5c8; text-decoration: none;' title='LeP subtrahieren'>[r: macroLink(minus, "changeEnergie@Lib:macros", "", "leMinus")]</span>
+						<span style='color: #eee5c8; text-decoration: none;' title='LeP subtrahieren'>[r: macroLink(minus, "changeEnergie@this", "", "leMinus")]</span>
 					</td>
 					<td width='152'>
 						<table style="background-image: url('[r: tblImage("mainTheme",39)]'); background-repeat: no-repeat; border-spacing: 0px;" width='152'>
@@ -94,9 +94,9 @@
 					</td>
 					<td style='padding: 0px; text-align: center;' width='40'>		
 						[r: KaP]/[r: MaxKaP]<br>
-						<span style='color: #eee5c8; text-decoration: none;' title='LeP addieren'>[r: macroLink(plus, "changeEnergie@Lib:macros", "", "kePlus")]</span>
+						<span style='color: #eee5c8; text-decoration: none;' title='LeP addieren'>[r: macroLink(plus, "changeEnergie@this", "", "kePlus")]</span>
 						&nbsp;
-						<span style='color: #eee5c8; text-decoration: none;' title='LeP subtrahieren'>[r: macroLink(minus, "changeEnergie@Lib:macros", "", "keMinus")]</span>
+						<span style='color: #eee5c8; text-decoration: none;' title='LeP subtrahieren'>[r: macroLink(minus, "changeEnergie@this", "", "keMinus")]</span>
 					</td>
 					<td width='152'>
 						<table style="background-image: url('[r: tblImage("mainTheme",39)]'); background-repeat: no-repeat; border-spacing: 0px;" width='152'>
@@ -174,7 +174,7 @@
 									<a href=[r: tWiki]>
 										<image border=0 alt='Liturgie in der Regelwiki nachschlagen' src='[r: tblImage('mainTheme', 113)]'/>
 									</a>
-									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;[r: tName]&quot; ablegen'>[r: macroLink(tName, "probeLiturgie@Lib:macros", "", tUebergabe)]</span>
+									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;[r: tName]&quot; ablegen'>[r: macroLink(tName, "probeLiturgie@this", "", tUebergabe)]</span>
 								</td>
 								<td width='15'>
 									&nbsp;
@@ -195,7 +195,7 @@
 									[r: tEigenschaft3]
 								</td>
 								<td style='text-align: right;' width='40'>
-									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;[r: tName]&quot; ablegen'>[r: macroLink(tWert, "probeLiturgie@Lib:macros", "", tUebergabe)]</span>
+									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;[r: tName]&quot; ablegen'>[r: macroLink(tWert, "probeLiturgie@this", "", tUebergabe)]</span>
 								</td>
 								<td>
 									&nbsp;
@@ -257,7 +257,7 @@
 									<a href=[r: tWiki]>
 										<image border=0 alt='Zeremonie in der Regelwiki nachschlagen' src='[r: tblImage('mainTheme', 113)]'/>
 									</a>
-									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;[r: tName]&quot; ablegen'>[r: macroLink(tName, "probeZeremonie@Lib:macros", "", tUebergabe)]</span>
+									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;[r: tName]&quot; ablegen'>[r: macroLink(tName, "probeZeremonie@this", "", tUebergabe)]</span>
 								</td>
 								<td width='15'>
 									&nbsp;
@@ -278,7 +278,7 @@
 									[r: tEigenschaft3]
 								</td>
 								<td style='text-align: right;' width='40'>
-									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;[r: tName]&quot; ablegen'>[r: macroLink(tWert, "probeLiturgie@Lib:macros", "", tUebergabe)]</span>
+									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;[r: tName]&quot; ablegen'>[r: macroLink(tWert, "probeLiturgie@this", "", tUebergabe)]</span>
 								</td>
 								<td>
 									&nbsp;
@@ -319,7 +319,7 @@
 									<div style='border-top: 1px solid #eee5c8; border-bottom: 1px solid #eee5c8; padding: 3px 0px 3px 3px;' width='417'>
 										KLERIKALE SONDERFERTIGKEITEN
 									</div>
-									[r,macro("charbogenTraits@Lib:macros"): KarmaleSF]
+									[r,macro("charbogenTraits@this"): KarmaleSF]
 								</td>
 							</tr>
 							<tr>
@@ -349,7 +349,7 @@
 									<div style='border-top: 1px solid #eee5c8; border-bottom: 1px solid #eee5c8; padding: 3px 0px 3px 3px;' width='417'>
 										SEGNUNGEN
 									</div>
-									[r,macro("charbogenTraits@Lib:macros"): Segnungen]
+									[r,macro("charbogenTraits@this"): Segnungen]
 								</td>
 							</tr>
 							<tr>

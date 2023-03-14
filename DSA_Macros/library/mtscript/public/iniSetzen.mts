@@ -3,14 +3,14 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
 	};{}
 ]
 
-[h: actionLink = macroLinkText("iniSetzenProcess@Lib:macros", "")]
+[h: actionLink = macroLinkText("iniSetzenProcess@this", "")]
 [dialog5("iniSetzen", "width=467; height=325; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

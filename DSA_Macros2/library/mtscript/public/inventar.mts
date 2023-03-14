@@ -1,11 +1,11 @@
-[h,macro("abfrageImpersonate@Lib:macros"): ""]
+[h,macro("abfrageImpersonate@lib:com.github.naxos.Macros"): ""]
 
 [h,if(isGM() == 1 && hasImpersonated() == 0), Code:
 	{
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@lib:com.github.naxos.Macros"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]

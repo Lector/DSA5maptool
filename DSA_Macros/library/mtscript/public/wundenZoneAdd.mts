@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -11,9 +11,9 @@
 ]
 
 [h: zone = macro.args]
-[h,if(getLibProperty("OptWunden", "Lib:macros") != 2), Code:
+[h,if(getLibProperty("OptWunden", "this") != 2), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "wundenSystem"]
+		[h,macro("inputFail@this"): "wundenSystem"]
 	};{}
 ]
 [h: closeDialog("wundenZone")]
@@ -128,13 +128,13 @@
 [h: listINI = getInitiative()]
 [h,if(isNumber(listINI) == 1): token.init = listINI - iniMalus]
 [h: sortInitiative()]
-[h,if(getLibProperty("OptKampfAU", "Lib:macros") == 1): auSchaden = 1d6; auSchaden = 0]
+[h,if(getLibProperty("OptKampfAU", "this") == 1): auSchaden = 1d6; auSchaden = 0]
 [h,if(auSchaden > AuP): auSchaden = AuP]
 [h: LeP = LeP - wuSchaden]
 [h: AuP = AuP - auSchaden]
 [h,if(wuSchaden > 0 || auSchaden > 0): wundenTitle = wundenTitle + strformat(" - SP: %s, SP(A): %s", wuSchaden, auSchaden)]
 
-[h: checkList = getLibProperty("ImpAusdruckVergleich", "Lib:macros")]
+[h: checkList = getLibProperty("ImpAusdruckVergleich", "this")]
 [h: check = listGet(checkList, 10)]
 [h,if(LeP <= 5 && LeP >= 1), Code:
 	{
@@ -339,14 +339,14 @@
 </div>
 ", tableImage("chat", 32))]
 
-[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "Lib:macros") == 1), Code:
+[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "this") == 1), Code:
 	{
-		[h,macro("sendToGM@Lib:macros"): ausgabe]
+		[h,macro("sendToGM@this"): ausgabe]
 	};
 	{
-		[h,macro("sendToPublic@Lib:macros"): ausgabe]
+		[h,macro("sendToPublic@this"): ausgabe]
 	}
 ]
-[h,macro("checkStatusWunden@Lib:macros"): ""]
-[h,macro("checkStatusLowLeAu@Lib:macros"): ""]
-[h,macro("refreshFrame@Lib:macros"): ""]
+[h,macro("checkStatusWunden@this"): ""]
+[h,macro("checkStatusLowLeAu@this"): ""]
+[h,macro("refreshFrame@this"): ""]

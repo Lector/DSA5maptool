@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -16,18 +16,18 @@
 	[value = json.get(uebergabe, key)]
 	[h,if(isNumber(value) == 0), Code:
 		{
-			[h,macro("inputFail@Lib:macros"): "numText"]
+			[h,macro("inputFail@this"): "numText"]
 		};{}
 	]
 	[h,if(value != round(value)), Code:
 		{
-			[h,macro("inputFail@Lib:macros"): "numInteger"]
+			[h,macro("inputFail@this"): "numInteger"]
 		};{}
 	]
 }]
 [h,if(json.get(uebergabe, "tModRS") < -9 || json.get(uebergabe, "tModRS") > 9), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "tModRS"]
+		[h,macro("inputFail@this"): "tModRS"]
 	};{}
 ]
 [h: closeDialog("tempMod")]
@@ -92,5 +92,5 @@
 </table>",
 tableImage("chat", 59), msgText))]
 
-[h,macro("sendToSelfGM@Lib:macros"): ausgabe]
-[h,macro("refreshFrame@Lib:macros"): ""]
+[h,macro("sendToSelfGM@this"): ausgabe]
+[h,macro("refreshFrame@this"): ""]

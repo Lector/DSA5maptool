@@ -3,14 +3,14 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
 	};{}
 ]
 
-[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "Lib:macros") == 1), Code:
+[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "this") == 1), Code:
 	{
 		[ausgabeSL = "checked='checked'"]
 		[ausgabePublic = ""]
@@ -21,7 +21,7 @@
 	}
 ]
 
-[h: actionLink = macroLinkText("schadenAllgemeinProcess@Lib:macros", "")]
+[h: actionLink = macroLinkText("schadenAllgemeinProcess@this", "")]
 [dialog("schadenAllgemein", "width=506; height=574; temporary=1; input=0; noframe=0"):{
 <html>
 	<head>

@@ -13,16 +13,16 @@
 			</div>
 		</td>
 		<td valign=top style="white-space: nowrap;">
-			[r,macro("probeInfo@Lib:macros"): json.append(currentToken(), "Pflanzenkunde")]
+			[r,macro("probeInfo@lib:com.github.naxos.Macros"): json.append(currentToken(), "Pflanzenkunde")]
 		</td>
 		
 		<td valign=top style="padding-left: 20; white-space: nowrap;">
 			<table>
 				<tr>
-					[r,macro("probeBelastung@Lib:macros"): "Pflanzenkunde"]
-					[r,macro("probeParalyse@Lib:macros"): json.append("Natur", "Pflanzenkunde")]
-					[r,macro("probeMirakel@Lib:macros"): "Pflanzenkunde"]
-					[r,macro("probeGottgefaellig@Lib:macros"): "Pflanzenkunde"]
+					[r,macro("probeBelastung@lib:com.github.naxos.Macros"): "Pflanzenkunde"]
+					[r,macro("probeParalyse@lib:com.github.naxos.Macros"): json.append("Natur", "Pflanzenkunde")]
+					[r,macro("probeMirakel@lib:com.github.naxos.Macros"): "Pflanzenkunde"]
+					[r,macro("probeGottgefaellig@lib:com.github.naxos.Macros"): "Pflanzenkunde"]
 				</tr>
 			</table>
 		</td>
@@ -39,16 +39,16 @@
 			</div>
 		</td>
 		<td valign=top style="white-space: nowrap;">
-			[r,macro("probeInfo@Lib:macros"): json.append(currentToken(), "Sinnesschärfe")]
+			[r,macro("probeInfo@lib:com.github.naxos.Macros"): json.append(currentToken(), "Sinnesschärfe")]
 		</td>
 		
 		<td valign=top style="padding-left: 20; white-space: nowrap;">
 			<table>
 				<tr>
-					[r,macro("probeBelastung@Lib:macros"): "Sinnesschärfe"]
-					[r,macro("probeParalyse@Lib:macros"): json.append("Koerper", "Sinnesschärfe")]
-					[r,macro("probeMirakel@Lib:macros"): "Sinnesschärfe"]
-					[r,macro("probeGottgefaellig@Lib:macros"): "Sinnesschärfe"]
+					[r,macro("probeBelastung@lib:com.github.naxos.Macros"): "Sinnesschärfe"]
+					[r,macro("probeParalyse@lib:com.github.naxos.Macros"): json.append("Koerper", "Sinnesschärfe")]
+					[r,macro("probeMirakel@lib:com.github.naxos.Macros"): "Sinnesschärfe"]
+					[r,macro("probeGottgefaellig@lib:com.github.naxos.Macros"): "Sinnesschärfe"]
 				</tr>
 			</table>
 		</td>

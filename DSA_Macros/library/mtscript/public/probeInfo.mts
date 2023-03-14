@@ -16,11 +16,11 @@
 [h: e1wert = eval(e1)]
 [h: e2wert = eval(e2)]
 [h: e3wert = eval(e3)]
-[h,macro("probeGetAktWert@Lib:macros"): e1]
+[h,macro("probeGetAktWert@this"): e1]
 [h: aktE1wert = macro.return]
-[h,macro("probeGetAktWert@Lib:macros"): e2]
+[h,macro("probeGetAktWert@this"): e2]
 [h: aktE2wert = macro.return]
-[h,macro("probeGetAktWert@Lib:macros"): e3]
+[h,macro("probeGetAktWert@this"): e3]
 [h: aktE3wert = macro.return]
 
 <table >

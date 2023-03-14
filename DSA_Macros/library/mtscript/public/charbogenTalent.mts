@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -57,7 +57,7 @@
 			<tr>
 				<td></td>
 				<td style='padding-left: 5px;'>
-					<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;[r: tName]&quot; ablegen'>[r: macroLink(tName, "probeTalent@Lib:macros", "", tUebergabe)]</span>
+					<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;[r: tName]&quot; ablegen'>[r: macroLink(tName, "probeTalent@this", "", tUebergabe)]</span>
 				</td>
 
 				<td style='font-weight: normal; text-align: center;' width='20'>
@@ -87,7 +87,7 @@
 					"<span title='Routineprobe nicht möglich. Dazu müssen alle Eigenschaften >= 13 sein.'>-</span>"]
 				</td>
 				<td style='text-align: right;'>
-					<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;[r: tName]&quot; ablegen'>[r: macroLink(tWert, "probeTalent@Lib:macros", "", tUebergabe)]</span>
+					<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;[r: tName]&quot; ablegen'>[r: macroLink(tWert, "probeTalent@this", "", tUebergabe)]</span>
 				</td>
 				<td>
 					&nbsp;

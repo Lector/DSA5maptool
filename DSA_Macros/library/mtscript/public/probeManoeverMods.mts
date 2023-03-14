@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -12,7 +12,7 @@
 
 [h: uebergabe = macro.args]
 
-[h,macro("probe1w20Mods@Lib:macros"): uebergabe]
+[h,macro("probe1w20Mods@this"): uebergabe]
 [h: modReturn = macro.return]
 [h: mod = json.get(modReturn, "mod")]
 [h: bonus = json.get(modReturn, "bonus")]

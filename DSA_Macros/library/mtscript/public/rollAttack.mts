@@ -113,14 +113,14 @@
 	};
 	{
 		[h: targetName = getName(target)]
-		[h: targetLink = "<a style='color: #441e13' href='" + macroLinkText("selectToken@Lib:macros", "none", targetName) + "'>" + targetName + "</a>"]
+		[h: targetLink = "<a style='color: #441e13' href='" + macroLinkText("selectToken@this", "none", targetName) + "'>" + targetName + "</a>"]
 		[h: passierschlagTarget = target]
 	}]
 	
 	[h,if(passierschlag >= 1),Code:{
 		[h: passierschlagParams = json.set("", "Passierschlag", "1", "Target", currentToken())]
 		[h,if(target != ""): executedOn = target; executedOn = "impersonated"]
-		[h: passierschlagLink = macroLinkText("probeAT@Lib:macros", "none", passierschlagParams, executedOn)]
+		[h: passierschlagLink = macroLinkText("probeAT@this", "none", passierschlagParams, executedOn)]
 		[h: passierschlagText = strformat( "%{manName} fehlgeschlagen! %{targetLink} darf einen <a style='color: #441e13' href='%{passierschlagLink}'>Passierschlag</a> ausf&uuml;hren.")]
 		[h: notification = listAppend(notification, passierschlagText, "<br>")]
 	}]

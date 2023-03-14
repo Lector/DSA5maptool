@@ -3,14 +3,14 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
 	};{}
 ]
 
-[h: actionLink = macroLinkText("probeKrankGiftProcess@Lib:macros", "")]
+[h: actionLink = macroLinkText("probeKrankGiftProcess@this", "")]
 [dialog5("probe", "width=510; height=415; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
@@ -101,7 +101,7 @@
 						</td>
 					</tr>
 				</table>
-				[r,macro("probeChat@Lib:macros"): currentToken()]
+				[r,macro("probeChat@this"): currentToken()]
 				<hr/>
 				<table style='border-spacing: 0px; margin-bottom: 5px;'>
 					<tr>
@@ -182,7 +182,7 @@
 					</tr>
 				</table>
 				<input type="hidden" name="image" value="85"/>
-				<input type="hidden" name="modMacro" value="probeKrankGiftMods@Lib:macros"/>
+				<input type="hidden" name="modMacro" value="probeKrankGiftMods@this"/>
 			</form>
 		</div>
 	</body>

@@ -4,7 +4,7 @@
 [h,if(visiontype != "OFF"): exposeView(currentToken())]
 
 <!-- Wenn die Funktionalität nicht fertig ist brechen wir ab -->
-[h: abort(getLibProperty("OptRestrictMovement", "Lib:macros"))]
+[h: abort(getLibProperty("OptRestrictMovement", "this"))]
 
 <!-- abort when GM -->
 [h: abort(!isGM())]

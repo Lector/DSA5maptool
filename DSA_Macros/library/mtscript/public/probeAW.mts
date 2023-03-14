@@ -1,23 +1,23 @@
-[h,macro("abfrageImpersonate@Lib:macros"): ""]
+[h,macro("abfrageImpersonate@this"): ""]
 
 [h,if(isGM() == 1 && hasImpersonated() == 0), Code:
 {
 	[selectID = getSelected()]
 	[if(listCount(selectID) != 1), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+		[h,macro("inputFail@this"): "gmSelectFail"]
 	};{}]
 	[switchToken(selectID)]
 };{}]
 
 [h,if(getState("Blutrausch") == 1),Code:
 {
-	[h,macro("inputFail@Lib:macros"): "blutrausch"]
+	[h,macro("inputFail@this"): "blutrausch"]
 };{}]
 
 [h,if(getProperty("AW") == 0), CODE:
 {
-	[h,macro("inputFail@Lib:macros"): "keinWert"]
+	[h,macro("inputFail@this"): "keinWert"]
 };{}]
 
 [h: uebergabe = macro.args]
@@ -52,7 +52,7 @@
 [h,if(patzerRoll < 7): patzerRoll = patzerRoll + 5]
 [h: patzerText = table("patzerNahkampf", patzerRoll)]
 
-[h: actionLink = macroLinkText("VerteidigungSchadenProcess@Lib:macros", "")]
+[h: actionLink = macroLinkText("VerteidigungSchadenProcess@this", "")]
 [dialog5("probe", "width=1125; height=602; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
@@ -68,7 +68,7 @@
 						<td>
 							<table class="probe">
 								<tr>
-									[r,macro("probeMod@Lib:macros"): probe]
+									[r,macro("probeMod@this"): probe]
 								</tr>
 								<tr>
 									<td>
@@ -91,7 +91,7 @@
 						</td>
 					</tr>
 				</table>
-				[r,macro("probeChat@Lib:macros"): currentToken()]
+				[r,macro("probeChat@this"): currentToken()]
 				<hr/>
 				<table style='border-spacing: 0px; margin: 0px auto 0px auto;'>
 					<tr>
@@ -112,18 +112,18 @@
 							&nbsp;
 						</td>
 						<td>
-							[r,macro("schadensart@Lib:macros"): uebergabe]
+							[r,macro("schadensart@this"): uebergabe]
 						</td>
 						<td width='20'>
 							&nbsp;
 						</td>
-						[r,macro("probeFKAbwehr@Lib:macros"): fkabwehr]
+						[r,macro("probeFKAbwehr@this"): fkabwehr]
 					</tr>
 				</table>
 				<hr/>
 				<table style='border-spacing: 0px; margin: 0px auto 6px auto;'>
 					<tr>
-						[r,macro("probeSicht@Lib:macros"): "aw"]
+						[r,macro("probeSicht@this"): "aw"]
 						<td width='20'>
 							&nbsp;
 						</td>
@@ -134,8 +134,8 @@
 						</td>
 						<td valign='top'>
 							<table>
-								[r,macro("probeVorteilPosition@Lib:macros"): json.append(currentToken(), attacker, "aw")]
-								[r,macro("probeWasser@Lib:macros"): ""]
+								[r,macro("probeVorteilPosition@this"): json.append(currentToken(), attacker, "aw")]
+								[r,macro("probeWasser@this"): ""]
 							</table>
 						</td>
 						<td width='20'>
@@ -150,7 +150,7 @@
 							<table>
 								<tr>
 									<td>
-										[r,macro("probeLiegend@Lib:macros"): "-2"]
+										[r,macro("probeLiegend@this"): "-2"]
 									</td>
 									<td>
 										Liegend (-2)
@@ -198,7 +198,7 @@
 			<input type="hidden" name="kritText" value="Du darfst sofort einen Passierschlag gegen den Gegner ausführen"/>
 			<input type="hidden" name="kritImage" value="49"/>
 			<input type="hidden" name="patzerText" value="[r: patzerText]"/>
-			<input type="hidden" name="modMacro" value="probeAWMods@Lib:macros"/>
+			<input type="hidden" name="modMacro" value="probeAWMods@this"/>
 			<input type="hidden" name="status" value='[r: status]'/>
 			<input type="hidden" name="failText" value="[r: failText]"/>
 			<input type="hidden" name="token" value="[r: currentToken()]"/>

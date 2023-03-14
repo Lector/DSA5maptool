@@ -1,11 +1,11 @@
-[h,macro("abfrageImpersonate@Lib:macros"): ""]
+[h,macro("abfrageImpersonate@this"): ""]
 
 [h,if(isGM() == 1 && hasImpersonated() == 0), Code:
 	{
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -47,7 +47,7 @@
 		}
 ]
 
-[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "Lib:macros") == 1), Code:
+[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "this") == 1), Code:
 	{
 		[ausgabeSL = "checked='checked'"]
 		[ausgabePublic = ""]
@@ -58,7 +58,7 @@
 	}
 ]
 
-[h: actionLink = macroLinkText("changeEnergieProcess@Lib:macros", "")]
+[h: actionLink = macroLinkText("changeEnergieProcess@this", "")]
 [dialog5("changeEnergie", "width=434; height=335; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

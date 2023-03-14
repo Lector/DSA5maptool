@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -18,7 +18,7 @@
 
 [h: entfernung = json.get(uebergabe, "entfernung")]
 [h,if(entfernung == "-100"),Code:{
-	[h,macro("inputFail@Lib:macros"): "zuWeitWeg"]
+	[h,macro("inputFail@this"): "zuWeitWeg"]
 };{}]
 [h,if(entfernung > 0): schadensmod = schadensmod + 1]
 [h,if(entfernung < 0): schadensmod = schadensmod - 1]

@@ -1,7 +1,7 @@
 [h: id = arg(0)]
 [h,if(id == ""): npc = 0; npc = isNPC(id)]
 
-[h,if(npc == 1 && getLibProperty("OptHideNSCAction", "Lib:macros") == 1), Code:
+[h,if(npc == 1 && getLibProperty("OptHideNSCAction", "this") == 1), Code:
 {
 	[ausgabeSL = "checked"]
 	[ausgabePublic = ""]

@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -15,7 +15,7 @@
 [h,if(json.get(uebergabe, "iniWert") == ""): iniWert = 0; iniWert = json.get(uebergabe, "iniWert")]
 [h,if(isNumber(iniWert) == 0), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "numText"]
+		[h,macro("inputFail@this"): "numText"]
 	};{}
 ]
 [h: closeDialog("iniSetzen")]

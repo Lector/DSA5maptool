@@ -12,10 +12,10 @@
 	{
 		[MaxLeP = life]
 		[LeP = life]
-		[h,macro("checkZustand@Lib:macros"): newTok]
+		[h,macro("checkZustand@lib:com.github.naxos.Macros"): newTok]
 	}]
 	[LeP = LeP - life]
 }]
 [h: removeToken(tok)]
-[h,macro("noticeSelf@Lib:macros"): "swarmSplit"]
+[h,macro("noticeSelf@lib:com.github.naxos.Macros"): "swarmSplit"]
 [h: closeDialog("splitSwarm")]

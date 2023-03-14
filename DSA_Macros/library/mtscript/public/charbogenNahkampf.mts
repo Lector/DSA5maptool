@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -64,7 +64,7 @@
 						[h: hauptTitle = "title='Der Held ist Linkshänder'"]
 						[h: nebenTitle = "title='Den Helden zum Rechtshänder machen'"]
 						[h: hauptLink = "Links"]
-						[h: nebenLink = macroLink("Rechts", "changeLinkshaender@Lib:macros", "", currentToken())]
+						[h: nebenLink = macroLink("Rechts", "changeLinkshaender@this", "", currentToken())]
 					};
 					{
 						[h: hauptBG = "bgcolor='#eee5c8'"]
@@ -74,7 +74,7 @@
 						[h: hauptTitle = "title='Der Held ist Rechtshänder'"]
 						[h: nebenTitle = "title='Den Helden zum Linkshänder machen'"]
 						[h: hauptLink = "Rechts"]
-						[h: nebenLink = macroLink("Links", "changeLinkshaender@Lib:macros", "", currentToken())]
+						[h: nebenLink = macroLink("Links", "changeLinkshaender@this", "", currentToken())]
 					}]
 					<td width='40' [r: hauptBG]>
 						<span style='color: [r: hauptFC]; text-decoration: none;' [r: hauptTitle]>[r: hauptLink]</span>
@@ -108,7 +108,7 @@
 						</td>
 						<td>
 							[h: tpParams = setStrProp("typ=nk", "id", wID)]
-							[h: tpLink = macroLink(wTP, "schadenWaffe@Lib:macros", "", tpParams)]
+							[h: tpLink = macroLink(wTP, "schadenWaffe@this", "", tpParams)]
 							[h: linkTitle = "Schaden mit dieser Waffe verursachen"]
 							<span style='color: #eee5c8; text-decoration: none;' title='[r: linkTitle]'>[r: tpLink]</span>
 						</td>
@@ -130,7 +130,7 @@
 							[h: bg = ""]
 							[h: fc = "#eee5c8"]
 							[h: linkTitle = "title='Diese Waffe mit dem Schwertarm ausr&uuml;sten'"]
-							[h: link = macroLink("&#10063;", "changeHauptHand@Lib:macros", "", wID)]
+							[h: link = macroLink("&#10063;", "changeHauptHand@this", "", wID)]
 						}]
 						<td [r: bg]>
 							<span style='color: [r: fc]; text-decoration: none;' [r: linkTitle]>[r: link]</span>
@@ -147,7 +147,7 @@
 							[h: bg = ""]
 							[h: fc = "#eee5c8"]
 							[h: linkTitle = "title='Diese Waffe mit dem Schildarm ausr&uuml;sten.'"]
-							[h: link = macroLink("&#10063;", "changeNebenHand@Lib:macros", "", wID)]
+							[h: link = macroLink("&#10063;", "changeNebenHand@this", "", wID)]
 						}]
 						<td [r: bg]>
 							<span style='color: [r: fc]; text-decoration: none;' [r: linkTitle]>[r: link]</span>

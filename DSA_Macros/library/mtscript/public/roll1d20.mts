@@ -22,7 +22,7 @@
 [h: origProp = property]
 [h,if(!isNumber(property)),Code:{
 	[h: origProp = eval(property)]
-	[h,macro("probeGetAktWert@Lib:macros"): param]
+	[h,macro("probeGetAktWert@this"): param]
 	[h: property = macro.return]
 };{}]
 

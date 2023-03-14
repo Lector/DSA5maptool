@@ -3,17 +3,17 @@
 	[selectID = getSelected()]
 	[if(listCount(selectID) != 1), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+		[h,macro("inputFail@this"): "gmSelectFail"]
 	};{}]
 	[switchToken(selectID)]
 	[if(arg(0) != "all" && getPropertyType() != "Basic"), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "propertyTypeNotBasic"]
+		[h,macro("inputFail@this"): "propertyTypeNotBasic"]
 	};{}]
 };
 {
 	[if(getImpersonated()==""), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "impersonate"]
+		[h,macro("inputFail@this"): "impersonate"]
 	};{}]
 }]

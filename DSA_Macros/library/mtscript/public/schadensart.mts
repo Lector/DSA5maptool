@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -69,7 +69,7 @@
 				</tr>
 				<tr>
 					<td colspan=2>
-						[r,macro("selectZone@Lib:macros"): zone]
+						[r,macro("selectZone@this"): zone]
 					</td>
 				</tr>
 			</table>

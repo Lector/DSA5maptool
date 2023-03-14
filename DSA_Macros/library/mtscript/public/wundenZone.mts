@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -39,8 +39,8 @@
 									<table style='border-spacing: 0px;' cellpadding='0' cellspacing='0' width='200'>
 										<tr>
 											<td style='height: 80; padding: 28px 0px 0px 28px;' valign='top'>
-												[h: wLinkAdd = macroLinkText("wundenZoneAdd@Lib:macros", "", "kopf")]
-												[h: wLinkSub = macroLinkText("wundenZoneSub@Lib:macros", "", "kopf")]
+												[h: wLinkAdd = macroLinkText("wundenZoneAdd@this", "", "kopf")]
+												[h: wLinkSub = macroLinkText("wundenZoneSub@this", "", "kopf")]
 												[h: num = 1]
 												[count(3,""), Code:
 													{
@@ -52,8 +52,8 @@
 										</tr>
 										<tr>
 											<td style='height: 60; padding: 15px 0px 0px 19px;' valign='top'>
-												[h: wLinkAdd = macroLinkText("wundenZoneAdd@Lib:macros", "", "brust")]
-												[h: wLinkSub = macroLinkText("wundenZoneSub@Lib:macros", "", "brust")]
+												[h: wLinkAdd = macroLinkText("wundenZoneAdd@this", "", "brust")]
+												[h: wLinkSub = macroLinkText("wundenZoneSub@this", "", "brust")]
 												[h: num = 1]
 												[count(3,""), Code:
 													{
@@ -65,8 +65,8 @@
 										</tr>
 										<tr>
 											<td style='height: 60; padding: 19px 0px 0px 25px;' valign='top'>
-												[h: wLinkAdd = macroLinkText("wundenZoneAdd@Lib:macros", "", "bauch")]
-												[h: wLinkSub = macroLinkText("wundenZoneSub@Lib:macros", "", "bauch")]
+												[h: wLinkAdd = macroLinkText("wundenZoneAdd@this", "", "bauch")]
+												[h: wLinkSub = macroLinkText("wundenZoneSub@this", "", "bauch")]
 												[h: num = 1]
 												[count(3,""), Code:
 													{
@@ -82,8 +82,8 @@
 									<table style='border-spacing: 0px;' cellpadding='0' cellspacing='0' width='150'>
 										<tr>
 											<td style='height: 100; padding: 48px 0px 0px 15px;' valign='top'>
-												[h: wLinkAdd = macroLinkText("wundenZoneAdd@Lib:macros", "", "armLinks")]
-												[h: wLinkSub = macroLinkText("wundenZoneSub@Lib:macros", "", "armLinks")]
+												[h: wLinkAdd = macroLinkText("wundenZoneAdd@this", "", "armLinks")]
+												[h: wLinkSub = macroLinkText("wundenZoneSub@this", "", "armLinks")]
 												[h: num = 1]
 												[count(3,""), Code:
 													{
@@ -95,8 +95,8 @@
 										</tr>
 										<tr>
 											<td style='height: 100; padding: 31px 0px 0px 17px;' valign='top'>
-												[h: wLinkAdd = macroLinkText("wundenZoneAdd@Lib:macros", "", "beinLinks")]
-												[h: wLinkSub = macroLinkText("wundenZoneSub@Lib:macros", "", "beinLinks")]
+												[h: wLinkAdd = macroLinkText("wundenZoneAdd@this", "", "beinLinks")]
+												[h: wLinkSub = macroLinkText("wundenZoneSub@this", "", "beinLinks")]
 												[h: num = 1]
 												[count(3,""), Code:
 													{
@@ -112,8 +112,8 @@
 									<table style='border-spacing: 0px;' cellpadding='0' cellspacing='0' width='150'>
 										<tr>
 											<td style='height: 100; padding: 59px 0px 0px 57px;' valign='top'>
-												[h: wLinkAdd = macroLinkText("wundenZoneAdd@Lib:macros", "", "armRechts")]
-												[h: wLinkSub = macroLinkText("wundenZoneSub@Lib:macros", "", "armRechts")]
+												[h: wLinkAdd = macroLinkText("wundenZoneAdd@this", "", "armRechts")]
+												[h: wLinkSub = macroLinkText("wundenZoneSub@this", "", "armRechts")]
 												[h: num = 1]
 												[count(3,""), Code:
 													{
@@ -125,8 +125,8 @@
 										</tr>
 										<tr>
 											<td style='height: 100; padding: 39px 0px 0px 50px;' valign='top'>
-												[h: wLinkAdd = macroLinkText("wundenZoneAdd@Lib:macros", "", "beinRechts")]
-												[h: wLinkSub = macroLinkText("wundenZoneSub@Lib:macros", "", "beinRechts")]
+												[h: wLinkAdd = macroLinkText("wundenZoneAdd@this", "", "beinRechts")]
+												[h: wLinkSub = macroLinkText("wundenZoneSub@this", "", "beinRechts")]
 												[h: num = 1]
 												[count(3,""), Code:
 													{
@@ -146,7 +146,7 @@
 			<table style='border-spacing: 0px; font-size: 12pt; margin: 10px 0px 18px 0px;'>
 				<tr>
 					<td>
-						<a href='[r: macroLinkText("wundenZoneSub@Lib:macros", "", "complete")]'><img src='[r: tblImage("forms",95)]' alt='Komplettheilung' border='0'></img></a>
+						<a href='[r: macroLinkText("wundenZoneSub@this", "", "complete")]'><img src='[r: tblImage("forms",95)]' alt='Komplettheilung' border='0'></img></a>
 					</td>
 				</tr>
 			</table>

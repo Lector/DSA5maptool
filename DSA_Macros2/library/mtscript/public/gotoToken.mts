@@ -9,22 +9,22 @@
 		[tFrame = getStrProp(PlayerOpt, "openFrameTalente")]
 		[switch(frame), code:
 			case "1": {
-				[h,macro("charbogenEigenschaften@Lib:macros"): ""]
+				[h,macro("charbogenEigenschaften@lib:com.github.naxos.Macros"): ""]
 				};
 			case "2": {
-				[h,macro("charbogenKampf@Lib:macros"): ""]
+				[h,macro("charbogenKampf@lib:com.github.naxos.Macros"): ""]
 				};
 			case "3": {
-				[h,macro("charbogenTalente@Lib:macros"): tFrame]
+				[h,macro("charbogenTalente@lib:com.github.naxos.Macros"): tFrame]
 				};
 			case "4": {
-				[h,macro("charbogenZauber@Lib:macros"): ""]
+				[h,macro("charbogenZauber@lib:com.github.naxos.Macros"): ""]
 				};
 			case "5": {
-				[h,macro("charbogenLiturgien@Lib:macros"): ""]
+				[h,macro("charbogenLiturgien@lib:com.github.naxos.Macros"): ""]
 				};
 			case "6": {
-				[h,macro("charbogenNotizen@Lib:macros"): ""]
+				[h,macro("charbogenNotizen@lib:com.github.naxos.Macros"): ""]
 				}
 		]
 	};{}
@@ -32,6 +32,6 @@
 [h,if(isGM() == 1 && hasImpersonated() == 0 && isFrameVisible("charbogenMini") == 1), Code:
 	{
 		[switchToken(id)]
-		[h,macro("charbogenMini@Lib:macros"): ""]
+		[h,macro("charbogenMini@lib:com.github.naxos.Macros"): ""]
 	};{}
 ]

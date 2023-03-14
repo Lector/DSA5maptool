@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -19,4 +19,4 @@
 [h,if(json.get(waffe, "Zweihand") != 0): HauptHand = id]
 
 [h: NebenHand = id]
-[h,macro("charbogenKampf@Lib:macros"): ""]
+[h,macro("charbogenKampf@this"): ""]

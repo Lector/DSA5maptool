@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -26,17 +26,17 @@
 
 [h,if(isNumber(schadenEingabe) == 0 || isNumber(wBonus) == 0 || isNumber(wMalus) == 0), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "numText"]
+		[h,macro("inputFail@this"): "numText"]
 	};{}
 ]
 [h,if(schadenEingabe != round(schadenEingabe) || wBonus != round(wBonus) || wMalus != round(wMalus)), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "numInteger"]
+		[h,macro("inputFail@this"): "numInteger"]
 	};{}
 ]
 [h,if(schadenEingabe < 0 || wBonus < 0 || wMalus < 0), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "numNegative"]
+		[h,macro("inputFail@this"): "numNegative"]
 	};{}
 ]
 [h: closeDialog("schadenErhalten")]
@@ -60,4 +60,4 @@
 
 [h: sendTo(chat, border("Schaden erhalten", show(damageResult)))]
 
-[h,macro("refreshFrame@Lib:macros"): ""]
+[h,macro("refreshFrame@this"): ""]

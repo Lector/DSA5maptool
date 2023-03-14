@@ -1,18 +1,18 @@
-[h,macro("abfrageImpersonate@Lib:macros"): ""]
+[h,macro("abfrageImpersonate@this"): ""]
 
 [h,if(isGM() == 1 && hasImpersonated() == 0), Code:
 	{
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
 	};{}
 ]
 
-[h: actionLink = macroLinkText("changeZustandProcess@Lib:macros", "")]
+[h: actionLink = macroLinkText("changeZustandProcess@this", "")]
 [dialog5("changeZustand", "width=425; height=500; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

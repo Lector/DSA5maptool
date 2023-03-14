@@ -1,18 +1,18 @@
-[h,macro("abfrageImpersonate@Lib:macros"): ""]
+[h,macro("abfrageImpersonate@this"): ""]
 
 [h,if(isGM() == 1 && hasImpersonated() == 0), Code:
 	{
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
 	};{}
 ]
 
-[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "Lib:macros") == 1), Code:
+[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "this") == 1), Code:
 	{
 		[ausgabeSL = "checked='checked'"]
 		[ausgabePublic = ""]
@@ -92,7 +92,7 @@
 	}
 ]
 
-[h: actionLink = macroLinkText("regenerationProcess@Lib:macros", "")]
+[h: actionLink = macroLinkText("regenerationProcess@this", "")]
 [dialog5("regeneration", "width=548; height=794; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
@@ -254,7 +254,7 @@
 						</tr>
 					</table>
 					<table style='border-spacing: 0px; margin-left: 18px'>
-						[r,macro("probeEisen@Lib:macros"): currentToken()]
+						[r,macro("probeEisen@this"): currentToken()]
 					</table>
 				</div>};{}]
 
@@ -420,7 +420,7 @@
 					</tr>
 				</table>
 				
-				[r,macro("probeChat@Lib:macros"): currentToken()]
+				[r,macro("probeChat@this"): currentToken()]
 				
 				<input type="hidden" name="lepmod" value="[r: lepmod]"/>
 				<input type="hidden" name="aspmod" value="[r: aspmod]"/>

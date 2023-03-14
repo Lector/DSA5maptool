@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -32,12 +32,12 @@
 						&nbsp;
 					</td>
 					<td width='383'>
-						<a href="[r: macroLinkText("charbogenEigenschaften@Lib:macros")]"><image src='[r: tableImage("mainTheme", 4)]' border="0" alt="Eigenschaftsbogen aufrufen"></image></a>
-						<a href="[r: macroLinkText("charbogenKampf@Lib:macros")]"><image src='[r: tableImage("mainTheme", 6)]' border="0" alt="Kampfbogen aufrufen"></image></a>
-						<a href="[r: macroLinkText("charbogenTalente@Lib:macros", "", "Koerper")]"><image src='[r: tableImage("mainTheme", 8)]' border="0" alt="Talentbogen aufrufen"></image></a>
+						<a href="[r: macroLinkText("charbogenEigenschaften@this")]"><image src='[r: tableImage("mainTheme", 4)]' border="0" alt="Eigenschaftsbogen aufrufen"></image></a>
+						<a href="[r: macroLinkText("charbogenKampf@this")]"><image src='[r: tableImage("mainTheme", 6)]' border="0" alt="Kampfbogen aufrufen"></image></a>
+						<a href="[r: macroLinkText("charbogenTalente@this", "", "Koerper")]"><image src='[r: tableImage("mainTheme", 8)]' border="0" alt="Talentbogen aufrufen"></image></a>
 						<image src='[r: tableImage("mainTheme", 11)]'></image>
-						<a href="[r: macroLinkText("charbogenLiturgien@Lib:macros")]"><image src='[r: tableImage("mainTheme", 12)]' border="0" alt="Liturgiebogen aufrufen"></image></a>
-						<a href="[r: macroLinkText("charbogenNotizen@Lib:macros")]"><image src='[r: tableImage("mainTheme", 14)]' border="0" alt="Notizen &amp; Handouts aufrufen"></image></a>
+						<a href="[r: macroLinkText("charbogenLiturgien@this")]"><image src='[r: tableImage("mainTheme", 12)]' border="0" alt="Liturgiebogen aufrufen"></image></a>
+						<a href="[r: macroLinkText("charbogenNotizen@this")]"><image src='[r: tableImage("mainTheme", 14)]' border="0" alt="Notizen &amp; Handouts aufrufen"></image></a>
 					</td>
 					<td width='59'>
 						&nbsp;
@@ -52,7 +52,7 @@
 						&nbsp;
 					</td>
 					<td style="background-image: url('[r: tblImage("mainTheme",21)]'); background-repeat: no-repeat; height: 90;" width='471'>
-						[r,macro("eigLeiste@Lib:macros"): ""]
+						[r,macro("eigLeiste@this"): ""]
 					</td>
 					<td>
 						&nbsp;
@@ -69,9 +69,9 @@
 					</td>
 					<td style='padding: 0px; text-align: center;' width='40'>		
 						[r: LeP]/[r: MaxLeP]<br>
-						<span style='color: #eee5c8; text-decoration: none;' title='LeP addieren'>[r: macroLink(plus, "changeEnergie@Lib:macros", "", "lePlus")]</span>
+						<span style='color: #eee5c8; text-decoration: none;' title='LeP addieren'>[r: macroLink(plus, "changeEnergie@this", "", "lePlus")]</span>
 						&nbsp;
-						<span style='color: #eee5c8; text-decoration: none;' title='LeP subtrahieren'>[r: macroLink(minus, "changeEnergie@Lib:macros", "", "leMinus")]</span>
+						<span style='color: #eee5c8; text-decoration: none;' title='LeP subtrahieren'>[r: macroLink(minus, "changeEnergie@this", "", "leMinus")]</span>
 					</td>
 					<td width='152'>
 						<table style="background-image: url('[r: tblImage("mainTheme",39)]'); background-repeat: no-repeat; border-spacing: 0px;" width='152'>
@@ -94,9 +94,9 @@
 					</td>
 					<td style='padding: 0px; text-align: center;' width='40'>		
 						[r: AsP]/[r: MaxAsP]<br>
-						<span style='color: #eee5c8; text-decoration: none;' title='LeP addieren'>[r: macroLink(plus, "changeEnergie@Lib:macros", "", "aePlus")]</span>
+						<span style='color: #eee5c8; text-decoration: none;' title='LeP addieren'>[r: macroLink(plus, "changeEnergie@this", "", "aePlus")]</span>
 						&nbsp;
-						<span style='color: #eee5c8; text-decoration: none;' title='LeP subtrahieren'>[r: macroLink(minus, "changeEnergie@Lib:macros", "", "aeMinus")]</span>
+						<span style='color: #eee5c8; text-decoration: none;' title='LeP subtrahieren'>[r: macroLink(minus, "changeEnergie@this", "", "aeMinus")]</span>
 					</td>
 					<td width='152'>
 						<table style="background-image: url('[r: tblImage("mainTheme",39)]'); background-repeat: no-repeat; border-spacing: 0px;" width='152'>
@@ -178,7 +178,7 @@
 										<image border=0 alt='Zauber in der Regelwiki nachschlagen' src='[r: tblImage('mainTheme', 113)]'/>
 									</a>
 									<span style='padding-left: 20px; color: #eee5c8; text-decoration: none;' title='Probe auf &quot;[r: tName]&quot; ablegen'>
-										[r: macroLink(tName, "probeZauber@Lib:macros", "", tUebergabe)]
+										[r: macroLink(tName, "probeZauber@this", "", tUebergabe)]
 									</span>
 								</td>
 								<td width='15'>
@@ -200,7 +200,7 @@
 									[r: tEigenschaft3]
 								</td>
 								<td style='text-align: right;' width='40'>
-									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;[r: tName]&quot; ablegen'>[r: macroLink(tWert, "probeZauber@Lib:macros", "", tUebergabe)]</span>
+									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;[r: tName]&quot; ablegen'>[r: macroLink(tWert, "probeZauber@this", "", tUebergabe)]</span>
 								</td>
 								<td>
 									&nbsp;
@@ -263,7 +263,7 @@
 									<a href=[r: tWiki]>
 										<image border=0 alt='Ritual in der Regelwiki nachschlagen' src='[r: tblImage('mainTheme', 113)]'/>
 									</a>
-									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;[r: tName]&quot; ablegen'>[r: macroLink(tName, "probeRitual@Lib:macros", "", tUebergabe)]</span>
+									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;[r: tName]&quot; ablegen'>[r: macroLink(tName, "probeRitual@this", "", tUebergabe)]</span>
 								</td>
 								<td width='15'>
 									&nbsp;
@@ -284,7 +284,7 @@
 									[r: tEigenschaft3]
 								</td>
 								<td style='text-align: right;' width='40'>
-									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;[r: tName]&quot; ablegen'>[r: macroLink(tWert, "probeRitual@Lib:macros", "", tUebergabe)]</span>
+									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;[r: tName]&quot; ablegen'>[r: macroLink(tWert, "probeRitual@this", "", tUebergabe)]</span>
 								</td>
 								<td>
 									&nbsp;
@@ -348,7 +348,7 @@
 									<a href=[r: tWiki]>
 										<image border=0 alt='[r: MagischeHandlungenSingular] in der Regelwiki nachschlagen' src='[r: tblImage('mainTheme', 113)]'/>
 									</a>
-									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;[r: tName]&quot; ablegen'>[r: macroLink(tName, "probeZauber@Lib:macros", "", tUebergabe)]</span>
+									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;[r: tName]&quot; ablegen'>[r: macroLink(tName, "probeZauber@this", "", tUebergabe)]</span>
 								</td>
 								<td width='15'>
 									&nbsp;
@@ -369,7 +369,7 @@
 									[r: tEigenschaft3]
 								</td>
 								<td style='text-align: right;' width='40'>
-									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;[r: tName]&quot; ablegen'>[r: macroLink(tWert, "probeZauber@Lib:macros", "", tUebergabe)]</span>
+									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;[r: tName]&quot; ablegen'>[r: macroLink(tWert, "probeZauber@this", "", tUebergabe)]</span>
 								</td>
 								<td>
 									&nbsp;
@@ -410,7 +410,7 @@
 									<div style='border-top: 1px solid #eee5c8; border-bottom: 1px solid #eee5c8; padding: 3px 0px 3px 3px;' width='417'>
 										MAGISCHE SONDERFERTIGKEITEN
 									</div>
-									[r,macro("charbogenTraits@Lib:macros"): MagieSF]
+									[r,macro("charbogenTraits@this"): MagieSF]
 								</td>
 							</tr>
 							<tr>
@@ -441,7 +441,7 @@
 									<div style='border-top: 1px solid #eee5c8; border-bottom: 1px solid #eee5c8; padding: 3px 0px 3px 3px;' width='417'>
 										ZAUBERTRICKS
 									</div>
-									[r,macro("charbogenTraits@Lib:macros"): Zaubertricks]
+									[r,macro("charbogenTraits@this"): Zaubertricks]
 								</td>
 							</tr>
 							<tr>

@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@lib:com.github.naxos.Macros"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -20,7 +20,7 @@
 [h: eval(delCmd)]
 
 [h,if(noticeKey != ""),Code:{
-	[h,macro("noticeSelf@Lib:macros"): noticeKey]
+	[h,macro("noticeSelf@lib:com.github.naxos.Macros"): noticeKey]
 };{}]
-[h,macro("refreshFrame@Lib:macros"): ""]
+[h,macro("refreshFrame@lib:com.github.naxos.Macros"): ""]
 [h,macro(frameToRefresh): list]

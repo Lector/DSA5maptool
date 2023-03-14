@@ -4,7 +4,7 @@
 [h,if(hasSight() == 1),Code:
 {
 	[h: '<!-- Wenn die entsprechende Einstellung aktiv ist löschen wir bisher aufgedeckten Kriegsnebel -->']
-	[h: hideFOW = getLibProperty("RestoreFogOfWarOnMove", "Lib:macros")]
+	[h: hideFOW = getLibProperty("RestoreFogOfWarOnMove", "this")]
 	[h,if(hideFOW == 1): restoreFOW()]
 	[h: toReveal = currentToken()]
 	<!-- Wenn sich ein Token mit Lichtquelle bewegt müssen alle ihre Sicht updaten -->

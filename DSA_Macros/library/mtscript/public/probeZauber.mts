@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -12,7 +12,7 @@
 
 [h,if(getState("Blutrausch") == 1),Code:
 {
-	[h,macro("inputFail@Lib:macros"): "blutrausch"]
+	[h,macro("inputFail@this"): "blutrausch"]
 };{}]
 
 [h: uebergabe = macro.args]
@@ -29,14 +29,14 @@
 [h: merkmal = listGet(uebergabe, 6)]
 [h: bezeichnung = listGet(uebergabe, 7)]
 
-[h,macro("probeGetAktWert@Lib:macros"): e1]
+[h,macro("probeGetAktWert@this"): e1]
 [h: aktE1wert = macro.return]
-[h,macro("probeGetAktWert@Lib:macros"): e2]
+[h,macro("probeGetAktWert@this"): e2]
 [h: aktE2wert = macro.return]
-[h,macro("probeGetAktWert@Lib:macros"): e3]
+[h,macro("probeGetAktWert@this"): e3]
 [h: aktE3wert = macro.return]
 
-[h: actionLink = macroLinkText("probe3w20Process@Lib:macros", "")]
+[h: actionLink = macroLinkText("probe3w20Process@this", "")]
 [dialog5("probe", "width=1125; height=500; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
@@ -52,7 +52,7 @@
 				</div>
 				<table style='border-spacing: 0px; padding: 5px; margin: 0px auto 0px auto;'>
 					<tr>
-						[r,macro("probeMod@Lib:macros"): ""]
+						[r,macro("probeMod@this"): ""]
 						<td width='10px'>
 							&nbsp;
 						</td>
@@ -64,7 +64,7 @@
 						</td>
 					</tr>
 				</table>
-				[r,macro("probeChat@Lib:macros"): currentToken()]
+				[r,macro("probeChat@this"): currentToken()]
 				<hr/>
 				<table style='border-spacing: 0px; margin: 0px auto 0px auto;'>
 					<tr>
@@ -112,7 +112,7 @@
 						<td width='20'>
 							&nbsp;
 						</td>
-						[r,macro("probeSpruch@Lib:macros"): setStrProp(setStrProp("", "Wert", wert), "Bezeichnung", bezeichnung)]
+						[r,macro("probeSpruch@this"): setStrProp(setStrProp("", "Wert", wert), "Bezeichnung", bezeichnung)]
 					</tr>
 				</table>
 				<input type="hidden" name="Merkmal" value="[r: merkmal]"/>
@@ -124,7 +124,7 @@
 				<input type="hidden" name="E3" value="[r: e3]"/>
 				<input type="hidden" name="image" value="76"/>
 				<input type="hidden" name="patzerTabelle" value="patzerZauber"/>
-				<input type="hidden" name="modMacro" value="probeZauberMods@Lib:macros"/>
+				<input type="hidden" name="modMacro" value="probeZauberMods@this"/>
 				<input type="hidden" name="kritText" value="Die AE-Kosten werden halbiert.<br/>Auf die FP d&uuml;rfen weitere 1W6 Punkte aufaddiert werden"/>
 				<input type="hidden" name="patzer19" value="[r: hasTrait('Nachteile', 'Wilde Magie')]"/>
 			</form>

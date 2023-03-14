@@ -66,7 +66,7 @@ tableImage("chat", 81), hToken, hTitleShow)]
 
 [h: ausgabePublic = border("Handout ge&auml;ndert", ausgabePublic)]
 
-[h: publicHandouts = getLibProperty("SharedHandouts", "Lib:macros")]
+[h: publicHandouts = getLibProperty("SharedHandouts", "lib:com.github.naxos.Macros")]
 
 [h,if(listFind(publicHandouts, hNum) == -1), Code:
 	{
@@ -76,7 +76,7 @@ tableImage("chat", 81), hToken, hTitleShow)]
 		[broadcast(ausgabePublic)]
 	}
 ]
-[h,if(isFrameVisible("meisterbogen") == 1 && getLibProperty("SLframe", "Lib:macros") == 5), Code:
+[h,if(isFrameVisible("meisterbogen") == 1 && getLibProperty("SLframe", "lib:com.github.naxos.Macros") == 5), Code:
 	{
 		[h,macro("meisterbogenHandouts@this"): ""]
 	};{}

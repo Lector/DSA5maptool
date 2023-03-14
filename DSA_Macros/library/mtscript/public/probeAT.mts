@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -70,7 +70,7 @@
 [h: rw2Mod = json.append(rw2Mod, json.get(rw2Mod, 0) + " / " + json.get(rw2Mod, 1))]
 [h: rw3Mod = json.append(rw3Mod, json.get(rw3Mod, 0) + " / " + json.get(rw3Mod, 1))]
 
-[h: actionLink = macroLinkText("probeATProcess@Lib:macros", "")]
+[h: actionLink = macroLinkText("probeATProcess@this", "")]
 [dialog5("probe", "width=1125; height=731; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
@@ -112,10 +112,10 @@
 						<td>
 							<table class="probe">
 								<tr>
-									[r,macro("probeMod@Lib:macros"): ""]
+									[r,macro("probeMod@this"): ""]
 								</tr>
 								<tr>
-									[r,macro("probeSchadenMod@Lib:macros"): ""]
+									[r,macro("probeSchadenMod@this"): ""]
 								</tr>
 							</table>
 						</td>
@@ -130,7 +130,7 @@
 						</td>
 					</tr>
 				</table>
-				[r,macro("probeChat@Lib:macros"): currentToken()]
+				[r,macro("probeChat@this"): currentToken()]
 				<hr/>
 				<table style='border-spacing: 0px; margin: 0px auto 0px auto;'>
 					<tr>
@@ -227,7 +227,7 @@
 				<hr/>
 				<table style='border-spacing: 0px; margin: 0px auto 0px auto;'>
 					<tr>
-						[r,macro("probeSicht@Lib:macros"): "at"]
+						[r,macro("probeSicht@this"): "at"]
 						<td width='20'>
 							&nbsp;
 						</td>
@@ -276,7 +276,7 @@
 							<table style='border-spacing: 0px;' cellpadding='1'>
 								<tr>
 									<td>
-										[r,macro("probeLiegend@Lib:macros"): "-4"]
+										[r,macro("probeLiegend@this"): "-4"]
 									</td>
 									<td>
 										Liegend (-4)
@@ -291,7 +291,7 @@
 										(keine Man&ouml;ver erlaubt<br>keine Patzer oder kritische Erfolge)
 									</td>
 								</tr>
-								[r,macro("probeGottgefaellig@Lib:macros"): ""]
+								[r,macro("probeGottgefaellig@this"): ""]
 							</table>
 						</td>
 						<td width='20'>
@@ -309,9 +309,9 @@
 						</td>
 						<td style='padding-left: 1px;' valign='top'>
 							<table style='border-spacing: 0px;' cellpadding='1'>
-								[r,macro("probeVorteilPosition@Lib:macros"): json.append(currentToken(), target, "at")]
-								[r,macro("probeCramped@Lib:macros"): json.append(currentToken(), target, "at")]
-								[r,macro("probeWasser@Lib:macros"): ""]
+								[r,macro("probeVorteilPosition@this"): json.append(currentToken(), target, "at")]
+								[r,macro("probeCramped@this"): json.append(currentToken(), target, "at")]
+								[r,macro("probeWasser@this"): ""]
 							</table>
 						</td>
 						<td width='20'>
@@ -345,7 +345,7 @@
 						</td>
 					</tr>
 				</table>
-				<input type="hidden" name="modMacro" value="probeATMods@Lib:macros"/>
+				<input type="hidden" name="modMacro" value="probeATMods@this"/>
 				<input type="hidden" name="target" value="[r:target]"/>
 			</form>
 		</div>

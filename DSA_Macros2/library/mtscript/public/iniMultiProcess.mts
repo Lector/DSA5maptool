@@ -8,23 +8,23 @@
 
 [h,if(isNumber(bonus) == 0 || isNumber(malus) == 0 || isNumber(wert) == 0), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "numText"]
+		[h,macro("inputFail@lib:com.github.naxos.Macros"): "numText"]
 	};{}
 ]
 [h,if(bonus != round(bonus) || malus != round(malus) || wert != round(wert)), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "numInteger"]
+		[h,macro("inputFail@lib:com.github.naxos.Macros"): "numInteger"]
 	};{}
 ]
 [h,if(bonus < 0 || malus < 0 || wert < 0), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "numNegative"]
+		[h,macro("inputFail@lib:com.github.naxos.Macros"): "numNegative"]
 	};{}
 ]
 [h: closeDialog("iniMulti")]
 [h,if(idList == ""), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "noTokensSelected"]
+		[h,macro("inputFail@lib:com.github.naxos.Macros"): "noTokensSelected"]
 	};{}
 ]
 
@@ -59,4 +59,4 @@
 ]
 
 [h: sortInitiative()]
-[h,macro("noticeSelf@Lib:macros"): "multiINI"]
+[h,macro("noticeSelf@lib:com.github.naxos.Macros"): "multiINI"]

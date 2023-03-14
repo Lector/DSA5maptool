@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -12,7 +12,7 @@
 
 [h,if(getStrProp(PlayerOpt, "lastFrame") == 1): cLastFrame = "checked='checked'"; cLastFrame = ""]
 
-[h: actionLink = macroLinkText("playerOptionsProcess@Lib:macros", "")]
+[h: actionLink = macroLinkText("playerOptionsProcess@this", "")]
 [dialog5("playerOptions", "width=500; height=300; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

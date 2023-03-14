@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -12,5 +12,5 @@
 
 [h: id = macro.args]
 [h: Reittier = id]
-[h,macro("checkZustand@Lib:macros"): currentToken()]
-[h,macro("refreshFrame@Lib:macros"): ""]
+[h,macro("checkZustand@this"): currentToken()]
+[h,macro("refreshFrame@this"): ""]

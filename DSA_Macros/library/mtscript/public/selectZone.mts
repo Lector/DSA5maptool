@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -15,7 +15,7 @@
 <select name='zone' size=1>
 	[h: zonen = trefferzonen(Trefferzonenmodell)]
 	
-	[h,if(getLibProperty("OptWunden", "Lib:macros") != 0),Code:
+	[h,if(getLibProperty("OptWunden", "this") != 0),Code:
 	{
 		[zufallChecked = "selected='selected'"]
 		[gesamtChecked = ""]

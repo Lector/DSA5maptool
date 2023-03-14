@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@lib:com.github.naxos.Macros"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -36,5 +36,5 @@
 [h: newAnzahlNotizen = notizenZahl - 1]
 [h: Notizen = setStrProp(Notizen, "nAnzahl", newAnzahlNotizen)]
 
-[h,macro("noticeSelf@Lib:macros"): "notizDel"]
-[h,macro("refreshFrame@Lib:macros"): ""]
+[h,macro("noticeSelf@lib:com.github.naxos.Macros"): "notizDel"]
+[h,macro("refreshFrame@lib:com.github.naxos.Macros"): ""]

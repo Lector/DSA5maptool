@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -25,4 +25,4 @@
 [h: wName = json.get(waffe, "Name")]
 [h: uebergabe = json.set(uebergabe, "Name", json.get(uebergabe, "ManName") + " mit "+ wName)]
 [h: uebergabe = json.set(uebergabe, "pruefreroll", hasTrait("Vorteile", "Waffenbegabung ("+technik+")"))]
-[h,macro("VerteidigungSchadenProcess@Lib:macros"): uebergabe]
+[h,macro("VerteidigungSchadenProcess@this"): uebergabe]

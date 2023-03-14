@@ -1,7 +1,7 @@
 [h: uebergabe = macro.args]
 [h: closeDialog("uniTrefferzone")]
 [h: groesse = json.get(uebergabe, "groesse")]
-[h,macro("trefferzone@Lib:macros"): groesse]
+[h,macro("trefferzone@lib:com.github.naxos.Macros"): groesse]
 [h: zone = macro.return]
 
 [h: ausgabe = border("Trefferzone", strformat("
@@ -17,4 +17,4 @@
 	</table>
 ", tableImage("chat", 67), zone))]
 
-[h,macro("sendToPublic@Lib:macros"): ausgabe]
+[h,macro("sendToPublic@lib:com.github.naxos.Macros"): ausgabe]

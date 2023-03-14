@@ -2,7 +2,7 @@
 [h: switchToken(tokenID)]
 [h,if(Schwarm != 1),Code:
 {
-	[h,macro("inputFail@Lib:macros"): "noSwarm"]
+	[h,macro("inputFail@lib:com.github.naxos.Macros"): "noSwarm"]
 };{}]
 
 [h: tokenIni = ""]
@@ -23,6 +23,6 @@
 	[h,if(tokenIni != ""),Code:{
 		[h: addToInitiative(0, tokenIni)]
 	}]
-	[h,macro("checkZustand@Lib:macros"): currentToken()]
+	[h,macro("checkZustand@lib:com.github.naxos.Macros"): currentToken()]
 }]
 [h: removeToken(tokenID)]

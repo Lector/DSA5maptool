@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -18,4 +18,4 @@
 
 [h: PlayerOpt = setStrProp(PlayerOpt, "lastFrame", fLastFrame)]
 
-[h,macro("noticeSelf@Lib:macros"): "playerOptions"]
+[h,macro("noticeSelf@this"): "playerOptions"]

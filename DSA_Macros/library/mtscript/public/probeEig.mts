@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -22,10 +22,10 @@ case "KO": eigName = "Konstitution";
 case "KK": eigName = "K&ouml;rperkraft"
 ]
 
-[h,macro("probeGetAktWert@Lib:macros"): macro.args]
+[h,macro("probeGetAktWert@this"): macro.args]
 [h: aktWert = macro.return]
 
-[h: actionLink = macroLinkText("probe1w20Process@Lib:macros", "")]
+[h: actionLink = macroLinkText("probe1w20Process@this", "")]
 
 [dialog5("probe", "width=587; height=398; temporary=1; closebutton=0; noframe=0"):{
 <html>
@@ -42,7 +42,7 @@ case "KK": eigName = "K&ouml;rperkraft"
 				</div>
 				<table style='padding: 5px; margin: 0px auto 0px auto;'>
 					<tr>
-						[r,macro("probeMod@Lib:macros"): ""]
+						[r,macro("probeMod@this"): ""]
 						<td width='10px'>
 							&nbsp;
 						</td>
@@ -54,7 +54,7 @@ case "KK": eigName = "K&ouml;rperkraft"
 						</td>
 					</tr>
 				</table>
-				[r,macro("probeChat@Lib:macros"): currentToken()]			
+				[r,macro("probeChat@this"): currentToken()]			
 				<hr/>
 				<table style='margin-bottom: 6px;'>
 					<tr>
@@ -90,7 +90,7 @@ case "KK": eigName = "K&ouml;rperkraft"
 				</table>
 				<input type="hidden" name="Name" value="[r: eigName]"/>
 				<input type="hidden" name="Wert" value="[r: aktWert]"/>
-				<input type="hidden" name="modMacro" value="probe1w20Mods@Lib:macros"/>
+				<input type="hidden" name="modMacro" value="probe1w20Mods@this"/>
 				<input type="hidden" name="pruefwurf" value="0"/>
 				<input type="hidden" name="image" value="12"/>
 			</form>

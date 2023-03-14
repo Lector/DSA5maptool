@@ -8,7 +8,7 @@
 <!-- Als erstes suchen wir auf dem Spieltisch nach allen Kraut-Tokens -->
 [h: herbSelectionCondition = json.set("{}", "propertyType", "Kraut", "mapName", getCurrentMapName())]
 [h: currentMapHerbs = getTokens("json", herbSelectionCondition)]
-[h,if(getLibProperty("WildnisSpieltisch", "Lib:macros") == 1),Code:
+[h,if(getLibProperty("WildnisSpieltisch", "lib:com.github.naxos.Macros") == 1),Code:
 {
 	[h: herbSelectionCondition = json.set(herbSelectionCondition, "mapName", "Spieltisch")]
 	[h: spieltischHerbs = getTokens("json", herbSelectionCondition)]
@@ -198,7 +198,7 @@ Diese FillFunctions generieren wir nun-->
 				[r: header("Kräutersuche")]
 				<table style='margin: 5px auto 7px auto;'>
 					<tr>
-						[r,macro("probeMod@Lib:macros"): ""]
+						[r,macro("probeMod@lib:com.github.naxos.Macros"): ""]
 						<td>
 							[h: button = tableImage("forms", 11)]
 							<button type="submit">
@@ -207,7 +207,7 @@ Diese FillFunctions generieren wir nun-->
 						</td>
 					</tr>
 				</table>
-				[r,macro("probeChat@Lib:macros"): currentToken()]
+				[r,macro("probeChat@lib:com.github.naxos.Macros"): currentToken()]
 				<hr/>
 				[r,macro("pflanzensucheInfo@this"): ""]
 				<table style='margin: 0px auto 0px auto;'>

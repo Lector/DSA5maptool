@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -19,17 +19,17 @@
 
 [h,if(isNumber(wBonus) == 0 || isNumber(wMalus) == 0 || isNumber(direkteingabe) == 0), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "numText"]
+		[h,macro("inputFail@this"): "numText"]
 	};{}
 ]
 [h,if(wBonus != round(wBonus) || wMalus != round(wMalus) || direkteingabe != round(direkteingabe)), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "numInteger"]
+		[h,macro("inputFail@this"): "numInteger"]
 	};{}
 ]
 [h,if(wBonus < 0 || wMalus < 0 || direkteingabe < 0), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "numNegative"]
+		[h,macro("inputFail@this"): "numNegative"]
 	};{}
 ]
 [h: closeDialog("changeEnergie")]
@@ -170,11 +170,11 @@
 </table>",
 chatImage, chatText, chatColor, ergebnisTitle, ergebnis, chatTyp)]
 
-[h,macro("checkZustand@Lib:macros"): currentToken()]
+[h,macro("checkZustand@this"): currentToken()]
 [h: ausgabe = ausgabe + subtext + show(macro.return)]
 
 [h: ausgabe = border(chatTitle, ausgabe)]
 
 [h: sendTo(chat, ausgabe)]
 
-[h,macro("refreshFrame@Lib:macros"): ""]
+[h,macro("refreshFrame@this"): ""]

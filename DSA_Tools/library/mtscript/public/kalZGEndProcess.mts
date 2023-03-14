@@ -483,7 +483,7 @@ tableImage("chat", 83), chatInfo)]
 
 [h,if(getStrProp(kalenderOptions, "kalenderChat") == 1), code:
 	{
-		[h,macro("sendToPublic@Lib:macros"): ausgabe]
+		[h,macro("sendToPublic@lib:com.github.naxos.Macros"): ausgabe]
 	};{}
 ]
 [h,if(isFrameVisible("kalender") == 1), code:

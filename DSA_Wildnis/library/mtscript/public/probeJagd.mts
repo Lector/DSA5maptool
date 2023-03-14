@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@lib:com.github.naxos.Macros"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -24,7 +24,7 @@
 	}]
 
 	[h: animals1 = getTokens("json", json.set("", "propertyType", "Basic", "mapName", getCurrentMapName()))]
-	[h,if(getLibProperty("WildnisSpieltisch", "Lib:macros") == 1),Code:
+	[h,if(getLibProperty("WildnisSpieltisch", "lib:com.github.naxos.Macros") == 1),Code:
 	{
 		[h: animals2 = getTokens("json", json.set("", "propertyType", "Basic", "mapName", "Spieltisch"))]
 		[h: allAnimals = json.union(animals1, animals2)]
@@ -195,7 +195,7 @@ window.addEventListener('load', function(evt) {
 						<td>
 							<table class="probe">
 								<tr>
-									[r,macro("probeMod@Lib:macros"): ""]
+									[r,macro("probeMod@lib:com.github.naxos.Macros"): ""]
 								</tr>
 							</table>
 						</td>
@@ -208,7 +208,7 @@ window.addEventListener('load', function(evt) {
 					</tr>
 				</table>
 
-				[r,macro("probeChat@Lib:macros"): currentToken()]
+				[r,macro("probeChat@lib:com.github.naxos.Macros"): currentToken()]
 				<hr/>
 
 				<table style='margin: 0px auto 0px auto;'>
@@ -219,16 +219,16 @@ window.addEventListener('load', function(evt) {
 							</div>
 						</td>
 						<td valign=top style="white-space: nowrap;">
-							[r,macro("probeInfo@Lib:macros"): json.append(currentToken(), skill1, spec1)]
+							[r,macro("probeInfo@lib:com.github.naxos.Macros"): json.append(currentToken(), skill1, spec1)]
 						</td>
 						<td width=20>&nbsp;</td>
 						
 						<td valign=top style="white-space: nowrap;">
 							<table><tr>
-							[r,macro("probeBelastung@Lib:macros"): skill1]
-							[r,macro("probeParalyse@Lib:macros"): json.append("Natur", skill1)]
-							[r,macro("probeMirakel@Lib:macros"): skill1]
-							[r,macro("probeGottgefaellig@Lib:macros"): skill1]
+							[r,macro("probeBelastung@lib:com.github.naxos.Macros"): skill1]
+							[r,macro("probeParalyse@lib:com.github.naxos.Macros"): json.append("Natur", skill1)]
+							[r,macro("probeMirakel@lib:com.github.naxos.Macros"): skill1]
+							[r,macro("probeGottgefaellig@lib:com.github.naxos.Macros"): skill1]
 							</tr></table>
 						</td>
 					</tr>
@@ -244,16 +244,16 @@ window.addEventListener('load', function(evt) {
 							</div>
 						</td>
 						<td valign=top style="white-space: nowrap;">
-							[r,macro("probeInfo@Lib:macros"): json.append(currentToken(), skill2, spec2)]
+							[r,macro("probeInfo@lib:com.github.naxos.Macros"): json.append(currentToken(), skill2, spec2)]
 						</td>
 						<td width=20>&nbsp;</td>
 						
 						<td valign=top style="white-space: nowrap;">
 							<table><tr>
-							[r,macro("probeBelastung@Lib:macros"): skill2]
-							[r,macro("probeParalyse@Lib:macros"): json.append("Natur", skill2)]
-							[r,macro("probeMirakel@Lib:macros"): skill2]
-							[r,macro("probeGottgefaellig@Lib:macros"): skill2]
+							[r,macro("probeBelastung@lib:com.github.naxos.Macros"): skill2]
+							[r,macro("probeParalyse@lib:com.github.naxos.Macros"): json.append("Natur", skill2)]
+							[r,macro("probeMirakel@lib:com.github.naxos.Macros"): skill2]
+							[r,macro("probeGottgefaellig@lib:com.github.naxos.Macros"): skill2]
 							</tr></table>
 						</td>
 					</tr>

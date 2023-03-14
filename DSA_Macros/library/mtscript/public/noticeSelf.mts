@@ -165,4 +165,4 @@
 </table>",
 tableImage("chat", 28)))]
 
-[h,macro("sendToSelf@Lib:macros"): ausgabe]
+[h,macro("sendToSelf@this"): ausgabe]

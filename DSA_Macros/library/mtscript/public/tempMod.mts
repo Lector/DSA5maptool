@@ -1,11 +1,11 @@
-[h,macro("abfrageImpersonate@Lib:macros"): ""]
+[h,macro("abfrageImpersonate@this"): ""]
 
 [h,if(isGM() == 1 && hasImpersonated() == 0), Code:
 	{
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -14,7 +14,7 @@
 
 [dialog5("tempMod", "width=500; height=547; temporary=1; closebutton=0; noframe=0"):{
 
-[h: actionLink = macroLinkText("tempModProcess@Lib:macros", "")]
+[h: actionLink = macroLinkText("tempModProcess@this", "")]
 
 <html>
 	<head>

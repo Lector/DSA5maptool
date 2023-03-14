@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@lib:com.github.naxos.Macros"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -27,24 +27,24 @@
 	{
 		[if(json.get(tDaten, "Talent") == tName), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "zauberDouble"]
+				[h,macro("inputFail@lib:com.github.naxos.Macros"): "zauberDouble"]
 			}
 		]
 	}
 ]
 [h,if(tName == ""), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "noInput"]
+		[h,macro("inputFail@lib:com.github.naxos.Macros"): "noInput"]
 	};{}
 ]
 [h,if(isNumber(tWert) == 0), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "numText"]
+		[h,macro("inputFail@lib:com.github.naxos.Macros"): "numText"]
 	};{}
 ]
 [h,if(tWert != round(tWert)), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "numInteger"]
+		[h,macro("inputFail@lib:com.github.naxos.Macros"): "numInteger"]
 	};{}
 ]
 [h: closeDialog("chareditMagieAdd")]
@@ -67,5 +67,5 @@
 	}
 ]
 
-[h,macro("noticeSelf@Lib:macros"): "chareditZauberAdd"]
-[h,macro("refreshFrame@Lib:macros"): ""]
+[h,macro("noticeSelf@lib:com.github.naxos.Macros"): "chareditZauberAdd"]
+[h,macro("refreshFrame@lib:com.github.naxos.Macros"): ""]

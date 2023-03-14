@@ -67,7 +67,7 @@
 						[h: bg = ""]
 						[h: fc = "#eee5c8"]
 						[h: linkTitle = "title='Vom Reittier absteigen'"]
-						[h: link = macroLink("&#10063;", "changeMount@Lib:macros", "", "")]
+						[h: link = macroLink("&#10063;", "changeMount@this", "", "")]
 					}]
 					<td [r: bg]>
 						<span style='color: [r: fc]; text-decoration: none;' [r: linkTitle]>[r: link]</span>
@@ -94,7 +94,7 @@
 							<img src="[r: getTokenImage(50, mount)]"/>
 						</td>
 						<td style='text-align: left;'>
-							[h: namefield = macroLink(getName(mount), "selectToken@Lib:macros", "", mount)]
+							[h: namefield = macroLink(getName(mount), "selectToken@this", "", mount)]
 							<span style='color: #eee5c8; text-decoration: none;' title='[r: getName(mount)] markieren'>[r: namefield]</span>
 						</td>
 						<td>
@@ -114,7 +114,7 @@
 							[h: bg = ""]
 							[h: fc = "#eee5c8"]
 							[h: linkTitle = "title='Auf diesem Reittier aufsitzen'"]
-							[h: link = macroLink("&#10063;", "changeMount@Lib:macros", "", mount)]
+							[h: link = macroLink("&#10063;", "changeMount@this", "", mount)]
 						}]
 						<td [r: bg]>
 							<span style='color: [r: fc]; text-decoration: none;' [r: linkTitle]>[r: link]</span>

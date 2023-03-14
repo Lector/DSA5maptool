@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -36,17 +36,17 @@
 
 [h,if(isNumber(leBonus) == 0 || isNumber(leMalus) == 0 || isNumber(aeBonus) == 0 || isNumber(aeMalus) == 0 || isNumber(keBonus) == 0 || isNumber(keMalus) == 0), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "numText"]
+		[h,macro("inputFail@this"): "numText"]
 	};{}
 ]
 [h,if(leBonus != round(leBonus) || leMalus != round(leMalus) || aeBonus != round(aeBonus) || aeMalus != round(aeMalus) || keBonus != round(keBonus) || keMalus != round(keMalus)), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "numInteger"]
+		[h,macro("inputFail@this"): "numInteger"]
 	};{}
 ]
 [h,if(leBonus < 0 || leMalus < 0 || aeBonus < 0 || aeMalus < 0 || keBonus < 0 || keMalus < 0), Code:
 	{
-		[h,macro("inputFail@Lib:macros"): "numNegative"]
+		[h,macro("inputFail@this"): "numNegative"]
 	};{}
 ]
 [h: closeDialog("regeneration")]
@@ -216,14 +216,14 @@ tableImage("chat", 53), leRegColor, leTitle, leRegGesamt, aeRegColor, aeTitle, a
 
 [h,switch(chat), Code:
 	case "1": {
-			[h,macro("sendToPublic@Lib:macros"): ausgabe]
+			[h,macro("sendToPublic@this"): ausgabe]
 		};
 	case "2": {
-			[h,macro("sendToGM@Lib:macros"): ausgabe]
+			[h,macro("sendToGM@this"): ausgabe]
 		};
 	case "3": {
-			[h,macro("sendToSelfGM@Lib:macros"): ausgabe]
+			[h,macro("sendToSelfGM@this"): ausgabe]
 		}
 ]
-[h,macro("checkZustand@Lib:macros"): currentToken()]
-[h,macro("refreshFrame@Lib:macros"): ""]
+[h,macro("checkZustand@this"): currentToken()]
+[h,macro("refreshFrame@this"): ""]

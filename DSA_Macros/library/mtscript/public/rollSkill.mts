@@ -16,12 +16,12 @@
 		[h: e3 = json.get(probe, "Eigenschaft3")]
 		
 		[h,switch(list):
-			case "Zauber": modMacro = "probeZauberMods@Lib:macros";
-			case "Rituale": modMacro = "probeRitualMods@Lib:macros";
-			case "MagischeHandlungen": modMacro = "probeZauberMods@Lib:macros";
+			case "Zauber": modMacro = "probeZauberMods@this";
+			case "Rituale": modMacro = "probeRitualMods@this";
+			case "MagischeHandlungen": modMacro = "probeZauberMods@this";
 			case "Liturgien": modMacro = "probeLiturgieMods@Lib:macors";
-			case "Zeremonien": modMacro = "probeZeremonieMods@Lib:macros";
-			default: modMacro = "probeTalentMods@Lib:macros"
+			case "Zeremonien": modMacro = "probeZeremonieMods@this";
+			default: modMacro = "probeTalentMods@this"
 		]
 		[h,if(json.contains(params, "modMacro") == 0): params = json.set(params, "modMacro", modMacro)]
 		

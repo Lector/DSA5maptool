@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -38,4 +38,4 @@
 [h: exposeView(currentToken())]
 
 [h: closeDialog("changeLight")]
-[h,macro("noticeSelf@Lib:macros"): "light"]
+[h,macro("noticeSelf@this"): "light"]

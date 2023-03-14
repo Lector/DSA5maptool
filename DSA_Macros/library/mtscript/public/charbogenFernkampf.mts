@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@Lib:macros"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -65,7 +65,7 @@
 						</td>
 						<td>
 							[h: tpParams = setStrProp("typ=fk", "id", wID)]
-							[h: tpLink = macroLink(wTP, "schadenWaffe@Lib:macros", "", tpParams)]
+							[h: tpLink = macroLink(wTP, "schadenWaffe@this", "", tpParams)]
 							[h: linkTitle = "Schaden mit dieser Waffe verursachen"]
 							<span style='color: #eee5c8; text-decoration: none;' title='[r: linkTitle]'>[r: tpLink]</span>
 						</td>
@@ -73,7 +73,7 @@
 							<span style='color: #eee5c8; text-decoration: none;' title='Ladezeit in Aktionen'>[r: wLZ]</span>
 						</td>
 						<td>
-							[h: atLink = macroLink(wFK, "probeFK@Lib:macros", "", wID)]
+							[h: atLink = macroLink(wFK, "probeFK@this", "", wID)]
 							[h: linkTitle = "Mit dieser Waffe angreifen"]
 							<span style='color: #eee5c8; text-decoration: none;' title='[r: linkTitle]'>[r: atLink]</span>
 						</td>
@@ -88,7 +88,7 @@
 							[bg = ""]
 							[fc = "#eee5c8"]
 							[linkTitle = "title='Diese Waffe ausr&uuml;sten.'"]
-							[link = macroLink("&#10063;", "changeFKWeapon@Lib:macros", "", wID)]
+							[link = macroLink("&#10063;", "changeFKWeapon@this", "", wID)]
 						}]
 						<td [r: bg]>
 							<span style='color: [r: fc]; text-decoration: none;' [r: linkTitle]>[r: link]</span>
