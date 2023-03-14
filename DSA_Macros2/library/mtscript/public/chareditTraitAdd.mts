@@ -10,7 +10,7 @@
 	};{}
 ]
 
-[h: actionLink = macroLinkText("chareditTraitAddProcess@Lib:macros2", "")]
+[h: actionLink = macroLinkText("chareditTraitAddProcess@this", "")]
 [dialog5("chareditTraitAdd", "width=425; height=350; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

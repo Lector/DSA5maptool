@@ -23,7 +23,7 @@
 	[h,macro("inputFail@Lib:macros"): "swarmTooSmallToSplit"]
 }]
 
-[h: actionLink = macroLinkText("splitSwarmProcess@Lib:macros2", "")]
+[h: actionLink = macroLinkText("splitSwarmProcess@this", "")]
 [dialog5("splitSwarm", "width=467; height=350; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

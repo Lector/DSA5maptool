@@ -10,7 +10,7 @@
 	};{}
 ]
 
-[h: actionLink = macroLinkText("chareditLiturgieAddProcess@Lib:macros2", "")]
+[h: actionLink = macroLinkText("chareditLiturgieAddProcess@this", "")]
 [dialog5("chareditLiturgieAdd", "width=425; height=374; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

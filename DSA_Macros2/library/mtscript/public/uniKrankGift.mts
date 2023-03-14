@@ -21,7 +21,7 @@
 	}
 ]
 
-[h: actionLink = macroLinkText("uniKrankGiftProcess@Lib:macros2", "")]
+[h: actionLink = macroLinkText("uniKrankGiftProcess@this", "")]
 [dialog("uniKrankGift", "width=510; height=450; temporary=1; input=0; noframe=0"):{
 <html>
 	<head>

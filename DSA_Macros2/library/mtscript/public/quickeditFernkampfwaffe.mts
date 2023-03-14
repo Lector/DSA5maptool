@@ -61,7 +61,7 @@
 [h: rw3 = json.get(waffe, "RW3")]
 [h: ladezeit = json.get(waffe, "Ladezeit")]
 
-[h: actionLink = macroLinkText("quickeditFernkampfwaffeProcess@Lib:macros2", "")]
+[h: actionLink = macroLinkText("quickeditFernkampfwaffeProcess@this", "")]
 [dialog5("quickeditWaffe", "width=425; height=443; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

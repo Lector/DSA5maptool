@@ -20,7 +20,7 @@
 	[h,macro("inputFail@Lib:macros"): "swarmTiny"]
 };{}]
 
-[h: actionLink = macroLinkText("createSwarmProcess@Lib:macros2", "")]
+[h: actionLink = macroLinkText("createSwarmProcess@this", "")]
 [dialog5("createSwarm", "width=467; height=350; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

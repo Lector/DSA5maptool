@@ -28,7 +28,7 @@
 	default: cb1 = "checked='checked'"
 ]
 
-[h: actionLink = macroLinkText("inventarItemMoveProcess@Lib:macros2", "")]
+[h: actionLink = macroLinkText("inventarItemMoveProcess@this", "")]
 [dialog5("inventarItemMove", "width=425; height=439; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

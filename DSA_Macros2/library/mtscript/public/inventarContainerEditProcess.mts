@@ -15,4 +15,4 @@
 
 [h,if(json.get(uebergabe, "cName") == ""): cName = "Beh&auml;lter"; cName = json.get(uebergabe, "cName")]
 [h: InventarMisc = json.set(InventarMisc, strformat("behaelter%s", json.get(uebergabe, "numContainer")), cName)]
-[h,macro("inventar@Lib:macros2"): ""]
+[h,macro("inventar@this"): ""]

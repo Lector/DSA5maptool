@@ -28,7 +28,7 @@
 	}
 ]
 
-[h: actionLink = macroLinkText("chareditMagieAddProcess@Lib:macros2", "")]
+[h: actionLink = macroLinkText("chareditMagieAddProcess@this", "")]
 [dialog5("chareditMagieAdd", "width=425; height=374; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

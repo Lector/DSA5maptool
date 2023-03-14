@@ -16,4 +16,4 @@
 [h: newAnzahl = json.get(item, "anzahl") + 1]
 [h: item = json.set(item, "anzahl", newAnzahl)]
 [h: Inventar = json.set(Inventar, numItem, item)]
-[h,macro("inventar@Lib:macros2"): ""]
+[h,macro("inventar@this"): ""]

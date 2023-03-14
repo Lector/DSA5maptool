@@ -9,7 +9,7 @@
 [h: tokenName = getName()]
 [h: hNum = substring(tokenName, lastIndexOf(tokenName, " ")+1, length(tokenName))]
 
-[h: actionLink = macroLinkText("handoutEditProcess@Lib:macros2", "")]
+[h: actionLink = macroLinkText("handoutEditProcess@this", "")]
 [dialog5("handoutEdit", "width=587; height=583; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

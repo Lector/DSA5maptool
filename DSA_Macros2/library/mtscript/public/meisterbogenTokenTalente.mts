@@ -17,7 +17,7 @@
 			<table style='border-spacing: 0px;'>
 				<tr>
 					<td>
-						<a href="[r: macroLinkText("gotoToken@Lib:macros2", "", id)]"><image src='[r: getTokenImage(30)]' border="0" alt="Zum Token wechseln und ausw&auml;hlen"></image></a>
+						<a href="[r: macroLinkText("gotoToken@this", "", id)]"><image src='[r: getTokenImage(30)]' border="0" alt="Zum Token wechseln und ausw&auml;hlen"></image></a>
 					</td>
 					<td style='font-weight: bold;'>
 						[r: getName()]
@@ -32,7 +32,7 @@
 								<span style='color: #bbbbba;'>K&ouml;rper</span>
 							};
 							{
-								<span style='color: #eee5c8; text-decoration: none;' title='K&ouml;rpertalente aufrufen'>[r: macroLink("K&ouml;rper", "meisterbogenTokenTalente@Lib:macros2", "", strformat("%s, Koerper", id))]</span>				
+								<span style='color: #eee5c8; text-decoration: none;' title='K&ouml;rpertalente aufrufen'>[r: macroLink("K&ouml;rper", "meisterbogenTokenTalente@this", "", strformat("%s, Koerper", id))]</span>				
 							}
 						]	
 						&middot;
@@ -41,7 +41,7 @@
 								<span style='color: #bbbbba;'>Gesellschaft</span>
 							};
 							{
-								<span style='color: #eee5c8; text-decoration: none;' title='Gesellschaftstalente aufrufen'>[r: macroLink("Gesellschaft", "meisterbogenTokenTalente@Lib:macros2", "", strformat("%s, Gesellschaft", id))]</span>				
+								<span style='color: #eee5c8; text-decoration: none;' title='Gesellschaftstalente aufrufen'>[r: macroLink("Gesellschaft", "meisterbogenTokenTalente@this", "", strformat("%s, Gesellschaft", id))]</span>				
 							}
 						]
 						&middot;
@@ -50,7 +50,7 @@
 								<span style='color: #bbbbba;'>Natur</span>
 							};
 							{
-								<span style='color: #eee5c8; text-decoration: none;' title='Naturtalente aufrufen'>[r: macroLink("Natur", "meisterbogenTokenTalente@Lib:macros2", "", strformat("%s, Natur", id))]</span>				
+								<span style='color: #eee5c8; text-decoration: none;' title='Naturtalente aufrufen'>[r: macroLink("Natur", "meisterbogenTokenTalente@this", "", strformat("%s, Natur", id))]</span>				
 							}
 						]
 						&middot;
@@ -59,7 +59,7 @@
 								<span style='color: #bbbbba;'>Wissen</span>
 							};
 							{
-								<span style='color: #eee5c8; text-decoration: none;' title='Wissenstalente aufrufen'>[r: macroLink("Wissen", "meisterbogenTokenTalente@Lib:macros2", "", strformat("%s, Wissen", id))]</span>				
+								<span style='color: #eee5c8; text-decoration: none;' title='Wissenstalente aufrufen'>[r: macroLink("Wissen", "meisterbogenTokenTalente@this", "", strformat("%s, Wissen", id))]</span>				
 							}
 						]
 					</td>
@@ -71,7 +71,7 @@
 								<span style='color: #bbbbba;'>Handwerk</span>
 							};
 							{
-								<span style='color: #eee5c8; text-decoration: none;' title='Handwerkstalente aufrufen'>[r: macroLink("Handwerk", "meisterbogenTokenTalente@Lib:macros2", "", strformat("%s, Handwerk", id))]</span>				
+								<span style='color: #eee5c8; text-decoration: none;' title='Handwerkstalente aufrufen'>[r: macroLink("Handwerk", "meisterbogenTokenTalente@this", "", strformat("%s, Handwerk", id))]</span>				
 							}
 						]
 						&middot;
@@ -80,7 +80,7 @@
 								<span style='color: #bbbbba;'>Kampf</span>
 							};
 							{
-								<span style='color: #eee5c8; text-decoration: none;' title='Kampftalente aufrufen'>[r: macroLink("Kampf", "meisterbogenTokenTalente@Lib:macros2", "", strformat("%s, Kampftechniken", id))]</span>				
+								<span style='color: #eee5c8; text-decoration: none;' title='Kampftalente aufrufen'>[r: macroLink("Kampf", "meisterbogenTokenTalente@this", "", strformat("%s, Kampftechniken", id))]</span>				
 							}
 						]
 						&middot;
@@ -89,7 +89,7 @@
 								<span style='color: #bbbbba;'>Gaben</span>
 							};
 							{
-								<span style='color: #eee5c8; text-decoration: none;' title='Gaben aufrufen'>[r: macroLink("Gaben", "meisterbogenTokenTalente@Lib:macros2", "", strformat("%s, Gaben", id))]</span>				
+								<span style='color: #eee5c8; text-decoration: none;' title='Gaben aufrufen'>[r: macroLink("Gaben", "meisterbogenTokenTalente@this", "", strformat("%s, Gaben", id))]</span>				
 							}
 						]
 					</td>

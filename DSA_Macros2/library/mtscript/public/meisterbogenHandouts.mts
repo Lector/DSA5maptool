@@ -18,12 +18,12 @@
 						&nbsp;
 					</td>
 					<td width='383'>
-						<a href="[r: macroLinkText("meisterbogen1@Lib:macros2", "", "pc")]"><image src='[r: tableImage("mainTheme", 80)]' border="0" alt="Spielercharaktere I: Werte, Waffen &amp; R&uuml;stung"></image></a>
-						<a href="[r: macroLinkText("meisterbogen2@Lib:macros2", "", "pc")]"><image src='[r: tableImage("mainTheme", 82)]' border="0" alt="Spielercharaktere II: Vorteile, Nachteile &amp; Notizen"></image></a>
-						<a href="[r: macroLinkText("meisterbogen1@Lib:macros2", "", "npc")]"><image src='[r: tableImage("mainTheme", 87)]' border="0" alt="NSCs I: Werte, Waffen &amp; R&uuml;stung"></image></a>
-						<a href="[r: macroLinkText("meisterbogen2@Lib:macros2", "", "npc")]"><image src='[r: tableImage("mainTheme", 89)]' border="0" alt="NSCs II: Vorteile, Nachteile &amp; Notizen"></image></a>
+						<a href="[r: macroLinkText("meisterbogen1@this", "", "pc")]"><image src='[r: tableImage("mainTheme", 80)]' border="0" alt="Spielercharaktere I: Werte, Waffen &amp; R&uuml;stung"></image></a>
+						<a href="[r: macroLinkText("meisterbogen2@this", "", "pc")]"><image src='[r: tableImage("mainTheme", 82)]' border="0" alt="Spielercharaktere II: Vorteile, Nachteile &amp; Notizen"></image></a>
+						<a href="[r: macroLinkText("meisterbogen1@this", "", "npc")]"><image src='[r: tableImage("mainTheme", 87)]' border="0" alt="NSCs I: Werte, Waffen &amp; R&uuml;stung"></image></a>
+						<a href="[r: macroLinkText("meisterbogen2@this", "", "npc")]"><image src='[r: tableImage("mainTheme", 89)]' border="0" alt="NSCs II: Vorteile, Nachteile &amp; Notizen"></image></a>
 						<image src='[r: tableImage("mainTheme", 92)]'></image>
-						<a href="[r: macroLinkText("meisterbogenTools@Lib:macros2", "")]"><image src='[r: tableImage("mainTheme", 84)]' border="0" alt="Tools"></image></a>
+						<a href="[r: macroLinkText("meisterbogenTools@this", "")]"><image src='[r: tableImage("mainTheme", 84)]' border="0" alt="Tools"></image></a>
 					</td>
 					<td width='59'>
 						&nbsp;
@@ -67,16 +67,16 @@
 														<span style='color: #eee5c8;'>[r,if(hShort == ""): output = "Keine Beschreibung verf&uuml;gbar"; output = hShort]</span>
 													</td>
 													<td style='padding: 0px 1px 0px 1px;'>
-														[r,if(listFind(hShared, num) != -1): hShareLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout ist f&uuml;r Spieler freigegeben - Klicken zum Sperren'></image></a>", macroLinkText("handoutShare@Lib:macros2", "", id), tableImage("mainTheme", 102)); hShareLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout ist f&uuml;r Spieler gesperrt - Klicken zum Freigeben'></image></a>", macroLinkText("handoutShare@Lib:macros2", "", id), tableImage("mainTheme", 103))]
+														[r,if(listFind(hShared, num) != -1): hShareLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout ist f&uuml;r Spieler freigegeben - Klicken zum Sperren'></image></a>", macroLinkText("handoutShare@this", "", id), tableImage("mainTheme", 102)); hShareLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout ist f&uuml;r Spieler gesperrt - Klicken zum Freigeben'></image></a>", macroLinkText("handoutShare@this", "", id), tableImage("mainTheme", 103))]
 													</td>
 													<td style='padding: 0px 1px 0px 1px;'>
-														[r: hEditLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout editieren'></image></a>", macroLinkText("handoutEdit@Lib:macros2", "", id), tableImage("mainTheme", 104))]
+														[r: hEditLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout editieren'></image></a>", macroLinkText("handoutEdit@this", "", id), tableImage("mainTheme", 104))]
 													</td>
 													<td style='padding: 0px 1px 0px 1px;'>
-														[r: hDelLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout sperren &amp; l&ouml;schen'></image></a>", macroLinkText("handoutDel@Lib:macros2", "", id), tableImage("mainTheme", 105))]
+														[r: hDelLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout sperren &amp; l&ouml;schen'></image></a>", macroLinkText("handoutDel@this", "", id), tableImage("mainTheme", 105))]
 													</td>
 													<td style='padding: 0px 1px 0px 1px;'>
-														[r: hShowLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout anzeigen'></image></a>", macroLinkText("handoutShow@Lib:macros2", "", id), tableImage("mainTheme", 106))]
+														[r: hShowLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout anzeigen'></image></a>", macroLinkText("handoutShow@this", "", id), tableImage("mainTheme", 106))]
 													</td>
 												</tr>
 											</table>

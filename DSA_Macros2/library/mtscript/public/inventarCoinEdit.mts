@@ -10,7 +10,7 @@
 	};{}
 ]
 
-[h: actionLink = macroLinkText("inventarCoinEditProcess@Lib:macros2", "")]
+[h: actionLink = macroLinkText("inventarCoinEditProcess@this", "")]
 [dialog5("inventarCoinEdit", "width=425; height=370; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

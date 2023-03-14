@@ -17,7 +17,7 @@
 	{
 		[hShared = listAppend(hShared, hNum)]
 		[chatTitleText = "Handout freigegeben"]
-		[chatText = strformat("Der Spielleiter hat ein Handout freigegeben (<span style='color: #000000;'>%s</span>):", macroLink("<span title='Neues Handout aufrufen'>Jetzt anzeigen</span>", "handoutShow@Lib:macros2", "", id))]
+		[chatText = strformat("Der Spielleiter hat ein Handout freigegeben (<span style='color: #000000;'>%s</span>):", macroLink("<span title='Neues Handout aufrufen'>Jetzt anzeigen</span>", "handoutShow@this", "", id))]
 	};
 	{
 		[hShared = listDelete(hShared, hItem)]
@@ -49,4 +49,4 @@ tableImage("chat", 81), chatText, hTitle)]
 [h,if(getCurrentMapName() != tokenMap): moveTokenToMap(id, tokenMap, x, y)]
 
 [h: broadcast(ausgabe)]
-[h,macro("meisterbogenHandouts@Lib:macros2"): ""]
+[h,macro("meisterbogenHandouts@this"): ""]

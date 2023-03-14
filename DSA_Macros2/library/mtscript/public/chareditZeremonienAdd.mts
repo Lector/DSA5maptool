@@ -10,7 +10,7 @@
 	};{}
 ]
 
-[h: actionLink = macroLinkText("chareditZeremonienAddProcess@Lib:macros2", "")]
+[h: actionLink = macroLinkText("chareditZeremonienAddProcess@this", "")]
 [dialog5("chareditZeremonienAdd", "width=425; height=374; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

@@ -20,6 +20,6 @@
 		[h,macro("editTier@lib:com.github.naxos.Wildnis"): currentToken()]
 	};
 	case "Basic": {
-		[h,macro("chareditChar@Lib:macros2"): currentToken()]
+		[h,macro("chareditChar@this"): currentToken()]
 	}
 ]

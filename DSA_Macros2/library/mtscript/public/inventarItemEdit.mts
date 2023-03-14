@@ -14,7 +14,7 @@
 
 [h: item = json.get(Inventar, num)]
 
-[h: actionLink = macroLinkText("inventarItemEditProcess@Lib:macros2", "")]
+[h: actionLink = macroLinkText("inventarItemEditProcess@this", "")]
 [dialog5("inventarItemEdit", "width=425; height=410; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

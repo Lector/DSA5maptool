@@ -1,4 +1,4 @@
-[h: actionLink = macroLinkText("uniTrefferzoneProcess@Lib:macros2", "")]
+[h: actionLink = macroLinkText("uniTrefferzoneProcess@this", "")]
 [h: button = tableImage("forms", 90)]
 [dialog5("uniTrefferzone", "width=480; height=512; temporary=1; closebutton=0; noframe=0"):{
 <html>

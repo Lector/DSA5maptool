@@ -19,4 +19,4 @@
 	}
 ]
 [h: Inventar = newList]
-[h,macro("inventar@Lib:macros2"): ""]
+[h,macro("inventar@this"): ""]

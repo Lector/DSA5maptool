@@ -1,4 +1,4 @@
-[h: actionLink = macroLinkText("counterProcess@Lib:macros2", "")]
+[h: actionLink = macroLinkText("counterProcess@this", "")]
 [dialog5("counter", "width=507; height=240; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

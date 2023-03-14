@@ -93,7 +93,7 @@
 												Geldbeutel
 											</td>
 											<td style='text-align: right;' width='45'>
-												<a href="[r: macroLinkText("inventarCoinEdit@Lib:macros2", "")]"><image src='[r: tableImage("misc", 8)]' border="0" alt="Verm&ouml;gen editieren"></image></a>&nbsp;<a href="[r: macroLinkText("inventarCoinDel@Lib:macros2", "", "2")]"><image src='[r: tableImage("misc", 3)]' border="0" alt="Komplettes Verm&ouml;gen l&ouml;schen"></image></a>
+												<a href="[r: macroLinkText("inventarCoinEdit@this", "")]"><image src='[r: tableImage("misc", 8)]' border="0" alt="Verm&ouml;gen editieren"></image></a>&nbsp;<a href="[r: macroLinkText("inventarCoinDel@this", "", "2")]"><image src='[r: tableImage("misc", 3)]' border="0" alt="Komplettes Verm&ouml;gen l&ouml;schen"></image></a>
 											</td>
 										</tr>
 									</table>
@@ -142,8 +142,8 @@
 												[r: json.get(InventarMisc, "dukaten")]
 											</td>
 											<td>
-												<a href="[r: macroLinkText("inventarCoinAdd@Lib:macros2", "", "dukat")]"><image src='[r: tableImage("misc", 6)]' border="0" alt="1 Dukate hinzuf&uuml;gen"></image>
-												<br><a href="[r: macroLinkText("inventarCoinSub@Lib:macros2", "", "dukat")]"><image src='[r: tableImage("misc", 7)]' border="0" alt="1 Dukate abziehen"></image>
+												<a href="[r: macroLinkText("inventarCoinAdd@this", "", "dukat")]"><image src='[r: tableImage("misc", 6)]' border="0" alt="1 Dukate hinzuf&uuml;gen"></image>
+												<br><a href="[r: macroLinkText("inventarCoinSub@this", "", "dukat")]"><image src='[r: tableImage("misc", 7)]' border="0" alt="1 Dukate abziehen"></image>
 											</td>
 											<td width='5'>
 												&nbsp;
@@ -152,8 +152,8 @@
 												[r: json.get(InventarMisc, "silbertaler")]
 											</td>
 											<td>
-												<a href="[r: macroLinkText("inventarCoinAdd@Lib:macros2", "", "silbertaler")]"><image src='[r: tableImage("misc", 6)]' border="0" alt="1 Silbertaler hinzuf&uuml;gen"></image>
-												<br><a href="[r: macroLinkText("inventarCoinSub@Lib:macros2", "", "silbertaler")]"><image src='[r: tableImage("misc", 7)]' border="0" alt="1 Silbertaler abziehen"></image>
+												<a href="[r: macroLinkText("inventarCoinAdd@this", "", "silbertaler")]"><image src='[r: tableImage("misc", 6)]' border="0" alt="1 Silbertaler hinzuf&uuml;gen"></image>
+												<br><a href="[r: macroLinkText("inventarCoinSub@this", "", "silbertaler")]"><image src='[r: tableImage("misc", 7)]' border="0" alt="1 Silbertaler abziehen"></image>
 											</td>
 											<td width='5'>
 												&nbsp;
@@ -162,8 +162,8 @@
 												[r: json.get(InventarMisc, "heller")]
 											</td>
 											<td>
-												<a href="[r: macroLinkText("inventarCoinAdd@Lib:macros2", "", "heller")]"><image src='[r: tableImage("misc", 6)]' border="0" alt="1 Heller hinzuf&uuml;gen"></image>
-												<br><a href="[r: macroLinkText("inventarCoinSub@Lib:macros2", "", "heller")]"><image src='[r: tableImage("misc", 7)]' border="0" alt="1 Heller abziehen"></image>
+												<a href="[r: macroLinkText("inventarCoinAdd@this", "", "heller")]"><image src='[r: tableImage("misc", 6)]' border="0" alt="1 Heller hinzuf&uuml;gen"></image>
+												<br><a href="[r: macroLinkText("inventarCoinSub@this", "", "heller")]"><image src='[r: tableImage("misc", 7)]' border="0" alt="1 Heller abziehen"></image>
 											</td>
 											<td width='5'>
 												&nbsp;
@@ -172,8 +172,8 @@
 												[r: json.get(InventarMisc, "kreuzer")]
 											</td>
 											<td>
-												<a href="[r: macroLinkText("inventarCoinAdd@Lib:macros2", "", "kreuzer")]"><image src='[r: tableImage("misc", 6)]' border="0" alt="1 Kreuzer hinzuf&uuml;gen"></image>
-												<br><a href="[r: macroLinkText("inventarCoinSub@Lib:macros2", "", "kreuzer")]"><image src='[r: tableImage("misc", 7)]' border="0" alt="1 Kreuzer abziehen"></image>
+												<a href="[r: macroLinkText("inventarCoinAdd@this", "", "kreuzer")]"><image src='[r: tableImage("misc", 6)]' border="0" alt="1 Kreuzer hinzuf&uuml;gen"></image>
+												<br><a href="[r: macroLinkText("inventarCoinSub@this", "", "kreuzer")]"><image src='[r: tableImage("misc", 7)]' border="0" alt="1 Kreuzer abziehen"></image>
 											</td>
 										</tr>
 									</table>

@@ -45,4 +45,4 @@
 [h: newItem = json.set("{}", "gegenstand", iGegenstand, "anzahl", iAnzahl, "gewicht", iGewicht, "beschreibung", iBeschreibung, "behaelter", iBehaelter)]
 [h: Inventar = json.set(Inventar, iNum, newItem)]
 [h: Inventar = json.sort(Inventar, "asc", "gegenstand")]
-[h,macro("inventar@Lib:macros2"): ""]
+[h,macro("inventar@this"): ""]

@@ -31,7 +31,7 @@
 						<tr>
 							<td style='text-align: center;'>
 								[h: id = json.get(rs, "ID")]
-								<span style='color: #441e13; text-decoration: none;'>[r: macroLink(json.get(rs, "Name"), "quickeditRS@Lib:macros2", "", id)]</span>
+								<span style='color: #441e13; text-decoration: none;'>[r: macroLink(json.get(rs, "Name"), "quickeditRS@this", "", id)]</span>
 							</td>
 						</tr>
 					}

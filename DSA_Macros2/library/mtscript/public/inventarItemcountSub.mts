@@ -18,6 +18,6 @@
 	{
 		[item = json.set(item, "anzahl", newAnzahl)]
 		[Inventar = json.set(Inventar, numItem, item)]
-		[h,macro("inventar@Lib:macros2"): ""]
+		[h,macro("inventar@this"): ""]
 	};{}
 ]

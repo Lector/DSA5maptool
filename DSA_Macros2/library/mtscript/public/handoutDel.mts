@@ -66,4 +66,4 @@ tableImage("chat", 81), chatText, hTitle)]
 		[broadcast(ausgabe, "gm")]
 	}
 ]
-[h,macro("meisterbogenHandouts@Lib:macros2"): ""]
+[h,macro("meisterbogenHandouts@this"): ""]

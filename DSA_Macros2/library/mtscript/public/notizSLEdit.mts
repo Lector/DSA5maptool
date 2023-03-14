@@ -10,7 +10,7 @@
 	};{}
 ]
 
-[h: actionLink = macroLinkText("notizSLEditProcess@Lib:macros2", "")]
+[h: actionLink = macroLinkText("notizSLEditProcess@this", "")]
 [dialog5("notizSLEdit", "width=424; height=387; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

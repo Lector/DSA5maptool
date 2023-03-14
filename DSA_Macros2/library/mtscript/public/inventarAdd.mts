@@ -12,7 +12,7 @@
 
 [h: num = macro.args]
 
-[h: actionLink = macroLinkText("inventarAddProcess@Lib:macros2", "")]
+[h: actionLink = macroLinkText("inventarAddProcess@this", "")]
 [dialog5("inventarAdd", "width=425; height=410; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

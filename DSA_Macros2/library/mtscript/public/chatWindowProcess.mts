@@ -133,6 +133,6 @@
 [h,if(chatText != ""), Code:
 	{
 		[h: broadcast(ausgabe, sendList)]
-		[h,macro("chatWindow@Lib:macros2"): ""]	
+		[h,macro("chatWindow@this"): ""]	
 	};{}
 ]

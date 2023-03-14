@@ -10,7 +10,7 @@
 	};{}
 ]
 
-[h: actionLink = macroLinkText("chareditFernkampfwaffeAddProcess@Lib:macros2", "")]
+[h: actionLink = macroLinkText("chareditFernkampfwaffeAddProcess@this", "")]
 [dialog5("chareditWaffeAdd", "width=425; height=443; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

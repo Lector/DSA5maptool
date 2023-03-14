@@ -12,7 +12,7 @@
 
 [h: nNum = macro.args]
 
-[h: actionLink = macroLinkText("notizEditProcess@Lib:macros2", "")]
+[h: actionLink = macroLinkText("notizEditProcess@this", "")]
 [dialog5("notizEdit", "width=424; height=335; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

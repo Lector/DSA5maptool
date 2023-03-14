@@ -5,7 +5,7 @@
 	};{}
 ]
 
-[h: actionLink = macroLinkText("tokensizeProcess@Lib:macros2", "")]
+[h: actionLink = macroLinkText("tokensizeProcess@this", "")]
 [dialog5("tokensize", "width=500; height=500; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

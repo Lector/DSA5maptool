@@ -10,7 +10,7 @@
 	};{}
 ]
 
-[h: actionLink = macroLinkText("chareditRSAddProcess@Lib:macros2", "")]
+[h: actionLink = macroLinkText("chareditRSAddProcess@this", "")]
 [dialog5("chareditRSAdd", "width=467; height=417; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

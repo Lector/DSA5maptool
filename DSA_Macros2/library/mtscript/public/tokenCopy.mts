@@ -5,7 +5,7 @@
 	};{}
 ]
 
-[h: actionLink = macroLinkText("tokenCopyProcess@Lib:macros2", "")]
+[h: actionLink = macroLinkText("tokenCopyProcess@this", "")]
 [dialog("tokenCopy", "width=425; height=343; temporary=1; input=0; noframe=0"):{
 <html>
 	<head>

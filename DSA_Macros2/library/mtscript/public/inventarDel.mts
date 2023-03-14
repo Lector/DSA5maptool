@@ -13,4 +13,4 @@
 [h: num = macro.args]
 
 [h: Inventar = json.remove(Inventar, num)]
-[h,macro("inventar@Lib:macros2"): ""]
+[h,macro("inventar@this"): ""]

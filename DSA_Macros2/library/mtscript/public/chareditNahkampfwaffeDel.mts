@@ -31,7 +31,7 @@
 					{
 						<tr>
 							<td style='text-align: center;'>
-								<span style='color: #441e13; text-decoration: none;'>[r: macroLink(json.get(waffe, "Name"), "chareditNahkampfwaffeDelProcess@Lib:macros2", "", index)]</span>
+								<span style='color: #441e13; text-decoration: none;'>[r: macroLink(json.get(waffe, "Name"), "chareditNahkampfwaffeDelProcess@this", "", index)]</span>
 								[h: index = index + 1]
 							</td>
 						</tr>

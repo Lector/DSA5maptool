@@ -3,16 +3,16 @@
 	[frame = getLibProperty("SLframe", "Lib:macros")]
 	[switch(frame), code:
 		case "1": {
-			[h,macro("meisterbogen1@Lib:macros2"): "pc"]
+			[h,macro("meisterbogen1@lib:com.github.naxos.Macros2"): "pc"]
 		};
 		case "2": {
-			[h,macro("meisterbogen1@Lib:macros2"): "npc"]
+			[h,macro("meisterbogen1@lib:com.github.naxos.Macros2"): "npc"]
 		};
 		case "3": {
-			[h,macro("meisterbogen2@Lib:macros2"): "pc"]
+			[h,macro("meisterbogen2@lib:com.github.naxos.Macros2"): "pc"]
 		};
 		case "4": {
-			[h,macro("meisterbogen2@Lib:macros2"): "npc"]
+			[h,macro("meisterbogen2@lib:com.github.naxos.Macros2"): "npc"]
 		};
 		default: {
 		}
@@ -65,5 +65,5 @@
 
 [h,if(isDialogVisible("chareditMain") == 1), Code:
 {
-	[h,macro("chareditMain@Lib:macros2"): ""]
+	[h,macro("chareditMain@lib:com.github.naxos.Macros2"): ""]
 };{}]

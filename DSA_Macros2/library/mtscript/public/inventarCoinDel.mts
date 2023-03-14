@@ -15,4 +15,4 @@
 [h: InventarMisc = json.set(InventarMisc, "heller", 0)]
 [h: InventarMisc = json.set(InventarMisc, "kreuzer", 0)]
 
-[h,macro("inventar@Lib:macros2"): ""]
+[h,macro("inventar@this"): ""]

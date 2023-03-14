@@ -28,7 +28,7 @@
 	}
 ]
 
-[h: actionLink = macroLinkText("uniDiceProcess@Lib:macros2", "")]
+[h: actionLink = macroLinkText("uniDiceProcess@this", "")]
 [dialog5("uniDice", "width=590; height=322; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

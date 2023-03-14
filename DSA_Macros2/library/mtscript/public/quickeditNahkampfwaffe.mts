@@ -125,7 +125,7 @@
 	}
 ]
 
-[h: actionLink = macroLinkText("quickeditNahkampfwaffeProcess@Lib:macros2", "")]
+[h: actionLink = macroLinkText("quickeditNahkampfwaffeProcess@this", "")]
 [dialog5("quickeditWaffe", "width=425; height=540; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

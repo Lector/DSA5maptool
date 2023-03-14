@@ -62,7 +62,7 @@
 }]
 
 
-[h: actionLink = macroLinkText("quickeditRSProcess@Lib:macros2", "")]
+[h: actionLink = macroLinkText("quickeditRSProcess@this", "")]
 [dialog5("quickeditRS", window):{
 <html>
 	<head>

@@ -1,4 +1,4 @@
-[h: actionLink = macroLinkText("teleportProcess@Lib:macros2", "")]
+[h: actionLink = macroLinkText("teleportProcess@this", "")]
 [dialog5("teleport", "width=500; height=550; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

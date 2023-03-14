@@ -15,7 +15,7 @@
 
 [h,if(isFrameVisible("meisterbogen") == 1 && getLibProperty("SLframe", "Lib:macros") == 6), Code:
 	{
-		[h,macro("meisterbogenTools@Lib:macros2"): ""]
+		[h,macro("meisterbogenTools@lib:com.github.naxos.Macros2"): ""]
 	};{}
 ]
 

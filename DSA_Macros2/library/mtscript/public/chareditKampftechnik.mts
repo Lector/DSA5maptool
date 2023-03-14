@@ -10,7 +10,7 @@
 	};{}
 ]
 
-[h: actionLink = macroLinkText("chareditKampftechnikProcess@Lib:macros2", "")]
+[h: actionLink = macroLinkText("chareditKampftechnikProcess@this", "")]
 [dialog5("chareditKampftechnik", "width=931; height=812; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

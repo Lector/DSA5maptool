@@ -75,7 +75,7 @@
 	}
 ]
 
-[h: actionLink = macroLinkText("chareditTalentProcess@Lib:macros2", "")]
+[h: actionLink = macroLinkText("chareditTalentProcess@this", "")]
 [dialog5("chareditTalent", "width=931; height=812; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
@@ -284,9 +284,9 @@
 							<td>
 								[h: params = setStrProp("", "list", uebergabe)]
 								[h: params = setStrProp(params, "index", num)]
-								[h: params = setStrProp(params, "frame", "chareditTalent@Lib:macros2")]
+								[h: params = setStrProp(params, "frame", "chareditTalent@this")]
 								[h: params = setStrProp(params, "noticeKey", "chareditTraitDel")]
-								[h: link = macroLink("<img src='"+tableImage("misc", 7)+"' border=0 alt='Eintrag l&ouml;schen'/>", "chareditTraitDelProcess@Lib:macros2", "", params)]
+								[h: link = macroLink("<img src='"+tableImage("misc", 7)+"' border=0 alt='Eintrag l&ouml;schen'/>", "chareditTraitDelProcess@this", "", params)]
 								[r: link]
 							</td>
 							};{}]

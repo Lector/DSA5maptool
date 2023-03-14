@@ -18,7 +18,7 @@
 [h: hContent = json.get(uebergabe, "hContent")]
 
 [h,if(hTitle == ""): hTitlePublic = "Handout"; hTitlePublic = hTitle]
-[h: shareLinkPublic = macroLink("<span title='Ge&auml;ndertes Handout aufrufen'>Jetzt anzeigen</span>", "handoutShow@Lib:macros2", "", id)]
+[h: shareLinkPublic = macroLink("<span title='Ge&auml;ndertes Handout aufrufen'>Jetzt anzeigen</span>", "handoutShow@this", "", id)]
 
 [h: setLabel(hTitle)]
 [h: setNotes(hShort)]
@@ -78,6 +78,6 @@ tableImage("chat", 81), hToken, hTitleShow)]
 ]
 [h,if(isFrameVisible("meisterbogen") == 1 && getLibProperty("SLframe", "Lib:macros") == 5), Code:
 	{
-		[h,macro("meisterbogenHandouts@Lib:macros2"): ""]
+		[h,macro("meisterbogenHandouts@this"): ""]
 	};{}
 ]

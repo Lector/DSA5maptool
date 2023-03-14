@@ -1,4 +1,4 @@
-[h: actionLink = macroLinkText("iniMultiProcess@Lib:macros2", "")]
+[h: actionLink = macroLinkText("iniMultiProcess@this", "")]
 [dialog5("iniMulti", "width=467; height=382; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

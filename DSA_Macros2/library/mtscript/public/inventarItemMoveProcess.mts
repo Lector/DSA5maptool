@@ -52,4 +52,4 @@
 ]
 [Inventar = json.sort(Inventar, "asc", "gegenstand")]
 
-[h,macro("inventar@Lib:macros2"): ""]
+[h,macro("inventar@this"): ""]
