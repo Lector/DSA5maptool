@@ -32,8 +32,7 @@
 [h,if(Lagerplatz < 0): gesamtTitle = listAppend(gesamtTitle, strformat("Lagerplatz (%s)", Lagerplatz))]
 [h,if(Nachtruhe < 0): gesamtTitle = listAppend(gesamtTitle, strformat("Nachtruhe (%s)", Nachtruhe))]
 [h,if(Unterkunft > 0): gesamtTitle = listAppend(gesamtTitle, strformat("Unterkunft (+%s)", Unterkunft))]
-[h: uue = uue()]
-[h,if(zustandMod > 0): gesamtTitle = listAppend(gesamtTitle, strformat("%{uue}beranstrengung (-%s)", zustandMod))]
+[h,if(zustandMod > 0): gesamtTitle = listAppend(gesamtTitle, strformat("Überanstrengung (-%s)", zustandMod))]
 
 [h,if(isNumber(leBonus) == 0 || isNumber(leMalus) == 0 || isNumber(aeBonus) == 0 || isNumber(aeMalus) == 0 || isNumber(keBonus) == 0 || isNumber(keMalus) == 0), Code:
 	{

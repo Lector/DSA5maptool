@@ -10,8 +10,6 @@
 	};{}
 ]
 
-[h: oe = oe()]
-[h: ae = ae()]
 [h: uebergabe = macro.args]
 [h: chat = json.get(uebergabe, "chat")]
 
@@ -109,15 +107,15 @@
 		[chatColor = "#1d5c2f"]
 	};
 	case "aeMinus": {
-		[if(hasTrait("Nachteile", "Schwacher Astralk"+oe+"rper") == 1),Code:{
+		[if(hasTrait("Nachteile", "Schwacher Astralkörper") == 1),Code:{
 			[ergebnis = ergebnis + 1]
 			[satext = "<b>Schwacher Astralk&ouml;rper</b><br>Es wurde 1 AsP zus&auml;tzlich abgezogen."]
 			[subtext = subtext + subtext(satext)]
 		};{}]
 		[if(AsP - ergebnis < 0): ergebnis = AsP]
-		[if(hasTrait("Nachteile", "L"+ae+"stige Mindergeister") == 1),Code:{
+		[if(hasTrait("Nachteile", "Lästige Mindergeister") == 1),Code:{
 			[dice = 1d20]
-			[mgtext = "<b>L&auml;stige Mindergeister</b><br>1W20: "+dice+" - "]
+			[mgtext = "<b>Lästige Mindergeister</b><br>1W20: "+dice+" - "]
 			[if(dice <= ergebnis): mgtext = mgtext + "Es erscheinen Mindergeister und bel&auml;stigen dich"; mgtext = mgtext + "Es erscheinen keine Mindergeister"]
 			[h: subtext = subtext + subtext(mgtext)]
 		};{}]
@@ -138,7 +136,7 @@
 		[chatColor = "#1d5c2f"]
 	};
 	case "keMinus": {
-		[if(hasTrait("Nachteile", "Schwacher Karmalk"+oe+"rper") == 1),Code:{
+		[if(hasTrait("Nachteile", "Schwacher Karmalkörper") == 1),Code:{
 			[ergebnis = ergebnis + 1]
 			[sktext = "<b>Schwacher Karmalk&ouml;rper</b><br>Es wurde 1 KaP zus&auml;tzlich abgezogen"]
 			[subtext = subtext + subtext(sktext)]

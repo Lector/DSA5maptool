@@ -10,8 +10,6 @@
 	};{}
 ]
 
-[h: ae = ae()]
-
 [h: typ = arg(0)]
 
 [h,switch(typ),Code:
