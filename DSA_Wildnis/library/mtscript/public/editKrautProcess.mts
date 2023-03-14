@@ -22,7 +22,7 @@
 [h,if(json.get(args, tok+"_heil") == 1): Heilpflanze = 1; Heilpflanze = 0]
 [h,if(json.get(args, tok+"_gift") == 1): Giftpflanze = 1; Giftpflanze = 0]
 [h,if(json.get(args, tok+"_nutz") == 1): Nutzpflanze = 1; Nutzpflanze = 0]
-[h,macro("inputVorkommenProcess@Lib:Wildnis"): json.append("[]", tok, args)]
+[h,macro("inputVorkommenProcess@this"): json.append("[]", tok, args)]
 
 [h,macro("noticeSelf@Lib:macros"): "krautEdit"]
 [h: closeDialog("krautEdit")]

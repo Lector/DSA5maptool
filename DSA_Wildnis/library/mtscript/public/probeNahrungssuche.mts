@@ -7,7 +7,7 @@
 	};{}
 ]
 
-[h: actionLink = macroLinkText("probeNahrungssucheProcess@Lib:Wildnis", "")]
+[h: actionLink = macroLinkText("probeNahrungssucheProcess@this", "")]
 [dialog5("probeNahrungssuche", "width=814; height=550; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
@@ -31,7 +31,7 @@
 				</table>
 				[r,macro("probeChat@Lib:macros"): ""]
 				<hr/>
-				[r,macro("pflanzensucheInfo@Lib:Wildnis"): ""]
+				[r,macro("pflanzensucheInfo@this"): ""]
 				<table style="margin: 0px auto 0px auto;">
 					<tr>
 						<td valign=top style="padding-left: 20;">
@@ -41,7 +41,7 @@
 						</td>
 						<td valign=top>
 							<table>
-								[r,macro("probeSuchdauer@Lib:Wildnis"): ""]
+								[r,macro("probeSuchdauer@this"): ""]
 							</table>
 						</td>
 						<td valign=top>
@@ -71,8 +71,8 @@
 										</select>
 									</td>
 								</tr>
-								[r,macro("probeGelaendekunde@Lib:Wildnis"): json.append(currentToken(), encode(json.append("", "Dschungelkundig", "Eis- und Schneekundig", "", "Gebirgskundig", "Kulturlandkundig", "Steppenkundig", "Sumpfkundig", "Waldkundig", "Waldkundig", "Wüstenkundig", "Wüstenkundig")))]
-								[r,macro("probeWetter@Lib:Wildnis"): ""]
+								[r,macro("probeGelaendekunde@this"): json.append(currentToken(), encode(json.append("", "Dschungelkundig", "Eis- und Schneekundig", "", "Gebirgskundig", "Kulturlandkundig", "Steppenkundig", "Sumpfkundig", "Waldkundig", "Waldkundig", "Wüstenkundig", "Wüstenkundig")))]
+								[r,macro("probeWetter@this"): ""]
 							</table>
 						</td>
 					</tr>

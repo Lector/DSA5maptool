@@ -13,7 +13,7 @@
 <!-- lese Sonderfertigkeiten aus-->
 [h: hasSpezVerbergen = hasTrait("AllgemeineSF", "Fertigkeitsspezialisierung (Verbergen: Sich Verstecken)")]
 
-[h: actionLink = macroLinkText("angelnProcess@Lib:Wildnis", "")]
+[h: actionLink = macroLinkText("angelnProcess@this", "")]
 [dialog5("angeln", "width=814; height=600; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

@@ -178,7 +178,7 @@ window.addEventListener('load', function(evt) {
 
 [h: height = 680]
 [h,if(fk == 0): height = height - 140]
-[h: actionLink = macroLinkText("probeJagdProcess@Lib:Wildnis", "")]
+[h: actionLink = macroLinkText("probeJagdProcess@this", "")]
 [dialog5("jagd", "width=814; height="+height+"; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
@@ -316,8 +316,8 @@ window.addEventListener('load', function(evt) {
 										</select>
 									</td>
 								</tr>
-								[r,macro("probeGelaendekunde@Lib:Wildnis"): json.append(currentToken(), encode("[]"))]
-								[r,macro("probeWetter@Lib:Wildnis"): ""]
+								[r,macro("probeGelaendekunde@this"): json.append(currentToken(), encode("[]"))]
+								[r,macro("probeWetter@this"): ""]
 								[r,if(typ == "Angeln"),Code:
 								{
 								<tr>

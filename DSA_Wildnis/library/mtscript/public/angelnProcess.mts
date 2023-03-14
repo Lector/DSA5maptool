@@ -17,7 +17,7 @@
 <!-- Vorbereitung der Probenwürfe-->
 [h: probeParams = json.set("{}",
 	"modMacroParams", uebergabe,
-	"modMacro", "angelnMods@Lib:Wildnis",
+	"modMacro", "angelnMods@this",
 	"spec", gewaesser)]
 <!-- würfel Angeln-Probe -->
 [h: resultAngeln = rollSkill(currentToken(), "Fischen & Angeln", probeMod, probeParams)]

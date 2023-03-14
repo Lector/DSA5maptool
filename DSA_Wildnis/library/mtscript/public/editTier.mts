@@ -19,7 +19,7 @@
 
 [h: tier = currentToken()]
 
-[h: actionLink = macroLinkText("editTierProcess@Lib:Wildnis", "")]
+[h: actionLink = macroLinkText("editTierProcess@this", "")]
 [dialog5("jagdEdit", "width=600; height=500; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

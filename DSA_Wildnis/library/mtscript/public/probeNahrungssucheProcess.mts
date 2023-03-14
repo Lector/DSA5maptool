@@ -14,7 +14,7 @@
 [h: suchDauer = json.get(uebergabe, "suchDauerSel")]
 [h: chat = json.get(uebergabe, "chat")]
 <!-- Vorbereitung der Probenwürfe-->
-[h: probeParams = json.set("", "modMacroParams", uebergabe, "modMacro", "pflanzensucheMods@Lib:Wildnis")]
+[h: probeParams = json.set("", "modMacroParams", uebergabe, "modMacro", "pflanzensucheMods@this")]
 
 [h: closeDialog("probeNahrungssuche")]
 

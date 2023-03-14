@@ -16,7 +16,7 @@
 [h: bonus = 0]
 [h: modtext = ""]
 
-[h,macro("pflanzensucheMods@Lib:Wildnis"): uebergabe]
+[h,macro("pflanzensucheMods@this"): uebergabe]
 
 [h: mod = json.get(macro.return, "mod")]
 [h: bonus = json.get(macro.return, "bonus")]

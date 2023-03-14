@@ -17,7 +17,7 @@
 
 [h: kraut = currentToken()]
 
-[h: actionLink = macroLinkText("editKrautProcess@Lib:Wildnis", "")]
+[h: actionLink = macroLinkText("editKrautProcess@this", "")]
 [dialog5("krautEdit", "width=600; height=760; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
@@ -184,7 +184,7 @@
 						</td>
 						<td colspan=2>Nutzpflanze</td>
 					</tr>
-				[r,macro("inputVorkommen@Lib:Wildnis"): kraut]
+				[r,macro("inputVorkommen@this"): kraut]
 				</table>
 				<table style='border-spacing: 0px; margin: 10px auto 10px auto;'>
 					<tr>

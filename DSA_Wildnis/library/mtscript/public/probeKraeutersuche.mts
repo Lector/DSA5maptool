@@ -102,7 +102,7 @@ Diese FillFunctions generieren wir nun-->
 
 [h: optionAllgemein = "<option value=''>Allgemeine Suche (-1)</option>"]
 
-[h: actionLink = macroLinkText("probeKraeutersucheProcess@Lib:Wildnis", "")]
+[h: actionLink = macroLinkText("probeKraeutersucheProcess@this", "")]
 [dialog5("kraeutersucheSpeziell", "width=1000; height=520; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
@@ -209,7 +209,7 @@ Diese FillFunctions generieren wir nun-->
 				</table>
 				[r,macro("probeChat@Lib:macros"): currentToken()]
 				<hr/>
-				[r,macro("pflanzensucheInfo@Lib:Wildnis"): ""]
+				[r,macro("pflanzensucheInfo@this"): ""]
 				<table style='margin: 0px auto 0px auto;'>
 					<tr>
 						<td valign="top">
@@ -239,7 +239,7 @@ Diese FillFunctions generieren wir nun-->
 										</select>
 									</td>
 								</tr>
-								[r,macro("probeSuchdauer@Lib:Wildnis"): ""]
+								[r,macro("probeSuchdauer@this"): ""]
 							</table>
 						</td>
 						<td width=20>&nbsp;</td>
@@ -267,8 +267,8 @@ Diese FillFunctions generieren wir nun-->
 										</select>
 									</td>
 								</tr>
-								[r,macro("probeGelaendekunde@Lib:Wildnis"): json.append(currentToken(), encode(json.append("", "Eis- und Schneekundig", "Steppenkundig", "Sumpfkundig", "Waldkundig", "Dschungelkundig", "Gebirgskundig", "Wüstenkundig", ""))) ]
-								[r,macro("probeWetter@Lib:Wildnis"): ""]
+								[r,macro("probeGelaendekunde@this"): json.append(currentToken(), encode(json.append("", "Eis- und Schneekundig", "Steppenkundig", "Sumpfkundig", "Waldkundig", "Dschungelkundig", "Gebirgskundig", "Wüstenkundig", ""))) ]
+								[r,macro("probeWetter@this"): ""]
 							</table>
 						</td>
 					</tr>

@@ -28,7 +28,7 @@
 <!-- Vorbereitung der Probenwürfe-->
 [h: probeParams = json.set("{}",
 	"modMacroParams", uebergabe,
-	"modMacro", "jagdMods@Lib:Wildnis",
+	"modMacro", "jagdMods@this",
 	"spec", spec1)]
 <!-- würfel Probe -->
 [h: result1 = rollSkill(currentToken(), skill1, 0, probeParams)]
@@ -115,10 +115,10 @@ skillRollTitle(skill1), tableImage("chat", image), show3d20(result1))]
 		[h,if(gr == 5): sizeMod = 4]
 		[h,if(gr >= 6): sizeMod = 8]
 		
-		[h: probeParams = json.set(probeParams, "modMacro", "jagdFKMods@Lib:Wildnis")]
+		[h: probeParams = json.set(probeParams, "modMacro", "jagdFKMods@this")]
 	};{
 		[h,if(gr <= 2): sizeMod = -4]
-		[h: probeParams = json.set(probeParams, "modMacro", "jagdATMods@Lib:Wildnis")]
+		[h: probeParams = json.set(probeParams, "modMacro", "jagdATMods@this")]
 	}]
 	
 	[h: uebergabe = json.set(uebergabe, "groesse", sizeMod)]
