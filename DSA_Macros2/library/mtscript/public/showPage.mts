@@ -1,0 +1,1 @@
+[html.dialog("Example Dialog", "lib://com.github.naxos84.dsa-ruleset-addons.Macros2/index.html", "value=some arbitrary data")]

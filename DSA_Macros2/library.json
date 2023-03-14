@@ -8,7 +8,7 @@
   "namespace": "com.github.naxos84.dsa-ruleset-addons.Macros2",
   "description": "None",
   "shortDescription": "None",
-  "allowsUriAccess": false,
+  "allowsUriAccess": true,
   "licenseFile": "",
   "readMeFile": ""
 }
