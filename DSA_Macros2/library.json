@@ -5,7 +5,7 @@
   "gitUrl": "https://github.com/Naxos84/dsa5-rulset-addons",
   "authors": ["Naxos84"],
   "license": "MIT",
-  "namespace": "com.github.naxos84.dsa-ruleset-addons.Macros2",
+  "namespace": "com.github.naxos84.Macros2",
   "description": "None",
   "shortDescription": "None",
   "allowsUriAccess": true,
