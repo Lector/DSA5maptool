@@ -1,1 +1,0 @@
-[h: macro.return = getLibProperty("sz", "Lib:macros")]

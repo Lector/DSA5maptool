@@ -1,1 +1,0 @@
-[h: macro.return = getLibProperty("ooe", "Lib:macros")]

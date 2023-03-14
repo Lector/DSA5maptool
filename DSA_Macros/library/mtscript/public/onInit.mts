@@ -24,14 +24,6 @@
 [h: defineFunction("aspekte", "aspekte@Lib:macros")]
 [h: defineFunction("compare", "compare@Lib:macros")]
 
-[h: defineFunction("ae", "ae@Lib:macros")]
-[h: defineFunction("aae", "aae@Lib:macros")]
-[h: defineFunction("oe", "oe@Lib:macros")]
-[h: defineFunction("ooe", "ooe@Lib:macros")]
-[h: defineFunction("ue", "ue@Lib:macros")]
-[h: defineFunction("uue", "uue@Lib:macros")]
-[h: defineFunction("sz", "sz@Lib:macros")]
-
 [h: defineFunction("roll1d20", "roll1d20@Lib:macros")]
 [h: defineFunction("roll3d20", "roll3d20@Lib:macros")]
 [h: defineFunction("rollSkill", "rollSkill@Lib:macros")]
