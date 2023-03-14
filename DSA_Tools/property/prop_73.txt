@@ -1,0 +1,1 @@
+zgTag=26 ; zgMonat=4 ; zgJahr=1040 ; zgSystem=Bosparans Fall

@@ -1,0 +1,12 @@
+[h: tok = arg(0)]
+[h: switchToken(tok)]
+[h: args = arg(1)]
+
+[h: Norden = json.get(args, tok+"_norden")]
+[h: Steppe = json.get(args, tok+"_steppe")]
+[h: Sumpf = json.get(args, tok+"_sumpf")]
+[h: Gebirge = json.get(args, tok+"_gebirge")]
+[h: Wueste = json.get(args, tok+"_wueste")]
+[h: Dschungel = json.get(args, tok+"_dschungel")]
+[h: Maraskan = json.get(args, tok+"_maraskan")]
+[h: Wald = json.get(args, tok+"_wald")]

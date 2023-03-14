@@ -1,0 +1,13 @@
+{ 
+  "properties": [ 
+    {
+      "filename": "public/auto_exec.mts",
+      "autoExecute": true,
+      "description": "Auto executable macro link"
+    },
+    {
+      "filename": "public/myUDF.mts",
+      "description": "My Test UDF in a drop in lib."
+    }
+  ]
+}

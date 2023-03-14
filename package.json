@@ -1,0 +1,17 @@
+{
+  "name": "dsa-ruleset-addons",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scripts/build-addons.mjs",
+  "module": "scripts/build-addons.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "extract-zip": "^2.0.1",
+    "zip-a-folder": "^1.1.5"
+  }
+}

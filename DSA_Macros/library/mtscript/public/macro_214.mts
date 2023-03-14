@@ -1,0 +1,1 @@
+[h: macro.return = json.append("[]", "Chimäre", "Daimonid", "Drache", "Dämon", "Elementar", "Fee", "Geist", "Golem", "Golemid", "Homunculus", "Kulturschaffend", "Magisches Wesen", "Pflanze", "Pflanzenchimäre", "Tier", "Untoter", "Übernatürliches Wesen", "Sonstiges")]

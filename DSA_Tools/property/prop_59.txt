@@ -1,0 +1,1 @@
+kalender=1 ; kalenderChat=1 ; uhr=1 ; uhrChat=1 ; uhrzeit=09.00 Uhr ; mada=1

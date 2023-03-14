@@ -1,0 +1,16 @@
+{
+  "events": [{
+    "name": "onInit",
+    "mts": "onCampaignLoad"
+  }],
+  "legacyEvents": [{
+    "name": "onInitiativeChangeRequest",
+    "mts": "onInitiativeChangeRequest"
+  }, {
+    "name": "onInitiativeChange",
+    "mts": "onInitiativeChange"
+  }, {
+    "name": "onTokenMove",
+    "mts": "onTokenMove"
+  }]
+}

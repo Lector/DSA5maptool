@@ -1,0 +1,1 @@
+[h: macro.return = json.get(getTokenMap(arg(0)), 0)]

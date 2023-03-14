@@ -1,0 +1,14 @@
+{
+  "name": "some-lib",
+  "version": "1.0.0",
+  "website": "www.rptools.net",
+  "gitUrl": "github.com/RPTools/maptool",
+  "authors": [ "RPTools Team" ],
+  "license": "GPL 3.0",
+  "namespace": "net.rptools.addon.some-lib",
+  "description": "My new test library for stuff",
+  "shortDescription": "test library",
+  "allowsUriAccess": true,
+  "readMeFile": "readme.md",
+  "licenseFile": "license.txt"
+}

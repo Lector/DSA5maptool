@@ -1,0 +1,14 @@
+{
+  "name": "Tools",
+  "version": "0.1",
+  "website": "",
+  "gitUrl": "https://github.com/Naxos84/dsa5-rulset-addons",
+  "authors": ["Naxos84"],
+  "license": "MIT",
+  "namespace": "com.github.naxos84.dsa-ruleset-addons.Tools",
+  "description": "None",
+  "shortDescription": "None",
+  "allowsUriAccess": false,
+  "licenseFile": "",
+  "readMeFile": ""
+}

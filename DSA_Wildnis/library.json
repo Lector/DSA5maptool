@@ -1,0 +1,14 @@
+{
+  "name": "Wildnis",
+  "version": "0.1",
+  "website": "",
+  "gitUrl": "https://github.com/Naxos84/dsa5-rulset-addons",
+  "authors": ["Naxos84"],
+  "license": "MIT",
+  "namespace": "com.github.naxos84.dsa-ruleset-addons.Wildnis",
+  "description": "None",
+  "shortDescription": "None",
+  "allowsUriAccess": true,
+  "licenseFile": "",
+  "readMeFile": ""
+}
