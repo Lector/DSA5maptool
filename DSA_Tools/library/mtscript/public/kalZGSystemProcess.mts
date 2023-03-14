@@ -1,6 +1,6 @@
 [h: uebergabe = macro.args]
 
-[h: options = getLibProperty("KalenderOpt", "Lib:tools")]
+[h: options = getLibProperty("KalenderOpt", "this")]
 [h,if(getStrProp(options, "kalender") == 0), code: 
 	{
 		[h,macro("inputFail@Lib:macros"): "kalender"]
@@ -8,7 +8,7 @@
 ]
 
 [h: nSystem = json.get(uebergabe, "fSystem")]
-[h: kalenderDaten = getLibProperty("KalenderMain", "Lib:tools")]
+[h: kalenderDaten = getLibProperty("KalenderMain", "this")]
 [h: aSystem = getStrProp(kalenderDaten, "zgSystem")]
 [h: aJahr = getStrProp(kalenderDaten, "zgJahr")]
 
@@ -129,6 +129,6 @@
 
 [h: kalenderDaten = setStrProp(kalenderDaten, "zgSystem", nSystem)]
 [h: kalenderDaten = setStrProp(kalenderDaten, "zgJahr", nJahr)]
-[h: setLibProperty("KalenderMain", kalenderDaten, "Lib:tools")]
+[h: setLibProperty("KalenderMain", kalenderDaten, "this")]
 
-[h,macro("kalZGEndProcess@Lib:tools"): ""]
+[h,macro("kalZGEndProcess@this"): ""]

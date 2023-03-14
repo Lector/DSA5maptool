@@ -1,4 +1,4 @@
-[h: kalenderDaten = getLibProperty("KalenderMain", "Lib:tools")]
+[h: kalenderDaten = getLibProperty("KalenderMain", "this")]
 
 [h: t1check = ""]
 [h: t2check = ""]
@@ -123,8 +123,8 @@
 	case "Zwerge": sysZwe = "selected='selected'"
 ]
 
-		[h: actionLinkDatum = macroLinkText("kalZGDatumProcess@Lib:tools", "")]
-		[h: actionLinkZeitrechnung = macroLinkText("kalZGSystemProcess@Lib:tools", "")]
+		[h: actionLinkDatum = macroLinkText("kalZGDatumProcess@this", "")]
+		[h: actionLinkZeitrechnung = macroLinkText("kalZGSystemProcess@this", "")]
 		<form action="[r:actionLinkDatum]">
 			<table style='border-spacing: 0px; margin: 10px auto 0px auto;'>
 				<tr>

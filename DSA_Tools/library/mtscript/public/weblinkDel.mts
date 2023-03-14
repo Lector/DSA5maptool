@@ -6,12 +6,12 @@
 		[chatNotice = "Alle Weblinks wurden gel&ouml;scht."]
 	};
 	{
-		[linklist = getLibProperty("Weblinks", "Lib:tools")]
+		[linklist = getLibProperty("Weblinks", "this")]
 		[newlist = json.remove(linklist, uebergabe)]
 		[chatNotice = "Der ausgew&auml;hlte Weblink wurde gel&ouml;scht."]
 	}
 ]
-[h: setLibProperty("Weblinks", newList, "Lib:tools")]
+[h: setLibProperty("Weblinks", newList, "this")]
 
 [h,if(isFrameVisible("meisterbogen") == 1 && getLibProperty("SLframe", "Lib:macros") == 6), Code:
 	{

@@ -62,7 +62,7 @@
 	}
 ]
 
-[h: actionLink = macroLinkText("laengenrechner@Lib:tools", "")]
+[h: actionLink = macroLinkText("laengenrechner@this", "")]
 [dialog5("laengenrechner", "width=955; height=480; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

@@ -1,4 +1,4 @@
-[h: options = getLibProperty("KalenderOpt", "Lib:tools")]
+[h: options = getLibProperty("KalenderOpt", "this")]
 
 [h,if(getStrProp(options, "kalender") == 1): cKal = "checked='checked'"; cKal = ""]
 [h,if(getStrProp(options, "kalenderChat") == 1): cKalChat = "checked='checked'"; cKalChat = ""]
@@ -6,7 +6,7 @@
 [h,if(getStrProp(options, "uhrChat") == 1): cUhrChat = "checked='checked'"; cUhrChat = ""]
 [h,if(getStrProp(options, "mada") == 1): cMada = "checked='checked'"; cMada = ""]
 
-[h: actionLink = macroLinkText("kalenderOptionsProcess@Lib:tools", "")]
+[h: actionLink = macroLinkText("kalenderOptionsProcess@this", "")]
 [dialog5("kalenderOptions", "width=424; height=409; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

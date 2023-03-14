@@ -1,5 +1,5 @@
-[h: kalenderOptions = getLibProperty("KalenderOpt", "Lib:tools")]
-[h: kalenderDaten = getLibProperty("KalenderMain", "Lib:tools")]
+[h: kalenderOptions = getLibProperty("KalenderOpt", "this")]
+[h: kalenderDaten = getLibProperty("KalenderMain", "this")]
 [h: system = getStrProp(kalenderDaten, "zgSystem")]
 [h: jahr = getStrProp(kalenderDaten, "zgJahr")]
 [h: monat = getStrProp(kalenderDaten, "zgMonat")]
@@ -488,6 +488,6 @@ tableImage("chat", 83), chatInfo)]
 ]
 [h,if(isFrameVisible("kalender") == 1), code:
 	{
-		[h,macro("kalenderMain@Lib:tools"): ""]
+		[h,macro("kalenderMain@this"): ""]
 	};{}
 ]

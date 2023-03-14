@@ -1,7 +1,7 @@
 [h: uebergabe = macro.args]
 
 [h: uhrNeu = json.get(uebergabe, "fUhr")]
-[h: options = getLibProperty("KalenderOpt", "Lib:tools")]
+[h: options = getLibProperty("KalenderOpt", "this")]
 
 [h,if(getStrProp(options, "uhr") == 0), code: 
 	{
@@ -10,7 +10,7 @@
 ]
 
 [h: options = setStrProp(options, "uhrzeit", uhrNeu)]
-[h: setLibProperty("KalenderOpt", options, "Lib:tools")]
+[h: setLibProperty("KalenderOpt", options, "this")]
 [h: kalender = "Zwoelfgoettlicher Kalender")]
 
 [h: tableIndex = number(substring(uhrNeu, 0, 2))]
@@ -179,6 +179,6 @@
 ]
 [h,if(isFrameVisible("kalender") == 1), code:
 	{
-		[h,macro("kalenderMain@Lib:tools"): ""]
+		[h,macro("kalenderMain@this"): ""]
 	};{}
 ]

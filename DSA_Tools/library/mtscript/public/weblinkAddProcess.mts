@@ -14,7 +14,7 @@
 		[h,macro("inputFail@Lib:macros"): "wrongLink"]
 	};{}
 ]
-[h: linklist = getLibProperty("Weblinks", "Lib:tools")]
+[h: linklist = getLibProperty("Weblinks", "this")]
 [h,foreach(link, linklist, ""), CODE:
 	{
 		[if(json.get(link, "linkname") == lName), Code:
@@ -29,7 +29,7 @@
 [h: newLink = json.set("{}", "linkname", lName, "linkadress", lAdress)]
 [h: newList = json.append(linklist, newLink)]
 [h: newList = json.sort(newList, "asc", "linkname")]
-[h: setLibProperty("Weblinks", newList, "Lib:tools")]
+[h: setLibProperty("Weblinks", newList, "this")]
 
 [h,if(isFrameVisible("meisterbogen") == 1 && getLibProperty("SLframe", "Lib:macros") == 6), Code:
 	{

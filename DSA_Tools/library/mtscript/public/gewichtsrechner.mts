@@ -58,7 +58,7 @@
 	}
 ]
 
-[h: actionLink = macroLinkText("gewichtsrechner@Lib:tools", "")]
+[h: actionLink = macroLinkText("gewichtsrechner@this", "")]
 [dialog5("gewichtsrechner", "width=955; height=450; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

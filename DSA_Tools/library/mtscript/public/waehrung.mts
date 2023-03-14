@@ -104,7 +104,7 @@
 	}
 ]
 
-[h: actionLink = macroLinkText("waehrung@Lib:tools", "")]
+[h: actionLink = macroLinkText("waehrung@this", "")]
 [dialog5("waehrungsrechner", "width=1511; height=892; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
@@ -650,8 +650,8 @@
 					}
 				]
 				[h: uKreuzer = uKreuzer - (uKreuzer * (gebuehr / 100))]
-				[r,macro("waehrungTeil5@Lib:tools"): uKreuzer]
-				[r,macro("waehrungTeil6@Lib:tools"): uKreuzer]
+				[r,macro("waehrungTeil5@this"): uKreuzer]
+				[r,macro("waehrungTeil6@this"): uKreuzer]
 			</form>
 		</div>
 	</body>

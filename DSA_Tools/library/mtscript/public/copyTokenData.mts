@@ -5,7 +5,7 @@
 	};{}
 ]
 
-[h: actionLink = macroLinkText("copyTokenDataProcess@Lib:tools", "")]
+[h: actionLink = macroLinkText("copyTokenDataProcess@this", "")]
 [dialog5("copyTokenData", "width=425; height=706; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

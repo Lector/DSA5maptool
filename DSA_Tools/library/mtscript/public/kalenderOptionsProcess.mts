@@ -1,10 +1,10 @@
 [h: uebergabe = macro.args]
 [h: closeDialog("kalenderOptions")]
 
-[h: options = getLibProperty("KalenderOpt", "Lib:tools")]
+[h: options = getLibProperty("KalenderOpt", "this")]
 [h: options = setStrProp(options, "kalenderChat", "0")]
 [h: options = setStrProp(options, "uhrChat", "0")]
-[h: setLibProperty("KalenderOpt", options, "Lib:tools")]
+[h: setLibProperty("KalenderOpt", options, "this")]
 
 [h,if(json.get(uebergabe, "fMada") == ""), code: 
 	{
@@ -16,7 +16,7 @@
 		[options = setStrProp(options, "mada", "1")]
 	}
 ]
-[h: setLibProperty("KalenderOpt", options, "Lib:tools")]
+[h: setLibProperty("KalenderOpt", options, "this")]
 [h,if(json.get(uebergabe, "fKal") == ""), code: 
 	{
 		[options = setStrProp(options, "kalender", "0")]
@@ -27,7 +27,7 @@
 	};
 	{
 		[options = setStrProp(options, "kalender", "1")]
-		[h,macro("kalZGEndProcess@Lib:tools"): ""]
+		[h,macro("kalZGEndProcess@this"): ""]
 		[token("Aktuelles Datum"): setTokenImage(tableImage("misc", 9))]
 	}
 ]
@@ -39,16 +39,16 @@
 	};
 	{
 		[options = setStrProp(options, "uhr", "1")]
-		[setLibProperty("KalenderOpt", options, "Lib:tools")]
+		[setLibProperty("KalenderOpt", options, "this")]
 		[nUebergabe = json.set("{}", "fUhr", getStrProp(options, "uhrzeit"))]
-		[h,macro("uhrzeitProcess@Lib:tools"): nUebergabe]
+		[h,macro("uhrzeitProcess@this"): nUebergabe]
 	}
 ]
 
 [h,if(json.get(uebergabe, "fKalChat") == ""): options = setStrProp(options, "kalenderChat", "0"); options = setStrProp(options, "kalenderChat", "1")]
 [h,if(json.get(uebergabe, "fUhrChat") == ""): options = setStrProp(options, "uhrChat", "0"); options = setStrProp(options, "uhrChat", "1")]
 
-[h: setLibProperty("KalenderOpt", options, "Lib:tools")]
+[h: setLibProperty("KalenderOpt", options, "this")]
 
 [h: ausgabe = strformat("
 <table style='border-spacing: 0px; margin-top: 3px; font-weight: bold;'>
@@ -69,7 +69,7 @@ tableImage("chat", 83))]
 
 [h,if(isFrameVisible("kalender") == 1), code:
 	{
-		[h,macro("kalenderMain@Lib:tools"): ""]
+		[h,macro("kalenderMain@this"): ""]
 	};{}
 ]
 [h: broadcast(ausgabe, "gm")]

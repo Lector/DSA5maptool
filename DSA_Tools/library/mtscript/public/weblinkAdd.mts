@@ -1,4 +1,4 @@
-[h: actionLink = macroLinkText("weblinkAddProcess@Lib:tools", "")]
+[h: actionLink = macroLinkText("weblinkAddProcess@this", "")]
 [dialog5("weblinkAdd", "width=466; height=308; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

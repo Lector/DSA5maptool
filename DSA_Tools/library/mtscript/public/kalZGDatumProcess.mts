@@ -1,6 +1,6 @@
 [h: uebergabe = macro.args]
 
-[h: options = getLibProperty("KalenderOpt", "Lib:tools")]
+[h: options = getLibProperty("KalenderOpt", "this")]
 [h,if(getStrProp(options, "kalender") == 0), code: 
 	{
 		[h,macro("inputFail@Lib:macros"): "kalender"]
@@ -31,7 +31,7 @@
 		[h,macro("inputFail@Lib:macros"): "kalenderNT"]
 	};{}
 ]
-[h: kalenderDaten = getLibProperty("KalenderMain", "Lib:tools")]
+[h: kalenderDaten = getLibProperty("KalenderMain", "this")]
 [h: system = getStrProp(kalenderDaten, "zgSystem")]
 [h,if(system == "Golgaris Erscheinen" || system == "JdU - Aranien" || system == "JdU - Kahet ni Kemi" || system == "Horas" || system == "Jahre des Lichts"), code:
 	{
@@ -46,6 +46,6 @@
 [h: kalenderDaten = setStrProp(kalenderDaten, "zgTag", nTag)]
 [h: kalenderDaten = setStrProp(kalenderDaten, "zgMonat", nMonat)]
 [h: kalenderDaten = setStrProp(kalenderDaten, "zgJahr", nJahr)]
-[h: setLibProperty("KalenderMain", kalenderDaten, "Lib:tools")]
+[h: setLibProperty("KalenderMain", kalenderDaten, "this")]
 
-[h,macro("kalZGEndProcess@Lib:tools"): ""]
+[h,macro("kalZGEndProcess@this"): ""]

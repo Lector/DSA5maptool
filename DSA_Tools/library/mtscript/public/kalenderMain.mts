@@ -1,4 +1,4 @@
-[h: options = getLibProperty("KalenderOpt", "Lib:tools")]
+[h: options = getLibProperty("KalenderOpt", "this")]
 
 [h: kalenderTyp = getStrProp(options, "kalenderTyp")]
 [h,if(kalenderTyp == "Zwoelfgoettlicher Kalender"): zgCheck = "selected='selected'"; zgCheck = ""]
@@ -35,10 +35,10 @@
 [h,if(uhrzeit == "22.00 Uhr"): u22Check = "selected='selected'"; u22Check = ""]
 [h,if(uhrzeit == "23.00 Uhr"): u23Check = "selected='selected'"; u23Check = ""]
 
-[h: actionLinkKalender = macroLinkText("kalenderProcess@Lib:tools", "")]
-[h: actionLinkUhr = macroLinkText("uhrzeitProcess@Lib:tools", "")]
-[h: actionLinkOptions = macroLinkText("kalenderOptions@Lib:tools", "")]
-[h: actionLinkJahrNull = macroLinkText("kalenderJahrNullInfo@Lib:tools", "")]
+[h: actionLinkKalender = macroLinkText("kalenderProcess@this", "")]
+[h: actionLinkUhr = macroLinkText("uhrzeitProcess@this", "")]
+[h: actionLinkOptions = macroLinkText("kalenderOptions@this", "")]
+[h: actionLinkJahrNull = macroLinkText("kalenderJahrNullInfo@this", "")]
 [frame5("kalender", "width=280; height=420; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
@@ -46,7 +46,7 @@
 		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
 	</head>
 	<body>
-		[r,macro("kalZG@Lib:tools"): ""]
+		[r,macro("kalZG@this"): ""]
 		<br>
 		<form action="[r:actionLinkUhr]">
 			<table style='border-spacing: 0px; margin: 0px auto 0px auto;'>
