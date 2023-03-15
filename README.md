@@ -22,3 +22,15 @@ remove Karmeenergie --> -''-
 counter --> -''-
 countUp --> -''-
 countDown --> -''-
+
+--------
+Credits
+--------
+
+Vielen Dank an alle kreativen Köpfe die ihre Grafik-Arbeiten kostenlos zur Verfügung stellen, damit Projekte wie dieses hier nicht nur funktionieren, sondern auch noch gut aussehen:
+Ashiroxzer, Ravenmore (http://dycha.net), Lamoot, TRaK, StumpyStrust, game-icons.net, CoveredInFish, yd, Silver Style Studios GmbH (Heldenatelier Fanpaket), Ulisses
+
+Weiterhin Dank an:
+- Farlon - Entwickler des Frameworks für DSA 4.1 auf dessen Arbeit ich aufsetzten durfte
+- EvS - Der viel der Vorarbeit geleistet hat Farlons Framework zu portieren
+- Lector - Entwickler, der das Framework zu dem gebracht hat, was es jetzt ist
