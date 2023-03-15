@@ -3,7 +3,7 @@
 [h: options = getLibProperty("KalenderOpt", "this")]
 [h,if(getStrProp(options, "kalender") == 0), code: 
 	{
-		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "kalender"]
+		[h,macro("inputFail@lib:com.github.naxos84.macros"): "kalender"]
 	};{}
 ]
 
@@ -13,22 +13,22 @@
 
 [h,if(nJahr == ""), code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "noInput"]
+		[h,macro("inputFail@lib:com.github.naxos84.macros"): "noInput"]
 	};{}
 ]
 [h,if(isNumber(nJahr) == 0), code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numText"]
+		[h,macro("inputFail@lib:com.github.naxos84.macros"): "numText"]
 	};{}
 ]
 [h,if(nJahr != round(nJahr)), code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numInteger"]
+		[h,macro("inputFail@lib:com.github.naxos84.macros"): "numInteger"]
 	};{}
 ]
 [h,if(nTag > 5 && nMonat == 13), code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "kalenderNT"]
+		[h,macro("inputFail@lib:com.github.naxos84.macros"): "kalenderNT"]
 	};{}
 ]
 [h: kalenderDaten = getLibProperty("KalenderMain", "this")]
@@ -37,7 +37,7 @@
 	{
 		[if(nJahr == 0), code:
 			{
-				[h,macro("inputFail@lib:com.github.naxos84.Macros"): "kalenderNull"]
+				[h,macro("inputFail@lib:com.github.naxos84.macros"): "kalenderNull"]
 			};{}
 		]
 	};{}

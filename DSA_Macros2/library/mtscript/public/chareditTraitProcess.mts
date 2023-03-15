@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.naxos84.Macros"): "gmSelectFail"]
+				[h,macro("inputFail@lib:com.github.naxos84.macros"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -25,7 +25,7 @@
 		[tStufe = json.get(uebergabe, strformat("f%sStufe", num))]
 		[if(tName == ""), Code:
 			{
-				[h,macro("inputFail@lib:com.github.naxos84.Macros"): "noInput"]
+				[h,macro("inputFail@lib:com.github.naxos84.macros"): "noInput"]
 			};{}
 		]
 		[h: newTrait = json.set("{}", "Name", tName, "Stufe", tStufe)]
@@ -65,5 +65,5 @@
 	}
 ]
 
-[h,macro("noticeSelf@lib:com.github.naxos84.Macros"): chatNotice]
-[h,macro("refreshFrame@lib:com.github.naxos84.Macros"): ""]
+[h,macro("noticeSelf@lib:com.github.naxos84.macros"): chatNotice]
+[h,macro("refreshFrame@lib:com.github.naxos84.macros"): ""]

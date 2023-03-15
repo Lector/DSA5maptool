@@ -1,6 +1,6 @@
 [h,if(isGM() == 0),Code:
 {
-	[h,macro("inputFail@lib:com.github.naxos84.Macros"): "gm"]
+	[h,macro("inputFail@lib:com.github.naxos84.macros"): "gm"]
 };{}]
 
 [h,if(hasImpersonated() == 0), Code:
@@ -8,7 +8,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.naxos84.Macros"): "gmSelectFail"]
+				[h,macro("inputFail@lib:com.github.naxos84.macros"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -16,11 +16,11 @@
 ]
 
 [h,if(Schwarm == 0),Code:{
-	[h,macro("inputFail@lib:com.github.naxos84.Macros"): "noSwarm"]
+	[h,macro("inputFail@lib:com.github.naxos84.macros"): "noSwarm"]
 }]
 [h: maxSplit = floor(SchwarmAnzahl / SchwarmGG)]
 [h,if(maxSplit < 2),Code:{
-	[h,macro("inputFail@lib:com.github.naxos84.Macros"): "swarmTooSmallToSplit"]
+	[h,macro("inputFail@lib:com.github.naxos84.macros"): "swarmTooSmallToSplit"]
 }]
 
 [h: actionLink = macroLinkText("splitSwarmProcess@this", "")]

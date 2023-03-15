@@ -5,12 +5,12 @@
 [h,if(gAnzahl == ""): gAnzahl = 1]
 [h,if(isNumber(gAnzahl) == 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numText"]
+		[h,macro("inputFail@lib:com.github.naxos84.macros"): "numText"]
 	};{}
 ]
 [h,if(gAnzahl < 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numNegative"]
+		[h,macro("inputFail@lib:com.github.naxos84.macros"): "numNegative"]
 	};{}
 ]
 

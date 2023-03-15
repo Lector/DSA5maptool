@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.naxos84.Macros"): "gmSelectFail"]
+				[h,macro("inputFail@lib:com.github.naxos84.macros"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -21,17 +21,17 @@
 [h,if(moveAnzahl == ""): moveAnzahl = 0; moveAnzahl = moveAnzahl]
 [h,if(isNumber(moveAnzahl) == 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numText"]
+		[h,macro("inputFail@lib:com.github.naxos84.macros"): "numText"]
 	};{}
 ]
 [h,if(moveAnzahl != round(moveAnzahl)), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numInteger"]
+		[h,macro("inputFail@lib:com.github.naxos84.macros"): "numInteger"]
 	};{}
 ]
 [h,if(moveAnzahl < 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numNegative"]
+		[h,macro("inputFail@lib:com.github.naxos84.macros"): "numNegative"]
 	};{}
 ]
 [h: closeDialog("inventarItemMove")]

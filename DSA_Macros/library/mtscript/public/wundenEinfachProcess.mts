@@ -15,7 +15,7 @@
 [h: chat = getStrProp(uebergabe, "chat")]
 [h: hWunden = getStrProp(uebergabe, "wZahl")]
 
-[h,if(getLibProperty("OptWunden", "this") != 1), Code:
+[h,if(getLibProperty("OptWunden", "com.github.naxos84.macros") != 1), Code:
 	{
 		[h,macro("inputFail@this"): "wundenSystem"]
 	};

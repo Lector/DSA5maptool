@@ -1,0 +1,1 @@
+[r: data.setData("addon:", namespace, variableName, value)]

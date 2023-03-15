@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.naxos84.Macros"): "gmSelectFail"]
+				[h,macro("inputFail@lib:com.github.naxos84.macros"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -21,5 +21,5 @@
 
 [h: closeDialog("chareditWaffeDel")]
 
-[h,macro("noticeSelf@lib:com.github.naxos84.Macros"): "delWaffe"]
-[h,macro("refreshFrame@lib:com.github.naxos84.Macros"): ""]
+[h,macro("noticeSelf@lib:com.github.naxos84.macros"): "delWaffe"]
+[h,macro("refreshFrame@lib:com.github.naxos84.macros"): ""]

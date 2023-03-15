@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.naxos84.Macros"): "gmSelectFail"]
+				[h,macro("inputFail@lib:com.github.naxos84.macros"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -29,17 +29,17 @@
 		[if(tWert == ""): tWert = 0]
 		[if(tName == ""), Code:
 			{
-				[h,macro("inputFail@lib:com.github.naxos84.Macros"): "noInput"]
+				[h,macro("inputFail@lib:com.github.naxos84.macros"): "noInput"]
 			};{}
 		]
 		[if(isNumber(tWert) == 0), Code:
 			{
-				[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numText"]
+				[h,macro("inputFail@lib:com.github.naxos84.macros"): "numText"]
 			};{}
 		]
 		[if(tWert != round(tWert)), Code:
 			{
-				[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numInteger"]
+				[h,macro("inputFail@lib:com.github.naxos84.macros"): "numInteger"]
 			};{}
 		]
 		[h: tProbe = json.set("{}", "Eigenschaft2", tE2, "Eigenschaft1", tE1, "Eigenschaft3", tE3 )]
@@ -112,5 +112,5 @@
 
 
 [h,if(tArt == "Zauber" || tArt == "Rituale" || tArt == "MagischeHandlungen"): chatNotice = "chareditZauber"; chatNotice = "chareditTalent"]
-[h,macro("noticeSelf@lib:com.github.naxos84.Macros"): chatNotice]
-[h,macro("refreshFrame@lib:com.github.naxos84.Macros"): ""]
+[h,macro("noticeSelf@lib:com.github.naxos84.macros"): chatNotice]
+[h,macro("refreshFrame@lib:com.github.naxos84.macros"): ""]

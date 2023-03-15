@@ -1,6 +1,6 @@
 [h,if(isGM() == 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "gm"]
+		[h,macro("inputFail@lib:com.github.naxos84.macros"): "gm"]
 	};{}
 ]
 
@@ -24,5 +24,5 @@
 [h,if(json.get(args, tok+"_nutz") == 1): Nutzpflanze = 1; Nutzpflanze = 0]
 [h,macro("inputVorkommenProcess@this"): json.append("[]", tok, args)]
 
-[h,macro("noticeSelf@lib:com.github.naxos84.Macros"): "krautEdit"]
+[h,macro("noticeSelf@lib:com.github.naxos84.macros"): "krautEdit"]
 [h: closeDialog("krautEdit")]

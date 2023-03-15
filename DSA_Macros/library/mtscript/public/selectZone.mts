@@ -15,7 +15,7 @@
 <select name='zone' size=1>
 	[h: zonen = trefferzonen(Trefferzonenmodell)]
 	
-	[h,if(getLibProperty("OptWunden", "this") != 0),Code:
+	[h,if(getLibProperty("OptWunden", "com.github.naxos84.macros") != 0),Code:
 	{
 		[zufallChecked = "selected='selected'"]
 		[gesamtChecked = ""]

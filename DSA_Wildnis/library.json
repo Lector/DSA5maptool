@@ -5,7 +5,7 @@
   "gitUrl": "https://github.com/Naxos84/dsa5-rulset-addons",
   "authors": ["Naxos84"],
   "license": "MIT",
-  "namespace": "com.github.naxos84.Wildnis",
+  "namespace": "com.github.naxos84.wildnis",
   "description": "None",
   "shortDescription": "None",
   "allowsUriAccess": true,

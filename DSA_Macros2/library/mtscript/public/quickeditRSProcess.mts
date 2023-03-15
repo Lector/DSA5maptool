@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.naxos84.Macros"): "gmSelectFail"]
+				[h,macro("inputFail@lib:com.github.naxos84.macros"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -26,15 +26,15 @@
 	[rsbeinrechts = json.get(uebergabe, "rsrb")]
 
 	[if(isNumber(rskopf) == 0 || isNumber(rstorso) == 0 || isNumber(rsarmlinks) == 0 || isNumber(rsarmrechts) == 0 || isNumber(rsbeinlinks) == 0 || isNumber(rsbeinrechts) == 0), Code: {
-		[macro("inputFail@lib:com.github.naxos84.Macros"): "numText"]
+		[macro("inputFail@lib:com.github.naxos84.macros"): "numText"]
 	};{}]
 
 	[if(rskopf != round(rskopf) || rstorso != round(rstorso) || rsarmlinks != round(rsarmlinks) || rsarmrechts != round(rsarmrechts) || rsbeinlinks != round(rsbeinlinks) || rsbeinrechts != round(rsbeinrechts)), Code: {
-		[macro("inputFail@lib:com.github.naxos84.Macros"): "numInteger"]
+		[macro("inputFail@lib:com.github.naxos84.macros"): "numInteger"]
 	};{}]
 
 	[if(rskopf < 0 || rstorso < 0 || rsarmlinks < 0 || rsarmrechts < 0 || rsbeinlinks < 0 || rsbeinrechts < 0), Code: {
-		[macro("inputFail@lib:com.github.naxos84.Macros"): "numNegative"]
+		[macro("inputFail@lib:com.github.naxos84.macros"): "numNegative"]
 	};{}]
 
 	[rs = round((rskopf + rstorso*5 + rsarmlinks*2 + rsarmrechts*2 + rsbeinlinks*2 + rsbeinrechts*2) / 14.0)]
@@ -43,15 +43,15 @@
 	[rs = json.get(uebergabe, "rsgesamt")]
 
 	[if(isNumber(rs) == 0), Code: {
-		[macro("inputFail@lib:com.github.naxos84.Macros"): "numText"]
+		[macro("inputFail@lib:com.github.naxos84.macros"): "numText"]
 	};{}]
 
 	[if(rs != round(rs)), Code: {
-		[macro("inputFail@lib:com.github.naxos84.Macros"): "numInteger"]
+		[macro("inputFail@lib:com.github.naxos84.macros"): "numInteger"]
 	};{}]
 
 	[if(rs < 0), Code: {
-		[macro("inputFail@lib:com.github.naxos84.Macros"): "numNegative"]
+		[macro("inputFail@lib:com.github.naxos84.macros"): "numNegative"]
 	};{}]
 	
 	[rskopf = rs]
@@ -76,5 +76,5 @@
 
 [h: closeDialog("quickeditRS")]
 
-[h,macro("noticeSelf@lib:com.github.naxos84.Macros"): "quickeditRS"]
-[h,macro("refreshFrame@lib:com.github.naxos84.Macros"): ""]
+[h,macro("noticeSelf@lib:com.github.naxos84.macros"): "quickeditRS"]
+[h,macro("refreshFrame@lib:com.github.naxos84.macros"): ""]

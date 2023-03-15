@@ -1,7 +1,8 @@
 [h: id = arg(0)]
 [h,if(id == ""): npc = 0; npc = isNPC(id)]
+[r: getLibProperty("OptHideNSCAction", "com.github.naxos84.macros")]
 
-[h,if(npc == 1 && getLibProperty("OptHideNSCAction", "this") == 1), Code:
+[h,if(npc == 1 && getLibProperty("OptHideNSCAction", "com.github.naxos84.macros") == 1), Code:
 {
 	[ausgabeSL = "checked"]
 	[ausgabePublic = ""]

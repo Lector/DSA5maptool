@@ -11,7 +11,7 @@
 ]
 
 [h: zone = macro.args]
-[h,if(getLibProperty("OptWunden", "this") != 2), Code:
+[h,if(getLibProperty("OptWunden", "com.github.naxos84.macros") != 2), Code:
 	{
 		[h,macro("inputFail@this"): "wundenSystem"]
 	};{}
@@ -128,13 +128,13 @@
 [h: listINI = getInitiative()]
 [h,if(isNumber(listINI) == 1): token.init = listINI - iniMalus]
 [h: sortInitiative()]
-[h,if(getLibProperty("OptKampfAU", "this") == 1): auSchaden = 1d6; auSchaden = 0]
+[h,if(getLibProperty("OptKampfAU", "com.github.naxos84.macros") == 1): auSchaden = 1d6; auSchaden = 0]
 [h,if(auSchaden > AuP): auSchaden = AuP]
 [h: LeP = LeP - wuSchaden]
 [h: AuP = AuP - auSchaden]
 [h,if(wuSchaden > 0 || auSchaden > 0): wundenTitle = wundenTitle + strformat(" - SP: %s, SP(A): %s", wuSchaden, auSchaden)]
 
-[h: checkList = getLibProperty("ImpAusdruckVergleich", "this")]
+[h: checkList = getLibProperty("ImpAusdruckVergleich", "com.github.naxos84.macros")]
 [h: check = listGet(checkList, 10)]
 [h,if(LeP <= 5 && LeP >= 1), Code:
 	{
@@ -339,7 +339,7 @@
 </div>
 ", tableImage("chat", 32))]
 
-[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "this") == 1), Code:
+[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "com.github.naxos84.macros") == 1), Code:
 	{
 		[h,macro("sendToGM@this"): ausgabe]
 	};

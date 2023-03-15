@@ -11,7 +11,7 @@
 ]
 
 [h: zone = macro.args]
-[h,if(getLibProperty("OptWunden", "this") != 2), Code:
+[h,if(getLibProperty("OptWunden", "com.github.naxos84.macros") != 2), Code:
 	{
 		[h,macro("inputFail@this"): "wundenSystem"]
 	};{}
@@ -142,7 +142,7 @@
 </div>
 ", tableImage("chat", 50), tableImage("chat", 51), tableImage("chat", 70), text, tableImage("chat", 52))]
 
-[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "this") == 1), Code:
+[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "com.github.naxos84.macros") == 1), Code:
 	{
 		[h,macro("sendToGM@this"): ausgabe]
 	};

@@ -13,7 +13,7 @@
 [h: typ = getStrProp(uebergabe, "typ")]
 [h: id = getStrProp(uebergabe, "id")]
 
-[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "this") == 1), Code:
+[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "com.github.naxos84.macros") == 1), Code:
 	{
 		[ausgabeSL = "checked='checked'"]
 		[ausgabePublic = ""]

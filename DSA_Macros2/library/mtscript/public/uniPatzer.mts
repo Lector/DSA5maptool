@@ -26,4 +26,4 @@
 </table>
 ", titleImage, patzerText))]
 
-[h,macro("sendToPublic@lib:com.github.naxos84.Macros"): ausgabe]
+[h,macro("sendToPublic@lib:com.github.naxos84.macros"): ausgabe]

@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.naxos84.Macros"): "gmSelectFail"]
+				[h,macro("inputFail@lib:com.github.naxos84.macros"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -19,17 +19,17 @@
 
 [h,if(isNumber(nKreuzer) == 0 || isNumber(nHeller) == 0 || isNumber(nSilbertaler) == 0 || isNumber(nDukaten) == 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numText"]
+		[h,macro("inputFail@lib:com.github.naxos84.macros"): "numText"]
 	};{}
 ]
 [h,if(nKreuzer != round(nKreuzer) || nHeller != round(nHeller) || nSilbertaler != round(nSilbertaler) || nDukaten != round(nDukaten)), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numInteger"]
+		[h,macro("inputFail@lib:com.github.naxos84.macros"): "numInteger"]
 	};{}
 ]
 [h,if(nKreuzer < 0 || nHeller < 0 || nSilbertaler < 0 || nDukaten < 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numNegative"]
+		[h,macro("inputFail@lib:com.github.naxos84.macros"): "numNegative"]
 	};{}
 ]
 [h: closeDialog("inventarCoinEdit")]

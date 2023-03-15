@@ -1,5 +1,5 @@
 <!-- Abfrage Player/GM - impersonate ... -->
-[h,macro("abfrageImpersonate@lib:com.github.naxos84.Macros"): ""]
+[h,macro("abfrageImpersonate@lib:com.github.naxos84.macros"): ""]
 [h,if(isGM() == 1 && hasImpersonated() == 0), Code:
 	{
 		[selectID = getSelected()]
@@ -20,7 +20,7 @@
 				[r: header("Nahrung sammeln")]
 				<table style='margin: 5px auto 7px auto;'>
 					<tr>
-						[r,macro("probeMod@lib:com.github.naxos84.Macros"): ""]
+						[r,macro("probeMod@lib:com.github.naxos84.macros"): ""]
 						<td>
 							[h: button = tableImage("forms", 11)]
 							<button type="submit">
@@ -29,7 +29,7 @@
 						</td>
 					</tr>
 				</table>
-				[r,macro("probeChat@lib:com.github.naxos84.Macros"): ""]
+				[r,macro("probeChat@lib:com.github.naxos84.macros"): ""]
 				<hr/>
 				[r,macro("pflanzensucheInfo@this"): ""]
 				<table style="margin: 0px auto 0px auto;">

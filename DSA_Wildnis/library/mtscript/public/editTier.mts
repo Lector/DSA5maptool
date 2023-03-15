@@ -1,6 +1,6 @@
 [h,if(isGM() == 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "gm"]
+		[h,macro("inputFail@lib:com.github.naxos84.macros"): "gm"]
 	};{}
 ]
 
@@ -9,7 +9,7 @@
 	[selectID = getSelected()]
 	[if(listCount(selectID) != 1), Code:
 		{
-			[h,macro("inputFail@lib:com.github.naxos84.Macros"): "gmSelectFail"]
+			[h,macro("inputFail@lib:com.github.naxos84.macros"): "gmSelectFail"]
 		};{}
 	]
 	[switchToken(selectID)]

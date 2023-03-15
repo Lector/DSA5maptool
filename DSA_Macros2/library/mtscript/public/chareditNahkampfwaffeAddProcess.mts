@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.naxos84.Macros"): "gmSelectFail"]
+				[h,macro("inputFail@lib:com.github.naxos84.macros"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -45,17 +45,17 @@
 
 [h,if(isNumber(tpwAnzahl) == 0 || isNumber(TPwAugenzahl) == TPwAugenzahl || isNumber(tpwMod) == 0 || isNumber(atMod) == 0 || isNumber(paMod) == 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numText"]
+		[h,macro("inputFail@lib:com.github.naxos84.macros"): "numText"]
 	};{}
 ]
 [h,if(tpwAnzahl != round(tpwAnzahl) || TPwAugenzahl != round(TPwAugenzahl) || tpwMod != round(tpwMod) || atMod != round(atMod) || paMod != round(paMod)), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numInteger"]
+		[h,macro("inputFail@lib:com.github.naxos84.macros"): "numInteger"]
 	};{}
 ]
 [h,if(tpwAnzahl < 0 || TPwAugenzahl < 0 || tpwMod < 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numNegative"]
+		[h,macro("inputFail@lib:com.github.naxos84.macros"): "numNegative"]
 	};{}
 ]
 [h: closeDialog("chareditWaffeAdd")]
@@ -76,7 +76,7 @@
 [h: Nahkampfwaffen = json.append(Nahkampfwaffen, waffe)]
 [h: Nahkampfwaffen = json.sort(Nahkampfwaffen, "a", "ID")]
 
-[h,macro("noticeSelf@lib:com.github.naxos84.Macros"): "addWaffe"]
-[h,macro("refreshFrame@lib:com.github.naxos84.Macros"): ""]
+[h,macro("noticeSelf@lib:com.github.naxos84.macros"): "addWaffe"]
+[h,macro("refreshFrame@lib:com.github.naxos84.macros"): ""]
 
 		

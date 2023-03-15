@@ -1,6 +1,6 @@
 [h,if(isGM() == 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "gm"]
+		[h,macro("inputFail@lib:com.github.naxos84.macros"): "gm"]
 	};{}
 ]
 
@@ -14,12 +14,12 @@
 
 [h,if(newRationen == ""), Code:
 {
-	[h,macro("inputFail@lib:com.github.naxos84.Macros"): "noInput"]
+	[h,macro("inputFail@lib:com.github.naxos84.macros"): "noInput"]
 }]
 [h: cleared = replace(newRationen,"-","")]
 [h,if(isNumber(cleared) == 0), Code:
 {
-	[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numText"]
+	[h,macro("inputFail@lib:com.github.naxos84.macros"): "numText"]
 }]
 
 [h: JagdMod = json.get(args, tok+"_mod")]
@@ -29,5 +29,5 @@
 [h,if(json.get(args, tok+"_wasser") == ""): Wasser = 0; Wasser = 1]
 [h,if(json.get(args, tok+"_land") == ""): Land = 0; Land = 1]
 
-[h,macro("noticeSelf@lib:com.github.naxos84.Macros"): "jagdEdit"]
+[h,macro("noticeSelf@lib:com.github.naxos84.macros"): "jagdEdit"]
 [h: closeDialog("jagdEdit")]

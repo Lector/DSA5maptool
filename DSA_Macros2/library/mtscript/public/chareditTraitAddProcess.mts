@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.naxos84.Macros"): "gmSelectFail"]
+				[h,macro("inputFail@lib:com.github.naxos84.macros"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -25,14 +25,14 @@
 	{
 		[if(json.get(tDaten, "Name") == tName), Code:
 			{
-				[h,macro("inputFail@lib:com.github.naxos84.Macros"): "traitDouble"]
+				[h,macro("inputFail@lib:com.github.naxos84.macros"): "traitDouble"]
 			}
 		]
 	}
 ]
 [h,if(tName == ""), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "noInput"]
+		[h,macro("inputFail@lib:com.github.naxos84.macros"): "noInput"]
 	};{}
 ]
 [h: closeDialog("chareditTraitAdd")]
@@ -74,5 +74,5 @@
 	}
 ]
 
-[h,macro("noticeSelf@lib:com.github.naxos84.Macros"): "chareditTraitAdd"]
-[h,macro("refreshFrame@lib:com.github.naxos84.Macros"): ""]
+[h,macro("noticeSelf@lib:com.github.naxos84.macros"): "chareditTraitAdd"]
+[h,macro("refreshFrame@lib:com.github.naxos84.macros"): ""]

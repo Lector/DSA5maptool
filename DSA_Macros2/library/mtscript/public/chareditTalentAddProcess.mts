@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.naxos84.Macros"): "gmSelectFail"]
+				[h,macro("inputFail@lib:com.github.naxos84.macros"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -12,7 +12,7 @@
 
 [h: uebergabe = macro.args]
 
-[h: ausdruckVergleich = getLibProperty("ImpAusdruckVergleich", "lib:com.github.naxos84.Macros")]
+[h: ausdruckVergleich = getLibProperty("ImpAusdruckVergleich", "lib:com.github.naxos84.macros")]
 [h: tArt = json.get(uebergabe, "fTalentart")]
 [h,if(tArt == listGet(ausdruckVergleich, 12)): tArt = "Koerper"]
 [h,if(tArt == "Kampf"): tArt = "Kampftalente"]
@@ -30,24 +30,24 @@
 	{
 		[if(json.get(tDaten, "Talent") == tName), Code:
 			{
-				[h,macro("inputFail@lib:com.github.naxos84.Macros"): "talentDouble"]
+				[h,macro("inputFail@lib:com.github.naxos84.macros"): "talentDouble"]
 			}
 		]
 	}
 ]
 [h,if(tName == ""), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "noInput"]
+		[h,macro("inputFail@lib:com.github.naxos84.macros"): "noInput"]
 	};{}
 ]
 [h,if(isNumber(tWert) == 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numText"]
+		[h,macro("inputFail@lib:com.github.naxos84.macros"): "numText"]
 	};{}
 ]
 [h,if(tWert != round(tWert)), Code:
 	{
-		[h,macro("inputFail@lib:com.github.naxos84.Macros"): "numInteger"]
+		[h,macro("inputFail@lib:com.github.naxos84.macros"): "numInteger"]
 	};{}
 ]
 [h: closeDialog("chareditTalentAdd")]
@@ -89,5 +89,5 @@
 [h,if(tName == "Akrobatik" && tArt == "Koerper"): AW = AW + max(0, floor((tWert-9)/3))]
 [h,if(AW < 1): AW = 0]
 
-[h,macro("noticeSelf@lib:com.github.naxos84.Macros"): "chareditTalentAdd"]
-[h,macro("refreshFrame@lib:com.github.naxos84.Macros"): ""]
+[h,macro("noticeSelf@lib:com.github.naxos84.macros"): "chareditTalentAdd"]
+[h,macro("refreshFrame@lib:com.github.naxos84.macros"): ""]

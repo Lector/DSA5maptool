@@ -1,18 +1,18 @@
 [h,if(isFrameVisible("meisterbogen") == 1), Code:
 {
-	[frame = getLibProperty("SLframe", "this")]
+	[frame = getLibProperty("SLframe", "com.github.naxos84.macros")]
 	[switch(frame), code:
 		case "1": {
-			[h,macro("meisterbogen1@lib:com.github.naxos84.Macros2"): "pc"]
+			[h,macro("meisterbogen1@lib:com.github.naxos84.macros2"): "pc"]
 		};
 		case "2": {
-			[h,macro("meisterbogen1@lib:com.github.naxos84.Macros2"): "npc"]
+			[h,macro("meisterbogen1@lib:com.github.naxos84.macros2"): "npc"]
 		};
 		case "3": {
-			[h,macro("meisterbogen2@lib:com.github.naxos84.Macros2"): "pc"]
+			[h,macro("meisterbogen2@lib:com.github.naxos84.macros2"): "pc"]
 		};
 		case "4": {
-			[h,macro("meisterbogen2@lib:com.github.naxos84.Macros2"): "npc"]
+			[h,macro("meisterbogen2@lib:com.github.naxos84.macros2"): "npc"]
 		};
 		default: {
 		}
@@ -65,5 +65,5 @@
 
 [h,if(isDialogVisible("chareditMain") == 1), Code:
 {
-	[h,macro("chareditMain@lib:com.github.naxos84.Macros2"): ""]
+	[h,macro("chareditMain@lib:com.github.naxos84.macros2"): ""]
 };{}]

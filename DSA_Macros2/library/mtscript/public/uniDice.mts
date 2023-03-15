@@ -101,7 +101,7 @@
 					</td>
 				</tr>
 			</table>
-			[r,macro("probeChat@lib:com.github.naxos84.Macros"): ""]
+			[r,macro("probeChat@lib:com.github.naxos84.macros"): ""]
 			<input type='hidden' name='diceTyp' value='[r: uebergabe]'/>
 		</form>
 	</div>
