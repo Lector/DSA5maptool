@@ -51,7 +51,8 @@
 									<table style='border-spacing: 0px;' cellpadding='5'>
 										<tr>
 											<td style='text-align: center;'>
-												<image src='[r: tableImage("tools", 11)]'></image>
+												[h: scaleImage = data.getStaticData("com.github.naxos84.macros2", "/public/images/tools/scale.png")]
+												<image src='[r: scaleImage]'></image>
 											</td>
 											<td>
 												<span style='color: #eee5c8; text-decoration: none;' title='Umrechner für Gewichtsmaße aufrufen'>[r: macroLink("Gewichtsrechner", "gewichtsrechner@lib:com.github.naxos84.tools")]</span>
@@ -59,7 +60,8 @@
 										</tr>
 										<tr>
 											<td style='text-align: center;'>
-												<image src='[r: tableImage("tools", 12)]'></image>
+												[h: rulerImage = data.getStaticData("com.github.naxos84.macros2", "/public/images/tools/ruler.png")]
+												<image src='[r: rulerImage]'></image>
 											</td>
 											<td>
 												<span style='color: #eee5c8; text-decoration: none;' title='Umrechner für Längenmaß aufrufen'>[r: macroLink("Längenrechner", "laengenrechner@lib:com.github.naxos84.tools")]</span>
@@ -67,7 +69,8 @@
 										</tr>
 										<tr>
 											<td style='text-align: center;'>
-												<image src='[r: tableImage("tools", 13)]'></image>
+												[h: moneyBagImage = data.getStaticData("com.github.naxos84.macros2", "/public/images/tools/moneyBag.png")]
+												<image src='[r: moneyBagImage]'></image>
 											</td>
 											<td>
 												<span style='color: #eee5c8; text-decoration: none;' title='Umrechner für Währungen aufrufen'>[r: macroLink("Währungsrechner", "waehrung@lib:com.github.naxos84.tools")]</span>
@@ -81,7 +84,8 @@
 									<table style='border-spacing: 0px;' cellpadding='5'>
 										<tr>
 											<td style='text-align: center;'>
-												<image src='[r: tableImage("tools", 17)]'></image>
+												[h: calendarImage = data.getStaticData("com.github.naxos84.macros2", "/public/images/tools/calendar.png")]
+												<image src='[r: calendarImage]'></image>
 											</td>
 											<td>
 												<span style='color: #eee5c8; text-decoration: none;' title='Das Steuerungsfenster für den Kalender aufrufen'>[r: macroLink("Kalender-Steuerung", "kalenderMain@lib:com.github.naxos84.tools", "")]</span>
@@ -114,7 +118,8 @@
 												[h: lAdress = json.get(link, "linkadress")]
 												<tr>
 													<td style='text-align: center;'>
-														<image src='[r: tableImage("tools", 14)]'></image>
+														[h: globeImage = data.getStaticData("com.github.naxos84.macros2", "/public/images/tools/globe.png")]
+														<image src='[r: globeImage]'></image>
 													</td>
 													<td>
 														[r: strformat("<a style='color: #eee5c8; text-decoration: none;' href='%s'>%s</a>", lAdress, lName)]

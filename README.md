@@ -4,6 +4,10 @@
 
 Replace tableImage usage with addon-image usage
 
+Represent patzerNahkampf table as json?
+Represent patzerZauber table as json?
+Represent patzerWaffenlos table as json?
+
 Check wether Tools --> onFirstInit --> setData("AvKalender") can use json instead of string
 Krankheits/Giftprobe --> Check wether `abfrageImpersonate` is needed in campaign macro
 Change Character/Token Option --> Check wether `abfrageImpersonate` is needed in campaign macro

@@ -451,9 +451,9 @@
 							&nbsp;
 						</td>
 						<td>
-							[h: button = tableImage("tools", 10)]
+						[h: convertImage = data.getStaticData("com.github.naxos84.macros2", "/public/images/tools/convertNow.png")]
 							<button type="submit">
-								<img src="[r: button]"/>
+								<img src="[r: convertImage]"/>
 							</button>
 						</td>
 						<td width='18'>
