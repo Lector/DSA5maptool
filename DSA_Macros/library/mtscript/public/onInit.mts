@@ -1,3 +1,5 @@
+[h: broadcast("Macros add on onInit")]
+
 [h: defineFunction("sendToPublic", "sendToPublic@this")]
 [h: defineFunction("sendToGM", "sendToGM@this")]
 [h: defineFunction("sendToSelfGM", "sendToSelfGM@this")]
@@ -183,5 +185,3 @@ Neu hier? Hier gehts zum <a href='https://www.youtube.com/watch?v=1GhtRMBgSWY'>V
 </table>"]
 
 [h: broadcast(message, getPlayerName())]
-
-[h: broadcast("Macros add on onInit")]
