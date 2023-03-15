@@ -103,7 +103,7 @@
 						[h,if(wRW == 1): rwtext = "Kurz"]
 						[h,if(wRW == 2): rwtext = "Mittel"]
 						[h,if(wRW == 3): rwtext = "Lang"]
-						[h,if(wRW == 4): rwtext = "&Uuml;berlang"]
+						[h,if(wRW == 4): rwtext = "überlang"]
 							<span style='text-decoration: none;'>[r: rwtext]</span>
 						</td>
 						<td>
@@ -123,13 +123,13 @@
 						{
 							[h: bg = "bgcolor='#eee5c8'"]
 							[h: fc = "#3d1919"]
-							[h: linkTitle = "title='Diese Waffe ist mit dem Schwertarm ausger&uuml;stet.'"]
+							[h: linkTitle = "title='Diese Waffe ist mit dem Schwertarm ausgerüstet.'"]
 							[h: link = "&#10003;"]
 						};
 						{
 							[h: bg = ""]
 							[h: fc = "#eee5c8"]
-							[h: linkTitle = "title='Diese Waffe mit dem Schwertarm ausr&uuml;sten'"]
+							[h: linkTitle = "title='Diese Waffe mit dem Schwertarm ausrüsten'"]
 							[h: link = macroLink("&#10063;", "changeHauptHand@this", "", wID)]
 						}]
 						<td [r: bg]>
@@ -140,13 +140,13 @@
 						{
 							[h: bg = "bgcolor='#eee5c8'"]
 							[h: fc = "#3d1919"]
-							[h: linkTitle = "title='Diese Waffe ist mit dem Schildarm ausger&uuml;stet.'"]
+							[h: linkTitle = "title='Diese Waffe ist mit dem Schildarm ausgerüstet.'"]
 							[h: link = "&#10003;"]
 						};
 						{
 							[h: bg = ""]
 							[h: fc = "#eee5c8"]
-							[h: linkTitle = "title='Diese Waffe mit dem Schildarm ausr&uuml;sten.'"]
+							[h: linkTitle = "title='Diese Waffe mit dem Schildarm ausrüsten.'"]
 							[h: link = macroLink("&#10063;", "changeNebenHand@this", "", wID)]
 						}]
 						<td [r: bg]>

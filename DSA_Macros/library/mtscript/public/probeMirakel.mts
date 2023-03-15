@@ -21,7 +21,7 @@ bieten eine Checkbox hierfuer an. KaP werden (noch) NICHT automatisch abgezogen.
 			<input type="checkbox" name="MirakelTalent[r:skill]" value="2"/>
 		</td>
 		<td colspan=2>
-			Mirakel (+2 FW f&uuml;r 4 KaP)
+			Mirakel (+2 FW für 4 KaP)
 		</td>
 	</tr>
 };

@@ -13,7 +13,7 @@
 [dialog("wundenZone", "width=586; height=517; temporary=1; input=0; noframe=0"):{
 <html>
 	<head>
-		<title>Wunden heilen oder hinzuf&uuml;gen</title>
+		<title>Wunden heilen oder hinzufügen</title>
 	</head>
 	<body style='font-size: 11pt;' bgcolor='#ece9d8'>
 		<div style="background-image: url('[r: tblImage("forms",12)]'); background-repeat: no-repeat; height: 20; margin: 0px;" width="562">
@@ -26,7 +26,7 @@
 				<tr>
 					<td>
 						- Klicke auf ein dunkles Herz um eine Wunde zu heilen.
-						<br>- Klicke auf ein rotes Herz um eine Wunde hinzuzuf&uuml;gen.
+						<br>- Klicke auf ein rotes Herz um eine Wunde hinzuzufügen.
 					</td>
 				</tr>
 			</table>
@@ -44,7 +44,7 @@
 												[h: num = 1]
 												[count(3,""), Code:
 													{
-														[r,if(WUKopf >= num): output = strformat("<a href='%s'><img src='%s' alt='Diese Wunde heilen' border='0'></img></a>", wLinkSub, tblImage("forms",93)); output = strformat("<a href='%s'><img src='%s' alt='Eine Wunde hinzuf&uuml;gen' border='0'></img></a>", wLinkAdd, tblImage("forms",92))]
+														[r,if(WUKopf >= num): output = strformat("<a href='%s'><img src='%s' alt='Diese Wunde heilen' border='0'></img></a>", wLinkSub, tblImage("forms",93)); output = strformat("<a href='%s'><img src='%s' alt='Eine Wunde hinzufügen' border='0'></img></a>", wLinkAdd, tblImage("forms",92))]
 														[h: num = num + 1]
 													}
 												]
@@ -57,7 +57,7 @@
 												[h: num = 1]
 												[count(3,""), Code:
 													{
-														[r,if(WUBrust >= num): output = strformat("<a href='%s'><img src='%s' alt='Diese Wunde heilen' border='0'></img></a>", wLinkSub, tblImage("forms",93)); output = strformat("<a href='%s'><img src='%s' alt='Eine Wunde hinzuf&uuml;gen' border='0'></img></a>", wLinkAdd, tblImage("forms",92))]
+														[r,if(WUBrust >= num): output = strformat("<a href='%s'><img src='%s' alt='Diese Wunde heilen' border='0'></img></a>", wLinkSub, tblImage("forms",93)); output = strformat("<a href='%s'><img src='%s' alt='Eine Wunde hinzufügen' border='0'></img></a>", wLinkAdd, tblImage("forms",92))]
 														[h: num = num + 1]
 													}
 												]
@@ -70,7 +70,7 @@
 												[h: num = 1]
 												[count(3,""), Code:
 													{
-														[r,if(WUBauch >= num): output = strformat("<a href='%s'><img src='%s' alt='Diese Wunde heilen' border='0'></img></a>", wLinkSub, tblImage("forms",93)); output = strformat("<a href='%s'><img src='%s' alt='Eine Wunde hinzuf&uuml;gen' border='0'></img></a>", wLinkAdd, tblImage("forms",92))]
+														[r,if(WUBauch >= num): output = strformat("<a href='%s'><img src='%s' alt='Diese Wunde heilen' border='0'></img></a>", wLinkSub, tblImage("forms",93)); output = strformat("<a href='%s'><img src='%s' alt='Eine Wunde hinzufügen' border='0'></img></a>", wLinkAdd, tblImage("forms",92))]
 														[h: num = num + 1]
 													}
 												]
@@ -87,7 +87,7 @@
 												[h: num = 1]
 												[count(3,""), Code:
 													{
-														[r,if(WUArmLinks >= num): output = strformat("<a href='%s'><img src='%s' alt='Diese Wunde heilen' border='0'></img></a>", wLinkSub, tblImage("forms",93)); output = strformat("<a href='%s'><img src='%s' alt='Eine Wunde hinzuf&uuml;gen' border='0'></img></a>", wLinkAdd, tblImage("forms",92))]
+														[r,if(WUArmLinks >= num): output = strformat("<a href='%s'><img src='%s' alt='Diese Wunde heilen' border='0'></img></a>", wLinkSub, tblImage("forms",93)); output = strformat("<a href='%s'><img src='%s' alt='Eine Wunde hinzufügen' border='0'></img></a>", wLinkAdd, tblImage("forms",92))]
 														[h: num = num + 1]
 													}
 												]
@@ -100,7 +100,7 @@
 												[h: num = 1]
 												[count(3,""), Code:
 													{
-														[r,if(WUBeinLinks >= num): output = strformat("<a href='%s'><img src='%s' alt='Diese Wunde heilen' border='0'></img></a>", wLinkSub, tblImage("forms",93)); output = strformat("<a href='%s'><img src='%s' alt='Eine Wunde hinzuf&uuml;gen' border='0'></img></a>", wLinkAdd, tblImage("forms",92))]
+														[r,if(WUBeinLinks >= num): output = strformat("<a href='%s'><img src='%s' alt='Diese Wunde heilen' border='0'></img></a>", wLinkSub, tblImage("forms",93)); output = strformat("<a href='%s'><img src='%s' alt='Eine Wunde hinzufügen' border='0'></img></a>", wLinkAdd, tblImage("forms",92))]
 														[h: num = num + 1]
 													}
 												]
@@ -117,7 +117,7 @@
 												[h: num = 1]
 												[count(3,""), Code:
 													{
-														[r,if(WUArmRechts >= num): output = strformat("<a href='%s'><img src='%s' alt='Diese Wunde heilen' border='0'></img></a>", wLinkSub, tblImage("forms",93)); output = strformat("<a href='%s'><img src='%s' alt='Eine Wunde hinzuf&uuml;gen' border='0'></img></a>", wLinkAdd, tblImage("forms",92))]
+														[r,if(WUArmRechts >= num): output = strformat("<a href='%s'><img src='%s' alt='Diese Wunde heilen' border='0'></img></a>", wLinkSub, tblImage("forms",93)); output = strformat("<a href='%s'><img src='%s' alt='Eine Wunde hinzufügen' border='0'></img></a>", wLinkAdd, tblImage("forms",92))]
 														[h: num = num + 1]
 													}
 												]
@@ -130,7 +130,7 @@
 												[h: num = 1]
 												[count(3,""), Code:
 													{
-														[r,if(WUBeinRechts >= num): output = strformat("<a href='%s'><img src='%s' alt='Diese Wunde heilen' border='0'></img></a>", wLinkSub, tblImage("forms",93)); output = strformat("<a href='%s'><img src='%s' alt='Eine Wunde hinzuf&uuml;gen' border='0'></img></a>", wLinkAdd, tblImage("forms",92))]
+														[r,if(WUBeinRechts >= num): output = strformat("<a href='%s'><img src='%s' alt='Diese Wunde heilen' border='0'></img></a>", wLinkSub, tblImage("forms",93)); output = strformat("<a href='%s'><img src='%s' alt='Eine Wunde hinzufügen' border='0'></img></a>", wLinkAdd, tblImage("forms",92))]
 														[h: num = num + 1]
 													}
 												]

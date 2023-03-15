@@ -137,7 +137,7 @@
 						<table style='border-spacing: 0px;' cellpadding='0'>
 							<tr>
 								<td>
-									<span title='Tag / Monat / Jahr ausw&auml;hlen (negative Jahreszahlen sind erlaubt)'>T/M/J:&nbsp;</span>
+									<span title='Tag / Monat / Jahr auswählen (negative Jahreszahlen sind erlaubt)'>T/M/J:&nbsp;</span>
 								</td>
 								<td style='padding-right: 5px;'>
 									<select name='fTag' size='1'>
@@ -220,7 +220,7 @@
 						<table style='border-spacing: 0px;' cellpadding='0'>
 							<tr>
 								<td>
-									<span title='Art der Zeitrechnung ausw&auml;hlen'>System:&nbsp;</span>
+									<span title='Art der Zeitrechnung auswählen'>System:&nbsp;</span>
 								</td>
 								<td>
 									<select name='fSystem' size='1'>

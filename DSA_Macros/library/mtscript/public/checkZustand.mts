@@ -59,9 +59,9 @@
 	[h: res = json.set(res, "Header", "Schmerz IV", "ResultType", "schmerz4")]
 	[h: success = json.get(res, "success")]
 	[h,if(success >= 1),Code:{
-		[h: meldung = "Probe auf <b>Selbstbeherrschung (Handlungsf&auml;higkeit bewahren)</b> gelungen!<br>Du bleibst <b>handlungsf&auml;hig</b>!"]
+		[h: meldung = "Probe auf <b>Selbstbeherrschung (Handlungsfähigkeit bewahren)</b> gelungen!<br>Du bleibst <b>handlungsfähig</b>!"]
 	};{
-		[h: meldung = "Probe auf <b>Selbstbeherrschung (Handlungsf&auml;higkeit bewahren)</b> misslungen!<br>Du bist <b>handlungsunf&auml;hig</b>!"]
+		[h: meldung = "Probe auf <b>Selbstbeherrschung (Handlungsfähigkeit bewahren)</b> misslungen!<br>Du bist <b>handlungsunfähig</b>!"]
 		[h: setState(state, 1)]
 	}]
 }]
@@ -98,7 +98,7 @@
 
 <!-- Wenn der Schwarm weniger Wesen hat als die Grundgroesse wird er in Einzelwesen zerschlagen -->
 [h,if(Schwarm == 1 && SchwarmAnzahl < SchwarmGG),Code:{
-	[meldung = "<b>Schwarm zerschlagen</b><br>Da weniger Wesen als die Grundgr&ouml;ße(" + SchwarmGG + ") &uuml;brig sind wurden die restlichen " + SchwarmAnzahl + " in Einzelwesen aufgeteilt!"]
+	[meldung = "<b>Schwarm zerschlagen</b><br>Da weniger Wesen als die Grundgröße(" + SchwarmGG + ") übrig sind wurden die restlichen " + SchwarmAnzahl + " in Einzelwesen aufgeteilt!"]
 	[h: scatter(currentToken())]
 }]
 

@@ -37,7 +37,7 @@
 				<img src='%s'>
 			</td>
 			<td valign='middle'>
-				<b>%s</b> hat SL-Notizen hinzugef&uuml;gt oder ge&auml;ndert.
+				<b>%s</b> hat SL-Notizen hinzugefügt oder geändert.
 			<td width='15'>
 				&nbsp;
 			</td>

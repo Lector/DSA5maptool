@@ -63,7 +63,7 @@
 }]
 
 [h: rName = json.get(uebergabe, "rsname")]
-[h, if(rName == ""): rName = "Unbekannte R&uuml;stung"; rName = rName]
+[h, if(rName == ""): rName = "Unbekannte Rüstung"; rName = rName]
 [h: be = json.get(uebergabe, "be")]
 [h, if(json.get(uebergabe, "beini") == "on"): rini = -1; rini = 0]
 [h, if(json.get(uebergabe, "begs") == "on"): rgs = -1; rgs = 0]

@@ -18,7 +18,7 @@ Evtl. koennten wir ihn bei Adel/Drachentoeter/Basiliskentoeter auch automatisch 
 			<input type="checkbox" name="stand" value="[r:stand]"/>
 		</td>
 		<td colspan=2>
-			H&ouml;herer sozialer Stand ([r:stand])
+			Höherer sozialer Stand ([r:stand])
 		</td>
 	</tr>
 };

@@ -33,25 +33,25 @@
 		{
 			[bfJahr = jahr - 854]
 			[if(jahr >= 0): infoSuffix = "d. U. (Andergast)"; infoSuffix = "v. d. U. (Andergast)"]
-			[if(jahr >= 0): chatInfoSuffix = strformat("im Jahre %s der Unabh&auml;ngigkeit Andergasts", infoJahr); chatInfoSuffix = strformat("im Jahre %s vor der Unabh&auml;ngigkeit Andergasts", infoJahr)]
+			[if(jahr >= 0): chatInfoSuffix = strformat("im Jahre %s der Unabhängigkeit Andergasts", infoJahr); chatInfoSuffix = strformat("im Jahre %s vor der Unabhängigkeit Andergasts", infoJahr)]
 		};
 	case "JdU - Aranien":
 		{
 			[if(jahr > 0): bfJahr = jahr + 994; bfJahr = jahr + 995]
 			[if(jahr >= 0): infoSuffix = "d. U. (Aranien)"; infoSuffix = "v. d. U. (Aranien)"]
-			[if(jahr >= 0): chatInfoSuffix = strformat("im Jahre %s der Unabh&auml;ngigkeit Araniens", infoJahr); chatInfoSuffix = strformat("im Jahre %s vor der Unabh&auml;ngigkeit Araniens", infoJahr)]
+			[if(jahr >= 0): chatInfoSuffix = strformat("im Jahre %s der Unabhängigkeit Araniens", infoJahr); chatInfoSuffix = strformat("im Jahre %s vor der Unabhängigkeit Araniens", infoJahr)]
 		};
 	case "JdU - Kahet ni Kemi":
 		{
 			[if(jahr > 0): bfJahr = jahr + 996; bfJahr = jahr + 997]
 			[if(jahr >= 0): infoSuffix = "d. U. (Kahet ni Kemi)"; infoSuffix = "v. d. U. (Kahet ni Kemi)"]
-			[if(jahr >= 0): chatInfoSuffix = strformat("im Jahre %s der Unabh&auml;ngigkeit Kahet ni Kemis", infoJahr); chatInfoSuffix = strformat("im Jahre %s vor der Unabh&auml;ngigkeit Kahet ni Kemis", infoJahr)]
+			[if(jahr >= 0): chatInfoSuffix = strformat("im Jahre %s der Unabhängigkeit Kahet ni Kemis", infoJahr); chatInfoSuffix = strformat("im Jahre %s vor der Unabhängigkeit Kahet ni Kemis", infoJahr)]
 		};
 	case "JdU - Nostria":
 		{
 			[bfJahr = jahr - 854]
 			[if(jahr >= 0): infoSuffix = "d. U. (Nostria)"; infoSuffix = "v. d. U. (Nostria)"]
-			[if(jahr >= 0): chatInfoSuffix = strformat("im Jahre %s der Unabh&auml;ngigkeit Nostrias", infoJahr); chatInfoSuffix = strformat("im Jahre %s vor der Unabh&auml;ngigkeit Nostrias", infoJahr)]
+			[if(jahr >= 0): chatInfoSuffix = strformat("im Jahre %s der Unabhängigkeit Nostrias", infoJahr); chatInfoSuffix = strformat("im Jahre %s vor der Unabhängigkeit Nostrias", infoJahr)]
 		};
 	case "Horas":
 		{

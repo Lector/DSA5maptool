@@ -227,8 +227,8 @@
 			case 12: zone = "Torso";
 			case 13: zone = "Linkes Vorderbein";
 			case 14: zone = "Rechtes Vorderbein";
-			case 15: zone = "Linkes Mittelbein / Fl&uuml;gel";
-			case 16: zone = "Rechtes Mittelbein / Fl&uuml;gel";
+			case 15: zone = "Linkes Mittelbein / Flügel";
+			case 16: zone = "Rechtes Mittelbein / Flügel";
 			case 17: zone = "Linkes Hinterbein";
 			case 18: zone = "Rechtes Hinterbein";
 			case 19: zone = "Schwanz";
@@ -252,8 +252,8 @@
 			case 12: zone = "Rechtes Vorderbein";
 			case 13: zone = "Linkes Vorderbein";
 			case 14: zone = "Rechtes Vorderbein";
-			case 15: zone = "Linkes Mittelbein / Fl&uuml;gel";
-			case 16: zone = "Rechtes Mittelbein / Fl&uuml;gel";
+			case 15: zone = "Linkes Mittelbein / Flügel";
+			case 16: zone = "Rechtes Mittelbein / Flügel";
 			case 17: zone = "Linkes Hinterbein";
 			case 18: zone = "Rechtes Hinterbein";
 			case 19: zone = "Schwanz";
@@ -287,7 +287,7 @@
 	};
 	case 9:
 	{
-		[zone = "K&ouml;rper"]
+		[zone = "Körper"]
 	};
 	default:
 		{[zone = dice]}

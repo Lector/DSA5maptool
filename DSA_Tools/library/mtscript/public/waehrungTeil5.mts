@@ -37,7 +37,7 @@
 							<table style='border-spacing: 0px;'>
 								<tr>
 									<td style='font-weight: bold; color: #ffffff; text-align: center;' bgcolor='#875e34'>
-										Bergk&ouml;nigreich
+										Bergkönigreich
 									</td>
 								</tr>
 								<tr>
@@ -95,7 +95,7 @@
 							<table style='border-spacing: 0px;' width='100%'>
 								<tr>
 									<td style='font-weight: bold; color: #ffffff; text-align: center;' bgcolor='#875e34'>
-										Gro&szlig;emirat Mengbilla
+										Großemirat Mengbilla
 									</td>
 								</tr>
 								<tr>
@@ -229,7 +229,7 @@
 							<table style='border-spacing: 0px;' width='100%'>
 								<tr>
 									<td style='font-weight: bold; color: #ffffff; text-align: center;' bgcolor='#875e34'>
-										K&ouml;niginnenreich der Amazonen
+										Königinnenreich der Amazonen
 									</td>
 								</tr>
 								<tr>
@@ -254,7 +254,7 @@
 							<table style='border-spacing: 0px;' width='100%'>
 								<tr>
 									<td style='font-weight: bold; color: #ffffff; text-align: center;' bgcolor='#875e34'>
-										K&ouml;nigreich Andergast
+										Königreich Andergast
 									</td>
 								</tr>
 								<tr>

@@ -195,7 +195,7 @@
 														<option value='1' [r: RWKurzAktiv]>Kurz</option>
 														<option value='2' [r: RWMittelAktiv]>Mittel</option>
 														<option value='3' [r: RWLangAktiv]>Lang</option>
-														<option value='4' [r: RWUeberlangAktiv]>&Uuml;berlang</option>
+														<option value='4' [r: RWUeberlangAktiv]>überlang</option>
 													</select>
 												</td>
 											</tr>
@@ -301,7 +301,7 @@
 										<input type='checkbox' name='zweihand' [r: checked]/>
 									</td>
 									<td>
-										Zweih&auml;ndige Waffe
+										Zweihändige Waffe
 									</td>
 								</tr>
 								<tr>

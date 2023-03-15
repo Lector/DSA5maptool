@@ -47,7 +47,7 @@
 				<img src='%s'>
 			</td>
 			<td valign='middle'>
-				Der neue Weblink wurde hinzugef&uuml;gt.
+				Der neue Weblink wurde hinzugefügt.
 			<td width='15'>
 				&nbsp;
 			</td>

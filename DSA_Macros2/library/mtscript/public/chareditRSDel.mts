@@ -13,7 +13,7 @@
 [dialog5("chareditRSDel", "width=425; height=342; temporary=1; input=0; noframe=0"):{
 <html>
 	<head>
-		<title>R&uuml;stung l&ouml;schen</title>
+		<title>Rüstung löschen</title>
 		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
 	</head>
 	<body>
@@ -22,7 +22,7 @@
 			<table style='border-spacing: 4px; margin: 0px auto 10px; auto'>
 				<tr>
 					<td style='text-align: center; padding-bottom: 5px;'>
-						W&auml;hle eine R&uuml;stung zum löschen aus:
+						Wähle eine Rüstung zum löschen aus:
 					</td>
 				</tr>
 				[h: baum = json.remove(Ruestungen, 0)]

@@ -52,7 +52,7 @@
 							<input type='radio' name='wSchaden' value='1' checked='checked'>
 						</td>
 						<td>
-							Schaden ausw&uuml;rfeln:
+							Schaden auswürfeln:
 						</td>
 						<td>
 							<table style='border-spacing: 0px;'>
@@ -136,7 +136,7 @@
 							<input type="radio" name="chat" value="1" [r: ausgabePublic]>
 						</td>
 						<td>
-							&Ouml;ffentlich
+							öffentlich
 						</td>
 						<td style='padding-left: 5px;'>
 							<input type='radio' name='chat' value='2' [r: ausgabeSL]>
@@ -282,7 +282,7 @@
 													<input type='radio' name='zone' value='99'>
 												</td>
 												<td>
-													Zuf&auml;llig
+													Zufällig
 												</td>
 											</tr>
 											<tr>
@@ -314,7 +314,7 @@
 													<input type='radio' name='zone' value='3'>
 												</td>
 												<td>
-													R&uuml;cken
+													Rücken
 												</td>
 											</tr>
 											<tr>

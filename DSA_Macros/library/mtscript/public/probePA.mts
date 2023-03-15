@@ -167,12 +167,12 @@
 						</td>
 						<td valign='top'>
 							<div class='label'>
-								Man&ouml;ver
+								Manöver
 							</div>
 						</td>
 						<td valign='top'>
 							<select size="1" name="spezial">
-								<option selected="selected" value="">Kein Spezialman&ouml;ver</option>
+								<option selected="selected" value="">Kein Spezialmanöver</option>
 								[h: spezialmanoever = getPASpezialManoever()]
 								[h: techniken = json.append("[]", json.get(hWaffe, "Technik"), json.get(nWaffe, "Technik"))]
 								[r: buildManoeverOptions(spezialmanoever, techniken)]
@@ -236,7 +236,7 @@
 										<input type='checkbox' name='kritisch' [r:gluecklich]>
 									</td>
 									<td>
-										Gl&uuml;cklicher / kritischer Treffer (PA halbiert)
+										Glücklicher / kritischer Treffer (PA halbiert)
 									</td>
 								</tr>
 							</table>

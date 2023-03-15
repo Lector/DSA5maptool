@@ -65,10 +65,10 @@
 								</td>
 								<td width='57'>
 									[h: aktKK = getKK()]
-									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;K&ouml;rperkraft&quot; ablegen'>[r: macroLink("KK: ", "probeEig@this", "", "KK")]</span>
+									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;Körperkraft&quot; ablegen'>[r: macroLink("KK: ", "probeEig@this", "", "KK")]</span>
 									[h,if(aktKK < KK): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 									[h,if(aktKK > KK): eigColor = "#0099ff"]
-									<span style='color: [r: eigColor]; text-decoration: none;' title='Probe auf &quot;K&ouml;rperkraft&quot; ablegen'>[r: macroLink(aktKK, "probeEig@this", "", "KK")]</span>
+									<span style='color: [r: eigColor]; text-decoration: none;' title='Probe auf &quot;Körperkraft&quot; ablegen'>[r: macroLink(aktKK, "probeEig@this", "", "KK")]</span>
 								</td>
 								<td width='22'>
 									&nbsp;

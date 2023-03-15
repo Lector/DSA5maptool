@@ -3,35 +3,35 @@
 [h,switch(uebergabe), Code:
 	case "playerOptions": {
 		[msgTitle = "Charakter-Optionen"]
-		[msgText = "Die Einstellungen f&uuml;r deinen aktuellen Token wurden ge&auml;ndert."]
+		[msgText = "Die Einstellungen für deinen aktuellen Token wurden geändert."]
 	};
 	case "chareditLiturgieAdd": {
 		[msgTitle = "Token-Editor"]
-		[msgText = "Die neue Liturgie wurde mit den eingetragenen Werten hinzugef&uuml;gt."]
+		[msgText = "Die neue Liturgie wurde mit den eingetragenen Werten hinzugefügt."]
 	};
 	case "quickeditRS": {
-		[msgTitle = "R&uuml;stung anpassen"]
-		[msgText = "Die R&uuml;stungswerte wurden ge&auml;ndert."]
+		[msgTitle = "Rüstung anpassen"]
+		[msgText = "Die Rüstungswerte wurden geändert."]
 	};
 	case "delRS": {
-		[msgTitle = "R&uuml;stung gel&ouml;scht"]
-		[msgText = "Die ausgew&auml;hlte R&uuml;stung wurde gel&ouml;scht"]
+		[msgTitle = "Rüstung gelöscht"]
+		[msgText = "Die ausgewählte Rüstung wurde gelöscht"]
 	};
 	case "addRS": {
-		[msgTitle = "R&uuml;stung hinzugef&uuml;gt"]
-		[msgText = "Die neue R&uuml;stung wurde mit den eingetragenen Werten hinzugef&uuml;gt"]
+		[msgTitle = "Rüstung hinzugefügt"]
+		[msgText = "Die neue Rüstung wurde mit den eingetragenen Werten hinzugefügt"]
 	};
 	case "quickeditWaffe": {
 		[msgTitle = "Waffe anpassen"]
-		[msgText = "Die Werte der Waffe wurden ge&auml;ndert."]
+		[msgText = "Die Werte der Waffe wurden geändert."]
 	};
 	case "delWaffe": {
-		[msgTitle = "Waffe gel&ouml;scht"]
-		[msgText = "Die ausgew&auml;hlte Waffe wurde gel&ouml;scht."]
+		[msgTitle = "Waffe gelöscht"]
+		[msgText = "Die ausgewählte Waffe wurde gelöscht."]
 	};
 	case "addWaffe": {
-		[msgTitle = "Waffe hinzugef&uuml;gt"]
-		[msgText = "Die neue Waffe wurde mit den eingetragenen Werten hinzugef&uuml;gt."]
+		[msgTitle = "Waffe hinzugefügt"]
+		[msgText = "Die neue Waffe wurde mit den eingetragenen Werten hinzugefügt."]
 	};
 	case "counter": {
 		[msgTitle = "Counter"]
@@ -39,27 +39,27 @@
 	};
 	case "notizSLEdit": {
 		[msgTitle = "SL-Notizen"]
-		[msgText = "Die SL-Notizen wurden ge&auml;ndert."]
+		[msgText = "Die SL-Notizen wurden geändert."]
 	};
 	case "notizSLDel": {
 		[msgTitle = "SL-Notizen"]
-		[msgText = "Die SL-Notizen wurden gel&ouml;scht."]
+		[msgText = "Die SL-Notizen wurden gelöscht."]
 	};
 	case "notizAdd": {
 		[msgTitle = "Notizen"]
-		[msgText = "Die neue Notiz wurde hinzugef&uuml;gt."]
+		[msgText = "Die neue Notiz wurde hinzugefügt."]
 	};
 	case "notizEdit": {
 		[msgTitle = "Notizen"]
-		[msgText = "Die Notiz wurde ge&auml;ndert."]
+		[msgText = "Die Notiz wurde geändert."]
 	};
 	case "notizDel": {
 		[msgTitle = "Notizen"]
-		[msgText = "Die Notiz wurde gel&ouml;scht."]
+		[msgText = "Die Notiz wurde gelöscht."]
 	};
 	case "notizDelAll": {
 		[msgTitle = "Notizen"]
-		[msgText = "Alle Notizen wurden gel&ouml;scht."]
+		[msgText = "Alle Notizen wurden gelöscht."]
 	};
 	case "chareditEigenschaften": {
 		[msgTitle = "Tokeneditor"]
@@ -67,11 +67,11 @@
 	};
 	case "chareditTraitAdd": {
 		[msgTitle = "Tokeneditor"]
-		[msgText = "Das neue Element wurde hinzugef&uuml;gt."]
+		[msgText = "Das neue Element wurde hinzugefügt."]
 	};
 	case "chareditTraitDel": {
 		[msgTitle = "Tokeneditor"]
-		[msgText = "Das Element wurde gel&ouml;scht."]
+		[msgText = "Das Element wurde gelöscht."]
 	};
 	case "chareditSF": {
 		[msgTitle = "Tokeneditor"]
@@ -87,11 +87,11 @@
 	};
 	case "chareditZauberAdd": {
 		[msgTitle = "Tokeneditor"]
-		[msgText = "Der neue Zauber wurde hinzugef&uuml;gt."]
+		[msgText = "Der neue Zauber wurde hinzugefügt."]
 	};
 	case "chareditTalentAdd": {
 		[msgTitle = "Tokeneditor"]
-		[msgText = "Das neue Talent wurde hinzugef&uuml;gt."]
+		[msgText = "Das neue Talent wurde hinzugefügt."]
 	};
 	case "chareditZauber": {
 		[msgTitle = "Tokeneditor"]
@@ -103,7 +103,7 @@
 	};
 	case "chareditKampftechnikAdd": {
 		[msgTitle = "Tokeneditor"]
-		[msgText = "Die neue Kampftechnik wurde hinzugef&uuml;gt"]
+		[msgText = "Die neue Kampftechnik wurde hinzugefügt"]
 	};
 	case "chareditKampftechnik": {
 		[msgTitle = "Tokeneditor"]
@@ -111,23 +111,23 @@
 	};
 	case "chareditCreateBasischar": {
 		[msgTitle = "Tokeneditor"]
-		[msgText = "Der Charakter wurde mit Basiswerten &uuml;berschrieben."]
+		[msgText = "Der Charakter wurde mit Basiswerten überschrieben."]
 	};
 	case "chareditCreateStandardchar": {
 		[msgTitle = "Tokeneditor"]
-		[msgText = "Der Charakter wurde mit Standardwerten &uuml;berschrieben."]
+		[msgText = "Der Charakter wurde mit Standardwerten überschrieben."]
 	};
 	case "tokenCopy": {
 		[msgTitle = "Token kopieren"]
-		[msgText = "Das ausgew&auml;hlte Token wurde kopiert."]
+		[msgText = "Das ausgewählte Token wurde kopiert."]
 	};
 	case "multiINI": {
 		[msgTitle = "Multi-Initiative"]
-		[msgText = "Die ausgew&auml;hlten Tokens wurden zur INI-Liste hinzugef&uuml;gt."]
+		[msgText = "Die ausgewählten Tokens wurden zur INI-Liste hinzugefügt."]
 	};
 	case "zustand": {
-		[msgTitle = "Zust&auml;nde"]
-		[msgText = "Die Zust&auml;nde wurden angepasst."]
+		[msgTitle = "Zustände"]
+		[msgText = "Die Zustände wurden angepasst."]
 	};
 	case "light": {
 		[msgTitle = "Lichtquelle"]
@@ -135,7 +135,7 @@
 	};
 	case "swarmSplit": {
 		[msgTitle = "Schwarm aufgeteilt"]
-		[msgText = "Der Schwarm wurde in aufgeteilt. Die Teilschw&auml;rme liegen jetzt als verschiedene Tokens &uuml;bereinander und k&ouml;nnen einzeln verschoben werden."]
+		[msgText = "Der Schwarm wurde in aufgeteilt. Die Teilschwärme liegen jetzt als verschiedene Tokens übereinander und können einzeln verschoben werden."]
 	};
 	case "krautEdit": {
 		[msgTitle = "Kraut angepasst"]

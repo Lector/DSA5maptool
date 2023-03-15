@@ -14,7 +14,7 @@
 [dialog5("chareditLiturgieAdd", "width=425; height=374; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
-		<title>Liturgie hinzuf&uuml;gen</title>
+		<title>Liturgie hinzufügen</title>
 		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
 	</head>
 	<body>

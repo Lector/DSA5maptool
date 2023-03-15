@@ -26,7 +26,7 @@ in dem wir letztes eintragen koennen -->
 				<input type="checkbox" name="wohlgefallen[r:skill]" value="1" [r:checked]/>
 			</td>
 			<td colspan=2>
-				Der Gottheit wohlgef&auml;llig
+				Der Gottheit wohlgefällig
 			</td>
 		</tr>
 	};

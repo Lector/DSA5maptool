@@ -25,7 +25,7 @@
 [dialog("uniKrankGift", "width=510; height=450; temporary=1; input=0; noframe=0"):{
 <html>
 	<head>
-		<title>Krankheits- bzw. Giftprobe w&uuml;rfeln</title>
+		<title>Krankheits- bzw. Giftprobe würfeln</title>
 	</head>
 	<body style='font-size: 11pt;' bgcolor='#ece9d8'>
 		<form action="[r:actionLink]">
@@ -128,7 +128,7 @@
 							<input type="radio" name="chat" value="1" [r: ausgabePublic]>
 						</td>
 						<td>
-							&Ouml;ffentlich
+							öffentlich
 						</td>
 						<td style='padding-left: 5px;'>
 							<input type="radio" name="chat" value="2" [r: ausgabeSL]>
@@ -193,7 +193,7 @@
 										<input type="radio" name="resistenz" value="ZKAktiv">
 									</td>
 									<td>
-										Probe gegen Z&auml;higkeit
+										Probe gegen Zähigkeit
 									</td>
 									<td style='text-align: right; padding-left: 3px;'>
 										[h: aktZK = ZK + getStrProp(TempMod, "zk")]												

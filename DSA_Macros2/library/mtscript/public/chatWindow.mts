@@ -20,7 +20,7 @@
 				</tr>
 				<tr>
 					<td>
-						<b>Empf&auml;nger eingrenzen:</b>
+						<b>Empfänger eingrenzen:</b>
 					</td>
 				</tr>
 			</table>
@@ -47,7 +47,7 @@
 				</button>
 			</p>
 			<p align='center'>
-				<span style='color: #000000; text-decoration: underline;' title='Smilies &amp; Schriftformatierungen anzeigen, die im Chat benutzt werden k&ouml;nnen.'>[r: macroLink("Chatk&uuml;rzel anzeigen", "showChatoptions@this", "")]</span>
+				<span style='color: #000000; text-decoration: underline;' title='Smilies &amp; Schriftformatierungen anzeigen, die im Chat benutzt werden können.'>[r: macroLink("Chatkürzel anzeigen", "showChatoptions@this", "")]</span>
 			</p>
 		</form>
 	</body>

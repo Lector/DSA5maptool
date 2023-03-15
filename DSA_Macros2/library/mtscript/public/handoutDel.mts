@@ -23,8 +23,8 @@
 	};
 	{
 		[chatNotice = 0]
-		[chatTextTitle = "Handout gel&ouml;scht"]
-		[chatText = "Ein Handout wurde gel&ouml;scht:"]
+		[chatTextTitle = "Handout gelöscht"]
+		[chatText = "Ein Handout wurde gelöscht:"]
 		[if(hTitle == ""): hTitle = hTokenName; hTitle = hTokenName+" - "+hTitle]
 	}
 ]

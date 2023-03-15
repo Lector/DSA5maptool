@@ -122,7 +122,7 @@
 				<input type="radio" name="sicht" value="0" [r: checked0]>
 			</td>
 			<td>
-				Stufe 0: Sicht klar & ungest&ouml;rt (0)
+				Stufe 0: Sicht klar & ungestört (0)
 			</td>
 		</tr>
 		<tr>
@@ -130,7 +130,7 @@
 				<input type="radio" name="sicht" value="[r:dunkel1]" [r: checked1]>
 			</td>
 			<td>
-				Stufe 1: leichte St&ouml;rung der Sicht ([r:dunkel1])
+				Stufe 1: leichte Störung der Sicht ([r:dunkel1])
 			</td>
 		</tr>
 		<tr>

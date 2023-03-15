@@ -18,7 +18,7 @@
 
 <html>
 	<head>
-		<title>Tempor&auml;re Effekte</title>
+		<title>Temporäre Effekte</title>
 		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
 	</head>
 	<body>
@@ -149,7 +149,7 @@
 					</tr>
 					<tr>
 						<td>
-							K&ouml;rperkraft:
+							Körperkraft:
 						</td>
 						<td>
 							<input type="text" name="tModKK" size="3" maxlength="3" value="[r: getStrProp(TempMod, "kk")]">
@@ -158,7 +158,7 @@
 							&nbsp;
 						</td>
 						<td>
-							R&uuml;stungsschutz:
+							Rüstungsschutz:
 						</td>
 						<td>
 							<input type="text" name="tModRS" size="3" maxlength="2" value="[r: getStrProp(TempMod, "rs")]">
@@ -166,7 +166,7 @@
 					</tr>
 					<tr>
 						<td>
-							Alle l&ouml;schen:
+							Alle löschen:
 						</td>
 						<td>
 							<input type="checkbox" name="delAll" value="ok">

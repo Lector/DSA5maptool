@@ -127,7 +127,7 @@
 				<input type="hidden" name="patzerTabelle" value="patzerLiturgie"/>
 				<input type="hidden" name="modMacro" value="probeLiturgieMods@this"/>
 				<input type="hidden" name="image" value="78"/>
-				<input type="hidden" name="kritText" value="Die KE-Kosten werden halbiert.<br/>Auf die FP d&uuml;rfen weitere 1W6 Punkte aufaddiert werden"/>
+				<input type="hidden" name="kritText" value="Die KE-Kosten werden halbiert.<br/>Auf die FP dürfen weitere 1W6 Punkte aufaddiert werden"/>
 			</form>
 		</div>
 	</body>

@@ -16,7 +16,7 @@
 [dialog5("notizEdit", "width=424; height=335; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
-		<title>Notiz &auml;ndern</title>
+		<title>Notiz ändern</title>
 		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
 	</head>
 	<body>

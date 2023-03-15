@@ -82,7 +82,7 @@
 		[WUArmLinks = WUArmLinks + 1]
 		[if(WUArmLinks == 3): meldungArmwunde = 1]
 		[text = "Linker Arm"]
-		[wundenTitle = "Automatisch eingetragen: Erste &amp; zweite Armwunde: AT, PA, KK &amp; FF -2 mit diesem Arm - Dritte Wunde: Arm handlungsunf&auml;hig"]
+		[wundenTitle = "Automatisch eingetragen: Erste &amp; zweite Armwunde: AT, PA, KK &amp; FF -2 mit diesem Arm - Dritte Wunde: Arm handlungsunfähig"]
 		};
 	case "armRechts": {
 		[WuMod = setStrProp(WuMod, "raAT", getStrProp(WuMod, "raAT") + 2)]
@@ -92,7 +92,7 @@
 		[WUArmRechts = WUArmRechts + 1]
 		[if(WUArmRechts == 3): meldungArmwunde = 1]
 		[text = "Rechter Arm"]
-		[wundenTitle = "Automatisch eingetragen: Erste &amp; zweite Armwunde: AT, PA, KK &amp; FF -2 mit diesem Arm - Dritte Wunde: Arm handlungsunf&auml;hig"]
+		[wundenTitle = "Automatisch eingetragen: Erste &amp; zweite Armwunde: AT, PA, KK &amp; FF -2 mit diesem Arm - Dritte Wunde: Arm handlungsunfähig"]
 		};
 	case "beinLinks": {
 		[WuMod = setStrProp(WuMod, "at", getStrProp(WuMod, "at") + 2)]
@@ -106,7 +106,7 @@
 		[if(WUBeinLinks == 3): meldungKampfunfaehig = 1]
 		[if(WUBeinLinks == 3): setState("amBoden", 1)]
 		[text = "Linkes Bein"]
-		[wundenTitle = "Automatisch eingetragen: Erste &amp; zweite Beinwunde: AT, PA, GE &amp; INI-Basis -2, GS -1 - Dritte Wunde: Sturz, kampfunf&auml;hig"]
+		[wundenTitle = "Automatisch eingetragen: Erste &amp; zweite Beinwunde: AT, PA, GE &amp; INI-Basis -2, GS -1 - Dritte Wunde: Sturz, kampfunfähig"]
 		};
 	case "beinRechts": {
 		[WuMod = setStrProp(WuMod, "at", getStrProp(WuMod, "at") + 2)]
@@ -120,7 +120,7 @@
 		[if(WUBeinRechts == 3): meldungKampfunfaehig = 1]
 		[if(WUBeinRechts == 3): setState("amBoden", 1)]
 		[text = "Rechtes Bein"]
-		[wundenTitle = "Automatisch eingetragen: Erste &amp; zweite Beinwunde: AT, PA, GE &amp; INI-Basis -2, GS -1 - Dritte Wunde: Sturz, kampfunf&auml;hig"]
+		[wundenTitle = "Automatisch eingetragen: Erste &amp; zweite Beinwunde: AT, PA, GE &amp; INI-Basis -2, GS -1 - Dritte Wunde: Sturz, kampfunfähig"]
 		}
 ]
 
@@ -179,7 +179,7 @@
 				&nbsp;
 			</td>
 			<td valign='middle'>
-				Neu hinzugef&uuml;gte Wunde: <span style='color: #a42b1e; font-size: 14pt;' title='%s'>%s</span>
+				Neu hinzugefügte Wunde: <span style='color: #a42b1e; font-size: 14pt;' title='%s'>%s</span>
 			</td>
 			<td width='25'>
 				&nbsp;
@@ -244,8 +244,8 @@
 					&nbsp;
 				</td>
 				<td style='font-weight: normal;' valign='middle'>
-					<b>Kampfunf&auml;hig</b>
-					<br>Keinerlei Aktionen mehr m&ouml;glich. Bewegung nur noch mit GS 1.
+					<b>Kampfunfähig</b>
+					<br>Keinerlei Aktionen mehr möglich. Bewegung nur noch mit GS 1.
 				</td>
 			</tr>
 		</table>
@@ -265,8 +265,8 @@
 					&nbsp;
 				</td>
 				<td style='font-weight: normal;' valign='middle'>
-					<b>Kampfunf&auml;hig</b>
-					<br>Keinerlei Aktionen mehr m&ouml;glich. Bewegung nur noch mit GS 1.
+					<b>Kampfunfähig</b>
+					<br>Keinerlei Aktionen mehr möglich. Bewegung nur noch mit GS 1.
 				</td>
 			</tr>
 		</table>
@@ -289,7 +289,7 @@
 				</td>
 				<td style='font-weight: normal;' valign='middle'>
 					<b>Bewusstlosigkeit &amp; Blutverlust</b>
-					<br>- Du bist f&uuml;r die n&auml;chsten %s Kampfrunden bewusstlos.
+					<br>- Du bist für die nächsten %s Kampfrunden bewusstlos.
 					<br>- Jede KR Verlust von 1 LeP bis die Wunde versorgt wurde.
 				</td>
 			</tr>
@@ -309,7 +309,7 @@
 			</td>
 			<td style='font-weight: normal;' valign='middle'>
 				<b>Dritte Armwunde</b>
-				<br>- Dieser Arm wird aktionsunf&auml;hig.
+				<br>- Dieser Arm wird aktionsunfähig.
 				<br>- Mit diesem Arm gehaltene Waffen werden fallengelassen.
 			</td>
 		</tr>

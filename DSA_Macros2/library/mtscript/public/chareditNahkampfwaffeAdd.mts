@@ -14,7 +14,7 @@
 [dialog5("chareditWaffeAdd", "width=425; height=532; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
-		<title>Nahkampfwaffe hinzuf&uuml;gen</title>
+		<title>Nahkampfwaffe hinzufügen</title>
 		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
 	</head>
 	<body>
@@ -66,7 +66,7 @@
 														<option value='1'>Kurz</option>
 														<option value='2' selected='selected'>Mittel</option>
 														<option value='3'>Lang</option>
-														<option value='4'>&Uuml;berlang</option>
+														<option value='4'>überlang</option>
 													</select>
 												</td>
 											</tr>
@@ -164,7 +164,7 @@
 										<input type='checkbox' name='zweihand'/>
 									</td>
 									<td>
-										Zweih&auml;ndige Waffe
+										Zweihändige Waffe
 									</td>
 								</tr>
 								<tr>

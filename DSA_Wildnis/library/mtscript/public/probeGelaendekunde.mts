@@ -47,6 +47,6 @@ json.length(gelaendekunden))]
 		<input type="checkbox" id='gelaende' value="1" name="geländekunde"/>
 	</td>
 	<td colspan=2>
-		<label id='gelaendeLabel'>Gel&auml;ndekunde</label><label> (+1)</label>
+		<label id='gelaendeLabel'>Geländekunde</label><label> (+1)</label>
 	</td>
 </tr>

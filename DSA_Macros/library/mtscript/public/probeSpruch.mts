@@ -42,7 +42,7 @@
 <td valign='top'>
 	<div class='label'>
 		Modifikationen<br>
-		([r: ModAnzahl] m&ouml;glich)
+		([r: ModAnzahl] möglich)
 	</div>
 </td>
 <td valign='top'>
@@ -78,7 +78,7 @@
 				<input type="checkbox" name="Reichweite" value="-1">
 			</td>
 			<td >
-				Reichweite erh&ouml;hen (-1)							
+				Reichweite erhöhen (-1)							
 			</td>
 		</tr>
 		<tr>
@@ -105,7 +105,7 @@
 };{}]
 <td valign='top'>
 	<div class='label'>
-		Umst&auml;nde
+		Umstände
 	</div>
 </td>
 <td valign='top'>

@@ -286,7 +286,7 @@
 								[h: params = setStrProp(params, "index", num)]
 								[h: params = setStrProp(params, "frame", "chareditTalent@this")]
 								[h: params = setStrProp(params, "noticeKey", "chareditTraitDel")]
-								[h: link = macroLink("<img src='"+tableImage("misc", 7)+"' border=0 alt='Eintrag l&ouml;schen'/>", "chareditTraitDelProcess@this", "", params)]
+								[h: link = macroLink("<img src='"+tableImage("misc", 7)+"' border=0 alt='Eintrag löschen'/>", "chareditTraitDelProcess@this", "", params)]
 								[r: link]
 							</td>
 							};{}]

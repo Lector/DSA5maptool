@@ -41,11 +41,11 @@
 					<td width='383'>
 					[r,if(arg(0) == "pc"),Code:{
 						<image src='[r: tableImage("mainTheme", 81)]'/>};{
-						<a href="[r: macroLinkText("meisterbogen1@this", "", "pc")]"><image src='[r: tableImage("mainTheme", 80)]' border="0" alt="Spielercharaktere I: Werte, Waffen &amp; R&uuml;stung"></image></a>
+						<a href="[r: macroLinkText("meisterbogen1@this", "", "pc")]"><image src='[r: tableImage("mainTheme", 80)]' border="0" alt="Spielercharaktere I: Werte, Waffen &amp; Rüstung"></image></a>
 					}]
 						<a href="[r: macroLinkText("meisterbogen2@this", "", "pc")]"><image src='[r: tableImage("mainTheme", 82)]' border="0" alt="Spielercharaktere II: Vorteile, Nachteile &amp; Notizen"></image></a>
 					[r,if(arg(0) == "pc"),Code:{
-						<a href="[r: macroLinkText("meisterbogen1@this", "", "npc")]"><image src='[r: tableImage("mainTheme", 87)]' border="0" alt="NSCs I: Werte, Waffen &amp; R&uuml;stung"></image></a>};{
+						<a href="[r: macroLinkText("meisterbogen1@this", "", "npc")]"><image src='[r: tableImage("mainTheme", 87)]' border="0" alt="NSCs I: Werte, Waffen &amp; Rüstung"></image></a>};{
 						<image src='[r: tableImage("mainTheme", 88)]'></image>
 					}]
 						<a href="[r: macroLinkText("meisterbogen2@this", "", "npc")]"><image src='[r: tableImage("mainTheme", 89)]' border="0" alt="NSCs II: Vorteile, Nachteile &amp; Notizen"></image></a>
@@ -89,7 +89,7 @@
 												<table style='border-spacing: 0px;' width='138'>
 													<tr>
 														<td style='text-align: center;'>
-															<a href="[r: macroLinkText("gotoToken@this", "", id)]"><image src='[r: getTokenImage(30)]' border="0" alt="Zum Token wechseln und ausw&auml;hlen"></image></a>
+															<a href="[r: macroLinkText("gotoToken@this", "", id)]"><image src='[r: getTokenImage(30)]' border="0" alt="Zum Token wechseln und auswählen"></image></a>
 														</td>
 													</tr>
 													<tr>
@@ -385,7 +385,7 @@
 																	case 1: "kurz";
 																	case 2: "mittel";
 																	case 3: "lang";
-																	case 4: "&uuml;lang"
+																	case 4: "ülang"
 																]
 															</td>
 															<td style='text-align: center;'>

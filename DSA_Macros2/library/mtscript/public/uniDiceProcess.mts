@@ -48,7 +48,7 @@
 			<table style='border-spacing: 0px; margin-top: 3px;'>
 				<tr>
 					<td style='padding: 0px 4px 1px 0px;'>
-						W&uuml;rfel:
+						Würfel:
 					</td>
 					<td style='padding: 0px 0px 1px 0px; text-align: center;'>
 						%s

@@ -48,7 +48,7 @@
 [dialog5("probe", "width=750; height=476; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
-		<title>Fertigkeitsprobe w&uuml;rfeln</title>
+		<title>Fertigkeitsprobe würfeln</title>
 		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
 	</head>
 	<body>

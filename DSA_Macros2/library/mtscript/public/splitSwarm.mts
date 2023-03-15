@@ -37,7 +37,7 @@
 				<table style='border-spacing: 0px;' cellpadding='3'>
 					<tr>
 						<td valign='middle'>
-							In wieviele Teilschw&auml;rme aufteilen:
+							In wieviele Teilschwärme aufteilen:
 						</td>
 						<td valign='middle' colspan=4>
 							<select size='1' name='count'>

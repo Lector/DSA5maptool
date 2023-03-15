@@ -77,10 +77,10 @@
 												[h: gruppe = uebergabe]
 												[r,if(gruppe == "Koerper"), Code:
 													{
-														<span style='color: #bbbbba;'>K&ouml;rper</span>
+														<span style='color: #bbbbba;'>Körper</span>
 													};
 													{
-														<span style='color: #eee5c8; text-decoration: none;' title='K&ouml;rpertalente aufrufen'>[r: macroLink("K&ouml;rper", "charbogenTalente@this", "", "Koerper")]</span>				
+														<span style='color: #eee5c8; text-decoration: none;' title='Körpertalente aufrufen'>[r: macroLink("Körper", "charbogenTalente@this", "", "Koerper")]</span>				
 													}
 												]
 												&middot; 

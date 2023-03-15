@@ -14,7 +14,7 @@
 [dialog5("chareditTraitAdd", "width=425; height=350; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
-		<title>Vorteil, Nachteil oder Sonderfertigkeit hinzuf&uuml;gen</title>
+		<title>Vorteil, Nachteil oder Sonderfertigkeit hinzufügen</title>
 		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
 	</head>
 	<body>

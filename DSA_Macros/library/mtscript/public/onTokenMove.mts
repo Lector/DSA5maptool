@@ -31,7 +31,7 @@
 	<!-- revert move when moved over the move limit -->
 	[h, if(usedMove > maxMove), CODE: {
 	    [h: tokens.denyMove = 1]
-	    [h: broadcast("Du hast dich zu weit bewegt! Deine aktuelle GS betr&auml;gt " + maxMove + ".", getPlayerName())]
+	    [h: broadcast("Du hast dich zu weit bewegt! Deine aktuelle GS beträgt " + maxMove + ".", getPlayerName())]
 	};{
 		[h: abort(0)]
 	}]

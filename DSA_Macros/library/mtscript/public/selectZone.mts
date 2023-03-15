@@ -32,7 +32,7 @@
 		}]
 	}]
 	<option value='zufall' [r:zufallChecked]>
-		Zuf&auml;llige Zone
+		Zufällige Zone
 	</option>
 	<option value='gesamt' [r: gesamtChecked]>
 		Keine Zone

@@ -185,7 +185,7 @@
 										<input type='checkbox' name='kritisch' [r:gluecklich]>
 									</td>
 									<td>
-										Gl&uuml;cklicher / kritischer Treffer (AW halbiert)
+										Glücklicher / kritischer Treffer (AW halbiert)
 									</td>
 								</tr>
 							</table>

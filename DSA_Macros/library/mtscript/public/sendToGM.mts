@@ -84,7 +84,7 @@
 				<img src='%s'>
 			</td>
 			<td valign='middle'>
-				Du hast eine verdeckte Probe f&uuml;r den Spielleiter gew&uuml;rfelt.
+				Du hast eine verdeckte Probe für den Spielleiter gewürfelt.
 			<td width='15'>
 				&nbsp;
 			</td>

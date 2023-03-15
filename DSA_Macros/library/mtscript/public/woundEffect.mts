@@ -10,8 +10,8 @@
 [h,if(success > 0),Code:{
 	[h: bedingung = strformat("Da die Probe auf <b>Selbstbeherrschung (%{spec}) -%{wound}</b> gelungen ist ")]
 	[switch(zone):
-		case "Kopf": wundtext = strformat("konntest du %{wound} Stufe(n) Bet&auml;ubung wiederstehen.");
-		case "Torso": wundtext = strformat("konntest du %{wound}W3+%{wound} zus&auml;tzliche SP abwenden.");
+		case "Kopf": wundtext = strformat("konntest du %{wound} Stufe(n) Betäubung wiederstehen.");
+		case "Torso": wundtext = strformat("konntest du %{wound}W3+%{wound} zusätzliche SP abwenden.");
 		case "Linker Arm": wundtext = "konntest du das in der Hand gehaltene Objekt festhalten.";
 		case "Rechter Arm": wundtext = "konntest du das in der Hand gehaltene Objekt festhalten.";
 		case "Linkes Bein": wundtext = strformat("bleibst du stehen.");
@@ -23,7 +23,7 @@
 	[switch(zone),Code:
 		case "Kopf":
 		{
-			[wundtext = strformat("hast du %{wound} Stufe(n) Bet&auml;ubung erhalten.")]
+			[wundtext = strformat("hast du %{wound} Stufe(n) Betäubung erhalten.")]
 			[Betaeubung = min(4, Betaeubung + wound)]
 		};
 		case "Torso":
@@ -42,7 +42,7 @@
 			Haupthand = noMeleeWeapon(currentToken())]
 			[if(Haupthand != Nebenhand && technik != "" && technik != "Schilde"),if(Linkshaender == 0): 
 			NebenHand = noMeleeWeapon(currentToken())]
-			[wundtext = strformat("wurde das in der Hand gehaltene Objekt '%{wName}' losgelassen, sofern es weder ein Schild ist, noch zweih&auml;ndig gef&uuml;hrt wurde.")]
+			[wundtext = strformat("wurde das in der Hand gehaltene Objekt '%{wName}' losgelassen, sofern es weder ein Schild ist, noch zweihändig geführt wurde.")]
 		};
 		case "Rechter Arm":
 		{
@@ -54,7 +54,7 @@
 			Haupthand = noMeleeWeapon(currentToken())]
 			[if(Haupthand != Nebenhand && technik != "" && technik != "Schilde"),if(Linkshaender == 1): 
 			NebenHand = noMeleeWeapon(currentToken())]
-			[wundtext = strformat("wurde das in der Hand gehaltene Objekt '%{wName}' losgelassen, sofern es weder ein Schild ist, noch zweih&auml;ndig gef&uuml;hrt wurde.")]
+			[wundtext = strformat("wurde das in der Hand gehaltene Objekt '%{wName}' losgelassen, sofern es weder ein Schild ist, noch zweihändig geführt wurde.")]
 		};
 		case "Linkes Bein":
 		{
@@ -68,7 +68,7 @@
 		};
 		default:
 		{
-			[wundtext = "wird ein Wundeffekt ausgel&ouml;st."]
+			[wundtext = "wird ein Wundeffekt ausgelöst."]
 		}
 	]
 }]

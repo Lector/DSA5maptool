@@ -63,7 +63,7 @@
 										<input type='radio' name='quellWaehrung' value='qBergkoenigreich' [r,if(getStrProp(uebergabe, "quellWaehrung") == "qBergkoenigreich"): output = "checked='checked'"; output = ""]>
 									</td>
 									<td style='font-weight: bold;'>
-										Bergk&ouml;nigreich
+										Bergkönigreich
 										<br>
 										<select name='wBergkoenigreich' size='1'>
 											[h: sBergkoenigreich = getStrProp(uebergabe, "wBergkoenigreich")]
@@ -78,7 +78,7 @@
 										<input type='radio' name='quellWaehrung' value='qAmazonen' [r,if(getStrProp(uebergabe, "quellWaehrung") == "qAmazonen"): output = "checked='checked'"; output = ""]>
 									</td>
 									<td style='font-weight: bold;'>
-										K&ouml;niginnenreich der Amazonen
+										Königinnenreich der Amazonen
 										<br>
 										<select name='wAmazonen' size='1'>
 											<option selected='selected'>Amazonenkrone</option>
@@ -129,7 +129,7 @@
 										<input type='radio' name='quellWaehrung' value='qAndergast' [r,if(getStrProp(uebergabe, "quellWaehrung") == "qAndergast"): output = "checked='checked'"; output = ""]>
 									</td>
 									<td style='font-weight: bold;'>
-										K&ouml;nigreich Andergast
+										Königreich Andergast
 										<br>
 										<select name='wAndergast' size='1'>
 											<option selected='selected'>Andrataler</option>

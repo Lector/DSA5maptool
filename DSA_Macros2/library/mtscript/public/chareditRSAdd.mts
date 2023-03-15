@@ -14,7 +14,7 @@
 [dialog5("chareditRSAdd", "width=467; height=355; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
-		<title>R&uuml;stung hinzuf&uuml;gen</title>
+		<title>Rüstung hinzufügen</title>
 		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
 	</head>
 	<body>

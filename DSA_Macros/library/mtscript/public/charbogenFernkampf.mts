@@ -81,13 +81,13 @@
 						{
 							[bg = "bgcolor='#eee5c8'"]
 							[fc = "#3d1919"]
-							[linkTitle = "title='Diese Waffe ist ausger&uuml;stet.'"]
+							[linkTitle = "title='Diese Waffe ist ausgerüstet.'"]
 							[link = "&#10003;"]
 						};
 						{
 							[bg = ""]
 							[fc = "#eee5c8"]
-							[linkTitle = "title='Diese Waffe ausr&uuml;sten.'"]
+							[linkTitle = "title='Diese Waffe ausrüsten.'"]
 							[link = macroLink("&#10063;", "changeFKWeapon@this", "", wID)]
 						}]
 						<td [r: bg]>

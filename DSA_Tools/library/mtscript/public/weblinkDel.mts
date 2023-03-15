@@ -3,12 +3,12 @@
 [h,if(uebergabe == "all"), Code:
 	{
 		[newList = '[]']
-		[chatNotice = "Alle Weblinks wurden gel&ouml;scht."]
+		[chatNotice = "Alle Weblinks wurden gelöscht."]
 	};
 	{
 		[linklist = getLibProperty("Weblinks", "com.github.naxos84.tools")]
 		[newlist = json.remove(linklist, uebergabe)]
-		[chatNotice = "Der ausgew&auml;hlte Weblink wurde gel&ouml;scht."]
+		[chatNotice = "Der ausgewählte Weblink wurde gelöscht."]
 	}
 ]
 [h: setLibProperty("Weblinks", newList, "com.github.naxos84.tools")]

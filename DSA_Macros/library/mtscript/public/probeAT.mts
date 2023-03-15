@@ -174,7 +174,7 @@
 										<input type="radio" name="waffe" id="waffe3" value="3"/>
 									</td>
 									<td colspan=2>
-										Beidh&auml;ndiger Angriff<br>(nur Basisman&ouml;ver)
+										Beidhändiger Angriff<br>(nur Basismanöver)
 									</td>
 									};{
 									<input type="hidden" name="waffe" value="1"/>
@@ -188,7 +188,7 @@
 
 						<td valign=top>
 							<div class="label">
-								Man&ouml;ver
+								Manöver
 							</div>
 						</td>
 
@@ -288,7 +288,7 @@
 									</td>
 									<td>
 										Passierschlag ([r: passierschlag])<br>
-										(keine Man&ouml;ver erlaubt<br>keine Patzer oder kritische Erfolge)
+										(keine Manöver erlaubt<br>keine Patzer oder kritische Erfolge)
 									</td>
 								</tr>
 								[r,macro("probeGottgefaellig@this"): ""]
@@ -319,7 +319,7 @@
 						</td>
 						<td valign=top>
 							<div class="label">
-								Gr&ouml;&szlig;e
+								Größe
 								<br>(Gegner)
 							</div>
 						</td>

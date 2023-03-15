@@ -14,7 +14,7 @@
 [dialog5("chareditZeremonienAdd", "width=425; height=374; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
-		<title>Zeremonie hinzuf&uuml;gen</title>
+		<title>Zeremonie hinzufügen</title>
 		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
 	</head>
 	<body>

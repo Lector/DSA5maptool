@@ -66,7 +66,7 @@
 [dialog5("quickeditRS", window):{
 <html>
 	<head>
-		<title>R&uuml;stung anpassen</title>
+		<title>Rüstung anpassen</title>
 		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
 	</head>
 	<body>

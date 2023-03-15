@@ -1,7 +1,7 @@
 [h: id = arg(0)]
 <tr>
 	<td valign='middle'>
-		<span title='siehe Bann des Eisens Seite 256'>Eisen am K&ouml;rper:</span>
+		<span title='siehe Bann des Eisens Seite 256'>Eisen am Körper:</span>
 	</td>
 	<td valign='middle'>
 		<select name='SteinEisenMalus' size='1'>

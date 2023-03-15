@@ -112,7 +112,7 @@
 								<img border=0 src='[r: tableImage("campaignButtons", 76)]'/>
 							</td>
 							<td>
-								[r: linkOpen1]Kr&auml;utersuche[r: linkClose] &middot; [r: linkOpen2]Nahrungssuche[r: linkClose]
+								[r: linkOpen1]Kräutersuche[r: linkClose] &middot; [r: linkOpen2]Nahrungssuche[r: linkClose]
 							</td>
 						</tr>
 					</table>

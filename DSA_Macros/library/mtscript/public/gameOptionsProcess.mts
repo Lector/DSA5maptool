@@ -18,7 +18,7 @@
 			&nbsp;
 		</td>
 		<td valign='middle'>
-			Die aktuellen Spieleinstellungen wurden vom Spielleiter ge&auml;ndert.
+			Die aktuellen Spieleinstellungen wurden vom Spielleiter geändert.
 		</td>
 	</tr>
 </table>",

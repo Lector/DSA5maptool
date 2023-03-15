@@ -79,7 +79,7 @@
 	};
 	{
 		[chatBubble = tableImage("chat", 73)]
-		[chatTitle = strformat("<span style='color: #0a4c07; font-size: 11pt;'><b>%{whisperName}</b> fl&uuml;stert ")]
+		[chatTitle = strformat("<span style='color: #0a4c07; font-size: 11pt;'><b>%{whisperName}</b> flüstert ")]
 		[if(listCount(chatList) > 1): chatTitle = chatTitle + strformat("euch (%{chatList}) "); chatTitle = chatTitle + "dir "]
 		[chatTitle = chatTitle + "etwas zu:</span>"]
 		[sendList = chatList]
@@ -96,7 +96,7 @@
 					<img src='%s'>
 				</td>
 				<td valign='middle'>
-					<span style='font-size: 11pt; color: #0a4c07;'>Du fl&uuml;sterst etwas zu <b>%s</b>:</span>
+					<span style='font-size: 11pt; color: #0a4c07;'>Du flüsterst etwas zu <b>%s</b>:</span>
 					<br>%s
 				</td>
 			</tr>

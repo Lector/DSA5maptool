@@ -14,7 +14,7 @@
 [dialog5("probe", "width=507; height=448; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
-		<title>Universelle Fertigkeitsprobe w&uuml;rfeln</title>
+		<title>Universelle Fertigkeitsprobe würfeln</title>
 		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
 	</head>
 	<body>

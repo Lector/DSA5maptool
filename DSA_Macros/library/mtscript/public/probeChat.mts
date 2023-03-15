@@ -21,7 +21,7 @@
 			<input type='radio' name='chat' value='1' [r: ausgabePublic]>
 		</td>
 		<td>
-			&Ouml;ffentlich
+			öffentlich
 		</td>
 		<td style='padding-left: 5px;'>
 			<input type='radio' name='chat' value='2' [r: ausgabeSL]>

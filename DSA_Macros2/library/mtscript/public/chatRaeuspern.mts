@@ -30,7 +30,7 @@
 			<img src='%s'>
 		</td>
 		<td style='color: #0b2369;' valign='middle'>
-			<b>%s</b> r&auml;uspert sich und m&ouml;chte etwas sagen.
+			<b>%s</b> räuspert sich und möchte etwas sagen.
 		</td>
 	</tr>
 </table>

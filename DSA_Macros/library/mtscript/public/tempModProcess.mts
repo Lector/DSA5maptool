@@ -50,7 +50,7 @@
 		[TempMod = setStrProp(TempMod, "sk", json.get(uebergabe, "tModSK"))]
 		[TempMod = setStrProp(TempMod, "zk", json.get(uebergabe, "tModZK"))]
 		[TempMod = setStrProp(TempMod, "rs", json.get(uebergabe, "tModRS"))]
-		[msgText = "Die tempor&auml;ren Effekte wurden ge&auml;ndert."]
+		[msgText = "Die temporären Effekte wurden geändert."]
 	};
 	{
 		[TempMod = setStrProp(TempMod, "mu", 0)]
@@ -69,7 +69,7 @@
 		[TempMod = setStrProp(TempMod, "sk", 0)]
 		[TempMod = setStrProp(TempMod, "zk", 0)]
 		[TempMod = setStrProp(TempMod, "rs", 0)]
-		[msgText = "Alle tempor&auml;ren Effekte wurden zur&uuml;ckgesetzt."]
+		[msgText = "Alle temporären Effekte wurden zurückgesetzt."]
 	}
 ]
 [h: iniDiff = getINI() - iniVorher]
@@ -79,7 +79,7 @@
 	[setInitiative(neueIni)]
 }]
 
-[h: ausgabe = border("Tempor&auml;re Effekte", strformat("
+[h: ausgabe = border("Temporäre Effekte", strformat("
 <table style='border-spacing: 0px; margin-top: 3px;'>
 	<tr>
 		<td style='text-align:center;' valign='middle' width='63'>

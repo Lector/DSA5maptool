@@ -118,7 +118,7 @@
 
 						<td valign='top'>
 							<div class='label'>
-								Man&ouml;ver
+								Manöver
 							</div>
 						</td>
 
@@ -202,7 +202,7 @@
 										<input type='radio' name='entfernung' value='-100' [r:cZuWeit]/>
 									</td>
 									<td>
-										&Uuml;ber [r: json.get(waffe, "RW3")] Schritt (Probe unm&ouml;glich)
+										über [r: json.get(waffe, "RW3")] Schritt (Probe unmöglich)
 									</td>
 								</tr>
 							</table>
@@ -262,7 +262,7 @@
 										<input type='radio' name='bewegungSchuetze' value='0' checked='checked'>
 									</td>
 									<td>
-										Sch&uuml;tze steht still (0)
+										Schütze steht still (0)
 									</td>
 								</tr>
 								<tr>
@@ -270,7 +270,7 @@
 										<input type='radio' name='bewegungSchuetze' value='-2'>
 									</td>
 									<td>
-										Sch&uuml;tze geht bis zu 4 Schritt (-2)
+										Schütze geht bis zu 4 Schritt (-2)
 									</td>
 								</tr>
 								<tr>
@@ -278,7 +278,7 @@
 										<input type='radio' name='bewegungSchuetze' value='-4'>
 									</td>
 									<td>
-										Sch&uuml;tze rennt mind. 5 Schritt (-4)
+										Schütze rennt mind. 5 Schritt (-4)
 									</td>
 								</tr>
 							</table>
@@ -397,7 +397,7 @@
 										<input type='checkbox' name='getuemmel' value='-2'>
 									</td>	
 									<td>
-										Kampfget&uuml;mmel (-2)
+										Kampfgetümmel (-2)
 									</td>
 								</tr>
 								[r,macro("probeGottgefaellig@this"): ""]

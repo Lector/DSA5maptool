@@ -25,7 +25,7 @@
 					<tr>
 						<td style='text-align: center;'>
 							Gebe hier den Initiative-Wert ein,
-							<br>den du manuell eintragen m&ouml;chtest.
+							<br>den du manuell eintragen möchtest.
 						</td>
 					</tr>
 				</table>		

@@ -14,7 +14,7 @@
 				<ul style='list-style-type: square'>
 					<li>Bosparans Fall</li>
 					<li>Hal</li>
-					<li>Jahr der Unabh&auml;ngigkeit (Nostria &amp; Andergast)</li>
+					<li>Jahr der Unabhängigkeit (Nostria &amp; Andergast)</li>
 					<li>Kurkum</li>
 					<li>E.-Akte</li>
 					<li>Jurgas Landung</li>
@@ -23,7 +23,7 @@
 				<span style='font-weight: bold; text-decoration: underline;'>Zeitrechnungen ohne ein Jahr Null:</span>
 				<ul style='list-style-type: square'>
 					<li>Golgaris Erscheinen</li>
-					<li>Jahr der Unabh&auml;ngigkeit (Aranien &amp; Kahet ni Kemi)</li>
+					<li>Jahr der Unabhängigkeit (Aranien &amp; Kahet ni Kemi)</li>
 					<li>Horas</li>
 					<li>Jahre des Lichts</li>
 				</ul>

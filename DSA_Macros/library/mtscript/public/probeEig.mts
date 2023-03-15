@@ -19,7 +19,7 @@ case "CH": eigName = "Charisma";
 case "FF": eigName = "Fingerfertigkeit";
 case "GE": eigName = "Gewandtheit";
 case "KO": eigName = "Konstitution";
-case "KK": eigName = "K&ouml;rperkraft"
+case "KK": eigName = "Körperkraft"
 ]
 
 [h,macro("probeGetAktWert@this"): macro.args]
@@ -30,7 +30,7 @@ case "KK": eigName = "K&ouml;rperkraft"
 [dialog5("probe", "width=587; height=398; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
-		<title>Eigenschaftsprobe w&uuml;rfeln</title>
+		<title>Eigenschaftsprobe würfeln</title>
 		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
 	</head>
 	<body>

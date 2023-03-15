@@ -16,7 +16,7 @@
 [dialog5("inventarAdd", "width=425; height=410; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
-		<title>Gegenstand hinzuf&uuml;gen</title>
+		<title>Gegenstand hinzufügen</title>
 		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
 	</head>
 	<body>

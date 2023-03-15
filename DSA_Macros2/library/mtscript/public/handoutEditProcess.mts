@@ -18,7 +18,7 @@
 [h: hContent = json.get(uebergabe, "hContent")]
 
 [h,if(hTitle == ""): hTitlePublic = "Handout"; hTitlePublic = hTitle]
-[h: shareLinkPublic = macroLink("<span title='Ge&auml;ndertes Handout aufrufen'>Jetzt anzeigen</span>", "handoutShow@this", "", id)]
+[h: shareLinkPublic = macroLink("<span title='Geändertes Handout aufrufen'>Jetzt anzeigen</span>", "handoutShow@this", "", id)]
 
 [h: setLabel(hTitle)]
 [h: setNotes(hShort)]
@@ -54,7 +54,7 @@ tableImage("chat", 81), hToken, hTitleShow)]
 			&nbsp;
 		</td>
 		<td style='text-align: center; font-weight: normal;' valign='middle'>
-			Der Spielleiter hat ein Handout ge&auml;ndert (<span style='color: #000000;'>%s</span>):
+			Der Spielleiter hat ein Handout geändert (<span style='color: #000000;'>%s</span>):
 			<br><br>
 			<span style='font-weight: bold;'>%s</span>
 		</td>
@@ -64,7 +64,7 @@ tableImage("chat", 81), hToken, hTitleShow)]
 
 [h,if(getCurrentMapName() != tokenMap): moveTokenToMap(id, tokenMap, x, y)]
 
-[h: ausgabePublic = border("Handout ge&auml;ndert", ausgabePublic)]
+[h: ausgabePublic = border("Handout geändert", ausgabePublic)]
 
 [h: publicHandouts = getLibProperty\("SharedHandouts","com.github.naxos84.macros")]
 

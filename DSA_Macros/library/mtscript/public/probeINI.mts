@@ -21,7 +21,7 @@
 [dialog5("probeINI", "width=587; height=360; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
-		<title>Initiative w&uuml;rfeln</title>
+		<title>Initiative würfeln</title>
 		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
 	</head>
 	<body>

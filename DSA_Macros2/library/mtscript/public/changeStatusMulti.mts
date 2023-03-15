@@ -35,7 +35,7 @@
 			<img src='%s'>
 		</td>
 		<td valign='middle'>
-			Der Status der markierten Tokens wurde ge&auml;ndert.<br><br>Falls ein eventuell ge&ouml;ffneter Charakterbogen eine Statusanzeige enth&auml;lt, diesen bitte manuell aktualisieren.
+			Der Status der markierten Tokens wurde geändert.<br><br>Falls ein eventuell geöffneter Charakterbogen eine Statusanzeige enthält, diesen bitte manuell aktualisieren.
 	</tr>
 </table>",
 tableImage("chat", 28))]

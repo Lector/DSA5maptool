@@ -57,10 +57,10 @@
 					</tr>
 					<tr>
 						<td style='font-weight: bold;' valign='top'>
-							Bild hinzuf&uuml;gen:
+							Bild hinzufügen:
 						</td>
 						<td>
-							Um ein Bild hinzuzuf&uuml;gen, doppelklicke auf das Handout-Token Nr. [r: hNum], w&auml;hle<br>im sich &ouml;ffnenden Fenster den Registerreiter &quot;Config&quot, und ziehe ein Bild von deinem Computer unten rechts auf das Feld &quot;Handout&quot;. Um das Bild zu &auml;ndern, f&uuml;hre die gleichen Schritte nochmal aus.
+							Um ein Bild hinzuzufügen, doppelklicke auf das Handout-Token Nr. [r: hNum], wähle<br>im sich öffnenden Fenster den Registerreiter &quot;Config&quot, und ziehe ein Bild von deinem Computer unten rechts auf das Feld &quot;Handout&quot;. Um das Bild zu ändern, führe die gleichen Schritte nochmal aus.
 						</td>
 					</tr>
 				</table>

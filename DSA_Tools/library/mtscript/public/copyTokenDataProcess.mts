@@ -195,11 +195,11 @@
 			<img src='%s'>
 		</td>
 		<td style='text-align: left; font-weight: normal;' valign='middle'>
-			Die ausgew&auml;hlten Tokendaten wurden von <b><i>%s</i></b> zu <b><i>%s</i></b> kopiert.
+			Die ausgewählten Tokendaten wurden von <b><i>%s</i></b> zu <b><i>%s</i></b> kopiert.
 		</td>
 	</tr>
 </table>",
 tableImage("chat", 82), qTokenName, zTokenName)]
-[h: ausgabe = border("Tokendaten &uuml;bertragen", ausgabe)]
+[h: ausgabe = border("Tokendaten übertragen", ausgabe)]
 
 [h: broadcast(ausgabe, playerName)]

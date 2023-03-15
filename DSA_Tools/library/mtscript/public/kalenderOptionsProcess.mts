@@ -60,7 +60,7 @@
 			&nbsp;
 		</td>
 		<td valign='middle'>
-			Die Kalendereinstellungen wurden ge&auml;ndert.
+			Die Kalendereinstellungen wurden geändert.
 		</td>
 	</tr>
 </table>",

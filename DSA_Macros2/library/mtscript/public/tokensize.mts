@@ -9,7 +9,7 @@
 [dialog5("tokensize", "width=500; height=500; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
-		<title>Tokengr&ouml;&szlig;e &auml;ndern</title>
+		<title>Tokengröße ändern</title>
 		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
 	</head>
 	<body>
@@ -17,7 +17,7 @@
 			<form action="[r:actionLink]">
 				[r: header("Tokengröße")]
 				<div style='padding: 0px 55px 0px 55px;'>
-					Bitte w&auml;hle eine Gr&ouml;&szlig;e aus, in der die aktuell markierten Tokens dargestellt werden sollen.
+					Bitte wähle eine Größe aus, in der die aktuell markierten Tokens dargestellt werden sollen.
 				</div>
 				<table style='border-spacing: 0px; margin: 0px auto 0px auto;'>
 					<tr>
@@ -49,7 +49,7 @@
 							<input type='radio' name='tokenSize' value='4'>
 						</td>
 						<td>
-							Gro&szlig;
+							Groß
 						</td>
 					</tr>
 					<tr>

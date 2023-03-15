@@ -9,7 +9,7 @@
 [dialog5("copyTokenData", "width=425; height=706; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
-		<title>Tokendaten &uuml;bertragen</title>
+		<title>Tokendaten übertragen</title>
 		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
 	</head>
 	<body>
@@ -19,9 +19,9 @@
 				<table style='border-spacing: 0px;' width='330'>
 					<tr>
 						<td>
-							Bitte w&auml;hle die zu kopierenden Daten aus, die du von einem anderen Token auf diesen Token &uuml;bertragen m&ouml;chtest.
+							Bitte wähle die zu kopierenden Daten aus, die du von einem anderen Token auf diesen Token übertragen möchtest.
 							<br><br>
-							W&auml;hle anschlie&szlig;end mit der Maus auf der Spieloberfl&auml;che den Token aus, von dem du die Daten beziehen m&ouml;chtest, und klicke dann unten auf &quot;Weiter&quot;.
+							Wähle anschließend mit der Maus auf der Spieloberfläche den Token aus, von dem du die Daten beziehen möchtest, und klicke dann unten auf &quot;Weiter&quot;.
 						</td>
 					</tr>
 				</table>
@@ -63,7 +63,7 @@
 							<input type='checkbox' name='cEnergie' value='1' checked='checked'>
 						</td>
 						<td>
-							Aktuelle Energiest&auml;nde (LE, SchiPs, AE, KE)
+							Aktuelle Energiestände (LE, SchiPs, AE, KE)
 						</td>
 					</tr>
 					<tr>
@@ -87,7 +87,7 @@
 							<input type='checkbox' name='cRuestung' value='1'>
 						</td>
 						<td>
-							R&uuml;stungen
+							Rüstungen
 						</td>
 					</tr>
 					<tr>
@@ -95,7 +95,7 @@
 							<input type='checkbox' name='cStatus' value='1' checked='checked'>
 						</td>
 						<td>
-							Status und Zust&auml;nde
+							Status und Zustände
 						</td>
 					</tr>
 					<tr>
@@ -103,7 +103,7 @@
 							<input type='checkbox' name='cTemp' value='1' checked='checked'>
 						</td>
 						<td>
-							Tempor&auml;re Effekte
+							Temporäre Effekte
 						</td>
 					</tr>
 				</table>
@@ -115,7 +115,7 @@
 					</tr>
 					<tr>
 						<td style='text-align: center;'>
-							Wenn du fortf&auml;hrst werden einige Werte des aktuellen Tokens &uuml;berschrieben!
+							Wenn du fortfährst werden einige Werte des aktuellen Tokens überschrieben!
 						</td>
 					</tr>
 				</table>

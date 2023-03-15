@@ -2,7 +2,7 @@
 [dialog5("weblinkAdd", "width=466; height=308; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
-		<title>Weblink hinzuf&uuml;gen</title>
+		<title>Weblink hinzufügen</title>
 		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
 	</head>
 	<body>

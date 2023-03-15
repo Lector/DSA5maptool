@@ -14,7 +14,7 @@
 [dialog5("chareditWaffeAdd", "width=425; height=443; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
-		<title>Fernkampfwaffe hinzuf&uuml;gen</title>
+		<title>Fernkampfwaffe hinzufügen</title>
 		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
 	</head>
 	<body>

@@ -103,7 +103,7 @@
 </tr>
 <tr>
 	<td style='margin: 1px 4px 1px 0px;' colspan=1>
-		Qualit&auml;t:
+		Qualität:
 	</td>
 	<td style='margin: 1px 0px 1px 0px; text-align: right; color: %{qualiColor};'>
 		%{quali}

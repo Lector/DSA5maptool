@@ -77,10 +77,10 @@
 													<image src='[r: tableImage("mainTheme", 93)]'></image>
 												</td>
 												<td style='text-align: center;' width='13'>
-													<a href="[r: macroLinkText("notizAdd@lib:com.github.naxos84.macros2")]"><image src='[r: tableImage("mainTheme", 97)]' border="0" alt="Eine neue Notiz hinzuf&uuml;gen"></image></a>
+													<a href="[r: macroLinkText("notizAdd@lib:com.github.naxos84.macros2")]"><image src='[r: tableImage("mainTheme", 97)]' border="0" alt="Eine neue Notiz hinzufügen"></image></a>
 												</td>
 												<td style='text-align: right;' width='13'>
-													<a href="[r: macroLinkText("notizDelAll@lib:com.github.naxos84.macros2")]"><image src='[r: tableImage("mainTheme", 98)]' border="0" alt="Alle Notizen l&ouml;schen"></image></a>
+													<a href="[r: macroLinkText("notizDelAll@lib:com.github.naxos84.macros2")]"><image src='[r: tableImage("mainTheme", 98)]' border="0" alt="Alle Notizen löschen"></image></a>
 												</td>
 											</tr>
 										</table>
@@ -94,7 +94,7 @@
 											[nTitel = getStrProp(Notizen, strformat("n%{num}Titel"))]
 											[nText = getStrProp(Notizen, strformat("n%{num}Text"))]
 											[editLink = strformat("<a href='%s'><image src='%s' border='0' alt='Diese Notiz editieren'></image></a>", macroLinkText("notizEdit@lib:com.github.naxos84.macros2", "", num), tableImage("mainTheme", 99))]
-											[delLink = strformat("<a href='%s'><image src='%s' border='0' alt='Diese Notiz l&ouml;schen'></image></a>", macroLinkText("notizDel@lib:com.github.naxos84.macros2", "", num), tableImage("mainTheme", 100))]
+											[delLink = strformat("<a href='%s'><image src='%s' border='0' alt='Diese Notiz löschen'></image></a>", macroLinkText("notizDel@lib:com.github.naxos84.macros2", "", num), tableImage("mainTheme", 100))]
 											[nAusgabe = nAusgabe + strformat("
 											<table style='border-spacing: 0px; margin-bottom: 3px;' cellpadding='0'>
 												<tr>
@@ -138,7 +138,7 @@
 										[token(hTokenName): hTitle = getLabel()]
 										[if(hTitle == ""): hTitle = "Handout"]
 										[token(hTokenName): hShort = getNotes()]
-										[if(hShort == ""): hShort = "Keine Beschreibung verf&uuml;gbar"]
+										[if(hShort == ""): hShort = "Keine Beschreibung verfügbar"]
 
 										[h,if(getCurrentMapName() != "Spieltisch"): moveTokenToMap(id, "Spieltisch", x, y)]
 										
@@ -173,10 +173,10 @@
 													<image src='[r: tableImage("mainTheme", 94)]'></image>
 												</td>
 												<td style='text-align: center;' width='16'>
-													<a href="[r: macroLinkText("notizSLEdit@lib:com.github.naxos84.macros2")]"><image src='[r: tableImage("mainTheme", 96)]' border="0" alt="SL-Notizen hinzuf&uuml;gen oder bearbeiten"></image></a>
+													<a href="[r: macroLinkText("notizSLEdit@lib:com.github.naxos84.macros2")]"><image src='[r: tableImage("mainTheme", 96)]' border="0" alt="SL-Notizen hinzufügen oder bearbeiten"></image></a>
 												</td>
 												<td style='text-align: right;' width='13'>
-													<a href="[r: macroLinkText("notizSLDel@lib:com.github.naxos84.macros2")]"><image src='[r: tableImage("mainTheme", 98)]' border="0" alt="Alle SL-Notizen l&ouml;schen"></image></a>
+													<a href="[r: macroLinkText("notizSLDel@lib:com.github.naxos84.macros2")]"><image src='[r: tableImage("mainTheme", 98)]' border="0" alt="Alle SL-Notizen löschen"></image></a>
 												</td>
 											</tr>
 										</table>

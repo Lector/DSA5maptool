@@ -165,7 +165,7 @@
 										</tr>
 										<tr>
 											<td>
-												AP verf&uuml;gbar:
+												AP verfügbar:
 											</td>
 											<td style='padding-left: 4px;'>
 												[r: APverfuegbar]

@@ -41,7 +41,7 @@
 		<input type='radio' name='wasser' value='[r: imWasser]'>
 	</td>
 	<td>
-		H&uuml;fthohes Wasser ([r: imWasser])
+		Hüfthohes Wasser ([r: imWasser])
 	</td>
 </tr>
 <tr>

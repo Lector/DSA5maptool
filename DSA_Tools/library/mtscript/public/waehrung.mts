@@ -38,11 +38,11 @@
 		[aktWaehrung = json.get(uebergabe, "wAranien")]
 	};
 	case "qBergkoenigreich": { 
-		[aktLand = "Bergk&ouml;nigreich"]
+		[aktLand = "Bergkönigreich"]
 		[aktWaehrung = json.get(uebergabe, "wBergkoenigreich")]
 	};
 	case "qAmazonen": { 
-		[aktLand = "K&ouml;nnigenreich der Amazonen"]
+		[aktLand = "Könnigenreich der Amazonen"]
 		[aktWaehrung = json.get(uebergabe, "wAmazonen")]
 	};
 	case "qMittelreich": { 
@@ -55,7 +55,7 @@
 		[aktWaehrung = json.get(uebergabe, "wBornland")]
 	};
 	case "qAndergast": { 
-		[aktLand = "K&ouml;nigreich Andergast"]
+		[aktLand = "Königreich Andergast"]
 		[aktWaehrung = json.get(uebergabe, "wAndergast")]
 	};
 	case "qSchwarzeLande": { 
@@ -63,11 +63,11 @@
 		[aktWaehrung = json.get(uebergabe, "wSchwarzeLande")]
 	};
 	case "qMengbilla": { 
-		[aktLand = "Gro&szlig;emirat Mengbilla"]
+		[aktLand = "Großemirat Mengbilla"]
 		[aktWaehrung = json.get(uebergabe, "wMengbilla")]
 	};
 	case "qBrabak": { 
-		[aktLand = "K&ouml;nigreich Brabak"]
+		[aktLand = "Königreich Brabak"]
 		[aktWaehrung = json.get(uebergabe, "wBrabak")]
 	};
 	case "qTulamidenlande": { 
@@ -79,7 +79,7 @@
 		[aktWaehrung = json.get(uebergabe, "wPaavi")]
 	};
 	case "qNostria": { 
-		[aktLand = "K&ouml;nigreich Nostria"]
+		[aktLand = "Königreich Nostria"]
 		[aktWaehrung = json.get(uebergabe, "wNostria")]
 	};
 	case "qVallusa": { 
@@ -91,11 +91,11 @@
 		[aktWaehrung = json.get(uebergabe, "wHorasreich")]
 	};
 	case "qTrahelien": { 
-		[aktLand = "K&ouml;nigreich Trahelien"]
+		[aktLand = "Königreich Trahelien"]
 		[aktWaehrung = json.get(uebergabe, "wTrahelien")]
 	};
 	case "qSonstige": { 
-		[aktLand = "Weitere M&uuml;nzen"]
+		[aktLand = "Weitere Münzen"]
 		[aktWaehrung = json.get(uebergabe, "wSonstige")]
 	};
 	default: {
@@ -108,7 +108,7 @@
 [dialog5("waehrungsrechner", "width=1511; height=892; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
-		<title>W&auml;hrungsrechner</title>
+		<title>Währungsrechner</title>
 		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
 	</head>
 	<body>
@@ -178,7 +178,7 @@
 										<input type='radio' name='quellWaehrung' value='qBergkoenigreich' [r,if(quellWaehrung == "qBergkoenigreich"): output = "checked='checked'"; output = ""]>
 									</td>
 									<td style='font-weight: bold;'>
-										Bergk&ouml;nigreich
+										Bergkönigreich
 										<br>
 										<select name='wBergkoenigreich' size='1'>
 											[h: sBergkoenigreich = json.get(uebergabe, "wBergkoenigreich")]
@@ -193,7 +193,7 @@
 										<input type='radio' name='quellWaehrung' value='qAmazonen' [r,if(quellWaehrung == "qAmazonen"): output = "checked='checked'"; output = ""]>
 									</td>
 									<td style='font-weight: bold;'>
-										K&ouml;niginnenreich der Amazonen
+										Königinnenreich der Amazonen
 										<br>
 										<select name='wAmazonen' size='1'>
 											<option selected='selected'>Amazonenkrone</option>
@@ -244,7 +244,7 @@
 										<input type='radio' name='quellWaehrung' value='qAndergast' [r,if(quellWaehrung == "qAndergast"): output = "checked='checked'"; output = ""]>
 									</td>
 									<td style='font-weight: bold;'>
-										K&ouml;nigreich Andergast
+										Königreich Andergast
 										<br>
 										<select name='wAndergast' size='1'>
 											<option selected='selected'>Andrataler</option>
@@ -280,7 +280,7 @@
 										<input type='radio' name='quellWaehrung' value='qMengbilla' [r,if(quellWaehrung == "qMengbilla"): output = "checked='checked'"; output = ""]>
 									</td>
 									<td style='font-weight: bold;'>
-										Gro&szlig;emirat Mengbilla
+										Großemirat Mengbilla
 										<br>
 										<select name='wMengbilla' size='1'>
 											[h: sMengbilla = json.get(uebergabe, "wMengbilla")]
@@ -297,7 +297,7 @@
 										<input type='radio' name='quellWaehrung' value='qBrabak' [r,if(quellWaehrung == "qBrabak"): output = "checked='checked'"; output = ""]>
 									</td>
 									<td style='font-weight: bold;'>
-										K&ouml;nigreich Brabak
+										Königreich Brabak
 										<br>
 										<select name='wBrabak' size='1'>
 											[h: sBrabak = json.get(uebergabe, "wBrabak")]
@@ -343,7 +343,7 @@
 										<input type='radio' name='quellWaehrung' value='qNostria' [r,if(quellWaehrung == "qNostria"): output = "checked='checked'"; output = ""]>
 									</td>
 									<td style='font-weight: bold;'>
-										K&ouml;nigreich Nostria
+										Königreich Nostria
 										<br>
 										<select name='wNostria' size='1'>
 											<option selected='selected'>Nostrische Krone</option>
@@ -395,7 +395,7 @@
 										<input type='radio' name='quellWaehrung' value='qTrahelien' [r,if(quellWaehrung == "qTrahelien"): output = "checked='checked'"; output = ""]>
 									</td>
 									<td style='font-weight: bold;'>
-										K&ouml;nigreich Trahelien
+										Königreich Trahelien
 										<br>
 										<select name='wTrahelien' size='1'>
 											[h: sTrahelien = json.get(uebergabe, "wTrahelien")]
@@ -411,7 +411,7 @@
 										<input type='radio' name='quellWaehrung' value='qSonstige' [r,if(quellWaehrung == "qSonstige"): output = "checked='checked'"; output = ""]>
 									</td>
 									<td style='font-weight: bold;'>
-										Weitere M&uuml;nzen
+										Weitere Münzen
 										<br>
 										<select name='wSonstige' size='1'>
 											[h: sSonstige = json.get(uebergabe, "wSonstige")]
@@ -431,7 +431,7 @@
 							<table style='border-spacing: 0px;'>
 								<tr>
 									<td>
-										Anzahl der M&uuml;nzen:
+										Anzahl der Münzen:
 									</td>
 									<td>
 										<input type='text' name='fAnzahl' size='4' maxlength='4' value=''>
@@ -439,7 +439,7 @@
 								</tr>
 								<tr>
 									<td>
-										Wechselgeb&uuml;hr (%):
+										Wechselgebühr (%):
 									</td>
 									<td>
 										<input type='text' name='fGebuehr' size='4' maxlength='2' value=''>
@@ -466,7 +466,7 @@
 							<table style='border-spacing: 0px;'>
 								<tr>
 									<td valign='top'>
-										Aktuelle W&auml;hrung:
+										Aktuelle Währung:
 									</td>
 									<td>
 										<span style='font-weight: bold; color: #441e13;'>[r: anzahl] [r: aktWaehrung] ([r: aktLand])</span>
@@ -474,7 +474,7 @@
 								</tr>
 								<tr>
 									<td valign='top'>
-										Wechselgeb&uuml;hr:
+										Wechselgebühr:
 									</td>
 									<td>
 										<span style='font-weight: bold; color: #441e13;'>[r: gebuehr] %</span>

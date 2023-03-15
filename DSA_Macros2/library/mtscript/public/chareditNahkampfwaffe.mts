@@ -22,7 +22,7 @@
 			<table style='border-spacing: 4px; margin: 0px auto 10px auto;'>
 				<tr>
 					<td style='text-align: center; padding-bottom: 5px;'>
-						W&auml;hle eine Nahkampfwaffe zum Editieren aus:
+						Wähle eine Nahkampfwaffe zum Editieren aus:
 					</td>
 				</tr>
 				[h: baum = Nahkampfwaffen]

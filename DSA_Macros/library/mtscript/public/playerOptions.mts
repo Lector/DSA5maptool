@@ -39,7 +39,7 @@
 										<input type='checkbox' name='fLastFrame' value='1' [r: cLastFrame]>
 									</td>
 									<td>
-										Beim &Ouml;ffnen des Charakterbogens immer zuletzt angezeigte Seite &ouml;ffnen
+										Beim öffnen des Charakterbogens immer zuletzt angezeigte Seite öffnen
 									</td>
 								</tr>
 							</table>

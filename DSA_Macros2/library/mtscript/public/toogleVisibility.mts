@@ -24,7 +24,7 @@
 				<img src='%s'>
 			</td>
 			<td valign='middle'>
-				Die Sichtbarkeit der markierten Tokens wurde ge&auml;ndert.
+				Die Sichtbarkeit der markierten Tokens wurde geändert.
 			<td width='15'>
 				&nbsp;
 			</td>

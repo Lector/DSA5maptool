@@ -11,7 +11,7 @@
 	};
 	case 2:
 	{
-		[h: zonen = json.append("[]", "Kopf", "Torso", "Linkes Vorderbein", "Rechtes Vorderbein", "Linkes Bittelbein / Fl&uuml;gel", "Rechtes Mittelbein / Fl&uuml;gel", "Linkes Hinterbein", "Rechtes Hinterbein", "Schwanz")]
+		[h: zonen = json.append("[]", "Kopf", "Torso", "Linkes Vorderbein", "Rechtes Vorderbein", "Linkes Bittelbein / Flügel", "Rechtes Mittelbein / Flügel", "Linkes Hinterbein", "Rechtes Hinterbein", "Schwanz")]
 	};
 	case 3:
 	{
@@ -19,7 +19,7 @@
 	};
 	case 4:
 	{
-		[zonen = json.append("[]", "K&ouml;rper")]
+		[zonen = json.append("[]", "Körper")]
 	}
 ]
 

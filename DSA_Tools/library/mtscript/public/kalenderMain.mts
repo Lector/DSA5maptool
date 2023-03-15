@@ -60,7 +60,7 @@
 						<table style='border-spacing: 0px;' cellpadding='0'>
 							<tr>
 								<td>
-									<span title='Uhrzeit ausw&auml;hlen'>Uhrzeit:&nbsp;</span>
+									<span title='Uhrzeit auswählen'>Uhrzeit:&nbsp;</span>
 								</td>
 								<td>
 									<select name='fUhr' size='1'>

@@ -17,7 +17,7 @@
 
 <td valign='top'>
 	<div class='label'>
-		Zielgr&ouml;&szlig;e
+		Zielgröße
 	</div>
 </td>
 <td valign='top'>
@@ -51,7 +51,7 @@
 				<input type='radio' name='groesse' value='4' [r:cGross]>
 			</td>
 			<td>
-				Gro&szlig; (+4)
+				Groß (+4)
 			</td>
 		</tr>
 		<tr>

@@ -44,7 +44,7 @@
 [h,if(mod > 0): modColor = "#1d5c2f"; modColor = "#441e13"]
 [h,if(mod < 0): modColor = "#a42b1e"]
 
-[h: ausgabe = border("Initiative w&uuml;rfeln", strformat("
+[h: ausgabe = border("Initiative würfeln", strformat("
 
 	<table style='border-spacing: 0px; margin-top: 3px; font-weight: bold;'>
 		<tr>

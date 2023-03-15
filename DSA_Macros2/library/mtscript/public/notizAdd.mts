@@ -14,7 +14,7 @@
 [dialog5("notizAdd", "width=424; height=335; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
-		<title>Notiz hinzuf&uuml;gen</title>
+		<title>Notiz hinzufügen</title>
 		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
 	</head>
 	<body>

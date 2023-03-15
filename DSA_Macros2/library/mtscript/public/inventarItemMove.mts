@@ -58,7 +58,7 @@
 					</tr>
 					<tr>
 						<td style='padding-top: 5px;' valign='top'>
-							Beh&auml;lter:
+							Behälter:
 						</td>
 						<td>
 							<table style='border-spacing: 0px;'>

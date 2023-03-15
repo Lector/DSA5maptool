@@ -62,7 +62,7 @@
 [dialog5("gewichtsrechner", "width=955; height=450; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
-		<title>Gewichtsma&szlig;e umrechnen</title>
+		<title>Gewichtsmaße umrechnen</title>
 		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
 	</head>
 	<body>
@@ -78,7 +78,7 @@
 										<input type='radio' name='quellGewicht' value='qIrdisch' [r,if(quellGewicht == "qIrdisch"): output = "checked='checked'"; output = ""]>
 									</td>
 									<td>
-										Irdische Ma&szlig;e:
+										Irdische Maße:
 									</td>
 									<td>
 										<select name='mIrdisch' size='1'>
@@ -97,7 +97,7 @@
 										<input type='radio' name='quellGewicht' value='qDerisch' [r,if(quellGewicht == "qDerisch"): output = "checked='checked'"; output = ""]>
 									</td>
 									<td>
-										Derische Ma&szlig;e:
+										Derische Maße:
 									</td>
 									<td>
 										<select name='mDerisch' size='1'>
@@ -117,7 +117,7 @@
 										<input type='radio' name='quellGewicht' value='qZwergisch' [r,if(quellGewicht == "qZwergisch"): output = "checked='checked'"; output = ""]>
 									</td>
 									<td>
-										Zwergische Ma&szlig;e:
+										Zwergische Maße:
 									</td>
 									<td>
 										<select name='mZwergisch' size='1'>
@@ -182,7 +182,7 @@
 							<table style='border-spacing: 0px;' width='100%'>
 								<tr>
 									<td style='font-weight: bold; color: #ffffff; text-align: center;' bgcolor='#875e34'>
-										Irdische Ma&szlig;e
+										Irdische Maße
 									</td>
 								</tr>
 								<tr>
@@ -217,7 +217,7 @@
 							<table style='border-spacing: 0px;'>
 								<tr>
 									<td style='font-weight: bold; color: #ffffff; text-align: center;' bgcolor='#875e34'>
-										Derische Ma&szlig;e
+										Derische Maße
 									</td>
 								</tr>
 								<tr>
@@ -254,7 +254,7 @@
 							<table style='border-spacing: 0px;' width='100%'>
 								<tr>
 									<td style='font-weight: bold; color: #ffffff; text-align: center;' bgcolor='#875e34'>
-										Zwergische Ma&szlig;e
+										Zwergische Maße
 									</td>
 								</tr>
 								<tr>

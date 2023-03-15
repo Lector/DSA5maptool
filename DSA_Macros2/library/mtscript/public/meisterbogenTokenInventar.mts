@@ -54,7 +54,7 @@
 <html>
 	<head>
 		<title>
-			Inventar &amp; Verm&ouml;gen
+			Inventar &amp; Vermögen
 		</title>
 	</head>
 	<body style="background-image: url('[r: tblImage("mainTheme",66)]'); font-size: 10pt; color: #eee5c8;">
@@ -64,7 +64,7 @@
 			<table style='border-spacing: 0px;'>
 				<tr>
 					<td>
-						<a href="[r: macroLinkText("gotoToken@this", "", id)]"><image src='[r: getTokenImage(30)]' border="0" alt="Zum Token wechseln und ausw&auml;hlen"></image></a>
+						<a href="[r: macroLinkText("gotoToken@this", "", id)]"><image src='[r: getTokenImage(30)]' border="0" alt="Zum Token wechseln und auswählen"></image></a>
 					</td>
 					<td style='font-weight: bold;'>
 						[r: getName()]

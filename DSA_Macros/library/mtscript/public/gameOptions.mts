@@ -48,7 +48,7 @@
 							<input type='checkbox' name='fRestrictMovement' value='1' [r: cRestrictMovement]>
 						</td>
 						<td>
-							Bewegung von Tokens w&auml;hrend der<br>Initiative-Phase auf die GS beschr&auml;nken
+							Bewegung von Tokens während der<br>Initiative-Phase auf die GS beschränken
 						</td>
 					</tr> -->
 					<tr>
@@ -56,7 +56,7 @@
 							<input type='checkbox' name='fNSCAction' value='1' [r: cNSCAction]>
 						</td>
 						<td>
-							Verdecktes W&uuml;rfeln bei NSCs vorselektieren/anwenden
+							Verdecktes Würfeln bei NSCs vorselektieren/anwenden
 						</td>
 					</tr>
 					<tr>

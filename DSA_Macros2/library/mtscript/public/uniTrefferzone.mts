@@ -3,7 +3,7 @@
 [dialog5("uniTrefferzone", "width=480; height=512; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
-		<title>Trefferzone ausw&uuml;rfeln</title>
+		<title>Trefferzone auswürfeln</title>
 		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
 	</head>
 	<div class="border">
@@ -31,7 +31,7 @@
 						<input type='radio' name='groesse' value='2'>
 					</td>
 					<td>
-						Humanoid (gro&szlig;)
+						Humanoid (groß)
 					</td>
 				</tr>
 				<tr>
@@ -55,7 +55,7 @@
 						<input type='radio' name='groesse' value='5'>
 					</td>
 					<td>
-						Vierbeiner (gro&szlig;)
+						Vierbeiner (groß)
 					</td>
 				</tr>
 				<tr>
@@ -63,7 +63,7 @@
 						<input type='radio' name='groesse' value='6'>
 					</td>
 					<td>
-						6 Gliedma&szlig;en + Schwanz (gro&szlig;)
+						6 Gliedmaßen + Schwanz (groß)
 					</td>
 				</tr>
 				<tr>
@@ -71,7 +71,7 @@
 						<input type='radio' name='groesse' value='7'>
 					</td>
 					<td>
-						6 Gliedma&szlig;en + Schwanz (riesig)
+						6 Gliedmaßen + Schwanz (riesig)
 					</td>
 				</tr>
 				<tr>

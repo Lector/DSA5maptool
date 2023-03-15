@@ -70,7 +70,7 @@
 			case "0": zone = "Gesamt";
 			case "1": zone = "Kopf<br>(gezielt)";
 			case "2": zone = "Brust<br>(gezielt)";
-			case "3": zone = "R&uuml;cken<br>(gezielt)";
+			case "3": zone = "Rücken<br>(gezielt)";
 			case "4": zone = "Bauch<br>(gezielt)";
 			case "5": zone = "Linker Arm<br>(gezielt)";
 			case "6": zone = "Rechter Arm<br>(gezielt)";

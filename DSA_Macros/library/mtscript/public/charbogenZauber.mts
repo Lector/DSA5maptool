@@ -138,7 +138,7 @@
 									&nbsp;
 								</td>
 								<td style='border-top: 1px solid #eee5c8; border-bottom: 1px solid #eee5c8; height: 23;' width='300'>
-									ZAUBERSPR&Uuml;CHE
+									ZAUBERSPRüCHE
 								</td>
 								<td style='border-top: 1px solid #eee5c8; border-bottom: 1px solid #eee5c8;' width='60'>
 									<image src='[r: tableImage("mainTheme", 26)]'></image>

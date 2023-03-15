@@ -33,7 +33,7 @@
 				<img src='%s'>
 			</td>
 			<td valign='middle'>
-				Die Gr&ouml;&szlig;e der markierten Tokens wurde ge&auml;ndert.
+				Die Größe der markierten Tokens wurde geändert.
 			<td width='15'>
 				&nbsp;
 			</td>

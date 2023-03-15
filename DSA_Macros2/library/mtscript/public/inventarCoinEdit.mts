@@ -14,7 +14,7 @@
 [dialog5("inventarCoinEdit", "width=425; height=370; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
-		<title>Verm&ouml;gen editieren</title>
+		<title>Vermögen editieren</title>
 		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
 	</head>
 	<body>

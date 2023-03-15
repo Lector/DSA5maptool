@@ -12,6 +12,8 @@
 
 [h: optList = macro.args]
 [h: closeDialog("changeZoneImage")]
+[r: optList]
+[r: listGet(optList, 0)]
 [h,if(listGet(optList, 0) == "rs"), Code:
 	{
 		[PlayerOpt = setStrProp(PlayerOpt, "imageRS", listGet(optList, 1))]

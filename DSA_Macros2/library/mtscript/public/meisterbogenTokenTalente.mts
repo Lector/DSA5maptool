@@ -17,7 +17,7 @@
 			<table style='border-spacing: 0px;'>
 				<tr>
 					<td>
-						<a href="[r: macroLinkText("gotoToken@this", "", id)]"><image src='[r: getTokenImage(30)]' border="0" alt="Zum Token wechseln und ausw&auml;hlen"></image></a>
+						<a href="[r: macroLinkText("gotoToken@this", "", id)]"><image src='[r: getTokenImage(30)]' border="0" alt="Zum Token wechseln und auswählen"></image></a>
 					</td>
 					<td style='font-weight: bold;'>
 						[r: getName()]
@@ -29,10 +29,10 @@
 					<td style='text-align: center;'>
 						[r,if(tChoice == "Koerper"), Code:
 							{
-								<span style='color: #bbbbba;'>K&ouml;rper</span>
+								<span style='color: #bbbbba;'>Körper</span>
 							};
 							{
-								<span style='color: #eee5c8; text-decoration: none;' title='K&ouml;rpertalente aufrufen'>[r: macroLink("K&ouml;rper", "meisterbogenTokenTalente@this", "", strformat("%s, Koerper", id))]</span>				
+								<span style='color: #eee5c8; text-decoration: none;' title='Körpertalente aufrufen'>[r: macroLink("Körper", "meisterbogenTokenTalente@this", "", strformat("%s, Koerper", id))]</span>				
 							}
 						]	
 						&middot;

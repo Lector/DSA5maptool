@@ -93,7 +93,7 @@
 								</tr>
 								<tr>
 									<td>
-										K&ouml;rperkraft: 
+										Körperkraft: 
 									</td>
 									<td>
 										<input type='text' name='oKK' size='2' maxlength='2' value='[r: KK]'>
@@ -109,7 +109,7 @@
 								</tr>
 								<tr>
 									<td>
-										AP verf&uuml;gbar:
+										AP verfügbar:
 									</td>
 									<td>
 										<input type='text' name='oAPverfuegbar' size='3' maxlength='6' value='[r: APverfuegbar]'>
@@ -173,7 +173,7 @@
 								</tr>
 								<tr>
 									<td>
-										Z&auml;higkeit:
+										Zähigkeit:
 									</td>
 									<td>
 										<input type='text' name='oZK' size='2' maxlength='2' value='[r: ZK]'>

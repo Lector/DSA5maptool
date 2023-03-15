@@ -7,7 +7,7 @@
 										<input type='radio' name='quellWaehrung' value='qMengbilla' [r,if(getStrProp(uebergabe, "quellWaehrung") == "qMengbilla"): output = "checked='checked'"; output = ""]>
 									</td>
 									<td style='font-weight: bold;'>
-										Gro&szlig;emirat Mengbilla
+										Großemirat Mengbilla
 										<br>
 										<select name='wMengbilla' size='1'>
 											[h: sMengbilla = getStrProp(uebergabe, "wMengbilla")]
@@ -24,7 +24,7 @@
 										<input type='radio' name='quellWaehrung' value='qBrabak' [r,if(getStrProp(uebergabe, "quellWaehrung") == "qBrabak"): output = "checked='checked'"; output = ""]>
 									</td>
 									<td style='font-weight: bold;'>
-										K&ouml;nigreich Brabak
+										Königreich Brabak
 										<br>
 										<select name='wBrabak' size='1'>
 											[h: sBrabak = getStrProp(uebergabe, "wBrabak")]
@@ -70,7 +70,7 @@
 										<input type='radio' name='quellWaehrung' value='qNostria' [r,if(getStrProp(uebergabe, "quellWaehrung") == "qNostria"): output = "checked='checked'"; output = ""]>
 									</td>
 									<td style='font-weight: bold;'>
-										K&ouml;nigreich Nostria
+										Königreich Nostria
 										<br>
 										<select name='wNostria' size='1'>
 											<option selected='selected'>Nostrische Krone</option>
@@ -122,7 +122,7 @@
 										<input type='radio' name='quellWaehrung' value='qTrahelien' [r,if(getStrProp(uebergabe, "quellWaehrung") == "qTrahelien"): output = "checked='checked'"; output = ""]>
 									</td>
 									<td style='font-weight: bold;'>
-										K&ouml;nigreich Trahelien
+										Königreich Trahelien
 										<br>
 										<select name='wTrahelien' size='1'>
 											[h: sTrahelien = getStrProp(uebergabe, "wTrahelien")]
@@ -138,7 +138,7 @@
 										<input type='radio' name='quellWaehrung' value='qSonstige' [r,if(getStrProp(uebergabe, "quellWaehrung") == "qSonstige"): output = "checked='checked'"; output = ""]>
 									</td>
 									<td style='font-weight: bold;'>
-										Weitere M&uuml;nzen
+										Weitere Münzen
 										<br>
 										<select name='wSonstige' size='1'>
 											[h: sSonstige = getStrProp(uebergabe, "wSonstige")]

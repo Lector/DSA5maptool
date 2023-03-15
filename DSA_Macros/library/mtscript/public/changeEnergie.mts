@@ -16,7 +16,7 @@
 
 [h,switch(uebergabe), Code:
 	case "lePlus": {
-			[dialogTitle = "Lebensenergie hinzuf&uuml;gen"]
+			[dialogTitle = "Lebensenergie hinzufügen"]
 			[title = "LE Gewinn"]
 			[button = tableImage("forms", 66)]
 		};
@@ -26,7 +26,7 @@
 			[button = tableImage("forms", 65)]
 		};
 	case "aePlus": {
-			[dialogTitle = "Astralenergie hinzuf&uuml;gen"]
+			[dialogTitle = "Astralenergie hinzufügen"]
 			[title = "AE Gewinn"]
 			[button = tableImage("forms", 70)]
 		};
@@ -36,7 +36,7 @@
 			[button = tableImage("forms", 69)]
 		};
 	case "kePlus": {
-			[dialogTitle = "Karmaenergie hinzuf&uuml;gen"]
+			[dialogTitle = "Karmaenergie hinzufügen"]
 			[title = "KE Gewinn"]
 			[button = tableImage("forms", 72)]
 		};
@@ -86,7 +86,7 @@
 							<input type='radio' name='eingabeTyp' value='1'>
 						</td>
 						<td>
-							Ausw&uuml;rfeln:
+							Auswürfeln:
 						</td>
 						<td>
 							<table style='border-spacing: 0px;'>
@@ -171,7 +171,7 @@
 							<input type="radio" name="chat" value="1" [r: ausgabePublic]>
 						</td>
 						<td>
-							&Ouml;ffentlich
+							öffentlich
 						</td>
 						<td style='padding-left: 5px;'>
 							<input type="radio" name="chat" value="2" [r: ausgabeSL]>

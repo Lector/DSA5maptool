@@ -198,7 +198,7 @@
 													<input type='checkbox' name='hilfsmittelGeraetschaften' value='1'>
 												</td>
 												<td>
-													Besonders geeignete Ger&auml;tschaften (+1)
+													Besonders geeignete Gerätschaften (+1)
 												</td>
 											</tr>
 										</table>
@@ -260,7 +260,7 @@
 				<input type="hidden" name="image" value="76"/>
 				<input type="hidden" name="patzerTabelle" value="patzerZauber"/>
 				<input type="hidden" name="modMacro" value="probeRitualMods@this"/>
-				<input type="hidden" name="kritText" value="Die AE-Kosten werden halbiert.<br/>Auf die FP d&uuml;rfen weitere 1W6 Punkte aufaddiert werden"/>
+				<input type="hidden" name="kritText" value="Die AE-Kosten werden halbiert.<br/>Auf die FP dürfen weitere 1W6 Punkte aufaddiert werden"/>
 				<input type="hidden" name="patzer19" value="[r: hasTrait('Nachteile', 'Wilde Magie')]"/>
 			</form>
 		</div>

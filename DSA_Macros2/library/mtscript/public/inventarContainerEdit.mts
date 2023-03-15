@@ -16,7 +16,7 @@
 [dialog5("inventarContainerEdit", "width=425; height=296; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
-		<title>Beh&auml;lter umbenennen</title>
+		<title>Behälter umbenennen</title>
 		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
 	</head>
 	<body style='font-size: 12pt;' bgcolor='#ece9d8'>

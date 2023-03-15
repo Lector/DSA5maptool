@@ -80,7 +80,7 @@
 							<input type='radio' name='wSchaden' value='1'>
 						</td>
 						<td>
-							Schaden ausw&uuml;rfeln:
+							Schaden auswürfeln:
 						</td>
 						<td>
 							<table style='border-spacing: 0px;'>

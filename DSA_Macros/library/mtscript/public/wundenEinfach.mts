@@ -25,7 +25,7 @@
 [dialog("wundenEinfach", "width=466; height=331; temporary=1; input=0; noframe=0"):{
 <html>
 	<head>
-		<title>Wunden heilen oder hinzuf&uuml;gen</title>
+		<title>Wunden heilen oder hinzufügen</title>
 	</head>
 	<body style='font-size: 11pt;' bgcolor='#ece9d8'>
 		<form action="[r:actionLink]">
@@ -83,7 +83,7 @@
 							<input type="radio" name="chat" value="1" [r: ausgabePublic]>
 						</td>
 						<td>
-							&Ouml;ffentlich
+							öffentlich
 						</td>
 						<td style='padding-left: 5px;'>
 							<input type="radio" name="chat" value="2" [r: ausgabeSL]>

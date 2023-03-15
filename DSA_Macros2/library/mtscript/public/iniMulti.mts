@@ -2,7 +2,7 @@
 [dialog5("iniMulti", "width=467; height=382; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
-		<title>Multi-Initiative w&uuml;rfeln</title>
+		<title>Multi-Initiative würfeln</title>
 		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
 	</head>
 	<body>

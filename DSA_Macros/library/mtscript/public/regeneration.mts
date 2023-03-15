@@ -152,7 +152,7 @@
 								<input type='radio' name='regLEtyp' value='1d6' checked='checked'/> 
 							</td>
 							<td>
-								Ausw&uuml;rfeln (1W6)
+								Auswürfeln (1W6)
 							</td>
 							<td width=200>&nbsp;</td>
 						</tr>
@@ -227,7 +227,7 @@
 								<input type='radio' name='regAEtyp' value='1d6' [r: aeRegWactive]>
 							</td>
 							<td>
-								Ausw&uuml;rfeln (1W6)
+								Auswürfeln (1W6)
 							</td>
 							<td width='20'>
 								&nbsp;
@@ -311,7 +311,7 @@
 								<input type='radio' name='regKEtyp' value='1d6' [r: KERegWactive]>
 							</td>
 							<td>
-								Ausw&uuml;rfeln (1W6)
+								Auswürfeln (1W6)
 							</td>
 						</tr>
 						[r,if(keRegSRwert != 0),Code:{
@@ -371,7 +371,7 @@
 								<input type='checkbox' name='Nachtruhe' value='-2'>
 							</td>
 							<td>
-								<span title='z.B. Hundswache, naechtlicher Ueberfall'>L&auml;ngere Unterbrechung der Nachtruhe (-2)</span>
+								<span title='z.B. Hundswache, naechtlicher Ueberfall'>Längere Unterbrechung der Nachtruhe (-2)</span>
 							</td>
 						</tr>
 						<tr>

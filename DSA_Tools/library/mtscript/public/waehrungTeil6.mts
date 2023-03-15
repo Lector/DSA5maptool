@@ -4,7 +4,7 @@
 							<table style='border-spacing: 0px;'>
 								<tr>
 									<td style='font-weight: bold; color: #ffffff; text-align: center;' bgcolor='#875e34'>
-										K&ouml;nigreich Brabak
+										Königreich Brabak
 									</td>
 								</tr>
 								<tr>
@@ -14,7 +14,7 @@
 												<td style='padding-right: 5px;'>
 													Brabaker Kreuzer
 													<br>Brabaker Krone (in Brabak)
-													<br>Brabaker Krone (au&szlig;erhalb Brabak)
+													<br>Brabaker Krone (außerhalb Brabak)
 												</td>
 												<td style='text-align: right; border-left: 1px solid #000000; padding-left: 5px;' width='50'>
 													[r: round(uKreuzer / 1, 2)]
@@ -33,7 +33,7 @@
 							<table style='border-spacing: 0px;' width='100%'>
 								<tr>
 									<td style='font-weight: bold; color: #ffffff; text-align: center;' bgcolor='#875e34'>
-										K&ouml;nigreich Nostria
+										Königreich Nostria
 									</td>
 								</tr>
 								<tr>
@@ -58,7 +58,7 @@
 							<table style='border-spacing: 0px;' width='100%'>
 								<tr>
 									<td style='font-weight: bold; color: #ffffff; text-align: center;' bgcolor='#875e34'>
-										K&ouml;nigreich Trahelien
+										Königreich Trahelien
 									</td>
 								</tr>
 								<tr>
@@ -66,7 +66,7 @@
 										<table style='border-spacing: 0px;' width='100%'>
 											<tr>
 												<td style='padding-right: 5px;'>
-													Tr&uuml;mmer
+													Trümmer
 													<br>Ch&#39;ryskl
 													<br>Hedsch
 													<br>Suvar
@@ -236,7 +236,7 @@
 											<tr>
 												<td style='padding-right: 5px;'>
 													Flindrich
-													<br>St&uuml;ber
+													<br>Stüber
 													<br>Witten
 												</td>
 												<td style='text-align: right; border-left: 1px solid #000000; padding-left: 5px;' width='50'>
@@ -256,7 +256,7 @@
 							<table style='border-spacing: 0px;' width='100%'>
 								<tr>
 									<td style='font-weight: bold; color: #ffffff; text-align: center;' bgcolor='#875e34'>
-										Weitere M&uuml;nzen
+										Weitere Münzen
 									</td>
 								</tr>
 								<tr>

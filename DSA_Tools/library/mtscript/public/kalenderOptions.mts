@@ -38,7 +38,7 @@
 							<input type='checkbox' name='fKalChat' value='1' [r: cKalChat]>
 						</td>
 						<td>
-							&Auml;nderungen des Datums im Chat ausgeben
+							änderungen des Datums im Chat ausgeben
 						</td>
 					</tr>
 					<tr>
@@ -71,7 +71,7 @@
 							<input type='checkbox' name='fUhrChat' value='1' [r: cUhrChat]>
 						</td>
 						<td>
-							&Auml;nderungen der Uhrzeit im Chat ausgeben
+							änderungen der Uhrzeit im Chat ausgeben
 						</td>
 					</tr>
 				</table>

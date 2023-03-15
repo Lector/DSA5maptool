@@ -142,7 +142,7 @@
 			<table style='border-spacing: 0px; margin-left: 9px;' width='416'> 	
 				<tr style='text-align: center;'>
 					<td style='text-align: left;'>
-						R&uuml;stung
+						Rüstung
 					</td>
 					<td width='30'>
 						RS

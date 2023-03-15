@@ -81,7 +81,7 @@
 			<img src='%s'>
 		</td>
 		<td valign='middle'>
-			Die gew&auml;hlten Tokens wurden zum gew&uuml;nschten Zielort teleportiert.
+			Die gewählten Tokens wurden zum gewünschten Zielort teleportiert.
 		<td width='15'>
 			&nbsp;
 		</td>

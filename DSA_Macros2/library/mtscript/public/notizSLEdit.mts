@@ -14,7 +14,7 @@
 [dialog5("notizSLEdit", "width=424; height=387; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
-		<title>Notizen f&uuml;r den Spielleiter</title>
+		<title>Notizen für den Spielleiter</title>
 		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
 	</head>
 	<body>
@@ -29,7 +29,7 @@
 							&nbsp;
 						</td>
 						<td style='text-align: center; padding-bottom: 10px;'>
-							Hier kannst du wichtige Charakterinformationen f&uuml;r den Spielleiter eintragen. Wenn du dir unsicher bist was du hier eintragen sollst, frage den Spielleiter.
+							Hier kannst du wichtige Charakterinformationen für den Spielleiter eintragen. Wenn du dir unsicher bist was du hier eintragen sollst, frage den Spielleiter.
 						</td>
 						<td width='48'>
 							&nbsp;

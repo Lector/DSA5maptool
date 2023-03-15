@@ -39,6 +39,6 @@ window.addEventListener('load', function(evt) {
 		<input type='checkbox' name='beengt' [r,if(getState("Eingeengt") == 1),Code:{ checked='checked' };{}]>
 	</td>
 	<td>
-		Beengte Verh&auml;ltnisse (<label id='cramped'>0</label>)
+		Beengte Verhältnisse (<label id='cramped'>0</label>)
 	</td>
 </tr>

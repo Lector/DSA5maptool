@@ -60,7 +60,7 @@
 									<img src='[r: tableImage("smilies", 1)]'></img>
 								</td>
 								<td>
-									L&auml;cheln
+									Lächeln
 								</td>
 							</tr>
 							<tr>
@@ -188,7 +188,7 @@
 									<img src='[r: tableImage("smilies", 12)]'></img>
 								</td>
 								<td>
-									Ver&auml;rgert
+									Verärgert
 								</td>
 							</tr>
 							<tr>
@@ -210,7 +210,7 @@
 									<img src='[r: tableImage("smilies", 14)]'></img>
 								</td>
 								<td>
-									&Uuml;berrascht
+									überrascht
 								</td>
 							</tr>
 							<tr>
@@ -287,7 +287,7 @@
 									<img src='[r: tableImage("smilies", 21)]'></img>
 								</td>
 								<td>
-									Geh&auml;ssig
+									Gehässig
 								</td>
 							</tr>
 							<tr>
@@ -316,7 +316,7 @@
 									<img src='[r: tableImage("smilies", 23)]'></img>
 								</td>
 								<td>
-									M&uuml;de
+									Müde
 								</td>
 							</tr>
 							<tr>
@@ -327,7 +327,7 @@
 									<img src='[r: tableImage("smilies", 24)]'></img>
 								</td>
 								<td>
-									Sch&uuml;chtern
+									Schüchtern
 								</td>
 							</tr>
 							<tr>
@@ -349,7 +349,7 @@
 									<img src='[r: tableImage("smilies", 26)]'></img>
 								</td>
 								<td>
-									Verr&uuml;ckt
+									Verrückt
 								</td>
 							</tr>
 							<tr>

@@ -36,7 +36,7 @@
 							Hinweis:
 						</td>
 						<td>
-							Die kopierten Tokens erscheinen gestapelt auf dem zum Kopieren ausgew&auml;hlten Token.
+							Die kopierten Tokens erscheinen gestapelt auf dem zum Kopieren ausgewählten Token.
 						</td>
 					</tr>
 				</table>

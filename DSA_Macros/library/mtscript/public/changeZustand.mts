@@ -16,7 +16,7 @@
 [dialog5("changeZustand", "width=425; height=500; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
-		<title>Zust&auml;nde bearbeiten</title>
+		<title>Zustände bearbeiten</title>
 		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
 	</head>
 	<body>
@@ -101,7 +101,7 @@
 					</tr>
 					<tr>
 						<td style='padding-right: 3px; height: 25'>
-							<span title='Ist der Ausl&ouml;ser nicht mehr vorhanden, baut sich die Furcht alle 5 Minuten um 1 Stufe ab, so nichts anderes angegeben ist.'>Furcht:</span>
+							<span title='Ist der Auslöser nicht mehr vorhanden, baut sich die Furcht alle 5 Minuten um 1 Stufe ab, so nichts anderes angegeben ist.'>Furcht:</span>
 						</td>
 						[h: i=0]
 						[while(i<=4,""), Code:
@@ -146,7 +146,7 @@
 					</tr>
 					<tr>
 						<td style='padding-right: 3px; height: 25'>
-							<span title='Jede Stufe Betäubung verschwindet, so nichts anderes angegeben ist, nach einer Ruhephase von 3 Stunden'>Bet&auml;ubung:</span>
+							<span title='Jede Stufe Betäubung verschwindet, so nichts anderes angegeben ist, nach einer Ruhephase von 3 Stunden'>Betäubung:</span>
 						</td>
 						[h: i=0][while(i<=4,""), Code:
 							{
@@ -160,7 +160,7 @@
 					</tr>
 					<tr>
 						<td style='padding-right: 3px; height: 25'>
-							<span title='&Uuml;beranstrengung baut sich nach 6 Stunden Schlaf um 1 Stufe ab.'>&Uuml;beranstrengung:</span>
+							<span title='überanstrengung baut sich nach 6 Stunden Schlaf um 1 Stufe ab.'>überanstrengung:</span>
 						</td>
 						[h: i=0]
 						[while(i<=4,""), Code:
@@ -175,7 +175,7 @@
 					</tr>
 					<tr>
 						<td style='padding-right: 3px; height: 25'>
-							<span title='Die Entr&uuml;ckung baut sich jede Stunde um 1 ab.'>Entr&uuml;ckung:</span>
+							<span title='Die Entrückung baut sich jede Stunde um 1 ab.'>Entrückung:</span>
 						</td>
 						[h: i=0]
 						[while(i<=4,""), Code:

@@ -168,7 +168,7 @@
 </tr>
 <tr>
 	<td style='padding: 1px 4px 1px 0px;'>
-		<span title='%{qualitaetTitle}'>Qualit&auml;t:</span>
+		<span title='%{qualitaetTitle}'>Qualität:</span>
 	</td>
 	<td style='padding: 1px 0px 1px 0px; text-align: right; color: %{qualiColor};'>
 		<span title='%{qualitaetTitle}'>%{quali}</span>

@@ -14,7 +14,7 @@
 [dialog5("probe", "width=510; height=415; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
-		<title>Krankheits- bzw. Giftprobe w&uuml;rfeln</title>
+		<title>Krankheits- bzw. Giftprobe würfeln</title>
 		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
 	</head>
 	<body>
@@ -135,7 +135,7 @@
 										<input type="radio" name="resistenz" value="ZKAktiv">
 									</td>
 									<td>
-										Probe gegen Z&auml;higkeit
+										Probe gegen Zähigkeit
 									</td>
 									<td style='text-align: right; padding-left: 3px;'>
 										[h: aktZK = ZK + getStrProp(TempMod, "zk")]												
