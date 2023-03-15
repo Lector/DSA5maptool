@@ -6,11 +6,12 @@
 [h: options = setStrProp(options, "uhrChat", "0")]
 [h: setLibProperty("KalenderOpt", options, "com.github.naxos84.tools")]
 
+[h: moonphaseImage = data.getStaticData("com.github.naxos84.macros2", "/public/images/moonphases/mada_29_off.png")]
 [h,if(json.get(uebergabe, "fMada") == ""), code: 
 	{
 		[options = setStrProp(options, "mada", "0")]
 		[token("Madaphase"): setNotes("Die Anzeige der Madaphasen wurde deaktiviert.")]
-		[token("Madaphase"): setTokenImage(tableImage("mada", 29))]
+		[token("Madaphase"): setTokenImage(moonphaseImage)]
 	};
 	{
 		[options = setStrProp(options, "mada", "1")]
@@ -23,7 +24,7 @@
 		[token("Aktuelles Datum"): setNotes("Die Anzeige des Datums wurde deaktiviert.")]
 		[token("Aktuelles Datum"): setTokenImage(tableImage("misc", 10))]
 		[token("Madaphase"): setNotes("Die Anzeige der Madaphasen wurde deaktiviert.")]
-		[token("Madaphase"): setTokenImage(tableImage("mada", 29))]
+		[token("Madaphase"): setTokenImage(moonphaseImage)]
 	};
 	{
 		[options = setStrProp(options, "kalender", "1")]

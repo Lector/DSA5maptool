@@ -376,7 +376,8 @@
 [h: madaphase = "<span style='font-size: 12pt; font-weight: bold;'>"+madaphase+"</span>"]
 [h,if(getStrProp(kalenderOptions, "mada") == 1), code:
 {
-		[setTokenImage(tableImage("mada", madanummer), idMada, mapName)]
+		[h: moonphaseImage = data.getStaticData("com.github.naxos84.macros2", "/public/images/moonphases/mada_" + madanummer + ".png")]
+		[setTokenImage(moonphaseImage, idMada, mapName)]
 		[setNotes(madaphase, idMada, mapName)]
 };{}]
 
