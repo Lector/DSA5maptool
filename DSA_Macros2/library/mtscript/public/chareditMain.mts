@@ -14,10 +14,10 @@
 
 [h,switch(propType),Code:
 	case "Kraut": {
-		[h,macro("editKraut@lib:com.github.naxos.Wildnis"): currentToken()]
+		[h,macro("editKraut@lib:com.github.naxos84.wildnis"): currentToken()]
 	};
 	case "Jagdwild": {
-		[h,macro("editTier@lib:com.github.naxos.Wildnis"): currentToken()]
+		[h,macro("editTier@lib:com.github.naxos84.wildnis"): currentToken()]
 	};
 	case "Basic": {
 		[h,macro("chareditChar@this"): currentToken()]

@@ -31,7 +31,7 @@
 						Optional: Spiel mit Wundeffekten
 					</td>
 					<td>
-						[r,if(getLibProperty("OptWunden", "lib:com.github.naxos84.macros") == 1): output = imageOk; output = imageFail]
+						[r,if(getLibProperty("OptWunden", "com.github.naxos84.macros") == 1): output = imageOk; output = imageFail]
 					</td>
 				</tr>
 			</table>

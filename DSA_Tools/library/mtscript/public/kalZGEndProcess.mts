@@ -1,5 +1,5 @@
-[h: kalenderOptions = getLibProperty("KalenderOpt", "this")]
-[h: kalenderDaten = getLibProperty("KalenderMain", "this")]
+[h: kalenderOptions = getLibProperty("KalenderOpt", "com.github.naxos84.tools")]
+[h: kalenderDaten = getLibProperty("KalenderMain", "com.github.naxos84.tools")]
 [h: system = getStrProp(kalenderDaten, "zgSystem")]
 [h: jahr = getStrProp(kalenderDaten, "zgJahr")]
 [h: monat = getStrProp(kalenderDaten, "zgMonat")]

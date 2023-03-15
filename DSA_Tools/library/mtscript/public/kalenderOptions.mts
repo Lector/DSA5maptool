@@ -1,4 +1,4 @@
-[h: options = getLibProperty("KalenderOpt", "this")]
+[h: options = getLibProperty("KalenderOpt", "com.github.naxos84.tools")]
 
 [h,if(getStrProp(options, "kalender") == 1): cKal = "checked='checked'"; cKal = ""]
 [h,if(getStrProp(options, "kalenderChat") == 1): cKalChat = "checked='checked'"; cKalChat = ""]

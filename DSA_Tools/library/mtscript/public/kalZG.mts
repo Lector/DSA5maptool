@@ -1,4 +1,4 @@
-[h: kalenderDaten = getLibProperty("KalenderMain", "this")]
+[h: kalenderDaten = getLibProperty("KalenderMain", "com.github.naxos84.tools")]
 
 [h: t1check = ""]
 [h: t2check = ""]

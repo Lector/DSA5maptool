@@ -6,14 +6,14 @@
 		[chatNotice = "Alle Weblinks wurden gel&ouml;scht."]
 	};
 	{
-		[linklist = getLibProperty("Weblinks", "this")]
+		[linklist = getLibProperty("Weblinks", "com.github.naxos84.tools")]
 		[newlist = json.remove(linklist, uebergabe)]
 		[chatNotice = "Der ausgew&auml;hlte Weblink wurde gel&ouml;scht."]
 	}
 ]
-[h: setLibProperty("Weblinks", newList, "this")]
+[h: setLibProperty("Weblinks", newList, "com.github.naxos84.tools")]
 
-[h,if(isFrameVisible("meisterbogen") == 1 && getLibProperty("SLframe", "lib:com.github.naxos84.macros") == 6), Code:
+[h,if(isFrameVisible("meisterbogen") == 1 && getLibProperty\("SLframe","com.github.naxos84.macros") == 6), Code:
 	{
 		[h,macro("meisterbogenTools@lib:com.github.naxos84.macros2"): ""]
 	};{}

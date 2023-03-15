@@ -10,7 +10,7 @@
 	};{}
 ]
 
-[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "lib:com.github.naxos84.macros") == 1), Code:
+[h,if(isNPC() == 1 && getLibProperty\("OptHideNSCAction","com.github.naxos84.macros") == 1), Code:
 	{
 		[ausgabeSL = "checked='checked'"]
 		[ausgabePublic = ""]

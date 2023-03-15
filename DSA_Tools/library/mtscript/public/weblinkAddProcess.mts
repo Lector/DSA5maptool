@@ -14,7 +14,7 @@
 		[h,macro("inputFail@lib:com.github.naxos84.macros"): "wrongLink"]
 	};{}
 ]
-[h: linklist = getLibProperty("Weblinks", "this")]
+[h: linklist = getLibProperty("Weblinks", "com.github.naxos84.tools")]
 [h,foreach(link, linklist, ""), CODE:
 	{
 		[if(json.get(link, "linkname") == lName), Code:
@@ -29,9 +29,9 @@
 [h: newLink = json.set("{}", "linkname", lName, "linkadress", lAdress)]
 [h: newList = json.append(linklist, newLink)]
 [h: newList = json.sort(newList, "asc", "linkname")]
-[h: setLibProperty("Weblinks", newList, "this")]
+[h: setLibProperty("Weblinks", newList, "com.github.naxos84.tools")]
 
-[h,if(isFrameVisible("meisterbogen") == 1 && getLibProperty("SLframe", "lib:com.github.naxos84.macros") == 6), Code:
+[h,if(isFrameVisible("meisterbogen") == 1 && getLibProperty\("SLframe","com.github.naxos84.macros") == 6), Code:
 	{
 		[h,macro("meisterbogenTools@lib:com.github.naxos84.macros2"): ""]
 	};{}

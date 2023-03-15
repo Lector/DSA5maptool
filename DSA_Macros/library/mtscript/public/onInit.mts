@@ -108,7 +108,7 @@
 
 [h: defineFunction("scatter", "scatter@lib:com.github.naxos84.macros2")]
 
-[h: defineFunction("getRandomHerbs", "getRandomHerbs@lib:com.github.naxos.Wildnis")]
+[h: defineFunction("getRandomHerbs", "getRandomHerbs@lib:com.github.naxos84.wildnis")]
 
 [h: message = "
 <h1>Willkommen beim DSA5 Regelsatz für maptools</h1><br>

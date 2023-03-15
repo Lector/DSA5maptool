@@ -1,10 +1,10 @@
 [h: uebergabe = macro.args]
 [h: closeDialog("kalenderOptions")]
 
-[h: options = getLibProperty("KalenderOpt", "this")]
+[h: options = getLibProperty("KalenderOpt", "com.github.naxos84.tools")]
 [h: options = setStrProp(options, "kalenderChat", "0")]
 [h: options = setStrProp(options, "uhrChat", "0")]
-[h: setLibProperty("KalenderOpt", options, "this")]
+[h: setLibProperty("KalenderOpt", options, "com.github.naxos84.tools")]
 
 [h,if(json.get(uebergabe, "fMada") == ""), code: 
 	{
@@ -16,7 +16,7 @@
 		[options = setStrProp(options, "mada", "1")]
 	}
 ]
-[h: setLibProperty("KalenderOpt", options, "this")]
+[h: setLibProperty("KalenderOpt", options, "com.github.naxos84.tools")]
 [h,if(json.get(uebergabe, "fKal") == ""), code: 
 	{
 		[options = setStrProp(options, "kalender", "0")]
@@ -39,7 +39,7 @@
 	};
 	{
 		[options = setStrProp(options, "uhr", "1")]
-		[setLibProperty("KalenderOpt", options, "this")]
+		[setLibProperty("KalenderOpt", options, "com.github.naxos84.tools")]
 		[nUebergabe = json.set("{}", "fUhr", getStrProp(options, "uhrzeit"))]
 		[h,macro("uhrzeitProcess@this"): nUebergabe]
 	}
@@ -48,7 +48,7 @@
 [h,if(json.get(uebergabe, "fKalChat") == ""): options = setStrProp(options, "kalenderChat", "0"); options = setStrProp(options, "kalenderChat", "1")]
 [h,if(json.get(uebergabe, "fUhrChat") == ""): options = setStrProp(options, "uhrChat", "0"); options = setStrProp(options, "uhrChat", "1")]
 
-[h: setLibProperty("KalenderOpt", options, "this")]
+[h: setLibProperty("KalenderOpt", options, "com.github.naxos84.tools")]
 
 [h: ausgabe = strformat("
 <table style='border-spacing: 0px; margin-top: 3px; font-weight: bold;'>

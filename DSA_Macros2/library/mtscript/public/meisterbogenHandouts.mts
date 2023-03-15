@@ -45,7 +45,7 @@
 							</tr>
 							<tr>
 								<td style="background-image: url('[r: tblImage("mainTheme",49)]'); background-repeat: repeat-y; padding-left: 10px; padding-right: 10px; height: 28;">
-									[h: hShared = getLibProperty("SharedHandouts", "lib:com.github.naxos84.macros")]
+									[h: hShared = getLibProperty\("SharedHandouts","com.github.naxos84.macros")]
 									[r,for(num,1,31,1,""), Code:
 									{
 										[h: hTokenName = strformat("Handout %s", num)]

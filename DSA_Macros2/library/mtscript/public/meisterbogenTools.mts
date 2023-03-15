@@ -54,7 +54,7 @@
 												<image src='[r: tableImage("tools", 11)]'></image>
 											</td>
 											<td>
-												<span style='color: #eee5c8; text-decoration: none;' title='Umrechner f&uuml;r Gewichtsma&szlig;e aufrufen'>[r: macroLink("Gewichtsrechner", "gewichtsrechner@lib:com.github.naxos.Tools")]</span>
+												<span style='color: #eee5c8; text-decoration: none;' title='Umrechner f&uuml;r Gewichtsma&szlig;e aufrufen'>[r: macroLink("Gewichtsrechner", "gewichtsrechner@lib:com.github.naxos84.tools")]</span>
 											</td>
 										</tr>
 										<tr>
@@ -62,7 +62,7 @@
 												<image src='[r: tableImage("tools", 12)]'></image>
 											</td>
 											<td>
-												<span style='color: #eee5c8; text-decoration: none;' title='Umrechner f&uuml;r L&auml;ngenma&szlig; aufrufen'>[r: macroLink("L&auml;ngenrechner", "laengenrechner@lib:com.github.naxos.Tools")]</span>
+												<span style='color: #eee5c8; text-decoration: none;' title='Umrechner f&uuml;r L&auml;ngenma&szlig; aufrufen'>[r: macroLink("L&auml;ngenrechner", "laengenrechner@lib:com.github.naxos84.tools")]</span>
 											</td>
 										</tr>
 										<tr>
@@ -70,7 +70,7 @@
 												<image src='[r: tableImage("tools", 13)]'></image>
 											</td>
 											<td>
-												<span style='color: #eee5c8; text-decoration: none;' title='Umrechner f&uuml;r W&auml;hrungen aufrufen'>[r: macroLink("W&auml;hrungsrechner", "waehrung@lib:com.github.naxos.Tools")]</span>
+												<span style='color: #eee5c8; text-decoration: none;' title='Umrechner f&uuml;r W&auml;hrungen aufrufen'>[r: macroLink("W&auml;hrungsrechner", "waehrung@lib:com.github.naxos84.tools")]</span>
 											</td>
 										</tr>
 									</table>
@@ -84,7 +84,7 @@
 												<image src='[r: tableImage("tools", 17)]'></image>
 											</td>
 											<td>
-												<span style='color: #eee5c8; text-decoration: none;' title='Das Steuerungsfenster f&uuml;r den Kalender aufrufen'>[r: macroLink("Kalender-Steuerung", "kalenderMain@lib:com.github.naxos.Tools", "")]</span>
+												<span style='color: #eee5c8; text-decoration: none;' title='Das Steuerungsfenster f&uuml;r den Kalender aufrufen'>[r: macroLink("Kalender-Steuerung", "kalenderMain@lib:com.github.naxos84.tools", "")]</span>
 											</td>
 										</tr>
 									</table>
@@ -96,16 +96,16 @@
 													<image src='[r: tableImage("mainTheme", 108)]'></image>
 												</td>
 												<td style='text-align: center;' width='13'>
-													<a href="[r: macroLinkText("weblinkAdd@lib:com.github.naxos.Tools")]"><image src='[r: tableImage("mainTheme", 97)]' border="0" alt="Einen neuen Weblink hinzuf&uuml;gen"></image></a>
+													<a href="[r: macroLinkText("weblinkAdd@lib:com.github.naxos84.tools")]"><image src='[r: tableImage("mainTheme", 97)]' border="0" alt="Einen neuen Weblink hinzuf&uuml;gen"></image></a>
 												</td>
 												<td style='text-align: right;' width='13'>
-													<a href="[r: macroLinkText("weblinkDel@lib:com.github.naxos.Tools", "", "all")]"><image src='[r: tableImage("mainTheme", 98)]' border="0" alt="Alle Weblinks l&ouml;schen"></image></a>
+													<a href="[r: macroLinkText("weblinkDel@lib:com.github.naxos84.tools", "", "all")]"><image src='[r: tableImage("mainTheme", 98)]' border="0" alt="Alle Weblinks l&ouml;schen"></image></a>
 												</td>
 											</tr>
 										</table>
 									</div>
 									<table style='border-spacing: 0px;' cellpadding='5'>
-										[h: linklist = getLibProperty("Weblinks", "lib:com.github.naxos.Tools")]
+										[h: linklist = getLibProperty("Weblinks", "com.github.naxos84.tools")]
 										[h: num = 0]
 										[r,if(json.isEmpty(linklist) == 1): output = "<tr><td>Keine vorhanden</td></tr>"]
 										[Foreach(link, linklist,""), CODE:
@@ -120,7 +120,7 @@
 														[r: strformat("<a style='color: #eee5c8; text-decoration: none;' href='%s'>%s</a>", lAdress, lName)]
 													</td>
 													<td style='text-align: center;'>
-														<a href="[r: macroLinkText("weblinkDel@lib:com.github.naxos.Tools", "", num)]"><image src='[r: tableImage("mainTheme", 100)]' border="0" alt="Diesen Weblink l&ouml;schen"></image></a>
+														<a href="[r: macroLinkText("weblinkDel@lib:com.github.naxos84.tools", "", num)]"><image src='[r: tableImage("mainTheme", 100)]' border="0" alt="Diesen Weblink l&ouml;schen"></image></a>
 													</td>
 												</tr>
 												[h: num = num + 1]

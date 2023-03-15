@@ -1,4 +1,4 @@
-[h: options = getLibProperty("KalenderOpt", "this")]
+[h: options = getLibProperty("KalenderOpt", "com.github.naxos84.tools")]
 
 [h: kalenderTyp = getStrProp(options, "kalenderTyp")]
 [h,if(kalenderTyp == "Zwoelfgoettlicher Kalender"): zgCheck = "selected='selected'"; zgCheck = ""]

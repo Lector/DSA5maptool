@@ -1,6 +1,6 @@
 [h: uebergabe = macro.args]
 
-[h: options = getLibProperty("KalenderOpt", "this")]
+[h: options = getLibProperty("KalenderOpt", "com.github.naxos84.tools")]
 [h,if(getStrProp(options, "kalender") == 0), code: 
 	{
 		[h,macro("inputFail@lib:com.github.naxos84.macros"): "kalender"]
@@ -8,7 +8,7 @@
 ]
 
 [h: nSystem = json.get(uebergabe, "fSystem")]
-[h: kalenderDaten = getLibProperty("KalenderMain", "this")]
+[h: kalenderDaten = getLibProperty("KalenderMain", "com.github.naxos84.tools")]
 [h: aSystem = getStrProp(kalenderDaten, "zgSystem")]
 [h: aJahr = getStrProp(kalenderDaten, "zgJahr")]
 
@@ -129,6 +129,6 @@
 
 [h: kalenderDaten = setStrProp(kalenderDaten, "zgSystem", nSystem)]
 [h: kalenderDaten = setStrProp(kalenderDaten, "zgJahr", nJahr)]
-[h: setLibProperty("KalenderMain", kalenderDaten, "this")]
+[h: setLibProperty("KalenderMain", kalenderDaten, "com.github.naxos84.tools")]
 
 [h,macro("kalZGEndProcess@this"): ""]

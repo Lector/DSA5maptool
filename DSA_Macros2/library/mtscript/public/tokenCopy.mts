@@ -17,6 +17,7 @@
 			</div>
 			<div style="background-image: url('[r: tblImage("forms",55)]'); background-repeat: repeat-y; text-align: center; height: 20; margin: 0px;" width="400">
 				<div style='padding: 10px 0px 10px 0px;'>
+				<p>Image forms:136</p>
 					<image src='[r: tableImage("forms", 136)]'></image>
 				</div>
 				<table style='border-spacing: 0px;'>
