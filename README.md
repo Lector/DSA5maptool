@@ -2,6 +2,9 @@
 
 ## Todos
 
+Replace Umlaute
+Replace tableImage usage with addon-image usage
+
 Check wether Tools --> onFirstInit --> setData("AvKalender") can use json instead of string
 Krankheits/Giftprobe --> Check wether `abfrageImpersonate` is needed in campaign macro
 Change Character/Token Option --> Check wether `abfrageImpersonate` is needed in campaign macro
