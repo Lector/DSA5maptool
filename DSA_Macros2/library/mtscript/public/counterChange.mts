@@ -42,7 +42,7 @@ tableImage("chat", 77), wertColor, wert)]
 
 [h: ausgabe = border(titel, ausgabe)]
 
-[h,if(isNPC() == 1 && getLibProperty\("OptHideNSCAction","com.github.naxos84.macros") == 1), Code:
+[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction","com.github.naxos84.macros") == 1), Code:
 	{
 		[h,macro("sendToGM@lib:com.github.naxos84.macros"): ausgabe]
 	};

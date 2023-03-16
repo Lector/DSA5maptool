@@ -13,7 +13,7 @@
 ]
 [h: setLibProperty("Weblinks", newList, "com.github.naxos84.tools")]
 
-[h,if(isFrameVisible("meisterbogen") == 1 && getLibProperty\("SLframe","com.github.naxos84.macros") == 6), Code:
+[h,if(isFrameVisible("meisterbogen") == 1 && getLibProperty("SLframe","com.github.naxos84.macros") == 6), Code:
 	{
 		[h,macro("meisterbogenTools@lib:com.github.naxos84.macros2"): ""]
 	};{}

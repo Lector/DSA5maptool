@@ -8,7 +8,7 @@
 <!-- Als erstes suchen wir auf dem Spieltisch nach allen Kraut-Tokens -->
 [h: herbSelectionCondition = json.set("{}", "propertyType", "Kraut", "mapName", getCurrentMapName())]
 [h: currentMapHerbs = getTokens("json", herbSelectionCondition)]
-[h,if(getLibProperty\("WildnisSpieltisch","com.github.naxos84.macros") == 1),Code:
+[h,if(getLibProperty("WildnisSpieltisch","com.github.naxos84.macros") == 1),Code:
 {
 	[h: herbSelectionCondition = json.set(herbSelectionCondition, "mapName", "Spieltisch")]
 	[h: spieltischHerbs = getTokens("json", herbSelectionCondition)]
