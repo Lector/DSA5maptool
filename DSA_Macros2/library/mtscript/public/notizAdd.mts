@@ -15,7 +15,7 @@
 <html>
 	<head>
 		<title>Notiz hinzufügen</title>
-		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
+		<link rel='stylesheet' type='text/css' href='lib://com.github.naxos84.macros2/styles/base.css?cachelib=false'/>
 	</head>
 	<body>
 		<div class="border">

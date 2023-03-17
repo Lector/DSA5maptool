@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<title>Trefferzone auswürfeln</title>
-		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
+		<link rel='stylesheet' type='text/css' href='lib://com.github.naxos84.macros2/styles/base.css?cachelib=false'/>
 	</head>
 	<div class="border">
 		<form action="[r: actionLink]" method="post">

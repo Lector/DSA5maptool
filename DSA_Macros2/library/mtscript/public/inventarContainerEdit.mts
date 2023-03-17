@@ -17,7 +17,7 @@
 <html>
 	<head>
 		<title>Behälter umbenennen</title>
-		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
+		<link rel='stylesheet' type='text/css' href='lib://com.github.naxos84.macros2/styles/base.css?cachelib=false'/>
 	</head>
 	<body style='font-size: 12pt;' bgcolor='#ece9d8'>
 		<div class="border">

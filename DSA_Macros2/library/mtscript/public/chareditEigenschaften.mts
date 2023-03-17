@@ -14,8 +14,8 @@
 [dialog5("chareditEigenschaften", "width=548; height=613; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
-		<title>Eigenschaften &amp; Basiswerte editieren</title>
-		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
+		<title>Eigenschaften &amp; Basiswerte editieren!</title>
+		<!-- Option 3--><link rel='stylesheet' type='text/css' href='lib://com.github.naxos84.macros2/styles/base.css?cachelib=false'/>
 	</head>
 	<body>
 		<div class="border">
@@ -24,7 +24,7 @@
 				<table style="margin: 0px auto 0px auto;">
 					<tr>
 						<td>
-							Name: 
+							Name:
 						</td>
 						<td colspan=3>
 							<input type='text' name='oName' value="[r: getName()]" size=20>

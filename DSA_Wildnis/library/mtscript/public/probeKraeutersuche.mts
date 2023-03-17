@@ -107,7 +107,7 @@ Diese FillFunctions generieren wir nun-->
 <html>
 	<head>
 		<title>Kräutersuche</title>
-		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
+		<link rel='stylesheet' type='text/css' href='lib://com.github.naxos84.macros2/styles/base.css?cachelib=false'/>
 
 		<!-- Hier generieren wir unser JavaScript -->
 		[h: js = strformat("

@@ -75,7 +75,7 @@
 <html>
 	<head>
 		<title>Nahkampf-Angriff</title>
-		<link rel='stylesheet' type='text/css' href='lib://macros/macro/style'/>
+		<link rel='stylesheet' type='text/css' href='lib://com.github.naxos84.macros2/styles/base.css?cachelib=false'/>
 		[h: js = ""]
 		[h,for(i,0,3,1,""): js = js + strformat("
 		function labelReach%{i}() {
