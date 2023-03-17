@@ -1,5 +1,11 @@
 # This could become important
 
+## Building addons
+
+[Download 7zr.exe cli executable](https://7-zip.org/download.html).
+Add 7zr.exe to PATH variable.
+execute `.\zip.bat`.
+
 ## Todos
 
 Replace tableImage usage with addon-image usage
