@@ -96,7 +96,7 @@
 </div>
 <div style='background-image: url(%s); background-repeat: no-repeat; color: #441e13; font-size: 12pt; font-weight: bold; margin: 0px; height: 19;' width='440'>
 </div>
-", tableImage("chat", 13), tableImage("chat", 14), tableImage("chat", 57), tableImage("chat", 15))] 
+", data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeKrautTitle.png"), tableImage("chat", 14), tableImage("chat", 57), tableImage("chat", 15))] 
 
 [h: ausgabeSelf = strformat("
 <table style='border-spacing: 0px; margin: 0px; padding: 0px;' cellpadding = '0' cellspacing = '0'>

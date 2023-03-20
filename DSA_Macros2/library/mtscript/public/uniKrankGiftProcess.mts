@@ -110,7 +110,7 @@
 [h,if(listContains(diceList, "1") == 2): erfolgImage = data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeErfolgGluecklich.png")]
 [h,if(listContains(diceList, "1") == 3): erfolgImage = data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeErfolgSpektakulaer.png")]
 [h,if(listContains(diceList, "20") == 2): erfolgImage = data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probePatzer.png")]
-[h,if(listContains(diceList, "20") == 3): erfolgImage = tableImage("chat", 11)]
+[h,if(listContains(diceList, "20") == 3): erfolgImage = data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probePatzerSpektakulaer.png")]
 [h,if(res > 0): modOutput = "&#43;"+res; modOutput = res]
 [h,if(dice1 <= tE1AktWert): dice1Color = "#1d5c2f"; dice1Color = "#a42b1e"]
 [h,if(dice2 <= tE2AktWert): dice2Color = "#1d5c2f"; dice2Color = "#a42b1e"]
