@@ -206,7 +206,7 @@
 			</td>
 		</tr>
 	</table>
-", tableImage("chat", 7))]
+", data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeZusatz.png"))]
 
 [h,if(meldungSterbend == 1 && getState("sterbend") == 0), Code:
 	{
@@ -227,7 +227,7 @@
 				</td>
 			</tr>
 		</table>
-		", tableImage("chat", 7), deathTime)]
+		", data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeZusatz.png"), deathTime)]
 	};{}
 ]
 
@@ -249,7 +249,7 @@
 				</td>
 			</tr>
 		</table>
-		", tableImage("chat", 7))]
+		", data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeZusatz.png"))]
 	};{}
 ]
 
@@ -270,7 +270,7 @@
 				</td>
 			</tr>
 		</table>
-		", tableImage("chat", 7))]
+		", data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeZusatz.png"))]
 	};{}
 ]
 
@@ -294,7 +294,7 @@
 				</td>
 			</tr>
 		</table>
-		", tableImage("chat", 7), bewusstlosDauer)]
+		", data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeZusatz.png"), bewusstlosDauer)]
 	};{}
 ]
 
@@ -314,7 +314,7 @@
 			</td>
 		</tr>
 	</table>
-", tableImage("chat", 7))]
+", data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeZusatz.png"))]
 
 [h,if(meldungSturz == 1): ausgabe = ausgabe + strformat("
 	<table style='border-spacing: 0px; margin-top: 5px;'>
@@ -331,7 +331,7 @@
 			</td>
 		</tr>
 	</table>
-", tableImage("chat", 7))]
+", data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeZusatz.png"))]
 
 [h: ausgabe = ausgabe + strformat("
 </div>

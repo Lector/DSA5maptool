@@ -9,4 +9,4 @@
 		</td>
 	</tr>
 </table>",
-tableImage("chat", 7), arg(0)); macro.return = ""]
+data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeZusatz.png"), arg(0)); macro.return = ""]

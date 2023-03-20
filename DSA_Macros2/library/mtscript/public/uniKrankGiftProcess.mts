@@ -107,7 +107,7 @@
 [h,if(tE3AktWert < tE3Wert): tE3Color = "#a42b1e"; tE3Color = "#441e13"]
 [h,if(tE3AktWert > tE3Wert): tE3Color = "#0066cc"]
 [h,if(success == 1): erfolgImage = data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeErfolg.png"); erfolgImage = data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeFehlschlag.png")]
-[h,if(listContains(diceList, "1") == 2): erfolgImage = tableImage("chat", 8)]
+[h,if(listContains(diceList, "1") == 2): erfolgImage = data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeErfolgGluecklich.png")]
 [h,if(listContains(diceList, "1") == 3): erfolgImage = tableImage("chat", 9)]
 [h,if(listContains(diceList, "20") == 2): erfolgImage = tableImage("chat", 10)]
 [h,if(listContains(diceList, "20") == 3): erfolgImage = tableImage("chat", 11)]
@@ -242,7 +242,7 @@
 		</td>
 	</tr>
 </table>
-", tableImage("chat", 7))]
+", data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeZusatz.png"))]
 
 [h,if(success == 0): ausgabe = ausgabe + strformat("
 <br>
@@ -257,7 +257,7 @@
 		</td>
 	</tr>
 </table>
-", tableImage("chat", 7))]
+", data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeZusatz.png"))]
 
 [h: ausgabe = ausgabe + strformat("
 </div>
