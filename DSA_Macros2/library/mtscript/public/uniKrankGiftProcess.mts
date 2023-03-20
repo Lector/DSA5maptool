@@ -227,7 +227,7 @@
 			</td>
 		</tr>
 	</table>
-", tableImage("chat", 4), tName, tableImage("chat", 5), tableImage("chat", 3), tE1AktWert, dice1Color, dice1, tE2AktWert, dice2Color, dice2, tE3AktWert, dice3Color, dice3, tWert, modColor, modOutput, tapColor, tap, erfolgImage)] 
+", data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/balkenDoppelt.png"), tName, tableImage("chat", 5), data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeTalentTitle.png"), tE1AktWert, dice1Color, dice1, tE2AktWert, dice2Color, dice2, tE3AktWert, dice3Color, dice3, tWert, modColor, modOutput, tapColor, tap, erfolgImage)] 
 
 [h,if(success == 1): ausgabe = ausgabe + strformat("
 <br>
