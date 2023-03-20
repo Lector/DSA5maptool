@@ -57,7 +57,7 @@
 	case -2: {[h: erfolgImage = tableImage("chat", patzerImage)]};
 	case -1: {[h: erfolgImage = tableImage("chat", patzerImage)]};
 	case 0: {[h: erfolgImage = tableImage("chat", 2)]};
-	case 1: {[h: erfolgImage = tableImage("chat", 1)]};
+	case 1: {[h: erfolgImage = data.getStaticData("com.github.naxos84.macros2", "/public/images/probeErfolg.png")]};
 	case 2: {[h: erfolgImage = tableImage("chat", gluecklichImage)]};
 	case 3: {[h: erfolgImage = tableImage("chat", kritImage)]}
 ]
