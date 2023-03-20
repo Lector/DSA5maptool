@@ -227,7 +227,7 @@
 			</td>
 		</tr>
 	</table>
-", data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/balkenDoppelt.png"), tName, tableImage("chat", 5), data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeTalentTitle.png"), tE1AktWert, dice1Color, dice1, tE2AktWert, dice2Color, dice2, tE3AktWert, dice3Color, dice3, tWert, modColor, modOutput, tapColor, tap, erfolgImage)] 
+", data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/balkenDoppelt.png"), tName, data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/balkenEinfach.png"), data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeTalentTitle.png"), tE1AktWert, dice1Color, dice1, tE2AktWert, dice2Color, dice2, tE3AktWert, dice3Color, dice3, tWert, modColor, modOutput, tapColor, tap, erfolgImage)] 
 
 [h,if(success == 1): ausgabe = ausgabe + strformat("
 <br>
@@ -263,7 +263,7 @@
 </div>
 <div style='background-image: url(%s); background-repeat: no-repeat; color: #441e13; font-size: 12pt; font-weight: bold; margin: 0px; height: 19;'>
 </div>
-", tableImage("chat", 6))]
+", data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/balkenSchmal.png"))]
 
 [h,switch(chat), Code:
 	case "1": {
