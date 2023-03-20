@@ -141,7 +141,7 @@
 </div>
 <div style='background-image: url(%s); background-repeat: no-repeat; color: #441e13; font-size: 12pt; font-weight: bold; margin: 0px; height: 19;' width='321'>
 </div>
-", tableImage("chat", 25), quelle, tableImage("chat", 26), tableImage("chat", 19), schadenTitle, ganzerSchaden, schadenArt, zone, tableImage("chat", 27))]
+", tableImage("chat", 25), quelle, tableImage("chat", 26), data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/damageTitle.png"), schadenTitle, ganzerSchaden, schadenArt, zone, tableImage("chat", 27))]
 
 [h,switch(chat), Code:
 	case "1": {
