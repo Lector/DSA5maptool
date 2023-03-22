@@ -6,12 +6,13 @@
 	[h: '<!-- Wenn die entsprechende Einstellung aktiv ist löschen wir bisher aufgedeckten Kriegsnebel -->']
 	[h: hideFOW = getLibProperty("RestoreFogOfWarOnMove", "com.github.naxos84.macros")]
 	[h,if(hideFOW == 1): restoreFOW()]
-	[h: toReveal = currentToken()]
+	[h: toReveal = "[" + currentToken() + "]"]
 	<!-- Wenn sich ein Token mit Lichtquelle bewegt müssen alle ihre Sicht updaten -->
 	<!-- Wenn vorher der Kriegsnebel verdeckt wurde müssen auch alle ihre Sicht updaten -->
 	[h: lights = getLights("DSA", ",", currentToken())]
-	[h,if(lights == "" || hideFOW == 1):
+	[h,if(lights != "" || hideFOW == 1):
 		toReveal = getTokens("json")]
-		
+
+		[h:sendToSelf("Revealong on Map: "+mapName+" "+toReveal+" Lights: "+lights)]
 	[h: exposeFOW(mapName, toReveal, "json")]
 }]
