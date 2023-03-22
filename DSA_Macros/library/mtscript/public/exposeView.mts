@@ -13,6 +13,6 @@
 	[h,if(lights != "" || hideFOW == 1):
 		toReveal = getTokens("json")]
 
-		[h:sendToSelf("Revealong on Map: "+mapName+" "+toReveal+" Lights: "+lights)]
+		[h:sendToSelf("Revealing on Map: "+mapName+" "+toReveal+" Lights: "+lights)]
 	[h: exposeFOW(mapName, toReveal, "json")]
 }]
