@@ -12,7 +12,5 @@
 	[h: lights = getLights("DSA", ",", currentToken())]
 	[h,if(lights != "" || hideFOW == 1):
 		toReveal = getTokens("json")]
-
-		[h:sendToSelf("Revealing on Map: "+mapName+" "+toReveal+" Lights: "+lights)]
 	[h: exposeFOW(mapName, toReveal, "json")]
 }]
