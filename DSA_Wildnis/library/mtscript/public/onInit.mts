@@ -1,1 +1,0 @@
-[h: broadcast("Wildnis add on onInit")]

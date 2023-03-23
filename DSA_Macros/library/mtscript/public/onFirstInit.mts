@@ -1,8 +1,0 @@
-[h: broadcast("First time initializing Macros Addon")]
-[data.setData("addon:", "com.github.lector.dsa5maptools", "OptWunden", 0)]
-[data.setData("addon:", "com.github.lector.dsa5maptools", "RestoreFogOfWarOnMove", 0)]
-[data.setData("addon:", "com.github.lector.dsa5maptools", "SLframe", 6)]
-[data.setData("addon:", "com.github.lector.dsa5maptools", "OptRestrictMovement", 0)]
-[data.setData("addon:", "com.github.lector.dsa5maptools", "WildnisSpieltisch", 1)]
-[data.setData("addon:", "com.github.lector.dsa5maptools", "SharedHandouts", "")]
-[data.setData("addon:", "com.github.lector.dsa5maptools", "OptHideNSCAction", 1)]

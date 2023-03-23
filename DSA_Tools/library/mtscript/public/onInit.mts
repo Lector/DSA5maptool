@@ -1,1 +1,0 @@
-[h: broadcast("Tools add on onInit")]

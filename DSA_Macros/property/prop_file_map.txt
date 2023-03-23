@@ -1,7 +1,0 @@
-prop_235.txt => SharedHandouts
-prop_245.txt => OptRestrictMovement
-prop_247.txt => SLframe
-prop_252.txt => OptHideNSCAction
-prop_257.txt => RestoreFogOfWarOnMove
-prop_259.txt => OptWunden
-prop_273.txt => WildnisSpieltisch

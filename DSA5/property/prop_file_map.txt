@@ -1,0 +1,10 @@
+prop_1.txt => SharedHandouts
+prop_2.txt => OptRestrictMovement
+prop_3.txt => SLframe
+prop_4.txt => OptHideNSCAction
+prop_5.txt => RestoreFogOfWarOnMove
+prop_6.txt => OptWunden
+prop_7.txt => WildnisSpieltisch
+prop_8.txt => KalenderOpt
+prop_9.txt => KalenderMain
+prop_10.txt => Weblinks

@@ -1,3 +1,0 @@
-prop_59.txt => KalenderOpt
-prop_73.txt => KalenderMain
-prop_93.txt => Weblinks
