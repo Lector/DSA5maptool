@@ -12,7 +12,7 @@
 
 [h: uebergabe = macro.args]
 
-[h: ausdruckVergleich = getLibProperty("ImpAusdruckVergleich","com.github.naxos84.macros")]
+[h: ausdruckVergleich = getLibProperty("ImpAusdruckVergleich","com.github.lector.dsa5maptools")]
 [h: tArt = json.get(uebergabe, "fTalentart")]
 [h,if(tArt == listGet(ausdruckVergleich, 12)): tArt = "Koerper"]
 [h,if(tArt == "Kampf"): tArt = "Kampftalente"]

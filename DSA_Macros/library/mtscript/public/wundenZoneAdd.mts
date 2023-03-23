@@ -11,7 +11,7 @@
 ]
 
 [h: zone = macro.args]
-[h,if(getLibProperty("OptWunden", "com.github.naxos84.macros") != 2), Code:
+[h,if(getLibProperty("OptWunden", "com.github.lector.dsa5maptools") != 2), Code:
 	{
 		[h,macro("inputFail@this"): "wundenSystem"]
 	};{}
@@ -128,13 +128,13 @@
 [h: listINI = getInitiative()]
 [h,if(isNumber(listINI) == 1): token.init = listINI - iniMalus]
 [h: sortInitiative()]
-[h,if(getLibProperty("OptKampfAU", "com.github.naxos84.macros") == 1): auSchaden = 1d6; auSchaden = 0]
+[h,if(getLibProperty("OptKampfAU", "com.github.lector.dsa5maptools") == 1): auSchaden = 1d6; auSchaden = 0]
 [h,if(auSchaden > AuP): auSchaden = AuP]
 [h: LeP = LeP - wuSchaden]
 [h: AuP = AuP - auSchaden]
 [h,if(wuSchaden > 0 || auSchaden > 0): wundenTitle = wundenTitle + strformat(" - SP: %s, SP(A): %s", wuSchaden, auSchaden)]
 
-[h: checkList = getLibProperty("ImpAusdruckVergleich", "com.github.naxos84.macros")]
+[h: checkList = getLibProperty("ImpAusdruckVergleich", "com.github.lector.dsa5maptools")]
 [h: check = listGet(checkList, 10)]
 [h,if(LeP <= 5 && LeP >= 1), Code:
 	{
@@ -206,7 +206,7 @@
 			</td>
 		</tr>
 	</table>
-", data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeZusatz.png"))]
+", data.getStaticData("com.github.lector.dsa5maptools", "/public/images/chat/probeZusatz.png"))]
 
 [h,if(meldungSterbend == 1 && getState("sterbend") == 0), Code:
 	{
@@ -227,7 +227,7 @@
 				</td>
 			</tr>
 		</table>
-		", data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeZusatz.png"), deathTime)]
+		", data.getStaticData("com.github.lector.dsa5maptools", "/public/images/chat/probeZusatz.png"), deathTime)]
 	};{}
 ]
 
@@ -249,7 +249,7 @@
 				</td>
 			</tr>
 		</table>
-		", data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeZusatz.png"))]
+		", data.getStaticData("com.github.lector.dsa5maptools", "/public/images/chat/probeZusatz.png"))]
 	};{}
 ]
 
@@ -270,7 +270,7 @@
 				</td>
 			</tr>
 		</table>
-		", data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeZusatz.png"))]
+		", data.getStaticData("com.github.lector.dsa5maptools", "/public/images/chat/probeZusatz.png"))]
 	};{}
 ]
 
@@ -294,7 +294,7 @@
 				</td>
 			</tr>
 		</table>
-		", data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeZusatz.png"), bewusstlosDauer)]
+		", data.getStaticData("com.github.lector.dsa5maptools", "/public/images/chat/probeZusatz.png"), bewusstlosDauer)]
 	};{}
 ]
 
@@ -314,7 +314,7 @@
 			</td>
 		</tr>
 	</table>
-", data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeZusatz.png"))]
+", data.getStaticData("com.github.lector.dsa5maptools", "/public/images/chat/probeZusatz.png"))]
 
 [h,if(meldungSturz == 1): ausgabe = ausgabe + strformat("
 	<table style='border-spacing: 0px; margin-top: 5px;'>
@@ -331,7 +331,7 @@
 			</td>
 		</tr>
 	</table>
-", data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeZusatz.png"))]
+", data.getStaticData("com.github.lector.dsa5maptools", "/public/images/chat/probeZusatz.png"))]
 
 [h: ausgabe = ausgabe + strformat("
 </div>
@@ -339,7 +339,7 @@
 </div>
 ", tableImage("chat", 32))]
 
-[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "com.github.naxos84.macros") == 1), Code:
+[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "com.github.lector.dsa5maptools") == 1), Code:
 	{
 		[h,macro("sendToGM@this"): ausgabe]
 	};

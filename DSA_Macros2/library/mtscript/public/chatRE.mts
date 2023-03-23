@@ -7,7 +7,7 @@
 	{
 		[if(isGM()), Code:
 			{
-				[tokenImage = data.getStaticData("com.github.naxos84.macros2", "/public/images/gmIcon.png")]
+				[tokenImage = data.getStaticData("com.github.lector.dsa5maptools", "/public/images/gmIcon.png")]
 				[tokenName = "Der Spielleiter"]
 			};
 			{
@@ -17,7 +17,7 @@
 		]
 	}
 ]
-[h: sprechblase = data.getStaticData("com.github.naxos84.macros2", "/public/images/sprechblase.png")]
+[h: sprechblase = data.getStaticData("com.github.lector.dsa5maptools", "/public/images/sprechblase.png")]
 
 [h: ausgabe = strformat("
 <table style='border-spacing: 0px; margin: 0px; padding: 0px; color: #000000;' cellpadding ='0' cellspacing ='0'>

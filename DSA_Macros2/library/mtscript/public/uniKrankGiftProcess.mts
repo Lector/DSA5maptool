@@ -106,11 +106,11 @@
 [h,if(tE2AktWert > tE2Wert): tE2Color = "#0066cc"]
 [h,if(tE3AktWert < tE3Wert): tE3Color = "#a42b1e"; tE3Color = "#441e13"]
 [h,if(tE3AktWert > tE3Wert): tE3Color = "#0066cc"]
-[h,if(success == 1): erfolgImage = data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeErfolg.png"); erfolgImage = data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeFehlschlag.png")]
-[h,if(listContains(diceList, "1") == 2): erfolgImage = data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeErfolgGluecklich.png")]
-[h,if(listContains(diceList, "1") == 3): erfolgImage = data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeErfolgSpektakulaer.png")]
-[h,if(listContains(diceList, "20") == 2): erfolgImage = data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probePatzer.png")]
-[h,if(listContains(diceList, "20") == 3): erfolgImage = data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probePatzerSpektakulaer.png")]
+[h,if(success == 1): erfolgImage = data.getStaticData("com.github.lector.dsa5maptools", "/public/images/chat/probeErfolg.png"); erfolgImage = data.getStaticData("com.github.lector.dsa5maptools", "/public/images/chat/probeFehlschlag.png")]
+[h,if(listContains(diceList, "1") == 2): erfolgImage = data.getStaticData("com.github.lector.dsa5maptools", "/public/images/chat/probeErfolgGluecklich.png")]
+[h,if(listContains(diceList, "1") == 3): erfolgImage = data.getStaticData("com.github.lector.dsa5maptools", "/public/images/chat/probeErfolgSpektakulaer.png")]
+[h,if(listContains(diceList, "20") == 2): erfolgImage = data.getStaticData("com.github.lector.dsa5maptools", "/public/images/chat/probePatzer.png")]
+[h,if(listContains(diceList, "20") == 3): erfolgImage = data.getStaticData("com.github.lector.dsa5maptools", "/public/images/chat/probePatzerSpektakulaer.png")]
 [h,if(res > 0): modOutput = "&#43;"+res; modOutput = res]
 [h,if(dice1 <= tE1AktWert): dice1Color = "#1d5c2f"; dice1Color = "#a42b1e"]
 [h,if(dice2 <= tE2AktWert): dice2Color = "#1d5c2f"; dice2Color = "#a42b1e"]
@@ -227,7 +227,7 @@
 			</td>
 		</tr>
 	</table>
-", data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/balkenDoppelt.png"), tName, data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/balkenEinfach.png"), data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeTalentTitle.png"), tE1AktWert, dice1Color, dice1, tE2AktWert, dice2Color, dice2, tE3AktWert, dice3Color, dice3, tWert, modColor, modOutput, tapColor, tap, erfolgImage)] 
+", data.getStaticData("com.github.lector.dsa5maptools", "/public/images/chat/balkenDoppelt.png"), tName, data.getStaticData("com.github.lector.dsa5maptools", "/public/images/chat/balkenEinfach.png"), data.getStaticData("com.github.lector.dsa5maptools", "/public/images/chat/probeTalentTitle.png"), tE1AktWert, dice1Color, dice1, tE2AktWert, dice2Color, dice2, tE3AktWert, dice3Color, dice3, tWert, modColor, modOutput, tapColor, tap, erfolgImage)] 
 
 [h,if(success == 1): ausgabe = ausgabe + strformat("
 <br>
@@ -242,7 +242,7 @@
 		</td>
 	</tr>
 </table>
-", data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeZusatz.png"))]
+", data.getStaticData("com.github.lector.dsa5maptools", "/public/images/chat/probeZusatz.png"))]
 
 [h,if(success == 0): ausgabe = ausgabe + strformat("
 <br>
@@ -257,13 +257,13 @@
 		</td>
 	</tr>
 </table>
-", data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeZusatz.png"))]
+", data.getStaticData("com.github.lector.dsa5maptools", "/public/images/chat/probeZusatz.png"))]
 
 [h: ausgabe = ausgabe + strformat("
 </div>
 <div style='background-image: url(%s); background-repeat: no-repeat; color: #441e13; font-size: 12pt; font-weight: bold; margin: 0px; height: 19;'>
 </div>
-", data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/balkenSchmal.png"))]
+", data.getStaticData("com.github.lector.dsa5maptools", "/public/images/chat/balkenSchmal.png"))]
 
 [h,switch(chat), Code:
 	case "1": {

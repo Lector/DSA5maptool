@@ -1,11 +1,11 @@
-[h,if(getLibProperty("OptHideNSCAction", "com.github.naxos84.macros") == 1): cNSCAction = "checked"; cNSCAction = ""]
-[h,if(getLibProperty("RestoreFogOfWarOnMove", "com.github.naxos84.macros") != 1): cKeepFOW = "checked"; cKeepFOW = ""]
-[h,if(getLibProperty("WildnisSpieltisch", "com.github.naxos84.macros") == 1): cSpieltisch = "checked"; cSpieltisch = ""]
+[h,if(getLibProperty("OptHideNSCAction", "com.github.lector.dsa5maptools") == 1): cNSCAction = "checked"; cNSCAction = ""]
+[h,if(getLibProperty("RestoreFogOfWarOnMove", "com.github.lector.dsa5maptools") != 1): cKeepFOW = "checked"; cKeepFOW = ""]
+[h,if(getLibProperty("WildnisSpieltisch", "com.github.lector.dsa5maptools") == 1): cSpieltisch = "checked"; cSpieltisch = ""]
 
 [h: cWunden = ""]
-[h,if(getLibProperty("OptWunden", "com.github.naxos84.macros") == 1): cWunden = "checked='checked'"]
+[h,if(getLibProperty("OptWunden", "com.github.lector.dsa5maptools") == 1): cWunden = "checked='checked'"]
 [h: cRestrictMovement = ""]
-[h,if(getLibProperty("OptRestrictMovement", "com.github.naxos84.macros") == 1): cRestrictMovement = "checked='checked'"]
+[h,if(getLibProperty("OptRestrictMovement", "com.github.lector.dsa5maptools") == 1): cRestrictMovement = "checked='checked'"]
 
 [h: actionLink = macroLinkText("gameOptionsProcess@this", "")]
 [dialog5("gameOptions", "width=650; height=420; temporary=1; closebutton=0; noframe=0"):{

@@ -1,4 +1,4 @@
-[h: kalenderDaten = getLibProperty("KalenderMain", "com.github.naxos84.tools")]
+[h: kalenderDaten = getLibProperty("KalenderMain", "com.github.lector.dsa5maptools")]
 
 [h: t1check = ""]
 [h: t2check = ""]

@@ -2,10 +2,13 @@
   "name": "Macros2",
   "version": "0.1",
   "website": "",
-  "gitUrl": "https://github.com/Naxos84/dsa5-rulset-addons",
-  "authors": ["Naxos84"],
+  "gitUrl": "https://github.com/Lector/DSA5maptool",
+  "authors": [
+    "Lector",
+    "Naxos84"
+  ],
   "license": "MIT",
-  "namespace": "com.github.naxos84.macros2",
+  "namespace": "com.github.lector.dsa5maptools",
   "description": "None",
   "shortDescription": "None",
   "allowsUriAccess": true,

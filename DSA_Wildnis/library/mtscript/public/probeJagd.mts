@@ -24,7 +24,7 @@
 	}]
 
 	[h: animals1 = getTokens("json", json.set("", "propertyType", "Basic", "mapName", getCurrentMapName()))]
-	[h,if(getLibProperty("WildnisSpieltisch","com.github.naxos84.macros") == 1),Code:
+	[h,if(getLibProperty("WildnisSpieltisch","com.github.lector.dsa5maptools") == 1),Code:
 	{
 		[h: animals2 = getTokens("json", json.set("", "propertyType", "Basic", "mapName", "Spieltisch"))]
 		[h: allAnimals = json.union(animals1, animals2)]

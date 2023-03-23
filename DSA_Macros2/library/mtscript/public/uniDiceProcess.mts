@@ -29,7 +29,7 @@
 [h,count(anzahl, ""), Code:
 	{
 		[diceResult = roll(1, diceTyp)]
-		[h: diceImage = data.getStaticData("com.github.naxos84.macros2", "/public/images/diceResult_" + wTable + "_" + diceResult + ".png")]
+		[h: diceImage = data.getStaticData("com.github.lector.dsa5maptools", "/public/images/diceResult_" + wTable + "_" + diceResult + ".png")]
 		[summe = summe + diceResult]
 		[diceList = diceList + strformat('<img src="%s" alt="diceResult_%s_%s"></img>&nbsp;', diceImage, wTable, diceResult)]
 	}

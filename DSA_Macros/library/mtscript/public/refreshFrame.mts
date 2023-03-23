@@ -1,6 +1,6 @@
 [h,if(isFrameVisible("meisterbogen") == 1), Code:
 {
-	[frame = getLibProperty("SLframe", "com.github.naxos84.macros")]
+	[frame = getLibProperty("SLframe", "com.github.lector.dsa5maptools")]
 	[switch(frame), code:
 		case "1": {
 			[h,macro("meisterbogen1@lib:com.github.naxos84.macros2"): "pc"]

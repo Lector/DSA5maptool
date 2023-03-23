@@ -42,7 +42,7 @@ default: {[rs = json.get(ruestung, "RS")]}]
 <!-- Wenn Daten im Token fehlen sollen keine Wunden verursacht werden -->
 [h: ws = getWS(currentToken())]
 [h,if(ws == 0): wound = 0; wound = floor(schaden / ws)]
-[h,if(getLibProperty("OptWunden", "com.github.naxos84.macros") != 0 && wound > 0 && zone != "gesamt"), Code:
+[h,if(getLibProperty("OptWunden", "com.github.lector.dsa5maptools") != 0 && wound > 0 && zone != "gesamt"), Code:
 {
 	[h,if(hasTrait("Vorteile", "Hart im nehmen") == 1): wound = wound - 1]
 	[h,if(hasTrait("Nachteile", "Verweichlicht") == 1): wound = wound + 2]

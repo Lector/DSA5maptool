@@ -1,7 +1,7 @@
 [h: uebergabe = macro.args]
 
 [h: uhrNeu = json.get(uebergabe, "fUhr")]
-[h: options = getLibProperty("KalenderOpt", "com.github.naxos84.tools")]
+[h: options = getLibProperty("KalenderOpt", "com.github.lector.dsa5maptools")]
 
 [h,if(getStrProp(options, "uhr") == 0), code: 
 	{
@@ -10,7 +10,7 @@
 ]
 
 [h: options = setStrProp(options, "uhrzeit", uhrNeu)]
-[h: setLibProperty("KalenderOpt", options, "com.github.naxos84.tools")]
+[h: setLibProperty("KalenderOpt", options, "com.github.lector.dsa5maptools")]
 [h: kalender = "Zwoelfgoettlicher Kalender")]
 
 [h: tableIndex = number(substring(uhrNeu, 0, 2))]

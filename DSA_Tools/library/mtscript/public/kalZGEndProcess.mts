@@ -1,5 +1,5 @@
-[h: kalenderOptions = getLibProperty("KalenderOpt", "com.github.naxos84.tools")]
-[h: kalenderDaten = getLibProperty("KalenderMain", "com.github.naxos84.tools")]
+[h: kalenderOptions = getLibProperty("KalenderOpt", "com.github.lector.dsa5maptools")]
+[h: kalenderDaten = getLibProperty("KalenderMain", "com.github.lector.dsa5maptools")]
 [h: system = getStrProp(kalenderDaten, "zgSystem")]
 [h: jahr = getStrProp(kalenderDaten, "zgJahr")]
 [h: monat = getStrProp(kalenderDaten, "zgMonat")]
@@ -376,7 +376,7 @@
 [h: madaphase = "<span style='font-size: 12pt; font-weight: bold;'>"+madaphase+"</span>"]
 [h,if(getStrProp(kalenderOptions, "mada") == 1), code:
 {
-		[h: moonphaseImage = data.getStaticData("com.github.naxos84.macros2", "/public/images/moonphases/mada_" + madanummer + ".png")]
+		[h: moonphaseImage = data.getStaticData("com.github.lector.dsa5maptools", "/public/images/moonphases/mada_" + madanummer + ".png")]
 		[setTokenImage(moonphaseImage, idMada, mapName)]
 		[setNotes(madaphase, idMada, mapName)]
 };{}]

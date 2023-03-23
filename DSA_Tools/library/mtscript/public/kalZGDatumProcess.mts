@@ -1,6 +1,6 @@
 [h: uebergabe = macro.args]
 
-[h: options = getLibProperty("KalenderOpt", "com.github.naxos84.tools")]
+[h: options = getLibProperty("KalenderOpt", "com.github.lector.dsa5maptools")]
 [h,if(getStrProp(options, "kalender") == 0), code: 
 	{
 		[h,macro("inputFail@lib:com.github.naxos84.macros"): "kalender"]
@@ -31,7 +31,7 @@
 		[h,macro("inputFail@lib:com.github.naxos84.macros"): "kalenderNT"]
 	};{}
 ]
-[h: kalenderDaten = getLibProperty("KalenderMain", "com.github.naxos84.tools")]
+[h: kalenderDaten = getLibProperty("KalenderMain", "com.github.lector.dsa5maptools")]
 [h: system = getStrProp(kalenderDaten, "zgSystem")]
 [h,if(system == "Golgaris Erscheinen" || system == "JdU - Aranien" || system == "JdU - Kahet ni Kemi" || system == "Horas" || system == "Jahre des Lichts"), code:
 	{
@@ -46,6 +46,6 @@
 [h: kalenderDaten = setStrProp(kalenderDaten, "zgTag", nTag)]
 [h: kalenderDaten = setStrProp(kalenderDaten, "zgMonat", nMonat)]
 [h: kalenderDaten = setStrProp(kalenderDaten, "zgJahr", nJahr)]
-[h: setLibProperty("KalenderMain", kalenderDaten, "com.github.naxos84.tools")]
+[h: setLibProperty("KalenderMain", kalenderDaten, "com.github.lector.dsa5maptools")]
 
 [h,macro("kalZGEndProcess@this"): ""]

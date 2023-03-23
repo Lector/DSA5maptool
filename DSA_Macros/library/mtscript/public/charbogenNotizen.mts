@@ -120,7 +120,7 @@
 									<div style='border-top: 1px solid #eee5c8; border-bottom: 1px solid #eee5c8; padding: 3px 0px 3px 3px;' width='405'>
 										<image src='[r: tableImage("mainTheme", 95)]'></image>
 									</div>
-									[h: hShared = getLibProperty("SharedHandouts", "com.github.naxos84.macros")]
+									[h: hShared = getLibProperty("SharedHandouts", "com.github.lector.dsa5maptools")]
 									[h: hCount = listCount(hShared)]
 									[h: hAusgabe = ""]
 									[h: num = 0]

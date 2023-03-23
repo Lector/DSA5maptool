@@ -1,8 +1,8 @@
 [h: id = arg(0)]
 [h,if(id == ""): npc = 0; npc = isNPC(id)]
-[h: getLibProperty("OptHideNSCAction", "com.github.naxos84.macros")]
+[h: getLibProperty("OptHideNSCAction", "com.github.lector.dsa5maptools")]
 
-[h,if(npc == 1 && getLibProperty("OptHideNSCAction", "com.github.naxos84.macros") == 1), Code:
+[h,if(npc == 1 && getLibProperty("OptHideNSCAction", "com.github.lector.dsa5maptools") == 1), Code:
 {
 	[ausgabeSL = "checked"]
 	[ausgabePublic = ""]

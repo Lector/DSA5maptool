@@ -108,7 +108,7 @@
 	</table>",
 tableImage("chat", 62), iniColor, aktWert, modColor, modOutput, 1, resultDice, result))] 
 
-[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "com.github.naxos84.macros") == 1), Code:
+[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "com.github.lector.dsa5maptools") == 1), Code:
 	{
 		[h,macro("sendToGM@this"): ausgabe]
 	};

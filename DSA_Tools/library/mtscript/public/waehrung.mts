@@ -451,7 +451,7 @@
 							&nbsp;
 						</td>
 						<td>
-						[h: convertImage = data.getStaticData("com.github.naxos84.macros2", "/public/images/tools/convertNow.png")]
+						[h: convertImage = data.getStaticData("com.github.lector.dsa5maptools", "/public/images/tools/convertNow.png")]
 							<button type="submit">
 								<img src="[r: convertImage]"/>
 							</button>

@@ -96,7 +96,7 @@
 </div>
 <div style='background-image: url(%s); background-repeat: no-repeat; color: #441e13; font-size: 12pt; font-weight: bold; margin: 0px; height: 19;' width='440'>
 </div>
-", data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeKrautTitle.png"), data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeJagdTitle.png"), tableImage("chat", 57), data.getStaticData("com.github.naxos84.macros2", "/public/images/chat/probeAngelnTitle.png"))] 
+", data.getStaticData("com.github.lector.dsa5maptools", "/public/images/chat/probeKrautTitle.png"), data.getStaticData("com.github.lector.dsa5maptools", "/public/images/chat/probeJagdTitle.png"), tableImage("chat", 57), data.getStaticData("com.github.lector.dsa5maptools", "/public/images/chat/probeAngelnTitle.png"))] 
 
 [h: ausgabeSelf = strformat("
 <table style='border-spacing: 0px; margin: 0px; padding: 0px;' cellpadding = '0' cellspacing = '0'>

@@ -10,7 +10,7 @@
 [h: hTitle = getLabel()]
 [h: hNum = substring(hTokenName, lastIndexOf(hTokenName, " ")+1, length(hTokenName))]
 
-[h: hShared = getLibProperty("SharedHandouts","com.github.naxos84.macros")]
+[h: hShared = getLibProperty("SharedHandouts","com.github.lector.dsa5maptools")]
 [h: hItem = listFind(hShared, hNum)]
 [h,if(hItem != -1), Code:
 	{

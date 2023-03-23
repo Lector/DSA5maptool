@@ -6,14 +6,14 @@
 		[chatNotice = "Alle Weblinks wurden gelöscht."]
 	};
 	{
-		[linklist = getLibProperty("Weblinks", "com.github.naxos84.tools")]
+		[linklist = getLibProperty("Weblinks", "com.github.lector.dsa5maptools")]
 		[newlist = json.remove(linklist, uebergabe)]
 		[chatNotice = "Der ausgewählte Weblink wurde gelöscht."]
 	}
 ]
-[h: setLibProperty("Weblinks", newList, "com.github.naxos84.tools")]
+[h: setLibProperty("Weblinks", newList, "com.github.lector.dsa5maptools")]
 
-[h,if(isFrameVisible("meisterbogen") == 1 && getLibProperty("SLframe","com.github.naxos84.macros") == 6), Code:
+[h,if(isFrameVisible("meisterbogen") == 1 && getLibProperty("SLframe","com.github.lector.dsa5maptools") == 6), Code:
 	{
 		[h,macro("meisterbogenTools@lib:com.github.naxos84.macros2"): ""]
 	};{}

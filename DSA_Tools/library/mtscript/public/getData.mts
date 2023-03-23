@@ -1,2 +1,2 @@
 [r: data.listNamespaces("addon:")]
-[r: data.listData("addon:", "com.github.naxos84.tools")]
+[r: data.listData("addon:", "com.github.lector.dsa5maptools")]

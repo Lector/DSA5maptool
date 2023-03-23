@@ -1,4 +1,4 @@
-[h: options = getLibProperty("KalenderOpt", "com.github.naxos84.tools")]
+[h: options = getLibProperty("KalenderOpt", "com.github.lector.dsa5maptools")]
 
 [h,if(getStrProp(options, "kalender") == 1): cKal = "checked='checked'"; cKal = ""]
 [h,if(getStrProp(options, "kalenderChat") == 1): cKalChat = "checked='checked'"; cKalChat = ""]
