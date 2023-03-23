@@ -1,0 +1,16 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build library",
+			"type": "process",
+			"command": "${workspaceFolder}\\zip.bat",
+			"echoCommand": true,
+			"problemMatcher": [],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}
