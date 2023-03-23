@@ -1,1 +1,0 @@
-[{"kalender":"zg","tag":"01","monat":"01","jahr":"01","typ":"01"}]

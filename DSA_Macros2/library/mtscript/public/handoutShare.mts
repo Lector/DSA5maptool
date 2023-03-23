@@ -14,17 +14,18 @@
 [h: hShared = getLibProperty("SharedHandouts","com.github.naxos84.macros")]
 [h: hItem = listFind(hShared, hNum)]									
 [h,if(hItem == -1), Code:
-	{
-		[hShared = listAppend(hShared, hNum)]
-		[chatTitleText = "Handout freigegeben"]
-		[chatText = strformat("Der Spielleiter hat ein Handout freigegeben (<span style='color: #000000;'>%s</span>):", macroLink("<span title='Neues Handout aufrufen'>Jetzt anzeigen</span>", "handoutShow@this", "", id))]
-	};
-	{
-		[hShared = listDelete(hShared, hItem)]
-		[chatTitleText = "Handout gesperrt"]
-		[chatText = "Der Spielleiter hat ein Handout gesperrt:"]
-	}
-]
+{
+	[hShared = listAppend(hShared, hNum)]
+	[chatTitleText = "Handout freigegeben"]
+	[chatText = strformat("Der Spielleiter hat ein Handout freigegeben (<span style='color: #000000;'>%s</span>):", macroLink("<span title='Neues Handout aufrufen'>Jetzt anzeigen</span>", "handoutShow@this", "", id))]
+	[recipient = "all"]
+};
+{
+	[hShared = listDelete(hShared, hItem)]
+	[chatTitleText = "Handout gesperrt"]
+	[chatText = "Der Spielleiter hat ein Handout gesperrt:"]
+	[recipient = "gm"]
+}]
 [h: setLibProperty("SharedHandouts", hShared, "lib:com.github.naxos84.macros")]
 
 [h: ausgabe = strformat("
@@ -48,5 +49,5 @@ tableImage("chat", 81), chatText, hTitle)]
 
 [h,if(getCurrentMapName() != tokenMap): moveTokenToMap(id, tokenMap, x, y)]
 
-[h: broadcast(ausgabe)]
+[h: broadcast(ausgabe, recipient)]
 [h,macro("meisterbogenHandouts@this"): ""]
