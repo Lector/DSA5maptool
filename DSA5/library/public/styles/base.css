@@ -64,7 +64,7 @@ input[type="text"] {
     height: calc(100% - 46px);
     max-height: calc(100% - 46px);
     overflow: scroll;
-    border-image-source: url("lib://this/styles/border.png");
+    border-image-source: url("lib://com.github.lector.dsa5maptool/styles/border.png");
     border-image-repeat: round;
     border-image-width: 16px;
     border-image-slice: 20 18;

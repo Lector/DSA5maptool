@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<title>Trefferzone auswürfeln</title>
-		<link rel='stylesheet' type='text/css' href='lib://this/styles/base.css?cachelib=false'/>
+		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 	</head>
 	<div class="border">
 		<form action="[r: actionLink]" method="post">

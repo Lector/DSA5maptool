@@ -15,7 +15,7 @@
 <html>
 	<head>
 		<title>Eigenschaften &amp; Basiswerte editieren!</title>
-		<!-- Option 3--><link rel='stylesheet' type='text/css' href='lib://this/styles/base.css?cachelib=false'/>
+		<!-- Option 3--><link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 	</head>
 	<body>
 		<div class="border">

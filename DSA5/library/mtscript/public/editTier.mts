@@ -24,7 +24,7 @@
 <html>
 	<head>
 		<title>Jagdwild anpassen</title>
-		<link rel='stylesheet' type='text/css' href='lib://this/styles/base.css?cachelib=false'/>
+		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 	</head>
 	<body>
 		<div class="border">

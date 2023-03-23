@@ -75,7 +75,7 @@
 <html>
 	<head>
 		<title>Nahkampf-Angriff</title>
-		<link rel='stylesheet' type='text/css' href='lib://this/styles/base.css?cachelib=false'/>
+		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 		[h: js = ""]
 		[h,for(i,0,3,1,""): js = js + strformat("
 		function labelReach%{i}() {

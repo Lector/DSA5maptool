@@ -17,7 +17,7 @@
 <html>
 	<head>
 		<title>Behälter umbenennen</title>
-		<link rel='stylesheet' type='text/css' href='lib://this/styles/base.css?cachelib=false'/>
+		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 	</head>
 	<body style='font-size: 12pt;' bgcolor='#ece9d8'>
 		<div class="border">

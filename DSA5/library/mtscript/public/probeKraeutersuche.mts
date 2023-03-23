@@ -107,7 +107,7 @@ Diese FillFunctions generieren wir nun-->
 <html>
 	<head>
 		<title>Kräutersuche</title>
-		<link rel='stylesheet' type='text/css' href='lib://this/styles/base.css?cachelib=false'/>
+		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 
 		<!-- Hier generieren wir unser JavaScript -->
 		[h: js = strformat("
