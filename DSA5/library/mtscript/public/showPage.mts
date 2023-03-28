@@ -1,1 +1,1 @@
-[html.dialog("Example Dialog", "lib://com.github.lector.dsa5maptool.DSA5/index.html", "value=some arbitrary data")]
+[html.dialog("Example Dialog", "lib://com.github.lector.dsa5maptool/index.html", "value=some arbitrary data")]
