@@ -9,7 +9,7 @@ a {
     text-decoration: none;
     font-size: 10pt;
     font-weight: bold;
-    color: #441e13;
+    /* color: #441e13; */
 }
 
 hr {
@@ -30,6 +30,26 @@ select {
 
 input[type="text"] {
     font-size: inherit;
+}
+
+.debug {
+    border: 1px solid blue;
+}
+.debug tr {
+    border: 1px solid green;
+}
+.debug tr td {
+    border: 1px solid red;
+}
+
+.attribute-default {
+    color: #eee5c8;
+}
+.attribute-decreased {
+    color: #ff3333;
+}
+.attribute-increased {
+    color: #0099ff;
 }
 
 .title {
@@ -68,6 +88,14 @@ input[type="text"] {
     border-image-repeat: round;
     border-image-width: 16px;
     border-image-slice: 20 18;
+}
+
+
+.panel {
+    margin-left: 28px;
+    margin-top: 15px;
+    margin-right: 35px;
+    border-spacing: 0px;
 }
 
 .panel-top {

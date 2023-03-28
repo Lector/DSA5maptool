@@ -51,7 +51,7 @@
 			</table>
 		</div>
 		
-		<div style="background-image: url('[r: tblImage("mainTheme",2)]'); margin: 0px;" width="500">
+		<div style="background-image: url('[r: tblImage("mainTheme",2)]'); margin: 0px; background-repeat: repeat-y" width="500">
 			<table style='border-spacing: 0px;' width='500'>
 				<tr>
 					<td width='14'>
@@ -291,43 +291,31 @@
 				</tr>
 			</table>		
 
-			<table style='border-spacing: 0px; margin-top: 15px;' width='500'>
+			<table class="panel" width='431'>
 				<tr>
-					<td width='34'>
-						&nbsp;
+					<td class="panel-top">
 					</td>
-					<td width='431'>			
-						<table style='border-spacing: 0px;' width='431'>				
-							<tr>
-								<td class="panel-top">
-								</td>
-							</tr>
-							<tr>
-								<td class="panel-middle" width='405'>
-									<div>
-										<image src=[r: imageVorteile]></image>
-									</div>
-									[r,macro("charbogenTraits@this"): Vorteile]
-									<br><br>
-									<div>
-										<image src=[r: imageNachteile]></image>
-									</div>
-									[r,macro("charbogenTraits@this"): Nachteile]
-									<br><br>
-									<div>
-										<image src=[r: imageAllgemeineSF]></image>
-									</div>
-									[r,macro("charbogenTraits@this"): AllgemeineSF]
-								</td>
-							</tr>
-							<tr>
-								<td class="panel-bottom">
-								</td>
-							</tr>
-						</table>					
+				</tr>
+				<tr>
+					<td class="panel-middle" width='405'>
+						<div>
+							<image src=[r: imageVorteile]></image>
+						</div>
+						[r,macro("charbogenTraits@this"): Vorteile]
+						<br><br>
+						<div>
+							<image src=[r: imageNachteile]></image>
+						</div>
+						[r,macro("charbogenTraits@this"): Nachteile]
+						<br><br>
+						<div>
+							<image src=[r: imageAllgemeineSF]></image>
+						</div>
+						[r,macro("charbogenTraits@this"): AllgemeineSF]
 					</td>
-					<td width='35'>
-						&nbsp;
+				</tr>
+				<tr>
+					<td class="panel-bottom">
 					</td>
 				</tr>
 			</table>
