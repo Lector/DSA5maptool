@@ -5,7 +5,6 @@
 		[switchToken(selectID)]
 	};{}
 ]
-
 [h,if(getStrProp(PlayerOpt, "lastFrame") == 1), Code:
 	{
 		[switch(getStrProp(PlayerOpt, "openFrame")), Code:
