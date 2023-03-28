@@ -56,11 +56,12 @@
 		<title>
 			Inventar &amp; Vermögen
 		</title>
+		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 	</head>
 	<body style="background-image: url('[r: tblImage("mainTheme",66)]'); font-size: 10pt; color: #eee5c8;">
 		<div style="background-image: url('[r: tblImage("mainTheme",48)]'); background-repeat: no-repeat; height: 28; margin: 0px;" width="431">
 		</div>
-		<div style="background-image: url('[r: tblImage("mainTheme",49)]'); background-repeat: repeat-y; margin: 0px; text-align: center;" width="431">
+		<div class="box-middle" width="431">
 			<table style='border-spacing: 0px;'>
 				<tr>
 					<td>

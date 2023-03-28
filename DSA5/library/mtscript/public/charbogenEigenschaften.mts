@@ -14,12 +14,17 @@
 [h: plus = strformat("<image src='%s' border='0'/>", tableImage("misc", 6))]
 [h: minus = strformat("<image src='%s' border='0'/>", tableImage("misc", 7))]
 
+[h: imageVorteile = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/schriftVorteile.png")]
+[h: imageNachteile = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/schriftNachteile.png")]
+[h: imageAllgemeineSF = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/schriftAllgemeineSF.png")]
+
 [frame("charbogen", "width=517; height=700; temporary=1; input=0; noframe=0"):{
 <html>
 	<head>
 		<title>
 			Charakterbogen - Eigenschaften
 		</title>
+		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 	</head>
 	<body style="background-image: url('[r: tblImage("mainTheme",66)]'); font-size: 12pt; font-weight: bold; color: #eee5c8;">
 		<div style="background-image: url('[r: tblImage("mainTheme",1)]'); background-repeat: no-repeat; height: 122; margin: 0px;" width="500">
@@ -298,19 +303,19 @@
 								</td>
 							</tr>
 							<tr>
-								<td style="background-image: url('[r: tblImage("mainTheme",49)]'); background-repeat: repeat-y; padding-left: 10px; padding-right: 10px; height: 28; font-weight: normal;">
-									<div style='border-top: 1px solid #eee5c8; border-bottom: 1px solid #eee5c8; padding: 3px 0px 3px 3px;' width='405'>
-										<image src='[r: tableImage("mainTheme", 51)]'></image>
+								<td class="box-middle" width='405'>
+									<div>
+										<image src=[r: imageVorteile]></image>
 									</div>
 									[r,macro("charbogenTraits@this"): Vorteile]
 									<br><br>
-									<div style='border-top: 1px solid #eee5c8; border-bottom: 1px solid #eee5c8; padding: 3px 0px 3px 3px;' width='405'>
-										<image src='[r: tableImage("mainTheme", 52)]'></image>
+									<div>
+										<image src=[r: imageNachteile]></image>
 									</div>
 									[r,macro("charbogenTraits@this"): Nachteile]
 									<br><br>
-									<div style='border-top: 1px solid #eee5c8; border-bottom: 1px solid #eee5c8; padding: 3px 0px 3px 3px;' width='405'>
-										<image src='[r: tableImage("mainTheme", 53)]'></image>
+									<div>
+										<image src=[r: imageAllgemeineSF]></image>
 									</div>
 									[r,macro("charbogenTraits@this"): AllgemeineSF]
 								</td>

@@ -69,3 +69,17 @@ input[type="text"] {
     border-image-width: 16px;
     border-image-slice: 20 18;
 }
+
+.box-middle {
+    background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/panelEigSfMiddle.png");
+    background-repeat: repeat-y;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 28;
+    font-weight: normal;
+}
+.box-middle div {
+    border-top: 1px solid #eee5c8;
+    border-bottom: 1px solid #eee5c8;
+    padding: 3px 0px 3px 3px;
+}
