@@ -41,11 +41,11 @@
 					<td>
 						<table style='border-spacing: 0px;' width='431'>				
 							<tr>
-								<td style="background-image: url('[r: tblImage("mainTheme",48)]'); background-repeat: no-repeat; height: 28;" width='431'>
+								<td class="panel-top">
 								</td>
 							</tr>
 							<tr>
-								<td class="box-middle">
+								<td class="panel-middle">
 									[h: hShared = getLibProperty("SharedHandouts","com.github.lector.dsa5maptool")]
 									[r,for(num,1,31,1,""), Code:
 									{
@@ -89,7 +89,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td style="background-image: url('[r: tblImage("mainTheme",50)]'); background-repeat: no-repeat; height: 28;">
+								<td class="panel-bottom">
 								</td>
 							</tr>
 						</table>

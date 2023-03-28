@@ -70,16 +70,29 @@ input[type="text"] {
     border-image-slice: 20 18;
 }
 
-.box-middle {
-    background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/panelEigSfMiddle.png");
+.panel-top {
+    background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/panelTop.png");
+    background-repeat: no-repeat;
+    height: 28;
+    width: 431;
+}
+
+.panel-middle {
+    background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/panelMiddle.png");
     background-repeat: repeat-y;
     padding-left: 10px;
     padding-right: 10px;
     height: 28;
     font-weight: normal;
 }
-.box-middle div {
+.panel-middle div {
     border-top: 1px solid #eee5c8;
     border-bottom: 1px solid #eee5c8;
     padding: 3px 0px 3px 3px;
+}
+
+.panel-bottom {
+    background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/panelBottom.png");
+    background-repeat: no-repeat;
+    height: 28;
 }

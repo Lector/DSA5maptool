@@ -12,11 +12,11 @@
 	<body style="background-image: url('[r: tblImage("mainTheme",66)]'); font-size: 10pt; color: #eee5c8;">
 		<table style='border-spacing: 0px;' width='431'>
 			<tr>
-				<td style="background-image: url('[r: tblImage("mainTheme",48)]'); background-repeat: no-repeat; height: 28; margin: 0px;" width="431">
+				<td class="panel-top">
 				</td>
 			</tr>
 			<tr>
-				<td class="box-middle" width="431">
+				<td class="panel-middle" width="431">
 					<table>
 						<tr>
 							<td>
@@ -64,8 +64,8 @@
 				</td>
 			</tr>
 			<tr>
-				<td style="background-image: url('[r: tblImage("mainTheme",50)]'); background-repeat: no-repeat; height: 28; margin: 0px;" width="431">
-				<td>
+				<td class="panel-bottom">
+				</td>
 			</tr>
 		</table>
 	</body>

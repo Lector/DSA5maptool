@@ -77,11 +77,11 @@
 						</table>
 						<table style='border-spacing: 0px;' width='431'>				
 							<tr>
-								<td style="background-image: url('[r: tblImage("mainTheme",48)]'); background-repeat: no-repeat; height: 28;" width='431'>
+								<td class="panel-top">
 								</td>
 							</tr>
 							<tr>
-								<td class="box-middle">
+								<td class="panel-middle">
 								[r,foreach(tok, fTokenList, ""), Code:
 								{
 									[h: id = json.get(tok, "id")]
@@ -453,7 +453,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td style="background-image: url('[r: tblImage("mainTheme",50)]'); background-repeat: no-repeat; height: 28;">
+								<td class="panel-bottom">
 								</td>
 							</tr>
 						</table>
