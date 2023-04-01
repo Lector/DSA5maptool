@@ -3,16 +3,16 @@
 	[frame = getLibProperty("SLframe", "com.github.lector.dsa5maptool")]
 	[switch(frame), code:
 		case "1": {
-			[h,macro("meisterbogen1@lib:this"): "pc"]
+			[h,macro("meisterbogen1@this"): "pc"]
 		};
 		case "2": {
-			[h,macro("meisterbogen1@lib:this"): "npc"]
+			[h,macro("meisterbogen1@this"): "npc"]
 		};
 		case "3": {
-			[h,macro("meisterbogen2@lib:this"): "pc"]
+			[h,macro("meisterbogen2@this"): "pc"]
 		};
 		case "4": {
-			[h,macro("meisterbogen2@lib:this"): "npc"]
+			[h,macro("meisterbogen2@this"): "npc"]
 		};
 		default: {
 		}
@@ -65,5 +65,5 @@
 
 [h,if(isDialogVisible("chareditMain") == 1), Code:
 {
-	[h,macro("chareditMain@lib:this"): ""]
+	[h,macro("chareditMain@this"): ""]
 };{}]

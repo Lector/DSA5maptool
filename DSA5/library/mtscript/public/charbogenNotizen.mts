@@ -23,7 +23,7 @@
 	<body style="background-image: url('[r: tblImage("mainTheme",66)]'); font-size: 12pt; font-weight: bold; color: #eee5c8;">
 		<div style="background-image: url('[r: tblImage("mainTheme",1)]'); background-repeat: no-repeat; height: 122; margin: 0px;" width="500">
 			<div style='margin-top: 18px; font-size: 22pt; text-align: center;' width='500'>
-				<span style='color: #eee5c8; text-decoration: none;' title='Zum Charaktertoken wechseln'>[r: macroLink(getName(), "gotoToken@lib:this", "", currentToken())]</span>
+				<span style='color: #eee5c8; text-decoration: none;' title='Zum Charaktertoken wechseln'>[r: macroLink(getName(), "gotoToken@this", "", currentToken())]</span>
 			</div>
 			<table style='border-spacing: 0px; margin-top: 3px;' width='500'>
 				<tr>
@@ -78,10 +78,10 @@
 													<image src='[r: tableImage("mainTheme", 93)]'></image>
 												</td>
 												<td style='text-align: center;' width='13'>
-													<a href="[r: macroLinkText("notizAdd@lib:this")]"><image src='[r: tableImage("mainTheme", 97)]' border="0" alt="Eine neue Notiz hinzufügen"></image></a>
+													<a href="[r: macroLinkText("notizAdd@this")]"><image src='[r: tableImage("mainTheme", 97)]' border="0" alt="Eine neue Notiz hinzufügen"></image></a>
 												</td>
 												<td style='text-align: right;' width='13'>
-													<a href="[r: macroLinkText("notizDelAll@lib:this")]"><image src='[r: tableImage("mainTheme", 98)]' border="0" alt="Alle Notizen löschen"></image></a>
+													<a href="[r: macroLinkText("notizDelAll@this")]"><image src='[r: tableImage("mainTheme", 98)]' border="0" alt="Alle Notizen löschen"></image></a>
 												</td>
 											</tr>
 										</table>
@@ -94,8 +94,8 @@
 										{
 											[nTitel = getStrProp(Notizen, strformat("n%{num}Titel"))]
 											[nText = getStrProp(Notizen, strformat("n%{num}Text"))]
-											[editLink = strformat("<a href='%s'><image src='%s' border='0' alt='Diese Notiz editieren'></image></a>", macroLinkText("notizEdit@lib:this", "", num), tableImage("mainTheme", 99))]
-											[delLink = strformat("<a href='%s'><image src='%s' border='0' alt='Diese Notiz löschen'></image></a>", macroLinkText("notizDel@lib:this", "", num), tableImage("mainTheme", 100))]
+											[editLink = strformat("<a href='%s'><image src='%s' border='0' alt='Diese Notiz editieren'></image></a>", macroLinkText("notizEdit@this", "", num), tableImage("mainTheme", 99))]
+											[delLink = strformat("<a href='%s'><image src='%s' border='0' alt='Diese Notiz löschen'></image></a>", macroLinkText("notizDel@this", "", num), tableImage("mainTheme", 100))]
 											[nAusgabe = nAusgabe + strformat("
 											<table style='border-spacing: 0px; margin-bottom: 3px;' cellpadding='0'>
 												<tr>
@@ -143,7 +143,7 @@
 
 										[h,if(getCurrentMapName() != "Spieltisch"): moveTokenToMap(id, "Spieltisch", x, y)]
 										
-										[hLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout anzeigen'></image></a>", macroLinkText("handoutShow@lib:this", "", id), tableImage("mainTheme", 101))]
+										[hLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout anzeigen'></image></a>", macroLinkText("handoutShow@this", "", id), tableImage("mainTheme", 101))]
 										[hAusgabe = hAusgabe + strformat("
 										<table style='border-spacing: 0px; margin-bottom: 3px;' width='405' cellpadding='0'>
 											<tr>
@@ -174,10 +174,10 @@
 													<image src='[r: tableImage("mainTheme", 94)]'></image>
 												</td>
 												<td style='text-align: center;' width='16'>
-													<a href="[r: macroLinkText("notizSLEdit@lib:this")]"><image src='[r: tableImage("mainTheme", 96)]' border="0" alt="SL-Notizen hinzufügen oder bearbeiten"></image></a>
+													<a href="[r: macroLinkText("notizSLEdit@this")]"><image src='[r: tableImage("mainTheme", 96)]' border="0" alt="SL-Notizen hinzufügen oder bearbeiten"></image></a>
 												</td>
 												<td style='text-align: right;' width='13'>
-													<a href="[r: macroLinkText("notizSLDel@lib:this")]"><image src='[r: tableImage("mainTheme", 98)]' border="0" alt="Alle SL-Notizen löschen"></image></a>
+													<a href="[r: macroLinkText("notizSLDel@this")]"><image src='[r: tableImage("mainTheme", 98)]' border="0" alt="Alle SL-Notizen löschen"></image></a>
 												</td>
 											</tr>
 										</table>

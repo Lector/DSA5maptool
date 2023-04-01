@@ -33,7 +33,7 @@
 
 [h,if(isFrameVisible("meisterbogen") == 1 && getLibProperty("SLframe","com.github.lector.dsa5maptool") == 6), Code:
 	{
-		[h,macro("meisterbogenTools@lib:this"): ""]
+		[h,macro("meisterbogenTools@this"): ""]
 	};{}
 ]
 

@@ -27,7 +27,7 @@
 						&nbsp;
 					</td>
 					<td style='text-align: center; border-top: 1px solid #eee5c8; border-bottom: 1px solid #eee5c8; padding: 2px 0px 3px 0px;'>
-						<span style='color: #eee5c8; text-decoration: none;' title='Zum Charaktertoken wechseln'>[r: macroLink(getName(), "gotoToken@lib:this", "", currentToken())]</span>
+						<span style='color: #eee5c8; text-decoration: none;' title='Zum Charaktertoken wechseln'>[r: macroLink(getName(), "gotoToken@this", "", currentToken())]</span>
 					</td>
 					<td>
 						&nbsp;

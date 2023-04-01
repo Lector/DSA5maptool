@@ -104,7 +104,7 @@
 [h: defineFunction("skillRollTitle", "skillRollTitle@this")]
 [h: defineFunction("modReason", "modReason@this")]
 
-[h: defineFunction("scatter", "scatter@lib:this")]
+[h: defineFunction("scatter", "scatter@this")]
 
 [h: defineFunction("getRandomHerbs", "getRandomHerbs@lib:com.github.lector.dsa5maptool")]
 
