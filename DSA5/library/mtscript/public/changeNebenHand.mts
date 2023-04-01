@@ -13,7 +13,7 @@
 [h: id = macro.args]
 
 [h: andereWaffe = getNahkampfwaffe(HauptHand)]
-[h,if(json.get(andereWaffe, "Zweihand") != 0): HauptHand = 0]
+[h,if(json.get(andereWaffe, "Zweihand") != 0 && json.get(andereWaffe, "Technik") != "Stangenwaffen"): HauptHand = 0]
 
 [h: waffe = getNahkampfwaffe(id)]
 [h,if(json.get(waffe, "Zweihand") != 0): HauptHand = id]

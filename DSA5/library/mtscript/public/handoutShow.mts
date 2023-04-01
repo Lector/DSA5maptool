@@ -21,7 +21,7 @@
 [h: hContent = replace(hContent, "#/u#:", "</u>")]
 [h: hContent = replace(hContent, "#br#", "<br>")]
 
-[dialog5("handoutShow", "width=1200; height=800; temporary=1; closebutton=0; noframe=0"):{
+[dialog5("handoutShow"+id, "width=1200; height=800; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
 		<title>Handout anzeigen</title>

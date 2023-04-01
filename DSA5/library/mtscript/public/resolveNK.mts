@@ -16,6 +16,7 @@
 [h: at = json.get(waffe, "AT")]
 [h: pa = json.get(waffe, "PA")]
 [h: tp = json.get(waffe, "TP")]
+[h: rw = json.get(waffe, "RW")]
 [h: wName = json.get(waffe, "Name")]
 
 [h: technikName = json.get(waffe, "Technik")]
@@ -27,6 +28,14 @@
 {
 	[if(at < 0): at = at + 1]
 	[if(pa < 0): pa = pa + 1]
+}]
+
+<!-- Falls man eine Stangenwaffe einhändig führt gibt es gewisse Abzüge -->
+[h,if(technikName == "Stangenwaffen" && HauptHand != NebenHand),Code:
+{
+	[h: tp = tp + "-1"]
+	[h: pa = pa - 1]
+	[rw = min(2, rw)]
 }]
 
 <!-- Bonus aus MU und der Leiteigenschaft rechnen wir nur an wenn eine Kampftechnik angegeben ist
@@ -140,4 +149,5 @@ beidhaendig == 0): pa = pa - 4]
 [h: waffe = json.set(waffe, "AT", at)]
 [h: waffe = json.set(waffe, "PA", pa)]
 [h: waffe = json.set(waffe, "TP", tp)]
+[h: waffe = json.set(waffe, "RW", rw)]
 [h: macro.return = waffe]

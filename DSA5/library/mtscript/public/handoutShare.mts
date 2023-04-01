@@ -12,7 +12,7 @@
 [h: hNum = substring(hTokenName, lastIndexOf(hTokenName, " ")+1, length(hTokenName))]
 
 [h: hShared = getLibProperty("SharedHandouts","com.github.lector.dsa5maptool")]
-[h: hItem = listFind(hShared, hNum)]									
+[h: hItem = listFind(hShared, hNum)]
 [h,if(hItem == -1), Code:
 {
 	[hShared = listAppend(hShared, hNum)]

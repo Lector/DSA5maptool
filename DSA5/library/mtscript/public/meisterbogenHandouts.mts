@@ -67,7 +67,9 @@
 														<span style='color: #eee5c8;'>[r,if(hShort == ""): output = "Keine Beschreibung verfügbar"; output = hShort]</span>
 													</td>
 													<td style='padding: 0px 1px 0px 1px;'>
-														[r,if(listFind(hShared, num) != -1): hShareLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout ist für Spieler freigegeben - Klicken zum Sperren'></image></a>", macroLinkText("handoutShare@this", "", id), tableImage("mainTheme", 102)); hShareLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout ist für Spieler gesperrt - Klicken zum Freigeben'></image></a>", macroLinkText("handoutShare@this", "", id), tableImage("mainTheme", 103))]
+														[r,if(listFind(hShared, num) != -1):
+															hShareLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout ist für Spieler freigegeben - Klicken zum Sperren'></image></a>", macroLinkText("handoutShare@this", "", id), tableImage("mainTheme", 102));
+															hShareLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout ist für Spieler gesperrt - Klicken zum Freigeben'></image></a>", macroLinkText("handoutShare@this", "", id), tableImage("mainTheme", 103))]
 													</td>
 													<td style='padding: 0px 1px 0px 1px;'>
 														[r: hEditLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout editieren'></image></a>", macroLinkText("handoutEdit@this", "", id), tableImage("mainTheme", 104))]
