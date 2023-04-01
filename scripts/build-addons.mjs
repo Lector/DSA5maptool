@@ -10,30 +10,16 @@ if(!fs.existsSync(addonsPaths)) {
     console.info("Created output directory");
 }
 
-zipMacros();
-zipMacros2();
-zipTools();
-zipWildnis();
+zipMacro();
 
-function zipMacros() {
-    doZip("DSA_Macros");
+function zipMacro() {
+    doZip("DSA5");
 }
 
-function zipMacros2() {
-    doZip("DSA_Macros2")
-}
-
-function zipTools() {
-    doZip("DSA_Tools");
-}
-
-function zipWildnis() {
-    doZip("DSA_Wildnis");
-}
 
 function doZip(addonName) {
     const macrosPath = path.resolve(workingDir, addonName);
-    const destination = path.resolve(workingDir, `addons/${addonName}.mtlib`);
+    const destination = path.resolve(workingDir, `${addonName}.mtlib`);
 
     zip(macrosPath, destination).then(() => console.log(`Zipped ${addonName}`)).catch((e) => console.error(`Error zipping ${addonName}`, e));
 }

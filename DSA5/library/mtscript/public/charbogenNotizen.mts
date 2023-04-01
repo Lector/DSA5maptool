@@ -18,6 +18,7 @@
 		<title>
 			Charakterbogen - Notizen &amp; Handouts
 		</title>
+		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 	</head>
 	<body style="background-image: url('[r: tblImage("mainTheme",66)]'); font-size: 12pt; font-weight: bold; color: #eee5c8;">
 		<div style="background-image: url('[r: tblImage("mainTheme",1)]'); background-repeat: no-repeat; height: 122; margin: 0px;" width="500">
@@ -65,12 +66,12 @@
 					<td width='431'>			
 						<table style='border-spacing: 0px;' width='431'>				
 							<tr>
-								<td style="background-image: url('[r: tblImage("mainTheme",48)]'); background-repeat: no-repeat; height: 28;" width='431'>
+								<td class="panel-top">
 								</td>
 							</tr>
 							<tr>
-								<td style="background-image: url('[r: tblImage("mainTheme",49)]'); background-repeat: repeat-y; padding-left: 10px; padding-right: 10px; height: 28; font-weight: normal; font-size: 11pt;">
-									<div style='border-top: 1px solid #eee5c8; border-bottom: 1px solid #eee5c8; padding: 3px 0px 3px 3px;' width='405'>
+								<td class="panel-middle">
+									<div width='405'>
 										<table style='border-spacing: 0px;' cellpadding='0' width='399'>
 											<tr>
 												<td width='373'>
@@ -117,7 +118,7 @@
 											[r: nAusgabe+"<br>"]
 										}
 									]
-									<div style='border-top: 1px solid #eee5c8; border-bottom: 1px solid #eee5c8; padding: 3px 0px 3px 3px;' width='405'>
+									<div width='405'>
 										<image src='[r: tableImage("mainTheme", 95)]'></image>
 									</div>
 									[h: hShared = getLibProperty("SharedHandouts", "com.github.lector.dsa5maptool")]
@@ -166,7 +167,7 @@
 											[r: hAusgabe+"<br>"]
 										}
 									]
-									<div style='border-top: 1px solid #eee5c8; border-bottom: 1px solid #eee5c8; padding: 3px 0px 3px 3px;' width='405'>
+									<div width='405'>
 										<table style='border-spacing: 0px;' cellpadding='0' width='399'>
 											<tr>
 												<td width='370'>
@@ -185,7 +186,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td style="background-image: url('[r: tblImage("mainTheme",50)]'); background-repeat: no-repeat; height: 28;">
+								<td class="panel-bottom">
 								</td>
 							</tr>
 						</table>					

@@ -6,6 +6,7 @@
 		<title>
 			Meisterbogen - Handouts
 		</title>
+		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 	</head>
 	<body style="background-image: url('[r: tblImage("mainTheme",66)]'); font-size: 10pt; color: #eee5c8;">
 		<div style="background-image: url('[r: tblImage("mainTheme",1)]'); background-repeat: no-repeat; height: 122; margin: 0px;" width="500">
@@ -40,11 +41,11 @@
 					<td>
 						<table style='border-spacing: 0px;' width='431'>				
 							<tr>
-								<td style="background-image: url('[r: tblImage("mainTheme",48)]'); background-repeat: no-repeat; height: 28;" width='431'>
+								<td class="panel-top">
 								</td>
 							</tr>
 							<tr>
-								<td style="background-image: url('[r: tblImage("mainTheme",49)]'); background-repeat: repeat-y; padding-left: 10px; padding-right: 10px; height: 28;">
+								<td class="panel-middle">
 									[h: hShared = getLibProperty("SharedHandouts","com.github.lector.dsa5maptool")]
 									[r,for(num,1,31,1,""), Code:
 									{
@@ -90,7 +91,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td style="background-image: url('[r: tblImage("mainTheme",50)]'); background-repeat: no-repeat; height: 28;">
+								<td class="panel-bottom">
 								</td>
 							</tr>
 						</table>

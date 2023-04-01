@@ -1,16 +1,39 @@
 [h,if(json.length(macro.args) > 2): tokenID = arg(2); tokenID = ""]
 
-[h,switch(arg(0)), Code:
+[h: target = arg(0)]
+[h: content = arg(1)]
+
+[h,switch(target), Code:
 	case "1": {
-			[sendToPublic(arg(1), tokenID)]
+			[
+				sendToPublic(content, tokenID)
+			]
 		};
 	case "2": {
-			[sendToGM(arg(1), tokenID)]
+			[
+				sendToGM(content, tokenID)
+			]
 		};
 	case "3": {
-			[sendToSelfGM(arg(1), tokenID)]
+			[
+				sendToSelfGM(content, tokenID)
+			]
 		};
 	case "4": {
-			[sendToSelf(arg(1), tokenID)]
-		}
+			[
+				sendToSelf(content, tokenID)
+			]
+		};
+	case "Public": {
+		[sendToPublic(content, tokenID)]
+	};
+	case "Gm": {
+		[sendToGM(content, tokenID)]
+	};
+	case "GmAndSelf": {
+		[sendToSelfGM(content, tokenID)]
+	};
+	case "Self": {
+		[sendToSelf(content, tokenID)]
+	}
 ]

@@ -1,0 +1,6 @@
+[h: input = json.toVars(macro.args, "in_")]
+[h: output = json.set("{}", "demo", "dummy")]
+[h: output = json.set(output, "input", input)]
+[h:output = json.set(output, "args", macro.args)]
+[h:output = json.set(output, "copy_hello", in_hello)]
+[r: output]

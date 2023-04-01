@@ -27,6 +27,7 @@
 		<title>
 			Meisterbogen - Spielercharaktere I
 		</title>
+		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 	</head>
 	<body style="background-image: url('[r: tblImage("mainTheme",66)]'); font-size: 10pt; color: #eee5c8;">
 		<div style="background-image: url('[r: tblImage("mainTheme",1)]'); background-repeat: no-repeat; height: 122; margin: 0px;" width="500">
@@ -40,12 +41,14 @@
 					</td>
 					<td width='383'>
 					[r,if(arg(0) == "pc"),Code:{
-						<image src='[r: tableImage("mainTheme", 81)]'/>};{
+						<image src='[r: tableImage("mainTheme", 81)]'/>
+					};{
 						<a href="[r: macroLinkText("meisterbogen1@this", "", "pc")]"><image src='[r: tableImage("mainTheme", 80)]' border="0" alt="Spielercharaktere I: Werte, Waffen &amp; Rüstung"></image></a>
 					}]
 						<a href="[r: macroLinkText("meisterbogen2@this", "", "pc")]"><image src='[r: tableImage("mainTheme", 82)]' border="0" alt="Spielercharaktere II: Vorteile, Nachteile &amp; Notizen"></image></a>
 					[r,if(arg(0) == "pc"),Code:{
-						<a href="[r: macroLinkText("meisterbogen1@this", "", "npc")]"><image src='[r: tableImage("mainTheme", 87)]' border="0" alt="NSCs I: Werte, Waffen &amp; Rüstung"></image></a>};{
+						<a href="[r: macroLinkText("meisterbogen1@this", "", "npc")]"><image src='[r: tableImage("mainTheme", 87)]' border="0" alt="NSCs I: Werte, Waffen &amp; Rüstung"></image></a>
+					};{
 						<image src='[r: tableImage("mainTheme", 88)]'></image>
 					}]
 						<a href="[r: macroLinkText("meisterbogen2@this", "", "npc")]"><image src='[r: tableImage("mainTheme", 89)]' border="0" alt="NSCs II: Vorteile, Nachteile &amp; Notizen"></image></a>
@@ -74,11 +77,11 @@
 						</table>
 						<table style='border-spacing: 0px;' width='431'>				
 							<tr>
-								<td style="background-image: url('[r: tblImage("mainTheme",48)]'); background-repeat: no-repeat; height: 28;" width='431'>
+								<td class="panel-top">
 								</td>
 							</tr>
 							<tr>
-								<td style="background-image: url('[r: tblImage("mainTheme",49)]'); background-repeat: repeat-y; padding-left: 10px; padding-right: 10px; height: 28;">
+								<td class="panel-middle">
 								[r,foreach(tok, fTokenList, ""), Code:
 								{
 									[h: id = json.get(tok, "id")]
@@ -450,7 +453,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td style="background-image: url('[r: tblImage("mainTheme",50)]'); background-repeat: no-repeat; height: 28;">
+								<td class="panel-bottom">
 								</td>
 							</tr>
 						</table>

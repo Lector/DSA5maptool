@@ -1,30 +1,9 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
-
-[h: PlayerOpt = setStrProp(PlayerOpt, "openFrame", "1")]
-[h: plus = strformat("<image src='%s' border='0'/>", tableImage("misc", 6))]
-[h: minus = strformat("<image src='%s' border='0'/>", tableImage("misc", 7))]
-
-[h: imageVorteile = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/schriftVorteile.png")]
-[h: imageNachteile = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/schriftNachteile.png")]
-[h: imageAllgemeineSF = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/schriftAllgemeineSF.png")]
-
-[frame("charbogen", "width=517; height=700; temporary=1; input=0; noframe=0"):{
 <html>
 	<head>
 		<title>
 			Charakterbogen - Eigenschaften
 		</title>
-		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
+		<link rel='stylesheet' type='text/css' href='./styles/base.css?cachelib=false'/>
 	</head>
 	<body style="background-image: url('[r: tblImage("mainTheme",66)]'); font-size: 12pt; font-weight: bold; color: #eee5c8;">
 		<div style="background-image: url('[r: tblImage("mainTheme",1)]'); background-repeat: no-repeat; height: 122; margin: 0px;" width="500">
@@ -51,7 +30,7 @@
 			</table>
 		</div>
 		
-		<div style="background-image: url('[r: tblImage("mainTheme",2)]'); margin: 0px; background-repeat: repeat-y" width="500">
+		<div style="background-image: url('[r: tblImage("mainTheme",2)]'); margin: 0px; background-repeat: repeat-y;" width="500">
 			<table style='border-spacing: 0px;' width='500'>
 				<tr>
 					<td width='14'>
@@ -184,6 +163,9 @@
 												[r: APausgegeben]
 											</td>
 										</tr>
+										<tr>
+											<td><a href="" title="Dont click me">He he</a></td>
+										</tr>
 									</table>
 								</td>
 							</tr>
@@ -291,20 +273,18 @@
 				</tr>
 			</table>		
 
-			<table class="panel" width='431'>
+			<table class="panel" description="Vor/Nachteile">
+                <caption>Vor/Nachteile</caption>
+                <th></th>
 				<tr>
-					<td class="panel-top">
-					</td>
-				</tr>
-				<tr>
-					<td class="panel-middle" width='405'>
+					<td>
 						<div>
-							<image src=[r: imageVorteile]></image>
+							<image src="./images/mainTheme/schriftVorteile.png"></image>
 						</div>
-						[r,macro("charbogenTraits@this"): Vorteile]
+						Goldgier
 						<br><br>
 						<div>
-							<image src=[r: imageNachteile]></image>
+							<image src="./images/mainTheme/schriftNachteile.png"></image>
 						</div>
 						[r,macro("charbogenTraits@this"): Nachteile]
 						<br><br>
@@ -314,10 +294,6 @@
 						[r,macro("charbogenTraits@this"): AllgemeineSF]
 					</td>
 				</tr>
-				<tr>
-					<td class="panel-bottom">
-					</td>
-				</tr>
 			</table>
 
 		</div>
@@ -325,4 +301,3 @@
 		</div>
 	</body>
 </html>
-}]

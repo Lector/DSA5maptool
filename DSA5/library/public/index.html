@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Example document</title>
+    <script src="./scripts/rest.js?cachelib=false"></script>
 </head>
 
 <body>
@@ -15,7 +16,16 @@
 
 <script>
     document.getElementById("clicker").addEventListener("click", function (event) {
-        alert("Hello World");
+        const rest = new RestData("macro:dataProvider@lib:com.github.lector.dsa5maptool", {hello: "world", foo: true, bar: 42});
+        rest.get().then(val => alert(val)).catch(e => alert(e))
+    })
+    window.addEventListener("load", function() {
+        try {
+        const rest = new RestData("macro:dataProvider@lib:com.github.lector.dsa5maptool", {hello: "world", foo: true, bar: 42});
+        rest.get().then(val => alert(val)).catch(e => alert(e));
+        } catch(e) {
+            alert(e);
+        }
     })
 </script>
 
