@@ -14,20 +14,20 @@
 
 [h,if(json.get(uebergabe, "offensive") != ""),Code:
 {
-    <!-- AT+2 TP+2 for melee weapons -->
+    <!-- AT+2 TP+4 for melee weapons -->
     [h: newWaffen = "[]"]
     [h,foreach(waffe, Nahkampfwaffen, ""),Code:
     {
-        [h: waffe = json.set(waffe, "TP", json.get(waffe, "TP") + "+2", "AT", json.get(waffe, "AT") + 2)]
+        [h: waffe = json.set(waffe, "TP", json.get(waffe, "TP") + "+4", "AT", json.get(waffe, "AT") + 2)]
         [h: newWaffen = json.append(newWaffen, waffe)]
     }]
     [h: Nahkampfwaffen = newWaffen]
 
-    <!-- FK+2 TP+2 for ranged weapons -->
+    <!-- FK+2 TP+4 for ranged weapons -->
     [h: newWaffen = "[]"]
     [h,foreach(waffe, Fernkampfwaffen, ""),Code:
     {
-        [h: waffe = json.set(waffe, "TP", json.get(waffe, "TP") + "+2", "FK", json.get(waffe, "FK") + 2)]
+        [h: waffe = json.set(waffe, "TP", json.get(waffe, "TP") + "+4", "FK", json.get(waffe, "FK") + 2)]
         [h: newWaffen = json.append(newWaffen, waffe)]
     }]
     [h: Fernkampfwaffen = newWaffen]
