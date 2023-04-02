@@ -149,6 +149,10 @@
 		[msgTitle = "Neues Jagdwild"]
 		[msgText = "Es wurde ein neues Token für die Jagd erzeugt."]
 	};
+	case "chareditImprovements": {
+		[msgTitle = "Beschwörung verbessert"]
+		[msgText = "Die Verbesserungen wurden angewendet."]
+	};
 ]
 
 [h: ausgabe = border(msgTitle, strformat("

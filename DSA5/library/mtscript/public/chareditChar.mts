@@ -1,6 +1,7 @@
 [h: switchToken(arg(0))]
 
 [h: linkEigenschaften = macroLink('Basis- &amp; Eigenschaftswerte', 'chareditEigenschaften@this', '')]
+[h: linkVerbesserungen = macroLink('Beschwörung verbessern', 'chareditImprovements@this', '')]
 [h: linkTraitAdd =  macroLink('Vorteil / Nachteil / SF hinzufügen', 'chareditTraitAdd@this', '')]
 [h: linkVorteile = macroLink('Vorteile', 'chareditTrait@this', '', 'Vorteile')]
 [h: linkNachteile = macroLink('Nachteile', 'chareditTrait@this', '', 'Nachteile')]
@@ -56,6 +57,13 @@
 								[r: linkEigenschaften]
 							</td>
 						</tr>
+						[r,if(listContains('Chimäre, Daimonid, Dämon, Elementar, Pflanzenchimäre', Typus) > 0),Code:{
+						<tr>
+							<td>
+								[r: linkVerbesserungen]
+							</td>
+						</tr>
+						}]
 						<tr>
 							<td>
 								[r: linkTraitAdd]
