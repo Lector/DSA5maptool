@@ -43,6 +43,7 @@
 				[h: result = resultDice + aktWert + mod]
 				[h: addToINI = result + INI/100]
 				[h: addToInitiative(0, addToINI)]
+				[h: VTinKR = 0]
 			}
 		]
 	};
@@ -53,6 +54,7 @@
 				[result = roll(wAnzahl, 6) + wert + bonus - malus]
 				[addToINI = result]
 				[addToInitiative(0, addToINI)]
+				[h: VTinKR = 0]
 			}
 		]
 	}

@@ -148,6 +148,7 @@
 						</td>
 						<td valign='top'>
 							<table>
+								[r,macro("probeVTinKR@this"): currentToken()]
 								<tr>
 									<td>
 										[r,macro("probeLiegend@this"): "-2"]

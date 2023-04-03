@@ -59,6 +59,10 @@ und geben diesen in die noch offene Tabelle aus -->
 	[h,if(technik != "Raufen" && technik != ""): patzerTabelle = "patzerNahkampf"]
 };{}]
 
+<!-- Wir zählen den VT-Tracker 1 hoch falls wir in der INI sind -->
+[h: hasIni = hasInitiative(currentToken())]
+[h,if(hasIni != 0): VTinKR = VTinKR + 1]
+
 <!-- Diverse Meldungen akkumulieren wir in der Variable subtext, welche wir am Ende mit ausgeben -->
 [h: kritText = "Du darfst sofort einen Passierschlag gegen den Gegner ausführen"]
 [h,if(success < 0): notification = listAppend(notification, table(patzerTabelle), "<br>")]

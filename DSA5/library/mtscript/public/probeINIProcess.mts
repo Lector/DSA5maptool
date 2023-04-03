@@ -116,6 +116,7 @@ tableImage("chat", 62), iniColor, aktWert, modColor, modOutput, 1, resultDice, r
 		[h,macro("sendToPublic@this"): ausgabe]
 	}
 ]
+[h: VTinKR = 0]
 [h: addToINI = result + (INI / 100)]
 [h: addToInitiative(0, addToINI)]
 [h: sortInitiative()]

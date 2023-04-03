@@ -214,6 +214,7 @@
 						</td>
 						<td style='padding-left: 1px;' valign='top'>
 							<table style='border-spacing: 0px;' cellpadding='1'>
+								[r,macro("probeVTinKR@this"): currentToken()]
 								<tr>
 									<td>
 										[r,macro("probeLiegend@this"): "-2"]
