@@ -9,7 +9,7 @@
 [h,if(json.length(macro.args) > 7): failText = arg(7); failText = ""]
 
 <!-- Create a miniscript for undoing all changes -->
-[h: undo = strformat("[h,token('%{tok}'),Code:{[h: LeP = %{LeP}]")]
+[h: undo = strformat("[h,token('%{tok}'),Code:{[h: LeP = %{LeP}][Haupthand = %{Haupthand}][Nebenhand = %{Nebenhand}]")]
 [h: states = getTokenStates("json")]
 [h,foreach(s, states, ""): undo = undo + strformat("[h: setState('%{s}', %s)]", getState(s))]
 [h: undo = undo + "[h:checkZustand(currentToken())]}]"]

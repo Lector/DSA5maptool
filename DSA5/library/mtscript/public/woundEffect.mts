@@ -38,9 +38,9 @@
 			[waffe = getNahkampfwaffe(waffe)]
 			[wName = json.get(waffe, "Name")]
 			[technik = json.get(waffe, "Technik")]
-			[if(Haupthand != Nebenhand && technik != "" && technik != "Schilde"),if(Linkshaender == 1):
+			[if(Haupthand != Nebenhand && technik != "" && technik != "Schilde" && Linkshaender == 1):
 			Haupthand = noMeleeWeapon(currentToken())]
-			[if(Haupthand != Nebenhand && technik != "" && technik != "Schilde"),if(Linkshaender == 0): 
+			[if(Haupthand != Nebenhand && technik != "" && technik != "Schilde" && Linkshaender == 0): 
 			NebenHand = noMeleeWeapon(currentToken())]
 			[wundtext = strformat("wurde das in der Hand gehaltene Objekt '%{wName}' losgelassen, sofern es weder ein Schild ist, noch zweihändig geführt wurde.")]
 		};
@@ -50,9 +50,9 @@
 			[waffe = getNahkampfwaffe(waffe)]
 			[wName = json.get(waffe, "Name")]
 			[technik = json.get(waffe, "Technik")]
-			[if(Haupthand != Nebenhand && technik != "" && technik != "Schilde"),if(Linkshaender == 0):
+			[if(Haupthand != Nebenhand && technik != "" && technik != "Schilde" && Linkshaender == 0):
 			Haupthand = noMeleeWeapon(currentToken())]
-			[if(Haupthand != Nebenhand && technik != "" && technik != "Schilde"),if(Linkshaender == 1): 
+			[if(Haupthand != Nebenhand && technik != "" && technik != "Schilde" && Linkshaender == 1): 
 			NebenHand = noMeleeWeapon(currentToken())]
 			[wundtext = strformat("wurde das in der Hand gehaltene Objekt '%{wName}' losgelassen, sofern es weder ein Schild ist, noch zweihändig geführt wurde.")]
 		};
