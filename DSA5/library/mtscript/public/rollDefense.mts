@@ -1,4 +1,5 @@
-[h: switchToken(arg(0))]
+[h: tok = arg(0)]
+[h: switchToken(tok)]
 [h: weapon = arg(1)]
 [h: mod = arg(2)]
 [h: damage = arg(3)]

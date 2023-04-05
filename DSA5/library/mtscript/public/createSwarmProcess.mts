@@ -33,5 +33,5 @@
 	[h: SchwarmEinzelLeP = lepPerCreature]
 	[h: MaxLeP = lePPerCreature * cnt]
 	[h: LeP = MaxLeP]
-	[h,macro("checkZustand@lib:com.github.lector.dsa5maptool") : newToken]
+	[h: checkZustand(newToken)]
 };{}]

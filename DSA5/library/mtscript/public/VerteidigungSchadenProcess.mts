@@ -1,6 +1,7 @@
 [h: uebergabe = macro.args]
 
 [h: switchToken(json.get(uebergabe, "token"))]
+[h: chat = json.get(uebergabe, "chat")]
 [h: manoever = json.get(uebergabe, "spezial")]
 [h,if(manoever == ""): manoever = "[]"; manoever = "[" + manoever + "]"]
 
@@ -53,8 +54,8 @@
 }]
 [h: title = manName + title]
 
-[h: output = show(defenseResult)]
+[h: output = show(json.set(defenseResult, "Chat", chat))]
 [h: output = border(title, output)]
-[h: sendTo(json.get(uebergabe, "chat"), output)]
+[h: sendTo(chat, output)]
 
 [h: closeDialog("probe")]

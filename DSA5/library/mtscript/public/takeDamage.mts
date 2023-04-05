@@ -1,4 +1,5 @@
-[h: switchToken(arg(0))]
+[h: tok = arg(0)]
+[h: switchToken(tok)]
 [h: baseDamage = arg(1)]
 [h,if(json.length(macro.args) > 2): mod = arg(2); mod = 0]
 [h,if(json.length(macro.args) > 3): zone = arg(3); zone = "zufall"]
@@ -7,8 +8,13 @@
 [h,if(json.length(macro.args) > 6): status = arg(6); status = "[]"]
 [h,if(json.length(macro.args) > 7): failText = arg(7); failText = ""]
 
-[h: subResults = "[]"]
+<!-- Create a miniscript for undoing all changes -->
+[h: undo = strformat("[h,token('%{tok}'),Code:{[h: LeP = %{LeP}]")]
+[h: states = getTokenStates("json")]
+[h,foreach(s, states, ""): undo = undo + strformat("[h: setState('%{s}', %s)]", getState(s))]
+[h: undo = undo + "[h:checkZustand(currentToken())]}]"]
 
+<!-- Apply armor to reduce the damage -->
 [h: ruestung = resolveRS(getRuestung(RuestungAktiv))]
 [h,if(zone == "zufall"),Code:
 {
@@ -31,6 +37,7 @@ case "Linkes Bein": {[rs = json.get(ruestung, "RSBeinLinks")]};
 case "Rechtes Bein": {[rs = json.get(ruestung, "RSBeinRechts")]};
 default: {[rs = json.get(ruestung, "RS")]}]
 
+<!-- Evaluate the damage. Damage can be a fixed value or a formula including "1d6" -->
 [h,if(isNumber(baseDamage) == 1): schaden = baseDamage; schaden = eval(baseDamage)]
 [h: rolledDamage = schaden + mod]
 [h: schaden = round(rolledDamage * multiplier)]
@@ -39,9 +46,10 @@ default: {[rs = json.get(ruestung, "RS")]}]
 [h,if(type == "TP"): schaden = schaden - rs]
 [h,if(schaden <= 0): schaden = 0]
 
-<!-- Wenn Daten im Token fehlen sollen keine Wunden verursacht werden -->
+<!-- Determine if we have wound effects. This is only possible if we have the nessessary data in our token and the global setting for wounds is active -->
 [h: ws = getWS(currentToken())]
 [h,if(ws == 0): wound = 0; wound = floor(schaden / ws)]
+[h: subResults = "[]"]
 [h,if(getLibProperty("OptWunden", "com.github.lector.dsa5maptool") != 0 && wound > 0 && zone != "gesamt"), Code:
 {
 	[h,if(hasTrait("Vorteile", "Hart im nehmen") == 1): wound = wound - 1]
@@ -49,6 +57,7 @@ default: {[rs = json.get(ruestung, "RS")]}]
 	[h: subResults = json.append(subResults, woundEffect(currentToken(), wound, zone))]
 };{}]
 
+<!-- Apply status effects to the token. Some special manouvers cause this to happen -->
 [h,foreach(stat, status),Code:{
 	[h,if(startsWith(stat, "-")),Code:{
 		
@@ -60,9 +69,9 @@ default: {[rs = json.get(ruestung, "RS")]}]
 	[setState(stat, val)]
 }]
 
+<!-- Apply damage and check for pain -->
 [h: LeP = LeP - schaden]
-[h,macro("checkZustand@this"): currentToken()]
-[h: subResults = json.append(subResults, macro.return)]
+[h: subResults = json.append(subResults, checkZustand(currentToken()))]
 
 [h: macro.return = json.set("{}",
 "ResultType", "takeDamage",
@@ -75,4 +84,5 @@ default: {[rs = json.get(ruestung, "RS")]}]
 "Type", type,
 "Zone", zone,
 "Notification", failText,
-"Wound", wound)]
+"Wound", wound,
+"Undo", undo)]

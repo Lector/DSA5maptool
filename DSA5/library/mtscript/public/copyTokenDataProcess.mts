@@ -185,7 +185,7 @@
 ]
 [h,if(cEnergie == 1 || cStatus == 1),Code:
 {
-	[h,macro("checkZustand@lib:com.github.lector.dsa5maptool"): zToken]
+	[h: checkZustand(zToken)]
 };{}]
 
 [h: ausgabe = strformat("

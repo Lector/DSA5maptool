@@ -1,5 +1,5 @@
 [h: params = arg(0)]
-
+[h: chat = json.get(params, "Chat")]
 [h: baseDamage = json.get(params, "BaseDamage")]
 [h: rolledDamage = json.get(params, "RolledDamage")]
 [h: damage = json.get(params, "Damage")]
@@ -7,6 +7,7 @@
 [h: type = json.get(params, "Type")]
 [h: zone = json.get(params, "Zone")]
 [h: multiplier = json.get(params, "Multiplier")]
+[h: undoMacro = json.get(params, "Undo")]
 [h,if(mod >= 0): damageFormula = baseDamage + "+" + abs(mod); signedMod = baseDamage + "-" + abs(mod)]
 
 [h,if(IsNumber(baseDamage)),Code:
@@ -20,6 +21,8 @@
 [h: multiplierTitle = ""]
 [h,if(multiplier == 2): multiplierTitle = ", Schaden verdoppelt"]
 [h,if(multiplier == 0.5): multiplierTitle = ", Schaden halbiert"]
+
+[h: undoLink = macroLinkText("undoProcess@this")]
 
 [h,if(zone != "gesamt"): displayZone = strformat("
 <table>
@@ -55,7 +58,15 @@
 			</td>
 		</tr>
 	</table>
+</td>
+<td style='margin-left: 12px' valign=middle>
+	<form action='%{undoLink}' method='json'>
+		<input type='submit' value='<html><img height=24 width=24 src=%s/></html>'/>
+		<input type='hidden' name='undo' value='%s'/>
+		<input type='hidden' name='chat' value='%{chat}'/>
+		<input type='hidden' name='token' value='%s'/>
+	</form>
 </td>"
-,tableImage("chat", 64))]
+,tableImage("chat", 64), data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/Undo.png"), encode(undoMacro), currentToken())]
 
 [h: macro.return = output]

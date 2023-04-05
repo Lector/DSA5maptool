@@ -1,4 +1,7 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
+[h: params = arg(0)]
+[h: tok = json.get(params, "token")]
+
+[h,if(isGM() == 1 && hasImpersonated() == 0 && tok == ""), Code:
 	{
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
@@ -10,12 +13,13 @@
 	};{}
 ]
 
-[h: uebergabe = macro.args]
-[h: chat = json.get(uebergabe, "chat")]
+[h,if(tok != ""): switchToken(tok)]
 
-[h,if(json.get(uebergabe, "direkteingabe") == ""): direkteingabe = 0; direkteingabe = json.get(uebergabe, "direkteingabe")]
-[h,if(json.get(uebergabe, "wBonus") == ""): wBonus = 0; wBonus = json.get(uebergabe, "wBonus")]
-[h,if(json.get(uebergabe, "wMalus") == ""): wMalus = 0; wMalus = json.get(uebergabe, "wMalus")]
+[h: chat = json.get(params, "chat")]
+
+[h,if(json.get(params, "direkteingabe") == ""): direkteingabe = 0; direkteingabe = json.get(params, "direkteingabe")]
+[h,if(json.get(params, "wBonus") == ""): wBonus = 0; wBonus = json.get(params, "wBonus")]
+[h,if(json.get(params, "wMalus") == ""): wMalus = 0; wMalus = json.get(params, "wMalus")]
 
 [h,if(isNumber(wBonus) == 0 || isNumber(wMalus) == 0 || isNumber(direkteingabe) == 0), Code:
 	{
@@ -34,14 +38,14 @@
 ]
 [h: closeDialog("changeEnergie")]
 
-[h,if(json.get(uebergabe, "eingabeTyp") == 0), Code:
+[h,if(json.get(params, "eingabeTyp") == 0), Code:
 	{
 		[ergebnis = direkteingabe]
 		[ergebnisTitle = "Direkteingabe"]
 	};
 	{
-		[wAnzahl = json.get(uebergabe, "wAnzahl")]
-		[wTyp = json.get(uebergabe, "wTyp")]
+		[wAnzahl = json.get(params, "wAnzahl")]
+		[wTyp = json.get(params, "wTyp")]
 		[wMod = wBonus - wMalus]
 		[if(wMod > 0): wModVorzeichen = "&#43;"; wModVorzeichen = ""]
 		[ergebnis = roll(wAnzahl, wTyp) + wMod]
@@ -53,7 +57,7 @@
 
 [h: subtext = ""]
 
-[h: energieTyp = json.get(uebergabe, "energieTyp")]
+[h: energieTyp = json.get(params, "energieTyp")]
 [h,switch(energieTyp), Code:
 	case "lePlus": {
 		[if(LeP < 0), Code:
@@ -170,8 +174,7 @@
 </table>",
 chatImage, chatText, chatColor, ergebnisTitle, ergebnis, chatTyp)]
 
-[h,macro("checkZustand@this"): currentToken()]
-[h: ausgabe = ausgabe + subtext + show(macro.return)]
+[h: ausgabe = ausgabe + subtext + show(checkZustand(currentToken()))]
 
 [h: ausgabe = border(chatTitle, ausgabe)]
 

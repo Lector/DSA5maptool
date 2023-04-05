@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -38,21 +38,21 @@
 [h,if(json.get(uebergabe, "oAE") == ""): nAE = MaxAsP; nAE = json.get(uebergabe, "oAE")]
 [h,if(json.get(uebergabe, "oKE") == ""): nKE = MaxKaP; nKE = json.get(uebergabe, "oKE")]
 [h,if(json.get(uebergabe, "oSchipsMax") == ""): nSchipsMax = SchipsMax; nSchipsMax = json.get(uebergabe, "oSchipsMax")]
-[h,macro("checkZustand@lib:com.github.lector.dsa5maptool"): currentToken()]
+[h: checkZustand(currentToken())]
 
 [h,if(isNumber(nMU) == 0 || isNumber(nGS) == 0 || isNumber(nINI) == 0 || isNumber(nAW) == 0 || isNumber(nSchipsMAX) == 0 || isNumber(nKL) == 0 || isNumber(nIN) == 0 || isNumber(nCH) == 0 || isNumber(nFF) == 0 || isNumber(nGE) == 0 || isNumber(nKO) == 0 || isNumber(nKK) == 0 || isNumber(nSK) == 0 || isNumber(nZK) == 0 || isNumber(nAPgesamt) == 0 || isNumber(nAPverfuegbar) == 0 || isNumber(nLE) == 0 || isNumber(nAPausgegeben) == 0 || isNumber(nAE) == 0 || isNumber(nKE) == 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numText"]
+		[h,macro("inputFail@this"): "numText"]
 	};{}
 ]
 [h,if(nMU != round(nMU) || nAW != round(nAW) || nINI != round(nINI) || nSchipsMax != round(nSchipsMax) || nKL != round(nKL) || nIN != round(nIN) || nCH != round(nCH) || nFF != round(nFF) || nGE != round(nGE) || nKO != round(nKO) || nKK != round(nKK) || nSK != round(nSK) || nZK != round(nZK) || nAPgesamt != round(nAPgesamt) || nAPverfuegbar != round(nAPverfuegbar) || nLE != round(nLE) || nAPausgegeben != round(nAPausgegeben) || nAE != round(nAE) || nKE != round(nKE)), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numInteger"]
+		[h,macro("inputFail@this"): "numInteger"]
 	};{}
 ]
 [h,if(nMU < 0 || nGS < 0 || nAW < 0 || nINI < 0 || nSchipsMax < 0 || nKL < 0 || nIN < 0 || nCH < 0 || nFF < 0 || nGE < 0 || nKO < 0 || nKK < 0 || nAPgesamt < 0 || nAPverfuegbar < 0 || nLE < 0 || nAPausgegeben < 0 || nAE < 0 || nKE < 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numNegative"]
+		[h,macro("inputFail@this"): "numNegative"]
 	};{}
 ]
 [h: closeDialog("chareditEigenschaften")]
@@ -91,5 +91,5 @@
 [h: AsP = min(AsP, MaxAsP)]
 [h: KaP = min(KaP, MaxKaP)]
 
-[h,macro("noticeSelf@lib:com.github.lector.dsa5maptool"): "chareditEigenschaften"]
-[h,macro("refreshFrame@lib:com.github.lector.dsa5maptool"): ""]
+[h,macro("noticeSelf@this"): "chareditEigenschaften"]
+[h,macro("refreshFrame@this"): ""]

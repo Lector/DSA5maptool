@@ -52,5 +52,5 @@
 [h: Schwarm = 1]
 [h: SchwarmAnzahl = num]
 [h: moveToken(round(x), round(y))]
-[h,macro("checkZustand@lib:com.github.lector.dsa5maptool"): first]
+[h: checkZustand(first)]
 [h,foreach(toDelete, tokens), if(toDelete != first): removeToken(toDelete)]

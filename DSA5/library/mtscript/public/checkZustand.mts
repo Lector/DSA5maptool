@@ -18,31 +18,31 @@
 <!-- Bestimmte Wesen sind von Schmerz nicht betroffen. Manuelle Schmerzen kann man trotzdem eintragen -->
 [h,if(listContains("Dämon, Elementar, Geist, Golem, Golemid", Typus) == 1),Code:
 {
-	[schmerz = 0]
+	[h: schmerz = 0]
 }]
 
 [h,if(Schwarm == 1),Code:{
 	<!-- Schwärme erhalten keine Schmerzen durch niedrige LeP.
 	Das macht keinen Sinn da sich die LeP auf die Summe aller Tiere beziehen -->
-	[schmerz = 0]
-	[SchwarmAnzahl = ceil(LeP / SchwarmEinzelLeP)]
+	[h: schmerz = 0]
+	[h: SchwarmAnzahl = ceil(LeP / SchwarmEinzelLeP)]
 	[h: setLabel("Schwarm aus " + SchwarmAnzahl + " Wesen")]
 }]
 
 [h: currentKO = getKO(tokenID)]
 [h,if(LeP <= 0 && LeP > -currentKO), Code:
 {
-	[setState("Sterbend", 1)]
-	[meldung = strformat("<b>Lebensbedrohlich verletzt</b><br>Du liegst im Sterben. In %s Kampfrunden bist du tot.", currentKO)]
+	[h: setState("Sterbend", 1)]
+	[h: meldung = strformat("<b>Lebensbedrohlich verletzt</b><br>Du liegst im Sterben. In %s Kampfrunden bist du tot.", currentKO)]
 };{}]
-[h,if(LeP > 0):setState("Sterbend", 0)]
+[h,if(LeP > 0): setState("Sterbend", 0)]
 [h,if(LeP < -currentKO), Code:
 {
-	[setState("Sterbend", 0)]
-	[setState("Tot", 1)]
-	[meldung = "<b>(Hoffentlich) Heldenhafter Tot</b><br>Du bist gerade gestorben. Ruhe in Frieden."]
+	[h: setState("Sterbend", 0)]
+	[h: setState("Tot", 1)]
+	[h: meldung = "<b>(Hoffentlich) Heldenhafter Tot</b><br>Du bist gerade gestorben. Ruhe in Frieden."]
 };{
-	[setState("Tot", 0)]
+	[h: setState("Tot", 0)]
 }]
 
 [h: mod = SchmerzMod]
@@ -54,8 +54,7 @@
 [h,if(Schmerz >= 4 && SchmerzAlt < 4 && meldung == ""),Code:
 {
 	<!-- Wenn man auf Schmerz 4 fällt wird Selbstbeherrschung gewürfelt ob man stehen bleibt -->
-	[h: res = rollSkill(currentToken(), "Selbstbeherrschung", 0,
-	json.set("{}", "spec", "Handlungsfähigkeit bewahren"))]
+	[h: res = rollSkill(currentToken(), "Selbstbeherrschung", 0, json.set("{}", "spec", "Handlungsfähigkeit bewahren"))]
 	[h: res = json.set(res, "Header", "Schmerz IV", "ResultType", "schmerz4")]
 	[h: success = json.get(res, "success")]
 	[h,if(success >= 1),Code:{
@@ -67,7 +66,7 @@
 }]
 
 [h: ruestung = resolveRS(getRuestung(RuestungAktiv, tokenID), tokenID)]
-[Belastung = max(0, min(4, json.get(ruestung, "BE") + BelastungMod))]
+[h: Belastung = max(0, min(4, json.get(ruestung, "BE") + BelastungMod))]
 
 [h,if(Ueberanstrengung >= 4), Code:
 {
@@ -79,11 +78,11 @@
 [h,if(Furcht >= 4 || Trance >= 4 || Verwirrung >= 4 || Betaeubung >= 4 || Belastung >= 4): zustandKritisch = 1; zustandKritisch = 0]
 [h,if(zustandKritisch == 1 && LeP > 0), Code:
 {
-	[setState(state, 1)]
+	[h: setState(state, 1)]
 }]
 [h,if(zustandKritisch == 0 && LeP > schmerz4), Code:
 {
-	[setState(state, 0)]
+	[h: setState(state, 0)]
 }]
 
 [h: state = "Bewegungsunfähig"]
@@ -98,7 +97,7 @@
 
 <!-- Wenn der Schwarm weniger Wesen hat als die Grundgroesse wird er in Einzelwesen zerschlagen -->
 [h,if(Schwarm == 1 && SchwarmAnzahl < SchwarmGG),Code:{
-	[meldung = "<b>Schwarm zerschlagen</b><br>Da weniger Wesen als die Grundgröße(" + SchwarmGG + ") übrig sind wurden die restlichen " + SchwarmAnzahl + " in Einzelwesen aufgeteilt!"]
+	[h: meldung = "<b>Schwarm zerschlagen</b><br>Da weniger Wesen als die Grundgröße(" + SchwarmGG + ") übrig sind wurden die restlichen " + SchwarmAnzahl + " in Einzelwesen aufgeteilt!"]
 	[h: scatter(currentToken())]
 }]
 

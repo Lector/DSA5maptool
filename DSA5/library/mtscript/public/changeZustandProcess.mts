@@ -25,5 +25,5 @@
 
 [h: closeDialog("changeZustand")]
 
-[h,macro("checkZustand@this"): currentToken()]
+[h: checkZustand(currentToken())]
 [h,macro("noticeSelf@this"): "zustand"]

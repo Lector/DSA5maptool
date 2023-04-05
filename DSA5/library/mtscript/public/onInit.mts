@@ -85,6 +85,7 @@
 
 [h: defineFunction("probeZone", "probeZone@this")]
 
+[h: defineFunction("checkZustand", "checkZustand@this")]
 [h: defineFunction("probeSicht", "probeSicht@this")]
 [h: defineFunction("probeATSingleProcess", "probeATSingleProcess@this")]
 [h: defineFunction("angriffSchadenProcess", "angriffSchadenProcess@this")]

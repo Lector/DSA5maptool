@@ -225,5 +225,5 @@ tableImage("chat", 53), leRegColor, leTitle, leRegGesamt, aeRegColor, aeTitle, a
 			[h,macro("sendToSelfGM@this"): ausgabe]
 		}
 ]
-[h,macro("checkZustand@this"): currentToken()]
+[h: checkZustand(currentToken())]
 [h,macro("refreshFrame@this"): ""]

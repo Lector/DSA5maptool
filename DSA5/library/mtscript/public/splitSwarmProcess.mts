@@ -12,7 +12,7 @@
 	{
 		[MaxLeP = life]
 		[LeP = life]
-		[h,macro("checkZustand@lib:com.github.lector.dsa5maptool"): newTok]
+		[h: checkZustand(newTok)]
 	}]
 	[LeP = LeP - life]
 }]

@@ -12,5 +12,5 @@
 
 [h: id = macro.args]
 [h: Reittier = id]
-[h,macro("checkZustand@this"): currentToken()]
+[h: checkZustand(currentToken())]
 [h,macro("refreshFrame@this"): ""]

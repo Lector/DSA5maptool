@@ -23,6 +23,6 @@
 	[h,if(tokenIni != ""),Code:{
 		[h: addToInitiative(0, tokenIni)]
 	}]
-	[h,macro("checkZustand@lib:com.github.lector.dsa5maptool"): currentToken()]
+	[h: checkZustand(currentToken())]
 }]
 [h: removeToken(tokenID)]
