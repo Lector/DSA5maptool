@@ -5,7 +5,7 @@
 
 [h: evalMacro(undo)]
 
-[h: ausgabe = border("Rückgängig", strformat("
+[h: ausgabe = border("Schaden rückgängig gemacht", strformat("
 
 <table style='border-spacing: 0px; margin-top: 3px;'>
 	<tr>
@@ -13,7 +13,7 @@
 			<img src='%s'>
 		</td>
 		<td valign='middle'>
-			Der Schaden wurde rückgängig gemacht. Alle Zustände und Stati vor dem Schaden wurden widerhergestellt.
+			Token-Zustand erfolgreich wiederhergestellt! Die Rückgängigfunktion hat den Schaden rückgängig gemacht und alle Zustände und Stati des Tokens zum Zeitpunkt unmittelbar vor dem Schaden wiederhergestellt.
 		</td>
 	</tr>
 </table>",

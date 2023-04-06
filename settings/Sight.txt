@@ -1,0 +1,35 @@
+Normal: circle r0.8
+Magiesinn: circle distance=200 r200
+Dunkelsicht Radius 1: circle r1
+Dunkelsicht Radius 1.5: circle r1.5
+Dunkelsicht Radius 2: circle r2
+Dunkelsicht Radius 2.5: circle r2.5
+Dunkelsicht Radius 3: circle r3
+Dunkelsicht Radius 4: circle r4
+Dunkelsicht Radius 4.5: circle r4.5
+Dunkelsicht Radius 5: circle r5
+Dunkelsicht Radius 6: circle r6
+Dunkelsicht Radius 7.5: circle r7.5
+Dunkelsicht Radius 9: circle r9
+Dunkelsicht Radius 10: circle r10
+Dunkelsicht Radius 12.5: circle r12.5
+Dunkelsicht Radius 15: circle r15
+Lightsource R1: circle distance=1 r1
+Lightsource R1.5: circle distance=1.5 r1.5
+Lightsource R2: circle distance=2 r2
+Lightsource R2.5: circle distance=2.5 r2.5
+Lightsource R3: circle distance=3 r3
+Lightsource R4: circle distance=4 r4
+Lightsource R4.5: circle distance=4.5 r4.5
+Lightsource R5: circle distance=5 r5
+Lightsource R6: circle distance=6 r6
+Lightsource R7.5: circle distance=7.5 r7.5
+Lightsource R8: circle distance=8 r8
+Lightsource R9: circle distance=9 r9
+Lightsource R10: circle distance=10 r10
+Lightsource R12: circle distance=12 r12
+Lightsource R12.5: circle distance=12.5 r12.5
+Lightsource R15: circle distance=15 r15
+Lightsource R16: circle distance=16 r16
+Lightsource R20: circle distance=20 r20
+Lightsource R24: circle distance=24 r24
