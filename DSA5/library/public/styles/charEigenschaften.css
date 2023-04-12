@@ -1,10 +1,15 @@
+@font-face {
+    font-family: Ringbearer;
+    src: url("lib://com.github.lector.dsa5maptool/fonts/RINGM___.TTF") format("truetype");
+}
+
 * {
     border: 1px dotted red;
+    font-family: Ringbearer;
 }
 
 body {
     font-size: 12pt;
-    font-weight: bold;
     color: #eee5c8;
     background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/background.png");
 }
@@ -14,6 +19,19 @@ body {
     font-weight: bold;
     font-size: 22pt;
     text-align: center;
+}
+
+.highlight {
+    border: 2px solid #eee5c8
+}
+
+.highlightHeading {
+    font-family: Ringbearer;
+    font-weight: bold;
+    width: 100%;
+    border-top: 1px solid #eee5c8;
+    border-bottom: 1px solid #eee5c8;
+    padding: 3px 10px 3px 10px;
 }
 
 a {
@@ -131,7 +149,9 @@ input[type="text"] {
     word-wrap: break-word;
 }
 
-.panel tr td div {
+.panel div {
+    font-weight: bold;
+    width: 100%;
     border-top: 1px solid #eee5c8;
     border-bottom: 1px solid #eee5c8;
     padding: 3px 10px 3px 10px;
