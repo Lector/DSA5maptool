@@ -35,7 +35,7 @@
 [h,if(aktKK < KK): className = "attribute-decreased"; className = "attribute-default"]
 [h,if(aktKK > KK): className = "attribute-increased"]
 
-<div style="display:flex;justify-content:center;align-items:center;">
+<div style="display:flex;justify-content:center;align-items:center;gap:5px">
 	<a href='[r:macroLinkText("probeEig@this", "", "MU")]' class='attribute-default' title='Probe auf "Mut" ablegen'>MU: <span class='[r: className]'>[r: aktMU]</span>
 	</a>
 	<a href='[r:macroLinkText("probeEig@this", "", "KL")]' class='attribute-default' title='Probe auf "Klugheit" ablegen'>KL: <span class='[r: className]'>[r: aktKL]</span>
@@ -53,46 +53,3 @@
 	<a href='[r:macroLinkText("probeEig@this", "", "KK")]' class='attribute-default' title='Probe auf "Körperkraft" ablegen'>KK: <span class='[r: className]'>[r: aktKL]</span>
 	</a>
 </div>
-<!-- <table style='border-spacing: 0px; margin-left: 22px; margin-right: 22px;'>
-	<tr>
-		<td width='57'>
-			
-			
-			
-		</td>
-		<td width='57'>
-			
-
-			
-		</td>
-		<td width='57'>
-
-
-
-		</td>
-		<td width='57'>
-
-			
-
-		</td>
-		<td width='57'>
-
-			
-
-		</td>
-		<td width='57'>
-
-			
-
-		</td>
-		<td width='57'>
-
-			
-
-		<td width='57'>
-
-			
-
-		</td>
-	</tr>
-</table> -->
