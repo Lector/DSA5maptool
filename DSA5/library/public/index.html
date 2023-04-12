@@ -5,27 +5,101 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Example document</title>
     <script src="./scripts/rest.js?cachelib=false"></script>
+    <link rel="stylesheet" type="text/css" href="./styles/charEigenschaften.css?cachelib=false" />
 </head>
 
 <body>
-    <p>Example Paragraph</p>
-    <button id="clicker">Click me!</button>
+    <div>tbd</div>
+    <button id="clicker">Click Me!</button>
+    <!-- <div class="border">
+		<form action="[r: actionLink]" method="post">
+			[r: header("Würfelwurf")]
+			<table style='border-spacing: 0px; margin-top: 8px; margin-left: auto; margin-right: auto;'>
+				<tr>
+					<td style='text-align: center; font-size: 14pt; font-weight: bold; color: #482902; border-top: 1px solid #7b5547; border-bottom: 1px solid #7b5547; margin-bottom: 5px;' width='300'>
+						[r: wTitle]
+					</td>
+				</tr>
+			</table>
+			<table style='border-spacing: 0px; margin-top: 5px; margin-left: auto; margin-right: auto;'>
+				<tr>
+					<td>
+						<select name='wAnzahl' size='1'>
+						<option selected='selected'>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+						<option>10</option>
+						<option>11</option>
+						<option>12</option>
+						<option>13</option>
+						<option>14</option>
+						<option>15</option>
+						<option>16</option>
+						<option>17</option>
+						<option>18</option>
+						<option>19</option>
+						<option>20</option>
+						<option>21</option>
+						</select>
+					</td>
+					<td>
+						[r: wText]
+					</td>
+					<td width='10'>
+						&nbsp;
+					</td>
+					<td>
+						+
+					</td>
+					<td>
+						<input type='text' name='wBonus' size='2' maxlength='2' value=''>
+					</td>
+					<td width='10'>
+						&nbsp;
+					</td>
+					<td>
+						-
+					</td>
+					<td>
+						<input type='text' name='wMalus' size='2' maxlength='2' value=''>
+					</td>
+				</tr>
+			</table>
+			<table style='border-spacing: 0px; margin: 7px auto 8px auto;'>
+					<td>
+						<button type='submit' name='action'><img src='[r: button]'/>
+					</td>
+				</tr>
+			</table>
+			[r,macro("probeChat@lib:com.github.lector.dsa5maptool"): ""]
+			<input type='hidden' name='diceTyp' value='[r: uebergabe]'/>
+		</form>
+	</div> -->
 </body>
 
 <script>
-    document.getElementById("clicker").addEventListener("click", function (event) {
-        const rest = new RestData("macro:dataProvider@lib:com.github.lector.dsa5maptool", {hello: "world", foo: true, bar: 42});
-        rest.get().then(val => alert(val)).catch(e => alert(e))
-    })
-    window.addEventListener("load", function() {
+    document.getElementById("clicker").addEventListener("click", async function (event) {
         try {
-        const rest = new RestData("macro:dataProvider@lib:com.github.lector.dsa5maptool", {hello: "world", foo: true, bar: 42});
-        rest.get().then(val => alert(val)).catch(e => alert(e));
-        } catch(e) {
-            alert(e);
-        }
+        console.log("Clicked a Button");
+            const userData = await MapTool.getUserData();
+            const data = JSON.parse(userData);
+        console.log(data);
+        console.log(data.key);
+        document.title = `W${data.dice} Wurf`;
+    } catch(e) { alert(e)}
+        // const rest = new RestData("macro:dataProvider@lib:com.github.lector.dsa5maptool", {hello: "world", foo: true, bar: 42});
+        // rest.get().then(val => alert(val)).catch(e => alert(e))
+    });
+    window.addEventListener("load", function() {
+        console.log("Loaded");
+        console.log(JSON.stringify(MapTool.getUserData()));
     })
 </script>
 
