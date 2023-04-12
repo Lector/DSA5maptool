@@ -18,53 +18,31 @@
 [h: imageNachteile = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/schriftNachteile.png")]
 [h: imageAllgemeineSF = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/schriftAllgemeineSF.png")]
 
-[frame("charbogen", "width=517; height=700; temporary=1; input=0; noframe=0"):{
+[frame5("charbogen", "width=517; height=700; temporary=1; input=0; noframe=0"):{
 <html>
 	<head>
 		<title>
 			Charakterbogen - Eigenschaften
 		</title>
-		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
+		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/charEigenschaften.css?cachelib=false'/>
 	</head>
-	<body style="background-image: url('[r: tblImage("mainTheme",66)]'); font-size: 12pt; font-weight: bold; color: #eee5c8;">
-		<div style="background-image: url('[r: tblImage("mainTheme",1)]'); background-repeat: no-repeat; height: 122; margin: 0px;" width="500">
-			<div style='margin-top: 18px; font-size: 22pt; text-align: center;' width='500'>
-				<span style='color: #eee5c8; text-decoration: none;' title='Zum Charaktertoken wechseln'>[r: macroLink(getName(), "gotoToken@this", "", currentToken())]</span>
+	<body >
+		<div id="header">
+			<div class="charactername">
+				<a href='[r: macroLinkText("gotoToken@this", "", currentToken())]' title='Zum Charaktertoken wechseln'>[r: getName()]</a>
 			</div>
-			<table style='border-spacing: 0px; margin-top: 3px;' width='500'>
-				<tr>
-					<td width='58'>
-						&nbsp;
-					</td>
-					<td width='383'>
-						<image src='[r: tableImage("mainTheme", 5)]'></image>
-						<a href="[r: macroLinkText("charbogenKampf@this")]"><image src='[r: tableImage("mainTheme", 6)]' border="0" alt="Kampfbogen aufrufen"></image></a>
-						<a href="[r: macroLinkText("charbogenTalente@this", "", "Koerper")]"><image src='[r: tableImage("mainTheme", 8)]' border="0" alt="Talentbogen aufrufen"></image></a>
-						<a href="[r: macroLinkText("charbogenZauber@this")]"><image src='[r: tableImage("mainTheme", 10)]' border="0" alt="Zauberbogen aufrufen"></image></a>
-						<a href="[r: macroLinkText("charbogenLiturgien@this")]"><image src='[r: tableImage("mainTheme", 12)]' border="0" alt="Liturgiebogen aufrufen"></image></a>
-						<a href="[r: macroLinkText("charbogenNotizen@this")]"><image src='[r: tableImage("mainTheme", 14)]' border="0" alt="Notizen &amp; Handouts aufrufen"></image></a>
-					</td>
-					<td width='59'>
-						&nbsp;
-					</td>
-				</tr>
-			</table>
+			<div style="display:flex; justify-content:center; align-items:center">
+				<image src='[r: tableImage("mainTheme", 5)]'></image>
+				<a href="[r: macroLinkText("charbogenKampf@this")]"><image src='[r: tableImage("mainTheme", 6)]' border="0" alt="Kampfbogen aufrufen"></image></a>
+				<a href="[r: macroLinkText("charbogenTalente@this", "", "Koerper")]"><image src='[r: tableImage("mainTheme", 8)]' border="0" alt="Talentbogen aufrufen"></image></a>
+				<a href="[r: macroLinkText("charbogenZauber@this")]"><image src='[r: tableImage("mainTheme", 10)]' border="0" alt="Zauberbogen aufrufen"></image></a>
+				<a href="[r: macroLinkText("charbogenLiturgien@this")]"><image src='[r: tableImage("mainTheme", 12)]' border="0" alt="Liturgiebogen aufrufen"></image></a>
+				<a href="[r: macroLinkText("charbogenNotizen@this")]"><image src='[r: tableImage("mainTheme", 14)]' border="0" alt="Notizen &amp; Handouts aufrufen"></image></a>
+			</div>
 		</div>
 		
-		<div style="background-image: url('[r: tblImage("mainTheme",2)]'); margin: 0px; background-repeat: repeat-y" width="500">
-			<table style='border-spacing: 0px;' width='500'>
-				<tr>
-					<td width='14'>
-						&nbsp;
-					</td>
-					<td style="background-image: url('[r: tblImage("mainTheme",21)]'); background-repeat: no-repeat; height: 90;" width='471'>
-						[r,macro("eigLeiste@this"): ""]
-					</td>
-					<td>
-						&nbsp;
-					</td>
-				</tr>
-			</table>			
+		<div id="content">
+		<div id="leisteEigenschaften">[r,macro("eigLeiste@this"): ""]</div>
 			<table style='border-spacing: 0px;' width='500'>
 				<tr>
 					<td width='38'>
@@ -151,13 +129,13 @@
 										</tr>
 										<tr>
 											<td>
-												<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;Ausweichen&quot; ablegen'>[r: macroLink("Ausweichen:", "probeAW@this", "", "")]</span>
+												<span class="hidden" style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;Ausweichen&quot; ablegen'>[r: macroLink("Ausweichen:", "probeAW@this", "", "")]</span>
 											</td>
 											<td style='padding-left: 4px;'>
 												[h: aktAW = AW + getStrProp(TempMod, "aw")]												
 												[h,if(aktAW < AW): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 												[h,if(aktAW > AW): eigColor = "#0099ff"]
-												<span style='color: [r: eigColor]; text-decoration: none;' title='Probe auf &quot;Ausweichen&quot; ablegen'>[r: macroLink(aktAW, "probeAW@this", "", "")]</span>
+												<span class="hidden" style='color: [r: eigColor]; text-decoration: none;' title='Probe auf &quot;Ausweichen&quot; ablegen'>[r: macroLink(aktAW, "probeAW@this", "", "")]</span>
 											</td>
 										</tr>
 										<tr>
@@ -291,13 +269,9 @@
 				</tr>
 			</table>		
 
-			<table class="panel" width='431'>
+			<table class="panel">
 				<tr>
-					<td class="panel-top">
-					</td>
-				</tr>
-				<tr>
-					<td class="panel-middle" width='405'>
+					<td>
 						<div>
 							<image src=[r: imageVorteile]></image>
 						</div>
@@ -314,15 +288,10 @@
 						[r,macro("charbogenTraits@this"): AllgemeineSF]
 					</td>
 				</tr>
-				<tr>
-					<td class="panel-bottom">
-					</td>
-				</tr>
 			</table>
 
 		</div>
-		<div style="background-image: url('[r: tblImage("mainTheme",3)]'); background-repeat: no-repeat; height: 34; margin: 0px;" width="500">
-		</div>
+		<div id="footer"></div>
 	</body>
 </html>
 }]

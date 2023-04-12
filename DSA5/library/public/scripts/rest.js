@@ -6,6 +6,7 @@ class RestData {
 		{
 			this.dataURI = dataURI;
 			this.send = send;
+			console.log("Init Restclient", this);
 		}	
 	async fetchUrl(url = this.dataURI) {
 	    let data = JSON.stringify(this.send);
