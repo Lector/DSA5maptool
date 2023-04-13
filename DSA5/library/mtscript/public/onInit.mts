@@ -31,6 +31,7 @@
 [h: defineFunction("show3d20", "show3d20@this")]
 [h: defineFunction("getTarget", "getTarget@this")]
 [h: defineFunction("lookAt", "lookAt@this")]
+[h: defineFunction("smoothPath", "smoothPath@this")]
 [h: defineFunction("isBehind", "isBehind@this")]
 [h: defineFunction("getIllumination", "getIllumination@this")]
 [h: defineFunction("getCampaignLight", "getCampaignLight@this")]

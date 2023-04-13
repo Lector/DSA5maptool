@@ -3,9 +3,11 @@
 [h,if(getLibProperty("WildnisSpieltisch", "com.github.lector.dsa5maptool") == 1): cSpieltisch = "checked"; cSpieltisch = ""]
 
 [h: cWunden = ""]
-[h,if(getLibProperty("OptWunden", "com.github.lector.dsa5maptool") == 1): cWunden = "checked='checked'"]
+[h,if(getLibProperty("OptWunden", "com.github.lector.dsa5maptool") == 1): cWunden = "checked"]
 [h: cRestrictMovement = ""]
-[h,if(getLibProperty("OptRestrictMovement", "com.github.lector.dsa5maptool") == 1): cRestrictMovement = "checked='checked'"]
+[h,if(getLibProperty("OptRestrictMovement", "com.github.lector.dsa5maptool") == 1): cRestrictMovement = "checked"]
+[h: cFacing = ""]
+[h,if(getLibProperty("OptFacing", "com.github.lector.dsa5maptool") == 1): cFacing = "checked"]
 
 [h: actionLink = macroLinkText("gameOptionsProcess@this", "")]
 [dialog5("gameOptions", "width=650; height=420; temporary=1; closebutton=0; noframe=0"):{
@@ -65,6 +67,14 @@
 						</td>
 						<td>
 							Einmal erkundete Kartenbereiche bleiben sichtbar
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type='checkbox' name='fFacing' value='1' [r: cFacing]>
+						</td>
+						<td>
+							Blickrichtung nach Bewegung und Attacke automatisch ausrichten
 						</td>
 					</tr>
 					<tr>

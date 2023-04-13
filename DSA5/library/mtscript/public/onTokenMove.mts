@@ -1,7 +1,31 @@
 [h: info = json.indent(getInfo("map"), 2)]
 [h: visiontype = json.get(info, "vision type")]
 
+<!-- Expose view when a token has moved -->
 [h,if(visiontype != "OFF"): exposeView(currentToken())]
+
+[h: hasIni = hasInitiative(currentToken())]
+[h,if(getLibProperty("OptFacing", "com.github.lector.dsa5maptool") != 0 && hasIni == 1),Code:
+{
+	[h: smoothed = smoothPath(macro.args))]
+	[h: from = json.get(smoothed, json.length(smoothed) - 2)]
+	[h: to = json.get(smoothed, json.length(smoothed) - 1)]
+	[h,if(from == to),Code:
+	{
+		[h: from = json.get(macro.args, json.length(macro.args) - 2)]
+		[h: to = json.get(macro.args, json.length(macro.args) - 1)]
+	}]
+	[h,if(from != to),Code:{
+		[h: xdir = json.get(to, "x") - json.get(from, "x")]
+		[h: ydir = json.get(to, "y") - json.get(from, "y")]
+		[h: len = sqrt(sqr(xdir) + sqr(ydir))]
+		[h: xdir = xdir / len]
+		[h: ydir = ydir / len]
+		[h: angle = round(math.atan2(-ydir, xdir))]
+		[h: setTokenFacing(angle, currentToken())]
+	}]
+}]
+
 
 <!-- Wenn die Funktionalität nicht fertig ist brechen wir ab -->
 [h: abort(getLibProperty("OptRestrictMovement", "com.github.lector.dsa5maptool"))]

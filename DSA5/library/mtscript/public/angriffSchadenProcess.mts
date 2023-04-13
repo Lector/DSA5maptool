@@ -45,6 +45,14 @@
 	[h: link = macroLinkText("selectToken@this", "none", target)]
 	[h: targetName = getName(target)]
 	[h: manName = strformat("%{manName} auf <a style='color: #441e13' href='%s'>%s</a>", link, targetName)]
+
+	[h: hasIni = hasInitiative(currentToken())]
+	[h,if(getLibProperty("OptFacing", "com.github.lector.dsa5maptool") != 0 && hasIni == 1),Code:
+	{
+		[h: vector = lookAt(currentToken(), target)]
+		[h: direction = math.atan2(-json.get(vector, "Y"), json.get(vector, "X"))]
+		[h: setTokenFacing(round(direction), currentToken())]
+	}]
 }]
 
 [h: sendTo(json.get(uebergabe, "chat"), border(manName, show(attackResult)))]
