@@ -40,16 +40,16 @@
 	</a>
 	<a href='[r:macroLinkText("probeEig@this", "", "KL")]' class='attribute-default' title='Probe auf "Klugheit" ablegen'>KL: <span class='[r: className]'>[r: aktKL]</span>
 	</a>
-	<a href='[r:macroLinkText("probeEig@this", "", "IN")]' class='attribute-default' title='Probe auf "Intuition" ablegen'>KL: <span class='[r: className]'>[r: aktKL]</span>
+	<a href='[r:macroLinkText("probeEig@this", "", "IN")]' class='attribute-default' title='Probe auf "Intuition" ablegen'>IN: <span class='[r: className]'>[r: aktIN]</span>
 	</a>
-	<a href='[r:macroLinkText("probeEig@this", "", "CH")]' class='attribute-default' title='Probe auf "Charisma" ablegen'>CH: <span class='[r: className]'>[r: aktKL]</span>
+	<a href='[r:macroLinkText("probeEig@this", "", "CH")]' class='attribute-default' title='Probe auf "Charisma" ablegen'>CH: <span class='[r: className]'>[r: aktCH]</span>
 	</a>
-	<a href='[r:macroLinkText("probeEig@this", "", "FF")]' class='attribute-default' title='Probe auf "Fingerfertigkeit" ablegen'>FF: <span class='[r: className]'>[r: aktKL]</span>
+	<a href='[r:macroLinkText("probeEig@this", "", "FF")]' class='attribute-default' title='Probe auf "Fingerfertigkeit" ablegen'>FF: <span class='[r: className]'>[r: aktFF]</span>
 	</a>
-	<a href='[r:macroLinkText("probeEig@this", "", "GE")]' class='attribute-default' title='Probe auf "Gewandheit" ablegen'>GE: <span class='[r: className]'>[r: aktKL]</span>
+	<a href='[r:macroLinkText("probeEig@this", "", "GE")]' class='attribute-default' title='Probe auf "Gewandheit" ablegen'>GE: <span class='[r: className]'>[r: aktGE]</span>
 	</a>
-	<a href='[r:macroLinkText("probeEig@this", "", "KO")]' class='attribute-default' title='Probe auf "Konstitution" ablegen'>KO: <span class='[r: className]'>[r: aktKL]</span>
+	<a href='[r:macroLinkText("probeEig@this", "", "KO")]' class='attribute-default' title='Probe auf "Konstitution" ablegen'>KO: <span class='[r: className]'>[r: aktKO]</span>
 	</a>
-	<a href='[r:macroLinkText("probeEig@this", "", "KK")]' class='attribute-default' title='Probe auf "Körperkraft" ablegen'>KK: <span class='[r: className]'>[r: aktKL]</span>
+	<a href='[r:macroLinkText("probeEig@this", "", "KK")]' class='attribute-default' title='Probe auf "Körperkraft" ablegen'>KK: <span class='[r: className]'>[r: aktKK]</span>
 	</a>
 </div>
