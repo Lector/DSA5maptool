@@ -7,17 +7,17 @@
 	{
 		[if(isGM()), Code:
 			{
-				[tokenImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/gmIcon.png")]
+				[tokenImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/gm.png")]
 				[tokenName = "Der Spielleiter"]
 			};
 			{
-				[tokenImage = ""]
+				[tokenImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/guest.png")]
 				[tokenName = getPlayerName()]
 			}
 		]
 	}
 ]
-[h: sprechblase = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/sprechblase.png")]
+[h: sprechblase = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/chatAFK.png")]
 
 [h: ausgabe = strformat("
 <table style='border-spacing: 0px; margin: 0px; padding: 0px; color: #000000;' cellpadding ='0' cellspacing ='0'>

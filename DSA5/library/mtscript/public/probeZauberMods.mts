@@ -23,6 +23,7 @@
 [h: Fremd = json.get(uebergabe, "Fremdtradition")]
 [h,if(Fremd == ""): Fremd = 0]
 [h: mod = mod + Fremd]
+[h,if(Fremd != 0): modtext = modtext + modReason(Fremd, "wegen Zaubern in Fremdtradition")]
 
 [h: eisen = json.get(uebergabe, "SteinEisenMalus")]
 [h,if(eisen == ""): eisen = 0]

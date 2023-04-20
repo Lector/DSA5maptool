@@ -6,11 +6,11 @@
 	{
 		[if(isGM()), Code:
 			{
-				[tokenImage = tableImage("chat", 65)]
+				[tokenImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/gm.png")]
 				[tokenName = "Der Spielleiter"]
 			};
 			{
-				[tokenImage = tableImage("chat", 66)]
+				[tokenImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/guest.png")]
 				[tokenName = getPlayerName()]
 			}
 		]
@@ -34,6 +34,6 @@
 		</td>
 	</tr>
 </table>
-", tokenImage, tableImage("chat", 74), tokenName)]
+", tokenImage, data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/chatHarrumph.png"), tokenName)]
 
 [h: broadcast(ausgabe)]

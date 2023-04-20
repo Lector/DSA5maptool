@@ -58,11 +58,11 @@
 	{
 		[if(isGM()), Code:
 			{
-				[tokenImage = tableImage("chat", 65)]
+				[tokenImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/gm.png")]
 				[tokenName = "Der Spielleiter"]
 			};
 			{
-				[tokenImage = tableImage("chat", 66)]
+				[tokenImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/guest.png")]
 				[tokenName = getPlayerName()]
 			}
 		]
@@ -73,12 +73,12 @@
 
 [h,if(chatList == ""), Code:
 	{
-		[chatBubble = tableImage("chat", 72)]
+		[chatBubble = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/chatSay.png")]
 		[chatTitle = strformat("<span style='color: #441e13; font-size: 11pt;'><b>%{tokenName}</b> spricht:</span>")]
 		[sendList = listAppend(pNames, ownName)]
 	};
 	{
-		[chatBubble = tableImage("chat", 73)]
+		[chatBubble = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/chatWhisper.png")]
 		[chatTitle = strformat("<span style='color: #0a4c07; font-size: 11pt;'><b>%{whisperName}</b> flüstert ")]
 		[if(listCount(chatList) > 1): chatTitle = chatTitle + strformat("euch (%{chatList}) "); chatTitle = chatTitle + "dir "]
 		[chatTitle = chatTitle + "etwas zu:</span>"]
