@@ -84,6 +84,7 @@
 		plusImage,
 		macroLinkText("inventarItemcountSub@this", "", numItem),
 		minusImage,
+		json.get(item, "anzahl"),
 		json.get(item, "gegenstand"), gesGewichtItem,
 		json.get(item, "beschreibung"))]
 
