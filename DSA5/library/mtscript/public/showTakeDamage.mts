@@ -67,6 +67,6 @@
 		<input type='hidden' name='token' value='%s'/>
 	</form>
 </td>"
-,tableImage("chat", 64), data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/Undo.png"), encode(undoMacro), currentToken())]
+,tableImage("chat", 64), data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/undo.png"), encode(undoMacro), currentToken())]
 
 [h: macro.return = output]

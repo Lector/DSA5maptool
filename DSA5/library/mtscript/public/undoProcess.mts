@@ -17,6 +17,6 @@
 		</td>
 	</tr>
 </table>",
-data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/Undo.png")))]
+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/undo.png")))]
 
 [h: sendTo(chat, ausgabe)]
