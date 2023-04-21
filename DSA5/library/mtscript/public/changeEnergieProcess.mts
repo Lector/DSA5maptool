@@ -72,7 +72,7 @@
 		[chatTitle = "Lebensenergie"]
 		[chatTyp = "LeP"]
 		[chatText = "Erhaltene Energie:"]
-		[chatImage = tableImage("chat", 33)]
+		[chatImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/lifePlus.png")]
 		[chatColor = "#1d5c2f"]
 	};
 	case "leMinus": {
@@ -80,7 +80,7 @@
 		[chatTitle = "Lebensenergie"]
 		[chatTyp = "LeP"]
 		[chatText = "Verlorene Energie:"]
-		[chatImage = tableImage("chat", 34)]
+		[chatImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/lifeMinus.png")]
 		[chatColor = "#a42b1e"]
 	};
 	case "spPlus": {
@@ -89,7 +89,7 @@
 		[chatTitle = "Schicksalspunkte"]
 		[chatTyp = "SchiP"]
 		[chatText = "Erhaltene Schicksalspunkte:"]
-		[chatImage = tableImage("chat", 35)]
+		[chatImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/fatePlus.png")]
 		[chatColor = "#1d5c2f"]
 	};
 	case "spMinus": {
@@ -98,7 +98,7 @@
 		[chatTitle = "Schicksalspunkte"]
 		[chatTyp = "SchiP"]
 		[chatText = "Verlorene Schicksalspunkte:"]
-		[chatImage = tableImage("chat", 36)]
+		[chatImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/fateMinus.png")]
 		[chatColor = "#a42b1e"]
 	};
 	case "aePlus": {
@@ -107,7 +107,7 @@
 		[chatTitle = "Astralenergie"]
 		[chatTyp = "AsP"]
 		[chatText = "Erhaltene Energie:"]
-		[chatImage = tableImage("chat", 37)]
+		[chatImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/magicPlus.png")]
 		[chatColor = "#1d5c2f"]
 	};
 	case "aeMinus": {
@@ -127,7 +127,7 @@
 		[chatTitle = "Astralenergie"]
 		[chatTyp = "AsP"]
 		[chatText = "Verlorene Energie:"]
-		[chatImage = tableImage("chat", 38)]
+		[chatImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/magicMinus.png")]
 		[chatColor = "#a42b1e"]
 	};
 	case "kePlus": {
@@ -136,7 +136,7 @@
 		[chatTitle = "Karmaenergie"]
 		[chatTyp = "KeP"]
 		[chatText = "Erhaltene Energie:"]
-		[chatImage = tableImage("chat", 39)]
+		[chatImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/karmaPlus.png")]
 		[chatColor = "#1d5c2f"]
 	};
 	case "keMinus": {
@@ -150,7 +150,7 @@
 		[chatTitle = "Karmaenergie"]
 		[chatTyp = "KeP"]
 		[chatText = "Verlorene Energie:"]
-		[chatImage = tableImage("chat", 40)]
+		[chatImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/karmaMinus.png")]
 		[chatColor = "#a42b1e"]
 	}
 ]

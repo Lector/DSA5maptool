@@ -286,7 +286,7 @@
 								[h: params = setStrProp(params, "index", num)]
 								[h: params = setStrProp(params, "frame", "chareditTalent@this")]
 								[h: params = setStrProp(params, "noticeKey", "chareditTraitDel")]
-								[h: link = macroLink("<img src='"+tableImage("misc", 7)+"' border=0 alt='Eintrag löschen'/>", "chareditTraitDelProcess@this", "", params)]
+								[h: link = macroLink("<img src='"+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/minus.png")+"' border=0 alt='Eintrag löschen'/>", "chareditTraitDelProcess@this", "", params)]
 								[r: link]
 							</td>
 							};{}]
@@ -297,9 +297,13 @@
 				<table style='border-spacing: 0px; margin: 10px auto 10px auto;'>
 					<tr>
 						<td>
-							[h: button = tableImage("forms", 112)]
 							<button type="submit">
-								<img src="[r: button]"/>
+								<table>
+									<tr>
+										<td><img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/hand.png")]/></td>
+										<td>Jetzt ändern</td>
+									</tr>
+								</table>
 							</button>
 						</td>
 					</tr>

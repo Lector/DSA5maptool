@@ -1,7 +1,6 @@
 [h: id = arg(0)]
 [h,if(id == ""): npc = 0; npc = isNPC(id)]
 [h: getLibProperty("OptHideNSCAction", "com.github.lector.dsa5maptool")]
-
 [h,if(npc == 1 && getLibProperty("OptHideNSCAction", "com.github.lector.dsa5maptool") == 1), Code:
 {
 	[ausgabeSL = "checked"]
@@ -11,6 +10,7 @@
 	[ausgabeSL = ""]
 	[ausgabePublic = "checked"]
 }]
+[h,if(json.length(macro.args) > 1): private = arg(1); private = 1]
 
 <table style='border-spacing: 0px; margin: 5px auto 10px auto;' cellpadding='0'>
 	<tr>
@@ -35,11 +35,13 @@
 		<td>
 			Privat &amp; Spielleiter
 		</td>
+		[r,if(private != 0),Code:{
 		<td style='padding-left: 5px;'>
 			<input type='radio' name='chat' value='4'>
 		</td>
 		<td>
 			Privat
 		</td>
+		}]
 	</tr>
 </table>

@@ -14,48 +14,39 @@
 
 [h: uebergabe = macro.args]
 
+[button = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/hand.png")]
 [h,switch(uebergabe), Code:
 	case "lePlus": {
 			[dialogTitle = "Lebensenergie hinzufügen"]
 			[title = "LE Gewinn"]
-			[button = tableImage("forms", 66)]
+			[buttonText = "LE hinzufügen"]
 		};
 	case "leMinus": {
 			[dialogTitle = "Lebensenergie abziehen"]
 			[title = "LE Verlust"]
-			[button = tableImage("forms", 65)]
+			[buttonText = "LE abziehen"]
 		};
 	case "aePlus": {
 			[dialogTitle = "Astralenergie hinzufügen"]
 			[title = "AE Gewinn"]
-			[button = tableImage("forms", 70)]
+			[buttonText = "AE hinzufügen"]
+
 		};
 	case "aeMinus": {
 			[dialogTitle = "Astralenergie abziehen"]
 			[title = "AE Verlust"]
-			[button = tableImage("forms", 69)]
+			[buttonText = "AE abziehen"]
 		};
 	case "kePlus": {
 			[dialogTitle = "Karmaenergie hinzufügen"]
 			[title = "KE Gewinn"]
-			[button = tableImage("forms", 72)]
+			[buttonText = "KE hinzufügen"]
 		};
 	case "keMinus": {
 			[dialogTitle = "Karmaenergie abziehen"]
 			[title = "KE Verlust"]
-			[button = tableImage("forms", 71)]
+			[buttonText = "KE abziehen"]
 		}
-]
-
-[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "com.github.lector.dsa5maptool") == 1), Code:
-	{
-		[ausgabeSL = "checked='checked'"]
-		[ausgabePublic = ""]
-	};
-	{
-		[ausgabeSL = ""]
-		[ausgabePublic = "checked='checked'"]
-	}
 ]
 
 [h: actionLink = macroLinkText("changeEnergieProcess@this", "")]
@@ -157,36 +148,17 @@
 					<tr>
 						<td>
 							<button type="submit">
-								<img src="[r: button]"/>
+								<table>
+									<tr>
+										<td><img src="[r: button]"/></td>
+										<td>[r: buttonText]</td>
+									</tr>
+								</table>
 							</button>
 						</td>
 					</tr>
 				</table>
-				<table style='border-spacing: 0px; margin: 11px 0px 10px 0px;' cellpadding='0'>
-					<tr>
-						<td style='border-right: 1px solid #939393; padding-right: 5px;'>
-							Ausgabe
-						</td>
-						<td style='padding-left: 5px;'>
-							<input type="radio" name="chat" value="1" [r: ausgabePublic]>
-						</td>
-						<td>
-							öffentlich
-						</td>
-						<td style='padding-left: 5px;'>
-							<input type="radio" name="chat" value="2" [r: ausgabeSL]>
-						</td>
-						<td>
-							Spielleiter
-						</td>
-						<td style='padding-left: 5px;'>
-							<input type="radio" name="chat" value="3">
-						</td>
-						<td>
-							Privat &amp; Spielleiter
-						</td>
-					</tr>
-				</table>
+				[r,macro("probeChat@this"): json.append(currentToken(), 0)]
 				<input type="hidden" name="energieTyp" value="[r: uebergabe]">
 			</form>
 		</div>

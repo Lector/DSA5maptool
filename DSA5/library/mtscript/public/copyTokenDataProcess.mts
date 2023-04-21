@@ -199,7 +199,7 @@
 		</td>
 	</tr>
 </table>",
-tableImage("chat", 82), qTokenName, zTokenName)]
+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/copy.png"), qTokenName, zTokenName)]
 [h: ausgabe = border("Tokendaten übertragen", ausgabe)]
 
 [h: broadcast(ausgabe, playerName)]

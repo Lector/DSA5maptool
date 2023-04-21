@@ -38,7 +38,7 @@
 			</td>
 		</tr>
 	</table>
-", tableImage("chat", 28), chatNotice)]
+", data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/scroll.png"), chatNotice)]
 
 [h: ausgabe = border("Weblinks", ausgabe)]
 

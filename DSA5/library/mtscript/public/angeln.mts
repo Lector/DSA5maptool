@@ -34,15 +34,15 @@
 							</table>
 						</td>
 						<td>
-							[h: button = tableImage("forms", 11)]
+							[h: button = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/d20.png")]
 							<button type="submit" name="action">
-								<img src="[r: button]"/>
+								<img src="[r: button]"/> Probe würfeln
 							</button>
 						</td>
 					</tr>
 				</table>
 
-				[r,macro("probeChat@lib:com.github.lector.dsa5maptool"): currentToken()]
+				[r,macro("probeChat@this"): currentToken()]
 				<hr/>
 
 				<table style='border-spacing: 0px; margin: 0px auto 0px auto;'>

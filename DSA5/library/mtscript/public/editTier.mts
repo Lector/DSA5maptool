@@ -102,9 +102,13 @@
 				<table style='margin: 10px auto 10px auto;'>
 					<tr>
 						<td>
-							[h: button = tableImage("forms", 112)]
-							<button type="submit" name="action">
-								<img src="[r: button]"/>
+							<button type="submit">
+								<table>
+									<tr>
+										<td><img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/hand.png")]/></td>
+										<td>Jetzt ändern</td>
+									</tr>
+								</table>
 							</button>
 						</td>
 					</tr>

@@ -2,12 +2,12 @@
 [h: dice = 2d6]
 [h,if(uebergabe == "nk"), Code:
 	{
-		[titleImage = tableImage("chat", 68)]
+		[titleImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/botchMelee.png")]
 		[titleText = "Nahkampf-Patzer"]
 		[patzerText = table("patzerNahkampf", dice)]
 	};
 	{
-		[titleImage = tableImage("chat", 69)]
+		[titleImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/botchRanged.png")]
 		[titleText = "Fernkampf-Patzer"]
 		[patzerText = table("patzerFernkampf", dice)]
 	}

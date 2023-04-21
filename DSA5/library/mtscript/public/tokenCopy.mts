@@ -17,9 +17,6 @@
 			</div>
 			<div style="background-image: url('[r: tblImage("forms",55)]'); background-repeat: repeat-y; text-align: center; height: 20; margin: 0px;" width="400">
 				<div style='padding: 10px 0px 10px 0px;'>
-				<p>Image forms:136</p>
-					<image src='[r: tableImage("forms", 136)]'></image>
-				</div>
 				<table style='border-spacing: 0px;'>
 					<tr>
 						<td>
@@ -43,8 +40,14 @@
 				<table style='border-spacing: 0px; margin: 10px 0px 10px 0px;'>
 					<tr>
 						<td>
-							[h: button = strformat("<html><img src='%s'></html>",tableImage("forms", 137))]
-							<input type="submit" name="action" value="[r: button]">
+							<button type="submit">
+								<table>
+									<tr>
+										<td><img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/hand.png")]/></td>
+										<td>Token kopieren</td>
+									</tr>
+								</table>
+							</button>
 						</td>
 					</tr>
 				</table>

@@ -90,7 +90,7 @@
 		</td>
 	</tr>
 </table>",
-tableImage("chat", 59), msgText))]
+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/hourglass.png"), msgText))]
 
 [h,macro("sendToSelfGM@this"): ausgabe]
 [h,macro("refreshFrame@this"): ""]

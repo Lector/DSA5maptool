@@ -38,7 +38,7 @@
 		</td>
 	</tr>
 </table>",
-tableImage("chat", 77), wertColor, wert)]
+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/counter.png"), wertColor, wert)]
 
 [h: ausgabe = border(titel, ausgabe)]
 

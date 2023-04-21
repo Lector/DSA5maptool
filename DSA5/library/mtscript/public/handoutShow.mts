@@ -8,8 +8,7 @@
 [h: switchToken(id)]
 [h: hTokenName = getName()]
 
-[h: pixelAsset = tableImage("misc", 5)]
-[h,if(getTokenHandout() == "" || getTokenHandout() == pixelAsset): hImage = tblImage("misc",4); hImage = getTokenHandout()]
+[h,if(getTokenHandout() == ""): hImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/handout.png"); hImage = getTokenHandout()]
 [h,if(getLabel() == ""): hTitle = "Handout"; hTitle = getLabel()]
 [h,if(getNotes() == ""): hShort = "---"; hShort = getNotes()]
 [h,if(getGMNotes() == ""): hContent = "---"; hContent = getGMNotes()]

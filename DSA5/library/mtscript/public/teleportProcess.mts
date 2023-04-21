@@ -90,7 +90,7 @@
 		</td>
 	</tr>
 </table>",
-tableImage("chat", 28))]
+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/scroll.png"))]
 [h: ausgabe = ausgabe + "</td><td></td></tr></table>"]
 
 [h: ausgabe = border("Teleportation", ausgabe)]

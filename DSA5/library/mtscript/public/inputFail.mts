@@ -53,7 +53,7 @@
 	default: msgText = "Ein unbekannter Fehler ist aufgetreten.<br>Bitte den Vorgang überprüfen."
 ]
 
-[h: image = tableImage("chat", 58)]
+[h: image = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/fail.png")]
 
 <!-- Hier wird komisch formatiert weil die \n\ts aus der Formatierung die Tabelle kaputt machen -->
 [h: output = strformat("<table style='border-spacing: 0px; margin-top: 3px;'>

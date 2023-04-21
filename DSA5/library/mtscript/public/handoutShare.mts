@@ -44,7 +44,7 @@
 		</td>
 	</tr>
 </table>",
-tableImage("chat", 81), chatText, hTitle)]
+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/handout.png"), chatText, hTitle)]
 [h: ausgabe = border(chatTitleText, ausgabe)]
 
 [h,if(getCurrentMapName() != tokenMap): moveTokenToMap(id, tokenMap, x, y)]

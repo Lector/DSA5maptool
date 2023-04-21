@@ -127,9 +127,13 @@
 				<table style='border-spacing: 0px; margin: 10px auto 10px auto;'>
 					<tr>
 						<td>
-							[h: button = tableImage("forms", 112)]
 							<button type="submit">
-								<img src="[r: button]"/>
+								<table>
+									<tr>
+										<td><img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/wand.png")]/></td>
+										<td>[r: title] hinzufügen</td>
+									</tr>
+								</table>
 							</button>
 						</td>
 					</tr>

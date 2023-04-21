@@ -78,10 +78,15 @@
 					</tr>
 				</table>
 				<table style='border-spacing: 0px; margin: 9px auto 8px auto;'>
+					<tr>
 						<td>
-							[h: button = strformat("<img src='%s'>",tableImage("forms", 112))]
-							<button type="submit" name="action">
-								[r: button]
+							<button type="submit">
+								<table>
+									<tr>
+										<td><img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/hand.png")]/></td>
+										<td>Jetzt ändern</td>
+									</tr>
+								</table>
 							</button>
 						</td>
 					</tr>

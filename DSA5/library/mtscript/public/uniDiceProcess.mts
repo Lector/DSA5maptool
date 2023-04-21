@@ -23,7 +23,7 @@
 [h: closeDialog("uniDice")]
 
 [h: mod = bonus - malus]
-[h: dTable = strformat("d%{diceTyp}")]
+[h,if(diceTyp == 3): dTable = "d6"; dTable = "d"+diceTyp)]
 [h: summe = 0]
 [h: diceList = ""]
 [h,count(anzahl, ""), Code:
@@ -79,14 +79,8 @@
 		<td style='text-align: center; padding-top: 4px;' valign='middle' width='100'>
 			%s
 		</td>
-		<td width='25'>
-			&nbsp;
-		</td>
-		<td width='18'>
-			&nbsp;
-		</td>
 	</tr>
 </table>
-", wurf, modColor, modOutput, ergebnis, diceList, tableImage("chat", 52)))]
+", wurf, modColor, modOutput, ergebnis, diceList))]
 
 [h: sendTo(chat, ausgabe)]

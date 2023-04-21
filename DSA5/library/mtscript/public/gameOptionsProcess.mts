@@ -23,7 +23,7 @@
 		</td>
 	</tr>
 </table>",
-tableImage("chat", 79))]
+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/tools.png"))]
 
 [h: ausgabe = border("Spieleinstellungen", ausgabe)]
 

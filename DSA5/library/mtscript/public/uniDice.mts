@@ -6,25 +6,25 @@
 
 [h,switch(uebergabe), Code:
 	case "3": {
-		[button = tableImage("forms", 82)]
+		[button = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/hand.png")]
 	};
 	case "4": {
-		[button = tableImage("forms", 83)]
+		[button = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/d4.png")]
 	};
 	case "6": {
-		[button = tableImage("forms", 84)]
+		[button = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/d6.png")]
 	};
 	case "8": {
-		[button = tableImage("forms", 85)]
+		[button = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/d8.png")]
 	};
 	case "10": {
-		[button = tableImage("forms", 86)]
+		[button = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/d10.png")]
 	};
 	case "12": {
-		[button = tableImage("forms", 87)]
+		[button = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/d12.png")]
 	};
 	case "20": {
-		[button = tableImage("forms", 88)]
+		[button = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/d20.png")]
 	}
 ]
 
@@ -96,8 +96,16 @@
 				</tr>
 			</table>
 			<table style='border-spacing: 0px; margin: 7px auto 8px auto;'>
+				<tr>
 					<td>
-						<button type='submit' name='action'><img src='[r: button]'/>
+						<button type="submit">
+							<table>
+								<tr>
+									<td><img src=[r: button]/></td>
+									<td>Jetzt würfeln</td>
+								</tr>
+							</table>
+						</button>
 					</td>
 				</tr>
 			</table>

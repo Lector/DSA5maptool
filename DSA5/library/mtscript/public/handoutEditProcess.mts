@@ -40,7 +40,7 @@
 		</td>
 	</tr>
 </table>",
-tableImage("chat", 81), hToken, hTitleShow)]
+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/handout.png"), hToken, hTitleShow)]
 
 [h: ausgabe = border("Handouts", ausgabe)]
 
@@ -60,7 +60,7 @@ tableImage("chat", 81), hToken, hTitleShow)]
 		</td>
 	</tr>
 </table>",
-	tableImage("chat", 81), shareLinkPublic, hTitlePublic)]
+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/handout.png"), shareLinkPublic, hTitlePublic)]
 
 [h,if(getCurrentMapName() != tokenMap): moveTokenToMap(id, tokenMap, x, y)]
 

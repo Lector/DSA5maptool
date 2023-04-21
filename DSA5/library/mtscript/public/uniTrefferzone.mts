@@ -1,5 +1,4 @@
 [h: actionLink = macroLinkText("uniTrefferzoneProcess@this", "")]
-[h: button = tableImage("forms", 90)]
 [dialog5("uniTrefferzone", "width=480; height=512; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
@@ -92,9 +91,15 @@
 				</tr>
 			</table>
 			<table style='border-spacing: 0px; margin: 9px auto 8px auto;'>
+				<tr>
 					<td>
-						<button type='submit' name='action'>
-							<img src='[r: button]'/>
+						<button type="submit">
+							<table>
+								<tr>
+									<td><img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/d20.png")]/></td>
+									<td>Zone bestimmen</td>
+								</tr>
+							</table>
 						</button>
 					</td>
 				</tr>

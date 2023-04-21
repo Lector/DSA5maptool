@@ -174,10 +174,14 @@
 					</tr>
 					<tr>
 						<td colspan=4 style='text-align: center'>
-						[h: button = tableImage("forms", 9)]
-						<button style="margin: 16px 0px 0px 0px;" type="submit">
-							<img src="[r:button]"/>
-						</button>
+							<button type="submit">
+								<table>
+									<tr>
+										<td><img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/hourglass.png")]/></td>
+										<td>Effekte anwenden</td>
+									</tr>
+								</table>
+							</button>
 						</td>
 					</tr>
 				</table>

@@ -38,7 +38,7 @@
 			Der Status der markierten Tokens wurde geändert.<br><br>Falls ein eventuell geöffneter Charakterbogen eine Statusanzeige enthält, diesen bitte manuell aktualisieren.
 	</tr>
 </table>",
-tableImage("chat", 28))]
+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/scroll.png"))]
 [h: ausgabe = ausgabe + "</td><td></td></tr></table>"]
 
 [h: broadcast(border("Token-Status",ausgabe), "gm")]

@@ -67,10 +67,15 @@
 					</tr>
 				</table>
 				<table style='border-spacing: 0px; margin: 10px auto 8px auto;'>
+					<tr>
 						<td>
-							[h: button = tableImage("forms", 115)]
 							<button type="submit">
-								<img src="[r: button]"/>
+								<table>
+									<tr>
+										<td><img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/d6.png")]/></td>
+										<td>Initiative würfeln</td>
+									</tr>
+								</table>
 							</button>
 						</td>
 					</tr>

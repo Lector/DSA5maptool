@@ -32,8 +32,7 @@
 [h: setLabel("")]
 [h: setNotes("")]
 [h: setGMNotes("")]
-[h: pixelAsset = tableImage("misc", 5)]
-[h: setTokenHandout(pixelAsset)]
+[h: setTokenHandout("")]
 
 
 [h: ausgabe = strformat("
@@ -52,7 +51,7 @@
 		</td>
 	</tr>
 </table>",
-tableImage("chat", 81), chatText, hTitle)]
+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/handout.png"), chatText, hTitle)]
 
 [h: ausgabe = border(chatTextTitle, ausgabe)]
 

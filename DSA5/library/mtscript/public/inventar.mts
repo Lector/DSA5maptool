@@ -23,6 +23,11 @@
 [h: gewichtB4 = 0]
 [h: gewichtB5 = 0]
 
+[h: plusImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/plus.png")]
+[h: minusImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/minus.png")]
+[h: xImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/x.png")]
+[h: pencilImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/pencil.png")]
+
 [h: numItem = 0]
 [h,foreach(item, Inventar,""), Code:
 	{
@@ -69,7 +74,19 @@
 				%s
 			</td>
 		</tr>
-		", macroLinkText("inventarDel@this", "", numItem), tableImage("misc", 3), macroLinkText("inventarItemMove@this", "", numItem), tableImage("misc", 11), macroLinkText("inventarItemEdit@this", "", numItem), tableImage("misc", 8), macroLinkText("inventarItemcountAdd@this", "", numItem), tableImage("misc", 6), macroLinkText("inventarItemcountSub@this", "", numItem), tableImage("misc", 7), json.get(item, "anzahl"), json.get(item, "gegenstand"), gesGewichtItem, json.get(item, "beschreibung"))]
+		", macroLinkText("inventarDel@this", "", numItem),
+		xImage,
+		macroLinkText("inventarItemMove@this", "", numItem),
+		data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/move.png"),
+		macroLinkText("inventarItemEdit@this", "", numItem),
+		pencilImage,
+		macroLinkText("inventarItemcountAdd@this", "", numItem),
+		plusImage,
+		macroLinkText("inventarItemcountSub@this", "", numItem),
+		minusImage,
+		json.get(item, "gegenstand"), gesGewichtItem,
+		json.get(item, "beschreibung"))]
+
 		[switch(json.get(item, "behaelter")), Code:
 			case "1":
 				{
@@ -165,7 +182,7 @@
 									[r: json.get(InventarMisc, "behaelter1")]
 								</td>
 								<td style='text-align: right;' width='161'>
-									<a href="[r: macroLinkText("inventarAdd@this", "", "1")]"><image src='[r: tableImage("misc", 6)]' border="0" alt="Gegenstand zu diesem Behälter hinzufügen"></image></a>&nbsp;<a href="[r: macroLinkText("inventarContainerEdit@this", "", "1")]"><image src='[r: tableImage("misc", 8)]' border="0" alt="Eine neue Bezeichnung für diesen Behälter eingeben"></image></a>&nbsp;<a href="[r: macroLinkText("inventarDelContainer@this", "", "1")]"><image src='[r: tableImage("misc", 3)]' border="0" alt="Alle Gegenstände in diesem Behälter löschen"></image></a>
+									<a href="[r: macroLinkText("inventarAdd@this", "", "1")]"><image src='[r: plusImage]' border="0" alt="Gegenstand zu diesem Behälter hinzufügen"></image></a>&nbsp;<a href="[r: macroLinkText("inventarContainerEdit@this", "", "1")]"><image src='[r: xImage]' border="0" alt="Eine neue Bezeichnung für diesen Behälter eingeben"></image></a>&nbsp;<a href="[r: macroLinkText("inventarDelContainer@this", "", "1")]"><image src='[r: xImage]' border="0" alt="Alle Gegenstände in diesem Behälter löschen"></image></a>
 								</td>
 							</tr>
 						</table>
@@ -191,7 +208,7 @@
 									[r: json.get(InventarMisc, "behaelter2")]
 								</td>
 								<td style='text-align: right;' width='161'>
-									<a href="[r: macroLinkText("inventarAdd@this", "", "2")]"><image src='[r: tableImage("misc", 6)]' border="0" alt="Gegenstand zu diesem Behälter hinzufügen"></image></a>&nbsp;<a href="[r: macroLinkText("inventarContainerEdit@this", "", "2")]"><image src='[r: tableImage("misc", 8)]' border="0" alt="Eine neue Bezeichnung für diesen Behälter eingeben"></image></a>&nbsp;<a href="[r: macroLinkText("inventarDelContainer@this", "", "2")]"><image src='[r: tableImage("misc", 3)]' border="0" alt="Alle Gegenstände in diesem Behälter löschen"></image></a>
+									<a href="[r: macroLinkText("inventarAdd@this", "", "2")]"><image src='[r: plusImage]' border="0" alt="Gegenstand zu diesem Behälter hinzufügen"></image></a>&nbsp;<a href="[r: macroLinkText("inventarContainerEdit@this", "", "2")]"><image src='[r: pencilImage]' border="0" alt="Eine neue Bezeichnung für diesen Behälter eingeben"></image></a>&nbsp;<a href="[r: macroLinkText("inventarDelContainer@this", "", "2")]"><image src='[r: xImage]' border="0" alt="Alle Gegenstände in diesem Behälter löschen"></image></a>
 								</td>
 							</tr>
 						</table>
@@ -217,7 +234,7 @@
 									[r: json.get(InventarMisc, "behaelter3")]
 								</td>
 								<td style='text-align: right;' width='161'>
-									<a href="[r: macroLinkText("inventarAdd@this", "", "3")]"><image src='[r: tableImage("misc", 6)]' border="0" alt="Gegenstand zu diesem Behälter hinzufügen"></image></a>&nbsp;<a href="[r: macroLinkText("inventarContainerEdit@this", "", "3")]"><image src='[r: tableImage("misc", 8)]' border="0" alt="Eine neue Bezeichnung für diesen Behälter eingeben"></image></a>&nbsp;<a href="[r: macroLinkText("inventarDelContainer@this", "", "3")]"><image src='[r: tableImage("misc", 3)]' border="0" alt="Alle Gegenstände in diesem Behälter löschen"></image></a>
+									<a href="[r: macroLinkText("inventarAdd@this", "", "3")]"><image src='[r: plusImage]' border="0" alt="Gegenstand zu diesem Behälter hinzufügen"></image></a>&nbsp;<a href="[r: macroLinkText("inventarContainerEdit@this", "", "3")]"><image src='[r: pencilImage]' border="0" alt="Eine neue Bezeichnung für diesen Behälter eingeben"></image></a>&nbsp;<a href="[r: macroLinkText("inventarDelContainer@this", "", "3")]"><image src='[r: xImage]' border="0" alt="Alle Gegenstände in diesem Behälter löschen"></image></a>
 								</td>
 							</tr>
 						</table>
@@ -243,7 +260,7 @@
 									[r: json.get(InventarMisc, "behaelter4")]
 								</td>
 								<td style='text-align: right;' width='161'>
-									<a href="[r: macroLinkText("inventarAdd@this", "", "4")]"><image src='[r: tableImage("misc", 6)]' border="0" alt="Gegenstand zu diesem Behälter hinzufügen"></image></a>&nbsp;<a href="[r: macroLinkText("inventarContainerEdit@this", "", "4")]"><image src='[r: tableImage("misc", 8)]' border="0" alt="Eine neue Bezeichnung für diesen Behälter eingeben"></image></a>&nbsp;<a href="[r: macroLinkText("inventarDelContainer@this", "", "4")]"><image src='[r: tableImage("misc", 3)]' border="0" alt="Alle Gegenstände in diesem Behälter löschen"></image></a>
+									<a href="[r: macroLinkText("inventarAdd@this", "", "4")]"><image src='[r: plusImage]' border="0" alt="Gegenstand zu diesem Behälter hinzufügen"></image></a>&nbsp;<a href="[r: macroLinkText("inventarContainerEdit@this", "", "4")]"><image src='[r: pencilImage]' border="0" alt="Eine neue Bezeichnung für diesen Behälter eingeben"></image></a>&nbsp;<a href="[r: macroLinkText("inventarDelContainer@this", "", "4")]"><image src='[r: xImage]' border="0" alt="Alle Gegenstände in diesem Behälter löschen"></image></a>
 								</td>
 							</tr>
 						</table>
@@ -269,7 +286,7 @@
 									[r: json.get(InventarMisc, "behaelter5")]
 								</td>
 								<td style='text-align: right;' width='161'>
-									<a href="[r: macroLinkText("inventarAdd@this", "", "5")]"><image src='[r: tableImage("misc", 6)]' border="0" alt="Gegenstand zu diesem Behälter hinzufügen"></image></a>&nbsp;<a href="[r: macroLinkText("inventarContainerEdit@this", "", "5")]"><image src='[r: tableImage("misc", 8)]' border="0" alt="Eine neue Bezeichnung für diesen Behälter eingeben"></image></a>&nbsp;<a href="[r: macroLinkText("inventarDelContainer@this", "", "5")]"><image src='[r: tableImage("misc", 3)]' border="0" alt="Alle Gegenstände in diesem Behälter löschen"></image></a>
+									<a href="[r: macroLinkText("inventarAdd@this", "", "5")]"><image src='[r: plusImage]' border="0" alt="Gegenstand zu diesem Behälter hinzufügen"></image></a>&nbsp;<a href="[r: macroLinkText("inventarContainerEdit@this", "", "5")]"><image src='[r: pencilImage]' border="0" alt="Eine neue Bezeichnung für diesen Behälter eingeben"></image></a>&nbsp;<a href="[r: macroLinkText("inventarDelContainer@this", "", "5")]"><image src='[r: xImage]' border="0" alt="Alle Gegenstände in diesem Behälter löschen"></image></a>
 								</td>
 							</tr>
 						</table>
