@@ -93,7 +93,7 @@ case "KK": eigName = "Körperkraft"
 					</tr>
 				</table>
 				<input type="hidden" name="Name" value="[r: eigName]"/>
-				<input type="hidden" name="Wert" value="[r: aktWert]"/>
+				<input type="hidden" name="Wert" value="[r: eigenschaft]"/>
 				<input type="hidden" name="modMacro" value="probe1w20Mods@this"/>
 				<input type="hidden" name="pruefwurf" value="0"/>
 				<input type="hidden" name="image" value="12"/>
