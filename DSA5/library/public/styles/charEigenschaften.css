@@ -1,11 +1,13 @@
+/* 
+//Currently not possible due to javafx restrictions
 @font-face {
     font-family: Ringbearer;
-    src: url("lib://com.github.lector.dsa5maptool/fonts/RINGM___.TTF") format("truetype");
-}
+    src: url("lib://com.github.lector.dsa5maptool/fonts/RINGM___.woff");
+} */
 
 * {
     border: 1px dotted red;
-    font-family: Ringbearer;
+    font-family: sans-serif;
 }
 
 body {
@@ -26,12 +28,33 @@ body {
 }
 
 .highlightHeading {
-    font-family: Ringbearer;
+    font-family: serif;
     font-weight: bold;
     width: 100%;
     border-top: 1px solid #eee5c8;
     border-bottom: 1px solid #eee5c8;
-    padding: 3px 10px 3px 10px;
+}
+
+.charbogen-werte {
+    display: grid;
+    grid-template-columns:auto auto;
+    grid-template-rows: auto auto auto auto auto;
+}
+
+.row-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.row-container div {
+    width: auto;
+}
+
+.column-container {
+    display: flex;
+    flex-direction: column
 }
 
 a {
@@ -114,6 +137,13 @@ input[type="text"] {
 .attribute-increased {
     color: #0099ff;
     font-size: 10pt;
+}
+
+.property-less {
+    color: #a42b1e
+}
+.property-greater {
+    color: #0099ff
 }
 
 .title {
