@@ -65,9 +65,19 @@
 
 [h: damageResult = weaponDamage(currentToken(), weapon, modSchaden, schadenArt, mul, reactionParams)]
 
-[h: titleImage = "<td style='text-align:center; padding: 0px 12px 0px 8px;' valign='middle' width='80' rowspan=3><img src='"]
-[h,if(typ == "fk"): titleImage = titleImage + tableImage("chat", 61); titleImage = titleImage + tableImage("chat", 60)]
-[h: titleImage = titleImage + "'/></td>"]
-[h: output = strformat("<table style='font-weight: bold'><tr>%{titleImage}%s</tr></table>",
+[h,if(typ == "fk"):
+	titleImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/rangedDamage.png");
+	titleImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/meleeDamage.png")]
+
+[h: output = strformat("
+<table style='font-weight: bold'>
+	<tr>
+		<td style='text-align:center; padding: 0px 12px 0px 8px;' valign='middle' width='80' rowspan=3>
+			<img src='%{titleImage}'/>
+		</td>
+		%s
+	</tr>
+</table>",
 showWeaponDamage(damageResult, reactionParams))]
+
 [h: sendTo(chat, border(title, output))]

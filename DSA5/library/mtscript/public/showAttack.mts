@@ -5,21 +5,24 @@
 [h: success = json.get(attackResult, "success")]
 
 [h,if(json.contains(weapon, "RW")): typ = "nk"; typ = "fk"]
-[h,if(success >= 1),Code:{
-	[h,if(typ == "nk"): image = 60; image = 61]
+[h,if(success >= 1),Code:
+{
+	[h,if(typ == "nk"):
+		image = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/meleeDamage.png");
+		image = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/rangedDamage.png")]
 };
 {
-	[h,if(typ == "nk"): image = 16; image = 18]
+	[h,if(typ == "nk"):
+		image = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/meleeAttack.png");
+		image = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/rangedAttack.png")]
 }]
 
 [h: rowspan = 6]
 [h,if(success < 1): rowspan=3]
 [h: output = strformat("
 <td style='text-align:center; padding: 0px 12px 0px 8px' valign='middle' rowspan=%{rowspan}>
-	<img src='%s'/>
-</td>
-",
-tableImage("chat", image))]
+	<img src=%{image}/>
+</td>")]
 
 [h,if(typ == "nk"): lucky = 44; lucky = 47]
 

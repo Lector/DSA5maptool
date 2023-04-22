@@ -412,9 +412,13 @@
 				<table style='border-spacing: 0px; padding: 0px; margin: 11px auto 11px auto;'>
 					<tr>
 						<td>
-							[h: button = tableImage("forms", 53)]
 							<button type="submit">
-								<img src="[r: button]"/>
+								<table>
+									<tr>
+										<td><img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/hand.png")]/></td>
+										<td>Regenerieren</td>
+									</tr>
+								</table>
 							</button>
 						</td>
 					</tr>

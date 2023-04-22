@@ -65,9 +65,13 @@
 							&nbsp;
 						</td>
 						<td>
-							[h: button = tableImage("forms", 11)]
 							<button type="submit">
-								<img src="[r: button]"/>
+								<table>
+									<tr>
+										<td><img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/d20.png")]/></td>
+										<td>Probe würfeln</td>
+									</tr>
+								</table>
 							</button>
 						</td>
 					</tr>

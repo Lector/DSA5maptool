@@ -5,12 +5,12 @@
 
 [h,switch(resultType),Code:
 	case "parry":{
-		[image = 17]
+		[image = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/shield.png")]
 		[critImage = 46]
 		[botchImage = 10]
 	};
 	case "dodge":{
-		[image = 48]
+		[image = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/dodge.png")]
 		[critImage = 49]
 		[botchImage = 10]
 	}
@@ -26,9 +26,8 @@
 
 [h: output = strformat("
 	<td style='text-align:center; padding: 0px 12px 0px 8px' valign='middle' rowspan=3>
-		<img src='%s'/>
+		<img src=%{image}/>
 	</td><td rowspan=3></td>
-	%{show1d20}",
-tableImage("chat", image))]
+	%{show1d20}")]
 
 [h: macro.return = output]

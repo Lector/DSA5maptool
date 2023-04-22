@@ -94,9 +94,13 @@
 				<table style='border-spacing: 0px; margin: 5px auto 7px auto;'>
 					<tr>
 						<td>
-							[h: button = tableImage("forms", 11)]
 							<button type="submit">
-								<img src="[r: button]"/>
+								<table>
+									<tr>
+										<td><img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/d20.png")]/></td>
+										<td>Jetzt würfeln</td>
+									</tr>
+								</table>
 							</button>
 						</td>
 					</tr>

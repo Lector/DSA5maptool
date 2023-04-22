@@ -42,12 +42,12 @@
 	%s
 	<tr>
 		<td rowSpan=3 style='text-align:center; padding: 0px 12px 0px 8px' valign='middle'>
-			<img src='%s'/>
+			<img src='%{image}'/>
 		</td>
 		%s
 	</tr>
 	",
-skillRollTitle(skill1), tableImage("chat", image), show3d20(result1))]
+skillRollTitle(skill1), show3d20(result1))]
 [h: success1 = number(json.get(result1, "success"))]
 [h: success2 = 0]
 [h: rat = 0]

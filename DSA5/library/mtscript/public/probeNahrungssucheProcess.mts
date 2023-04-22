@@ -34,7 +34,7 @@
 		</td>
 		%s
 	<tr>",
-skillRollTitle("Pflanzenkunde"), tableImage("chat", 41), show3d20(resultPflanzenkunde))]
+skillRollTitle("Pflanzenkunde"), data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/herb.png"), show3d20(resultPflanzenkunde))]
 
 [h,if(json.get(resultPflanzenkunde, "success") > 0),Code:
 {

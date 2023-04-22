@@ -10,7 +10,7 @@
 		[gmName = getName()]
 	};
 	{
-		[gmImage = tableImage("chat", 65)]
+		[gmImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/gm.png")]
 		[gmName = "Spielleiter"]
 	}
 ]
@@ -27,7 +27,7 @@
 				[tokenName = gmName]
 			};
 			{
-				[tokenImage = tableImage("chat", 66)]
+				[tokenImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/guest.png")]
 				[tokenName = playerName]
 			}
 		]
@@ -61,7 +61,10 @@
 			%s
 		</td>
 	</tr>
-</table>
-", tableImage("chat", 54), tokenImage, tokenName, tableImage("chat", 55), tableImage("chat", 56), uebergabe)]
+</table>",
+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/ornamentTop.png"),
+tokenImage, tokenName,
+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/ornamentBottom.png"),
+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/visibility.png"), uebergabe)]
 
 [h: broadcast(ausgabe, playerName)]

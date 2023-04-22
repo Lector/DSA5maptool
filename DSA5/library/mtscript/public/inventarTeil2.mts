@@ -93,7 +93,7 @@
 												Geldbeutel
 											</td>
 											<td style='text-align: right;' width='45'>
-												<a href="[r: macroLinkText("inventarCoinEdit@this", "")]"><image src='[r: tableImage("misc", 8)]' border="0" alt="Vermögen editieren"></image></a>&nbsp;<a href="[r: macroLinkText("inventarCoinDel@this", "", "2")]"><image src='[r: tableImage("misc", 3)]' border="0" alt="Komplettes Vermögen löschen"></image></a>
+												<a href="[r: macroLinkText("inventarCoinEdit@this", "")]"><image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/pencil.png")]' border="0" alt="Vermögen editieren"></image></a>&nbsp;<a href="[r: macroLinkText("inventarCoinDel@this", "", "2")]"><image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/x.png")]' border="0" alt="Komplettes Vermögen löschen"></image></a>
 											</td>
 										</tr>
 									</table>
@@ -142,8 +142,8 @@
 												[r: json.get(InventarMisc, "dukaten")]
 											</td>
 											<td>
-												<a href="[r: macroLinkText("inventarCoinAdd@this", "", "dukat")]"><image src='[r: tableImage("misc", 6)]' border="0" alt="1 Dukate hinzufügen"></image>
-												<br><a href="[r: macroLinkText("inventarCoinSub@this", "", "dukat")]"><image src='[r: tableImage("misc", 7)]' border="0" alt="1 Dukate abziehen"></image>
+												<a href="[r: macroLinkText("inventarCoinAdd@this", "", "dukat")]"><image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/plus.png")]' border="0" alt="1 Dukate hinzufügen"></image>
+												<br><a href="[r: macroLinkText("inventarCoinSub@this", "", "dukat")]"><image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/minus.png")]' border="0" alt="1 Dukate abziehen"></image>
 											</td>
 											<td width='5'>
 												&nbsp;
@@ -152,8 +152,8 @@
 												[r: json.get(InventarMisc, "silbertaler")]
 											</td>
 											<td>
-												<a href="[r: macroLinkText("inventarCoinAdd@this", "", "silbertaler")]"><image src='[r: tableImage("misc", 6)]' border="0" alt="1 Silbertaler hinzufügen"></image>
-												<br><a href="[r: macroLinkText("inventarCoinSub@this", "", "silbertaler")]"><image src='[r: tableImage("misc", 7)]' border="0" alt="1 Silbertaler abziehen"></image>
+												<a href="[r: macroLinkText("inventarCoinAdd@this", "", "silbertaler")]"><image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/plus.png")]' border="0" alt="1 Silbertaler hinzufügen"></image>
+												<br><a href="[r: macroLinkText("inventarCoinSub@this", "", "silbertaler")]"><image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/minus.png")]' border="0" alt="1 Silbertaler abziehen"></image>
 											</td>
 											<td width='5'>
 												&nbsp;
@@ -162,8 +162,8 @@
 												[r: json.get(InventarMisc, "heller")]
 											</td>
 											<td>
-												<a href="[r: macroLinkText("inventarCoinAdd@this", "", "heller")]"><image src='[r: tableImage("misc", 6)]' border="0" alt="1 Heller hinzufügen"></image>
-												<br><a href="[r: macroLinkText("inventarCoinSub@this", "", "heller")]"><image src='[r: tableImage("misc", 7)]' border="0" alt="1 Heller abziehen"></image>
+												<a href="[r: macroLinkText("inventarCoinAdd@this", "", "heller")]"><image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/plus.png")]' border="0" alt="1 Heller hinzufügen"></image>
+												<br><a href="[r: macroLinkText("inventarCoinSub@this", "", "heller")]"><image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/minus.png")]' border="0" alt="1 Heller abziehen"></image>
 											</td>
 											<td width='5'>
 												&nbsp;
@@ -172,8 +172,8 @@
 												[r: json.get(InventarMisc, "kreuzer")]
 											</td>
 											<td>
-												<a href="[r: macroLinkText("inventarCoinAdd@this", "", "kreuzer")]"><image src='[r: tableImage("misc", 6)]' border="0" alt="1 Kreuzer hinzufügen"></image>
-												<br><a href="[r: macroLinkText("inventarCoinSub@this", "", "kreuzer")]"><image src='[r: tableImage("misc", 7)]' border="0" alt="1 Kreuzer abziehen"></image>
+												<a href="[r: macroLinkText("inventarCoinAdd@this", "", "kreuzer")]"><image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/plus.png")]' border="0" alt="1 Kreuzer hinzufügen"></image>
+												<br><a href="[r: macroLinkText("inventarCoinSub@this", "", "kreuzer")]"><image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/minus.png")]' border="0" alt="1 Kreuzer abziehen"></image>
 											</td>
 										</tr>
 									</table>

@@ -6,7 +6,7 @@
 </td>
 <td rowspan=3></td>
 %s",
-tableImage("chat", 70),
+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/heartFull.png"),
 show3d20(params))]
 
 [h: macro.return = output]

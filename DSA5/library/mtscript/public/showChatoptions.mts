@@ -57,7 +57,7 @@
 									:)
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 1)]'></img>
+									<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/smile.png")]></img>
 								</td>
 								<td>
 									Lächeln
@@ -68,7 +68,7 @@
 									:D
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 2)]'></img>
+								<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/grin.png")]></img>
 								</td>
 								<td>
 									Grinsen
@@ -79,7 +79,7 @@
 									,)
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 3)]'></img>
+								<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/twinkle.png")]></img>
 								</td>
 								<td>
 									Zwinkern
@@ -90,7 +90,7 @@
 									,D
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 4)]'></img>
+								<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/twinkleGrin.png")]></img>
 								</td>
 								<td>
 									Zwinkern (grinsend)
@@ -101,7 +101,7 @@
 									xD
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 5)]'></img>
+								<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/laugh.png")]></img>
 								</td>
 								<td>
 									Lachen
@@ -112,7 +112,7 @@
 									xP
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 6)]'></img>
+								<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/laughTongue.png")]></img>
 								</td>
 								<td>
 									Lachen (Zunge raus)
@@ -123,7 +123,7 @@
 									^^
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 7)]'></img>
+								<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/smirk.png")]></img>
 								</td>
 								<td>
 									Schmunzeln
@@ -134,7 +134,7 @@
 									^_^
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 8)]'></img>
+								<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/giggle.png")]></img>
 								</td>
 								<td>
 									Kichern
@@ -145,7 +145,7 @@
 									8)
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 9)]'></img>
+								<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/cool.png")]></img>
 								</td>
 								<td>
 									Cool
@@ -156,7 +156,7 @@
 									:(
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 10)]'></img>
+								<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/sad.png")]></img>
 								</td>
 								<td>
 									Traurig
@@ -167,7 +167,7 @@
 									:c
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 11)]'></img>
+								<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/crying.png")]></img>
 								</td>
 								<td>
 									Weinend
@@ -185,7 +185,7 @@
 									x(
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 12)]'></img>
+									<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/angry.png")]></img>
 								</td>
 								<td>
 									Verärgert
@@ -196,7 +196,7 @@
 									:0
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 13)]'></img>
+									<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/shocked.png")]></img>
 								</td>
 								<td>
 									Geschockt
@@ -207,7 +207,7 @@
 									:o
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 14)]'></img>
+									<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/surprised.png")]></img>
 								</td>
 								<td>
 									überrascht
@@ -218,7 +218,7 @@
 									Oo
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 15)]'></img>
+									<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/irritated.png")]></img>
 								</td>
 								<td>
 									Irritiert
@@ -229,7 +229,7 @@
 									:#
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 16)]'></img>
+									<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/confused.png")]></img>
 								</td>
 								<td>
 									Verwirrt
@@ -240,7 +240,7 @@
 									:*
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 17)]'></img>
+									<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/skeptical.png")]></img>
 								</td>
 								<td>
 									Skeptisch
@@ -251,7 +251,7 @@
 									:|
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 18)]'></img>
+									<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/speechless.png")]></img>
 								</td>
 								<td>
 									Sprachlos
@@ -262,7 +262,7 @@
 									x|
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 19)]'></img>
+									<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/annoyed.png")]></img>
 								</td>
 								<td>
 									Genervt
@@ -273,7 +273,7 @@
 									x0
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 20)]'></img>
+									<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/ouch.png")]></img>
 								</td>
 								<td>
 									Ouch!
@@ -284,7 +284,7 @@
 									&gt;=)
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 21)]'></img>
+									<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/spiteful.png")]></img>
 								</td>
 								<td>
 									Gehässig
@@ -295,7 +295,7 @@
 									&gt;=D
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 22)]'></img>
+									<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/vicious.png")]></img>
 								</td>
 								<td>
 									Boshaft
@@ -313,7 +313,7 @@
 									-_-
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 23)]'></img>
+									<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/tired.png")]></img>
 								</td>
 								<td>
 									Müde
@@ -324,7 +324,7 @@
 									^-^
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 24)]'></img>
+									<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/shy.png")]></img>
 								</td>
 								<td>
 									Schüchtern
@@ -335,7 +335,7 @@
 									+)
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 25)]'></img>
+									<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/greed.png")]></img>
 								</td>
 								<td>
 									Gierig
@@ -346,7 +346,7 @@
 									=:)
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 26)]'></img>
+									<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/crazy.png")]></img>
 								</td>
 								<td>
 									Verrückt
@@ -357,7 +357,7 @@
 									:x
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 27)]'></img>
+									<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/silent.png")]></img>
 								</td>
 								<td>
 									Lippen versiegelt
@@ -368,7 +368,7 @@
 									0:)
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 28)]'></img>
+									<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/angle.png")]></img>
 								</td>
 								<td>
 									Engel
@@ -379,7 +379,7 @@
 									3:)
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 29)]'></img>
+									<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/devil.png")]></img>
 								</td>
 								<td>
 									Teufel
@@ -390,7 +390,7 @@
 									&lt;3
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 30)]'></img>
+									<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/heart.png")]></img>
 								</td>
 								<td>
 									Herz
@@ -401,7 +401,7 @@
 									:dh:
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 31)]'></img>
+									<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/thumbUp.png")]></img>
 								</td>
 								<td>
 									Daumen hoch
@@ -412,7 +412,7 @@
 									:dr:
 								</td>
 								<td>
-									<img src='[r: tableImage("smilies", 32)]'></img>
+									<img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/smilies/thumbDown.png")]></img>
 								</td>
 								<td>
 									Daumen runter

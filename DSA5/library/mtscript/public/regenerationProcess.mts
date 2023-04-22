@@ -210,7 +210,8 @@
 		</td>
 	</tr>
 </table>",
-tableImage("chat", 53), leRegColor, leTitle, leRegGesamt, aeRegColor, aeTitle, aeRegGesamt, keRegColor, keTitle, keRegGesamt)]
+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/heal.png"),
+leRegColor, leTitle, leRegGesamt, aeRegColor, aeTitle, aeRegGesamt, keRegColor, keTitle, keRegGesamt)]
 
 [h: ausgabe = border("Regeneration", ausgabe)]
 

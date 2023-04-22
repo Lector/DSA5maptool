@@ -17,5 +17,5 @@
 		</table>
 	</td>
 </tr>",
-tableImage("chat", 54), tableImage("chat", 54))]
+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/ornamentTop.png"), data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/ornamentTop.png"))]
 [h: macro.return = outString]

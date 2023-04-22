@@ -200,9 +200,13 @@ window.addEventListener('load', function(evt) {
 							</table>
 						</td>
 						<td>
-							[h: button = tableImage("forms", 11)]
-							<button type="submit" name="action">
-								<img src="[r: button]"/>
+							<button type="submit">
+								<table>
+									<tr>
+										<td><img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/d20.png")]/></td>
+										<td>Jetzt würfeln</td>
+									</tr>
+								</table>
 							</button>
 						</td>
 					</tr>
@@ -361,7 +365,10 @@ window.addEventListener('load', function(evt) {
 				<input type="hidden" name="basisDauer" value="[r: zeit]"/>
 				<input type="hidden" id="maxqs" name="maxqs" value="[r: maxqs]"/>
 				<input type="hidden" name="typ" value="[r: typ]"/>
-				<input type="hidden" name="image" value="[r,if(typ == 'Angeln'): 43; 42]"/>
+				[h,if(typ == "Angeln"):
+					image = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/fish.png");
+					image = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/hunt.png")]
+				<input type="hidden" name="image" value="[r: image]"/>
 			</form>
 			<div style="display: none" id="sightfk">
 				[r: sightfk]

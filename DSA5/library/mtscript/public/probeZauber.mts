@@ -57,9 +57,13 @@
 							&nbsp;
 						</td>
 						<td>
-							[h: button = tableImage("forms", 97)]
 							<button type="submit">
-								<img src="[r: button]"/>
+								<table>
+									<tr>
+										<td><img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/wand.png")]/></td>
+										<td>Zauber wirken</td>
+									</tr>
+								</table>
 							</button>
 						</td>
 					</tr>

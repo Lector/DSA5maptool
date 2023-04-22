@@ -45,68 +45,67 @@
 [h,if(mod < 0): modColor = "#a42b1e"]
 
 [h: ausgabe = border("Initiative würfeln", strformat("
-
-	<table style='border-spacing: 0px; margin-top: 3px; font-weight: bold;'>
-		<tr>
-			<td style='text-align:center;' valign='middle' width='85'>
-				<img src='%s'>
-			</td>
-			<td valign='middle'>
-				<table style='border-spacing: 0px;'>
-					<tr>
-						<td style='padding: 1px 4px 1px 0px;'>
-							Wert:
-						</td>
-						<td style='padding: 1px 0px 1px 0px; text-align: right; color: %s;'>
-							%s
-						</td>
-					</tr>
-					<tr>
-						<td style='padding: 1px 4px 1px 0px;'>
-							Modifikator:
-						</td>
-						<td style='padding: 1px 0px 1px 0px; text-align: right; color: %s;'>
-							%s
-						</td>
-					</tr>
-					<tr>
-						<td style='padding: 1px 4px 1px 0px;'>
-							W6-Anzahl:
-						</td>
-						<td style='padding: 1px 0px 1px 0px; text-align: right;'>
-							%s
-						</td>
-					</tr>
-					<tr>
-						<td style='padding: 1px 4px 1px 0px;'>
-							W6-Wurf:
-						</td>
-						<td style='padding: 1px 0px 1px 0px; text-align: right;'>
-							%s
-						</td>
-					</tr>
-				</table>
-			</td>
-			<td width='25'>
-				&nbsp;
-			</td>
-			<td valign='top'>
-				<table style='border-spacing: 0px;'>
-					<tr>
-						<td style='text-align: center;'>
-							Ergebnis:
-						</td>
-					</tr>
-					<tr>
-						<td style='text-align: center; font-size: 20pt; padding-top: 3px; color: #1d5c2f;'>
-							%s
-						</td>
-					</tr>
-				</table>
-			</td>
-		</tr>
-	</table>",
-tableImage("chat", 62), iniColor, aktWert, modColor, modOutput, 1, resultDice, result))] 
+<table style='border-spacing: 0px; margin-top: 3px; font-weight: bold;'>
+	<tr>
+		<td style='text-align:center;' valign='middle' width='85'>
+			<img src='%s'>
+		</td>
+		<td valign='middle'>
+			<table style='border-spacing: 0px;'>
+				<tr>
+					<td style='padding: 1px 4px 1px 0px;'>
+						Wert:
+					</td>
+					<td style='padding: 1px 0px 1px 0px; text-align: right; color: %s;'>
+						%s
+					</td>
+				</tr>
+				<tr>
+					<td style='padding: 1px 4px 1px 0px;'>
+						Modifikator:
+					</td>
+					<td style='padding: 1px 0px 1px 0px; text-align: right; color: %s;'>
+						%s
+					</td>
+				</tr>
+				<tr>
+					<td style='padding: 1px 4px 1px 0px;'>
+						W6-Anzahl:
+					</td>
+					<td style='padding: 1px 0px 1px 0px; text-align: right;'>
+						%s
+					</td>
+				</tr>
+				<tr>
+					<td style='padding: 1px 4px 1px 0px;'>
+						W6-Wurf:
+					</td>
+					<td style='padding: 1px 0px 1px 0px; text-align: right;'>
+						%s
+					</td>
+				</tr>
+			</table>
+		</td>
+		<td width='25'>
+			&nbsp;
+		</td>
+		<td valign='top'>
+			<table style='border-spacing: 0px;'>
+				<tr>
+					<td style='text-align: center;'>
+						Ergebnis:
+					</td>
+				</tr>
+				<tr>
+					<td style='text-align: center; font-size: 20pt; padding-top: 3px; color: #1d5c2f;'>
+						%s
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>",
+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/initiative.png"), iniColor, aktWert, modColor, modOutput, 1, resultDice, result))] 
 
 [h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "com.github.lector.dsa5maptool") == 1), Code:
 	{

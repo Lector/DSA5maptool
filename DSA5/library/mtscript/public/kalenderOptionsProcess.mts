@@ -50,14 +50,14 @@
 	{
 		[options = setStrProp(options, "kalender", "0")]
 		[setNotes("Die Anzeige des Datums wurde deaktiviert.", idDate, mapDate)]
-		[setTokenImage(tableImage("misc", 10), idDate, mapDate)]
+		[setTokenImage(data.getStaticData("com.github.lector.dsa5maptool", "/public/images/tools/calendarOff.png"), idDate, mapDate)]
 		[setNotes("Die Anzeige der Madaphasen wurde deaktiviert.", idMada, mapMada)]
 		[setTokenImage(moonphaseImage, idMada, mapMada)]
 	};
 	{
 		[options = setStrProp(options, "kalender", "1")]
 		[h,macro("kalZGEndProcess@this"): ""]
-		[setTokenImage(tableImage("misc", 9), idDate, mapDate)]
+		[setTokenImage(data.getStaticData("com.github.lector.dsa5maptool", "/public/images/tools/calendarOn.png"), idDate, mapDate)]
 	}
 ]
 [h,if(json.get(uebergabe, "fUhr") == ""), code: 
@@ -93,7 +93,7 @@
 		</td>
 	</tr>
 </table>",
-tableImage("chat", 83))] 
+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/date.png"))] 
 [h: ausgabe = border("Kalendereinstellungen", ausgabe)]
 
 [h,if(isFrameVisible("kalender") == 1), code:

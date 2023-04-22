@@ -10,7 +10,7 @@
 		[gmName = getName()]
 	};
 	{
-		[gmImage = tableImage("chat", 65)]
+		[gmImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/gm.png")]
 		[gmName = "Spielleiter"]
 	}
 ]
@@ -27,7 +27,7 @@
 				[tokenName = gmName]
 			};
 			{
-				[tokenImage = tableImage("chat", 66)]
+				[tokenImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/guest.png")]
 				[tokenName = playerName]
 			}
 		]
@@ -61,8 +61,11 @@
 			%s
 		</td>
 	</tr>
-</table>
-", tableImage("chat", 54), tokenImage, tokenName, tableImage("chat", 55), tableImage("chat", 56), uebergabe)]
+</table>", 
+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/ornamentTop.png"),
+tokenImage, tokenName,
+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/ornamentBottom.png"),
+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/visibility.png"), uebergabe)]
 
 [h: meldung = border("Verdeckter Wurf", strformat("
 <table>
@@ -74,7 +77,7 @@
 	</td>
 	<td style='white-space: nowrap;'>Du hast eine verdeckte Probe für den Spielleiter gewürfelt.</td>
 </table>",
-tableImage("chat", 57)))]
+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/secret.png")))]
 
 [h: ausgabeSelf = strformat("
 <table style='border-spacing: 0px; margin: 0px; padding: 0px;' cellpadding = '0' cellspacing = '0'>
@@ -92,8 +95,11 @@ tableImage("chat", 57)))]
 			%s
 		</td>
 	</tr>
-</table>
-", tableImage("chat", 54), tokenImage, tokenName, tableImage("chat", 55), meldung)]
+</table>",
+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/ornamentTop.png"),
+tokenImage, tokenName,
+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/ornamentBottom.png"),
+uebergabe)]
 
 [h: broadcast(ausgabeSL, "gm")]
 [h,if(isGM()), Code:

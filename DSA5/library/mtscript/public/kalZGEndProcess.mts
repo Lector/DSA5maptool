@@ -478,7 +478,7 @@
 		</td>
 	</tr>
 </table>",
-tableImage("chat", 83), chatInfo)]
+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/date.png"), chatInfo)]
 
 [h: ausgabe = border("Kalendereinstellungen", ausgabe)]
 

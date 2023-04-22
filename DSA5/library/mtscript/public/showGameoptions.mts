@@ -1,5 +1,5 @@
-[h: imageOk = strformat("<img src='%s' alt='Aktiviert'></img>", tableImage("misc", 2))]
-[h: imageFail = strformat("<img src='%s' alt='Deaktiviert'></img>", tableImage("misc", 3))]
+[h: imageOk = strformat("<img src='%s' alt='Aktiviert'></img>", data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/check.png"))]
+[h: imageFail = strformat("<img src='%s' alt='Deaktiviert'></img>", data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/x.png"))]
 
 [dialog("showGameoptions", "width=325; height=206; temporary=1; input=0; noframe=0"):{
 <html>

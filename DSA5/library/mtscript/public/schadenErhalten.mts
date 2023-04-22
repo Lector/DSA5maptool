@@ -150,9 +150,13 @@
 				<table style='padding: 0px; margin: 7px auto 0px auto;'>
 					<tr>
 						<td>
-							[h: button = tableImage("forms", 47)]
 							<button type="submit">
-								<img src="[r: button]"/>
+								<table>
+									<tr>
+										<td><img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/hand.png")]/></td>
+										<td>Schaden eintragen</td>
+									</tr>
+								</table>
 							</button>
 						</td>
 					</tr>

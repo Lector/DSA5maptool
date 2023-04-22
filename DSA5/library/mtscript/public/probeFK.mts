@@ -84,9 +84,13 @@
 							&nbsp;
 						</td>
 						<td>
-							[h: button = tableImage("forms", 33)]
 							<button type="submit">
-								<img src="[r: button]"/>
+								<table>
+									<tr>
+										<td><img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/bolt.png")]/></td>
+										<td>Schießen / Werfen</td>
+									</tr>
+								</table>
 							</button>
 						</td>
 					</tr>

@@ -70,7 +70,7 @@
 		</td>
 		%s
 	</tr>",
-skillRollTitle("Pflanzenkunde"), tableImage("chat", 41), show3d20(resultPflanzenkunde))]
+skillRollTitle("Pflanzenkunde"), data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/herb.png"), show3d20(resultPflanzenkunde))]
 
 [h:pkSuccess = number(json.get(resultPflanzenkunde, "success"))]
 [h,if(pkSuccess > 0),Code:

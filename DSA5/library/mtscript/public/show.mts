@@ -21,10 +21,13 @@
 	case "weaponDamage": output = output + showWeaponDamage(actionResult);
 	case "dodge": output = output + showDefense(actionResult);
 	case "parry": output = output + showDefense(actionResult);
-	case "schmerz4": output = output + strformat("<td style='text-align:center; padding: 0px 12px 0px 8px' valign='middle' rowspan=3>
+	case "schmerz4": output = output + strformat("
+<td style='text-align:center; padding: 0px 12px 0px 8px' valign='middle' rowspan=3>
 	<img src='%s'/>
-</td><td rowspan=3></td>%s",
-tableImage("chat", 71), show3d20(actionResult));
+</td>
+<td rowspan=3></td>
+%s",
+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/heartEmpty.png"), show3d20(actionResult));
 	default: output = output
 ]
 
