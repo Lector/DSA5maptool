@@ -179,7 +179,7 @@ input[type="text"] {
     word-wrap: break-word;
 }
 
-.panel div {
+.panel .heading {
     font-weight: bold;
     width: 100%;
     border-top: 1px solid #eee5c8;

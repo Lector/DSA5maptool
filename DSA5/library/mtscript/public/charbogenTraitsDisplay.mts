@@ -15,18 +15,22 @@
 [h: imageAllgemeineSF = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/schriftAllgemeineSF.png")]
 
 <div class="panel" style="display: flex;flex-direction: column;align-items:center; justify-content:center;">
-	<div>
+	<div class="heading">
 		<image src=[r: imageVorteile]></image>
 	</div>
-	[r,macro("charbogenTraits@this"): Vorteile]
-	<br><br>
 	<div>
+		[r,macro("charbogenTraits@this"): Vorteile]
+	</div>
+	<div class="heading">
 		<image src=[r: imageNachteile]></image>
 	</div>
-		[r,macro("charbogenTraits@this"): Nachteile]
-	<br><br>
 	<div>
+		[r,macro("charbogenTraits@this"): Nachteile]
+	</div>
+	<div class="heading">
 		<image src=[r: imageAllgemeineSF]></image>
 	</div>
+	<div>
 		[r,macro("charbogenTraits@this"): AllgemeineSF]
+	</div>
 </div>
