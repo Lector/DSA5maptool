@@ -14,7 +14,7 @@
 [h: imageNachteile = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/schriftNachteile.png")]
 [h: imageAllgemeineSF = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/schriftAllgemeineSF.png")]
 
-<div class="panel" style="display: flex;flex-direction: column;align-items:center; justify-content:center;">
+<div class="panel">
 	<div class="heading">
 		<image src=[r: imageVorteile]></image>
 	</div>

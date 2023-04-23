@@ -78,101 +78,101 @@
 			</div>
 		</div>
 
-			<div style="display: flex; flex-direction: column; gap:24px">
-			<!-- Token image -->
-				<table style='border-spacing: 0px; padding: 0px; margin-bottom: 8px;' width='212' cellpadding='0' cellspacing='0'>
-					<tr>
-						<td style='text-align: center'>
-							<img src='[r:getTokenImage(85)]'></img>
-						</td>	
-					</tr>
-				</table>
-				<!-- Lebensbalken -->
-				<table style='border-spacing: 0px; padding: 0px; margin-bottom: 8px;' width='212' cellpadding='0' cellspacing='0'>
-					<tr>
-						<td style='padding: 0px; height: 33;' width='20'>
-							LE:
-						</td>
-						<td style='padding: 0px; text-align: center;' width='40'>		
-							[r: LeP]/[r: MaxLeP]<br>
-							<span style='color: #eee5c8; text-decoration: none;' title='LeP addieren'>[r: macroLink(plus, "changeEnergie@this", "", "lePlus")]</span>
-							&nbsp;
-							<span style='color: #eee5c8; text-decoration: none;' title='LeP subtrahieren'>[r: macroLink(minus, "changeEnergie@this", "", "leMinus")]</span>
-						</td>
-						<td width='152'>
-							<table style="background-image: url('[r: tblImage("mainTheme",39)]'); background-repeat: no-repeat; border-spacing: 0px;" width='152'>
-								<tr>
-								[h,if(MaxLeP <=0): barMaxLeP = 1; barMaxLeP = MaxLeP]
-								[h: barLE = round(1.5 * (LeP / (barMaxLeP / 100)))]
-									<td style="background-image: url('[r: tblImage("mainTheme",40)]'); background-repeat: no-repeat; height: 33; padding: 0px;" width="[r: barLE]">						
-									</td>
-									<td style='padding: 0px;'>
-										&nbsp;
-									</td>
-								</tr>
-							</table>
-						</td>
-					</tr>
-				</table>
-				<!-- Zeige AstralPunkte Balken falls relevant-->
-				[r,if(MaxAsP > 0),Code:{
-				<table style='border-spacing: 0px; padding: 0px; margin-bottom: 8px;' width='212' cellpadding='0' cellspacing='0'>
-					<tr>
-						<td style='padding: 0px; height: 33;' width='20'>
-							AE:
-						</td>
-						<td style='padding: 0px; text-align: center;' width='40'>		
-							[r: AsP]/[r: MaxAsP]<br>
-							<span style='color: #eee5c8; text-decoration: none;' title='AsP addieren'>[r: macroLink(plus, "changeEnergie@this", "", "aePlus")]</span>
-							&nbsp;
-							<span style='color: #eee5c8; text-decoration: none;' title='AsP subtrahieren'>[r: macroLink(minus, "changeEnergie@this", "", "aeMinus")]</span>
-							
-						</td>
-						<td width='152'>
-							<table style="background-image: url('[r: tblImage("mainTheme",39)]'); background-repeat: no-repeat; border-spacing: 0px;" width='152'>
-								<tr>
-								[h,if(MaxAsP <=0): barMaxAsP = 1; barMaxAsP = MaxAsP]
-								[h: barAE = round(1.5 * (AsP / (barMaxAsP / 100)))]
-									<td style="background-image: url('[r: tblImage("mainTheme",42)]'); background-repeat: no-repeat; height: 33; padding: 0px;" width="[r: barAE]">						
-									</td>
-									<td style='padding: 0px;'>
-										&nbsp;
-									</td>
-								</tr>
-							</table>
-						</td>
-					</tr>
-				</table>};{}]
-				<!-- Zeige KarmalPunkte Balken falls relevant-->
-				[r,if(MaxKaP > 0),Code:{
-				<table style='border-spacing: 0px; padding: 0px;' width='212' cellpadding='0' cellspacing='0'>
-					<tr>
-						<td style='padding: 0px; height: 33;' width='20'>
-							KE:
-						</td>
-						<td style='padding: 0px; text-align: center;' width='40'>		
-							[r: KaP]/[r: MaxKaP]<br>
-							<span style='color: #eee5c8; text-decoration: none;' title='KE addieren'>[r: macroLink(plus, "changeEnergie@this", "", "kePlus")]</span>
-							&nbsp;
-							<span style='color: #eee5c8; text-decoration: none;' title='KE subtrahieren'>[r: macroLink(minus, "changeEnergie@this", "", "keMinus")]</span>
-						</td>
-						<td width='152'>
-							<table style="background-image: url('[r: tblImage("mainTheme",39)]'); background-repeat: no-repeat; border-spacing: 0px;" width='152'>
-								<tr>
-								[h,if(MaxKaP <=0): barMaxKaP = 1; barMaxKaP = MaxKaP]
-								[h: barKE = round(1.5 * (KaP / (barMaxKaP / 100)))]
-									<td style="background-image: url('[r: tblImage("mainTheme",43)]'); background-repeat: no-repeat; height: 33; padding: 0px;" width="[r: barKE]">						
-									</td>
-									<td style='padding: 0px;'>
-										&nbsp;
-									</td>
-								</tr>
-							</table>
-						</td>
-					</tr>
-				</table>};{}]
-			</div>
-			</div>
+		<div style="display: flex; flex-direction: column; gap:24px">
+		<!-- Token image -->
+			<table style='border-spacing: 0px; padding: 0px; margin-bottom: 8px;' width='212' cellpadding='0' cellspacing='0'>
+				<tr>
+					<td style='text-align: center'>
+						<img src='[r:getTokenImage(85)]'></img>
+					</td>
+				</tr>
+			</table>
+			<!-- Lebensbalken -->
+			<table style='border-spacing: 0px; padding: 0px; margin-bottom: 8px;' width='212' cellpadding='0' cellspacing='0'>
+				<tr>
+					<td style='padding: 0px; height: 33;' width='20'>
+						LE:
+					</td>
+					<td style='padding: 0px; text-align: center;' width='40'>
+						[r: LeP]/[r: MaxLeP]<br>
+						<span style='color: #eee5c8; text-decoration: none;' title='LeP addieren'>[r: macroLink(plus, "changeEnergie@this", "", "lePlus")]</span>
+						&nbsp;
+						<span style='color: #eee5c8; text-decoration: none;' title='LeP subtrahieren'>[r: macroLink(minus, "changeEnergie@this", "", "leMinus")]</span>
+					</td>
+					<td width='152'>
+						<table style="background-image: url('[r: tblImage("mainTheme",39)]'); background-repeat: no-repeat; border-spacing: 0px;" width='152'>
+							<tr>
+							[h,if(MaxLeP <=0): barMaxLeP = 1; barMaxLeP = MaxLeP]
+							[h: barLE = round(1.5 * (LeP / (barMaxLeP / 100)))]
+								<td style="background-image: url('[r: tblImage("mainTheme",40)]'); background-repeat: no-repeat; height: 33; padding: 0px;" width="[r: barLE]">						
+								</td>
+								<td style='padding: 0px;'>
+									&nbsp;
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<!-- Zeige AstralPunkte Balken falls relevant-->
+			[r,if(MaxAsP > 0),Code:{
+			<table style='border-spacing: 0px; padding: 0px; margin-bottom: 8px;' width='212' cellpadding='0' cellspacing='0'>
+				<tr>
+					<td style='padding: 0px; height: 33;' width='20'>
+						AE:
+					</td>
+					<td style='padding: 0px; text-align: center;' width='40'>
+						[r: AsP]/[r: MaxAsP]<br>
+						<span style='color: #eee5c8; text-decoration: none;' title='AsP addieren'>[r: macroLink(plus, "changeEnergie@this", "", "aePlus")]</span>
+						&nbsp;
+						<span style='color: #eee5c8; text-decoration: none;' title='AsP subtrahieren'>[r: macroLink(minus, "changeEnergie@this", "", "aeMinus")]</span>
+						
+					</td>
+					<td width='152'>
+						<table style="background-image: url('[r: tblImage("mainTheme",39)]'); background-repeat: no-repeat; border-spacing: 0px;" width='152'>
+							<tr>
+							[h,if(MaxAsP <=0): barMaxAsP = 1; barMaxAsP = MaxAsP]
+							[h: barAE = round(1.5 * (AsP / (barMaxAsP / 100)))]
+								<td style="background-image: url('[r: tblImage("mainTheme",42)]'); background-repeat: no-repeat; height: 33; padding: 0px;" width="[r: barAE]">						
+								</td>
+								<td style='padding: 0px;'>
+									&nbsp;
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>};{}]
+			<!-- Zeige KarmalPunkte Balken falls relevant-->
+			[r,if(MaxKaP > 0),Code:{
+			<table style='border-spacing: 0px; padding: 0px;' width='212' cellpadding='0' cellspacing='0'>
+				<tr>
+					<td style='padding: 0px; height: 33;' width='20'>
+						KE:
+					</td>
+					<td style='padding: 0px; text-align: center;' width='40'>
+						[r: KaP]/[r: MaxKaP]<br>
+						<span style='color: #eee5c8; text-decoration: none;' title='KE addieren'>[r: macroLink(plus, "changeEnergie@this", "", "kePlus")]</span>
+						&nbsp;
+						<span style='color: #eee5c8; text-decoration: none;' title='KE subtrahieren'>[r: macroLink(minus, "changeEnergie@this", "", "keMinus")]</span>
+					</td>
+					<td width='152'>
+						<table style="background-image: url('[r: tblImage("mainTheme",39)]'); background-repeat: no-repeat; border-spacing: 0px;" width='152'>
+							<tr>
+							[h,if(MaxKaP <=0): barMaxKaP = 1; barMaxKaP = MaxKaP]
+							[h: barKE = round(1.5 * (KaP / (barMaxKaP / 100)))]
+								<td style="background-image: url('[r: tblImage("mainTheme",43)]'); background-repeat: no-repeat; height: 33; padding: 0px;" width="[r: barKE]">						
+								</td>
+								<td style='padding: 0px;'>
+									&nbsp;
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>};{}]
+		</div>
+		</div>
 			[r,macro("charbogenTraitsDisplay@this"): ""]
 		</div>
 		<div id="footer"></div>
