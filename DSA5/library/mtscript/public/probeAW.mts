@@ -102,13 +102,15 @@
 						<td valign='top'>
 							<table>
 								<tr>
-									<td valign=top>
+									<td>
 										<div class="label">
 											Ausweichen
 										</div>
 									</td>
 									<td>
-										Wert: [r: wert]
+										<div>
+											Wert: [r: wert]
+										</div>
 									</td>
 								</tr>
 							</table>
