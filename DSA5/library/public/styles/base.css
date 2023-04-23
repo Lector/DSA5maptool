@@ -27,7 +27,6 @@ table {
     font-size: inherit;
     font-family: inherit;
     border-spacing: 0px;
-    border: 1px solid green;
 }
 
 select {
@@ -45,16 +44,6 @@ button[type="submit"] table tr td {
     color: #482902;
     font-family: 'Diamond';
     font-size: 14;
-}
-
-.debug {
-    border: 1px solid blue;
-}
-.debug tr {
-    border: 1px solid green;
-}
-.debug tr td {
-    border: 1px solid red;
 }
 
 .attribute-default {

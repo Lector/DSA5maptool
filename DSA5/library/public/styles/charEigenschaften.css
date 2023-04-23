@@ -6,7 +6,7 @@
 } */
 
 * {
-    border: 1px dotted red;
+    /* outline: 1px dotted red; */
     font-family: sans-serif;
 }
 
@@ -14,13 +14,47 @@ body {
     font-size: 12pt;
     color: #eee5c8;
     background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/background.png");
+    /* border: 1px dotted red; */
+}
+
+.debug {
+    border: 1px dotted red !important;
+}
+
+#header {
+    display: grid;
+    grid-template-columns: 57px auto 57px;
+    grid-template-rows: 16px 46px 4px 46px 13px;
+    background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/header.png");
+    background-repeat: no-repeat;
+    background-size: 100% 122px;
+    height: 122;
+    margin: 0px;
 }
 
 .charactername {
-    margin-top: 18px;
+    display: flex;
+    align-items:center;
+    justify-content:center;
     font-weight: bold;
     font-size: 22pt;
     text-align: center;
+
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.charbogenNav {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
 }
 
 .highlight {
@@ -72,7 +106,7 @@ hr {
 table {
     font-size: inherit;
     border-spacing: 0px;
-    border: 1px solid green;
+    /* border: 1px solid green; */
 }
 
 select {
@@ -84,19 +118,10 @@ input[type="text"] {
     font-size: inherit;
 }
 
-#header {
-    background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/header.png");
-    background-repeat: no-repeat;
-    background-size: 100% 122px;
-    height: 122;
-    margin: 0px;
-}
-
 #content {
     background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/content.png");
     background-repeat: repeat-y;
     background-size: 100% auto;
-    margin: 0px;
 }
 
 #footer {
@@ -104,7 +129,6 @@ input[type="text"] {
     background-repeat: no-repeat;
     background-size: 100% 34px;
     height: 34;
-    margin: 0px;
 }
 
 #leisteEigenschaften {
