@@ -6,18 +6,16 @@
 ]
 
 [h: actionLink = macroLinkText("tokenCopyProcess@this", "")]
-[dialog("tokenCopy", "width=425; height=343; temporary=1; input=0; noframe=0"):{
+[dialog5("tokenCopy", "width=425; height=300; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
 		<title>Token kopieren</title>
+		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 	</head>
-	<body style='font-size: 12pt;' bgcolor='#ece9d8'>
-		<form action="[r:actionLink]">
-			<div style="background-image: url('[r: tblImage("forms",54)]'); background-repeat: no-repeat; height: 20; margin: 0px;" width="400">
-			</div>
-			<div style="background-image: url('[r: tblImage("forms",55)]'); background-repeat: repeat-y; text-align: center; height: 20; margin: 0px;" width="400">
-				<div style='padding: 10px 0px 10px 0px;'>
-				<table style='border-spacing: 0px;'>
+	<body>
+		<div class="border">
+			<form action="[r:actionLink]">
+				<table style='border-spacing: 0px; margin: 20px auto 0px auto;'>
 					<tr>
 						<td>
 							Anzahl der Kopien:
@@ -27,7 +25,7 @@
 						</td>
 					</tr>
 				</table>
-				<table style='border-spacing: 0px; margin-top: 9px;' width='308'>
+				<table style='border-spacing: 0px;  margin: 9px auto 0px auto;' width='308'>
 					<tr>
 						<td style='font-weight: bold;' valign='top'>
 							Hinweis:
@@ -37,7 +35,7 @@
 						</td>
 					</tr>
 				</table>
-				<table style='border-spacing: 0px; margin: 10px 0px 10px 0px;'>
+				<table style='border-spacing: 0px; margin: 10px auto 10px auto;'>
 					<tr>
 						<td>
 							<button type="submit">
@@ -51,11 +49,9 @@
 						</td>
 					</tr>
 				</table>
-			</div>
-			<div style="background-image: url('[r: tblImage("forms",56)]'); background-repeat: no-repeat; height: 20; margin: 0px;" width="400">
-			</div>
-			<input type="hidden" name="tokenID" value="[r: selectID]">
-		</form>
+				<input type="hidden" name="tokenID" value="[r: selectID]">
+			</form>
+		</div>
 	</body>
 </html>
 }]
