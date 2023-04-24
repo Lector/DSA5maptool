@@ -88,60 +88,17 @@
 						<img src='[r:getTokenImage(85)]'></img>
 					</div>
 					<!-- Healthbar -->
-					<div class="energyBar" title="Lebenspunkte">
-						[h,if(MaxLeP <=0): barMaxLeP = 1; barMaxLeP = MaxLeP]
-						[h: barLE = round(1.5 * (LeP / (barMaxLeP / 100)))]
-						[h: imageLEBarEmpty = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/bar.png")]
-						[h: imageLEBar = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/barLife.png")]
-
-						<!-- These inline styles are neede cause they are dynamic -->
-						<div style="background-image: url('[r:imageLEBarEmpty]'); width: 150px; height: 33px; overflow: hidden; position: relative">
-							<div style="background-image: url('[r: imageLEBar]'); height: 33px; width: [r: barLE];"></div>
-							<div class="energyBarText">[r: LeP]/[r: MaxLeP]</div>
-						</div>
-						<div class="energyBarModifiers">
-							[r: macroLink(plus, "changeEnergie@this", "", "lePlus")]
-							[r: macroLink(minus, "changeEnergie@this", "", "leMinus")]
-						</div>
-					</div>
+					[r, macro("energyBar@this"): json.append(currentToken(), "le")]
 
 					<!-- Zeige Astralbalken, falls nötig -->
 					[r,if(MaxAsP > 0),Code:{
-					<div class="energyBar" title="Astralpunkte">
-						[h,if(MaxAsP <=0): barMaxAsP = 1; barMaxAsP = MaxAsP]
-						[h: barAE = round(1.5 * (AsP / (barMaxAsP / 100)))]
-						[h: imageLEBarEmpty = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/bar.png")]
-						[h: imageMagicBar = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/barMagic.png")]
-
-						<!-- These inline styles are neede cause they are dynamic -->
-						<div style="background-image: url('[r:imageLEBarEmpty]'); width: 150px; height: 33px; overflow: hidden; position: relative">
-							<div style="background-image: url('[r: imageMagicBar]'); height: 33px; width: [r: barAE];"></div>
-							<div class="energyBarText">[r: AsP]/[r: MaxAsP]</div>
-						</div>
-						<div class="energyBarModifiers">
-							[r: macroLink(plus, "changeEnergie@this", "", "aePlus")]
-							[r: macroLink(minus, "changeEnergie@this", "", "aeMinus")]
-						</div>
-					</div>};{}]
+						[r, macro("energyBar@this"): json.append(currentToken(), "ae")]
+					};{}]
 
 					<!-- Zeige Karmabalken, falls nötig -->
 					[r,if(MaxKaP > 0),Code:{
-					<div class="energyBar" title="Karmalpunkte">
-						[h,if(MaxKaP <=0): barMaxKaP = 1; barMaxKaP = MaxKaP]
-						[h: barKE = round(1.5 * (KaP / (barMaxKaP / 100)))]
-						[h: imageLEBarEmpty = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/bar.png")]
-						[h: imageKarmaBar = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/barKarma.png")]
-
-						<!-- These inline styles are neede cause they are dynamic -->
-						<div style="background-image: url('[r:imageLEBarEmpty]'); width: 150px; height: 33px; overflow: hidden; position: relative">
-							<div style="background-image: url('[r: imageKarmaBar]'); height: 33px; width: [r: barKE];"></div>
-							<div class="energyBarText">[r: KaP]/[r: MaxKaP]</div>
-						</div>
-						<div class="energyBarModifiers">
-							[r: macroLink(plus, "changeEnergie@this", "", "kePlus")]
-							[r: macroLink(minus, "changeEnergie@this", "", "keMinus")]
-						</div>
-					</div>};{}]
+						[r, macro("energyBar@this"): json.append(currentToken(), "ke")]
+					};{}]
 				</div>
 			</div>
 			<div>
