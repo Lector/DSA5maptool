@@ -20,6 +20,9 @@
 		<title>
 			Charakterbogen - Eigenschaften
 		</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com%22%3E/"
+		<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Crete+Round&family=IM+Fell+Great+Primer&family=Wellfleet&display=swap" rel="stylesheet">
 		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/charEigenschaften.css?cachelib=false'/>
 	</head>
 	<body >
