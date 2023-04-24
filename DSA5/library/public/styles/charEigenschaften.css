@@ -101,6 +101,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 5px;
 }
 .energyBarText {
     position: absolute;
