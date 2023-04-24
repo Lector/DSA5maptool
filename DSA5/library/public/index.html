@@ -12,6 +12,26 @@
 <body>
     <div>tbd</div>
     <button id="clicker">Click Me!</button>
+	<!-- <div style="position: relative; width: 122px">
+		<img style="position:absolute; top:0; left: 0;" src="images/mainTheme/bar.png" height="33px">
+		<img style="position:absolute; top:0; left: 0;" src="images/mainTheme/barLife.png" width="50%" height="33px">
+	</div> -->
+	<div class="row-container">
+		<div style="display: flex; flex-direction: column; gap:24px">
+			<div title="Test" style="display: flex; justify-content: center; align-items: center;">
+				<div>LE:</div>
+				<div style="display: flex; flex-direction: column; justify-content: space-evenly">
+					<a title="Erhöhen" style="margin: 0;"><img src="images/misc/plus.png"/></a>
+					<a title="Reduzieren" style="margin: 0;"><img src="images/misc/minus.png"/></a>
+				</div>
+				<div style="background-image: url('images/mainTheme/bar.png'); width: 150px; height: 33px; overflow: hidden; position: relative">
+					<div style="background-image: url('images/mainTheme/barLife.png'); height: 33px; width: 70%;">
+					</div>
+					<div style="position: absolute; top: 35%; left: 36%; width: 100%; height: 100%;"> 23/27</div>
+				</div>
+			</div>
+		</div>
+	</div>
     <!-- <div class="border">
 		<form action="[r: actionLink]" method="post">
 			[r: header("Würfelwurf")]

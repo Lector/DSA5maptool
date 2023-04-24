@@ -57,6 +57,12 @@ body {
     grid-row-end: 5;
 }
 
+.bar {
+    background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/bar.png");
+    width: 152px;
+    overflow: hidden;
+}
+
 .highlight {
     border: 2px solid #eee5c8
 }
@@ -89,6 +95,24 @@ body {
 .column-container {
     display: flex;
     flex-direction: column
+}
+
+.energyBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.energyBarText {
+    position: absolute;
+    top: 35%;
+    left: 36%;
+    width: 100%;
+    height: 100%;
+}
+.energyBarModifiers {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly
 }
 
 a {

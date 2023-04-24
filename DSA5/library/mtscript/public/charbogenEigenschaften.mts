@@ -11,8 +11,8 @@
 ]
 
 [h: PlayerOpt = setStrProp(PlayerOpt, "openFrame", "1")]
-[h: plus = strformat("<image src='%s' border='0'/>", tableImage("misc", 6))]
-[h: minus = strformat("<image src='%s' border='0'/>", tableImage("misc", 7))]
+[h: plus = strformat("<image src='%s' title='Erhöhen' border='0'/>", data.getStaticData("com.github.lector.dsa5maptool", "/public/images/misc/plus.png"))]
+[h: minus = strformat("<image src='%s' title='Senken' border='0'/>", data.getStaticData("com.github.lector.dsa5maptool", "/public/images/misc/minus.png"))]
 
 [frame5("charbogen", "width=525; height=700; temporary=1; input=0; noframe=0"):{
 <html>
@@ -81,99 +81,67 @@
 					</div>
 				</div>
 
-				<div style="display: flex; flex-direction: column; gap:24px">
-				<!-- Token image -->
-					<table style='border-spacing: 0px; padding: 0px; margin-bottom: 8px;' width='212' cellpadding='0' cellspacing='0'>
-						<tr>
-							<td style='text-align: center'>
-								<img src='[r:getTokenImage(85)]'></img>
-							</td>
-						</tr>
-					</table>
-					<!-- Lebensbalken -->
-					<table style='border-spacing: 0px; padding: 0px; margin-bottom: 8px;' width='212' cellpadding='0' cellspacing='0'>
-						<tr>
-							<td style='padding: 0px; height: 33;' width='20'>
-								LE:
-							</td>
-							<td style='padding: 0px; text-align: center;' width='40'>
-								[r: LeP]/[r: MaxLeP]<br>
-								<span style='color: #eee5c8; text-decoration: none;' title='LeP addieren'>[r: macroLink(plus, "changeEnergie@this", "", "lePlus")]</span>
-								&nbsp;
-								<span style='color: #eee5c8; text-decoration: none;' title='LeP subtrahieren'>[r: macroLink(minus, "changeEnergie@this", "", "leMinus")]</span>
-							</td>
-							<td width='152'>
-								<table style="background-image: url('[r: tblImage("mainTheme",39)]'); background-repeat: no-repeat; border-spacing: 0px;" width='152'>
-									<tr>
-									[h,if(MaxLeP <=0): barMaxLeP = 1; barMaxLeP = MaxLeP]
-									[h: barLE = round(1.5 * (LeP / (barMaxLeP / 100)))]
-										<td style="background-image: url('[r: tblImage("mainTheme",40)]'); background-repeat: no-repeat; height: 33; padding: 0px;" width="[r: barLE]">						
-										</td>
-										<td style='padding: 0px;'>
-											&nbsp;
-										</td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-					</table>
-					<!-- Zeige AstralPunkte Balken falls relevant-->
+				<div style="display: flex; flex-direction: column; gap:4px">
+				
+					<!-- TokenImage-->
+					<div style="display: flex; justify-content: center">
+						<img src='[r:getTokenImage(85)]'></img>
+					</div>
+					<!-- Healthbar -->
+					<div class="energyBar" title="Lebenspunkte">
+						[h,if(MaxLeP <=0): barMaxLeP = 1; barMaxLeP = MaxLeP]
+						[h: barLE = round(1.5 * (LeP / (barMaxLeP / 100)))]
+						[h: imageLEBarEmpty = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/bar.png")]
+						[h: imageLEBar = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/barLife.png")]
+
+						<!-- These inline styles are neede cause they are dynamic -->
+						<div style="background-image: url('[r:imageLEBarEmpty]'); width: 150px; height: 33px; overflow: hidden; position: relative">
+							<div style="background-image: url('[r: imageLEBar]'); height: 33px; width: [r: barLE];"></div>
+							<div class="energyBarText">[r: LeP]/[r: MaxLeP]</div>
+						</div>
+						<div class="energyBarModifiers">
+							[r: macroLink(plus, "changeEnergie@this", "", "lePlus")]
+							[r: macroLink(minus, "changeEnergie@this", "", "leMinus")]
+						</div>
+					</div>
+
+					<!-- Zeige Astralbalken, falls nötig -->
 					[r,if(MaxAsP > 0),Code:{
-					<table style='border-spacing: 0px; padding: 0px; margin-bottom: 8px;' width='212' cellpadding='0' cellspacing='0'>
-						<tr>
-							<td style='padding: 0px; height: 33;' width='20'>
-								AE:
-							</td>
-							<td style='padding: 0px; text-align: center;' width='40'>
-								[r: AsP]/[r: MaxAsP]<br>
-								<span style='color: #eee5c8; text-decoration: none;' title='AsP addieren'>[r: macroLink(plus, "changeEnergie@this", "", "aePlus")]</span>
-								&nbsp;
-								<span style='color: #eee5c8; text-decoration: none;' title='AsP subtrahieren'>[r: macroLink(minus, "changeEnergie@this", "", "aeMinus")]</span>
-								
-							</td>
-							<td width='152'>
-								<table style="background-image: url('[r: tblImage("mainTheme",39)]'); background-repeat: no-repeat; border-spacing: 0px;" width='152'>
-									<tr>
-									[h,if(MaxAsP <=0): barMaxAsP = 1; barMaxAsP = MaxAsP]
-									[h: barAE = round(1.5 * (AsP / (barMaxAsP / 100)))]
-										<td style="background-image: url('[r: tblImage("mainTheme",42)]'); background-repeat: no-repeat; height: 33; padding: 0px;" width="[r: barAE]">						
-										</td>
-										<td style='padding: 0px;'>
-											&nbsp;
-										</td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-					</table>};{}]
-					<!-- Zeige KarmalPunkte Balken falls relevant-->
+					<div class="energyBar" title="Astralpunkte">
+						[h,if(MaxAsP <=0): barMaxAsP = 1; barMaxAsP = MaxAsP]
+						[h: barAE = round(1.5 * (AsP / (barMaxAsP / 100)))]
+						[h: imageLEBarEmpty = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/bar.png")]
+						[h: imageMagicBar = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/barMagic.png")]
+
+						<!-- These inline styles are neede cause they are dynamic -->
+						<div style="background-image: url('[r:imageLEBarEmpty]'); width: 150px; height: 33px; overflow: hidden; position: relative">
+							<div style="background-image: url('[r: imageMagicBar]'); height: 33px; width: [r: barAE];"></div>
+							<div class="energyBarText">[r: AsP]/[r: MaxAsP]</div>
+						</div>
+						<div class="energyBarModifiers">
+							[r: macroLink(plus, "changeEnergie@this", "", "aePlus")]
+							[r: macroLink(minus, "changeEnergie@this", "", "aeMinus")]
+						</div>
+					</div>};{}]
+
+					<!-- Zeige Karmabalken, falls nötig -->
 					[r,if(MaxKaP > 0),Code:{
-					<table style='border-spacing: 0px; padding: 0px;' width='212' cellpadding='0' cellspacing='0'>
-						<tr>
-							<td style='padding: 0px; height: 33;' width='20'>
-								KE:
-							</td>
-							<td style='padding: 0px; text-align: center;' width='40'>
-								[r: KaP]/[r: MaxKaP]<br>
-								<span style='color: #eee5c8; text-decoration: none;' title='KE addieren'>[r: macroLink(plus, "changeEnergie@this", "", "kePlus")]</span>
-								&nbsp;
-								<span style='color: #eee5c8; text-decoration: none;' title='KE subtrahieren'>[r: macroLink(minus, "changeEnergie@this", "", "keMinus")]</span>
-							</td>
-							<td width='152'>
-								<table style="background-image: url('[r: tblImage("mainTheme",39)]'); background-repeat: no-repeat; border-spacing: 0px;" width='152'>
-									<tr>
-									[h,if(MaxKaP <=0): barMaxKaP = 1; barMaxKaP = MaxKaP]
-									[h: barKE = round(1.5 * (KaP / (barMaxKaP / 100)))]
-										<td style="background-image: url('[r: tblImage("mainTheme",43)]'); background-repeat: no-repeat; height: 33; padding: 0px;" width="[r: barKE]">						
-										</td>
-										<td style='padding: 0px;'>
-											&nbsp;
-										</td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-					</table>};{}]
+					<div class="energyBar" title="Karmalpunkte">
+						[h,if(MaxKaP <=0): barMaxKaP = 1; barMaxKaP = MaxKaP]
+						[h: barKE = round(1.5 * (KaP / (barMaxKaP / 100)))]
+						[h: imageLEBarEmpty = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/bar.png")]
+						[h: imageKarmaBar = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/barKarma.png")]
+
+						<!-- These inline styles are neede cause they are dynamic -->
+						<div style="background-image: url('[r:imageLEBarEmpty]'); width: 150px; height: 33px; overflow: hidden; position: relative">
+							<div style="background-image: url('[r: imageKarmaBar]'); height: 33px; width: [r: barKE];"></div>
+							<div class="energyBarText">[r: KaP]/[r: MaxKaP]</div>
+						</div>
+						<div class="energyBarModifiers">
+							[r: macroLink(plus, "changeEnergie@this", "", "kePlus")]
+							[r: macroLink(minus, "changeEnergie@this", "", "keMinus")]
+						</div>
+					</div>};{}]
 				</div>
 			</div>
 			<div>
