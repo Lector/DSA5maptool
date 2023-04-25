@@ -11,8 +11,6 @@
 ]
 
 [h: PlayerOpt = setStrProp(PlayerOpt, "openFrame", "1")]
-[h: plus = strformat("<image src='%s' title='Erhöhen' border='0'/>", data.getStaticData("com.github.lector.dsa5maptool", "/public/images/misc/plus.png"))]
-[h: minus = strformat("<image src='%s' title='Senken' border='0'/>", data.getStaticData("com.github.lector.dsa5maptool", "/public/images/misc/minus.png"))]
 
 [frame5("charbogen", "width=525; height=700; temporary=1; input=0; noframe=0"):{
 <html>
@@ -31,14 +29,7 @@
 				<a href='[r: macroLinkText("gotoToken@this", "", currentToken())]' title='Zum Charaktertoken wechseln'>[r: getName()]</a>
 			</div>
 
-			<div class="charbogenNav">
-				<image src='[r: tableImage("mainTheme", 5)]'></image>
-				<a href="[r: macroLinkText("charbogenKampf@this")]"><image src='[r: tableImage("mainTheme", 6)]' alt="Kampfbogen aufrufen"></image></a>
-				<a href="[r: macroLinkText("charbogenTalente@this", "", "Koerper")]"><image src='[r: tableImage("mainTheme", 8)]' alt="Talentbogen aufrufen"></image></a>
-				<a href="[r: macroLinkText("charbogenZauber@this")]"><image src='[r: tableImage("mainTheme", 10)]'alt="Zauberbogen aufrufen"></image></a>
-				<a href="[r: macroLinkText("charbogenLiturgien@this")]"><image src='[r: tableImage("mainTheme", 12)]' alt="Liturgiebogen aufrufen"></image></a>
-				<a href="[r: macroLinkText("charbogenNotizen@this")]"><image src='[r: tableImage("mainTheme", 14)]' alt="Notizen &amp; Handouts aufrufen"></image></a>
-			</div>
+			[r,macro("charsheetNavigation@this"): json.append(currentToken(), 0)]
 		</div>
 		
 		<div id="content">
