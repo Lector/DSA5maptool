@@ -42,8 +42,12 @@
 
     <!-- These inline styles are neede cause they are dynamic -->
     <div style="background-image: url('[r:imageBarEmpty]'); width: 150px; height: 33px; overflow: hidden; position: relative">
-        <div style="background-image: url('[r: imageBar]'); height: 33px; width: [r: barLE];"></div>
-        <div class="energyBarText">[r: currentValue]/[r: maxValue]</div>
+        <div style="background-image: url('[r: imageBar]'); height: 33px; width: [r: barLE]; position: absolute"></div>
+        <table class="energyBarText">
+            <tr>
+                <td>[r: currentValue] / [r: maxValue]</td>
+            </tr>
+        </table>
     </div>
     <div class="energyBarModifiers">
         [r: macroLink(plus, "changeEnergie@this", "", increaseAction)]
