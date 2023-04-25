@@ -53,7 +53,7 @@
 						&nbsp;
 					</td>
 					<td style="background-image: url('[r: tblImage("mainTheme",21)]'); background-repeat: no-repeat; height: 90;" width='471'>
-						[r,macro("eigLeiste@this"): ""]
+						[r,macro("eigLeiste@this"): currentToken()]
 					</td>
 					<td>
 						&nbsp;

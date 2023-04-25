@@ -42,9 +42,7 @@
 		</div>
 		
 		<div id="content">
-			<div id="leisteEigenschaften" style="display: flex;flex-direction: column;align-items:center; justify-content:center;">
-				[r,macro("eigLeiste@this"): ""]
-			</div>
+			[r,macro("eigLeiste@this"): currentToken()]
 			<div class="row-container">
 				<div class="highlight column-container">
 					<div class="highlightHeading">WERTE</div>
@@ -96,17 +94,15 @@
 					<!-- Zeige Astralbalken, falls nötig -->
 					[r,if(MaxAsP > 0),Code:{
 						[r, macro("energyBar@this"): json.append(currentToken(), "ae")]
-					};{}]
+					}]
 
 					<!-- Zeige Karmabalken, falls nötig -->
 					[r,if(MaxKaP > 0),Code:{
 						[r, macro("energyBar@this"): json.append(currentToken(), "ke")]
-					};{}]
+					}]
 				</div>
 			</div>
-			<div>
-				[r,macro("charbogenTraitsDisplay@this"): ""]
-			</div>
+			[r,macro("charbogenTraitsDisplay@this"): currentToken()]
 		</div>
 		<div id="footer"></div>
 	</body>

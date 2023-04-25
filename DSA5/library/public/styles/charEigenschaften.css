@@ -11,7 +11,7 @@
 }
 
 body {
-    font-size: 12pt;
+    font-size: 11pt;
     color: #eee5c8;
     background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/background.png");
     /* border: 1px dotted red; */
@@ -37,8 +37,9 @@ body {
     align-items:center;
     justify-content:center;
     font-weight: bold;
-    font-size: 22pt;
+    font-size: 16pt;
     text-align: center;
+    margin-top: 6px;
 
     grid-column-start: 2;
     grid-column-end: 3;

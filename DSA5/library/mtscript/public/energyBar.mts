@@ -3,9 +3,6 @@
 
 [h: switchToken(tokenId)]
 
-[h: plus = strformat("<image src='%s' title='Erhöhen' border='0'/>", data.getStaticData("com.github.lector.dsa5maptool", "/public/images/misc/plus.png"))]
-[h: minus = strformat("<image src='%s' title='Senken' border='0'/>", data.getStaticData("com.github.lector.dsa5maptool", "/public/images/misc/minus.png"))]
-
 [h,switch(barIdentifier), Code:
 	case "le": {
         [h: title = "Lebenspunkte"]
@@ -33,6 +30,9 @@
 
 		};
 ]
+
+[h: plus = strformat("<image src='%s' title='%{title} erhöhen' border='0'/>", data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/plus.png"))]
+[h: minus = strformat("<image src='%s' title='%{title} senken' border='0'/>", data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/minus.png"))]
 
 <div class="energyBar" title="[r: title]">
     [h,if(maxValue <=0): barMaxLeP = 1; barMaxLeP = maxValue]

@@ -53,7 +53,7 @@
 						&nbsp;
 					</td>
 					<td style="background-image: url('[r: tblImage("mainTheme",21)]'); background-repeat: no-repeat; height: 90;" width='471'>
-						[r,macro("eigLeiste@this"): ""]
+						[r,macro("eigLeiste@this"): currentToken()]
 					</td>
 					<td>
 						&nbsp;
@@ -92,11 +92,11 @@
 					</td>
 				</tr>
 			</table>	
-			[r,macro("charbogenRuestung@this"): ""]
-			[r,macro("charbogenNahkampf@this"): ""]
+			[r,macro("charbogenRuestung@this"): currentToken()]
+			[r,macro("charbogenNahkampf@this"): currentToken()]
 			[r,if(json.length(Fernkampfwaffen) > 0),Code:
 			{
-				[macro("charbogenFernkampf@this"): ""]
+				[macro("charbogenFernkampf@this"): currentToken()]
 			}]
 			<table style='border-spacing: 0px; margin-top: 13px;' width='500'>
 				<tr>

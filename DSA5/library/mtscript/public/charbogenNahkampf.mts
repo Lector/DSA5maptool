@@ -1,14 +1,4 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
+[h: switchToken(arg(0))]
 
 <table style='border-spacing: 0px; margin-top: 15px;' width='500'>
 	<tr>
