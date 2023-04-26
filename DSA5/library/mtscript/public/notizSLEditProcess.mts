@@ -53,8 +53,7 @@
 
 [h,macro("noticeSelf@lib:com.github.lector.dsa5maptool"): "notizSLEdit"]
 [h,if(isGM() == 0), Code:
-	{
-		[h,macro("sendToGM@lib:com.github.lector.dsa5maptool"): ausgabe]
-	};{}
-]
+{
+	[h: sendTo("Gm", ausgabe)]
+}]
 [h,macro("refreshFrame@lib:com.github.lector.dsa5maptool"): ""]

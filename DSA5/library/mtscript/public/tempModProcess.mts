@@ -92,5 +92,5 @@
 </table>",
 data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/hourglass.png"), msgText))]
 
-[h,macro("sendToSelfGM@this"): ausgabe]
+[h: sendTo("GmAndSelf", ausgabe)]
 [h,macro("refreshFrame@this"): ""]

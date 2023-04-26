@@ -1,7 +1,6 @@
-[h: defineFunction("sendToPublic", "sendToPublic@this")]
-[h: defineFunction("sendToGM", "sendToGM@this")]
-[h: defineFunction("sendToSelfGM", "sendToSelfGM@this")]
-[h: defineFunction("sendToSelf", "sendToSelf@this")]
+[h: defineFunction("chatAvatar", "chatAvatar@this")]
+[h: defineFunction("getGMNames", "getGMNames@this")]
+[h: defineFunction("sendToUsers", "sendToUsers@this")]
 [h: defineFunction("sendTo", "sendTo@this")]
 
 [h: defineFunction("exposeView", "exposeView@this")]
