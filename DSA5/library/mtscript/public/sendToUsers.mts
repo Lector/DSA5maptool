@@ -13,7 +13,6 @@
 	[h: myContent = content]
 	[h: find = strfind(content, "<recipients ids='([^']+(,\\s*[^']+)*)'>([\\s\\S]*?)</recipients>")]
 	[h: findCount = getFindCount(find)]
-	[h: broadcast("Found "+findCount+" output restrictions", "self")]
 	[h,for(i, 1, findCount+1),Code:{
 		[h: groupCount = getGroupCount(find)]
 		[h: match = getGroup(find, i, 0)]
