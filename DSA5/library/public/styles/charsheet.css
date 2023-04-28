@@ -7,7 +7,7 @@
 
 * {
     /* outline: 1px dotted red; */
-    font-family: sans-serif; /* Crete Round, Cinzel*/
+    font-family: "aclonica", sans-serif; /* Crete Round, Cinzel*/
 }
 
 body {
@@ -230,9 +230,11 @@ ul {
 }
 
 .energyBarText {
-    width: 150px;
-    height: 33px;
     position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: default;
 }
 
 .energyBarText tr td {
