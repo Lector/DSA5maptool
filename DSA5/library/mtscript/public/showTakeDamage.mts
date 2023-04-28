@@ -1,4 +1,5 @@
 [h: params = arg(0)]
+[h: tok = json.get(params, "Token")]
 [h: chat = json.get(params, "Chat")]
 [h: baseDamage = json.get(params, "BaseDamage")]
 [h: rolledDamage = json.get(params, "RolledDamage")]
@@ -58,16 +59,22 @@
 			</td>
 		</tr>
 	</table>
-</td>
+</td>",
+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/sufferDamage.png"))]
+
+[h: undoIcon = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/undo.png")]
+[h: undoMacro = encode(undoMacro)]
+[h: undo = strformat("
 <td style='margin-left: 12px' valign=middle>
 	<form action='%{undoLink}' method='json'>
-		<input type='submit' value='<html><img height=24 width=24 src=%s/></html>'/>
-		<input type='hidden' name='undo' value='%s'/>
+		<input type='submit' value='<html><img height=24 width=24 src=%{undoIcon}/></html>'/>
+		<input type='hidden' name='undo' value='%{undoMacro}'/>
 		<input type='hidden' name='chat' value='%{chat}'/>
-		<input type='hidden' name='token' value='%s'/>
+		<input type='hidden' name='token' value='%{tok}'/>
 	</form>
-</td>",
-data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/sufferDamage.png"),
-data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/undo.png"), encode(undoMacro), currentToken())]
+</td>")]
+[h: undo = onlyFor(undo, json.merge(getGMNames(), getOwners(tok)))]
+
+[h: output = output + undo]
 
 [h: macro.return = output]

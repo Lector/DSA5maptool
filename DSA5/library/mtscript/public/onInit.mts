@@ -1,5 +1,6 @@
 [h: defineFunction("chatAvatar", "chatAvatar@this")]
 [h: defineFunction("getGMNames", "getGMNames@this")]
+[h: defineFunction("onlyFor", "onlyFor@this")]
 [h: defineFunction("sendToUsers", "sendToUsers@this")]
 [h: defineFunction("sendTo", "sendTo@this")]
 

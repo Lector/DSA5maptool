@@ -17,7 +17,8 @@
 	};
 	case "4": {
 		[target = "Self"]
-	}
+	};
+	default: {}
 ]
 
 [h,switch(target), Code:

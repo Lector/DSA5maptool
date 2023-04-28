@@ -136,7 +136,9 @@ skillRollTitle("Pflanzenkunde"), data.getStaticData("com.github.lector.dsa5mapto
 		[h: krautImage = strformat("<img style='vertical-align: middle;' src='%s'/>", getTokenImage(50, krautToken, map))]
 		[h: krautName = getName(krautToken, map)]
 		[h: link = strformat("https://ulisses-regelwiki.de/suche.html?keywords=%s", replace(krautName, " ", "+"))]
-		[h: krautLink = strformat("<a style='font-weight: bold; color: #441e13;' href='%{link}'>%{krautName}</a>")]
+		[h: gms = getGMNames()]
+		[h: krautLink = 
+			onlyFor(strformat("<a style='font-weight: bold; color: #441e13;' href='%{link}'>"), gms) + krautName + onlyFor("</a>",gms)]
 	}]
 	<!-- Hier bauen wir unseren Ergebnis-String auf indem wir Anwendungen, Bild und Name aneinanderheften -->
 	[h: resString = resString + strformat("
@@ -144,7 +146,7 @@ skillRollTitle("Pflanzenkunde"), data.getStaticData("com.github.lector.dsa5mapto
 		<tr>
 			<td>Es wurde <b>%{anw} x </b></td>
 			<td>%{krautImage}</td>
-			<td>%{krautName} in <b>%{suchDauer} Stunden</b> gefunden.</td>
+			<td>%{krautLink} in <b>%{suchDauer} Stunden</b> gefunden.</td>
 		</tr>
 	</table>")]
 }]
