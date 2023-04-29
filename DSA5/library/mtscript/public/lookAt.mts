@@ -3,13 +3,13 @@
 
 [h,token(from),Code:
 {
-	[h: fromX = getTokenX()]
-	[h: fromY = getTokenY()]
+	[h: fromX = getTokenX() + getTokenWidth() / 2.0]
+	[h: fromY = getTokenY() + getTokenHeight() / 2.0]
 }]
 [h,token(to),Code:
 {
-	[h: toX = getTokenX()]
-	[h: toY = getTokenY()]
+	[h: toX = getTokenX() + getTokenWidth() / 2.0]
+	[h: toY = getTokenY() + getTokenHeight() / 2.0]
 }]
 
 [h: x = toX - fromX]
@@ -23,4 +23,6 @@
 	[h: y = y / len]
 };{}]
 
-[h: macro.return = json.set("{}", "X", x, "Y", y)]
+[h: vector = json.set("{}", "X", x, "Y", y)]
+
+[h: macro.return = vector]

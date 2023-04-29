@@ -10,7 +10,7 @@
 	[h: smoothed = smoothPath(macro.args))]
 	[h: from = json.get(smoothed, json.length(smoothed) - 2)]
 	[h: to = json.get(smoothed, json.length(smoothed) - 1)]
-	[h,if(from == to),Code:
+	[h,if(from == to && json.length(macro.args) >= 2),Code:
 	{
 		[h: from = json.get(macro.args, json.length(macro.args) - 2)]
 		[h: to = json.get(macro.args, json.length(macro.args) - 1)]

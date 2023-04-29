@@ -50,6 +50,7 @@
 	[h,if(getLibProperty("OptFacing", "com.github.lector.dsa5maptool") != 0 && hasIni == 1),Code:
 	{
 		[h: vector = lookAt(currentToken(), target)]
+		[h: broadcast(vector)]
 		[h: direction = math.atan2(-json.get(vector, "Y"), json.get(vector, "X"))]
 		[h: setTokenFacing(round(direction), currentToken())]
 	}]
