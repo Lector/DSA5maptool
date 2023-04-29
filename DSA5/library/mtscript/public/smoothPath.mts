@@ -1,8 +1,8 @@
 [h: path = arg(0)]
+[h: tolerance = arg(1)]
 
 [h: firstIndex = 0]
 [h: lastIndex = json.length(path) - 1]
-[h: tolerance = 30]
 [h: simplified = json.append("[]", json.get(path, firstIndex))]
 
 <!-- Der Algorithmus ist bewusst so ausgelegt dass er nur das ENDE des Pfades glättet. Das liegt daran dass dieses Skript nur für die Richtungsbestimmung da ist -->
@@ -31,6 +31,7 @@
         [h,if(distanceSquared > maxDistanceSqr): maxDistanceSqr = distanceSquared]
         [h,if(distanceSquared > maxDistanceSqr): maxDistanceIndex = j]
     }]
+    
     [h, if(maxDistanceSqr > sqr(tolerance)), Code:
     {
         [h: simplified = json.append(simplified, json.get(path, maxDistanceIndex))]
