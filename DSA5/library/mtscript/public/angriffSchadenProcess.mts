@@ -1,18 +1,7 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
-
-[h: uebergabe = arg(0)]
-[h: waffe = arg(1)]
-[h: target = arg(2)]
+[h: switchToken(arg(0))]
+[h: uebergabe = arg(1)]
+[h: waffe = arg(2)]
+[h: target = arg(3)]
 
 [h: basis = json.get(uebergabe, "basis")]
 [h: spezial = json.get(uebergabe, "spezial")]

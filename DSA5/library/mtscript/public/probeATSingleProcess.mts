@@ -1,16 +1,5 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
-
 [h: uebergabe = arg(0)]
+[h: switchToken(json.get(uebergabe, "token"))]
 [h: waffe = arg(1)]
 [h: target = arg(2)]
 
@@ -21,4 +10,4 @@
 [h,if(technik == "Raufen" || technik == ""): tabelle = "patzerWaffenlos"; tabelle = "patzerNahkampf"]
 [h: uebergabe = json.set(uebergabe, "patzerTabelle", tabelle)]
 [h: uebergabe = json.set(uebergabe, "pruefreroll", hasTrait("Vorteile", "Waffenbegabung ("+technik+")"))]
-[h: angriffSchadenProcess(uebergabe, waffe, target)]
+[h: angriffSchadenProcess(currentToken(), uebergabe, waffe, target)]

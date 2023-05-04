@@ -57,7 +57,7 @@
 [h,if(groesse != 0): modtext = modtext + modReason(groesse, "wegen winzigem Gegner")]
 [h: mod = mod + groesse]
 
-[h: beidhaendig = json.get(uebergabe, "beidhaendig")]
+[h: beidhaendig = json.get(waffe, "Wield")]
 [h,if(beidhaendig == ""): beidhaendig = 0]
 [h,if(beidhaendig != 0): modtext = modtext + modReason(beidhaendig, " wegen beidhaendigem Kampf")]
 [h: mod = mod + beidhaendig]
