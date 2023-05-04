@@ -28,4 +28,4 @@
 [h: waffe = resolveFK(getFernkampfwaffe(FKWaffe))]
 [h: tp = json.get(waffe, "TP")]
 [h: uebergabe = json.set(uebergabe, "tp", tp)]
-[h: angriffSchadenProcess(uebergabe, waffe, target)]
+[h: angriffSchadenProcess(currentToken(), uebergabe, waffe, target)]
