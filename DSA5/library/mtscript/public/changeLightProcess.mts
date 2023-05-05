@@ -29,11 +29,14 @@
 	[h: value = startsWith(lname, lightName)]
 	[h,if(lightName == ""): value = 0]
 	[h: setLight("DSA", lname, value)]
-	[h,if(startsWith(lname, "Dunkelheit") == 1 || startsWith(lname, "Bann des Lichts") == 1): isDark = 1; isDark = 0]
-	[h,if(isDark == 1 && value == 1): darkRadius = max(darkRadius, json.get(light, "max range"))]
+	[h,if(value != 0),Code:{
+		[h: segments = json.get(light, "light segments")]
+		[h: firstSegment = json.get(segments, 0)]
+		[h,if(json.get(firstSegment, "lumens") < 0): darkRadius = max(darkRadius, json.get(light, "max range"))]
+	}]
 }]
 
-[h,if(darkRadius == 0): setSightType(sightForTypus(Typus)); setSightType("Dunkelsicht Radius "+darkRadius)]
+[h,if(darkRadius == 0): setSightType(sightForTypus(Typus)); setSightType("Dunkelsicht Radius " + darkRadius)]
 
 [h: exposeView(currentToken())]
 
