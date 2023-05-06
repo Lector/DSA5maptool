@@ -78,7 +78,7 @@
 					[h: mounts = getTokens("json", json.set("{}", "propertyType", "Basic"))]
 				};
 				{
-					[h: mounts = getTokens("json", json.set("{}", "propertyType", "Basic", "owned", getOwners()))]
+					[h: mounts = getTokens("json", json.set("{}", "propertyType", "Basic", "owned", "["+getPlayerName()+"]"))]
 					[h: mounts = json.union(mounts, getTokens("json", json.set("{}", "propertyType", "Basic", "owned", "byall")))]
 				}]
 				[h,if(Reittier != "" && json.contains(mounts, Reittier) == 0): mounts = json.append(mounts, Reittier)]
