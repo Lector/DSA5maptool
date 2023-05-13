@@ -3,37 +3,42 @@
 [h: target = arg(0)]
 [h: content = arg(1)]
 
-[h,switch(target), Code:
+[h: player = getPlayerName()]
+
+[h,switch(target),Code:
 	case "1": {
-			[
-				sendToPublic(content, tokenID)
-			]
-		};
+		[target = "Public"]
+	};
 	case "2": {
-			[
-				sendToGM(content, tokenID)
-			]
-		};
+		[target = "Gm"]
+	};
 	case "3": {
-			[
-				sendToSelfGM(content, tokenID)
-			]
-		};
+		[target = "GmAndSelf"]
+	};
 	case "4": {
-			[
-				sendToSelf(content, tokenID)
-			]
-		};
+		[target = "Self"]
+	};
+	default: {}
+]
+
+[h,switch(target), Code:
 	case "Public": {
-		[sendToPublic(content, tokenID)]
+		[recipients = getAllPlayerNames("json")]
+		[visibility = ""]
 	};
 	case "Gm": {
-		[sendToGM(content, tokenID)]
+		[recipients = getGMNames()]
+		[visibility = "SL"]
 	};
 	case "GmAndSelf": {
-		[sendToSelfGM(content, tokenID)]
+		[recipients = getGMNames()]
+		[h,if(json.contains(recipients, player) == 0): recipients = json.append(recipients, player)]
+		[visibility = "SL & Privat"]
 	};
 	case "Self": {
-		[sendToSelf(content, tokenID)]
-	}
+		[recipients = json.append("[]", player)]
+		[visibility = "Privat"]
+	};
 ]
+
+[h: sendToUsers(content, recipients, visibility)]

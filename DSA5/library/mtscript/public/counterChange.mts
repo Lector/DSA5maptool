@@ -42,11 +42,5 @@ data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/counter
 
 [h: ausgabe = border(titel, ausgabe)]
 
-[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction","com.github.lector.dsa5maptool") == 1), Code:
-	{
-		[h,macro("sendToGM@lib:com.github.lector.dsa5maptool"): ausgabe]
-	};
-	{
-		[h,macro("sendToPublic@lib:com.github.lector.dsa5maptool"): ausgabe]
-	}
-]
+[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction","com.github.lector.dsa5maptool") == 1): recipient = "Gm"; recipient = "Public"]
+[h: sendTo(recipient, ausgabe)]

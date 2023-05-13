@@ -107,14 +107,9 @@
 </table>",
 data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/initiative.png"), iniColor, aktWert, modColor, modOutput, 1, resultDice, result))] 
 
-[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "com.github.lector.dsa5maptool") == 1), Code:
-	{
-		[h,macro("sendToGM@this"): ausgabe]
-	};
-	{
-		[h,macro("sendToPublic@this"): ausgabe]
-	}
-]
+[h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction","com.github.lector.dsa5maptool") == 1): recipient = "Gm"; recipient = "Public"]
+[h: sendTo(recipient, ausgabe)]
+
 [h: VTinKR = 0]
 [h: addToINI = result + (INI / 100)]
 [h: addToInitiative(0, addToINI)]

@@ -215,16 +215,6 @@ leRegColor, leTitle, leRegGesamt, aeRegColor, aeTitle, aeRegGesamt, keRegColor, 
 
 [h: ausgabe = border("Regeneration", ausgabe)]
 
-[h,switch(chat), Code:
-	case "1": {
-			[h,macro("sendToPublic@this"): ausgabe]
-		};
-	case "2": {
-			[h,macro("sendToGM@this"): ausgabe]
-		};
-	case "3": {
-			[h,macro("sendToSelfGM@this"): ausgabe]
-		}
-]
+[h: sendTo(chat, ausgabe)]
 [h: checkZustand(currentToken())]
 [h,macro("refreshFrame@this"): ""]

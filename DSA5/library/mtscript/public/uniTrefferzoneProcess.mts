@@ -17,4 +17,4 @@
 	</table>
 ", data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/target.png"), zone))]
 
-[h,macro("sendToPublic@lib:com.github.lector.dsa5maptool"): ausgabe]
+[h: sendTo("Public", ausgabe)]

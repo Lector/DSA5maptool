@@ -134,6 +134,17 @@ technikName != "Schilde" &&
 technikName != "" &&
 beidhaendig == 0): pa = pa - 4]
 
+<!-- We save the mod for the wielding in the weapon if the owner uses hands -->
+[h: hands = usesHands(currentToken())]
+[h,if(hands != 0),Code:
+{
+	[h: bhkhaupt = -2 + getTraitLevel("KampfSF", "Beidhändiger Kampf")]
+	[h,if(hasTrait("Vorteile", "Beidhändig") != 1): fhand = -4; fhand = 0]
+	[h: bhkneben = bhkhaupt + fhand]
+	[h,if(id == HauptHand): waffe = json.set(waffe, "Wield", bhkhaupt)]
+	[h,if(id == NebenHand): waffe = json.set(waffe, "Wield", bhkneben)]
+}]
+
 [h,if(getState("Blutrausch") == 1): tpbonus = tpbonus + 4]
 
 [h,if(Schwarm == 1),Code:

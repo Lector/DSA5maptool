@@ -57,18 +57,20 @@
 	};{}]
 };{}]
 
-[h: rw1Mod = "[]"]
-[h: rw2Mod = "[]"]
-[h: rw3Mod = "[]"]
-[h: rw1Mod = json.append(rw1Mod, getReachMod(hWaffe, 1))]
-[h: rw2Mod = json.append(rw2Mod, getReachMod(hWaffe, 2))]
-[h: rw3Mod = json.append(rw3Mod, getReachMod(hWaffe, 3))]
-[h: rw1Mod = json.append(rw1Mod, getReachMod(nWaffe, 1))]
-[h: rw2Mod = json.append(rw2Mod, getReachMod(nWaffe, 2))]
-[h: rw3Mod = json.append(rw3Mod, getReachMod(nWaffe, 3))]
-[h: rw1Mod = json.append(rw1Mod, json.get(rw1Mod, 0) + " / " + json.get(rw1Mod, 1))]
-[h: rw2Mod = json.append(rw2Mod, json.get(rw2Mod, 0) + " / " + json.get(rw2Mod, 1))]
-[h: rw3Mod = json.append(rw3Mod, json.get(rw3Mod, 0) + " / " + json.get(rw3Mod, 1))]
+[h: weapons = "[]"]
+[h: hands = usesHands(currentToken())]
+[h,if(hands != 0),Code:
+{
+	[h: weapons = json.append(weapons, json.set(hWaffe, "Wield", "0"))]
+	[h,if(HauptHand != NebenHand),Code:
+	{
+		[h: weapons = json.append(weapons, nWaffe)]
+		[h: weapons = json.append(weapons, json.append("[]", hWaffe, nWaffe))]
+	}]
+};
+{
+	[h,foreach(weapon, Nahkampfwaffen): weapons = json.append(weapons, resolveNK(weapon))]
+}]
 
 [h: actionLink = macroLinkText("probeATProcess@this", "")]
 [dialog5("probe", "width=1125; height=731; temporary=1; closebutton=0; noframe=0"):{
@@ -77,27 +79,33 @@
 		<title>Nahkampf-Angriff</title>
 		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 		[h: js = ""]
-		[h,for(i,0,3,1,""): js = js + strformat("
-		function labelReach%{i}() {
-			document.getElementById('rw1').innerText = '%s';
-			document.getElementById('rw2').innerText = '%s';
-			document.getElementById('rw3').innerText = '%s';
-		}",
-		json.get(rw1Mod, i), json.get(rw2Mod, i), json.get(rw3Mod, i))]
-		[h: js = js + strformat("
+		[h,for(i, 0, json.length(weapons), 1, ""),Code:{
+			[h: weapon = json.get(weapons, i)]
+			[h,if(json.type(weapon) == "ARRAY"),Code:{
+				[h: rw1Mod = getReachMod(json.get(weapon, 0), 1) + " / " + getReachMod(json.get(weapon, 1), 1)]
+				[h: rw2Mod = getReachMod(json.get(weapon, 0), 2) + " / " + getReachMod(json.get(weapon, 1), 2)]
+				[h: rw3Mod = getReachMod(json.get(weapon, 0), 3) + " / " + getReachMod(json.get(weapon, 1), 3)]
+			};{
+				[h: rw1Mod = getReachMod(weapon, 1)]
+				[h: rw2Mod = getReachMod(weapon, 2)]
+				[h: rw3Mod = getReachMod(weapon, 3)]
+			}]
+			[h: js = js + strformat("
+			function labelReach%{i}() {
+				document.getElementById('rw1').innerText = '%s';
+				document.getElementById('rw2').innerText = '%s';
+				document.getElementById('rw3').innerText = '%s';
+			}",
+			rw1Mod, rw2Mod, rw3Mod)]
+		}]
+		[h: js = js + "
 		window.addEventListener('load', function(evt) {
-			labelReach0();
-		    document.getElementById('waffe1').addEventListener('change', function(evt) {
-		        labelReach0();
-		    });
-		    document.getElementById('waffe2').addEventListener('change', function(evt) {
-		        labelReach1();
-		    });
-		    document.getElementById('waffe3').addEventListener('change', function(evt) {
-		        labelReach2();
-		    });
-		}
-		)")]
+			labelReach0();"]
+		[h,for(i, 0, json.length(weapons), 1, ""): js = js + strformat("
+		    document.getElementById('waffe%{i}').addEventListener('change', function(evt) {
+		        labelReach%{i}();
+		    });")]
+		[h: js = js + "});"]
 		<script>[r:js]</script>
 	</head>
 	<body>
@@ -144,46 +152,20 @@
 							</div>
 						</td>
 						<td valign='top'>
-							<table style='border-spacing: 0px;' cellpadding='1'>
-								<tr>
-									[h: pt = 0]
-									[r,if(HauptHand != NebenHand),Code:{
-									<td>
-										<input type="radio" name="waffe" id="waffe1" value="1" checked="checked"/>
-									</td>
-									};{
-										[h: pt = 7]
-									}]
-									<td style='padding-top:[r:pt]px;'>
-										[r: json.get(hWaffe, "Name")]:
-									</td>
-									<td style='padding-left: 3px; padding-top:[r:pt]px;'>
-										[r: json.get(hWaffe, "AT")]
-									</td>
-								</tr>
-								<tr>
-									[r,if(HauptHand != NebenHand),Code:{
-									<td>
-										<input type="radio" name="waffe" id="waffe2" value="2"/>
-									</td>
-									<td>
-										[r: json.get(nWaffe, "Name")]:
-									</td>
-									<td style='padding-left: 3px;'>
-										[r: json.get(nWaffe, "AT")]
-									</td>
-								</tr>
+							<table style='border-spacing: 0px 0px;' cellpadding='1'>
+								[h: i = 0]
+								[r,foreach(weapon, weapons, ""),Code:
+								{
 								<tr>
 									<td>
-										<input type="radio" name="waffe" id="waffe3" value="3"/>
+										<input type="radio" name="waffe" id="waffe[r:i]" value="[r: encode(weapon)]" [r,if(i==0):"checked"]/>
 									</td>
-									<td colspan=2>
-										Beidhändiger Angriff<br>(nur Basismanöver)
+									<td>
+										[r,if(json.type(weapon) == "OBJECT"): strformat("%s (%s)", json.get(weapon, "Name"), json.get(weapon, "AT")); "Beidhändiger Angriff<br>(Nur Basismanöver)"]
 									</td>
-									};{
-									<input type="hidden" name="waffe" value="1"/>
-									}]
 								</tr>
+								[h: i = i + 1]
+								}]
 							</table>
 						</td>
 						<td width='20'>
@@ -314,7 +296,7 @@
 						<td style='padding-left: 1px;' valign='top'>
 							<table style='border-spacing: 0px;' cellpadding='1'>
 								[r,macro("probeVorteilPosition@this"): json.append(currentToken(), target, "at")]
-								[r,macro("probeCramped@this"): json.append(currentToken(), target, "at")]
+								[r,macro("probeCramped@this"): json.append(currentToken(), weapons, target, "at")]
 								[r,macro("probeWasser@this"): ""]
 							</table>
 						</td>
@@ -351,6 +333,7 @@
 				</table>
 				<input type="hidden" name="modMacro" value="probeATMods@this"/>
 				<input type="hidden" name="target" value="[r:target]"/>
+				<input type="hidden" name="token" value="[r: currentToken()]">
 			</form>
 		</div>
 	</body>

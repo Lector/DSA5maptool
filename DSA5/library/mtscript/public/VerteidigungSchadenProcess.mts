@@ -40,7 +40,7 @@
 "modMacroParams", uebergabe))]
 
 [h: defenseResult = rollDefense(currentToken(),
-	json.get(uebergabe, "waffe"),
+	decode(json.get(uebergabe, "waffe")),
 	0,
 	damage,
 	manoever,

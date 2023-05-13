@@ -52,7 +52,19 @@
 	[wname = json.get(hWaffe, "Name") + " &amp; " + json.get(nWaffe, "Name")]
 }]
 
-
+[h: weapons = "[]"]
+[h: hands = usesHands(currentToken())]
+[h,if(hands != 0),Code:
+{
+	[h: weapons = json.append(weapons, hWaffe)]
+	[h,if(HauptHand != NebenHand),Code:
+	{
+		[h: weapons = json.append(weapons, nWaffe)]
+	}]
+};
+{
+	[h,foreach(weapon, Nahkampfwaffen): weapons = json.append(weapons, resolveNK(weapon))]
+}]
 
 [h: hWaffeCheck = ""]
 [h: nWaffeCheck = ""]
@@ -123,40 +135,20 @@
 						</td>
 						<td valign='top'>
 							<table style='border-spacing: 0px;' cellpadding='1'>
+								[h: i = 0]
+								[r,foreach(weapon, weapons, ""),Code:
+								{
 								<tr>
-									[h: pt = 0]
-									[r,if(HauptHand != NebenHand),Code:{
 									<td>
-										<input type="radio" name="waffe" id="waffe1" value="1" [r:hWaffeCheck]/>
+										<input type="radio" name="waffe" id="waffe[r:i]" value="[r: encode(weapon)]" [r,if(i==0):"checked"]/>
 									</td>
-									};{
-										[h: pt = 7]
-									}]
-									<td style='padding-top:[r:pt]px;'>
-										[r: json.get(hWaffe, "Name")]:
-									</td>
-									<td style='text-align: right; padding-left: 3px; padding-top: [r:pt]px;'>
-										[r: json.get(hWaffe, "PA")]
+									<td>
+										[r: strformat("%s (%s)", json.get(weapon, "Name"), json.get(weapon, "PA"))]
 									</td>
 								</tr>
-								<tr>
-									[r,if(HauptHand != NebenHand),Code:{
-									<td>
-										<input type="radio" name="waffe" id="waffe2" value="2" [r:nWaffeCheck]/>
-									</td>
-									<td>
-										[r: json.get(nWaffe, "Name")]:
-									</td>
-									<td style='text-align: right; padding-left: 3px;'>
-										[r: json.get(nWaffe, "PA")]
-									</td>
-									};{
-									<input type="hidden" name="waffe" value="1"/>
-									}]
-								</tr>
+								[h: i = i + 1]
+								}]
 							</table>
-							<input type="hidden" name="PA1" value="[r: json.get(hWaffe, 'PA')]"/>
-							<input type="hidden" name="PA2" value="[r: json.get(nWaffe, 'PA')]"/>
 						</td>
 						<td width='20'>
 							&nbsp;
@@ -203,7 +195,7 @@
 						<td style='padding-left: 1px;' valign='top'>
 							<table style='border-spacing: 0px;' cellpadding='1'>
 								[r,macro("probeVorteilPosition@this"): json.append(currentToken(), attacker, "pa")]
-								[r,macro("probeCramped@this"): json.append(currentToken(), attacker, "pa")]
+								[r,macro("probeCramped@this"): json.append(currentToken(), weapons, attacker, "pa")]
 								[r,macro("probeWasser@this"): ""]
 							</table>
 						</td>

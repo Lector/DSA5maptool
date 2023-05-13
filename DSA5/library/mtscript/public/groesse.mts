@@ -6,7 +6,7 @@
 	case "Medium": value = 4;
 	case "Large": value = 5;
 	case "Huge": value = 6;
-	case "Gergantuan": value = 7;
+	case "Gargantuan": value = 7;
 	case "Colossal": value = 8;
 	default: value = 4
 ]

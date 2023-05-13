@@ -76,6 +76,7 @@ default: {[rs = json.get(ruestung, "RS")]}]
 [h: macro.return = json.set("{}",
 "ResultType", "takeDamage",
 "SubResults", subResults,
+"Token", tok,
 "BaseDamage", baseDamage,
 "Mod", mod,
 "RolledDamage", rolledDamage,

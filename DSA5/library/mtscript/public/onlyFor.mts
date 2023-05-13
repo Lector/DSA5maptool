@@ -1,0 +1,5 @@
+[h: content = arg(0)]
+[h: recipients = arg(1)]
+[h: list = ""]
+[h,foreach(recipient, recipients): list = listAppend(list, recipient)]
+[h: macro.return = strformat("<recipients ids='%{list}'>%{content}</recipients>")]

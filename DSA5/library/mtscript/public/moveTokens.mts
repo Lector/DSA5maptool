@@ -38,11 +38,11 @@
 					</tr>
 				</table>
 				<br>
-				[h: conditions = json.set("{}", "layer", "Token", "visible", "1")]
+				[h: conditions = json.set("{}", "layer", "Token")]
 				[h,if(isGM() == 0),Code:
 				{
 					[h: conditions = json.set(conditions, "owned", "self")]
-				};{}]
+				}]
 				[h: owned = getTokens("json", conditions)]
 				<input type='hidden' name='tokens' value='[r: owned]'/>
 				<table style='border-spacing: 0px; margin: 0px auto 0px auto;' cellpadding='1'>
@@ -54,7 +54,7 @@
 					<tr>
 						<td style="text-align: center;">
 							<table>
-								[r,foreach(tok, owned, ""),Code:
+								[r,foreach(tok, owned, ""),if(getVisible(tok) == 1 || isGM() == 1),Code:
 								{
 								[h: selected = getSelected()]
 								[h,if(isGM() == 0 && selected == "" && isOwnedByAll(tok) == 0):

@@ -1,12 +1,11 @@
-https://pixabay.com/[dialog("frameworkInfo", "width=406; height=446; temporary=1; input=0; noframe=1"):{
+[dialog5("frameworkInfo", "width=406; height=446; temporary=1; input=0; noframe=1"):{
 <html>
 	<head>
-		<title>
-			Regelsatz Info
-		</title>
+		<title>Regelsatz Info</title>
+		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 	</head>
-	<body style="background-image: url('[r: tblImage("misc",12)]'); font-size: 11pt; font-weight: bold; color: #87827d; text-align: center;">
-		<table style='border-spacing: 0px; margin-top: 100px;'>
+	<body style="background-image: url('[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/impressumBackground.png")]'); font-size: 11pt; font-weight: bold; color: #87827d; text-align: center;">
+		<table style='border-spacing: 0px; margin: 150px auto 0px auto;'>
 			<tr>
 				<td style='margin-right: 10px; margin-left: 10px; text-align: center; border-top: 1px solid #eee5c8; border-bottom: 1px solid #eee5c8; font-size: 16pt;'>
 					- DSA5-Regelsatz -
@@ -23,7 +22,7 @@ https://pixabay.com/[dialog("frameworkInfo", "width=406; height=446; temporary=1
 				<td>
 			</tr>
 		</table>
-		<table style='border-spacing: 0px; margin-top: 10px;'>
+		<table style='border-spacing: 0px; margin: 10px auto 10px auto;'>
 			<!-- <tr>
 				<td style='text-align: center;'>
 					Ulisses: <a style='color: #87827d; text-decoration: none; font-weight: normal;' href='http://www.ulisses-spiele.de'>http://www.ulisses-spiele.de</a>
@@ -45,8 +44,10 @@ https://pixabay.com/[dialog("frameworkInfo", "width=406; height=446; temporary=1
 					(Diskussion zum Regelsatz)
 				<td>
 			</tr>
+		</table>
+		<table style="border-spacing: 0px; margin: 10px 20px 0px 20px;">
 			<tr>
-				<td style='text-align: center; font-size: 9; margin-left: 20; margin-right: 20'>
+				<td style='text-align: center; font-size: 9;'>
 					Dieses Produkt wurde unter Lizenz erstellt. Das Schwarze Auge und sein Logo sowie Aventuria, Dere, Myranor, Riesland, Tharun, Uthuria, The Dark Eye und ihre Logos sind eingetragene Marken von Ulisses Medien und Spiele Distribution GmbH in Deutschland, den U.S.A. und anderen Ländern. Ulisses Spiele und sein Logo sind eingetragene Marken der Ulisses Medien und Spiele Distribution GmbH.
 
 Dieses Werk enthält Material, das durch Ulisses Spiele und/oder andere Autoren urheberrechtlich geschützt ist. Solches Material wird mit Erlaubnis im Rahmen der Vereinbarung über Gemeinschaftsinhalte für SCRIPTORIUM AVENTURIS verwendet.

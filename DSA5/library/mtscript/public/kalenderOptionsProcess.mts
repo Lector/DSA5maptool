@@ -9,7 +9,7 @@
 [h: moonphaseImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/moonphases/mada_29_off.png")]
 [h: clockImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/clock/clock_disabled.png")]
 
-[h: sendToSelf(moonphaseImage+" "+clockImage+" Uebergabe:'"+uebergabe+"'")]
+[h: sendTo("Self", moonphaseImage+" "+clockImage+" Uebergabe:'"+uebergabe+"'")]
 
 [h: idClock = findToken("Aktuelle Uhrzeit")]
 [h: mapClock = getCurrentMapName()]

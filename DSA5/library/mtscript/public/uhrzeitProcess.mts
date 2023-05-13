@@ -171,12 +171,10 @@
 [h: ausgabe = border("Aktuelle Uhrzeit", ausgabe)]
 
 [h,if(getStrProp(options, "uhrChat") == 1), code:
-	{
-		[h,macro("sendToPublic@lib:com.github.lector.dsa5maptool"): ausgabe]
-	};{}
-]
+{
+	[h: sendTo("Public", ausgabe)]
+}}
 [h,if(isFrameVisible("kalender") == 1), code:
-	{
-		[h,macro("kalenderMain@this"): ""]
-	};{}
-]
+{
+	[h,macro("kalenderMain@this"): ""]
+}]

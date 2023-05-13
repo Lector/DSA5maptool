@@ -1,37 +1,30 @@
 [h: switchToken(arg(0))]
-[h: target = arg(1)]
-[h: action = arg(2)]
+[h: weapons = arg(1)]
+[h: target = arg(2)]
+[h: action = arg(3)]
 
-[h: cramped1 = getCrampedMod(currentToken(), getNahkampfwaffe(HauptHand), target, action)]
-[h: cramped2 = getCrampedMod(currentToken(), getNahkampfwaffe(NebenHand), target, action)]
-
-[h: js = strformat("
-function labelCramped1() {
-	document.getElementById('cramped').innerText = '%{cramped1}';
-}
-function labelCramped2() {
-	document.getElementById('cramped').innerText = '%{cramped2}';
-}
-function labelCrampedDual() {
-	document.getElementById('cramped').innerText = '%{cramped1} / %{cramped2}';
-}
+[h: js = ""]
+[h,for(i, 0, json.length(weapons), 1, ""),Code:{
+	[h: weapon = json.get(weapons, i)]
+	[h,if(json.type(weapon) == "ARRAY"),Code:{
+		[h: mod = getCrampedMod(currentToken(), json.get(weapon, 0), target, action) + " / " + getCrampedMod(currentToken(), json.get(weapon, 1), target, action)]
+	};{
+		[h: mod = getCrampedMod(currentToken(), weapon, target, action)]
+	}]
+	[h: js = js + strformat("
+	function labelCramped%{i}() {
+		document.getElementById('cramped').innerText = '%{mod}';
+	}")]
+}]
+[h: js = js + "
 window.addEventListener('load', function(evt) {
-	if(document.getElementById('waffe1').checked){
-		labelCramped1();
-	}else{
-		labelCramped2();
-	}
-	document.getElementById('waffe1').addEventListener('change', function() {
-        labelCramped1();
-    });
-	document.getElementById('waffe2').addEventListener('change', function() {
-        labelCramped2();
-    });
-    document.getElementById('waffe3').addEventListener('change', function() {
-        labelCrampedDual();
-    });
-})
-")]
+	labelCramped0();"]
+[h,for(i, 0, json.length(weapons), 1, ""): js = js + strformat("
+	document.getElementById('waffe%{i}').addEventListener('change', function(evt) {
+		labelCramped%{i}();
+	});")]
+[h: js = js + "});"]
+
 <script>[r: js]</script>
 
 <tr>

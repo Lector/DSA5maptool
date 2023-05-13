@@ -55,26 +55,41 @@
 	<head>
 		<title>[r: dialogTitle]</title>
 		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
+		[h: js = "
+		function direct() {
+			document.getElementById('inputDirect').checked = true;
+		}
+		function rolled() {
+			document.getElementById('inputDie').checked = true;
+		}
+		window.addEventListener('load', function(evt) {
+			document.getElementById('direct').addEventListener('input', function(e) { direct(); });
+			document.getElementById('dieCount').addEventListener('change', function(e) { rolled(); });
+			document.getElementById('dieType').addEventListener('change', function(e) { rolled(); });
+			document.getElementById('dieBonus').addEventListener('input', function(e) { rolled(); });
+			document.getElementById('dieMalus').addEventListener('input', function(e) { rolled(); });
+		});"]
+		<script>[r: js]</script>
 	</head>
 	<body>
 		<div class="border">
 			<form action="[r:actionLink]">
 				[r: header(title)]
-				<table style='border-spacing: 0px; font-size: 11pt;'>
+				<table style='border-spacing: 0px;'>
 					<tr>
 						<td>
-							<input type='radio' name='eingabeTyp' value='0' checked='checked'>
+							<input type='radio' id='inputDirect' name='eingabeTyp' value='0' checked>
 						</td>
 						<td>
 							Direkteingabe:
 						</td>
 						<td style='padding-left: 5px;'>
-							<input type='text' name='direkteingabe' size='3' maxlength='3' value=''>
+							<input type='text' id='direct' name='direkteingabe' size='3' maxlength='3' value=''>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<input type='radio' name='eingabeTyp' value='1'>
+							<input type='radio' id='inputDie' name='eingabeTyp' value='1'>
 						</td>
 						<td>
 							Auswürfeln:
@@ -83,7 +98,7 @@
 							<table style='border-spacing: 0px;'>
 								<tr>
 									<td>
-										<select name='wAnzahl' size='1'>
+										<select name='wAnzahl' id="dieCount" size='1'>
 										<option selected='selected'>1</option>
 										<option>2</option>
 										<option>3</option>
@@ -111,7 +126,7 @@
 										W
 									</td>
 									<td>
-										<select name='wTyp' size='1'>
+										<select name='wTyp' id="dieType" size='1'>
 										<option>3</option>
 										<option>4</option>
 										<option selected='selected'>6</option>
@@ -128,7 +143,7 @@
 										+
 									</td>
 									<td>
-										<input type='text' name='wBonus' size='3' maxlength='3' value=''>
+										<input type='text' name='wBonus' id="dieBonus" size='3' maxlength='3' value=''>
 									</td>
 									<td>
 										&nbsp;
@@ -137,7 +152,7 @@
 										-
 									</td>
 									<td>
-										<input type='text' name='wMalus' size='3' maxlength='3' value=''>
+										<input type='text' name='wMalus' id="dieMalus" size='3' maxlength='3' value=''>
 									</td>
 								</tr>
 							</table>

@@ -16,8 +16,7 @@
 [h: currentLight = ""]
 [h: currentQS = ""]
 [h,if(json.length(currentLights) != 0),Code:{
-	[h: currentLightName = json.get(currentLights, 0)]
-	[h: currentLight = substring(currentLightName, 0, length(currentLightName) - 2)]
+	[h: currentLight = json.get(currentLights, 0)]
 	[h: hasCurrentLightQS = endsWith(substring(currentLight, 0, length(currentLight) - 1), "QS")]
 	[h,if(hasCurrentLightQS == 1),Code:{
 		[currentQS = substring(currentLight, length(currentLight)-1)]
@@ -34,8 +33,7 @@
 [h: qs = "[]"]
 [h,for(i, 0, json.length(dsalights)),Code:{
 	[h: light = json.get(dsalights, i)]
-	[h: origName = json.get(light, "name")]
-	[h: lname = substring(origName, 0, length(origName) - 2)]
+	[h: lname = json.get(light, "name")]
 	[h: hasQS = endsWith(substring(lname, 0, length(lname) - 1), "QS")]
 	[h,if(hasQS == 1): lname = substring(lname, 0, length(lname) - 4)]
 	[h,if(json.contains(lightnames, lname) == 0), Code:{
@@ -99,9 +97,13 @@
 				<table style='border-spacing: 0px; margin: 11px auto 8px auto;'>
 					<tr>
 						<td>
-							[h: button = tableImage("forms", 101)]
 							<button type="submit">
-								<img src="[r: button]"/>
+								<table>
+									<tr>
+										<td><img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/hand.png")]/></td>
+										<td>Jetzt ändern</td>
+									</tr>
+								</table>
 							</button>
 						</td>
 					</tr>
