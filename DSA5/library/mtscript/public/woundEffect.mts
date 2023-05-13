@@ -10,8 +10,8 @@
 [h,if(success > 0),Code:{
 	[h: bedingung = strformat("Da die Probe auf <b>Selbstbeherrschung (%{spec}) -%{wound}</b> gelungen ist ")]
 	[switch(zone):
-		case "Kopf": wundtext = strformat("konntest du %{wound} Stufe(n) Betäubung wiederstehen.");
-		case "Torso": wundtext = strformat("konntest du %{wound}W3+%{wound} zusätzliche SP abwenden.");
+		case "Kopf": wundtext = strformat("konntest du 1 Stufe Betäubung wiederstehen.");
+		case "Torso": wundtext = strformat("konntest du 1W3+1 zusätzliche SP abwenden.");
 		case "Linker Arm": wundtext = "konntest du das in der Hand gehaltene Objekt festhalten.";
 		case "Rechter Arm": wundtext = "konntest du das in der Hand gehaltene Objekt festhalten.";
 		case "Linkes Bein": wundtext = strformat("bleibst du stehen.");
@@ -23,13 +23,13 @@
 	[switch(zone),Code:
 		case "Kopf":
 		{
-			[wundtext = strformat("hast du %{wound} Stufe(n) Betäubung erhalten.")]
-			[Betaeubung = min(4, Betaeubung + wound)]
+			[wundtext = strformat("hast du 1 Stufe Betäubung erhalten.")]
+			[Betaeubung = min(4, Betaeubung + 1)]
 		};
 		case "Torso":
 		{
-			[loss = eval(wound + "d3+" + wound)]
-			[wundtext = strformat("hast du <span style='font-weight:bold' title='%{wound}W3+%{wound}'>%{loss} SP</span> extra bekommen.")]
+			[loss = eval("1d3+1")]
+			[wundtext = strformat("hast du <span style='font-weight:bold' title='1W3+1'>%{loss} SP</span> extra bekommen.")]
 			[LeP = LeP - loss]
 		};
 		case "Linker Arm":
