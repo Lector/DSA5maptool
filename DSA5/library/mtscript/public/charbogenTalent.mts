@@ -1,16 +1,6 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
+[h: switchToken(arg(0))]
+[h: group = arg(1)]
 
-[h: uebergabe = macro.args]
 <tr>
 	<td width='25'>
 		&nbsp;
@@ -38,7 +28,7 @@
 				</td>
 			</tr>
 		
-		[h: tBaum = eval(uebergabe)]
+		[h: tBaum = eval(group)]
 		[Foreach(tDaten, tBaum,""), CODE:
 		{
 			[h: tName = json.get(tDaten, "Talent")]
@@ -53,7 +43,7 @@
 			[h: tUebergabe = listAppend(tUebergabe, tEigenschaft2)]
 			[h: tUebergabe = listAppend(tUebergabe, tEigenschaft3)]
 			[h: tUebergabe = listAppend(tUebergabe, tWert)]
-			[h: tUebergabe = listAppend(tUebergabe, uebergabe)]
+			[h: tUebergabe = listAppend(tUebergabe, group)]
 			<tr>
 				<td></td>
 				<td style='padding-left: 5px;'>
@@ -94,7 +84,7 @@
 				</td>
 			</tr>
 		}]
-		[r,if(uebergabe == "Natur" && Typus == "Kulturschaffend"),Code:{
+		[r,if(group == "Natur" && Typus == "Kulturschaffend"),Code:{
 			<tr></tr>
 			<tr>
 				<td></td>

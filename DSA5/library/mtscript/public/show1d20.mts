@@ -2,7 +2,7 @@
 
 [h: success = json.get(params, "success")]
 [h: dice = json.get(params, "dice")]
-[h: propertiy = json.get(params, "property")]
+[h: property = json.get(params, "property")]
 [h: currentProperty = json.get(params, "currentProperty")]
 [h: quali = json.get(params, "quality")]
 [h: mod = json.get(params, "mod")]
@@ -66,13 +66,14 @@
 [h,if(quali < 0): qualiColor = "#a42b1e"]
 [h,if(mod > 0): modColor = "#1d5c2f"; modColor = "#441e13"]
 [h,if(mod < 0): modColor = "#a42b1e"]
+[h: propColor = propertyColor(currentProperty, property, "#441e13")]
 
 [h: ausgabe = strformat("
 	<td rowspan=3></td>
 	<td style='margin: 1px 4px 1px 0px;' colspan=1>
 		Wert:
 	</td>
-	<td style='margin: 1px 0px 1px 0px; text-align: right;'>
+	<td style='margin: 1px 0px 1px 0px; text-align: right; color: %{propColor};'>
 		%{currentProperty}
 	</td>
 	<td valign='middle' style='text-align: center; margin: 0px 14px 0px 14px;' rowspan=3>

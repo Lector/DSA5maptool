@@ -1,9 +1,0 @@
-[getLibProperty("testAONumber")]<br>
-[isNumber(getLibProperty("tesAOtNumber"))]<br>
-[getLibProperty("tesAOtNumber2")]<br>
-[isNumber(getLibProperty("tesAOtNumber2"))]<br>
-[getLibProperty("tesAOtString")]<br>
-[getLibProperty("tesAOtJsonArray")]<br>
-[json.type(getLibProperty("tesAOtJsonArray"))]<br>
-[getLibProperty("tesAOtJsonObject")]<br>
-[json.type(getLibProperty("tesAOtJsonObject"))]<br>

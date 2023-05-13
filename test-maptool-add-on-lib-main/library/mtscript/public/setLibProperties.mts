@@ -1,5 +1,0 @@
-[setLibProperty("testAONumber", 22)]
-[setLibProperty("testAONumber2",88.65)]
-[setLibProperty("testAOString", "this is a test")]
-[setLibProperty("testAOJsonArray", json.append("[]", 3 , 55, "test"))]
-[setLibProperty("testAOJsonObject", json.set("{}", "num1" , 55, "str1",  "test"))]

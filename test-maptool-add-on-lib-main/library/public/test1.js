@@ -1,1 +1,0 @@
-document.getElementById('test1').innerHTML += '<br>Testing JS!';	

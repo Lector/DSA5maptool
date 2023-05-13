@@ -46,16 +46,6 @@ button[type="submit"] table tr td {
     font-size: 14;
 }
 
-.debug {
-    border: 1px solid blue;
-}
-.debug tr {
-    border: 1px solid green;
-}
-.debug tr td {
-    border: 1px solid red;
-}
-
 .attribute-default {
     color: #eee5c8;
 }
@@ -106,35 +96,20 @@ button[type="submit"] table tr td {
 
 
 .panel {
-    margin-left: 28px;
     margin-top: 15px;
-    margin-right: 35px;
+    margin-left: 34px;
+    margin-right: 34px;
     border-spacing: 0px;
+    border: 20px solid red;
+    border-image-source: url("lib://com.github.lector.dsa5maptool/images/mainTheme/panelFrame.png");
+    border-image-slice: 35% 30%;
+    border-image-repeat: round;
+    border-collapse: separate;
+    word-wrap: break-word;
 }
 
-.panel-top {
-    background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/panelTop.png");
-    background-repeat: no-repeat;
-    height: 28;
-    width: 431;
-}
-
-.panel-middle {
-    background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/panelMiddle.png");
-    background-repeat: repeat-y;
-    padding-left: 10px;
-    padding-right: 10px;
-    height: 28;
-    font-weight: normal;
-}
-.panel-middle div {
+.panel tr td div {
     border-top: 1px solid #eee5c8;
     border-bottom: 1px solid #eee5c8;
-    padding: 3px 0px 3px 3px;
-}
-
-.panel-bottom {
-    background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/panelBottom.png");
-    background-repeat: no-repeat;
-    height: 28;
+    padding: 3px 10px 3px 10px;
 }

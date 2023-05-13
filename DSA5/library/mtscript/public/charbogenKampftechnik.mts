@@ -1,16 +1,6 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
+[h: switchToken(arg(0))]
+[h: group = arg(1)]
 
-[h: uebergabe = macro.args]
 <tr>
 	<td width='25'>
 		&nbsp;
@@ -42,7 +32,7 @@
 			</tr>
 		</table>
 		<table style='border-spacing: 0px; margin-top: 5px;' width='450'>						
-		[h: tBaum = eval(uebergabe)]
+		[h: tBaum = eval(group)]
 		[Foreach(tDaten, tBaum,""), CODE:
 		{
 			[h: tName = json.get(tDaten, "Name")]

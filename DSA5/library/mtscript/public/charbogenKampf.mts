@@ -1,14 +1,4 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
+[h: switchToken(arg(0))]
 
 [h: PlayerOpt = setStrProp(PlayerOpt, "openFrame", "2")]
 [h: plus = strformat("<image src='%s' border='0'/>", tableImage("misc", 6))]
@@ -33,12 +23,7 @@
 						&nbsp;
 					</td>
 					<td width='383'>
-						<a href="[r: macroLinkText("charbogenEigenschaften@this")]"><image src='[r: tableImage("mainTheme", 4)]' border="0" alt="Eigenschaftsbogen aufrufen"></image></a>
-						<image src='[r: tableImage("mainTheme", 7)]'></image>
-						<a href="[r: macroLinkText("charbogenTalente@this", "", "Koerper")]"><image src='[r: tableImage("mainTheme", 8)]' border="0" alt="Talentbogen aufrufen"></image></a>
-						<a href="[r: macroLinkText("charbogenZauber@this")]"><image src='[r: tableImage("mainTheme", 10)]' border="0" alt="Zauberbogen aufrufen"></image></a>
-						<a href="[r: macroLinkText("charbogenLiturgien@this")]"><image src='[r: tableImage("mainTheme", 12)]' border="0" alt="Liturgiebogen aufrufen"></image></a>
-						<a href="[r: macroLinkText("charbogenNotizen@this")]"><image src='[r: tableImage("mainTheme", 14)]' border="0" alt="Notizen &amp; Handouts aufrufen"></image></a>
+						[r,macro("charsheetNavigation@this"): json.append(currentToken(), 1)]
 					</td>
 					<td width='59'>
 						&nbsp;
@@ -53,7 +38,7 @@
 						&nbsp;
 					</td>
 					<td style="background-image: url('[r: tblImage("mainTheme",21)]'); background-repeat: no-repeat; height: 90;" width='471'>
-						[r,macro("eigLeiste@this"): ""]
+						[r,macro("eigLeiste@this"): currentToken()]
 					</td>
 					<td>
 						&nbsp;
@@ -92,11 +77,11 @@
 					</td>
 				</tr>
 			</table>	
-			[r,macro("charbogenRuestung@this"): ""]
-			[r,macro("charbogenNahkampf@this"): ""]
+			[r,macro("charbogenRuestung@this"): currentToken()]
+			[r,macro("charbogenNahkampf@this"): currentToken()]
 			[r,if(json.length(Fernkampfwaffen) > 0),Code:
 			{
-				[macro("charbogenFernkampf@this"): ""]
+				[macro("charbogenFernkampf@this"): currentToken()]
 			}]
 			<table style='border-spacing: 0px; margin-top: 13px;' width='500'>
 				<tr>
