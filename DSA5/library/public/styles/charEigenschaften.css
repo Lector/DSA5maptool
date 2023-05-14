@@ -14,6 +14,9 @@ body {
     font-size: 11pt;
     color: #eee5c8;
     background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/background.png");
+    display: grid;
+    grid-template-columns: 500px;
+    gap: 0;
     /* border: 1px dotted red; */
 }
 
@@ -27,7 +30,7 @@ body {
     grid-template-rows: 16px 46px 4px 46px 13px;
     background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/header.png");
     background-repeat: no-repeat;
-    background-size: 100% 122px;
+    background-size: 500px 122px;
     height: 122;
     margin: 0px;
 }
@@ -65,7 +68,7 @@ body {
 }
 
 .highlight {
-    border: 2px solid #eee5c8
+    border: 2px solid #eee5c8;
 }
 
 .highlightHeading {
@@ -84,9 +87,15 @@ body {
 
 .row-container {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row nowrap;
     justify-content: space-evenly;
+    justify-items: start;
+}
+
+.stat-table {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 6px;
 }
 
 .row-container div {
@@ -95,7 +104,7 @@ body {
 
 .column-container {
     display: flex;
-    flex-direction: column
+    flex-direction: column;
 }
 
 .energyBar {
@@ -119,7 +128,7 @@ body {
 .energyBarModifiers {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly
+    justify-content: space-evenly;
 }
 
 a {
@@ -152,14 +161,18 @@ input[type="text"] {
 #content {
     background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/content.png");
     background-repeat: repeat-y;
-    background-size: 100% auto;
+    background-size: contain;
+    padding-top: 15px;
+    padding-left: 34px;
+    padding-right: 34px;
+    margin: 0px;
 }
 
 #footer {
     background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/footer.png");
     background-repeat: no-repeat;
-    background-size: 100% 34px;
-    height: 34;
+    background-size: contain;
+    height: 34px;
 }
 
 #leisteEigenschaften {
@@ -167,8 +180,9 @@ input[type="text"] {
     background-repeat: no-repeat;
     background-size: 100% 90px;
     height: 90;
-    margin-left: 3%;
-    margin-right: 3%;
+    margin-top: -15px;
+    margin-left: -21px;
+    margin-right: -20px;
 }
 
 .hidden {
@@ -195,10 +209,10 @@ input[type="text"] {
 }
 
 .property-less {
-    color: #a42b1e
+    color: #a42b1e;
 }
 .property-greater {
-    color: #0099ff
+    color: #0099ff;
 }
 
 .title {
@@ -224,23 +238,18 @@ input[type="text"] {
 .panel {
     display: flex;
     flex-direction: column;
-    align-items:center;
-    justify-content:center;
-    margin-top: 15px;
-    margin-left: 34px;
-    margin-right: 34px;
     border-spacing: 0px;
-    border: 20px solid #eee5c8; /* Not shown but needed for the border-image*/
     border-image-source: url("lib://com.github.lector.dsa5maptool/images/mainTheme/panelFrame.png");
-    border-image-slice: 35% 30%;
+    border-image-slice: 24 35;
+    border-image-width: 24px 35px;
     border-image-repeat: round;
-    border-collapse: separate;
     word-wrap: break-word;
+    padding: 20px 6px;
 }
 
 .panel .heading {
     font-weight: bold;
-    width: 100%;
+    width: calc(100% - 20px);
     border-top: 1px solid #eee5c8;
     border-bottom: 1px solid #eee5c8;
     padding: 3px 10px 3px 10px;
