@@ -239,18 +239,19 @@ input[type="text"] {
     display: flex;
     flex-direction: column;
     border-spacing: 0px;
-    border-image-source: url("lib://com.github.lector.dsa5maptool/images/mainTheme/panelFrame.png");
-    border-image-slice: 24 35;
+    border-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/panelFrame.png") 24 35 round;
     border-image-width: 24px 35px;
-    border-image-repeat: round;
     word-wrap: break-word;
     padding: 20px 6px;
 }
 
-.panel .heading {
-    font-weight: bold;
+.heading {
+    font-family: "IM Fell DW Pica";
+    font-size: 11pt;
+    text-transform: uppercase;
     width: calc(100% - 20px);
     border-top: 1px solid #eee5c8;
     border-bottom: 1px solid #eee5c8;
     padding: 3px 10px 3px 10px;
+    margin-bottom: 6px;
 }

@@ -6,19 +6,19 @@
 
 <div class="panel">
 	<div class="heading">
-		<image src=[r: imageVorteile]></image>
+		Vorteile
 	</div>
 	<div>
 		[r,macro("charbogenTraits@this"): Vorteile]
 	</div>
 	<div class="heading">
-		<image src=[r: imageNachteile]></image>
+		Nachteile
 	</div>
 	<div>
 		[r,macro("charbogenTraits@this"): Nachteile]
 	</div>
 	<div class="heading">
-		<image src=[r: imageAllgemeineSF]></image>
+		Allgemeine Sonderfertigkeiten
 	</div>
 	<div>
 		[r,macro("charbogenTraits@this"): AllgemeineSF]

@@ -7,6 +7,7 @@
 [h: defineFunction("exposeView", "exposeView@this")]
 
 [h: defineFunction("inputFail", "inputFail@this")]
+[h: defineFunction("linkGoogleFonts", "linkGoogleFonts@this")]
 [h: defineFunction("border", "border@this")]
 [h: defineFunction("header", "header@this")]
 [h: defineFunction("subtext", "subtext@this")]

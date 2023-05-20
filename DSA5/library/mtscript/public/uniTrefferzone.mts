@@ -3,6 +3,7 @@
 <html>
 	<head>
 		<title>Trefferzone auswürfeln</title>
+		[r: linkGoogleFonts()]
 		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 	</head>
 	<div class="border">

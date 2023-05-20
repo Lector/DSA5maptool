@@ -183,6 +183,7 @@ window.addEventListener('load', function(evt) {
 <html>
 	<head>
 		<title>[r: typ]</title>
+		[r: linkGoogleFonts()]
 		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 		<script>[r: js]</script>
 	</head>
