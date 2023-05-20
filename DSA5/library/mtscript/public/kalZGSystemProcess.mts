@@ -3,7 +3,7 @@
 [h: options = getLibProperty("KalenderOpt", "com.github.lector.dsa5maptool")]
 [h,if(getStrProp(options, "kalender") == 0), code: 
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "kalender"]
+		[h,macro("inputFail@this"): "kalender"]
 	};{}
 ]
 

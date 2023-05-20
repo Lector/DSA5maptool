@@ -161,7 +161,7 @@
 					</tr>
 					<tr>
 						<td style='padding-right: 3px; height: 25'>
-							<span title='überanstrengung baut sich nach 6 Stunden Schlaf um 1 Stufe ab.'>überanstrengung:</span>
+							<span title='überanstrengung baut sich nach 6 Stunden Schlaf um 1 Stufe ab.'>Überanstrengung:</span>
 						</td>
 						[h: i=0]
 						[while(i<=4,""), Code:

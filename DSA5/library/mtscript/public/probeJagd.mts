@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -196,7 +196,7 @@ window.addEventListener('load', function(evt) {
 						<td>
 							<table class="probe">
 								<tr>
-									[r,macro("probeMod@lib:com.github.lector.dsa5maptool"): ""]
+									[r,macro("probeMod@this"): ""]
 								</tr>
 							</table>
 						</td>
@@ -213,7 +213,7 @@ window.addEventListener('load', function(evt) {
 					</tr>
 				</table>
 
-				[r,macro("probeChat@lib:com.github.lector.dsa5maptool"): currentToken()]
+				[r,macro("probeChat@this"): currentToken()]
 				<hr/>
 
 				<table style='margin: 0px auto 0px auto;'>
@@ -224,16 +224,16 @@ window.addEventListener('load', function(evt) {
 							</div>
 						</td>
 						<td valign=top style="white-space: nowrap;">
-							[r,macro("probeInfo@lib:com.github.lector.dsa5maptool"): json.append(currentToken(), skill1, spec1)]
+							[r,macro("probeInfo@this"): json.append(currentToken(), skill1, spec1)]
 						</td>
 						<td width=20>&nbsp;</td>
 						
 						<td valign=top style="white-space: nowrap;">
 							<table><tr>
-							[r,macro("probeBelastung@lib:com.github.lector.dsa5maptool"): skill1]
-							[r,macro("probeParalyse@lib:com.github.lector.dsa5maptool"): json.append("Natur", skill1)]
-							[r,macro("probeMirakel@lib:com.github.lector.dsa5maptool"): skill1]
-							[r,macro("probeGottgefaellig@lib:com.github.lector.dsa5maptool"): skill1]
+							[r,macro("probeBelastung@this"): skill1]
+							[r,macro("probeParalyse@this"): json.append("Natur", skill1)]
+							[r,macro("probeMirakel@this"): skill1]
+							[r,macro("probeGottgefaellig@this"): skill1]
 							</tr></table>
 						</td>
 					</tr>
@@ -249,16 +249,16 @@ window.addEventListener('load', function(evt) {
 							</div>
 						</td>
 						<td valign=top style="white-space: nowrap;">
-							[r,macro("probeInfo@lib:com.github.lector.dsa5maptool"): json.append(currentToken(), skill2, spec2)]
+							[r,macro("probeInfo@this"): json.append(currentToken(), skill2, spec2)]
 						</td>
 						<td width=20>&nbsp;</td>
 						
 						<td valign=top style="white-space: nowrap;">
 							<table><tr>
-							[r,macro("probeBelastung@lib:com.github.lector.dsa5maptool"): skill2]
-							[r,macro("probeParalyse@lib:com.github.lector.dsa5maptool"): json.append("Natur", skill2)]
-							[r,macro("probeMirakel@lib:com.github.lector.dsa5maptool"): skill2]
-							[r,macro("probeGottgefaellig@lib:com.github.lector.dsa5maptool"): skill2]
+							[r,macro("probeBelastung@this"): skill2]
+							[r,macro("probeParalyse@this"): json.append("Natur", skill2)]
+							[r,macro("probeMirakel@this"): skill2]
+							[r,macro("probeGottgefaellig@this"): skill2]
 							</tr></table>
 						</td>
 					</tr>

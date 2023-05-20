@@ -1,7 +1,7 @@
 [h: idList = getSelected()]
 [h,if(idList == ""), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "noTokensSelected"]
+		[h,macro("inputFail@this"): "noTokensSelected"]
 	};
 	{
 		[foreach(id, idList, ""), Code:

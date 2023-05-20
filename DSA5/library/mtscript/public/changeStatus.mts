@@ -13,4 +13,4 @@
 [h: uebergabe = macro.args]
 [h: status = getState(uebergabe)]
 [h,if(status == 1): setState(uebergabe, 0); setState(uebergabe, 1)]
-[h,macro("refreshFrame@this"): ""]
+[h: refreshFrame(currentToken())]

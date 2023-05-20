@@ -1,6 +1,6 @@
 [h,if(isGM() == 0),Code:
 {
-	[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "gm"]
+	[h,macro("inputFail@this"): "gm"]
 };{}]
 
 [h,if(hasImpersonated() == 0), Code:
@@ -8,7 +8,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -17,7 +17,7 @@
 
 [h,if(getSize() != "Tiny"), Code:
 {
-	[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "swarmTiny"]
+	[h,macro("inputFail@this"): "swarmTiny"]
 };{}]
 
 [h: actionLink = macroLinkText("createSwarmProcess@this", "")]

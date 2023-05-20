@@ -5,22 +5,22 @@
 
 [h,if(copyNum == ""), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "noInput"]
+		[h,macro("inputFail@this"): "noInput"]
 	};{}
 ]
 [h,if(isNumber(copyNum) == 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numText"]
+		[h,macro("inputFail@this"): "numText"]
 	};{}
 ]
 [h,if(copyNum != round(copyNum)), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numInteger"]
+		[h,macro("inputFail@this"): "numInteger"]
 	};{}
 ]
 [h,if(copyNum < 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numNegative"]
+		[h,macro("inputFail@this"): "numNegative"]
 	};{}
 ]
 [h: closeDialog("tokenCopy")]
@@ -31,5 +31,5 @@
 [h: cloneNum = 0]
 [h: copyToken(tID, copyNum, "", updates)]
 
-[h,macro("noticeSelf@lib:com.github.lector.dsa5maptool"): "tokenCopy"]
-[h,macro("refreshFrame@lib:com.github.lector.dsa5maptool"): ""]
+[h,macro("noticeSelf@this"): "tokenCopy"]
+[h: refreshFrame(currentToken())]

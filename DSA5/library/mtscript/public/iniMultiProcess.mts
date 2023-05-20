@@ -8,23 +8,23 @@
 
 [h,if(isNumber(bonus) == 0 || isNumber(malus) == 0 || isNumber(wert) == 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numText"]
+		[h,macro("inputFail@this"): "numText"]
 	};{}
 ]
 [h,if(bonus != round(bonus) || malus != round(malus) || wert != round(wert)), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numInteger"]
+		[h,macro("inputFail@this"): "numInteger"]
 	};{}
 ]
 [h,if(bonus < 0 || malus < 0 || wert < 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numNegative"]
+		[h,macro("inputFail@this"): "numNegative"]
 	};{}
 ]
 [h: closeDialog("iniMulti")]
 [h,if(idList == ""), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "noTokensSelected"]
+		[h,macro("inputFail@this"): "noTokensSelected"]
 	};{}
 ]
 
@@ -61,4 +61,4 @@
 ]
 
 [h: sortInitiative()]
-[h,macro("noticeSelf@lib:com.github.lector.dsa5maptool"): "multiINI"]
+[h,macro("noticeSelf@this"): "multiINI"]

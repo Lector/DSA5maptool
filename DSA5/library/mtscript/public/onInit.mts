@@ -7,6 +7,7 @@
 [h: defineFunction("exposeView", "exposeView@this")]
 
 [h: defineFunction("inputFail", "inputFail@this")]
+[h: defineFunction("refreshFrame", "refreshFrame@this")]
 [h: defineFunction("linkGoogleFonts", "linkGoogleFonts@this")]
 [h: defineFunction("border", "border@this")]
 [h: defineFunction("header", "header@this")]
@@ -109,7 +110,7 @@
 
 [h: defineFunction("scatter", "scatter@this")]
 
-[h: defineFunction("getRandomHerbs", "getRandomHerbs@lib:com.github.lector.dsa5maptool")]
+[h: defineFunction("getRandomHerbs", "getRandomHerbs@this")]
 
 [h: message = "
 <h1>Willkommen beim DSA5 Regelsatz für maptools</h1><br>

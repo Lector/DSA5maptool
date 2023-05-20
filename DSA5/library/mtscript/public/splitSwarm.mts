@@ -1,6 +1,6 @@
 [h,if(isGM() == 0),Code:
 {
-	[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "gm"]
+	[h,macro("inputFail@this"): "gm"]
 };{}]
 
 [h,if(hasImpersonated() == 0), Code:
@@ -8,7 +8,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -16,11 +16,11 @@
 ]
 
 [h,if(Schwarm == 0),Code:{
-	[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "noSwarm"]
+	[h,macro("inputFail@this"): "noSwarm"]
 }]
 [h: maxSplit = floor(SchwarmAnzahl / SchwarmGG)]
 [h,if(maxSplit < 2),Code:{
-	[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "swarmTooSmallToSplit"]
+	[h,macro("inputFail@this"): "swarmTooSmallToSplit"]
 }]
 
 [h: actionLink = macroLinkText("splitSwarmProcess@this", "")]

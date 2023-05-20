@@ -11,7 +11,7 @@
 }
 
 body {
-    font-size: 11pt;
+    font-size: 10pt;
     color: #eee5c8;
     background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/background.png");
     display: grid;
@@ -20,11 +20,15 @@ body {
     /* border: 1px dotted red; */
 }
 
+ul {
+    padding-left: 16px;
+}
+
 .debug {
     border: 1px dotted red !important;
 }
 
-#header {
+.header {
     display: grid;
     grid-template-columns: 57px auto 57px;
     grid-template-rows: 16px 46px 4px 46px 13px;
@@ -96,6 +100,12 @@ body {
     display: grid;
     grid-template-columns: auto 1fr;
     column-gap: 6px;
+    row-gap: 6px;
+    padding: 0px;
+}
+
+.stat-table div {
+    margin: 0px;
 }
 
 .row-container div {
@@ -109,6 +119,7 @@ body {
 
 .energyBar {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 5px;
@@ -158,7 +169,7 @@ input[type="text"] {
     font-size: inherit;
 }
 
-#content {
+.content {
     background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/content.png");
     background-repeat: repeat-y;
     background-size: contain;
@@ -166,9 +177,12 @@ input[type="text"] {
     padding-left: 34px;
     padding-right: 34px;
     margin: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
-#footer {
+.footer {
     background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/footer.png");
     background-repeat: no-repeat;
     background-size: contain;
@@ -238,6 +252,8 @@ input[type="text"] {
 .panel {
     display: flex;
     flex-direction: column;
+    gap: 6px;
+    background-color: #3d1919;
     border-spacing: 0px;
     border-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/panelFrame.png") 24 35 round;
     border-image-width: 24px 35px;
@@ -253,5 +269,4 @@ input[type="text"] {
     border-top: 1px solid #eee5c8;
     border-bottom: 1px solid #eee5c8;
     padding: 3px 10px 3px 10px;
-    margin-bottom: 6px;
 }

@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -14,10 +14,10 @@
 
 [h,switch(propType),Code:
 	case "Kraut": {
-		[h,macro("editKraut@lib:com.github.lector.dsa5maptool"): currentToken()]
+		[h,macro("editKraut@this"): currentToken()]
 	};
 	case "Jagdwild": {
-		[h,macro("editTier@lib:com.github.lector.dsa5maptool"): currentToken()]
+		[h,macro("editTier@this"): currentToken()]
 	};
 	case "Basic": {
 		[h,macro("chareditChar@this"): currentToken()]

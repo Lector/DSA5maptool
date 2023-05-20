@@ -62,4 +62,4 @@
 
 [h: sendTo(chat, border("Schaden erhalten", show(damageResult)))]
 
-[h,macro("refreshFrame@this"): ""]
+[h: refreshFrame(currentToken())]

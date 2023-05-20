@@ -18,22 +18,22 @@
 
 [h,if(listCount(qToken) != 1), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "copyTokenDataSelect"]
+		[h,macro("inputFail@this"): "copyTokenDataSelect"]
 	};{}
 ]
 [h,if(qToken == zToken), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "copyTokenDataEqual"]
+		[h,macro("inputFail@this"): "copyTokenDataEqual"]
 	};{}
 ]
 [h,if(isOwner(playerName, qToken) == 0 && isGM() == 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "copyTokenDataOwner"]
+		[h,macro("inputFail@this"): "copyTokenDataOwner"]
 	};{}
 ]
 [h,if(cTokenbilder != 1 && cInventar != 1 && cNotizen != 1 && cOptions != 1 && cEnergie != 1 && cNahkampf != 1 && cFernkampf != 1 && cRuestung != 1 && cTemp != 1 && cStatus != 1), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "copyTokenDataOption"]
+		[h,macro("inputFail@this"): "copyTokenDataOption"]
 	};{}
 ]
 

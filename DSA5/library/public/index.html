@@ -102,7 +102,7 @@
 					</td>
 				</tr>
 			</table>
-			[r,macro("probeChat@lib:com.github.lector.dsa5maptool"): ""]
+			[r,macro("probeChat@this"): ""]
 			<input type='hidden' name='diceTyp' value='[r: uebergabe]'/>
 		</form>
 	</div> -->
@@ -118,7 +118,7 @@
         console.log(data.key);
         document.title = `W${data.dice} Wurf`;
     } catch(e) { alert(e)}
-        // const rest = new RestData("macro:dataProvider@lib:com.github.lector.dsa5maptool", {hello: "world", foo: true, bar: 42});
+        // const rest = new RestData("macro:dataProvider@this", {hello: "world", foo: true, bar: 42});
         // rest.get().then(val => alert(val)).catch(e => alert(e))
     });
     window.addEventListener("load", function() {

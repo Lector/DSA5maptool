@@ -17,5 +17,5 @@
 	[LeP = LeP - life]
 }]
 [h: removeToken(tok)]
-[h,macro("noticeSelf@lib:com.github.lector.dsa5maptool"): "swarmSplit"]
+[h,macro("noticeSelf@this"): "swarmSplit"]
 [h: closeDialog("splitSwarm")]

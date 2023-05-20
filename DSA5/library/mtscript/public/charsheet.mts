@@ -1,4 +1,4 @@
-[h,macro("abfrageImpersonate@Lib:com.github.lector.dsa5maptool"): ""]
+[h,macro("abfrageImpersonate@this"): ""]
 [h,if(isGM() == 1 && hasImpersonated() == 0), Code:
 	{
 		[selectID = getSelected()]

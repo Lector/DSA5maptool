@@ -110,7 +110,7 @@
 					</td>
 				</tr>
 			</table>
-			[r,macro("probeChat@lib:com.github.lector.dsa5maptool"): ""]
+			[r,macro("probeChat@this"): ""]
 			<input type='hidden' name='diceTyp' value='[r: uebergabe]'/>
 		</form>
 	</div>

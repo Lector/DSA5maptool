@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -45,17 +45,17 @@
 
 [h,if(isNumber(tpwAnzahl) == 0 || isNumber(TPwAugenzahl) == TPwAugenzahl || isNumber(tpwMod) == 0 || isNumber(atMod) == 0 || isNumber(paMod) == 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numText"]
+		[h,macro("inputFail@this"): "numText"]
 	};{}
 ]
 [h,if(tpwAnzahl != round(tpwAnzahl) || TPwAugenzahl != round(TPwAugenzahl) || tpwMod != round(tpwMod) || atMod != round(atMod) || paMod != round(paMod)), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numInteger"]
+		[h,macro("inputFail@this"): "numInteger"]
 	};{}
 ]
 [h,if(tpwAnzahl < 0 || TPwAugenzahl < 0 || tpwMod < 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numNegative"]
+		[h,macro("inputFail@this"): "numNegative"]
 	};{}
 ]
 [h: closeDialog("chareditWaffeAdd")]
@@ -76,7 +76,5 @@
 [h: Nahkampfwaffen = json.append(Nahkampfwaffen, waffe)]
 [h: Nahkampfwaffen = json.sort(Nahkampfwaffen, "a", "ID")]
 
-[h,macro("noticeSelf@lib:com.github.lector.dsa5maptool"): "addWaffe"]
-[h,macro("refreshFrame@lib:com.github.lector.dsa5maptool"): ""]
-
-		
+[h,macro("noticeSelf@this"): "addWaffe"]
+[h: refreshFrame(currentToken())]

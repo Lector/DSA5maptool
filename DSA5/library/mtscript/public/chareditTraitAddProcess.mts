@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -25,14 +25,14 @@
 	{
 		[if(json.get(tDaten, "Name") == tName), Code:
 			{
-				[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "traitDouble"]
+				[h,macro("inputFail@this"): "traitDouble"]
 			}
 		]
 	}
 ]
 [h,if(tName == ""), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "noInput"]
+		[h,macro("inputFail@this"): "noInput"]
 	};{}
 ]
 [h: closeDialog("chareditTraitAdd")]
@@ -74,5 +74,5 @@
 	}
 ]
 
-[h,macro("noticeSelf@lib:com.github.lector.dsa5maptool"): "chareditTraitAdd"]
-[h,macro("refreshFrame@lib:com.github.lector.dsa5maptool"): ""]
+[h,macro("noticeSelf@this"): "chareditTraitAdd"]
+[h: refreshFrame(currentToken())]

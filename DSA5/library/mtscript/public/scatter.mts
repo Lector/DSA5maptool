@@ -2,7 +2,7 @@
 [h: switchToken(tokenID)]
 [h,if(Schwarm != 1),Code:
 {
-	[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "noSwarm"]
+	[h,macro("inputFail@this"): "noSwarm"]
 };{}]
 
 [h: tokenIni = ""]

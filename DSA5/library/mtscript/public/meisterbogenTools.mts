@@ -57,7 +57,7 @@
 												<image src='[r: scaleImage]'></image>
 											</td>
 											<td>
-												<span style='color: #eee5c8; text-decoration: none;' title='Umrechner für Gewichtsmaße aufrufen'>[r: macroLink("Gewichtsrechner", "gewichtsrechner@lib:com.github.lector.dsa5maptool")]</span>
+												<span style='color: #eee5c8; text-decoration: none;' title='Umrechner für Gewichtsmaße aufrufen'>[r: macroLink("Gewichtsrechner", "gewichtsrechner@this")]</span>
 											</td>
 										</tr>
 										<tr>
@@ -66,7 +66,7 @@
 												<image src='[r: rulerImage]'></image>
 											</td>
 											<td>
-												<span style='color: #eee5c8; text-decoration: none;' title='Umrechner für Längenmaß aufrufen'>[r: macroLink("Längenrechner", "laengenrechner@lib:com.github.lector.dsa5maptool")]</span>
+												<span style='color: #eee5c8; text-decoration: none;' title='Umrechner für Längenmaß aufrufen'>[r: macroLink("Längenrechner", "laengenrechner@this")]</span>
 											</td>
 										</tr>
 										<tr>
@@ -75,7 +75,7 @@
 												<image src='[r: moneyBagImage]'></image>
 											</td>
 											<td>
-												<span style='color: #eee5c8; text-decoration: none;' title='Umrechner für Währungen aufrufen'>[r: macroLink("Währungsrechner", "waehrung@lib:com.github.lector.dsa5maptool")]</span>
+												<span style='color: #eee5c8; text-decoration: none;' title='Umrechner für Währungen aufrufen'>[r: macroLink("Währungsrechner", "waehrung@this")]</span>
 											</td>
 										</tr>
 									</table>
@@ -90,7 +90,7 @@
 												<image src='[r: calendarImage]'></image>
 											</td>
 											<td>
-												<span style='color: #eee5c8; text-decoration: none;' title='Das Steuerungsfenster für den Kalender aufrufen'>[r: macroLink("Kalender-Steuerung", "kalenderMain@lib:com.github.lector.dsa5maptool", "")]</span>
+												<span style='color: #eee5c8; text-decoration: none;' title='Das Steuerungsfenster für den Kalender aufrufen'>[r: macroLink("Kalender-Steuerung", "kalenderMain@this", "")]</span>
 											</td>
 										</tr>
 									</table>
@@ -102,10 +102,10 @@
 													<image src='[r: tableImage("mainTheme", 108)]'></image>
 												</td>
 												<td style='text-align: center;' width='13'>
-													<a href="[r: macroLinkText("weblinkAdd@lib:com.github.lector.dsa5maptool")]"><image src='[r: tableImage("mainTheme", 97)]' border="0" alt="Einen neuen Weblink hinzufügen"></image></a>
+													<a href="[r: macroLinkText("weblinkAdd@this")]"><image src='[r: tableImage("mainTheme", 97)]' border="0" alt="Einen neuen Weblink hinzufügen"></image></a>
 												</td>
 												<td style='text-align: right;' width='13'>
-													<a href="[r: macroLinkText("weblinkDel@lib:com.github.lector.dsa5maptool", "", "all")]"><image src='[r: tableImage("mainTheme", 98)]' border="0" alt="Alle Weblinks löschen"></image></a>
+													<a href="[r: macroLinkText("weblinkDel@this", "", "all")]"><image src='[r: tableImage("mainTheme", 98)]' border="0" alt="Alle Weblinks löschen"></image></a>
 												</td>
 											</tr>
 										</table>
@@ -127,7 +127,7 @@
 														[r: strformat("<a style='color: #eee5c8; text-decoration: none;' href='%s'>%s</a>", lAdress, lName)]
 													</td>
 													<td style='text-align: center;'>
-														<a href="[r: macroLinkText("weblinkDel@lib:com.github.lector.dsa5maptool", "", num)]"><image src='[r: tableImage("mainTheme", 100)]' border="0" alt="Diesen Weblink löschen"></image></a>
+														<a href="[r: macroLinkText("weblinkDel@this", "", num)]"><image src='[r: tableImage("mainTheme", 100)]' border="0" alt="Diesen Weblink löschen"></image></a>
 													</td>
 												</tr>
 												[h: num = num + 1]

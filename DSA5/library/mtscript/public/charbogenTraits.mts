@@ -1,8 +1,9 @@
-[h: list = ""]
+[h: list = "<ul>"]
 [h,foreach(trait, macro.args, ""),Code:
 {
 	[h: stufe = romanNumeral(json.get(trait, "Stufe"))]
-	[h: ausgabe = json.get(trait, "Name") + " " + stufe]
-	[h: list = listAppend(list, ausgabe)]
+	[h: ausgabe = "<li>" + json.get(trait, "Name") + " " + stufe + "</li>"]
+	[h: list = list + ausgabe]
 }]
-[r,if(list != ""): list; "Keine Vorhanden"]
+[h: list = list + "</ul>"]
+[r,if(json.length(macro.args) > 0): list; "<p>Keine Vorhanden</p>"]

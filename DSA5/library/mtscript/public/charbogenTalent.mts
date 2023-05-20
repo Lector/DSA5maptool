@@ -91,10 +91,10 @@
 				<td colspan=8>
 					[h: linkOpen1 = "
 					<span style='color: #eee5c8; text-decoration: none; vertical-align: middle;' title='Heil-, Gift- und Nutzpflanzen suchen'>
-					<a href='"+ macroLinkText("probeKraeutersuche@lib:com.github.lector.dsa5maptool", "", "") +"'>"]
+					<a href='"+ macroLinkText("probeKraeutersuche@this", "", "") +"'>"]
 					[h: linkOpen2 = "
 					<span style='color: #eee5c8; text-decoration: none; vertical-align: middle;' title='Nahrung suchen'>
-					<a href='"+ macroLinkText("probeNahrungssuche@lib:com.github.lector.dsa5maptool", "", "") +"'>"]
+					<a href='"+ macroLinkText("probeNahrungssuche@this", "", "") +"'>"]
 					[h: linkClose = "</a></span>"]
 					<table>
 						<tr>
@@ -113,13 +113,13 @@
 				<td colspan=8>
 					[h: linkOpen1 = "
 					<span style='color: #eee5c8; text-decoration: none; vertical-align: middle;' title='Auf die Jagd nach Wild gehen'>
-					<a href='"+ macroLinkText("probeJagd@lib:com.github.lector.dsa5maptool", "", "Ansitzjagd") +"'>"]
+					<a href='"+ macroLinkText("probeJagd@this", "", "Ansitzjagd") +"'>"]
 					[h: linkOpen2 = "
 					<span style='color: #eee5c8; text-decoration: none; vertical-align: middle;' title='Auf die Jagd nach Wild gehen'>
-					<a href='"+ macroLinkText("probeJagd@lib:com.github.lector.dsa5maptool", "", "Pirschjagd") +"'>"]
+					<a href='"+ macroLinkText("probeJagd@this", "", "Pirschjagd") +"'>"]
 					[h: linkOpen3 = "
 					<span style='color: #eee5c8; text-decoration: none; vertical-align: middle;' title='Auf die Jagd nach Wild gehen'>
-					<a href='"+ macroLinkText("probeJagd@lib:com.github.lector.dsa5maptool", "", "Fallenjagd") +"'>"]
+					<a href='"+ macroLinkText("probeJagd@this", "", "Fallenjagd") +"'>"]
 					[h: linkClose = "</a></span>"]
 					[h: link = strformat("
 					%{linkOpen1}Ansitzjagd%{linkClose} &middot; %{linkOpen2}Pirschjagd%{linkClose} &middot; %{linkOpen3}Fallenjagd%{linkClose}"
@@ -141,7 +141,7 @@
 				<td colspan=8>
 					[h: linkOpen = "
 					<span style='color: #eee5c8; text-decoration: none; vertical-align: middle;' title='Fischen / Angeln gehen'>
-					<a href='"+ macroLinkText("probeJagd@lib:com.github.lector.dsa5maptool", "", "Angeln") +"'>"]
+					<a href='"+ macroLinkText("probeJagd@this", "", "Angeln") +"'>"]
 					[h: linkClose = "</a></span>"]
 					<table>
 						<tr>

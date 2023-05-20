@@ -13,16 +13,16 @@
 			</div>
 		</td>
 		<td valign=top style="white-space: nowrap;">
-			[r,macro("probeInfo@lib:com.github.lector.dsa5maptool"): json.append(currentToken(), "Pflanzenkunde")]
+			[r,macro("probeInfo@this"): json.append(currentToken(), "Pflanzenkunde")]
 		</td>
 		
 		<td valign=top style="padding-left: 20; white-space: nowrap;">
 			<table>
 				<tr>
-					[r,macro("probeBelastung@lib:com.github.lector.dsa5maptool"): "Pflanzenkunde"]
-					[r,macro("probeParalyse@lib:com.github.lector.dsa5maptool"): json.append("Natur", "Pflanzenkunde")]
-					[r,macro("probeMirakel@lib:com.github.lector.dsa5maptool"): "Pflanzenkunde"]
-					[r,macro("probeGottgefaellig@lib:com.github.lector.dsa5maptool"): "Pflanzenkunde"]
+					[r,macro("probeBelastung@this"): "Pflanzenkunde"]
+					[r,macro("probeParalyse@this"): json.append("Natur", "Pflanzenkunde")]
+					[r,macro("probeMirakel@this"): "Pflanzenkunde"]
+					[r,macro("probeGottgefaellig@this"): "Pflanzenkunde"]
 				</tr>
 			</table>
 		</td>
@@ -39,16 +39,16 @@
 			</div>
 		</td>
 		<td valign=top style="white-space: nowrap;">
-			[r,macro("probeInfo@lib:com.github.lector.dsa5maptool"): json.append(currentToken(), "Sinnesschärfe")]
+			[r,macro("probeInfo@this"): json.append(currentToken(), "Sinnesschärfe")]
 		</td>
 		
 		<td valign=top style="padding-left: 20; white-space: nowrap;">
 			<table>
 				<tr>
-					[r,macro("probeBelastung@lib:com.github.lector.dsa5maptool"): "Sinnesschärfe"]
-					[r,macro("probeParalyse@lib:com.github.lector.dsa5maptool"): json.append("Koerper", "Sinnesschärfe")]
-					[r,macro("probeMirakel@lib:com.github.lector.dsa5maptool"): "Sinnesschärfe"]
-					[r,macro("probeGottgefaellig@lib:com.github.lector.dsa5maptool"): "Sinnesschärfe"]
+					[r,macro("probeBelastung@this"): "Sinnesschärfe"]
+					[r,macro("probeParalyse@this"): json.append("Koerper", "Sinnesschärfe")]
+					[r,macro("probeMirakel@this"): "Sinnesschärfe"]
+					[r,macro("probeGottgefaellig@this"): "Sinnesschärfe"]
 				</tr>
 			</table>
 		</td>

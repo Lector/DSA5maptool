@@ -1,6 +1,6 @@
 [h,if(isGM() == 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "gm"]
+		[h,macro("inputFail@this"): "gm"]
 	};{}
 ]
 
@@ -14,12 +14,12 @@
 
 [h,if(newRationen == ""), Code:
 {
-	[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "noInput"]
+	[h,macro("inputFail@this"): "noInput"]
 }]
 [h: cleared = replace(newRationen,"-","")]
 [h,if(isNumber(cleared) == 0), Code:
 {
-	[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numText"]
+	[h,macro("inputFail@this"): "numText"]
 }]
 
 [h: JagdMod = json.get(args, tok+"_mod")]
@@ -29,5 +29,5 @@
 [h,if(json.get(args, tok+"_wasser") == ""): Wasser = 0; Wasser = 1]
 [h,if(json.get(args, tok+"_land") == ""): Land = 0; Land = 1]
 
-[h,macro("noticeSelf@lib:com.github.lector.dsa5maptool"): "jagdEdit"]
+[h,macro("noticeSelf@this"): "jagdEdit"]
 [h: closeDialog("jagdEdit")]

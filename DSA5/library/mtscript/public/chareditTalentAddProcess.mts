@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -12,9 +12,7 @@
 
 [h: uebergabe = macro.args]
 
-[h: ausdruckVergleich = getLibProperty("ImpAusdruckVergleich","com.github.lector.dsa5maptool")]
 [h: tArt = json.get(uebergabe, "fTalentart")]
-[h,if(tArt == listGet(ausdruckVergleich, 12)): tArt = "Koerper"]
 [h,if(tArt == "Kampf"): tArt = "Kampftalente"]
 [h,if(tArt == "Sprachen"): tArt = "SprachenSchriften"]
 [h: tName = json.get(uebergabe, "fTalentname")]
@@ -30,24 +28,24 @@
 	{
 		[if(json.get(tDaten, "Talent") == tName), Code:
 			{
-				[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "talentDouble"]
+				[h,macro("inputFail@this"): "talentDouble"]
 			}
 		]
 	}
 ]
 [h,if(tName == ""), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "noInput"]
+		[h,macro("inputFail@this"): "noInput"]
 	};{}
 ]
 [h,if(isNumber(tWert) == 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numText"]
+		[h,macro("inputFail@this"): "numText"]
 	};{}
 ]
 [h,if(tWert != round(tWert)), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numInteger"]
+		[h,macro("inputFail@this"): "numInteger"]
 	};{}
 ]
 [h: closeDialog("chareditTalentAdd")]
@@ -76,18 +74,11 @@
 		[Handwerk = json.append(Handwerk, newTalent)]
 		[Handwerk = json.sort(Handwerk, "asc", "Talent")]
 		};
-	case "Kampftalente": {
-		[Kampftalente = json.append(Kampftalente, newTalent)]
-		[Kampftalente = json.sort(Kampftalente, "asc", "Talent")]
-		};
 	case "Gaben": {
 		[Gaben = json.append(Gaben, newTalent)]
 		[Gaben = json.sort(Gaben, "asc", "Talent")]
 		}
 ]
 
-[h,if(tName == "Akrobatik" && tArt == "Koerper"): AW = AW + max(0, floor((tWert-9)/3))]
-[h,if(AW < 1): AW = 0]
-
-[h,macro("noticeSelf@lib:com.github.lector.dsa5maptool"): "chareditTalentAdd"]
-[h,macro("refreshFrame@lib:com.github.lector.dsa5maptool"): ""]
+[h,macro("noticeSelf@this"): "chareditTalentAdd"]
+[h: refreshFrame(currentToken())]

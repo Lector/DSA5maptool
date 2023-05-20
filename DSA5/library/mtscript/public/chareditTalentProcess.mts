@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -29,17 +29,17 @@
 		[if(tWert == ""): tWert = 0]
 		[if(tName == ""), Code:
 			{
-				[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "noInput"]
+				[h,macro("inputFail@this"): "noInput"]
 			};{}
 		]
 		[if(isNumber(tWert) == 0), Code:
 			{
-				[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numText"]
+				[h,macro("inputFail@this"): "numText"]
 			};{}
 		]
 		[if(tWert != round(tWert)), Code:
 			{
-				[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numInteger"]
+				[h,macro("inputFail@this"): "numInteger"]
 			};{}
 		]
 		[h: tProbe = json.set("{}", "Eigenschaft2", tE2, "Eigenschaft1", tE1, "Eigenschaft3", tE3 )]
@@ -112,5 +112,5 @@
 
 
 [h,if(tArt == "Zauber" || tArt == "Rituale" || tArt == "MagischeHandlungen"): chatNotice = "chareditZauber"; chatNotice = "chareditTalent"]
-[h,macro("noticeSelf@lib:com.github.lector.dsa5maptool"): chatNotice]
-[h,macro("refreshFrame@lib:com.github.lector.dsa5maptool"): ""]
+[h,macro("noticeSelf@this"): chatNotice]
+[h: refreshFrame(currentToken())]

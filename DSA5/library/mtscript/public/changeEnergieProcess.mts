@@ -180,4 +180,4 @@ chatImage, chatText, chatColor, ergebnisTitle, ergebnis, chatTyp)]
 
 [h: sendTo(chat, ausgabe)]
 
-[h,macro("refreshFrame@this"): ""]
+[h: refreshFrame(currentToken())]

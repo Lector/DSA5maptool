@@ -119,6 +119,7 @@
 	
 	[h,if(passierschlag >= 1),Code:{
 		[h: passierschlagParams = json.set("", "Passierschlag", "1", "Target", currentToken())]
+		[h: passierschlagParams = json.append("[]", target, passierschlagParams)]
 		[h,if(target != ""): executedOn = target; executedOn = "impersonated"]
 		[h: passierschlagLink = macroLinkText("probeAT@this", "none", passierschlagParams, executedOn)]
 		[h: passierschlagText = strformat( "%{manName} fehlgeschlagen! %{targetLink} darf einen <a style='color: #441e13' href='%{passierschlagLink}'>Passierschlag</a> ausführen.")]
