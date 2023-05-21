@@ -1,6 +1,6 @@
 [h: switchToken(arg(0))]
 
-<div class="panel">
+<div class="panel-ornament">
 	[h: rs = resolveRS(currentToken(), getRuestung(Ruestungen, RuestungAktiv))]
 	[h: temprs = getStrProp(TempMod, "rs")]
 	[h,if(temprs < 0): eigColor = "#ff3333"; eigColor = "#eee5c8"]

@@ -29,7 +29,7 @@
 				[macro("charbogenFernkampf@this"): currentToken()]
 			}]
 
-			<div class="panel">
+			<div class="panel-ornament">
 				<div class="heading">
 					Kampfsonderfertigkeiten
 				</div>

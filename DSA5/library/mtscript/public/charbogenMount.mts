@@ -1,6 +1,6 @@
 [h: switchToken(arg(0))]
 
-<div class="panel">
+<div class="panel-ornament">
 	<div class="heading">Reittier</div>
 	<div class="equip-table" id="mount">
 		<div>

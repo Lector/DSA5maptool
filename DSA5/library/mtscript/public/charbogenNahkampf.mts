@@ -1,6 +1,6 @@
 [h: switchToken(arg(0))]
 
-<div class="panel">
+<div class="panel-ornament">
 	<div class="heading">
 		<img src="[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/swordAndShield.png")]">
 		Nahkampfwaffen

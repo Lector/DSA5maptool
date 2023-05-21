@@ -1,6 +1,6 @@
 [h: switchToken(arg(0))]
 
-<div class="panel">
+<div class="panel-ornament">
 	<div class="heading">Fernkampfwaffen</div>
 	<div class="equip-table" id="ranged">
 		<div>

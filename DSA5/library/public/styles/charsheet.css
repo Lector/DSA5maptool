@@ -20,6 +20,11 @@ body {
     /* border: 1px dotted red; */
 }
 
+span {
+    font-size: inherit;
+    font-family: inherit;
+}
+
 ul {
     padding-left: 16px;
 }
@@ -55,14 +60,41 @@ ul {
 }
 
 .charbogenNav {
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 4;
     grid-row-end: 5;
+}
+
+.skillContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.skillContainer > :nth-child(2) {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.skillNavigation {
+    background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/skillNavigation.png");
+    background-repeat: no-repeat;
+    width: 376px;
+    height: 70px;
+    margin-bottom: -6px;
+    z-index: 2;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.skillNavigation > * {
+    margin-top: 10px;
+    z-index: 1;
 }
 
 .bar {
@@ -76,6 +108,10 @@ ul {
     flex-flow: row nowrap;
     justify-content: space-evenly;
     justify-items: start;
+}
+
+.row-container > div {
+    width: auto;
 }
 
 .stat-table {
@@ -113,6 +149,12 @@ ul {
 .equip-table[id="mount"] {
     grid-template-columns: auto 1fr auto auto 30px;
 }
+.equip-table[id="skill"] {
+    grid-template-columns: 1fr auto auto auto;
+}
+.equip-table[id="combatTechnique"] {
+    grid-template-columns: 1fr auto auto auto auto;
+}
 
 .equip-table[id="melee"] > div:nth-child(-n + 7),
 .equip-table[id="ranged"] > div:nth-child(-n + 6),
@@ -120,6 +162,14 @@ ul {
 .equip-table[id="mount"] > div:nth-child(-n + 5) {
     font-weight: bold;
     white-space: nowrap;
+}
+.equip-table[id="skill"] > div:nth-child(-n + 4),
+.equip-table[id="combatTechnique"] > div:nth-child(-n + 5) {
+    font-family: "IM Fell DW Pica";
+    text-transform: uppercase;
+    white-space: nowrap;
+    border-bottom: 1px solid #eee5c8;
+    border-top: 1px solid #eee5c8;
 }
 
 .equip-table[id="melee"] > div:not(:nth-last-child(-n + 7)),
@@ -132,17 +182,29 @@ ul {
 .equip-table[id="melee"] > div:nth-child(7n + 1),
 .equip-table[id="ranged"] > div:nth-child(6n + 1),
 .equip-table[id="armor"] > div:nth-child(6n + 1),
-.equip-table[id="mount"] > div:nth-child(5n + 2) {
+.equip-table[id="mount"] > div:nth-child(5n + 2),
+.equip-table[id="skill"] > div:nth-child(4n + 1),
+.equip-table[id="combatTechnique"] > div:nth-child(5n + 1) {
     text-align: left;
-}
-
-.row-container > div {
-    width: auto;
 }
 
 .column-container {
     display: flex;
     flex-direction: column;
+}
+
+.natureSkillContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 2px;
+}
+
+.natureSkillContainer > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
 }
 
 .energyBar {
@@ -278,7 +340,7 @@ input[type="text"] {
     vertical-align: top;
 }
 
-.panel {
+.panel-ornament {
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -288,6 +350,18 @@ input[type="text"] {
     border-image-width: 24px 35px;
     word-wrap: break-word;
     padding: 20px 6px;
+}
+
+.panel-round {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background-color: #3d1919;
+    border-spacing: 0px;
+    border-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/panelBubble.png") 19 19 round;
+    border-image-width: 19px 19px;
+    word-wrap: break-word;
+    padding: 20px;
 }
 
 .heading {

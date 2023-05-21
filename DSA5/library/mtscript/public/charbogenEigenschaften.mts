@@ -23,7 +23,7 @@
 		<div class="content">
 			[r,macro("eigLeiste@this"): currentToken()]
 			<div class="row-container" style="justify-content: space-between; gap: 0;">
-				<div class="panel">
+				<div class="panel-round">
 					<div class="heading">Werte</div>
 					<div class="stat-table">
 						<div>Seelenkraft:</div>
