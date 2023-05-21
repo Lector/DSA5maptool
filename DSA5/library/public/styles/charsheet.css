@@ -35,7 +35,7 @@ ul {
     background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/header.png");
     background-repeat: no-repeat;
     background-size: 500px 122px;
-    height: 122;
+    height: 122px;
     margin: 0px;
 }
 
@@ -71,24 +71,6 @@ ul {
     overflow: hidden;
 }
 
-.highlight {
-    border: 2px solid #eee5c8;
-}
-
-.highlightHeading {
-    font-family: serif;
-    font-weight: bold;
-    width: 100%;
-    border-top: 1px solid #eee5c8;
-    border-bottom: 1px solid #eee5c8;
-}
-
-.charbogen-werte {
-    display: grid;
-    grid-template-columns:auto auto;
-    grid-template-rows: auto auto auto auto auto;
-}
-
 .row-container {
     display: flex;
     flex-flow: row nowrap;
@@ -103,12 +85,58 @@ ul {
     row-gap: 6px;
     padding: 0px;
 }
-
-.stat-table div {
+.stat-table > div {
     margin: 0px;
 }
 
-.row-container div {
+.equip-table {
+    display: grid;
+    align-items: center;
+}
+.equip-table > div {
+    padding: 4px 4px;
+    margin: 0px;
+    text-align: center;
+}
+.equipped {
+    background-color: #eee5c8;
+    color: #3d1919;
+}
+
+.equip-table[id="melee"] {
+    grid-template-columns: 1fr auto auto auto auto auto auto;
+}
+.equip-table[id="ranged"],
+.equip-table[id="armor"] {
+    grid-template-columns: 1fr auto auto auto auto 30px;
+}
+.equip-table[id="mount"] {
+    grid-template-columns: auto 1fr auto auto 30px;
+}
+
+.equip-table[id="melee"] > div:nth-child(-n + 7),
+.equip-table[id="ranged"] > div:nth-child(-n + 6),
+.equip-table[id="armor"] > div:nth-child(-n + 6),
+.equip-table[id="mount"] > div:nth-child(-n + 5) {
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.equip-table[id="melee"] > div:not(:nth-last-child(-n + 7)),
+.equip-table[id="ranged"] > div:not(:nth-last-child(-n + 6)),
+.equip-table[id="armor"] > div:not(:nth-last-child(-n + 6)),
+.equip-table[id="mount"] > div:not(:nth-last-child(-n + 5)) {
+    border-bottom: 1px solid #eee5c8;
+}
+
+.equip-table[id="melee"] > div:nth-child(7n + 1),
+.equip-table[id="ranged"] > div:nth-child(6n + 1),
+.equip-table[id="armor"] > div:nth-child(6n + 1),
+.equip-table[id="mount"] > div:nth-child(5n + 2) {
+    text-align: left;
+}
+
+.row-container > div {
     width: auto;
 }
 
@@ -136,6 +164,7 @@ ul {
     padding-top: 11px;
     cursor: default;
 }
+
 .energyBarModifiers {
     display: flex;
     flex-direction: column;
@@ -193,7 +222,7 @@ input[type="text"] {
     background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/leisteEigenschaften.png");
     background-repeat: no-repeat;
     background-size: 100% 90px;
-    height: 90;
+    height: 90px;
     margin-top: -15px;
     margin-left: -21px;
     margin-right: -20px;
@@ -262,6 +291,9 @@ input[type="text"] {
 }
 
 .heading {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
     font-family: "IM Fell DW Pica";
     font-size: 11pt;
     text-transform: uppercase;
@@ -269,4 +301,6 @@ input[type="text"] {
     border-top: 1px solid #eee5c8;
     border-bottom: 1px solid #eee5c8;
     padding: 3px 10px 3px 10px;
+    justify-items: center;
+    align-items: center;
 }

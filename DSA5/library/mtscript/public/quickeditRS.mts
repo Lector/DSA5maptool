@@ -18,7 +18,7 @@
 
 [h: id = macro.args]
 
-[h: ruestung = getRuestung(macro.args)]
+[h: ruestung = getRuestung(Ruestungen, id)]
 
 [h: rName = json.get(ruestung, "Name")]
 [h: rs = json.get(ruestung, "RS")]

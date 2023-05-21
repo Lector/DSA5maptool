@@ -9,7 +9,7 @@
 			Charakterbogen - Kampf
 		</title>
 		[r: linkGoogleFonts()]
-		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/charEigenschaften.css?cachelib=false'/>
+		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/charsheet.css?cachelib=false'/>
 	</head>
 	<body>
 		<div class="header">

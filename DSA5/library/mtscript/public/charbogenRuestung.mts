@@ -1,7 +1,7 @@
 [h: switchToken(arg(0))]
 
 <div class="panel">
-	[h: rs = resolveRS(getRuestung(RuestungAktiv))]
+	[h: rs = resolveRS(currentToken(), getRuestung(Ruestungen, RuestungAktiv))]
 	[h: temprs = getStrProp(TempMod, "rs")]
 	[h,if(temprs < 0): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 	[h,if(temprs > 0): eigColor = "#0099ff"]
@@ -84,7 +84,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td style='padding-left: 5px;''>
+						<td style='padding-left: 5px;'>
 							Linkes Bein:
 						</td>
 						<td style='text-align: center; padding-left: 0px;'>
@@ -102,27 +102,25 @@
 		</tr>
 	</table>
 	
-	<table> 	
-		<tr style='text-align: center;'>
-			<td style='text-align: left;'>
-				Rüstung
-			</td>
-			<td>
-				RS
-			</td>
-			<td>
-				Belastung
-			</td>
-			<td>
-				INI
-			</td>
-			<td>
-				GS
-			</td>
-			<td>
-				&nbsp;
-			</td>
-		</tr>
+	<div class="equip-table" id="armor"> 	
+		<div style='text-align: left;'>
+			Rüstung
+		</div>
+		<div>
+			RS
+		</div>
+		<div>
+			Belastung
+		</div>
+		<div>
+			INI
+		</div>
+		<div>
+			GS
+		</div>
+		<div>
+			&nbsp;
+		</div>
 		[r, Foreach(ruestung, Ruestungen, ""), Code:
 		{
 			[h: rName = json.get(ruestung, "Name")]
@@ -132,32 +130,33 @@
 			[h: rGS = json.get(ruestung, "GS")]
 			[h: rID = json.get(ruestung, "ID")]
 			[h: editMacroLink = macroLink(rName, "quickeditRS@this", "", rID)]
-
-			<tr style='font-weight: normal; text-align: center; border-top: 1px solid #eee5c8;'>
-				[h: ausgabe = "<span style='color: #eee5c8; text-decoration: none;' title='Diese Ruestung editieren'>" + editMacroLink + "</span>"]
-				<td style='text-align: left;'>
-					[r: ausgabe]
-				</td>
-				<td>
-					[r: rRS]
-				</td>
-				<td>
-					[r: rBE]
-				</td>
-				<td>
-					[r: rINI]
-				</td>
-				<td>
-					[r: rGS]
-				</td>
-				[h,if(rID == RuestungAktiv): bg = "bgcolor='#eee5c8'"; bg = ""]
-				[h,if(rID == RuestungAktiv): fc = "#3d1919"; fc = "#eee5c8"]
-				[h,if(rID == RuestungAktiv): linkTitle = "title='Diese Ruestung ist angelegt.'"; linkTitle = "title='Diese Ruestung anlegen.'"]
-				[h,if(rID == RuestungAktiv): link = "&#10003;"; link = macroLink("&#10063;", "changeRS@this", "", json.append(currentToken(), rID))]
-				<td [r: bg]>
-					<span style='color: [r: fc]; text-decoration: none;' [r: linkTitle]>[r: link]</span>
-				</td>
-			</tr>
+			<div>
+				<span title='Diese Rüstung editieren'>[r: editMacroLink]</span>
+			</div>
+			<div>
+				[r: rRS]
+			</div>
+			<div>
+				[r: rBE]
+			</div>
+			<div>
+				[r: rINI]
+			</div>
+			<div>
+				[r: rGS]
+			</div>
+			[h,if(rID == RuestungAktiv),Code: {
+				[class = "equipped"]
+				[linkTitle = "title='Diese Ruestung ist angelegt.'"]
+				[link = "&#10003;"]
+			};{
+				[class = ""]
+				[linkTitle = "title='Diese Ruestung anlegen.'"]
+				[link = macroLink("&#10063;", "changeRS@this", "", json.append(currentToken(), rID))]
+			}]
+			<div class="[r: class]">
+				<span [r: linkTitle]>[r: link]</span>
+			</div>
 		}]
-	</table>
+	</div>
 </div>

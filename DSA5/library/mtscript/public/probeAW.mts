@@ -45,7 +45,7 @@
 	[h: attacker = json.get(uebergabe, "Attacker")]
 };{}]
 
-[h: wert = getAW()]
+[h: wert = getAW(currentToken())]
 
 <!-- Da die Patzertabelle bei Waffenlosen Varianten seinen Sonderfall hat muessen wir hier manuell wuerfeln -->
 [h: patzerRoll = 2d6]

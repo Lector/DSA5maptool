@@ -31,7 +31,7 @@
 	};{}
 ]
 [h: closeDialog("tempMod")]
-[h: iniVorher = getINI()]
+[h: iniVorher = getINI(currentToken())]
 [h,if(json.get(uebergabe, "delAll") == ""), Code:
 	{
 		[TempMod = setStrProp(TempMod, "mu", json.get(uebergabe, "tModMU"))]
@@ -72,7 +72,7 @@
 		[msgText = "Alle temporären Effekte wurden zurückgesetzt."]
 	}
 ]
-[h: iniDiff = getINI() - iniVorher]
+[h: iniDiff = getINI(currentToken()) - iniVorher]
 [h,if(hasInitiative() == 1),Code:
 {
 	[neueIni = iniDiff + number(getInitiative())]

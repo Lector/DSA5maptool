@@ -59,7 +59,7 @@
 						<table style='border-spacing: 0px;' cellpadding='2'>
 							<tr>
 								<td>
-									[h: aktMU = getMU()]
+									[h: aktMU = getMU(currentToken())]
 									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;Mut&quot; ablegen'>[r: macroLink("MU: ", "probeEig@this", "", "MU")]</span>
 								</td>
 								<td style='text-align: right;' width='17'>
@@ -70,7 +70,7 @@
 							</tr>
 							<tr>
 								<td>
-									[h: aktKL = getKL()]
+									[h: aktKL = getKL(currentToken())]
 									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;Klugheit&quot; ablegen'>[r: macroLink("KL: ", "probeEig@this", "", "KL")]</span>
 								</td>
 								<td style='text-align: right;'>
@@ -81,7 +81,7 @@
 							</tr>
 							<tr>
 								<td>
-									[h: aktIN = getIN()]
+									[h: aktIN = getIN(currentToken())]
 									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;Intuition&quot; ablegen'>[r: macroLink("IN: ", "probeEig@this", "", "IN")]</span>
 								</td>
 								<td style='text-align: right;'>
@@ -92,7 +92,7 @@
 							</tr>
 							<tr>
 								<td>
-									[h: aktCH = getCH()]
+									[h: aktCH = getCH(currentToken())]
 									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;Charisma&quot; ablegen'>[r: macroLink("CH: ", "probeEig@this", "", "CH")]</span>
 								</td>
 								<td style='text-align: right;'>
@@ -103,7 +103,7 @@
 							</tr>
 							<tr>
 								<td>
-									[h: aktFF = getFF()]
+									[h: aktFF = getFF(currentToken())]
 									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;Fingerfertigkeit&quot; ablegen'>[r: macroLink("FF: ", "probeEig@this", "", "FF")]</span>
 								</td>
 								<td style='text-align: right;'>
@@ -114,7 +114,7 @@
 							</tr>
 							<tr>
 								<td>
-									[h: aktGE = getGE()]
+									[h: aktGE = getGE(currentToken())]
 									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;Gewandheit&quot; ablegen'>[r: macroLink("GE: ", "probeEig@this", "", "GE")]</span>
 								</td>
 								<td style='text-align: right;'>
@@ -125,7 +125,7 @@
 							</tr>
 							<tr>
 								<td>
-									[h: aktKO = getKO()]
+									[h: aktKO = getKO(currentToken())]
 									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;Konstitution&quot; ablegen'>[r: macroLink("KO: ", "probeEig@this", "", "KO")]</span>
 								</td>
 								<td style='text-align: right;'>
@@ -136,7 +136,7 @@
 							</tr>
 							<tr>
 								<td>
-									[h: aktKK = getKK()]
+									[h: aktKK = getKK(currentToken())]
 									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;Körperkraft&quot; ablegen'>[r: macroLink("KK: ", "probeEig@this", "", "KK")]</span>
 								</td>
 								<td style='text-align: right;'>
@@ -157,7 +157,7 @@
 									SK:
 								</td>
 								<td style='text-align: right;' width='17'>
-									[h: aktSK = getSK()]												
+									[h: aktSK = getSK(currentToken())]												
 									[h,if(aktSK < SK): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 									[h,if(aktSK > SK): eigColor = "#0099ff"]	
 									<span style='color: [r: eigColor];'>[r: aktSK]</span>
@@ -168,7 +168,7 @@
 									ZK:
 								</td>
 								<td style='text-align: right;'>
-									[h: aktZK = getZK()]												
+									[h: aktZK = getZK(currentToken())]												
 									[h,if(aktZK < ZK): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 									[h,if(aktZK > ZK): eigColor = "#0099ff"]	
 									<span style='color: [r: eigColor];'>[r: aktZK]</span>
@@ -179,7 +179,7 @@
 									INI<span style='font-weight: normal; font-size: 9pt;'>(+W6)</span>:
 								</td>
 								<td style='text-align: right;'>
-									[h: aktINI = getINI()]
+									[h: aktINI = getINI(currentToken())]
 									[h,if(aktINI < INI): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 									[h,if(aktINI > INI): eigColor = "#0099ff"]
 									<span style='color: [r: eigColor];'>[r: aktINI]</span>
@@ -190,7 +190,7 @@
 									GS:
 								</td>
 								<td style='text-align: right;'>
-									[h: aktGS = getGS()]
+									[h: aktGS = getGS(currentToken())]
 									[h,if(aktGS < GS ): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 									[h,if(aktGS > GS ): eigColor = "#0099ff"]
 									<span style='color: [r: eigColor];'>[r: aktGS]</span>
@@ -201,7 +201,7 @@
 									<span style='color: #eee5c8; text-decoration: none;' title='Probe auf &quot;Ausweichen&quot; ablegen'>[r: macroLink("AW:", "probeAW@this", "")]</span>
 								</td>
 								<td style='text-align: right;'>
-									[h: aktAW = getAW()]
+									[h: aktAW = getAW(currentToken())]
 									[h,if(aktAW < AW): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 									[h,if(aktAW > AW): eigColor = "#0099ff"]
 									<span style='color: [r: eigColor]; text-decoration: none;' title='Probe auf &quot;Ausweichen&quot; ablegen'>[r: macroLink(aktAW, "probeAW@this", "")]</span>

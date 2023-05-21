@@ -14,11 +14,11 @@
 
 [h,if(json.get(uebergabe, "resistenz") == "SKAktiv"), Code:
 	{
-		[h: mod = -getSK()]
+		[h: mod = -getSK(currentToken())]
 		[h: modtext = modReason(mod, "durch SK")]
 	};
 	{
-		[h: mod = -getZK()]
+		[h: mod = -getZK(currentToken())]
 		[h: modtext = modReason(mod, "durch ZK")]
 	}
 ]

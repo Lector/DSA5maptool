@@ -9,7 +9,7 @@
 			Charakterbogen - Eigenschaften
 		</title>
 		[r: linkGoogleFonts()]
-		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/charEigenschaften.css?cachelib=false'/>
+		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/charsheet.css?cachelib=false'/>
 	</head>
 	<body>
 		<div class="header">
@@ -27,19 +27,19 @@
 					<div class="heading">Werte</div>
 					<div class="stat-table">
 						<div>Seelenkraft:</div>
-						[h: aktSK = getSK()]
+						[h: aktSK = getSK(currentToken())]
 						[h,if(aktSK < SK): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 						[h,if(aktSK > SK): eigColor = "#0099ff"]
 						<div style='color: [r: eigColor];'>[r: aktSK]</div>
 
 						<div>Zähigkeit:</div>
-						[h: aktZK = getZK()]												
+						[h: aktZK = getZK(currentToken())]												
 						[h,if(aktZK < ZK): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 						[h,if(aktZK > ZK): eigColor = "#0099ff"]
 						<div style='color: [r: eigColor];'>[r: aktZK]</div>
 
 						[h: wID = getStrProp(PlayerOpt, "atWeapon")]
-						[h: aktINI = getINI()]
+						[h: aktINI = getINI(currentToken())]
 						[h,if(aktINI < INI): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 						[h,if(aktINI > INI): eigColor = "#0099ff"]
 						[h: link = strformat("<a title='Initiative ermitteln' href='%s' style='font-weight: normal;'>", macroLinkText("probeINI@this", "", currentToken()))]
@@ -47,7 +47,7 @@
 						<div style='color: [r: eigColor];' >[r: link][r: aktINI]+1W6</a></div>
 
 						<div>Geschwindigkeit:</div>
-						[h: aktGS = getGS()]												
+						[h: aktGS = getGS(currentToken())]												
 						[h,if(aktGS < GS): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 						[h,if(aktGS > GS): eigColor = "#0099ff"]	
 						<div style='color: [r: eigColor];'>[r: aktGS]</div>

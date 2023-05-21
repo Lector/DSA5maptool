@@ -328,7 +328,7 @@
 															BE
 														</td>
 													</tr>
-													[h: ruestung = resolveRS(getRuestung(RuestungAktiv, id), id)]
+													[h: ruestung = resolveRS(id, getRuestung(Ruestungen, RuestungAktiv))]
 													<tr style='border-top: 1px solid #eee5c8;'>
 														<td style='font-weight: bold;'>
 															RS
