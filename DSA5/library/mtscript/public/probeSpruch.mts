@@ -4,7 +4,7 @@
 [h: modwert = getStrProp(uebergabe, "Wert")]
 [h: bezeichnung = getStrProp(uebergabe, "Bezeichnung")]
 
-[h,if(bezeichnung == "Liturgie" || bezeichnung == "Zeremonie"),Code:
+[h,if(bezeichnung == "chant" || bezeichnung == "ceremony"),Code:
 {
 	[h: sfgroup = "KarmaleSF"]
 	[h: improVerbal = "Improvisierte Liturgie (Gebet)"]
@@ -54,6 +54,8 @@
 					case "spell": "Zauber";
 					case "ritual": "Ritual";
 					case "magic": "Magische Handlungs";
+					case "chant": "Liturgie";
+					case "ceremony": "Zeremonie";
 					default: bezeichnung
 				]dauer:
 			</td>

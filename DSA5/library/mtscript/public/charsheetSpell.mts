@@ -20,6 +20,17 @@ case "magic": {
     [list = MagischeHandlungen]
     [wikiLink = "https://www.ulisses-regelwiki.de/" + MagischeHandlungenSingular + ".html?" + MagischeHandlungenSingular + "=%s"]
     [h,if(json.length(list) == 0): return(0, "")]
+};
+case "chant": {
+    [label = "Liturgien"]
+    [list = Liturgien]
+    [wikiLink = "https://www.ulisses-regelwiki.de/liturgie.html?liturgie=%s"]
+};
+case "ceremony": {
+    [label = "Zeremonien"]
+    [list = Zeremonien]
+    [wikiLink = "https://www.ulisses-regelwiki.de/zeremonie.html?zeremonie=%s"]
+    [h,if(json.length(list) == 0): return(0, "")]
 }]
 
 <div class="equip-table" id="spell">
