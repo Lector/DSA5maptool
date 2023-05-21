@@ -1,16 +1,5 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
-
-[h: uebergabe = macro.args]
+[h:switchToken(arg(0))]
+[h: uebergabe = arg(1)]
 
 [h: modwert = getStrProp(uebergabe, "Wert")]
 [h: bezeichnung = getStrProp(uebergabe, "Bezeichnung")]
@@ -38,7 +27,7 @@
 [h: wiederholung = hasTrait(sfgroup, routine)]
 [h: ModAnzahl = floor(modwert / 4.0)] 
 
-[r,if(bezeichnung != "Magische Handlung"),Code:{
+[r,if(bezeichnung != "magic"),Code:{
 <td valign='top'>
 	<div class='label'>
 		Modifikationen<br>
@@ -61,7 +50,12 @@
 		</tr>
 		<tr>
 			<td valign='middle'>
-				[r: bezeichnung]dauer:
+				[r,switch(bezeichnung):
+					case "spell": "Zauber";
+					case "ritual": "Ritual";
+					case "magic": "Magische Handlungs";
+					default: bezeichnung
+				]dauer:
 			</td>
 			<td>
 				<select size='1' name="Dauer">
@@ -143,7 +137,7 @@
 		[r,if(arkan == 1),Code:{
 			[r,macro("probeEisen@this"): currentToken()]
 		};{}]
-		[r,if(bezeichnung == "Zauber" || bezeichnung == "Ritual"),Code:{
+		[r,if(bezeichnung == "spell" || bezeichnung == "ritual"),Code:{
 	</table>
 	<table style='border-spacing: 0px;' cellpadding='1'>
 		<tr>

@@ -67,7 +67,7 @@
 														<option value='1'>Kurz</option>
 														<option value='2' selected='selected'>Mittel</option>
 														<option value='3'>Lang</option>
-														<option value='4'>überlang</option>
+														<option value='4'>Überlang</option>
 													</select>
 												</td>
 											</tr>

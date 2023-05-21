@@ -1,33 +1,23 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
+[h:switchToken(arg(0))]
 
 [h,if(getState("Blutrausch") == 1),Code:
 {
 	[h,macro("inputFail@this"): "blutrausch"]
 };{}]
 
-[h: uebergabe = macro.args]
+[h: uebergabe = arg(1)]
 
-[h: zname = listGet(uebergabe, 0)]
-[h: e1 = listGet(uebergabe, 1)]
-[h: e2 = listGet(uebergabe, 2)]
-[h: e3 = listGet(uebergabe, 3)]
+[h: zname = json.get(uebergabe, 0)]
+[h: e1 = json.get(uebergabe, 1)]
+[h: e2 = json.get(uebergabe, 2)]
+[h: e3 = json.get(uebergabe, 3)]
 [h: e1wert = eval(e1)]
 [h: e2wert = eval(e2)]
 [h: e3wert = eval(e3)]
-[h: wert = listGet(uebergabe, 4)]
-[h: wiki = listGet(uebergabe, 5)]
-[h: merkmal = listGet(uebergabe, 6)]
-[h: bezeichnung = listGet(uebergabe, 7)]
+[h: wert = json.get(uebergabe, 4)]
+[h: wiki = json.get(uebergabe, 5)]
+[h: merkmal = json.get(uebergabe, 6)]
+[h: bezeichnung = json.get(uebergabe, 7)]
 
 [h,macro("probeGetAktWert@this"): e1]
 [h: aktE1wert = macro.return]
@@ -117,7 +107,7 @@
 						<td width='20'>
 							&nbsp;
 						</td>
-						[r,macro("probeSpruch@this"): setStrProp(setStrProp("", "Wert", wert), "Bezeichnung", bezeichnung)]
+						[r,macro("probeSpruch@this"): json.append(currentToken(), setStrProp(setStrProp("", "Wert", wert), "Bezeichnung", bezeichnung))]
 					</tr>
 				</table>
 				<input type="hidden" name="Merkmal" value="[r: merkmal]"/>

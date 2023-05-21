@@ -49,7 +49,7 @@
 			[h,if(wRW == 1): rwtext = "Kurz"]
 			[h,if(wRW == 2): rwtext = "Mittel"]
 			[h,if(wRW == 3): rwtext = "Lang"]
-			[h,if(wRW == 4): rwtext = "überlang"]
+			[h,if(wRW == 4): rwtext = "Überlang"]
 				<span style='text-decoration: none;'>[r: rwtext]</span>
 		</div>
 		<div>

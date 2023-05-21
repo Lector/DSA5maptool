@@ -26,7 +26,7 @@ span {
 }
 
 ul {
-    padding-left: 16px;
+    padding-left: 20px;
 }
 
 .debug {
@@ -103,6 +103,12 @@ ul {
     overflow: hidden;
 }
 
+.splitterH {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+}
+
 .row-container {
     display: flex;
     flex-flow: row nowrap;
@@ -155,6 +161,9 @@ ul {
 .equip-table[id="combatTechnique"] {
     grid-template-columns: 1fr auto auto auto auto;
 }
+.equip-table[id="spell"] {
+    grid-template-columns: auto 1fr auto auto;
+}
 
 .equip-table[id="melee"] > div:nth-child(-n + 7),
 .equip-table[id="ranged"] > div:nth-child(-n + 6),
@@ -164,7 +173,8 @@ ul {
     white-space: nowrap;
 }
 .equip-table[id="skill"] > div:nth-child(-n + 4),
-.equip-table[id="combatTechnique"] > div:nth-child(-n + 5) {
+.equip-table[id="combatTechnique"] > div:nth-child(-n + 5),
+.equip-table[id="spell"] > div:nth-child(-n + 4) {
     font-family: "IM Fell DW Pica";
     text-transform: uppercase;
     white-space: nowrap;
@@ -184,7 +194,8 @@ ul {
 .equip-table[id="armor"] > div:nth-child(6n + 1),
 .equip-table[id="mount"] > div:nth-child(5n + 2),
 .equip-table[id="skill"] > div:nth-child(4n + 1),
-.equip-table[id="combatTechnique"] > div:nth-child(5n + 1) {
+.equip-table[id="combatTechnique"] > div:nth-child(5n + 1),
+.equip-table[id="spell"] > div:nth-child(4n + 2) {
     text-align: left;
 }
 
@@ -358,8 +369,8 @@ input[type="text"] {
     gap: 6px;
     background-color: #3d1919;
     border-spacing: 0px;
-    border-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/panelBubble.png") 19 19 round;
-    border-image-width: 19px 19px;
+    border-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/panelBubble.png") 20 20 round;
+    border-image-width: 20px 20px;
     word-wrap: break-word;
     padding: 20px;
 }
