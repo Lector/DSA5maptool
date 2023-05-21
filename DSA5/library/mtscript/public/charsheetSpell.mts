@@ -8,28 +8,33 @@ case "spell": {
     [label = "Zaubersprüche"]
     [list = Zauber]
     [wikiLink = "https://www.ulisses-regelwiki.de/zauber.html?zauber=%s"]
+    [mac = "probeZauber"]
 };
 case "ritual": {
     [label = "Rituale"]
     [list = Rituale]
     [wikiLink = "https://www.ulisses-regelwiki.de/ritual.html?ritual=%s"]
+    [mac = "probeRitual"]
     [h,if(json.length(list) == 0): return(0, "")]
 };
 case "magic": {
     [label = MagischeHandlungenPlural]
     [list = MagischeHandlungen]
     [wikiLink = "https://www.ulisses-regelwiki.de/" + MagischeHandlungenSingular + ".html?" + MagischeHandlungenSingular + "=%s"]
+    [mac = "probeZauber"]
     [h,if(json.length(list) == 0): return(0, "")]
 };
 case "chant": {
     [label = "Liturgien"]
     [list = Liturgien]
     [wikiLink = "https://www.ulisses-regelwiki.de/liturgie.html?liturgie=%s"]
+    [mac = "probeLiturgie"]
 };
 case "ceremony": {
     [label = "Zeremonien"]
     [list = Zeremonien]
     [wikiLink = "https://www.ulisses-regelwiki.de/zeremonie.html?zeremonie=%s"]
+    [mac = "probeZeremonie"]
     [h,if(json.length(list) == 0): return(0, "")]
 }]
 
@@ -65,14 +70,14 @@ case "ceremony": {
     </div>
     <div>
         <span title='Probe auf &quot;[r: tName]&quot; ablegen'>
-            [r: macroLink(tName, "probeZauber@this", "", params)]
+            [r: macroLink(tName, mac+"@this", "", params)]
         </span>
     </div>
     <div>
         [r: tEigenschaft1] &middot; [r: tEigenschaft2] &middot; [r: tEigenschaft3]
     </div>
     <div>
-        <span title='Probe auf &quot;[r: tName]&quot; ablegen'>[r: macroLink(tWert, "probeZauber@this", "", params)]</span>
+        <span title='Probe auf &quot;[r: tName]&quot; ablegen'>[r: macroLink(tWert, mac+"@this", "", params)]</span>
     </div>
     }]
 </div>

@@ -107,7 +107,7 @@
 						<td width='20'>
 							&nbsp;
 						</td>
-						[r,macro("probeSpruch@this"): json.append(currentToken(), setStrProp(setStrProp("", "Wert", wert), "Bezeichnung", bezeichnung))]
+						[r: probeSpruch(currentToken(), json.set("{}", "Wert", wert, "Bezeichnung", bezeichnung))]
 					</tr>
 				</table>
 				<input type="hidden" name="Merkmal" value="[r: merkmal]"/>

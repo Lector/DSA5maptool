@@ -1,8 +1,8 @@
-[h:switchToken(arg(0))]
+[h: switchToken(arg(0))]
 [h: uebergabe = arg(1)]
 
-[h: modwert = getStrProp(uebergabe, "Wert")]
-[h: bezeichnung = getStrProp(uebergabe, "Bezeichnung")]
+[h: modwert = json.get(uebergabe, "Wert")]
+[h: bezeichnung = json.get(uebergabe, "Bezeichnung")]
 
 [h,if(bezeichnung == "chant" || bezeichnung == "ceremony"),Code:
 {
