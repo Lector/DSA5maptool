@@ -21,24 +21,21 @@
 		<div class="content">
 			[r,macro("eigLeiste@this"): currentToken()]
 
-			<table style='border-spacing: 0px;' width='431'>
-				<tr>
-					<td class="panel-middle">
-						<div width='405'>
-							<table style='border-spacing: 0px;' cellpadding='0' width='399'>
-								<tr>
-									<td width='373'>
-										<image src='[r: tableImage("mainTheme", 93)]'></image>
-									</td>
-									<td style='text-align: center;' width='13'>
-										<a href="[r: macroLinkText("notizAdd@this")]"><image src='[r: tableImage("mainTheme", 97)]' border="0" alt="Eine neue Notiz hinzufügen"></image></a>
-									</td>
-									<td style='text-align: right;' width='13'>
-										<a href="[r: macroLinkText("notizDelAll@this")]"><image src='[r: tableImage("mainTheme", 98)]' border="0" alt="Alle Notizen löschen"></image></a>
-									</td>
-								</tr>
-							</table>
-						</div>
+			<div>
+				<table>
+					<tr>
+						<td width='373'>
+							<image src='[r: tableImage("mainTheme", 93)]'></image>
+						</td>
+						<td style='text-align: center;' width='13'>
+							<a href="[r: macroLinkText("notizAdd@this")]"><image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesAdd.png")]' alt="Eine neue Notiz hinzufügen"></image></a>
+						</td>
+						<td style='text-align: right;' width='13'>
+							<a href="[r: macroLinkText("notizDelAll@this")]"><image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesRemove.png")]' alt="Alle Notizen löschen"></image></a>
+						</td>
+					</tr>
+				</table>
+			</div>
 						[h: nAusgabe = ""]
 						[h: nTitel = ""]
 						[h: nText = ""]
@@ -127,18 +124,16 @@
 										<image src='[r: tableImage("mainTheme", 94)]'></image>
 									</td>
 									<td style='text-align: center;' width='16'>
-										<a href="[r: macroLinkText("notizSLEdit@this")]"><image src='[r: tableImage("mainTheme", 96)]' border="0" alt="SL-Notizen hinzufügen oder bearbeiten"></image></a>
+										<a href="[r: macroLinkText("notizSLEdit@this")]"><image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesEdit.png")]' alt="SL-Notizen hinzufügen oder bearbeiten"></image></a>
 									</td>
 									<td style='text-align: right;' width='13'>
-										<a href="[r: macroLinkText("notizSLDel@this")]"><image src='[r: tableImage("mainTheme", 98)]' border="0" alt="Alle SL-Notizen löschen"></image></a>
+										<a href="[r: macroLinkText("notizSLDel@this")]"><image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesRemove.png")]' alt="Alle SL-Notizen löschen"></image></a>
 									</td>
 								</tr>
 							</table>
 						</div>
 						[r,if(getGMNotes() == ""): output = "Keine Vorhanden"; output = getGMNotes()]
-					</td>
-				</tr>
-			</table>
+					</div>
 
 		</div>
 		<div class="footer"/>
