@@ -3,7 +3,7 @@
 
 
 <div class="panel-round">
-	<div class="equip-table" id="combatTechnique">
+	<div class="table" id="combatTechnique">
 		<div>
 			KAMPFTECHNIK
 		</div>

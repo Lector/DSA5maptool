@@ -5,7 +5,7 @@
 		<img src="[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/swordAndShield.png")]">
 		Nahkampfwaffen
 	</div>
-	<div class="equip-table" id="melee">
+	<div class="table" id="melee">
 		<div>Nahkampfwaffe</div>
 		<div>RW</div>
 		<div>TP</div>

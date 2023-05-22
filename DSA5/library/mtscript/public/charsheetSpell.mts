@@ -38,7 +38,7 @@ case "ceremony": {
     [h,if(json.length(list) == 0): return(0, "")]
 }]
 
-<div class="equip-table" id="spell">
+<div class="table" id="spell">
     <div>
         &nbsp;
     </div>

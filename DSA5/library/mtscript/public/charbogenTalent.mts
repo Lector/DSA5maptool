@@ -2,7 +2,7 @@
 [h: group = arg(1)]
 
 <div class="panel-round">
-	<div class="equip-table" id="skill">
+	<div class="table" id="skill">
 		<div>
 			Fertigkeit
 		</div>

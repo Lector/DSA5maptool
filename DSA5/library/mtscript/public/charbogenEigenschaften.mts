@@ -42,7 +42,7 @@
 						[h: aktINI = getINI(currentToken())]
 						[h,if(aktINI < INI): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 						[h,if(aktINI > INI): eigColor = "#0099ff"]
-						[h: link = strformat("<a title='Initiative ermitteln' href='%s' style='font-weight: normal;'>", macroLinkText("probeINI@this", "", currentToken()))]
+						[h: link = strformat("<a title='Initiative ermitteln' href='%s'>", macroLinkText("probeINI@this", "", currentToken()))]
 						<div>[r:link]Initiative:</a></div>
 						<div style='color: [r: eigColor];' >[r: link][r: aktINI]+1W6</a></div>
 
@@ -51,6 +51,14 @@
 						[h,if(aktGS < GS): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 						[h,if(aktGS > GS): eigColor = "#0099ff"]	
 						<div style='color: [r: eigColor];'>[r: aktGS]</div>
+
+						[h: aktAW = getAW(currentToken())]
+						[h,if(aktAW < AW): eigColor = "#ff3333"; eigColor = "#eee5c8"]
+						[h,if(aktAW > AW): eigColor = "#0099ff"]
+						[h: link = strformat("<a href='%s'>", macroLinkText("probeAW@this", "", currentToken()))]
+						[h: hands = usesHands(currentToken())]
+						<div>[r: link][r,if(hands != 0):"Ausweichen";"Verteidigung"]:</a></div>
+						<div style='color: [r: eigColor];'>[r: link][r: aktAW]</a></div>
 
 						<div>Schicksalspunkte:</div>
 						<div>[r: SchipsAktuell] / [r: SchipsMax]</div>

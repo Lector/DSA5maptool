@@ -1,14 +1,16 @@
-[h,macro("abfrageImpersonate@this"): ""]
-
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
+[h,if(arg(0) != ""),Code:
 {
-	[selectID = getSelected()]
-	[if(listCount(selectID) != 1), Code:
+	[switchToken(arg(0))]
+};
+{
+	[h,macro("abfrageImpersonate@this"): ""]
+	[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
 	{
-		[h,macro("inputFail@this"): "gmSelectFail"]
-	};{}]
-	[switchToken(selectID)]
-};{}]
+		[selectID = getSelected()]
+		[h,if(listCount(selectID) != 1): inputFail("gmSelectFail")]
+		[switchToken(selectID)]
+	}]
+}]
 
 [h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction", "com.github.lector.dsa5maptool") == 1), Code:
 	{
@@ -23,7 +25,8 @@
 [h: schaden = ""]
 [h: status = "[]"]
 [h: failText = ""]
-[h: uebergabe = macro.args]
+[h: uebergabe = ""]
+[h,if(json.length(macro.args) > 1): uebergabe = arg(1)]
 [h,if(uebergabe != ""),Code:{
 	[schadensart = json.get(uebergabe, "Schadensart")]
 	[if(schadensart != "StP"): schaden = json.get(uebergabe, "Schaden")]

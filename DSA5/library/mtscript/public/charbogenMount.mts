@@ -2,7 +2,7 @@
 
 <div class="panel-ornament">
 	<div class="heading">Reittier</div>
-	<div class="equip-table" id="mount">
+	<div class="table" id="mount">
 		<div>
 			&nbsp;
 		</div>

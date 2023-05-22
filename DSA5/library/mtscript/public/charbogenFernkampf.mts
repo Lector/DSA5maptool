@@ -2,7 +2,7 @@
 
 <div class="panel-ornament">
 	<div class="heading">Fernkampfwaffen</div>
-	<div class="equip-table" id="ranged">
+	<div class="table" id="ranged">
 		<div>
 			Fernkampfwaffe
 		</div>

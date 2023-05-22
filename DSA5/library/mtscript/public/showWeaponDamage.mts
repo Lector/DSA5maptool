@@ -15,9 +15,9 @@
 
 [h: reactionParams = json.get(params, "ReactionParams")]
 
-[h: paradeLink = macroLinkText("probePA@this", "", reactionParams)]
-[h: awLink = macroLinkText("probeAW@this", "", reactionParams)]
-[h: schadenLink = macroLinkText("schadenErhalten@this", "", reactionParams)]
+[h: paradeLink = macroLinkText("probePA@this", "", json.append("[]", "", reactionParams))]
+[h: awLink = macroLinkText("probeAW@this", "", json.append("[]", "", reactionParams))]
+[h: schadenLink = macroLinkText("schadenErhalten@this", "", json.append("[]", "", reactionParams))]
 
 [h: buttons = strformat("
 <td valign=middle rowspan=3>

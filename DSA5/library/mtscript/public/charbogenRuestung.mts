@@ -102,7 +102,7 @@
 		</tr>
 	</table>
 	
-	<div class="equip-table" id="armor"> 	
+	<div class="table" id="armor"> 	
 		<div style='text-align: left;'>
 			Rüstung
 		</div>

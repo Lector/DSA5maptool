@@ -1,14 +1,16 @@
-[h,macro("abfrageImpersonate@this"): ""]
-
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
+[h,if(arg(0) != ""),Code:
 {
-	[selectID = getSelected()]
-	[if(listCount(selectID) != 1), Code:
+	[switchToken(arg(0))]
+};
+{
+	[h,macro("abfrageImpersonate@this"): ""]
+	[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
 	{
-		[h,macro("inputFail@this"): "gmSelectFail"]
-	};{}]
-	[switchToken(selectID)]
-};{}]
+		[selectID = getSelected()]
+		[h,if(listCount(selectID) != 1): inputFail("gmSelectFail")]
+		[switchToken(selectID)]
+	}]
+}]
 
 [h,if(getState("Blutrausch") == 1),Code:
 {
@@ -20,7 +22,8 @@
 	[h,macro("inputFail@this"): "keinWert"]
 };{}]
 
-[h: uebergabe = macro.args]
+[h: uebergabe = ""]
+[h,if(json.length(macro.args) > 1): uebergabe = arg(1)]
 [h: gluecklich = ""]
 [h: hinten = ""]
 [h: probe = 0]
@@ -43,7 +46,7 @@
 	[h: status = json.get(uebergabe, "Status")]
 	[h: failText = json.get(uebergabe, "FailText")]
 	[h: attacker = json.get(uebergabe, "Attacker")]
-};{}]
+}]
 
 [h: wert = getAW(currentToken())]
 

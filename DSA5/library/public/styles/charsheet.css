@@ -130,12 +130,15 @@ ul {
 .stat-table > div {
     margin: 0px;
 }
+.stat-table a {
+    font-weight: normal;
+}
 
-.equip-table {
+.table {
     display: grid;
     align-items: center;
 }
-.equip-table > div {
+.table > div {
     padding: 4px 4px;
     margin: 0px;
     text-align: center;
@@ -145,36 +148,36 @@ ul {
     color: #3d1919;
 }
 
-.equip-table[id="melee"] {
+.table[id="melee"] {
     grid-template-columns: 1fr auto auto auto auto auto auto;
 }
-.equip-table[id="ranged"],
-.equip-table[id="armor"] {
+.table[id="ranged"],
+.table[id="armor"] {
     grid-template-columns: 1fr auto auto auto auto 30px;
 }
-.equip-table[id="mount"] {
+.table[id="mount"] {
     grid-template-columns: auto 1fr auto auto 30px;
 }
-.equip-table[id="skill"] {
+.table[id="skill"] {
     grid-template-columns: 1fr auto auto auto;
 }
-.equip-table[id="combatTechnique"] {
+.table[id="combatTechnique"] {
     grid-template-columns: 1fr auto auto auto auto;
 }
-.equip-table[id="spell"] {
+.table[id="spell"] {
     grid-template-columns: auto 1fr auto auto;
 }
 
-.equip-table[id="melee"] > div:nth-child(-n + 7),
-.equip-table[id="ranged"] > div:nth-child(-n + 6),
-.equip-table[id="armor"] > div:nth-child(-n + 6),
-.equip-table[id="mount"] > div:nth-child(-n + 5) {
+.table[id="melee"] > div:nth-child(-n + 7),
+.table[id="ranged"] > div:nth-child(-n + 6),
+.table[id="armor"] > div:nth-child(-n + 6),
+.table[id="mount"] > div:nth-child(-n + 5) {
     font-weight: bold;
     white-space: nowrap;
 }
-.equip-table[id="skill"] > div:nth-child(-n + 4),
-.equip-table[id="combatTechnique"] > div:nth-child(-n + 5),
-.equip-table[id="spell"] > div:nth-child(-n + 4) {
+.table[id="skill"] > div:nth-child(-n + 4),
+.table[id="combatTechnique"] > div:nth-child(-n + 5),
+.table[id="spell"] > div:nth-child(-n + 4) {
     font-family: "IM Fell DW Pica";
     text-transform: uppercase;
     white-space: nowrap;
@@ -182,20 +185,20 @@ ul {
     border-top: 1px solid #eee5c8;
 }
 
-.equip-table[id="melee"] > div:not(:nth-last-child(-n + 7)),
-.equip-table[id="ranged"] > div:not(:nth-last-child(-n + 6)),
-.equip-table[id="armor"] > div:not(:nth-last-child(-n + 6)),
-.equip-table[id="mount"] > div:not(:nth-last-child(-n + 5)) {
+.table[id="melee"] > div:not(:nth-last-child(-n + 7)),
+.table[id="ranged"] > div:not(:nth-last-child(-n + 6)),
+.table[id="armor"] > div:not(:nth-last-child(-n + 6)),
+.table[id="mount"] > div:not(:nth-last-child(-n + 5)) {
     border-bottom: 1px solid #eee5c8;
 }
 
-.equip-table[id="melee"] > div:nth-child(7n + 1),
-.equip-table[id="ranged"] > div:nth-child(6n + 1),
-.equip-table[id="armor"] > div:nth-child(6n + 1),
-.equip-table[id="mount"] > div:nth-child(5n + 2),
-.equip-table[id="skill"] > div:nth-child(4n + 1),
-.equip-table[id="combatTechnique"] > div:nth-child(5n + 1),
-.equip-table[id="spell"] > div:nth-child(4n + 2) {
+.table[id="melee"] > div:nth-child(7n + 1),
+.table[id="ranged"] > div:nth-child(6n + 1),
+.table[id="armor"] > div:nth-child(6n + 1),
+.table[id="mount"] > div:nth-child(5n + 2),
+.table[id="skill"] > div:nth-child(4n + 1),
+.table[id="combatTechnique"] > div:nth-child(5n + 1),
+.table[id="spell"] > div:nth-child(4n + 2) {
     text-align: left;
 }
 
