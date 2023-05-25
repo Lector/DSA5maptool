@@ -11,15 +11,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/@fontsource/aclonica@4.5.9/index.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./styles/charEigenschaften.css?cachelib=false" />
+	<link rel="onChangeSelection" type="macro" href="macro://showPage@lib:com.github.lector.dsa5maptool/self/impersonated?"
 </head>
 
 <body>
     <div>tbd</div>
-    <button id="clicker">Click Me!</button>
-	<!-- <div style="position: relative; width: 122px">
+    <!--<button id="clicker">Click Me!</button>
+	 <div style="position: relative; width: 122px">
 		<img style="position:absolute; top:0; left: 0;" src="images/mainTheme/bar.png" height="33px">
 		<img style="position:absolute; top:0; left: 0;" src="images/mainTheme/barLife.png" width="50%" height="33px">
-	</div> -->
+	</div>
 	<p>Some Text</p>
 	<div class="row-container">
 		<div style="display: flex; flex-direction: column; gap:24px">
@@ -36,95 +37,31 @@
 				</div>
 			</div>
 		</div>
-	</div>
-    <!-- <div class="border">
-		<form action="[r: actionLink]" method="post">
-			[r: header("Würfelwurf")]
-			<table style='border-spacing: 0px; margin-top: 8px; margin-left: auto; margin-right: auto;'>
-				<tr>
-					<td style='text-align: center; font-size: 14pt; font-weight: bold; color: #482902; border-top: 1px solid #7b5547; border-bottom: 1px solid #7b5547; margin-bottom: 5px;' width='300'>
-						[r: wTitle]
-					</td>
-				</tr>
-			</table>
-			<table style='border-spacing: 0px; margin-top: 5px; margin-left: auto; margin-right: auto;'>
-				<tr>
-					<td>
-						<select name='wAnzahl' size='1'>
-						<option selected='selected'>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-						<option>6</option>
-						<option>7</option>
-						<option>8</option>
-						<option>9</option>
-						<option>10</option>
-						<option>11</option>
-						<option>12</option>
-						<option>13</option>
-						<option>14</option>
-						<option>15</option>
-						<option>16</option>
-						<option>17</option>
-						<option>18</option>
-						<option>19</option>
-						<option>20</option>
-						<option>21</option>
-						</select>
-					</td>
-					<td>
-						[r: wText]
-					</td>
-					<td width='10'>
-						&nbsp;
-					</td>
-					<td>
-						+
-					</td>
-					<td>
-						<input type='text' name='wBonus' size='2' maxlength='2' value=''>
-					</td>
-					<td width='10'>
-						&nbsp;
-					</td>
-					<td>
-						-
-					</td>
-					<td>
-						<input type='text' name='wMalus' size='2' maxlength='2' value=''>
-					</td>
-				</tr>
-			</table>
-			<table style='border-spacing: 0px; margin: 7px auto 8px auto;'>
-					<td>
-						<button type='submit' name='action'><img src='[r: button]'/>
-					</td>
-				</tr>
-			</table>
-			[r,macro("probeChat@this"): ""]
-			<input type='hidden' name='diceTyp' value='[r: uebergabe]'/>
-		</form>
 	</div> -->
+	<div class="row-container">
+		<div class="heading">Name</div>
+		<p id="name"></p>
+		<div class="heading">Mut</div>
+		<p id="mu"></p>
+		<div class="heading">Klugheit</div>
+		<p id="kl"></p>
+	</div>
 </body>
 
 <script>
-    document.getElementById("clicker").addEventListener("click", async function (event) {
-        try {
-        console.log("Clicked a Button");
-            const userData = await MapTool.getUserData();
-        console.log("#",userData, "#");
-        const rest = new RestData("macro:dataProvider@lib:com.github.lector.dsa5maptool", {hello: "world", foo: true, bar: 42, tokenId: userData});
-        rest.get().then(val => alert(val)).catch(e => alert(e))
-        // document.title = `W${data.dice} Wurf`;
-    } catch(e) { alert(e)}
-        // const rest = new RestData("macro:dataProvider@this", {hello: "world", foo: true, bar: 42});
-        // rest.get().then(val => alert(val)).catch(e => alert(e))
-    });
-    window.addEventListener("load", function() {
+    window.addEventListener("load", async function() {
         console.log("Loaded");
-        console.log(JSON.stringify(MapTool.getUserData()));
+		const tokenId = await MapTool.getUserData();
+        console.log("Open Page for token", tokenId);
+		const rest = new RestData("macro:dataProvider@lib:com.github.lector.dsa5maptool", {tokenId: tokenId});
+
+		rest.get().then(val => {
+			const data = JSON.parse(val);
+			console.log("Fetched value", data);
+			document.getElementById("name").innerText = data.name;
+			document.getElementById("mu").innerText = data.mu;
+			document.getElementById("kl").innerText = data.kl;
+		})
     })
 </script>
 
