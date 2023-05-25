@@ -21,120 +21,55 @@
 		<div class="content">
 			[r,macro("eigLeiste@this"): currentToken()]
 
-			<div>
-				<table>
-					<tr>
-						<td width='373'>
-							<image src='[r: tableImage("mainTheme", 93)]'></image>
-						</td>
-						<td style='text-align: center;' width='13'>
-							<a href="[r: macroLinkText("notizAdd@this")]"><image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesAdd.png")]' alt="Eine neue Notiz hinzufügen"></image></a>
-						</td>
-						<td style='text-align: right;' width='13'>
-							<a href="[r: macroLinkText("notizDelAll@this")]"><image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesRemove.png")]' alt="Alle Notizen löschen"></image></a>
-						</td>
-					</tr>
-				</table>
-			</div>
-						[h: nAusgabe = ""]
-						[h: nTitel = ""]
-						[h: nText = ""]
-						[h: num = 1]
-						[h,count(getStrProp(Notizen, "nAnzahl"), ""), Code:
-							{
-								[nTitel = getStrProp(Notizen, strformat("n%{num}Titel"))]
-								[nText = getStrProp(Notizen, strformat("n%{num}Text"))]
-								[editLink = strformat("<a href='%s'><image src='%s' border='0' alt='Diese Notiz editieren'></image></a>", macroLinkText("notizEdit@this", "", num), tableImage("mainTheme", 99))]
-								[delLink = strformat("<a href='%s'><image src='%s' border='0' alt='Diese Notiz löschen'></image></a>", macroLinkText("notizDel@this", "", num), tableImage("mainTheme", 100))]
-								[nAusgabe = nAusgabe + strformat("
-								<table style='border-spacing: 0px; margin-bottom: 3px;' cellpadding='0'>
-									<tr>
-										<td>
-											<b>%s - </b>%s&nbsp;%s
-											<br>
-											%s
-										</td>
-									</tr>
-								</table>
-								", nTitel, editLink, delLink, nText)]
-								[num = num + 1]
-							}
-						]
-						[r,if(getStrProp(Notizen, "nAnzahl") == 0), Code:
-							{
-								[r: "Keine Vorhanden<br>&nbsp;"]
-							};
-							{
-								[r: nAusgabe+"<br>"]
-							}
-						]
-						<div width='405'>
-							<image src='[r: tableImage("mainTheme", 95)]'></image>
-						</div>
-						[h: hShared = getLibProperty("SharedHandouts", "com.github.lector.dsa5maptool")]
-						[h: hCount = listCount(hShared)]
-						[h: hAusgabe = ""]
-						[h: num = 0]
-						[h,count(hCount, ""), Code:
-						{
-							[hNum = listGet(hShared, num)]
-							[hTokenName = strformat("Handout %s", hNum)]
-							[id = findToken(hTokenName, "Spieltisch")]
+			<div class="table" id="handouts">
+				<div>Handouts</div>
+				[h: hShared = getLibProperty("SharedHandouts", "com.github.lector.dsa5maptool")]
+				[h: hCount = listCount(hShared)]
+				[h: hAusgabe = ""]
+				[h: num = 0]
+				[h,count(hCount, ""), Code:
+				{
+					[hNum = listGet(hShared, num)]
+					[hTokenName = strformat("Handout %s", hNum)]
+					[id = findToken(hTokenName, "Spieltisch")]
 
-							[h: x = getTokenX(0, id, "Spieltisch")]
-							[h: y = getTokenY(0, id, "Spieltisch")]
-							[h,if(getCurrentMapName() != "Spieltisch"): moveTokenFromMap(id, "Spieltisch", x, y)]
-							[h: switchToken(id)]
-							
-							[token(hTokenName): hTitle = getLabel()]
-							[if(hTitle == ""): hTitle = "Handout"]
-							[token(hTokenName): hShort = getNotes()]
-							[if(hShort == ""): hShort = "Keine Beschreibung verfügbar"]
+					[h: x = getTokenX(0, id, "Spieltisch")]
+					[h: y = getTokenY(0, id, "Spieltisch")]
+					[h,if(getCurrentMapName() != "Spieltisch"): moveTokenFromMap(id, "Spieltisch", x, y)]
+					[h: switchToken(id)]
+					
+					[token(hTokenName): hTitle = getLabel()]
+					[if(hTitle == ""): hTitle = "Handout"]
+					[token(hTokenName): hShort = getNotes()]
+					[if(hShort == ""): hShort = "Keine Beschreibung verfügbar"]
 
-							[h,if(getCurrentMapName() != "Spieltisch"): moveTokenToMap(id, "Spieltisch", x, y)]
-							
-							[hLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout anzeigen'></image></a>", macroLinkText("handoutShow@this", "", id), tableImage("mainTheme", 101))]
-							[hAusgabe = hAusgabe + strformat("
-							<table style='border-spacing: 0px; margin-bottom: 3px;' width='405' cellpadding='0'>
-								<tr>
-									<td>
-										<b>%s</b>
-										<br>%s
-									</td>
-									<td style='text-align: right; padding-right: 3px;'>
-										%s
-									</td>
-								</tr>
-							</table>
-							", hTitle, hShort, hLink)]
-							[num = num + 1]
-						}]
-						[r,if(hAusgabe == ""), Code:
-							{
-								[r: "Keine Vorhanden<br>&nbsp;"]
-							};
-							{
-								[r: hAusgabe+"<br>"]
-							}
-						]
-						<div width='405'>
-							<table style='border-spacing: 0px;' cellpadding='0' width='399'>
-								<tr>
-									<td width='370'>
-										<image src='[r: tableImage("mainTheme", 94)]'></image>
-									</td>
-									<td style='text-align: center;' width='16'>
-										<a href="[r: macroLinkText("notizSLEdit@this")]"><image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesEdit.png")]' alt="SL-Notizen hinzufügen oder bearbeiten"></image></a>
-									</td>
-									<td style='text-align: right;' width='13'>
-										<a href="[r: macroLinkText("notizSLDel@this")]"><image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesRemove.png")]' alt="Alle SL-Notizen löschen"></image></a>
-									</td>
-								</tr>
-							</table>
-						</div>
-						[r,if(getGMNotes() == ""): output = "Keine Vorhanden"; output = getGMNotes()]
+					[h,if(getCurrentMapName() != "Spieltisch"): moveTokenToMap(id, "Spieltisch", x, y)]
+					
+					[hLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout anzeigen'></image></a>", macroLinkText("handoutShow@this", "", id), data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/scroll.png"))]
+					[hAusgabe = hAusgabe + strformat("
+					<div>
+						<table style='border-spacing: 0px; margin-bottom: 3px;' width='405' cellpadding='0'>
+							<tr>
+								<td>
+									<b>%s</b>
+									<br>%s
+								</td>
+								<td style='text-align: right; padding-right: 3px;'>
+									%s
+								</td>
+							</tr>
+						</table>
 					</div>
-
+					", hTitle, hShort, hLink)]
+					[num = num + 1]
+				}]
+				[r,if(hAusgabe == ""), Code:
+				{
+					[r: "<div>Keine Vorhanden</div>"]
+				};{
+					[r: hAusgabe]
+				}]
+			</div>
 		</div>
 		<div class="footer"/>
 	</body>

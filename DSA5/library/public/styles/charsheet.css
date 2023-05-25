@@ -143,10 +143,6 @@ ul {
     margin: 0px;
     text-align: center;
 }
-.equipped {
-    background-color: #eee5c8;
-    color: #3d1919;
-}
 
 .table[id="melee"] {
     grid-template-columns: 1fr auto auto auto auto auto auto;
@@ -167,6 +163,11 @@ ul {
 .table[id="spell"] {
     grid-template-columns: auto 1fr auto auto;
 }
+.table[id="notes"],
+.table[id="gmnotes"],
+.table[id="handouts"] {
+    grid-template-columns: 1fr;
+}
 
 .table[id="melee"] > div:nth-child(-n + 7),
 .table[id="ranged"] > div:nth-child(-n + 6),
@@ -177,7 +178,10 @@ ul {
 }
 .table[id="skill"] > div:nth-child(-n + 4),
 .table[id="combatTechnique"] > div:nth-child(-n + 5),
-.table[id="spell"] > div:nth-child(-n + 4) {
+.table[id="spell"] > div:nth-child(-n + 4),
+.table[id="notes"] > div:nth-child(-n + 1),
+.table[id="gmnotes"] > div:nth-child(-n + 1),
+.table[id="handouts"] > div:nth-child(-n + 1) {
     font-family: "IM Fell DW Pica";
     text-transform: uppercase;
     white-space: nowrap;
@@ -198,8 +202,28 @@ ul {
 .table[id="mount"] > div:nth-child(5n + 2),
 .table[id="skill"] > div:nth-child(4n + 1),
 .table[id="combatTechnique"] > div:nth-child(5n + 1),
-.table[id="spell"] > div:nth-child(4n + 2) {
+.table[id="spell"] > div:nth-child(4n + 2),
+.table[id="notes"] > div:nth-child(n + 1),
+.table[id="gmnotes"] > div:nth-child(n + 1),
+.table[id="handouts"] > div:nth-child(n + 1) {
     text-align: left;
+}
+
+.equipped {
+    background-color: #eee5c8;
+    color: #3d1919;
+}
+
+.tableHeader {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr auto auto;
+    gap: 0px 4px;
+}
+.tableHeader > div {
+    font-family: "IM Fell DW Pica";
+    text-transform: uppercase;
+    white-space: nowrap;
 }
 
 .column-container {
