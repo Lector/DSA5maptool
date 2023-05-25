@@ -1,7 +1,7 @@
 [h: switchToken(arg(0))]
 
-<div class="panel-ornament">
-	<div class="heading">Fernkampfwaffen</div>
+<div class="panel-round">
+	<!--<div class="heading">Fernkampfwaffen</div>-->
 	<div class="table" id="ranged">
 		<div>
 			Fernkampfwaffe

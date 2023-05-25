@@ -1,4 +1,5 @@
 [h: switchToken(arg(0))]
+[h: group = arg(1)]
 
 [h: PlayerOpt = setStrProp(PlayerOpt, "openFrame", "2")]
 
@@ -22,12 +23,52 @@
 			[r,macro("eigLeiste@this"): currentToken()]
 			<!-- Healthbar -->
 			[r, macro("energyBar@this"): json.append(currentToken(), "le")]
-			[r,macro("charbogenRuestung@this"): currentToken()]
-			[r,macro("charbogenNahkampf@this"): currentToken()]
-			[r,if(json.length(Fernkampfwaffen) > 0),Code:
-			{
-				[macro("charbogenFernkampf@this"): currentToken()]
-			}]
+
+
+
+			<div class="skillContainer">
+				<div class="skillNavigation">
+					<div>
+						<div [r,if(group == "Melee"): "class='disabled-link'"] title='Nahkampfwaffen aufrufen'>
+							[r: macroLink("Nahkampf", "charbogenKampf@this", "", json.append(currentToken(), "Melee"))]
+						</div>
+						&middot;
+						<div [r,if(group == "Ranged"): "class='disabled-link'"] title='Fernkampfwaffen aufrufen'>
+							[r: macroLink("Fernkampf", "charbogenKampf@this", "", json.append(currentToken(), "Ranged"))]
+						</div>
+						&middot;
+						<div [r,if(group == "Armor"): "class='disabled-link'"] title='Rüstungen aufrufen'>
+							[r: macroLink("Rüstung", "charbogenKampf@this", "", json.append(currentToken(), "Armor"))]
+						</div>
+						
+						<div [r,if(group == "Mount"): "class='disabled-link'"] title='Reittiere aufrufen'>
+							[r: macroLink("Reittier", "charbogenKampf@this", "", json.append(currentToken(), "Mount"))]
+						</div>
+						<hr class="skillNavigationLine"/>
+					</div>
+				</div>
+				[r,switch(group),Code:
+					case "Melee":
+					{
+						[r: charbogenNahkampf(currentToken())]
+					};
+					case "Ranged":
+					{
+						[r: charbogenFernkampf(currentToken())]
+					};
+					case "Armor":
+					{
+						[r: charbogenRuestung(currentToken())]
+					};
+					case "Mount":
+					{
+						[r: charbogenMount(currentToken())]
+					};
+					default:
+					{
+					}
+				]
+			</div>
 
 			<div class="panel-ornament">
 				<div class="heading">
@@ -37,11 +78,6 @@
 					[r,macro("charbogenTraits@this"): KampfSF]
 				</div>
 			</div>
-			
-			[r,if(TrefferzonenModell == 0),Code:
-			{
-				[r,macro("charbogenMount@this"): currentToken()]	
-			}]	
 		</div>
 		<div class="footer"/>
 	</body>

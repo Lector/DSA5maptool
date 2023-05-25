@@ -87,14 +87,35 @@ ul {
     height: 70px;
     margin-bottom: -6px;
     z-index: 2;
-    text-align: center;
+    position: relative;
     display: flex;
-    flex-direction: row;
     justify-content: center;
 }
-.skillNavigation > * {
-    margin-top: 10px;
+.skillNavigation > div {
+    margin-top: 2px;
     z-index: 1;
+    width: 260px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 0px;
+    column-gap: 4px;
+    align-items: center;
+    justify-content: center;
+}
+.skillNavigation > div > * {
+    margin: 0px;
+    padding: 0px;
+}
+.skillNavigationLine {
+    position: absolute;
+    top: 27px; /* Anpassen der vertikalen Position */
+    left: 56px; /* Anpassen der horizontalen Position */
+    width: 260px; /* Anpassen der Breite der Linie */
+    height: 1px; /* Höhe der Linie */
+    background-color: #eee5c8; /* Farbe der Linie */
+    border: none;
 }
 
 .bar {
@@ -127,11 +148,21 @@ ul {
     row-gap: 6px;
     padding: 0px;
 }
-.stat-table > div {
-    margin: 0px;
-}
 .stat-table a {
     font-weight: normal;
+}
+
+.armor-table {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 6px;
+    row-gap: 6px;
+    padding: 0px;
+}
+
+.stat-table > div,
+.armor-table > div {
+    margin: 0px;
 }
 
 .table {
@@ -277,6 +308,12 @@ a {
     text-decoration: none;
     color: #eee5c8;
     font-weight: bold;
+}
+
+.disabled-link > a {
+    color: #bbbbba; /* Farbe für deaktivierte Links */
+    pointer-events: none; /* Deaktiviert die Klickreaktion */
+    cursor: default; /* Ändert den Cursor-Stil für deaktivierte Links */
 }
 
 hr {
