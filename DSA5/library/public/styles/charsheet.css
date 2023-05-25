@@ -384,7 +384,7 @@ input[type="text"] {
     display: flex;
     flex-direction: row;
     gap: 4px;
-    font-family: "IM Fell DW Pica";
+    font-family: "IM Fell DW Pica", serif;
     font-size: 11pt;
     text-transform: uppercase;
     width: calc(100% - 20px);
