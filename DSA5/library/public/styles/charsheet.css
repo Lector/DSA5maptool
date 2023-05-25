@@ -394,3 +394,7 @@ input[type="text"] {
     justify-items: center;
     align-items: center;
 }
+
+.heading-additional {
+    justify-content: space-between;
+}
