@@ -24,16 +24,29 @@
 [h,if(isFrameVisible("charbogen") == 1), Code:
 {
 	[frame = getStrProp(PlayerOpt, "openFrame")]
-	[tFrame = getStrProp(PlayerOpt, "openFrameTalente")]
-	[h: charbogenMacro = ""]
-	[h: params = json.append(currentToken(), tFrame)]
-	[switch(frame):
-		case "1": charbogenMacro = "charbogenEigenschaften@this";
-		case "2": charbogenMacro = "charbogenKampf@this";
-		case "3": charbogenMacro = "charbogenTalente@this";
-		case "4": charbogenMacro = "charbogenZauber@this";
-		case "5": charbogenMacro = "charbogenLiturgien@this";
-		case "6": charbogenMacro = "charbogenNotizen@this"
+	[charbogenMacro = ""]
+	[params = currentToken()]
+	[switch(frame),Code:
+		case "1": {
+			[charbogenMacro = "charbogenEigenschaften@this"]
+		};
+		case "2": {
+			[charbogenMacro = "charbogenKampf@this"]
+			[params = json.append(currentToken(), getStrProp(PlayerOpt, "openFrameCombat"))]
+		};
+		case "3": {
+			[charbogenMacro = "charbogenTalente@this"]
+			[params = json.append(currentToken(), getStrProp(PlayerOpt, "openFrameTalente"))]
+		};
+		case "4": charbogenMacro = {
+			["charbogenZauber@this"]
+		};
+		case "5": charbogenMacro = {
+			["charbogenLiturgien@this"]
+		};
+		case "6": charbogenMacro = {
+			["charbogenNotizen@this"]
+		}
 	]
 	[h,macro(charbogenMacro): json.append(currentToken(), params)]
 }]

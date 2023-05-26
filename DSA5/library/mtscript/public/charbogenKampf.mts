@@ -1,7 +1,9 @@
 [h: switchToken(arg(0))]
 [h: group = arg(1)]
+[h,if(group == ""): group = "Melee"]
 
 [h: PlayerOpt = setStrProp(PlayerOpt, "openFrame", "2")]
+[h: PlayerOpt = setStrProp(PlayerOpt, "openFrameCombat", group)]
 
 [frame5("charbogen", "width=517; height=700; temporary=1; input=0; noframe=0"):{
 <html>
