@@ -1,11 +1,12 @@
 [h: switchToken(arg(0))]
+[h: hands = usesHands(currentToken())]
 
 <div class="panel-round">
 	<!--<div class="heading">
 		<img src="[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/swordAndShield.png")]">
 		Nahkampfwaffen
 	</div>-->
-	<div class="table" id="melee">
+	<div class="table" id=[r,if(hands): "melee"; "meleeNoHands"]>
 		<div>Nahkampfwaffe</div>
 		<div>RW</div>
 		<div>TP</div>
@@ -24,12 +25,14 @@
 			[h: hauptLink = "Rechts"]
 			[h: nebenLink = macroLink("Links", "changeLinkshaender@this", "", currentToken())]
 		}]
+		[r,if(hands),Code:{
 		<div class='equipped'>
 			<span [r: hauptTitle]>[r: hauptLink]</span>
 		</div>
 		<div>
 			<span [r: nebenTitle]>[r: nebenLink]</span>
 		</div>
+		}]
 		[r, Foreach(waffe, Nahkampfwaffen, ""), Code:
 		{
 		[h: waffe = resolveNK(waffe)]
@@ -77,9 +80,11 @@
 			[h: linkTitle = "title='Diese Waffe mit dem Schwertarm ausrüsten'"]
 			[h: link = macroLink("&#10063;", "changeHauptHand@this", "", json.append(currentToken(), wID))]
 		}]
+		[r,if(hands),Code:{
 		<div [r: bg]>
 			<span style='color: [r: fc];' [r: linkTitle]>[r: link]</span>
 		</div>
+		}]
 		[h,if(wID == NebenHand),Code:
 		{
 			[h: bg = "style='background: #eee5c8'"]
@@ -93,9 +98,11 @@
 			[h: linkTitle = "title='Diese Waffe mit dem Schildarm ausrüsten.'"]
 			[h: link = macroLink("&#10063;", "changeNebenHand@this", "", json.append(currentToken(), wID))]
 		}]
+		[r,if(hands),Code:{
 		<div [r: bg]>
 			<span style='color: [r: fc];' [r: linkTitle]>[r: link]</span>
 		</div>
+		}]
 		}]
 	</div>
 </div>

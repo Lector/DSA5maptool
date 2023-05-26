@@ -30,17 +30,17 @@
 				<div class="skillNavigation">
 					<div>
 						<div [r,if(group == "Melee"): "class='disabled-link'"] title='Nahkampfwaffen aufrufen'>
-							[r: macroLink("Nahkampf", "charbogenKampf@this", "", json.append(currentToken(), "Melee"))]
+							[r: macroLink("Nahkampfwaffen", "charbogenKampf@this", "", json.append(currentToken(), "Melee"))]
 						</div>
 						&middot;
 						<div [r,if(group == "Ranged"): "class='disabled-link'"] title='Fernkampfwaffen aufrufen'>
-							[r: macroLink("Fernkampf", "charbogenKampf@this", "", json.append(currentToken(), "Ranged"))]
+							[r: macroLink("Fernkampfwaffen", "charbogenKampf@this", "", json.append(currentToken(), "Ranged"))]
 						</div>
-						&middot;
+						
 						<div [r,if(group == "Armor"): "class='disabled-link'"] title='Rüstungen aufrufen'>
 							[r: macroLink("Rüstung", "charbogenKampf@this", "", json.append(currentToken(), "Armor"))]
 						</div>
-						
+						&middot;
 						<div [r,if(group == "Mount"): "class='disabled-link'"] title='Reittiere aufrufen'>
 							[r: macroLink("Reittier", "charbogenKampf@this", "", json.append(currentToken(), "Mount"))]
 						</div>
