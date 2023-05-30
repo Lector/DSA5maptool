@@ -38,15 +38,15 @@
 			[charbogenMacro = "charbogenTalente@this"]
 			[params = json.append(currentToken(), getStrProp(PlayerOpt, "openFrameTalente"))]
 		};
-		case "4": charbogenMacro = {
-			["charbogenZauber@this"]
+		case "4": {
+			[charbogenMacro = "charbogenZauber@this"]
 		};
-		case "5": charbogenMacro = {
-			["charbogenLiturgien@this"]
+		case "5": {
+			[charbogenMacro = "charbogenLiturgien@this"]
 		};
-		case "6": charbogenMacro = {
-			["charbogenNotizen@this"]
-		}
+		case "6": {
+			[charbogenMacro = "charbogenNotizen@this"]
+		};
 	]
 	[h,macro(charbogenMacro): json.append(currentToken(), params)]
 }]

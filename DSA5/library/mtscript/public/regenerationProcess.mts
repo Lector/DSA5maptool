@@ -217,4 +217,4 @@ leRegColor, leTitle, leRegGesamt, aeRegColor, aeTitle, aeRegGesamt, keRegColor, 
 
 [h: sendTo(chat, ausgabe)]
 [h: checkZustand(currentToken())]
-[h,macro("refreshFrame@this"): ""]
+[h,macro("refreshFrame@this"): currentToken()]

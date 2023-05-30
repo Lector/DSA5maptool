@@ -51,7 +51,7 @@
 						</div>
 						&middot;
 						<div title='Universelle Fertigkeitsprobe würfeln'>
-							[r: macroLink("Univ. Probe", "probeUni@this")]
+							[r: macroLink("Univ. Probe", "probeUni@this", "", currentToken())]
 						</div>
 						<hr class="skillNavigationLine"/>
 					</div>
@@ -59,11 +59,11 @@
 				[r,switch(group),Code:
 					case "Kampftechniken":
 					{
-						[r,macro("charbogenKampftechnik@this"): json.append(currentToken(), group)]
+						[r: charbogenKampftechnik(currentToken(), group)]
 					};
 					default:
 					{
-						[r,macro("charbogenTalent@this"): json.append(currentToken(), group)]
+						[r: charbogenTalent(currentToken(), group)]
 					}]
 			</div>
 		</div>

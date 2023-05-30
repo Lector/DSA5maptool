@@ -1,5 +1,6 @@
 [h: switchToken(arg(0))]
 [h: group = arg(1)]
+[h,if(group == ""): group = "Koerper"]
 
 <div class="panel-round">
 	<div class="table" id="skill">

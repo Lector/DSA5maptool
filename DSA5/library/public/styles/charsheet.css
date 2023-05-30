@@ -167,12 +167,14 @@ ul {
 
 .table {
     display: grid;
-    align-items: center;
+    align-items: stretch;
 }
 .table > div {
     padding: 4px 4px;
     margin: 0px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .table[id="melee"] {
@@ -243,7 +245,7 @@ ul {
 .table[id="notes"] > div:nth-child(n + 1),
 .table[id="gmnotes"] > div:nth-child(n + 1),
 .table[id="handouts"] > div:nth-child(n + 1) {
-    text-align: left;
+    justify-content: left;
 }
 
 .equipped {
