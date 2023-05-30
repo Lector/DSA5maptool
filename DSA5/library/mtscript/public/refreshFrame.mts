@@ -25,18 +25,18 @@
 {
 	[frame = getStrProp(PlayerOpt, "openFrame")]
 	[charbogenMacro = ""]
-	[params = currentToken()]
+	[params = ""]
 	[switch(frame),Code:
 		case "1": {
 			[charbogenMacro = "charbogenEigenschaften@this"]
 		};
 		case "2": {
 			[charbogenMacro = "charbogenKampf@this"]
-			[params = json.append(currentToken(), getStrProp(PlayerOpt, "openFrameCombat"))]
+			[params = getStrProp(PlayerOpt, "openFrameCombat")]
 		};
 		case "3": {
 			[charbogenMacro = "charbogenTalente@this"]
-			[params = json.append(currentToken(), getStrProp(PlayerOpt, "openFrameTalente"))]
+			[params = getStrProp(PlayerOpt, "openFrameTalente")]
 		};
 		case "4": {
 			[charbogenMacro = "charbogenZauber@this"]
