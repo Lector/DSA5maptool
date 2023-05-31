@@ -26,25 +26,6 @@ window.addEventListener("load", function () {
   const { createApp } = Vue;
 
   createApp(MyComponent).mount("#app");
-  const pdfjslib = window["pdfjs-dist/build/pdf"];
-  console.log(window);
-  document
-    .getElementById("fileSelector")
-    .addEventListener("change", async function (ev) {
-      console.log(ev.target.files);
-      /**
-       * @type {File}
-       */
-      const file = ev.target.files[0];
-      const arrBuff = await file.arrayBuffer();
-      const loadingTask = pdfjslib.getDocument(arrBuff);
-      loadingTask.promise.then(async function (pdf) {
-        console.log("Pages:", pdf.numPages);
-        const page = await pdf.getPage(1);
-        const textContent = await page.getTextContent();
-        console.log(textContent.items);
-      });
-    });
 });
 
 function showContent() {
