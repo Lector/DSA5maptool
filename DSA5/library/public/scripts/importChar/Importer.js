@@ -6,28 +6,24 @@ const Importer = {
     async onInputChange(ev) {
       const pdfjslib = window["pdfjs-dist/build/pdf"];
       console.log("Changed input", ev);
+      this.pages = [];
       /**
        * @type {File}
        */
       const file = ev.target.files[0];
       const arrBuff = await file.arrayBuffer();
       const loadingTask = pdfjslib.getDocument(arrBuff);
+      loadingTask.onProgress = function ({ loaded, total }) {
+        console.log("Progress:", (loaded / total) * 100);
+      };
       loadingTask.promise.then(async (pdf) => {
         console.log("Pages:", pdf.numPages);
         for (let i = 1; i <= pdf.numPages; i++) {
+          /** @type {{getTextContent: () => any, getAnnotations: () => any}} */
           const page = await pdf.getPage(i);
-          console.log(`Page ${i}`);
-          const textContent = await page.getTextContent();
-          const structTree = await page.getStructTree();
-          const opList = await page.getOperatorList();
-          const jsActions = await page.getJSActions();
-          console.log({ textContent });
-          console.log({ structTree });
-          console.log({ opList });
-          console.log({ jsActions });
+          console.log(`Parsed page ${i}`);
           /** @type {{fieldName: string, subtype: string, fieldValue: string, textContent: string[]}[]} */
           const annotations = await page.getAnnotations();
-          console.log({ annotations });
           //   const annotationFieldNames = annotations.map(
           //     (annotation) => annotation.fieldName
           //   );
@@ -41,6 +37,7 @@ const Importer = {
           //   });
           this.pages.push({ id: i, annotations });
         }
+        pdf.destroy();
       });
     },
   },

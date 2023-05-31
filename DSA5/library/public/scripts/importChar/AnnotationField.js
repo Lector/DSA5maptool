@@ -14,9 +14,6 @@ const AnnotationField = {
       },
     },*/
   },
-  mounted: function () {
-    console.log(this.annotation);
-  },
   template: `
     <p>
         <div>Key: {{annotation.fieldName}}</div>
