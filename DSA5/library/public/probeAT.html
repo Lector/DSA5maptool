@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nahkampf-Angriff</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com%22%3E/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap" rel="stylesheet">
+
+    <link href="https://unpkg.com/pdfjs-dist@3.7.107/legacy/build/pdf.min.js">
+    <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./styles/probeAT/base.css?cachelib=false" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="./scripts/utils/logger.js?cachelib=false"></script>
+    <script src="./scripts/probeAT/ProbeMod.js?cachelib=false"></script>
+    <script src="./scripts/probeAT/Probe.js?cachelib=false"></script>
+    <script src="./scripts/probeAT/ProbeHeader.js?cachelib=false"></script>
+    <script src="./scripts/probeAT/childComponent.js?cachelib=false"></script>
+    <script src="./scripts/probeAT/index.js?cachelib=false"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const DEBUG = true;
+    </script>
+</head>
+<body>
+    <div id="loading">Loading...</div>
+    <div id="content" class="hidden">My Content</div>
+    <div id="error" class="hidden">
+        An error occurred.
+    </div>
+    <input id="fileSelector" type="file" accept=".pdf">
+    <div id="app" class="border">
+        <form action="[r:actionLink]" method="json">
+            <!--
+            [r,macro("probeChat@this"): currentToken()]
+            <hr/>
+            <table style='border-spacing: 0px; margin: 0px auto 0px auto;'>
+                <tr>
+                    <td valign=top>
+                        <div class="label">
+                            Waffe
+                        </div>
+                    </td>
+                    <td valign='top'>
+                        <table style='border-spacing: 0px 0px;' cellpadding='1'>
+                            [h: i = 0]
+                            [r,foreach(weapon, weapons, ""),Code:
+                            {
+                            <tr>
+                                <td>
+                                    <input type="radio" name="waffe" id="waffe[r:i]" value="[r: encode(weapon)]" [r,if(i==0):"checked"]/>
+                                </td>
+                                <td>
+                                    [r,if(json.type(weapon) == "OBJECT"): strformat("%s (%s)", json.get(weapon, "Name"), json.get(weapon, "AT")); "Beidhändiger Angriff<br>(Nur Basismanöver)"]
+                                </td>
+                            </tr>
+                            [h: i = i + 1]
+                            }]
+                        </table>
+                    </td>
+                    <td width='20'>
+                        &nbsp;
+                    </td>
+
+                    <td valign=top>
+                        <div class="label">
+                            Manöver
+                        </div>
+                    </td>
+
+                    [h: techniken = json.append("[]", json.get(hWaffe, "Technik"), json.get(nWaffe, "Technik"))]
+                    <td valign='top'>
+                        <table style='border-spacing: 0px;' cellpadding='1'>
+                            <tr>
+                                <td>
+                                    <select size="1" name="basis">
+                                        <option selected="selected" value="">Kein Basismanöver</option>
+                                        [h: basismanoever = getATBasisManoever(target)]
+                                        [r: buildManoeverOptions(basismanoever, techniken, target)]
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select size="1" name="spezial">
+                                        <option selected="selected" value="">Kein Spezialmanöver</option>
+                                        [h: spezialmanoever = getATSpezialManoever(target)]
+                                        [r: buildManoeverOptions(spezialmanoever, techniken, target)]
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+
+                    <td width='20'>
+                        &nbsp;
+                    </td>
+                    
+                    [r: probeZone(zonenmodell, "nk", target)]
+                    
+                </tr>
+            </table>
+            <hr/>
+            <table style='border-spacing: 0px; margin: 0px auto 0px auto;'>
+                <tr>
+                    [r,macro("probeSicht@this"): "at"]
+                    <td width='20'>
+                        &nbsp;
+                    </td>
+                    <td valign=top>
+                        <div class="label">
+                            Reichweite (Gegner)
+                        </div>
+                    </td>
+                    <td style='padding-left: 1px;' valign='top'>
+                        <table style='border-spacing: 0px;' cellpadding='1'>
+                            <tr>
+                                <td>
+                                    <input type='radio' name='rw' value='1' [r:cKurz]>
+                                </td>
+                                <td>
+                                    Kurz (<label id='rw1'></label>)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type='radio' name='rw' value='2' [r:cMittel]>
+                                </td>
+                                <td>
+                                    Mittel (<label id='rw2'></label>)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type='radio' name='rw' value='3' [r:cLang]>
+                                </td>
+                                <td>
+                                    Lang (<label id='rw3'></label>)
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td width='20'>
+                        &nbsp;
+                    </td>
+                    <td valign=top>
+                        <div class="label">
+                            Situation
+                        </div>
+                    </td>
+                    <td style='padding-left: 1px;' valign='top'>
+                        <table style='border-spacing: 0px;' cellpadding='1'>
+                            <tr>
+                                <td>
+                                    [r,macro("probeLiegend@this"): "-4"]
+                                </td>
+                                <td>
+                                    Liegend (-4)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type='checkbox' name='passierschlag' value='[r: passierschlag]' [r:cPassierschlag]>
+                                </td>
+                                <td>
+                                    Passierschlag ([r: passierschlag])<br>
+                                    (keine Manöver erlaubt<br>keine Patzer oder kritische Erfolge)
+                                </td>
+                            </tr>
+                            [r,macro("probeGottgefaellig@this"): ""]
+                        </table>
+                    </td>
+                    <td width='20'>
+                        &nbsp;
+                    </td>
+                </tr>
+            </table>
+            <hr/>
+            <table style='border-spacing: 0px; margin: 6px auto 0px auto;;'>
+                <tr>
+                    <td valign=top>
+                        <div class="label">
+                            Umgebung
+                        </div>
+                    </td>
+                    <td style='padding-left: 1px;' valign='top'>
+                        <table style='border-spacing: 0px;' cellpadding='1'>
+                            [r,macro("probeVorteilPosition@this"): json.append(currentToken(), target, "at")]
+                            [r,macro("probeCramped@this"): json.append(currentToken(), weapons, target, "at")]
+                            [r,macro("probeWasser@this"): ""]
+                        </table>
+                    </td>
+                    <td width='20'>
+                        &nbsp;
+                    </td>
+                    <td valign=top>
+                        <div class="label">
+                            Größe
+                            <br>(Gegner)
+                        </div>
+                    </td>
+                    <td style='padding-left: 1px;' valign='top'>
+                        <table style='border-spacing: 0px;' cellpadding='1'>
+                            <tr>
+                                <td>
+                                    <input type='radio' name='groesse' value='[r: tiny]' [r:cSmall]/>
+                                </td>
+                                <td>
+                                    Winzig ([r: tiny])
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type='radio' name='groesse' value='0' [r:cBig]/>
+                                </td>
+                                <td>
+                                    Klein - Riesig (0)
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <input type="hidden" name="modMacro" value="probeATMods@this"/>
+            <input type="hidden" name="target" value="[r:target]"/>
+            <input type="hidden" name="token" value="[r: currentToken()]"> -->
+        </form>
+    </div>
+    
+</body>
+</html>

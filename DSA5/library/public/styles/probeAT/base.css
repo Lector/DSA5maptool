@@ -1,0 +1,43 @@
+body {
+    font-size: 9pt;
+    background-color: #ece9d8;
+    padding: 0px;
+    margin: 0px;
+}
+
+.hidden {
+    display: none;
+}
+
+.heading {
+    font-family: "IM Fell DW Pica", serif;
+}
+
+.border {
+    margin: 0px;
+    padding: 20px;
+    height: calc(100% - 46px);
+    max-height: calc(100% - 46px);
+    overflow: scroll;
+    border-image-source: url("../../styles/border.png");
+    border-image-repeat: round;
+    border-image-width: 16px;
+    border-image-slice: 20 18;
+}
+
+.title {
+    text-align: center;
+    font-size: 14pt;
+    font-weight: bold;
+    color: #482902;
+    border-top: 1px solid #7b5547;
+    border-bottom: 1px solid #7b5547;
+    margin: 20px auto 10px auto;
+    width: 350px;
+}
+
+.probe {
+    border-spacing: 0px;
+    font-size: 11pt;
+    text-align: right;
+}
