@@ -1,4 +1,7 @@
 const Importer = {
+  components: {
+    AnnotationField,
+  },
   methods: {
     async onInputChange(ev) {
       const pdfjslib = window["pdfjs-dist/build/pdf"];
@@ -24,18 +27,19 @@ const Importer = {
           console.log({ jsActions });
           /** @type {{fieldName: string, subtype: string, fieldValue: string, textContent: string[]}[]} */
           const annotations = await page.getAnnotations();
-          const annotationFieldNames = annotations.map(
-            (annotation) => annotation.fieldName
-          );
-          console.log({ annotationFieldNames });
-          annotations.forEach((annotation) => {
-            const mappedField = this.mapping[annotation.fieldName];
-            if (mappedField) {
-              console.log({ annotation });
-              this[mappedField] = annotation.textContent.join("");
-            }
-          });
-          this.pages.push({ id: i, annotationFieldNames });
+          console.log({ annotations });
+          //   const annotationFieldNames = annotations.map(
+          //     (annotation) => annotation.fieldName
+          //   );
+          //   console.log({ annotationFieldNames });
+          //   annotations.forEach((annotation) => {
+          //     const mappedField = this.mapping[annotation.fieldName];
+          //     if (mappedField) {
+          //       console.log({ annotation });
+          //       this[mappedField] = annotation.textContent.join("");
+          //     }
+          //   });
+          this.pages.push({ id: i, annotations });
         }
       });
     },
@@ -56,11 +60,10 @@ const Importer = {
   template: `
         <input id="fileSelector" type="file" accept=".pdf" @change="onInputChange" >
         <div id="charDetails">
-        
             <div :id="page.id" v-for="page in pages" :key="page.id">
                 <p style="border: 3px solid red;">Page: {{ page.id }}</p>
                 <p>Felder:</p>
-                <p v-for="annotationFieldName in page.annotationFieldNames" :key="annotationFieldName"> {{annotationFieldName}}</p>
+                <AnnotationField v-for="annotation in page.annotations" :annotation="annotation"></AnnotationField>
             </div>
         </div>
     `,
