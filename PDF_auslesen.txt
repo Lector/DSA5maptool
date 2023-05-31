@@ -1,0 +1,108 @@
+Shown Text enthängt die richtigen Daten.
+Value ist oft auf dem Standardwert (z.B. bei Eigenschaften)
+
+Held_Name
+
+MU_1
+KL_1
+IN_1
+CH_1
+FF_1
+GE_1
+KO_1
+KK_1
+
+AP_gesamt
+AP_gesammelt (verfügbare AP)
+AP_ausgegeben
+
+LE_Max_1
+AE_Max_1
+KE_Max_1
+SK_Max_1
+ZK_Max_1
+AW_Max_1
+INI_Max_1
+GS_Max_1
+SchiP_Max_1
+
+Held_Vorteile (Vorteile mit / getrennt und der Stufe jeweils römisch am Ende)
+Vorteil_X (Vorteile einzeln mit AP-Kosten z.B. "[ "Verbesserte Regeneration (Karmaenergie) III [30]" ]" - Hier muss Value anstelle von Shown Text ausgelesen werden)
+
+SF_allg_X
+SF_allg_Er_X
+
+SF_Kampf_X
+
+Talent_FW_X (x steht für eine fortlaufende Zahl. Die Talente sind sortiert nach Gruppen. Die Gruppen nach A-Z. Evtl. könnte man die Talente von den Standardwerten ausgehend entsprechend belegen)
+
+Sprache_X (Name der Sprache)
+Sprache_Wert_X (Wert entsprechender Sprache z.B. ("I", "II", oder "III (MS)"))
+
+Schrift_X
+
+KaT_Name_Anzeige_X (Name der Kampftechnik)
+KaT_FW_X (Wert der Kampftechnik)
+
+Nahwaffe_Name_Anzeige_X (Name des Nahkampfwaffe)
+Nah_Kampftechnik_Name_Anzeige_X (Kampftechnik von Nahkampfwaffe X)
+Nah_Schadensbonus_X (Leiteigenschaft des Waffe. Evtl. mehrere mit / getrennt)
+Nah_Schadensschwelle_X (Schadensschwelle von N.Waffe X)
+Nah_TP_Wurf_X (Schadenswürfel der Waffe ohne Bonus (z.B. "1W6"))
+Nah_TP_Basis_X (Schadensbonus (z.B. "+3") OHNE Schadensbonus)
+Nah_AT_Mod_X
+Nah_PA_Mod_X
+Nah_Reichweite_X (Reichweite als String (z.B. "mittel"))
+
+Fernwaffe_Name_Anzeige_X (Name der FWaffe)
+Fern_Kampftechnik_Name_Anzeige_X (Name der Kampftechnik)
+Fern_Ladezeit_X (Ladezeit Formatierung unbekannt)
+Fern_TP_X (Trefferpunkte der FWaffe Formatierung unbekannt)
+Fern_Reichweite_X (Reichweite Formatierung unbekannt)
+
+Ruestung_Name_Anzeige_X
+Ruestung_RS_X
+Ruestung_BE_X
+Ruestung_Abzuege_X
+
+ZonenRuestung_Name_X
+ZonenRuestung_Ko_X
+ZonenRuestung_lA_X
+ZonenRuestung_rA_X
+ZonenRuestung_lB_X
+ZonenRuestung_rB_X
+ZonenRuestung_BE_X
+ZonenRuestung_Abzuege_X
+
+Schild_Name_Anzeige_X
+Schild_Mod_X (AT/PA-Mod Formatierung unbekannt)
+
+Held_SF_Kampf
+
+Zauber_Anzeige_X
+Z_Probe_X
+Z_FW_X
+Z_Merkmal_X
+
+Held_Tradition_kurz_magisch
+Trick_X
+SF_mag_X
+SF_mag_Er
+
+Liturgie_Anzeige_X
+L_Probe_X (Eigenschaften der Probe z.B. "MU/KL/CH")
+L_FW_X (Wert der Liturgie)
+Segnung_X (Im Value den Segen)
+SF_karm_X (Karmale SF-Name mit AP-Kosten und Gruppe z.B. "Liturgiestil: (Stil) [8/40]")
+SF_karm_Er_X (Erweiterung der SF auch mit Kosten z.B. "Braniborier:in [20]")
+
+Besitz_Name_Anzeige_X
+Besitz_Anzahl_X
+Besitz_Wert_X
+Besitz_Gewicht_X
+Besitz_Ort_X
+
+Geld_D
+Geld_S
+Geld_H
+Geld_K
