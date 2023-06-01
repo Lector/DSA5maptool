@@ -27,6 +27,7 @@
 		<title>
 			Meisterbogen - Spielercharaktere I
 		</title>
+		[r: linkGoogleFonts()]
 		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 	</head>
 	<body style="background-image: url('[r: tblImage("mainTheme",66)]'); font-size: 10pt; color: #eee5c8;">
@@ -327,7 +328,7 @@
 															BE
 														</td>
 													</tr>
-													[h: ruestung = resolveRS(getRuestung(RuestungAktiv, id), id)]
+													[h: ruestung = resolveRS(id, getRuestung(Ruestungen, RuestungAktiv))]
 													<tr style='border-top: 1px solid #eee5c8;'>
 														<td style='font-weight: bold;'>
 															RS

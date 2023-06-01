@@ -3,7 +3,7 @@
 [h: options = getLibProperty("KalenderOpt", "com.github.lector.dsa5maptool")]
 [h,if(getStrProp(options, "kalender") == 0), code: 
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "kalender"]
+		[h,macro("inputFail@this"): "kalender"]
 	};{}
 ]
 
@@ -13,22 +13,22 @@
 
 [h,if(nJahr == ""), code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "noInput"]
+		[h,macro("inputFail@this"): "noInput"]
 	};{}
 ]
 [h,if(isNumber(nJahr) == 0), code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numText"]
+		[h,macro("inputFail@this"): "numText"]
 	};{}
 ]
 [h,if(nJahr != round(nJahr)), code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numInteger"]
+		[h,macro("inputFail@this"): "numInteger"]
 	};{}
 ]
 [h,if(nTag > 5 && nMonat == 13), code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "kalenderNT"]
+		[h,macro("inputFail@this"): "kalenderNT"]
 	};{}
 ]
 [h: kalenderDaten = getLibProperty("KalenderMain", "com.github.lector.dsa5maptool")]
@@ -37,7 +37,7 @@
 	{
 		[if(nJahr == 0), code:
 			{
-				[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "kalenderNull"]
+				[h,macro("inputFail@this"): "kalenderNull"]
 			};{}
 		]
 	};{}

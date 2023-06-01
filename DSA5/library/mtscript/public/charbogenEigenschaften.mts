@@ -1,14 +1,4 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
+[h: switchToken(arg(0))]
 
 [h: PlayerOpt = setStrProp(PlayerOpt, "openFrame", "1")]
 
@@ -18,13 +8,11 @@
 		<title>
 			Charakterbogen - Eigenschaften
 		</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com%22%3E/"
-		<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Crete+Round&family=IM+Fell+Great+Primer&family=Wellfleet&display=swap" rel="stylesheet">
-		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/charEigenschaften.css?cachelib=false'/>
+		[r: linkGoogleFonts()]
+		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/charsheet.css?cachelib=false'/>
 	</head>
-	<body >
-		<div id="header">
+	<body>
+		<div class="header">
 			<div class="charactername">
 				<a href='[r: macroLinkText("gotoToken@this", "", currentToken())]' title='Zum Charaktertoken wechseln'>[r: getName()]</a>
 			</div>
@@ -32,48 +20,58 @@
 			[r,macro("charsheetNavigation@this"): json.append(currentToken(), 0)]
 		</div>
 		
-		<div id="content">
+		<div class="content">
 			[r,macro("eigLeiste@this"): currentToken()]
-			<div class="row-container">
-				<div class="highlight column-container">
-					<div class="highlightHeading">WERTE</div>
-					<div class="row-container">
-						<div>SK: [h: aktSK = getSK()]
-								[h,if(aktSK < SK): eigColor = "#ff3333"; eigColor = "#eee5c8"]
-								[h,if(aktSK > SK): eigColor = "#0099ff"]	
-								<span style='color: [r: eigColor];'>[r: aktSK]</span>
-						</div>
-						<div>
-							[h: wID = getStrProp(PlayerOpt, "atWeapon")]
-							[h: aktINI = getINI()]
-							[h,if(aktINI < INI): eigColor = "#ff3333"; eigColor = "#eee5c8"]
-							[h,if(aktINI > INI): eigColor = "#0099ff"]
-							<a title='Initiative ermitteln' href="[r: macroLinkText("probeINI@this", "", wID)]">INI: <span style='color: [r: eigColor];' >[r: aktINI]</span>+1W6</a>
-						</div>
-						
-					</div>
-					<div class="row-container">
-						<div>ZK: [h: aktZK = getZK()]												
-								[h,if(aktZK < ZK): eigColor = "#ff3333"; eigColor = "#eee5c8"]
-								[h,if(aktZK > ZK): eigColor = "#0099ff"]
-								<span style='color: [r: eigColor];'>[r: aktZK]</span>
-						</div>
-						<div>GS: [h: aktGS = getGS()]												
-								[h,if(aktGS < GS): eigColor = "#ff3333"; eigColor = "#eee5c8"]
-								[h,if(aktGS > GS): eigColor = "#0099ff"]	
-								<span style='color: [r: eigColor];'>[r: aktGS]</span>
-						</div>
-					</div>
-					<div class="charbogen-werte">
-						<div>Schmerzstufen:</div><div>[r: schmerzStufe(1)]/[r: schmerzStufe(2)]/[r: schmerzStufe(3)]/[r: schmerzStufe(4)]</div>
-						<div>Schips:</div><div>[r: SchipsAktuell]/[r: SchipsMax]</div>
-						<div>AP gesamt:</div><div>[r: APgesamt]</div>
-						<div>AP verfügbar:</div><div>[r: APverfuegbar]</div>
-						<div>AP ausgegeben:</div><div>[r: APausgegeben]</div>
+			<div class="row-container" style="justify-content: space-between; gap: 0;">
+				<div class="panel-round">
+					<div class="heading">Werte</div>
+					<div class="stat-table">
+						<div>Seelenkraft:</div>
+						[h: aktSK = getSK(currentToken())]
+						[h,if(aktSK < SK): eigColor = "#ff3333"; eigColor = "#eee5c8"]
+						[h,if(aktSK > SK): eigColor = "#0099ff"]
+						<div style='color: [r: eigColor];'>[r: aktSK]</div>
+
+						<div>Zähigkeit:</div>
+						[h: aktZK = getZK(currentToken())]												
+						[h,if(aktZK < ZK): eigColor = "#ff3333"; eigColor = "#eee5c8"]
+						[h,if(aktZK > ZK): eigColor = "#0099ff"]
+						<div style='color: [r: eigColor];'>[r: aktZK]</div>
+
+						[h: wID = getStrProp(PlayerOpt, "atWeapon")]
+						[h: aktINI = getINI(currentToken())]
+						[h,if(aktINI < INI): eigColor = "#ff3333"; eigColor = "#eee5c8"]
+						[h,if(aktINI > INI): eigColor = "#0099ff"]
+						[h: link = strformat("<a title='Initiative ermitteln' href='%s'>", macroLinkText("probeINI@this", "", currentToken()))]
+						<div>[r:link]Initiative:</a></div>
+						<div style='color: [r: eigColor];' >[r: link][r: aktINI]+1W6</a></div>
+
+						<div>Geschwindigkeit:</div>
+						[h: aktGS = getGS(currentToken())]												
+						[h,if(aktGS < GS): eigColor = "#ff3333"; eigColor = "#eee5c8"]
+						[h,if(aktGS > GS): eigColor = "#0099ff"]	
+						<div style='color: [r: eigColor];'>[r: aktGS]</div>
+
+						[h: aktAW = getAW(currentToken())]
+						[h,if(aktAW < AW): eigColor = "#ff3333"; eigColor = "#eee5c8"]
+						[h,if(aktAW > AW): eigColor = "#0099ff"]
+						[h: link = strformat("<a href='%s'>", macroLinkText("probeAW@this", "", currentToken()))]
+						[h: hands = usesHands(currentToken())]
+						<div>[r: link][r,if(hands != 0):"Ausweichen";"Verteidigung"]:</a></div>
+						<div style='color: [r: eigColor];'>[r: link][r: aktAW]</a></div>
+
+						<div>Schicksalspunkte:</div>
+						<div>[r: SchipsAktuell] / [r: SchipsMax]</div>
+
+						<div>Schmerzstufen:</div>
+						<div>[r: schmerzStufe(1)] / [r: schmerzStufe(2)] / [r: schmerzStufe(3)] / [r: schmerzStufe(4)]</div>
+
+						<div>Abenteuerpunkte:</div>
+						<div>[r: APverfuegbar] / [r: APgesamt]</div>
 					</div>
 				</div>
 
-				<div style="display: flex; flex-direction: column; gap:4px">
+				<div style="display: flex; flex-direction: column; justify-content: start; flex: 1; gap:4px">
 				
 					<!-- TokenImage-->
 					<div style="display: flex; justify-content: center">
@@ -95,7 +93,7 @@
 			</div>
 			[r,macro("charbogenTraitsDisplay@this"): currentToken()]
 		</div>
-		<div id="footer"></div>
+		<div class="footer"/>
 	</body>
 </html>
 }]

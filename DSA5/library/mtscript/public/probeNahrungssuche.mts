@@ -1,5 +1,5 @@
 <!-- Abfrage Player/GM - impersonate ... -->
-[h,macro("abfrageImpersonate@lib:com.github.lector.dsa5maptool"): ""]
+[h,macro("abfrageImpersonate@this"): ""]
 [h,if(isGM() == 1 && hasImpersonated() == 0), Code:
 	{
 		[selectID = getSelected()]
@@ -12,6 +12,7 @@
 <html>
 	<head>
 		<title>Nahrung Sammeln</title>
+		[r: linkGoogleFonts()]
 		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 	</head>
 	<body>
@@ -20,7 +21,7 @@
 				[r: header("Nahrung sammeln")]
 				<table style='margin: 5px auto 7px auto;'>
 					<tr>
-						[r,macro("probeMod@lib:com.github.lector.dsa5maptool"): ""]
+						[r,macro("probeMod@this"): ""]
 						<td>
 							<button type="submit">
 								<table>
@@ -33,7 +34,7 @@
 						</td>
 					</tr>
 				</table>
-				[r,macro("probeChat@lib:com.github.lector.dsa5maptool"): ""]
+				[r,macro("probeChat@this"): ""]
 				<hr/>
 				[r,macro("pflanzensucheInfo@this"): ""]
 				<table style="margin: 0px auto 0px auto;">

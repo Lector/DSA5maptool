@@ -65,7 +65,7 @@
 	}]
 }]
 
-[h: ruestung = resolveRS(getRuestung(RuestungAktiv, tokenID), tokenID)]
+[h: ruestung = resolveRS(currentToken(), getRuestung(Ruestungen, RuestungAktiv))]
 [h: Belastung = max(0, min(4, json.get(ruestung, "BE") + BelastungMod))]
 
 [h,if(Ueberanstrengung >= 4), Code:

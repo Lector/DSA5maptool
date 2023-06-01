@@ -1,7 +1,7 @@
 [h: uebergabe = macro.args]
 [h: closeDialog("uniTrefferzone")]
 [h: groesse = json.get(uebergabe, "groesse")]
-[h,macro("trefferzone@lib:com.github.lector.dsa5maptool"): groesse]
+[h,macro("trefferzone@this"): groesse]
 [h: zone = macro.return]
 
 [h: ausgabe = border("Trefferzone", strformat("

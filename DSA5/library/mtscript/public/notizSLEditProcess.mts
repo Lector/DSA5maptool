@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -51,9 +51,9 @@
 </div>
 ", tableImage("chat", 41), tableImage("chat", 42), tableImage("chat", 28), tokenName, tableImage("chat", 43))]
 
-[h,macro("noticeSelf@lib:com.github.lector.dsa5maptool"): "notizSLEdit"]
+[h,macro("noticeSelf@this"): "notizSLEdit"]
 [h,if(isGM() == 0), Code:
 {
 	[h: sendTo("Gm", ausgabe)]
 }]
-[h,macro("refreshFrame@lib:com.github.lector.dsa5maptool"): ""]
+[h: refreshFrame(currentToken())]

@@ -15,7 +15,7 @@
 [h: undo = undo + "[h:checkZustand(currentToken())]}]"]
 
 <!-- Apply armor to reduce the damage -->
-[h: ruestung = resolveRS(getRuestung(RuestungAktiv))]
+[h: ruestung = resolveRS(currentToken(), getRuestung(Ruestungen, RuestungAktiv))]
 [h,if(zone == "zufall"),Code:
 {
 	[zone = trefferzone(Trefferzonenmodell, groesse(getSize()))]

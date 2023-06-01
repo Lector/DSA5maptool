@@ -107,6 +107,7 @@ Diese FillFunctions generieren wir nun-->
 <html>
 	<head>
 		<title>Kräutersuche</title>
+		[r: linkGoogleFonts()]
 		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 
 		<!-- Hier generieren wir unser JavaScript -->
@@ -198,7 +199,7 @@ Diese FillFunctions generieren wir nun-->
 				[r: header("Kräutersuche")]
 				<table style='margin: 5px auto 7px auto;'>
 					<tr>
-						[r,macro("probeMod@lib:com.github.lector.dsa5maptool"): ""]
+						[r,macro("probeMod@this"): ""]
 						<td>
 							<button type="submit">
 								<table>
@@ -211,7 +212,7 @@ Diese FillFunctions generieren wir nun-->
 						</td>
 					</tr>
 				</table>
-				[r,macro("probeChat@lib:com.github.lector.dsa5maptool"): currentToken()]
+				[r,macro("probeChat@this"): currentToken()]
 				<hr/>
 				[r,macro("pflanzensucheInfo@this"): ""]
 				<table style='margin: 0px auto 0px auto;'>

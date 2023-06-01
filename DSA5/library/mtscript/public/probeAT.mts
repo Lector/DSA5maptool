@@ -1,4 +1,5 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
+[h: id = arg(0)]
+[h,if(isGM() == 1 && hasImpersonated() == 0 && id == ""), Code:
 	{
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
@@ -10,7 +11,9 @@
 	};{}
 ]
 
-[h: uebergabe = macro.args]
+[h,if(id != ""): switchToken(id)]
+
+[h,if(json.length(macro.args) >= 2): uebergabe = arg(1); uebergabe = "{}"]
 [h,if(uebergabe == ""): uebergabe = "{}"]
 
 [h: hWaffe = resolveNK(getNahkampfwaffe(HauptHand))]
@@ -77,6 +80,7 @@
 <html>
 	<head>
 		<title>Nahkampf-Angriff</title>
+		[r: linkGoogleFonts()]
 		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 		[h: js = ""]
 		[h,for(i, 0, json.length(weapons), 1, ""),Code:{

@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -18,6 +18,7 @@
 <html>
 	<head>
 		<title>Angeln</title>
+		[r: linkGoogleFonts()]
 		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 	</head>
 	<body>
@@ -29,7 +30,7 @@
 						<td>
 							<table class="probe">
 								<tr>
-									[r,macro("probeMod@lib:com.github.lector.dsa5maptool"): ""]
+									[r,macro("probeMod@this"): ""]
 								</tr>
 							</table>
 						</td>
@@ -53,16 +54,16 @@
 							</div>
 						</td>
 						<td valign=top style="white-space: nowrap;">
-							[r,macro("probeInfo@lib:com.github.lector.dsa5maptool"): json.append(currentToken(), "Fischen & Angeln")]
+							[r,macro("probeInfo@this"): json.append(currentToken(), "Fischen & Angeln")]
 						</td>
 						<td width=20>&nbsp;</td>
 						
 						<td valign=top style="white-space: nowrap;">
 							<table><tr>
-							[r,macro("probeBelastung@lib:com.github.lector.dsa5maptool"): "Fischen & Angeln"]
-							[r,macro("probeParalyse@lib:com.github.lector.dsa5maptool"): json.append("Natur", "Fischen & Angeln")]
-							[r,macro("probeMirakel@lib:com.github.lector.dsa5maptool"): "Fischen & Angeln"]
-							[r,macro("probeGottgefaellig@lib:com.github.lector.dsa5maptool"): "Fischen & Angeln"]
+							[r,macro("probeBelastung@this"): "Fischen & Angeln"]
+							[r,macro("probeParalyse@this"): json.append("Natur", "Fischen & Angeln")]
+							[r,macro("probeMirakel@this"): "Fischen & Angeln"]
+							[r,macro("probeGottgefaellig@this"): "Fischen & Angeln"]
 							</tr></table>
 						</td>
 					</tr>
@@ -78,16 +79,16 @@
 							</div>
 						</td>
 						<td valign=top style="white-space: nowrap;">
-							[r,macro("probeInfo@lib:com.github.lector.dsa5maptool"): json.append(currentToken(), "Verbergen")]
+							[r,macro("probeInfo@this"): json.append(currentToken(), "Verbergen")]
 						</td>
 						<td width=20>&nbsp;</td>
 						
 						<td valign=top style="white-space: nowrap;">
 							<table><tr>
-							[r,macro("probeBelastung@lib:com.github.lector.dsa5maptool"): "Verbergen"]
-							[r,macro("probeParalyse@lib:com.github.lector.dsa5maptool"): json.append("Koerper", "Verbergen")]
-							[r,macro("probeMirakel@lib:com.github.lector.dsa5maptool"): "Verbergen"]
-							[r,macro("probeGottgefaellig@lib:com.github.lector.dsa5maptool"): "Verbergen"]
+							[r,macro("probeBelastung@this"): "Verbergen"]
+							[r,macro("probeParalyse@this"): json.append("Koerper", "Verbergen")]
+							[r,macro("probeMirakel@this"): "Verbergen"]
+							[r,macro("probeGottgefaellig@this"): "Verbergen"]
 							</tr></table>
 						</td>
 					</tr>

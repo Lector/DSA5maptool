@@ -5,7 +5,7 @@
 
 [h,if(getStrProp(options, "uhr") == 0), code: 
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "uhrzeit"]
+		[h,macro("inputFail@this"): "uhrzeit"]
 	};{}
 ]
 

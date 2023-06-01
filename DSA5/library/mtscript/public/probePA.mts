@@ -1,21 +1,24 @@
-[h,macro("abfrageImpersonate@this"): ""]
-
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
+[h,if(arg(0) != ""),Code:
 {
-	[selectID = getSelected()]
-	[if(listCount(selectID) != 1), Code:
+	[switchToken(arg(0))]
+};
+{
+	[h,macro("abfrageImpersonate@this"): ""]
+	[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
 	{
-		[h,macro("inputFail@this"): "gmSelectFail"]
-	};{}]
-	[switchToken(selectID)]
-};{}]
+		[selectID = getSelected()]
+		[h,if(listCount(selectID) != 1): inputFail("gmSelectFail")]
+		[switchToken(selectID)]
+	}]
+}]
 
 [h,if(getState("Blutrausch") == 1),Code:
 {
 	[h,macro("inputFail@this"): "blutrausch"]
 };{}]
 
-[h: uebergabe = macro.args]
+[h: uebergabe = ""]
+[h,if(json.length(macro.args) > 1): uebergabe = arg(1)]
 [h: gluecklich = ""]
 [h: hinten = ""]
 [h: probe = 0]
@@ -83,6 +86,7 @@
 <html>
 	<head>
 		<title>Parade</title>
+		[r: linkGoogleFonts()]
 		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 	</head>
 	<body>

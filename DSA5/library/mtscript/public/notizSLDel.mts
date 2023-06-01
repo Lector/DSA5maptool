@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -12,5 +12,5 @@
 
 [h: setGMNotes("")]
 
-[h,macro("noticeSelf@lib:com.github.lector.dsa5maptool"): "notizSLDel"]
-[h,macro("refreshFrame@lib:com.github.lector.dsa5maptool"): ""]
+[h,macro("noticeSelf@this"): "notizSLDel"]
+[h: refreshFrame(currentToken())]

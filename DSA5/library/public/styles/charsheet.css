@@ -1,0 +1,481 @@
+/* 
+//Currently not possible due to javafx restrictions
+@font-face {
+    font-family: Ringbearer;
+    src: url("lib://com.github.lector.dsa5maptool/fonts/RINGM___.woff");
+} */
+
+* {
+    /* outline: 1px dotted red; */
+    font-family: "aclonica", sans-serif; /* Crete Round, Cinzel*/
+}
+
+body {
+    font-size: 10pt;
+    color: #eee5c8;
+    background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/background.png");
+    display: grid;
+    grid-template-columns: 500px;
+    gap: 0;
+    /* border: 1px dotted red; */
+}
+
+span {
+    font-size: inherit;
+    font-family: inherit;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.debug {
+    border: 1px dotted red !important;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 57px auto 57px;
+    grid-template-rows: 16px 46px 4px 46px 13px;
+    background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/header.png");
+    background-repeat: no-repeat;
+    background-size: 500px 122px;
+    height: 122px;
+    margin: 0px;
+}
+
+.charactername {
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    font-weight: bold;
+    font-size: 16pt;
+    text-align: center;
+    margin-top: 6px;
+
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.charbogenNav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+.skillContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.skillContainer > :nth-child(2) {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.skillNavigation {
+    background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/skillNavigation.png");
+    background-repeat: no-repeat;
+    width: 376px;
+    height: 70px;
+    margin-bottom: -6px;
+    z-index: 2;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.skillNavigation > div {
+    margin-top: 2px;
+    z-index: 1;
+    width: 260px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 0px;
+    column-gap: 4px;
+    align-items: center;
+    justify-content: center;
+}
+.skillNavigation > div > * {
+    margin: 0px;
+    padding: 0px;
+}
+.skillNavigationLine {
+    position: absolute;
+    top: 27px; /* Anpassen der vertikalen Position */
+    left: 56px; /* Anpassen der horizontalen Position */
+    width: 260px; /* Anpassen der Breite der Linie */
+    height: 1px; /* Höhe der Linie */
+    background-color: #eee5c8; /* Farbe der Linie */
+    border: none;
+}
+
+.bar {
+    background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/bar.png");
+    width: 152px;
+    overflow: hidden;
+}
+
+.splitterH {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+}
+
+.row-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    justify-items: start;
+}
+
+.row-container > div {
+    width: auto;
+}
+
+.stat-table {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 6px;
+    row-gap: 6px;
+    padding: 0px;
+}
+.stat-table a {
+    font-weight: normal;
+}
+
+.armor-table {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 6px;
+    row-gap: 6px;
+    padding: 0px;
+}
+
+.stat-table > div,
+.armor-table > div {
+    margin: 0px;
+}
+
+.table {
+    display: grid;
+    align-items: stretch;
+}
+.table > div {
+    padding: 4px 4px;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table[id="melee"] {
+    grid-template-columns: 1fr auto auto auto auto auto auto;
+}
+.table[id="meleeNoHands"] {
+    grid-template-columns: 1fr auto auto auto auto;
+}
+.table[id="ranged"],
+.table[id="armor"] {
+    grid-template-columns: 1fr auto auto auto auto 30px;
+}
+.table[id="mount"] {
+    grid-template-columns: auto 1fr auto auto 30px;
+}
+.table[id="skill"] {
+    grid-template-columns: 1fr auto auto auto;
+}
+.table[id="combatTechnique"] {
+    grid-template-columns: 1fr auto auto auto auto;
+}
+.table[id="spell"] {
+    grid-template-columns: auto 1fr auto auto;
+}
+.table[id="notes"],
+.table[id="gmnotes"],
+.table[id="handouts"] {
+    grid-template-columns: 1fr;
+}
+
+.table[id="melee"] > div:nth-child(-n + 7),
+.table[id="meleeNoHands"] > div:nth-child(-n + 5),
+.table[id="ranged"] > div:nth-child(-n + 6),
+.table[id="armor"] > div:nth-child(-n + 6),
+.table[id="mount"] > div:nth-child(-n + 5) {
+    font-weight: bold;
+    white-space: nowrap;
+}
+.table[id="skill"] > div:nth-child(-n + 4),
+.table[id="combatTechnique"] > div:nth-child(-n + 5),
+.table[id="spell"] > div:nth-child(-n + 4),
+.table[id="notes"] > div:nth-child(-n + 1),
+.table[id="gmnotes"] > div:nth-child(-n + 1),
+.table[id="handouts"] > div:nth-child(-n + 1) {
+    font-family: "IM Fell DW Pica";
+    text-transform: uppercase;
+    white-space: nowrap;
+    border-bottom: 1px solid #eee5c8;
+    border-top: 1px solid #eee5c8;
+}
+
+.table[id="melee"] > div:not(:nth-last-child(-n + 7)),
+.table[id="meleeNoHands"] > div:not(:nth-last-child(-n + 5)),
+.table[id="ranged"] > div:not(:nth-last-child(-n + 6)),
+.table[id="armor"] > div:not(:nth-last-child(-n + 6)),
+.table[id="mount"] > div:not(:nth-last-child(-n + 5)) {
+    border-bottom: 1px solid #eee5c8;
+}
+
+.table[id="melee"] > div:nth-child(7n + 1),
+.table[id="meleeNoHands"] > div:nth-child(5n + 1),
+.table[id="ranged"] > div:nth-child(6n + 1),
+.table[id="armor"] > div:nth-child(6n + 1),
+.table[id="mount"] > div:nth-child(5n + 2),
+.table[id="skill"] > div:nth-child(4n + 1),
+.table[id="combatTechnique"] > div:nth-child(5n + 1),
+.table[id="spell"] > div:nth-child(4n + 2),
+.table[id="notes"] > div:nth-child(n + 1),
+.table[id="gmnotes"] > div:nth-child(n + 1),
+.table[id="handouts"] > div:nth-child(n + 1) {
+    justify-content: left;
+}
+
+.equipped {
+    background-color: #eee5c8;
+    color: #3d1919;
+}
+
+.tableHeader {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr auto auto;
+    gap: 0px 4px;
+}
+.tableHeader > div {
+    font-family: "IM Fell DW Pica";
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.column-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.natureSkillContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 2px;
+}
+
+.natureSkillContainer > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.energyBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.energyBarText {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: default;
+}
+
+.energyBarText tr td {
+    text-align: center;
+    padding-top: 11px;
+    cursor: default;
+}
+
+.energyBarModifiers {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+a {
+    text-decoration: none;
+    color: #eee5c8;
+    font-weight: bold;
+}
+
+.disabled-link > a {
+    color: #bbbbba; /* Farbe für deaktivierte Links */
+    pointer-events: none; /* Deaktiviert die Klickreaktion */
+    cursor: default; /* Ändert den Cursor-Stil für deaktivierte Links */
+}
+
+hr {
+    height: 1px;
+    border-width: 0;
+    background-color: #7b5547;
+}
+
+table {
+    font-size: inherit;
+    border-spacing: 0px;
+    /* border: 1px solid green; */
+}
+
+select {
+    font-size: inherit;
+    padding: 2px;
+}
+
+input[type="text"] {
+    font-size: inherit;
+}
+
+.content {
+    background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/content.png");
+    background-repeat: repeat-y;
+    background-size: contain;
+    padding-top: 15px;
+    padding-left: 34px;
+    padding-right: 34px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.footer {
+    background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/footer.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 34px;
+}
+
+#leisteEigenschaften {
+    background-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/leisteEigenschaften.png");
+    background-repeat: no-repeat;
+    background-size: 100% 90px;
+    height: 90px;
+    margin-top: -15px;
+    margin-left: -21px;
+    margin-right: -20px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.debug {
+    border: 1px solid blue;
+}
+
+.attribute-default {
+    color: #eee5c8;
+    font-size: 10pt;
+}
+
+.attribute-decreased {
+    color: #ff3333;
+    font-size: 10pt;
+}
+
+.attribute-increased {
+    color: #0099ff;
+    font-size: 10pt;
+}
+
+.property-less {
+    color: #a42b1e;
+}
+.property-greater {
+    color: #0099ff;
+}
+
+.title {
+    text-align: center;
+    font-size: 14pt;
+    font-weight: bold;
+    color: #482902;
+    border-top: 1px solid #7b5547;
+    border-bottom: 1px solid #7b5547;
+    margin: 20px auto 10px auto;
+    width: 350px;
+}
+
+.label {
+    text-align: right;
+    font-weight: bold;
+    border-right: 1px solid #7b5547;
+    padding: 7px 6px 7px 6px;
+    margin-right: 4px;
+    vertical-align: top;
+}
+
+.panel-ornament {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background-color: #3d1919;
+    border-spacing: 0px;
+    border-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/panelFrame.png") 24 35 round;
+    border-image-width: 24px 35px;
+    word-wrap: break-word;
+    padding: 20px 6px;
+}
+
+.panel-round {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background-color: #3d1919;
+    border-spacing: 0px;
+    border-image: url("lib://com.github.lector.dsa5maptool/images/mainTheme/panelBubble.png") 20 20 round;
+    border-image-width: 20px 20px;
+    word-wrap: break-word;
+    padding: 20px;
+}
+
+.heading {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    font-family: "IM Fell DW Pica", serif;
+    font-size: 11pt;
+    text-transform: uppercase;
+    width: calc(100% - 20px);
+    border-top: 1px solid #eee5c8;
+    border-bottom: 1px solid #eee5c8;
+    padding: 3px 10px 3px 10px;
+    justify-items: center;
+    align-items: center;
+}
+
+.heading-additional {
+    justify-content: space-between;
+}
+
+.linkListing {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 8px;
+}
+.linkListing > div {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 6px;
+}

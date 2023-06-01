@@ -1,17 +1,5 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0 && json.length(macro.args) < 2), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
-[h,if(json.length(macro.args) >= 2): switchToken(arg(1))]
-
-[h: ruestung = arg(0)]
+[h: switchToken(arg(0))]
+[h: ruestung = arg(1)]
 
 [h: temp = getStrProp(TempMod, "rs")]
 

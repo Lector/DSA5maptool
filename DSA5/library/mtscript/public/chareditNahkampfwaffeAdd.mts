@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -15,6 +15,7 @@
 <html>
 	<head>
 		<title>Nahkampfwaffe hinzufügen</title>
+		[r: linkGoogleFonts()]
 		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 	</head>
 	<body>
@@ -66,7 +67,7 @@
 														<option value='1'>Kurz</option>
 														<option value='2' selected='selected'>Mittel</option>
 														<option value='3'>Lang</option>
-														<option value='4'>überlang</option>
+														<option value='4'>Überlang</option>
 													</select>
 												</td>
 											</tr>

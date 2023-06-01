@@ -1,22 +1,7 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0 && json.length(macro.args) < 2), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
-[h,if(json.length(macro.args) >= 2): switchToken(arg(1))]
-
+[h: list = arg(0)]
 [h: rs = ""]
-[h, Foreach(item, Ruestungen, ""), Code:
+[h, Foreach(item, list, ""), Code:
 {
-	[if(json.get(item, "ID") == arg(0)),Code:
-	{
-		[h: rs = item]
-	};{}]
+	[if(json.get(item, "ID") == arg(1)): rs = item]
 }]
 [h: macro.return = rs]

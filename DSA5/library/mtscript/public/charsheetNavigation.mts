@@ -11,7 +11,7 @@
     [h,if(page == 1): active = "Active"; active = ""]
     [h: image = data.getStaticData("com.github.lector.dsa5maptool", strformat("/public/images/mainTheme/tabCombat%{active}.png"))]
     [h: tab = strformat("<image src='%{image}' alt='Kampfbogen'/>")]
-    [h,if(page != 1): tab = strformat("<a href='%s'>%{tab}</a>", macroLinkText("charbogenKampf@this", "none", currentToken()))]
+    [h,if(page != 1): tab = strformat("<a href='%s'>%{tab}</a>", macroLinkText("charbogenKampf@this", "none", json.append(currentToken(), getStrProp(PlayerOpt, "openFrameCombat"))))]
     [r: tab]
 
     [h,if(page == 2): active = "Active"; active = ""]

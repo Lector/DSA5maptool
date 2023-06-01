@@ -155,7 +155,7 @@
 }]
 
 <!-- Anlauf zum Gegner muss noch 4 Schritt sein -->
-[h: cgs = getGS()]
+[h: cgs = getGS(currentToken())]
 [h,if(hasTrait("KampfSF", "Sturmangriff") != 0 && cgs >= 4 && mount == ""),Code:
 {
 	[manoever = json.set("{}",

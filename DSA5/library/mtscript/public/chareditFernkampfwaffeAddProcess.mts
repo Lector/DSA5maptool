@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -41,17 +41,17 @@
 ]
 [h,if(isNumber(tpwAnzahl) == 0 || isNumber(TPwAugenzahl) == TPwAugenzahl || isNumber(tpwMod) == 0 || isNumber(fk) == 0 || isNumber(RWnah) == 0 || isNumber(RWmittel) == 0 || isNumber(RWfern) == 0 || isNumber(ladezeit) == 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numText"]
+		[h,macro("inputFail@this"): "numText"]
 	};{}
 ]
 [h,if(tpwAnzahl != round(tpwAnzahl)  || TPwAugenzahl != round(TPwAugenzahl) || tpwMod != round(tpwMod) || fk != round(fk) || RWnah != round(RWnah) || RWmittel != round(RWmittel) || RWfern != round(RWfern) || ladezeit != round(ladezeit)), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numInteger"]
+		[h,macro("inputFail@this"): "numInteger"]
 	};{}
 ]
 [h,if(tpwAnzahl < 0 || TPwAugenzahl < 0 || tpwMod < 0 || RWnah < 0 || RWmittel < 0 || RWfern < 0 || ladezeit < 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numNegative"]
+		[h,macro("inputFail@this"): "numNegative"]
 	};{}
 ]
 [h: closeDialog("chareditWaffeAdd")]
@@ -60,7 +60,7 @@
 [h: Fernkampfwaffen = json.append(Fernkampfwaffen, waffe)]
 [h: Fernkampfwaffen = json.sort(Fernkampfwaffen, "a", "Name")]
 
-[h,macro("noticeSelf@lib:com.github.lector.dsa5maptool"): "addWaffe"]
-[h,macro("refreshFrame@lib:com.github.lector.dsa5maptool"): ""]
+[h,macro("noticeSelf@this"): "addWaffe"]
+[h: refreshFrame(currentToken())]
 
 		

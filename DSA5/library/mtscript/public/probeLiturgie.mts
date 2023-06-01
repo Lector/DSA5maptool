@@ -1,32 +1,22 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
+[h: switchToken(arg(0))]
 
 [h,if(getState("Blutrausch") == 1),Code:
 {
 	[h,macro("inputFail@this"): "blutrausch"]
 };{}]
 
-[h: uebergabe = macro.args]
+[h: uebergabe = arg(1)]
 
-[h: name = listGet(uebergabe, 0)]
-[h: e1 = listGet(uebergabe, 1)]
-[h: e2 = listGet(uebergabe, 2)]
-[h: e3 = listGet(uebergabe, 3)]
+[h: name = json.get(uebergabe, 0)]
+[h: e1 = json.get(uebergabe, 1)]
+[h: e2 = json.get(uebergabe, 2)]
+[h: e3 = json.get(uebergabe, 3)]
 [h: e1wert = eval(e1)]
 [h: e2wert = eval(e2)]
 [h: e3wert = eval(e3)]
-[h: wert = listGet(uebergabe, 4)]
+[h: wert = json.get(uebergabe, 4)]
 [h: modWert = wert]
-[h: wiki = listGet(uebergabe, 5)]
+[h: wiki = json.get(uebergabe, 5)]
 
 [h,macro("probeGetAktWert@this"): e1]
 [h: aktE1wert = macro.return]
@@ -40,6 +30,7 @@
 <html>
 	<head>
 		<title>Liturgie wirken</title>
+		[r: linkGoogleFonts()]
 		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 	</head>
 	<body>
@@ -119,7 +110,7 @@
 						<td width='20'>
 							&nbsp;
 						</td>
-						[r,macro("probeSpruch@this"): setStrProp(setStrProp("", "Wert", modwert), "Bezeichnung", "Liturgie")]
+						[r: probeSpruch(currentToken(), json.set("{}", "Wert", modwert, "Bezeichnung", "chant"))]
 					</tr>
 				</table>
 				<input type="hidden" name="Wiki" value="[r: wiki]"/>

@@ -1,6 +1,6 @@
 [h,if(isGM() == 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "gm"]
+		[h,macro("inputFail@this"): "gm"]
 	};{}
 ]
 
@@ -9,7 +9,7 @@
 	[selectID = getSelected()]
 	[if(listCount(selectID) != 1), Code:
 		{
-			[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "gmSelectFail"]
+			[h,macro("inputFail@this"): "gmSelectFail"]
 		};{}
 	]
 	[switchToken(selectID)]
@@ -24,6 +24,7 @@
 <html>
 	<head>
 		<title>Jagdwild anpassen</title>
+		[r: linkGoogleFonts()]
 		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 	</head>
 	<body>

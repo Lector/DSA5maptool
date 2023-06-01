@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -25,7 +25,7 @@
 		[tStufe = json.get(uebergabe, strformat("f%sStufe", num))]
 		[if(tName == ""), Code:
 			{
-				[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "noInput"]
+				[h,macro("inputFail@this"): "noInput"]
 			};{}
 		]
 		[h: newTrait = json.set("{}", "Name", tName, "Stufe", tStufe)]
@@ -65,5 +65,5 @@
 	}
 ]
 
-[h,macro("noticeSelf@lib:com.github.lector.dsa5maptool"): chatNotice]
-[h,macro("refreshFrame@lib:com.github.lector.dsa5maptool"): ""]
+[h,macro("noticeSelf@this"): chatNotice]
+[h: refreshFrame(currentToken())]

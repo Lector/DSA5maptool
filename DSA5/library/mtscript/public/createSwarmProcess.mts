@@ -5,15 +5,15 @@
 
 [h,if(isNumber(cnt) == 0 || isNumber(gg) == 0), Code:
 {
-	[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numText"]
+	[h,macro("inputFail@this"): "numText"]
 };{}]
 [h,if(cnt != round(cnt) || gg != round(gg)), Code:
 {
-	[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numInteger"]
+	[h,macro("inputFail@this"): "numInteger"]
 };{}]
 [h,if(cnt <= 0 || gg <= 0), Code:
 {
-	[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numNegative"]
+	[h,macro("inputFail@this"): "numNegative"]
 };{}]
 
 [h: closeDialog("createSwarm")]

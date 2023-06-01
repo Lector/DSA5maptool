@@ -10,8 +10,8 @@
 		<select size="1" name="FWPlus[r: skill]">
 			<option value="0" selected='selected'>+0</option>
 			[h: gsbase = ""]
-			[h,if(arg(1) == "Körperbeherrschung"): gsbase = getGS(arg(0))]
-			[h: mount = getMount(arg(0))]
+			[h,if(arg(1) == "Körperbeherrschung"): gsbase = getGS(currentToken())]
+			[h: mount = getMount(currentToken())]
 			[h,if(arg(1) == "Reiten" && mount != ""): gsbase = getGS(mount)]
 			[r,if(gsbase != ""),Code:
 			{

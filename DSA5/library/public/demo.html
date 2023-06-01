@@ -66,7 +66,7 @@
 												SK:
 											</td>
 											<td style='text-align: center;' width='22'>
-												[h: aktSK = getSK()]												
+												[h: aktSK = getSK(currentToken())]												
 												[h,if(aktSK < SK): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 												[h,if(aktSK > SK): eigColor = "#0099ff"]	
 												<span style='color: [r: eigColor];'>[r: aktSK]</span>
@@ -80,7 +80,7 @@
 												<span style='font-weight: normal; font-size: 9pt;'>(+W6)</span>:
 											</td>
 											<td style='text-align: center;' width='22'>
-												[h: aktINI = getINI()]
+												[h: aktINI = getINI(currentToken())]
 												[h,if(aktINI < INI): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 												[h,if(aktINI > INI): eigColor = "#0099ff"]
 												<span style='color: [r: eigColor]; text-decoration: none;' title='Initiative ermitteln'>[r: macroLink(aktINI, "probeINI@this", "", wID)]</span>
@@ -91,7 +91,7 @@
 												ZK:
 											</td>
 											<td style='text-align: center;'>
-												[h: aktZK = getZK()]												
+												[h: aktZK = getZK(currentToken())]												
 												[h,if(aktZK < ZK): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 												[h,if(aktZK > ZK): eigColor = "#0099ff"]
 												<span style='color: [r: eigColor];'>[r: aktZK]</span>
@@ -103,7 +103,7 @@
 												GS:
 											</td>
 											<td style='text-align: center;'>
-												[h: aktGS = getGS()]												
+												[h: aktGS = getGS(currentToken())]												
 												[h,if(aktGS < GS): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 												[h,if(aktGS > GS): eigColor = "#0099ff"]	
 												<span style='color: [r: eigColor];'>[r: aktGS]</span>
@@ -273,7 +273,7 @@
 				</tr>
 			</table>		
 
-			<table class="panel" description="Vor/Nachteile">
+			<table class="panel-ornament" description="Vor/Nachteile">
                 <caption>Vor/Nachteile</caption>
                 <th></th>
 				<tr>

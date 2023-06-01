@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -25,24 +25,24 @@
 	{
 		[if(json.get(tDaten, "Talent") == tName), Code:
 			{
-				[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "zauberDouble"]
+				[h,macro("inputFail@this"): "zauberDouble"]
 			}
 		]
 	}
 ]
 [h,if(tName == ""), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "noInput"]
+		[h,macro("inputFail@this"): "noInput"]
 	};{}
 ]
 [h,if(isNumber(tWert) == 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numText"]
+		[h,macro("inputFail@this"): "numText"]
 	};{}
 ]
 [h,if(tWert != round(tWert)), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numInteger"]
+		[h,macro("inputFail@this"): "numInteger"]
 	};{}
 ]
 [h: closeDialog("chareditZeremonienAdd")]
@@ -53,5 +53,5 @@
 [h: Zeremonien = json.append(Zeremonien, newTalent)]
 [h: Zeremonien = json.sort(Zeremonien, "asc", "Talent")]
 
-[h,macro("noticeSelf@lib:com.github.lector.dsa5maptool"): "chareditZauberAdd"]
-[h,macro("refreshFrame@lib:com.github.lector.dsa5maptool"): ""]
+[h,macro("noticeSelf@this"): "chareditZauberAdd"]
+[h: refreshFrame(currentToken())]

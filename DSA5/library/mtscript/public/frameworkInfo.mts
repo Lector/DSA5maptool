@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Regelsatz Info</title>
+		[r: linkGoogleFonts()]
 		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 	</head>
 	<body style="background-image: url('[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/impressumBackground.png")]'); font-size: 11pt; font-weight: bold; color: #87827d; text-align: center;">

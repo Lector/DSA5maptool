@@ -5,12 +5,12 @@
 [h,if(gAnzahl == ""): gAnzahl = 1]
 [h,if(isNumber(gAnzahl) == 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numText"]
+		[h,macro("inputFail@this"): "numText"]
 	};{}
 ]
 [h,if(gAnzahl < 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numNegative"]
+		[h,macro("inputFail@this"): "numNegative"]
 	};{}
 ]
 
@@ -63,6 +63,7 @@
 <html>
 	<head>
 		<title>Gewichtsmaße umrechnen</title>
+		[r: linkGoogleFonts()]
 		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 	</head>
 	<body>

@@ -1,6 +1,6 @@
 [h,if(isGM() == 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "gm"]
+		[h,macro("inputFail@this"): "gm"]
 	};{}
 ]
 
@@ -24,5 +24,5 @@
 [h,if(json.get(args, tok+"_nutz") == 1): Nutzpflanze = 1; Nutzpflanze = 0]
 [h,macro("inputVorkommenProcess@this"): json.append("[]", tok, args)]
 
-[h,macro("noticeSelf@lib:com.github.lector.dsa5maptool"): "krautEdit"]
+[h,macro("noticeSelf@this"): "krautEdit"]
 [h: closeDialog("krautEdit")]

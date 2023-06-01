@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -18,7 +18,7 @@
 
 [h: id = macro.args]
 
-[h: ruestung = getRuestung(macro.args)]
+[h: ruestung = getRuestung(Ruestungen, id)]
 
 [h: rName = json.get(ruestung, "Name")]
 [h: rs = json.get(ruestung, "RS")]
@@ -67,6 +67,7 @@
 <html>
 	<head>
 		<title>Rüstung anpassen</title>
+		[r: linkGoogleFonts()]
 		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 	</head>
 	<body>

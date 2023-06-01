@@ -6,12 +6,12 @@
 
 [h,if(lName == "" || lAdress == "" || lAdress == "http://"), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "noInput"]
+		[h,macro("inputFail@this"): "noInput"]
 	};{}
 ]
 [h,if(startsWith(lAdress, "http://") == 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "wrongLink"]
+		[h,macro("inputFail@this"): "wrongLink"]
 	};{}
 ]
 [h: linklist = getLibProperty("Weblinks", "com.github.lector.dsa5maptool")]
@@ -19,7 +19,7 @@
 	{
 		[if(json.get(link, "linkname") == lName), Code:
 			{
-				[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "linkDouble"]
+				[h,macro("inputFail@this"): "linkDouble"]
 			}
 		]
 	}

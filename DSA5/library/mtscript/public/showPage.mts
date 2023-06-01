@@ -1,2 +1,10 @@
+[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
+	{
+		[selectID = getSelected()]
+	};{
+		[selectID = currentToken()]
+		}
+]
+[r: "Selection Change for showPage"]
 
-[h,html.frame5(macro.args, "lib://com.github.lector.dsa5maptool/index.html", 'value={"key": "some arbitrary data", "dice": macro.args}')]
+[r: html.frame5("MyPersonalTest", "lib://com.github.lector.dsa5maptool/index.html?cachelib=false", "value=" + selectID)];

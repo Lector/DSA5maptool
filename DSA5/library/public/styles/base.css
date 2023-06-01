@@ -42,8 +42,10 @@ button[type="submit"] table tr td {
     padding-left: 4px;
     padding-right: 4px;
     color: #482902;
-    font-family: 'Diamond';
-    font-size: 14;
+    text-shadow: 4px 4px 4px #aaa;
+    font-family: "IM Fell DW Pica";
+    font-size: 11pt;
+    text-transform: uppercase;
 }
 
 .attribute-default {

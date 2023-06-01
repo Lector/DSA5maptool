@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -19,17 +19,17 @@
 
 [h,if(isNumber(nKreuzer) == 0 || isNumber(nHeller) == 0 || isNumber(nSilbertaler) == 0 || isNumber(nDukaten) == 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numText"]
+		[h,macro("inputFail@this"): "numText"]
 	};{}
 ]
 [h,if(nKreuzer != round(nKreuzer) || nHeller != round(nHeller) || nSilbertaler != round(nSilbertaler) || nDukaten != round(nDukaten)), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numInteger"]
+		[h,macro("inputFail@this"): "numInteger"]
 	};{}
 ]
 [h,if(nKreuzer < 0 || nHeller < 0 || nSilbertaler < 0 || nDukaten < 0), Code:
 	{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "numNegative"]
+		[h,macro("inputFail@this"): "numNegative"]
 	};{}
 ]
 [h: closeDialog("inventarCoinEdit")]

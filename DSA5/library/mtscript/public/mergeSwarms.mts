@@ -2,7 +2,7 @@
 
 [h,if(listCount(tokens) < 2),Code:
 {
-	[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "multipleSwarms"]
+	[h,macro("inputFail@this"): "multipleSwarms"]
 };{}]
 
 [h: first = ""]
@@ -13,7 +13,7 @@
 }]
 [h,if(first == ""),Code:
 {
-	[h,macro("inputFail@lib:com.github.lector.dsa5maptool") : "swarmMergeInfoMissing"]
+	[h,macro("inputFail@this") : "swarmMergeInfoMissing"]
 }]
 
 [h: switchToken(first)]
@@ -36,14 +36,14 @@
 	[h,if(compareProps == 0||
 	(SchwarmEinzelLeP != singleLife && SchwarmEinzelLeP != "")||
 	(SchwarmGG != gg && SchwarmGG != "")), Code:{
-		[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "swarmsDifferent"]
+		[h,macro("inputFail@this"): "swarmsDifferent"]
 	}]
 }]
 
 [h: switchToken(first)]
 [h: num = ceil(maxLife / singleLife)]
 [h,if(num < gg),Code:{
-	[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "swarmTooSmallToMerge"]
+	[h,macro("inputFail@this"): "swarmTooSmallToMerge"]
 }]
 [h: x = x / listCount(tokens)]
 [h: y = y / listCount(tokens)]

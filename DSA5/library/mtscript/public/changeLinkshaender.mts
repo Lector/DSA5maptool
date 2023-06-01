@@ -1,5 +1,5 @@
-[h:switchToken(arg(0))]
+[h: switchToken(arg(0))]
 
 [h,if(Linkshaender == 0): Linkshaender = 1; Linkshaender = 0]
 
-[h,macro("refreshFrame@this"): ""]
+[h: refreshFrame(currentToken())]

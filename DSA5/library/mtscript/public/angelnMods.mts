@@ -3,7 +3,7 @@
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
 			{
-				[h,macro("inputFail@lib:com.github.lector.dsa5maptool"): "gmSelectFail"]
+				[h,macro("inputFail@this"): "gmSelectFail"]
 			};{}
 		]
 		[switchToken(selectID)]
@@ -16,7 +16,7 @@
 [h: bonus = 0]
 [h: modtext = ""]
 
-[h,macro("probeTalentMods@lib:com.github.lector.dsa5maptool"): uebergabe]
+[h,macro("probeTalentMods@this"): uebergabe]
 
 [h: mod = json.get(macro.return, "mod")]
 [h: bonus = json.get(macro.return, "bonus")]

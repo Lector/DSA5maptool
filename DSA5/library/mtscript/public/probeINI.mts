@@ -1,16 +1,4 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
-
-[wID = macro.args]
+[h:switchToken(arg(0))]
 
 [h: wert = INI]
 [h: modWert = getINI(currentToken())]
@@ -22,6 +10,7 @@
 <html>
 	<head>
 		<title>Initiative würfeln</title>
+		[r: linkGoogleFonts()]
 		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 	</head>
 	<body>

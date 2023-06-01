@@ -12,8 +12,8 @@
 [h: linkNatur = macroLink('Naturfertigkeiten', 'chareditTalent@this', '', 'Natur')]
 [h: linkWissen = macroLink('Wissensfertigkeiten', 'chareditTalent@this', '', 'Wissen')]
 [h: linkHandwerk = macroLink('Handwerkliche Fertigkeiten', 'chareditTalent@this', '', 'Handwerk')]
-[h: linkCopyTokenData =  macroLink('Tokendaten von anderem<br>Token übertragen', 'copyTokenData@lib:com.github.lector.dsa5maptool', '')]
-[h: linkJagd = macroLink('Jagdwerte', 'editTier@lib:com.github.lector.dsa5maptool', '', currentToken())]
+[h: linkCopyTokenData =  macroLink('Tokendaten von anderem<br>Token übertragen', 'copyTokenData@this', '')]
+[h: linkJagd = macroLink('Jagdwerte', 'editTier@this', '', currentToken())]
 [h: linkEditKampf = macroLink('Kampftechniken editieren', 'chareditKampftechnik@this', '', '')]
 [h: linkSFKampf = macroLink('Kampfsonderfertigkeiten', 'chareditTrait@this', '', 'KampfSF')]
 [h: linkAddNK =  macroLink('Nahkampfwaffe hinzufügen', 'chareditNahkampfwaffeAdd@this', '')]
@@ -44,6 +44,7 @@
 <html>
 	<head>
 		<title>Charakter-/Tokeneditor</title>
+		[r: linkGoogleFonts()]
 		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 	</head>
 	<div class="border">

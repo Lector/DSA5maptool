@@ -1,7 +1,7 @@
 "use strict";
 class RestData {
 	constructor(
-		dataURI = "dataProvider@lib:com.github.lector.dsa5maptool", 
+		dataURI = "dataProvider@this", 
 		send = null) 
 		{
 			this.dataURI = dataURI;

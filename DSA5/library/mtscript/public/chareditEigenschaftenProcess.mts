@@ -92,4 +92,4 @@
 [h: KaP = min(KaP, MaxKaP)]
 
 [h,macro("noticeSelf@this"): "chareditEigenschaften"]
-[h,macro("refreshFrame@this"): ""]
+[h: refreshFrame(currentToken())]
