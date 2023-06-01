@@ -150,9 +150,14 @@
 							&nbsp;
 						</td>
 						<td>
-							[h: convertImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/tools/convertNow.png")]
+							[h: convertImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/hand.png")]
 							<button type="submit">
-								<img src="[r: convertImage]"/>
+								<table>
+									<tr>
+										<td><img src="[r: convertImage]"/></td>
+										<td>Jetzt umrechnen</td>
+									</tr>
+								</table>
 							</button>
 						</td>
 						<td width='18'>
