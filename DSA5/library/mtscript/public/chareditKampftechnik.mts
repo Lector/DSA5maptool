@@ -133,8 +133,6 @@
 					</tr>
 				</table>
 			</div>
-			<div style="background-image: url('[r: tblImage("forms",135)]'); background-repeat: no-repeat; height: 21; margin: 0px;" width="906">
-			</div>
 			<input type='hidden' name='tAnzahl' value='[r: num]'>
 		</form>
 	</body>

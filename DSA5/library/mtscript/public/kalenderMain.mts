@@ -39,7 +39,7 @@
 [h: actionLinkUhr = macroLinkText("uhrzeitProcess@this", "")]
 [h: actionLinkOptions = macroLinkText("kalenderOptions@this", "")]
 [h: actionLinkJahrNull = macroLinkText("kalenderJahrNullInfo@this", "")]
-[frame5("kalender", "width=280; height=420; temporary=1; closebutton=0; noframe=0"):{
+[frame5("kalender", "width=280; height=450; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
 		<title>Kalender</title>
@@ -97,9 +97,10 @@
 				</tr>
 				<tr>
 					<td style='text-align: center'>
-						[h: button = tableImage("forms", 151)]
-						<button type="submit" name="actionUhr">
+						[h: button = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/tools/time.png")]
+						<button type="submit" name="actionUhr" class="row-container">
 							<img src="[r: button]"/>
+							Uhrzeit ändern
 						</button>
 					</td>
 				</tr>
@@ -115,9 +116,10 @@
 			<tr>
 				<td style='text-align: center;'>
 					<form action="[r:actionLinkOptions]">
-						[h: button = tableImage("forms", 152)]
+						[h: button = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/tools/settings.png")]
 						<button type="submit" name="actionOptions">
 							<img src="[r: button]"/>
+							Einstellungen
 						</button>
 					</form>
 				</td>
@@ -125,9 +127,10 @@
 			<tr>
 				<td style='text-align: center;'>
 					<form action="[r:actionLinkJahrNull]">
-						[h: button = tableImage("forms", 153)]
+						[h: button = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/tools/info.png")]
 						<button type="submit" name="actionUhr">
 							<img src="[r: button]"/>
+							Jahr Null Info
 						</button>
 					</form>
 				</td>

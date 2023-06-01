@@ -42,8 +42,9 @@
 				]
 			</table>
 			<p align='center'>
-				<button type="submit" name="action">
-					[r: strformat("<img src='%s'>",tableImage("forms", 148))]
+				<button type="submit" name="action" class="row-container">
+					[r: strformat("<img src='%s'>", data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/chat.png"))]
+					Nachricht senden
 				</button>
 			</p>
 			<p align='center'>

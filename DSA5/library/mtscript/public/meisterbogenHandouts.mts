@@ -48,6 +48,11 @@
 							<tr>
 								<td class="panel-middle">
 									[h: hShared = getLibProperty("SharedHandouts","com.github.lector.dsa5maptool")]
+									[h: hHidden = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/hidden.png")]
+									[h: hVisible = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/visible.png")]
+									[h: hEdit = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/handoutEdit.png")]
+									[h: hDelete = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/handoutDelete.png")]
+									[h: hShow = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/handoutShow.png")]
 									[r,for(num,1,31,1,""), Code:
 									{
 										[h: hTokenName = strformat("Handout %s", num)]
@@ -70,17 +75,17 @@
 													</td>
 													<td style='padding: 0px 1px 0px 1px;'>
 														[r,if(listFind(hShared, num) != -1):
-															hShareLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout ist für Spieler freigegeben - Klicken zum Sperren'></image></a>", macroLinkText("handoutShare@this", "", id), tableImage("mainTheme", 102));
-															hShareLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout ist für Spieler gesperrt - Klicken zum Freigeben'></image></a>", macroLinkText("handoutShare@this", "", id), tableImage("mainTheme", 103))]
+															hShareLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout ist für Spieler freigegeben - Klicken zum Sperren'></image></a>", macroLinkText("handoutShare@this", "", id), hVisible);
+															hShareLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout ist für Spieler gesperrt - Klicken zum Freigeben'></image></a>", macroLinkText("handoutShare@this", "", id), hHidden)]
 													</td>
 													<td style='padding: 0px 1px 0px 1px;'>
-														[r: hEditLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout editieren'></image></a>", macroLinkText("handoutEdit@this", "", id), tableImage("mainTheme", 104))]
+														[r: hEditLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout editieren'></image></a>", macroLinkText("handoutEdit@this", "", id), hEdit)]
 													</td>
 													<td style='padding: 0px 1px 0px 1px;'>
-														[r: hDelLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout sperren &amp; löschen'></image></a>", macroLinkText("handoutDel@this", "", id), tableImage("mainTheme", 105))]
+														[r: hDelLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout sperren &amp; löschen'></image></a>", macroLinkText("handoutDel@this", "", id), hDelete)]
 													</td>
 													<td style='padding: 0px 1px 0px 1px;'>
-														[r: hShowLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout anzeigen'></image></a>", macroLinkText("handoutShow@this", "", id), tableImage("mainTheme", 106))]
+														[r: hShowLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout anzeigen'></image></a>", macroLinkText("handoutShow@this", "", id), hShow)]
 													</td>
 												</tr>
 											</table>

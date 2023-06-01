@@ -24,7 +24,7 @@
 		<div class="border">
 			<form action="[r:actionLink]">
 				[r: header("Zustände")]
-				<table style='border-spacing: 0px;' cellpadding='1'>
+				<table style="margin: 0px auto 0px auto;">
 					<tr>
 						<td/>
 						<td style='padding-right: 3px; text-align: center'>
@@ -205,12 +205,16 @@
 						]
 					</tr>
 				</table>
-				<table style='border-spacing: 0px; margin: 11px auto 8px auto;'>
+				<table style='border-spacing: 0px; padding: 0px; margin: 11px auto 11px auto;'>
 					<tr>
 						<td>
-							[h: button = tableImage("forms", 101)]
 							<button type="submit">
-								<img src="[r: button]"/>
+								<table>
+									<tr>
+										<td><img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/hand.png")]/></td>
+										<td>Jetzt ändern</td>
+									</tr>
+								</table>
 							</button>
 						</td>
 					</tr>

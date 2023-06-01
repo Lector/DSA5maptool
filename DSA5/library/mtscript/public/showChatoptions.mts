@@ -1,14 +1,14 @@
-[dialog("showChatoptions", "width=524; height=481; temporary=1; input=0; noframe=0"):{
+[dialog5("showChatoptions", "width=524; height=481; temporary=1; input=0; noframe=0"):{
 <html>
 	<head>
 		<title>
 			Chatbefehle
 		</title>
+		[r: linkGoogleFonts()]
+		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/charsheet.css?cachelib=false'/>
 	</head>
-	<body style='color: #eee5c8; font-size: 11pt;'>
-		<div style="background-image: url('[r: tblImage("mainTheme",76)]'); background-repeat: no-repeat; height: 28; margin: 0px;" width="500">
-		</div>
-		<div style="background-image: url('[r: tblImage("mainTheme",77)]'); background-repeat: repeat-y; text-align: center; margin: 0px;" width="500">
+	<body>
+		<div class="panel-ornament">
 			<table style='border-spacing: 0px; font-size: 12pt; font-weight: bold; margin-bottom: 10px;' cellpadding='0'> 
 				<tr>
 					<td>
@@ -422,8 +422,6 @@
 					</td>
 				</tr>
 			</table>
-		</div>
-		<div style="background-image: url('[r: tblImage("mainTheme",78)]'); background-repeat: no-repeat; height: 28; margin: 0px;" width="500">
 		</div>
 	</body>
 </html>

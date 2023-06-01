@@ -33,7 +33,7 @@
 		%s
 	</tr>
 	",
-skillRollTitle("Fischen & Angeln"), tableImage("chat", 43), show3d20(resultAngeln))]
+skillRollTitle("Fischen & Angeln"), data.getStaticData("com.github.lector.dsa5maptool", "public/images/fish.png"), show3d20(resultAngeln))]
 [h: faSuccess = number(json.get(resultAngeln, "success"))]
 [if(faSuccess>0), CODE:
 {

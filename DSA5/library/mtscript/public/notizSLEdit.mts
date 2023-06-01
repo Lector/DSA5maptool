@@ -21,9 +21,6 @@
 	<body>
 		<div class="border">
 			<form action="[r:actionLink]">
-				<div style='padding: 10px 0px 5px 0px;'>
-					<image src='[r: tableImage("forms", 119)]'></image>
-				</div>
 				<table style='border-spacing: 0px; font-size: 12pt;' width='400'>
 					<tr>
 						<td width='48'>

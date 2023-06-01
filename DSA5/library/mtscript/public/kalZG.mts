@@ -199,9 +199,9 @@
 				</tr>
 				<tr>
 					<td style='text-align: center'>
-						[h: button = tableImage("forms", 149)]
-						<button type="submit" name="actionDatum">
-							<img src="[r: button]"/>
+						<button type="submit" class="row-container" name="actionDatum">
+							<img src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/tools/date.png")]'/>
+							Datum ändern
 						</button>
 					</td>
 				</tr>
@@ -246,10 +246,10 @@
 				</tr>
 				<tr>
 					<td style='text-align: center'>
-						[h: button = tableImage("forms", 150)]
-						<button type="submit" name="actionSystem">
-							<img src="[r: button]"/>
-						</button>
+						<button type="submit" class="row-container" name="actionSystem">
+						<img src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/tools/dateSystem.png")]'/>
+						System ändern
+					</button>
 					</td>
 				</tr>
 			</table>
