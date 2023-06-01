@@ -1,44 +1,24 @@
 [h: setLibProperty("SLframe", 5, "lib:com.github.lector.dsa5maptool")]
 
-[frame("meisterbogen", "width=528; height=500; temporary=1; input=0; noframe=0"):{
+[frame5("meisterbogen", "width=525; height=500; temporary=1; input=0; noframe=0"):{
 <html>
 	<head>
 		<title>
 			Meisterbogen - Handouts
 		</title>
 		[r: linkGoogleFonts()]
-		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
+		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/charsheet.css?cachelib=false'/>
 	</head>
-	<body style="background-image: url('[r: tblImage("mainTheme",66)]'); font-size: 10pt; color: #eee5c8;">
-		<div style="background-image: url('[r: tblImage("mainTheme",1)]'); background-repeat: no-repeat; height: 122; margin: 0px;" width="500">
-			<div style='margin-top: 18px; font-size: 22pt; font-weight: bold; text-align: center;' width='500'>
+	<body>
+		<div class="header">
+			<div class="charactername">
 				Handouts
 			</div>
-			<table style='border-spacing: 0px; margin-top: 3px;' width='500'>
-				<tr>
-					<td width='58'>
-						&nbsp;
-					</td>
-					<td width='383'>
-						<a href="[r: macroLinkText("meisterbogen1@this", "", "pc")]"><image src='[r: tableImage("mainTheme", 80)]' border="0" alt="Spielercharaktere I: Werte, Waffen &amp; Rüstung"></image></a>
-						<a href="[r: macroLinkText("meisterbogen2@this", "", "pc")]"><image src='[r: tableImage("mainTheme", 82)]' border="0" alt="Spielercharaktere II: Vorteile, Nachteile &amp; Notizen"></image></a>
-						<a href="[r: macroLinkText("meisterbogen1@this", "", "npc")]"><image src='[r: tableImage("mainTheme", 87)]' border="0" alt="NSCs I: Werte, Waffen &amp; Rüstung"></image></a>
-						<a href="[r: macroLinkText("meisterbogen2@this", "", "npc")]"><image src='[r: tableImage("mainTheme", 89)]' border="0" alt="NSCs II: Vorteile, Nachteile &amp; Notizen"></image></a>
-						<image src='[r: tableImage("mainTheme", 92)]'></image>
-						<a href="[r: macroLinkText("meisterbogenTools@this", "")]"><image src='[r: tableImage("mainTheme", 84)]' border="0" alt="Tools"></image></a>
-					</td>
-					<td width='59'>
-						&nbsp;
-					</td>
-				</tr>
-			</table>
+			[r: gmsheetNavigation(4)]
 		</div>
-		<div style="background-image: url('[r: tblImage("mainTheme",2)]'); margin: 0px;" width="500">		
+		<div class="content">
 			<table style='border-spacing: 0px;' width='500'>
 				<tr>
-					<td width='34'>
-						&nbsp;
-					</td>
 					<td>
 						<table style='border-spacing: 0px;' width='431'>				
 							<tr>
@@ -102,14 +82,10 @@
 							</tr>
 						</table>
 					</td>
-					<td width='35'>
-						&nbsp;
-					</td>
 				</tr>
 			</table>
 		</div>
-		<div style="background-image: url('[r: tblImage("mainTheme",3)]'); background-repeat: no-repeat; height: 34; margin: 0px;" width="500">
-		</div>
+		<div class="footer"></div>
 	</body>
 </html>
 }]
