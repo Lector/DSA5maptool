@@ -467,3 +467,15 @@ input[type="text"] {
 .heading-additional {
     justify-content: space-between;
 }
+
+.linkListing {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 8px;
+}
+.linkListing > div {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 6px;
+}
