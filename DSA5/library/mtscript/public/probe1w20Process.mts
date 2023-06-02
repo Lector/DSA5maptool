@@ -34,7 +34,7 @@ Dies wird von den unterschiedlichen Aufrufskripten alles mit übergeben werden
 
 [h: kritText = json.get(uebergabe, "kritText")]
 [h: kritImage = json.get(uebergabe, "kritImage")]
-[h,if(kritImage == ""): kritImage = 9]
+[h,if(kritImage == ""): kritImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/luckySuccess.png")]
 
 [h: gluecklichText = json.get(uebergabe, "gluecklichText")]
 [h: gluecklichImage = json.get(uebergabe, "gluecklichImage")]
@@ -42,7 +42,7 @@ Dies wird von den unterschiedlichen Aufrufskripten alles mit übergeben werden
 [h: patzerTabelle = json.get(uebergabe, "patzerTabelle")]
 [h: patzerText = json.get(uebergabe, "patzerText")]
 [h: patzerImage = json.get(uebergabe, "patzerImage")]
-[h,if(patzerImage == ""): patzerImage = 10]
+[h,if(patzerImage == ""): patzerImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/botch.png")]
 
 [h: image = json.get(uebergabe, "image")]
 [h: modMacro = json.get(uebergabe, "modMacro")]
@@ -67,12 +67,11 @@ Dies wird von den unterschiedlichen Aufrufskripten alles mit übergeben werden
 
 <!--Und hier die Ausgabe-->
 [h: output = show1d20(ergebnis)]
-[h: imageSrc = tableImage("chat", image)]
 [h: output = strformat("
 <table style='border-spacing: 0px; margin-top: 3px; font-weight: bold;'>
 	<tr>
 		<td style='text-align:center; padding: 0px 12px 0px 8px' valign='middle' rowspan=3>
-			<img src='%{imageSrc}'>
+			<img src='%{image}'>
 		</td>
 		%{output}
 	</tr>

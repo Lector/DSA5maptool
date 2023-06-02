@@ -205,9 +205,8 @@
 				</table>
 			<input type="hidden" name="Name" value="Ausweichen"/>
 			<input type="hidden" name="Wert" value="[r: wert]"/>
-			<input type="hidden" name="image" value="48"/>
+			<input type="hidden" name="image" value=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/dodge.png")]/>
 			<input type="hidden" name="kritText" value="Du darfst sofort einen Passierschlag gegen den Gegner ausführen"/>
-			<input type="hidden" name="kritImage" value="49"/>
 			<input type="hidden" name="patzerText" value="[r: patzerText]"/>
 			<input type="hidden" name="modMacro" value="probeAWMods@this"/>
 			<input type="hidden" name="status" value='[r: status]'/>

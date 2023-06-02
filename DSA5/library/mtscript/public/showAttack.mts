@@ -24,14 +24,16 @@
 	<img src=%{image}/>
 </td>")]
 
-[h,if(typ == "nk"): lucky = 44; lucky = 47]
+[h,if(typ == "nk"):
+	lucky = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/luckyAttack.png");
+	lucky = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/luckyHit.png")]
 
 <!-- Anschließend bauen wir uns eine Ausgabe.
 Je nach Art sind die Krit- und Patzerbilder etwas anders -->
 [h: params = json.set("{}",
 "luckyImage", lucky,
-"critImage", 45,
-"botchImage", 10
+"critImage", data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/criticalHit.png"),
+"botchImage", data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/botch.png")
 )]
 
 [h: output = output + show1d20(attackResult, params) + "</tr>"]

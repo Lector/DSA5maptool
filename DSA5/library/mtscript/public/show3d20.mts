@@ -44,15 +44,14 @@
 }]
 
 [h,switch(success),Code:
-	case -2: {[imageIndex = 11]};
-	case -1: {[imageIndex = 10]};
-	case 0: {[imageIndex = 2]};
-	case 1: {[imageIndex = 1]};
-	case 2: {[imageIndex = 8]};
-	case 3: {[imageIndex = 9]};
-	default: {[imageIndex = -1]}
+	case -2: {[erfolgImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/epicBotch.png")]};
+	case -1: {[erfolgImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/botch.png")]};
+	case 0: {[erfolgImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/failure.png")]};
+	case 1: {[erfolgImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/success.png")]};
+	case 2: {[erfolgImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/luckySuccess.png")]};
+	case 3: {[erfolgImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/spectacularSuccess.png")]};
+	default: {[erfolgImage = ""]}
 ]
-[h: erfolgImage = tableImage("chat", imageIndex)]
 
 [h,if(fp >= 0): fpColor = "#1d5c2f"; fpColor = "#a42b1e"]
 [h,if(fp > 0): qsText = fp + "<span style='color: #441e13;'>&middot;</span><span style='color: #1d5c2f;'>" + qs + "</span>"; qsText = "0"]

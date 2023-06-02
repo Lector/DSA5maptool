@@ -186,7 +186,7 @@
 						</td>
 					</tr>
 				</table>
-				<input type="hidden" name="image" value="85"/>
+				<input type="hidden" name="image" value=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/poison.png")]/>
 				<input type="hidden" name="modMacro" value="probeKrankGiftMods@this"/>
 			</form>
 		</div>

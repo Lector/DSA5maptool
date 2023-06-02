@@ -117,7 +117,7 @@
 				<input type="hidden" name="E1" value="[r: e1]"/>
 				<input type="hidden" name="E2" value="[r: e2]"/>
 				<input type="hidden" name="E3" value="[r: e3]"/>
-				<input type="hidden" name="image" value="76"/>
+				<input type="hidden" name="image" value=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/magic.png")]/>
 				<input type="hidden" name="patzerTabelle" value="patzerZauber"/>
 				<input type="hidden" name="modMacro" value="probeZauberMods@this"/>
 				<input type="hidden" name="kritText" value="Die AE-Kosten werden halbiert.<br/>Auf die FP dürfen weitere 1W6 Punkte aufaddiert werden"/>

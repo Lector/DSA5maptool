@@ -44,9 +44,9 @@
 
 [h,if(listCount(dice) > 1): diceOutput = diceOutput + pruefOutput]
 
-[h: gluecklichImage = 1]
-[h: kritImage = 8]
-[h: patzerImage = 10]
+[h: gluecklichImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/success.png")]
+[h: kritImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/luckySuccess.png")]
+[h: patzerImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/botch.png")]
 [h,if(json.length(macro.args) > 1),Code:{
 	[h: outputParams = arg(1)]
 	[h,if(json.contains(outputParams, "luckyImage")): gluecklichImage = json.get(outputParams, "luckyImage")]
@@ -54,12 +54,12 @@
 	[h,if(json.contains(outputParams, "botchImage")): patzerImage = json.get(outputParams, "botchImage")]
 };{}]
 [h,switch(success),Code:
-	case -2: {[h: erfolgImage = tableImage("chat", patzerImage)]};
-	case -1: {[h: erfolgImage = tableImage("chat", patzerImage)]};
-	case 0: {[h: erfolgImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/probeFehlschlag.png")]};
-	case 1: {[h: erfolgImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/probeErfolg.png")]};
-	case 2: {[h: erfolgImage = tableImage("chat", gluecklichImage)]};
-	case 3: {[h: erfolgImage = tableImage("chat", kritImage)]}
+	case -2: {[h: erfolgImage = patzerImage]};
+	case -1: {[h: erfolgImage = patzerImage]};
+	case 0: {[h: erfolgImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/failure.png")]};
+	case 1: {[h: erfolgImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/success.png")]};
+	case 2: {[h: erfolgImage = gluecklichImage]};
+	case 3: {[h: erfolgImage = kritImage]}
 ]
 
 [h,if(quali > 0): qualiColor = "#1d5c2f"; qualiColor = "#441e13"]

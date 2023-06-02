@@ -121,7 +121,7 @@
 				<input type="hidden" name="E3" value="[r: e3]"/>
 				<input type="hidden" name="patzerTabelle" value="patzerLiturgie"/>
 				<input type="hidden" name="modMacro" value="probeLiturgieMods@this"/>
-				<input type="hidden" name="image" value="78"/>
+				<input type="hidden" name="image" value=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/divine.png")]/>
 				<input type="hidden" name="kritText" value="Die KE-Kosten werden halbiert.<br/>Auf die FP dürfen weitere 1W6 Punkte aufaddiert werden"/>
 			</form>
 		</div>

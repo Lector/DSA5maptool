@@ -97,7 +97,7 @@ case "KK": eigName = "Körperkraft"
 				<input type="hidden" name="Wert" value="[r: eigenschaft]"/>
 				<input type="hidden" name="modMacro" value="probe1w20Mods@this"/>
 				<input type="hidden" name="pruefwurf" value="0"/>
-				<input type="hidden" name="image" value="12"/>
+				<input type="hidden" name="image" value="[r: data.getStaticData('com.github.lector.dsa5maptool', '/public/images/chat/d20.png')]"/>
 			</form>
 		</div>
 	</body>

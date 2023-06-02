@@ -244,10 +244,8 @@
 						</td>
 					</tr>
 				</table>
-				<input type="hidden" name="image" value="17"/>
-				<input type="hidden" name="patzerImage" value="10"/>
+				<input type="hidden" name="image" value=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/shield.png")]/>
 				<input type="hidden" name="kritText" value="Du darfst sofort einen Passierschlag gegen den Gegner ausführen"/>
-				<input type="hidden" name="kritImage" value="46"/>
 				<input type="hidden" name="modMacro" value="probePAMods@this"/>
 				<input type="hidden" name="status" value='[r: status]'/>
 				<input type="hidden" name="failText" value="[r: failText]"/>

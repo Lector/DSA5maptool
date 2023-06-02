@@ -6,13 +6,13 @@
 [h,switch(resultType),Code:
 	case "parry":{
 		[image = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/shield.png")]
-		[critImage = 46]
-		[botchImage = 10]
+		[critImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/luckyParry.png")]
+		[botchImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/botch.png")]
 	};
 	case "dodge":{
 		[image = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/dodge.png")]
-		[critImage = 49]
-		[botchImage = 10]
+		[critImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/luckyDodge.png")]
+		[botchImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/botch.png")]
 	}
 ]
 

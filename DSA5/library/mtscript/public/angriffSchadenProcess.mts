@@ -13,7 +13,7 @@
 [h: params = json.set("{}",
 "modMacro", json.get(uebergabe, "modMacro"),
 "rerollConfirm", json.get(uebergabe, "pruefreroll"),
-"modMacroParams", uebergabe))]
+"modMacroParams", uebergabe)]
 
 [h: attackResult = rollAttack(
 	currentToken(),

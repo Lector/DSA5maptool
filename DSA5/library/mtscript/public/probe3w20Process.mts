@@ -57,12 +57,11 @@ Dies soll von den unterschiedlichen Aufrufskripten alles mit übergeben werden
 
 <!--Und hier die Ausgabe-->
 [h: output = show3d20(ergebnis)]
-[h: imageSrc = tableImage("chat", image)]
 [h: output = strformat("
 <table style='border-spacing: 0px; margin-top: 3px; font-weight: bold;'>
 	<tr>
 		<td style='text-align:center; padding: 0px 12px 0px 8px' valign='middle' rowspan=3>
-			<img src='%{imageSrc}'>
+			<img src='%{image}'>
 		</td>
 		%{output}
 	</tr>
