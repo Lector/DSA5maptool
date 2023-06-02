@@ -4,6 +4,8 @@ const MyComponent = {
     ProbeHeader,
     Probe,
     ProbeMod,
+    ProbeChat,
+    WeaponManeuverZone,
   },
   data() {
     return {
@@ -15,37 +17,37 @@ const MyComponent = {
     <ProbeHeader text="Nahkampf-Anagriff" />
     <div class="title">{{weaponName}}</div>
     <Probe />
+    <ProbeChat  isNpc nscActionHidden isPrivate/>
+    <hr />
+    <WeaponManeuverZone />
   </form>`,
   // template: `<div><ChildComponent myMessage="Hello Child Framework."> With some slot content.</ChildComponent> <div style="border: 1px solid red;"> {{message}}</div></div>`,
 };
+if (typeof MapTool === "undefined") {
+  console.log("No MapTool found");
+  window.MapTool = {
+    async getUserData() {
+      return "Mocked_5D845616B86A4871AFEC35E1135C60FC";
+    },
+  };
+}
 
 window.addEventListener("load", function () {
-  console.log("ProbeAT dialog loaded");
+  init()
+    .then(() => LOGGER.log("Initialization Done"))
+    .catch((e) => LOGGER.logError("Initialization failed", e));
+});
+
+async function init() {
+  console.log("ProbeAT dialog loaded", window.MapTool);
+  const tokenId = await MapTool.getUserData();
+  console.log("Open Page for token", tokenId);
   hideLoading();
   showContent();
   const { createApp } = Vue;
 
   createApp(MyComponent).mount("#app");
-  const pdfjslib = window["pdfjs-dist/build/pdf"];
-  console.log(window);
-  document
-    .getElementById("fileSelector")
-    .addEventListener("change", async function (ev) {
-      console.log(ev.target.files);
-      /**
-       * @type {File}
-       */
-      const file = ev.target.files[0];
-      const arrBuff = await file.arrayBuffer();
-      const loadingTask = pdfjslib.getDocument(arrBuff);
-      loadingTask.promise.then(async function (pdf) {
-        console.log("Pages:", pdf.numPages);
-        const page = await pdf.getPage(1);
-        const textContent = await page.getTextContent();
-        console.log(textContent.items);
-      });
-    });
-});
+}
 
 function showContent() {
   $("#content").removeClass("hidden");

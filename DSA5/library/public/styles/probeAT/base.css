@@ -13,16 +13,52 @@ body {
     font-family: "IM Fell DW Pica", serif;
 }
 
-.border {
-    margin: 0px;
-    padding: 20px;
-    height: calc(100% - 46px);
-    max-height: calc(100% - 46px);
-    overflow: scroll;
-    border-image-source: url("../../styles/border.png");
-    border-image-repeat: round;
-    border-image-width: 16px;
-    border-image-slice: 20 18;
+a {
+    text-decoration: none;
+    font-size: 10pt;
+    font-weight: bold;
+    color: #441e13;
+}
+
+hr {
+    height: 1px;
+    border-width: 0;
+    background-color: #7b5547;
+}
+
+table {
+    font-size: inherit;
+    font-family: inherit;
+    border-spacing: 0px;
+}
+
+select {
+    font-size: inherit;
+    padding: 2px;
+}
+
+input[type="text"] {
+    font-size: inherit;
+}
+
+button[type="submit"] table tr td {
+    padding-left: 4px;
+    padding-right: 4px;
+    color: #482902;
+    text-shadow: 4px 4px 4px #aaa;
+    font-family: "IM Fell DW Pica";
+    font-size: 11pt;
+    text-transform: uppercase;
+}
+
+.attribute-default {
+    color: #eee5c8;
+}
+.attribute-decreased {
+    color: #ff3333;
+}
+.attribute-increased {
+    color: #0099ff;
 }
 
 .title {
@@ -36,8 +72,49 @@ body {
     width: 350px;
 }
 
+.label {
+    text-align: right;
+    font-weight: bold;
+    border-right: 1px solid #7b5547;
+    padding: 7px 6px 7px 6px;
+    margin-right: 4px;
+    vertical-align: top;
+}
+
 .probe {
     border-spacing: 0px;
     font-size: 11pt;
     text-align: right;
+}
+
+.border {
+    margin: 0px;
+    padding: 20px;
+    height: calc(100% - 46px);
+    max-height: calc(100% - 46px);
+    overflow: scroll;
+    border-image-source: url("../border.png");
+    border-image-repeat: round;
+    border-image-width: 16px;
+    border-image-slice: 20 18;
+}
+
+
+.panel {
+    margin-top: 15px;
+    margin-left: 34px;
+    margin-right: 34px;
+    border-spacing: 0px;
+    border: 20px solid red;
+    border-image-source: url("lib://com.github.lector.dsa5maptool/images/mainTheme/panelFrame.png");
+    border-image-slice: 35% 30%;
+    border-image-repeat: round;
+    border-collapse: separate;
+    word-wrap: break-word;
+}
+
+.panel tr td div {
+    border-top: 1px solid #eee5c8;
+    border-bottom: 1px solid #eee5c8;
+    padding: 3px 10px 3px 10px;
 }

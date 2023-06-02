@@ -1,0 +1,66 @@
+[
+  {
+    "ID": 0,
+    "Name": "Waffenlos",
+    "Improvisiert": 0,
+    "Technik": "Raufen",
+    "RW": 1,
+    "AT": 14,
+    "PA": 4,
+    "LS": [
+      { "L": "GE", "S": 14 },
+      { "L": "KK", "S": 14 }
+    ],
+    "TP": "1d6+0+1",
+    "Parierwaffe": 0,
+    "Zweihand": 0,
+    "Wield": -6
+  },
+  {
+    "ID": 1,
+    "Name": "Dolch",
+    "Improvisiert": 0,
+    "Technik": "Dolche",
+    "RW": 1,
+    "AT": 8,
+    "PA": 4,
+    "LS": [{ "L": "GE", "S": 14 }],
+    "TP": "1d6+1",
+    "Parierwaffe": 0,
+    "Zweihand": 0,
+    "Wield": "0"
+  },
+  [
+    {
+      "ID": 1,
+      "Name": "Dolch",
+      "Improvisiert": 0,
+      "Technik": "Dolche",
+      "RW": 1,
+      "AT": 8,
+      "PA": 4,
+      "LS": [{ "L": "GE", "S": 14 }],
+      "TP": "1d6+1",
+      "Parierwaffe": 0,
+      "Zweihand": 0,
+      "Wield": -2
+    },
+    {
+      "ID": 0,
+      "Name": "Waffenlos",
+      "Improvisiert": 0,
+      "Technik": "Raufen",
+      "RW": 1,
+      "AT": 14,
+      "PA": 4,
+      "LS": [
+        { "L": "GE", "S": 14 },
+        { "L": "KK", "S": 14 }
+      ],
+      "TP": "1d6+0+1",
+      "Parierwaffe": 0,
+      "Zweihand": 0,
+      "Wield": -6
+    }
+  ]
+]

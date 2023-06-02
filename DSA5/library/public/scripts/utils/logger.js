@@ -11,6 +11,12 @@ class Logger {
       console.log(args);
     }
   }
+
+  logError(...args) {
+    if (DEBUG) {
+      console.error(args);
+    }
+  }
 }
 
 const LOGGER = new Logger();
