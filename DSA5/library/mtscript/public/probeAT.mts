@@ -72,7 +72,8 @@
 	}]
 };
 {
-	[h,foreach(weapon, Nahkampfwaffen): weapons = json.append(weapons, resolveNK(weapon))]
+	[h: noMelee = noMeleeWeapon(currentToken())]
+	[h,foreach(weapon, Nahkampfwaffen),if(json.get(weapon, "ID") != noMelee): weapons = json.append(weapons, resolveNK(weapon))]
 }]
 
 [h: actionLink = macroLinkText("probeATProcess@this", "")]
@@ -116,9 +117,11 @@
 		<div class="border">
 			<form action="[r:actionLink]" method="json">
 				[r: header("Nahkampf-Angriff")]
+				[r,if(hands != 0),Code:{
 				<div class="title">
 					[r: wname]
 				</div>
+				}]
 				<table style='border-spacing: 0px; padding: 5px; margin: 0px auto 0px auto'>
 					<tr>
 						<td>
