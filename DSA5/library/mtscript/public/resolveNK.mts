@@ -31,7 +31,7 @@
 }]
 
 <!-- Falls man eine Stangenwaffe einhändig führt gibt es gewisse Abzüge -->
-[h,if(technikName == "Stangenwaffen" && HauptHand != NebenHand),Code:
+[h,if(technikName == "Stangenwaffen" && HauptHand != NebenHand && (HauptHand == id || NebenHand == id)),Code:
 {
 	[h: tp = tp + "-1"]
 	[h: pa = pa - 1]

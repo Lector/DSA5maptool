@@ -108,8 +108,6 @@ we only need 1 loop and can iterate through both of them very quickly  -->
 	[h: sightType = getSightType(illuminator)]
 	[h: setSightType("Lightsource R"+radius, illuminator)]
 	[h: setHasSight(true, illuminator)]
-	<!-- This is a crucial part. When removing the broadcast canSeeToken crashes by throwing a java.util.ConcurrentModificationException... -->
-	[h: broadcast("")]
 	[h: illuminatedPoints = canSeeToken(target, illuminator)]
 	[h: relevantPoints = json.intersection(illuminatedPoints, visiblePoints)]
 	<!-- Revert the sight of our light source. There is still a problem. When having lots of light sources this change of view can result into flickering. -->
