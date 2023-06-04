@@ -1,15 +1,10 @@
 {
   "events": [
     { "name": "onInit", "mts": "onInit" },
-    { "name": "onFirstInit", "mts": "onFirstInit" }],
-  "legacyEvents": [{
-    "name": "onInitiativeChangeRequest",
-    "mts": "onInitiativeChangeRequest"
-  }, {
-    "name": "onInitiativeChange",
-    "mts": "onInitiativeChange"
-  }, {
-    "name": "onTokenMove",
-    "mts": "onTokenMove"
-  }]
+    { "name": "onFirstInit", "mts": "onFirstInit" }
+  ],
+  "legacyEvents": [
+    { "name": "onInitiativeChange", "mts": "onInitiativeChange" },
+    { "name": "onTokenMove", "mts": "onTokenMove" }
+  ]
 }
