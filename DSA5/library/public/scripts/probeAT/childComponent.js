@@ -2,5 +2,17 @@ const ChildComponent = {
   props: {
     myMessage: String,
   },
-  template: `<div style="border: 1px solid blue;"> {{myMessage}} <slot>No Slot content provided.</slot></div>`,
+  data() {
+    return {};
+  },
+  async setup() {
+    console.log("Setting up component");
+    const response = await fetch("https://jsonplaceholder.typicode.com/todos");
+    const todos = await response.json();
+    console.log("Response", todos);
+    return {
+      todos,
+    };
+  },
+  template: `<div style="border: 1px solid blue;"> {{myMessage}} <div v-for="todo in todos">{{todo.title}}</div></div>`,
 };

@@ -10,7 +10,7 @@ const ProbeChat = {
     };
   },
   mounted() {
-    console.log("Mounted ProbeChat", this.isNpc, this.nscActionHidden);
+    LOGGER.log("Mounted ProbeChat", this.isNpc, this.nscActionHidden);
   },
   template: `
     <table style='border-spacing: 0px; margin: 5px auto 10px auto;' cellpadding='0'>

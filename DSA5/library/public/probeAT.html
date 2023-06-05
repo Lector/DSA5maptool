@@ -16,8 +16,12 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
+    <!-- Provide mocking if neccessary-->
+    <script src="./scripts/utils/maptoolMock.js?cachelib=false"></script>
+
     <!-- Internal files-->
     <link rel="stylesheet" type="text/css" href="./styles/probeAT/base.css?cachelib=false" />
+    <script src="./scripts/rest.js?cachelib=false"></script>
     <script src="./scripts/utils/logger.js?cachelib=false"></script>
     <script src="./scripts/probeAT/ZoneSelection.js?cachelib=false"></script>
     <script src="./scripts/probeAT/WeaponSelection.js?cachelib=false"></script>
@@ -27,20 +31,15 @@
     <script src="./scripts/probeAT/ProbeMod.js?cachelib=false"></script>
     <script src="./scripts/probeAT/Probe.js?cachelib=false"></script>
     <script src="./scripts/probeAT/ProbeHeader.js?cachelib=false"></script>
-    <script src="./scripts/probeAT/childComponent.js?cachelib=false"></script>
+    <script src="./scripts/probeAT/ProbeAT.js?cachelib=false"></script>
     <script src="./scripts/probeAT/index.js?cachelib=false"></script>
 
     <script>
         // configure DEBUG flag for Logger
-        const DEBUG = true;
+        const DEBUG = false;
     </script>
 </head>
 <body>
-    <div id="loading">Loading...</div>
-    <div id="content" class="hidden">My Content</div>
-    <div id="error" class="hidden">
-        An error occurred.
-    </div>
     <div id="app" class="border">
         <!--<form action="[r:actionLink]" method="json">
             

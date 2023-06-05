@@ -3,7 +3,7 @@ class RestData {
   constructor(dataURI = "dataProvider@this", send = null) {
     this.dataURI = dataURI;
     this.send = send;
-    console.log("Init Restclient", this);
+    LOGGER.log("Init Restclient", this);
   }
   async fetchUrl(mockedResult) {
     if (MapTool.mocked) {
@@ -23,7 +23,7 @@ class RestData {
     }
   }
   mtHandlerError(error, dataURI) {
-    if (verbose) console.log("mtHandlerError: " + error + " : " + dataURI);
+    if (verbose) LOGGER.log("mtHandlerError: " + error + " : " + dataURI);
   }
   async get(mockedResult, obj = this) {
     let data = obj.fetchUrl(mockedResult);

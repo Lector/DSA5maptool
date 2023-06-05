@@ -1,5 +1,4 @@
 [h: input = json.toVars(macro.args, "in_")]
-[r: input]
 [h: switchToken(in_tokenId)]
 
 [h: hWaffe = resolveNK(getNahkampfwaffe(HauptHand))]
@@ -20,4 +19,6 @@
 	[h,foreach(weapon, Nahkampfwaffen),if(json.get(weapon, "ID") != noMelee): weapons = json.append(weapons, resolveNK(weapon))]
 }]
 
-[r: weapons]
+[h: result = json.set("{}", "hasHands", hands, "weapons", weapons)]
+
+[r: result]

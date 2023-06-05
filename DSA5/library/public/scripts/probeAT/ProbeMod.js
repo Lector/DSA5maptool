@@ -12,7 +12,7 @@ const ProbeMod = {
   methods: {
     print(e) {
       e.preventDefault();
-      console.log("selectedValue", this.selectedValue);
+      LOGGER.log("selectedValue", this.selectedValue);
     },
   },
   template: `

@@ -18,7 +18,7 @@ const WeaponSelection = {
     };
   },
   mounted() {
-    console.log("Mounted WeaponSelection", this.weapons);
+    LOGGER.log("Mounted WeaponSelection", this.weapons);
   },
   template: `
     <td valign=top>
