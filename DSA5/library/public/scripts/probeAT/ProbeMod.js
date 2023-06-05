@@ -13,12 +13,7 @@ const ProbeMod = {
     name: String,
     text: String,
   },
-  methods: {
-    print(e) {
-      e.preventDefault();
-      LOGGER.log("selectedValue", this.selectedValue);
-    },
-  },
+  methods: {},
   template: `
     <td class="probe">
         {{text}}:
@@ -27,7 +22,6 @@ const ProbeMod = {
         <select name={{name}} size="1" v-model="selectedValue">
             <option v-for="mod in mods" :key="mod" :value="mod">{{mod}}</option>
         </select>
-        <button @click="print">Debug</button>
     </td>
     `,
 };
