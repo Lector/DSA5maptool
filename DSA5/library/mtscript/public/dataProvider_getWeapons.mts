@@ -16,7 +16,8 @@
 	}]
 };
 {
-	[h,foreach(weapon, Nahkampfwaffen): weapons = json.append(weapons, resolveNK(weapon))]
+	[h: noMelee = noMeleeWeapon(currentToken())]
+	[h,foreach(weapon, Nahkampfwaffen),if(json.get(weapon, "ID") != noMelee): weapons = json.append(weapons, resolveNK(weapon))]
 }]
 
 [r: weapons]
