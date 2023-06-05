@@ -23,6 +23,9 @@
     <link rel="stylesheet" type="text/css" href="./styles/probeAT/base.css?cachelib=false" />
     <script src="./scripts/rest.js?cachelib=false"></script>
     <script src="./scripts/utils/logger.js?cachelib=false"></script>
+    <script src="./scripts/probeAT/Situation.js?cachelib=false"></script>
+    <script src="./scripts/probeAT/Range.js?cachelib=false"></script>
+    <script src="./scripts/probeAT/Sight.js?cachelib=false"></script>
     <script src="./scripts/probeAT/ZoneSelection.js?cachelib=false"></script>
     <script src="./scripts/probeAT/WeaponSelection.js?cachelib=false"></script>
     <script src="./scripts/probeAT/ManeuverSelection.js?cachelib=false"></script>
@@ -87,73 +90,12 @@
             <hr/>
             <table style='border-spacing: 0px; margin: 0px auto 0px auto;'>
                 <tr>
-                    [r,macro("probeSicht@this"): "at"]
+                    
+                    
                     <td width='20'>
                         &nbsp;
                     </td>
-                    <td valign=top>
-                        <div class="label">
-                            Reichweite (Gegner)
-                        </div>
-                    </td>
-                    <td style='padding-left: 1px;' valign='top'>
-                        <table style='border-spacing: 0px;' cellpadding='1'>
-                            <tr>
-                                <td>
-                                    <input type='radio' name='rw' value='1' [r:cKurz]>
-                                </td>
-                                <td>
-                                    Kurz (<label id='rw1'></label>)
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type='radio' name='rw' value='2' [r:cMittel]>
-                                </td>
-                                <td>
-                                    Mittel (<label id='rw2'></label>)
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type='radio' name='rw' value='3' [r:cLang]>
-                                </td>
-                                <td>
-                                    Lang (<label id='rw3'></label>)
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td width='20'>
-                        &nbsp;
-                    </td>
-                    <td valign=top>
-                        <div class="label">
-                            Situation
-                        </div>
-                    </td>
-                    <td style='padding-left: 1px;' valign='top'>
-                        <table style='border-spacing: 0px;' cellpadding='1'>
-                            <tr>
-                                <td>
-                                    [r,macro("probeLiegend@this"): "-4"]
-                                </td>
-                                <td>
-                                    Liegend (-4)
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type='checkbox' name='passierschlag' value='[r: passierschlag]' [r:cPassierschlag]>
-                                </td>
-                                <td>
-                                    Passierschlag ([r: passierschlag])<br>
-                                    (keine Manöver erlaubt<br>keine Patzer oder kritische Erfolge)
-                                </td>
-                            </tr>
-                            [r,macro("probeGottgefaellig@this"): ""]
-                        </table>
-                    </td>
+                    
                     <td width='20'>
                         &nbsp;
                     </td>

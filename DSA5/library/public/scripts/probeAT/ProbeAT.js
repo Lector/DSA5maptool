@@ -2,9 +2,11 @@ const ProbeAT = {
   components: {
     ProbeHeader,
     Probe,
-    ProbeMod,
     ProbeChat,
     WeaponManeuverZone,
+    Sight,
+    Situation,
+    Range,
   },
   mounted() {
     LOGGER.log("Setting up ProbeAT");
@@ -86,5 +88,18 @@ const ProbeAT = {
       <ProbeChat  isNpc nscActionHidden isPrivate/>
       <hr />
       <WeaponManeuverZone :weapons="characterWeapons"/>
+      <table style='border-spacing: 0px; margin: 0px auto 0px auto;'>
+                <tr>
+                    <Sight />
+                    <td width='20'>
+                        &nbsp;
+                    </td>
+                    <Range />
+                    <td width='20'>
+                        &nbsp;
+                    </td>
+                    <Situation />
+                </tr>
+      </table>
     </form>`,
 };
