@@ -55,7 +55,7 @@
 [h,if(patzerRoll < 7): patzerRoll = patzerRoll + 5]
 [h: patzerText = table("patzerNahkampf", patzerRoll)]
 
-[h: actionLink = macroLinkText("VerteidigungSchadenProcess@this", "")]
+[h: actionLink = macroLinkText("verteidigungSchadenProcess@this", "")]
 [dialog5("probe", "width=1125; height=602; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

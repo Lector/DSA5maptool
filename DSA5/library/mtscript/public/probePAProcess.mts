@@ -1,7 +1,7 @@
 [h: uebergabe = macro.args]
 [h: switchToken(json.get(uebergabe, "token"))]
 [h: waffe = decode(json.get(uebergabe, "waffe"))]
-[h,if(waffe == 1): id = HauptHand; id = NebenHand]
+[h: uebergabe = json.set(uebergabe, "Wert", json.get(waffe, "PA"))]
 
 [h: technik = json.get(waffe, "Technik")]
 [h,if(technik == "Raufen" || technik == ""): tabelle = "patzerWaffenlos"; tabelle = "patzerNahkampf"]
@@ -9,4 +9,4 @@
 [h: wName = json.get(waffe, "Name")]
 [h: uebergabe = json.set(uebergabe, "Name", json.get(uebergabe, "ManName") + " mit "+ wName)]
 [h: uebergabe = json.set(uebergabe, "pruefreroll", hasTrait("Vorteile", "Waffenbegabung ("+technik+")"))]
-[h,macro("VerteidigungSchadenProcess@this"): uebergabe]
+[h: verteidigungSchadenProcess(uebergabe)]

@@ -13,9 +13,8 @@
 		[statsRequired = min(statsRequired, getState(stat, target))]
 	}]
 
-	[if(json.length(possibleTechniques) > 0 || json.contains(techniken, "") == 1),
-	if(statsRequired == 1),Code:
+	[if(json.length(possibleTechniques) > 0 || json.contains(techniken, "") == 1 && statsRequired == 1), Code:
 	{
 		<option value="[r: encode(m)]">[r: json.get(m, 'Name')]</option>
-	};{}]
+	}]
 }]

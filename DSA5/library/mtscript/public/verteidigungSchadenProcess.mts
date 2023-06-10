@@ -1,4 +1,5 @@
-[h: uebergabe = macro.args]
+[h: uebergabe = arg(0)]
+[h: uebergabe = json.set(uebergabe, "waffe", decode(json.get(uebergabe, "waffe")))]
 
 [h: switchToken(json.get(uebergabe, "token"))]
 [h: chat = json.get(uebergabe, "chat")]
@@ -9,20 +10,17 @@
 [h: damage = json.get(uebergabe, "schadenEingabe")]
 [h,if(damage == ""): damage = 0]
 [h,if(isNumber(damage) == 0), Code:
-	{
-		[h,macro("inputFail@this"): "numText"]
-	};{}
-]
+{
+	[h,macro("inputFail@this"): "numText"]
+}]
 [h,if(damage != round(damage)), Code:
-	{
-		[h,macro("inputFail@this"): "numInteger"]
-	};{}
-]
+{
+	[h,macro("inputFail@this"): "numInteger"]
+}]
 [h,if(damage < 0), Code:
-	{
-		[h,macro("inputFail@this"): "numNegative"]
-	};{}
-]
+{
+	[h,macro("inputFail@this"): "numNegative"]
+}]
 
 [h: multiplier = 1]
 [h,if(json.get(uebergabe, "kritischDK") != ""): multiplier = multiplier * 2]
@@ -40,7 +38,7 @@
 "modMacroParams", uebergabe))]
 
 [h: defenseResult = rollDefense(currentToken(),
-	decode(json.get(uebergabe, "waffe")),
+	json.get(uebergabe, "waffe"),
 	0,
 	damage,
 	manoever,
