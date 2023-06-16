@@ -71,7 +71,7 @@
 [h: checked = "checked"]
 [h,if(FKWaffe >= 0),Code:
 {
-	[h: fk = resolveFK(getFernkampfwaffe(FKWaffe))]
+	[h: fk = resolveFK(currentToken(), getFernkampfwaffe(FKWaffe))]
 	[h: waffen = waffen + strformat("
 	<tr>
 		<td>
@@ -82,7 +82,7 @@
 	json.get(fk, "Name"), json.get(fk, "FK"))]
 	[h: checked = ""]
 }]
-[h: melee = resolveNK(getNahkampfwaffe(0))]
+[h: melee = resolveNK(currentToken(), getNahkampfwaffe(0))]
 [h,if(json.get(melee, "Name") == "Waffenlos"), Code:
 {
     [h: waffen = waffen + strformat("

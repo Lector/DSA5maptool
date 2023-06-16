@@ -43,7 +43,7 @@
 	[h: attacker = json.get(uebergabe, "Attacker")]
 };{}]
 
-[h: hWaffe = resolveNK(getNahkampfwaffe(HauptHand))]
+[h: hWaffe = resolveNK(currentToken(), getNahkampfwaffe(HauptHand))]
 [h,if(NebenHand == HauptHand),Code:
 {
 	[nWaffe = hWaffe]
@@ -51,7 +51,7 @@
 };
 {
 	[unresolved = getNahkampfwaffe(NebenHand)]
-	[nWaffe = resolveNK(unresolved)]
+	[nWaffe = resolveNK(currentToken(), unresolved)]
 	[wname = json.get(hWaffe, "Name") + " &amp; " + json.get(nWaffe, "Name")]
 }]
 
@@ -67,7 +67,7 @@
 };
 {
 	[h: noMelee = noMeleeWeapon(currentToken())]
-	[h,foreach(weapon, Nahkampfwaffen),if(json.get(weapon, "ID") != noMelee): weapons = json.append(weapons, resolveNK(weapon))]
+	[h,foreach(weapon, Nahkampfwaffen),if(json.get(weapon, "ID") != noMelee): weapons = json.append(weapons, resolveNK(currentToken(), weapon))]
 }]
 
 [h: hWaffeCheck = ""]

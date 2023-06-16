@@ -274,7 +274,7 @@
 
 [h,if(hasTrait("KampfSF", "Herunterstoßen") != 0 && mount == ""),Code:
 {
-	[h: waffe = resolveNK(getNahkampfwaffe(HauptHand))]
+	[h: waffe = resolveNK(currentToken(), getNahkampfwaffe(HauptHand))]
 	[manoever = json.set("{}",
 	"ID", id,
 	"Name", "Herunterstoßen",

@@ -23,7 +23,7 @@
 		</div>
 		[r, Foreach(waffe, Fernkampfwaffen, ""), Code:
 		{
-			[h: waffe = resolveFK(waffe)]
+			[h: waffe = resolveFK(currentToken(), waffe)]
 			[h: wID = json.get(waffe, "ID")]
 			[h: wName = json.get(waffe, "Name")]
 			[h: wRW = json.get(waffe, "RW1") + "&middot;" + json.get(waffe, "RW2") + "&middot;" + json.get(waffe, "RW3")]

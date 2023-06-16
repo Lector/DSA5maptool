@@ -1,17 +1,6 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0 && json.length(macro.args) < 2), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
-[h,if(json.length(macro.args) >= 2): switchToken(arg(1))]
+[h: switchToken(arg(0))]
+[h: waffe = arg(1)]
 
-[h: waffe = arg(0)]
 [h: id = json.get(waffe, "ID")]
 [h: at = json.get(waffe, "AT")]
 [h: pa = json.get(waffe, "PA")]
@@ -138,8 +127,8 @@ beidhaendig == 0): pa = pa - 4]
 [h: hands = usesHands(currentToken())]
 [h,if(hands != 0),Code:
 {
-	[h: bhkhaupt = -2 + getTraitLevel("KampfSF", "Beidhändiger Kampf")]
-	[h,if(hasTrait("Vorteile", "Beidhändig") != 1): fhand = -4; fhand = 0]
+	[h: bhkhaupt = -2 + getTraitLevel("KampfSF", "Beidhändiger Kampf", currentToken())]
+	[h,if(beidhaendig != 1): fhand = -4; fhand = 0]
 	[h: bhkneben = bhkhaupt + fhand]
 	[h,if(id == HauptHand): waffe = json.set(waffe, "Wield", bhkhaupt)]
 	[h,if(id == NebenHand): waffe = json.set(waffe, "Wield", bhkneben)]

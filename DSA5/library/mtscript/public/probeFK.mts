@@ -5,7 +5,7 @@
 	[h,macro("inputFail@this"): "blutrausch"]
 }]
 
-[h: waffe = resolveFK(getFernkampfwaffe(arg(1)))]
+[h: waffe = resolveFK(currentToken(), getFernkampfwaffe(arg(1)))]
 
 [h: wname = json.get(waffe, "Name")]
 [h: wert = json.get(waffe, "FK")]

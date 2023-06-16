@@ -37,7 +37,7 @@
 							<input type="checkbox" name="defensive">
 						</td>
 						<td>
-							Defensive Verbesserung (+2 PA, +2 RS, +10 LeP)
+							Defensive Verbesserung (+2 PA/VW, +2 RS, +10 LeP)
 						</td>
 					</tr>
 					<tr>
@@ -97,6 +97,7 @@
 						</td>
 					</tr>
 				</table>
+				<input type="hidden" name="token" value="[r: currentToken()]">
 			</form>
 		</div>
 	</body>

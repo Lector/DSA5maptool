@@ -30,10 +30,10 @@
 				[r: header("Waffenschaden")]
 				[r,if(typ == "nk"),Code:
 				{
-					[h: waffe = resolveNK(getNahkampfwaffe(id))]
+					[h: waffe = resolveNK(currentToken(), getNahkampfwaffe(id))]
 				};
 				{
-					[h: waffe = resolveFK(getFernkampfwaffe(id))]
+					[h: waffe = resolveFK(currentToken(), getFernkampfwaffe(id))]
 				}]
 				[h: wName = json.get(waffe, "Name")]
 				[h: tp = json.get(waffe, "TP")]

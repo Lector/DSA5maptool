@@ -63,7 +63,8 @@
 					[h,if(getCurrentMapName() != tokenMap): moveTokenToMap(id, tokenMap, x, y)]
 				}]
 				<!-- Wenn diese Tabelle, oder cellpadding='0' gelöscht wird hängt sich Maptool bei diesem Skript auf. Weis der Teufel warum. Desshalb bleibt das hier erstmal stehen -->
-				<table cellpadding='0'/>
+				<table cellpadding='0'>
+				</table>
 			}]
 		</div>
 		<div class="footer"></div>

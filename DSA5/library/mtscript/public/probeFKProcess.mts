@@ -25,7 +25,7 @@
 
 [h: uebergabe = json.set(uebergabe, "schadenmod", schadensmod)]
 
-[h: waffe = resolveFK(getFernkampfwaffe(FKWaffe))]
+[h: waffe = resolveFK(currentToken(), getFernkampfwaffe(FKWaffe))]
 [h: tp = json.get(waffe, "TP")]
 [h: uebergabe = json.set(uebergabe, "tp", tp)]
 [h: angriffSchadenProcess(currentToken(), uebergabe, waffe, target)]

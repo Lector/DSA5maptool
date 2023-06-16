@@ -35,7 +35,7 @@
 		}]
 		[r, Foreach(waffe, Nahkampfwaffen, ""), Code:
 		{
-		[h: waffe = resolveNK(waffe)]
+		[h: waffe = resolveNK(currentToken(), waffe)]
 		[h: wID = json.get(waffe, "ID")]
 		[h: wName = json.get(waffe, "Name")]
 		[h,if(json.get(waffe, "Zweihand") != 0): wName = wName + " (2h)"]

@@ -16,8 +16,8 @@
 [h,if(json.length(macro.args) >= 2): uebergabe = arg(1); uebergabe = "{}"]
 [h,if(uebergabe == ""): uebergabe = "{}"]
 
-[h: hWaffe = resolveNK(getNahkampfwaffe(HauptHand))]
-[h,if(NebenHand == HauptHand): nWaffe = hWaffe; nWaffe = resolveNK(getNahkampfwaffe(NebenHand))]
+[h: hWaffe = resolveNK(currentToken(), getNahkampfwaffe(HauptHand))]
+[h,if(NebenHand == HauptHand): nWaffe = hWaffe; nWaffe = resolveNK(currentToken(), getNahkampfwaffe(NebenHand))]
 
 [h: hName = json.get(hWaffe, "Name")]
 [h: nName = json.get(nWaffe, "Name")]
@@ -73,7 +73,7 @@
 };
 {
 	[h: noMelee = noMeleeWeapon(currentToken())]
-	[h,foreach(weapon, Nahkampfwaffen),if(json.get(weapon, "ID") != noMelee): weapons = json.append(weapons, resolveNK(weapon))]
+	[h,foreach(weapon, Nahkampfwaffen),if(json.get(weapon, "ID") != noMelee): weapons = json.append(weapons, resolveNK(currentToken(), weapon))]
 }]
 
 [h: actionLink = macroLinkText("probeATProcess@this", "")]

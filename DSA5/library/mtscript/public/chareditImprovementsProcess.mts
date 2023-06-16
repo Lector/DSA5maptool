@@ -1,16 +1,5 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
-
 [h: uebergabe = macro.args]
+[h: switchToken(json.get(uebergabe, "token"))]
 
 [h,if(json.get(uebergabe, "offensive") != ""),Code:
 {
@@ -51,6 +40,7 @@
         [h: newWaffen = json.append(newWaffen, waffe)]
     }]
     [h: Nahkampfwaffen = newWaffen]
+    [h: AW = AW + 2]
 
     <!-- LeP +10 -->
     [h: MaxLeP = MaxLeP + 10]
