@@ -55,21 +55,27 @@
 					<tr>
 						<td style="text-align: center;">
 							<table>
-								[r,foreach(tok, owned, ""),if(getVisible(tok) == 1 || isGM() == 1),Code:
-								{
-								[h: selected = getSelected()]
-								[h,if(isGM() == 0 && selected == "" && isOwnedByAll(tok) == 0):
-									alwaysMark = 1; alwaysMark = 0]
-								<tr>
-									<td>
-										<input type='checkbox' name='[r: tok]'
-										[r,if(alwaysMark == 1 || listContains(selected, tok) != 0): 'checked']
-										/>
-									</td>
-									<td width="100%">
-										[r: getName(tok)]
-									</td>
-								</tr>
+								[r,foreach(tok, owned, ""),Code:{
+									[h: owners = getOwners(",", tok)]
+									[h: directlyOwned = listContains(owners, getPlayerName())]
+									[h: visible = getVisible(tok)]
+									[r,if(isGM() == 1 || (visible == 1 && directlyOwned > 0)),Code:
+									{
+										[h: selected = getSelected()]
+										[h: impersonated = getImpersonated()]
+										[h: alwaysMark = 0]
+										[h,if(isGM() == 1 && listContains(selected, tok)): alwaysMark = 1]
+										[h,if(isGM() == 0 && impersonated == "" && listContains(selected, tok) != 0): alwaysMark = 1]
+										[h,if(isGM() == 0 && impersonated != "" && tok == impersonated): alwaysMark = 1]
+										<tr>
+											<td>
+												<input type='checkbox' name='[r: tok]' [r,if(alwaysMark == 1): 'checked'] />
+											</td>
+											<td width="100%">
+												[r: getName(tok)]
+											</td>
+										</tr>
+									}]
 								}]
 							</table>
 						</td>
