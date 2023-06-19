@@ -5,10 +5,9 @@ class Logger {
     }
   }
 
+  // logError ignores DEBUG flag so that errors are always visible
   logError(...args) {
-    if (DEBUG) {
-      console.error(args);
-    }
+    console.log(args);
   }
 }
 

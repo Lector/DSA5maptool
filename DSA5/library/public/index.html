@@ -2,11 +2,13 @@
 <html lang="en">
 
 <head>
+	<title>Some Title</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="./scripts/utils/maptoolMock.js"></script>
+	<script src="./scripts/utils/maptoolMock.js?cachelib=false"></script>
     <script src="./scripts/rest.js?cachelib=false"></script>
+    <script src="./scripts/utils/logger.js?cachelib=false"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap" rel="stylesheet">
@@ -14,6 +16,11 @@
     <link rel="stylesheet" type="text/css" href="./styles/charEigenschaften.css?cachelib=false" />
 	<link rel="onChangeSelection" type="macro" href="macro://showPage@lib:com.github.lector.dsa5maptool/self/impersonated?"
 </head>
+
+<script>
+	// configure DEBUG flag for Logger
+	const DEBUG = true;
+</script>
 
 <body>
     <div>tbd</div>
@@ -50,20 +57,21 @@
 </body>
 
 <script>
-    window.addEventListener("load", async function() {
-        console.log("Loaded");
+	window.addEventListener("load", async function() {
+		LOGGER.log("Loaded");
 		const tokenId = await MapTool.getUserData();
-        console.log("Open Page for token", tokenId);
-		const rest = new RestData("macro:dataProvider@lib:com.github.lector.dsa5maptool", {tokenId: tokenId});
+		LOGGER.log("Open Page for token", tokenId);
 
-		rest.get({name: "MockedName", mu: 14, kl: 8}).then(val => {
-			const data = JSON.parse(val);
-			console.log("Fetched value", data);
-			document.getElementById("name").innerText = data.name;
-			document.getElementById("mu").innerText = data.mu;
-			document.getElementById("kl").innerText = data.kl;
+		const URI = "macro:dataProvider@lib:com.github.lector.dsa5maptool"
+		getData(URI, {tokenId: tokenId},{name: "MockedName", mu: 14, kl: 8}).then(val => {
+			LOGGER.log("Fetched value", val);
+			document.getElementById("name").innerText = val.name;
+			document.getElementById("mu").innerText = val.mu;
+			document.getElementById("kl").innerText = val.kl;
+		}).catch(e => {
+			LOGGER.logError(`Error occured while fetching data from ${URI}`, e);
 		})
-    })
+	})
 </script>
 
 </html>
