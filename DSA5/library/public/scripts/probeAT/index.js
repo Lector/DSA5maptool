@@ -95,14 +95,6 @@ const MyComponent = {
   },
   template: `<ProbeAT></ProbeAT>`,
 };
-if (typeof MapTool === "undefined") {
-  LOGGER.log("No MapTool found");
-  window.MapTool = {
-    async getUserData() {
-      return "Mocked_5D845616B86A4871AFEC35E1135C60FC";
-    },
-  };
-}
 
 window.addEventListener("load", function () {
   init()
@@ -111,7 +103,8 @@ window.addEventListener("load", function () {
 });
 
 async function init() {
-  tokenId = await MapTool.getUserData();
+  TOKENID = await MapTool.getUserData();
+  LOGGER.log("Got Token", TOKENID);
 
   const { createApp } = Vue;
   createApp(MyComponent).mount("#app");

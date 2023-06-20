@@ -47,7 +47,7 @@ const ProbeAT = {
     ];
     getData(
       "macro:dataProvider_getWeapons@lib:com.github.lector.dsa5maptool",
-      { tokenId: tokenId },
+      { tokenId: TOKENID },
       mockedWeapons
     )
       .then((data) => {

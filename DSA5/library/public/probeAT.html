@@ -16,13 +16,12 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-    <!-- Provide mocking if neccessary-->
-    <script src="./scripts/utils/maptoolMock.js?cachelib=false"></script>
+    <!-- Util scripts for logging and data fetching (incl. MT mock)-->
+    <script src="./scripts/utils/logger.js?cachelib=false"></script>
+    <script src="./scripts/rest.js?cachelib=false"></script>
 
     <!-- Internal files-->
     <link rel="stylesheet" type="text/css" href="./styles/probeAT/base.css?cachelib=false" />
-    <script src="./scripts/rest.js?cachelib=false"></script>
-    <script src="./scripts/utils/logger.js?cachelib=false"></script>
     <script src="./scripts/probeAT/Situation.js?cachelib=false"></script>
     <script src="./scripts/probeAT/Range.js?cachelib=false"></script>
     <script src="./scripts/probeAT/Sight.js?cachelib=false"></script>
@@ -39,7 +38,7 @@
 
     <script>
         // configure DEBUG flag for Logger
-        const DEBUG = false;
+        const DEBUG = true;
     </script>
 </head>
 <body>
