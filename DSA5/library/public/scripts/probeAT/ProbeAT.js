@@ -45,19 +45,15 @@ const ProbeAT = {
         },
       ],
     ];
-    const rest = new RestData(
+    getData(
       "macro:dataProvider_getWeapons@lib:com.github.lector.dsa5maptool",
-      { tokenId: tokenId }
-    );
-
-    rest
-      .get(mockedWeapons)
-      .then((response) => {
-        LOGGER.log("Stringified Weapons", JSON.stringify(response));
-        LOGGER.log("Parsed weapons", JSON.parse(response));
-        const result = JSON.parse(response);
-        this.characterWeapons = result.weapons;
-        this.hasHands = result.hasHands === 1;
+      { tokenId: tokenId },
+      mockedWeapons
+    )
+      .then((data) => {
+        LOGGER.log("Parsed weapons", data);
+        this.characterWeapons = data.weapons;
+        this.hasHands = data.hasHands === 1;
       })
       .catch((e) => LOGGER.logError("Error in ProbeAT.js", e));
   },
