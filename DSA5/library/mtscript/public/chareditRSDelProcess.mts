@@ -14,10 +14,7 @@
 
 [h: del = json.get(Ruestungen, index)]
 [h: id = json.get(del, "ID")]
-[h, if(id == RuestungAktiv), Code:
-{
-	[h,macro("changeRS@this") : 0]
-};{}]
+[h, if(id == RuestungAktiv): changeRS(currentToken(), 0)]
 
 [h: Ruestungen = json.remove(Ruestungen, index)]
 

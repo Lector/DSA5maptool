@@ -8,7 +8,8 @@
 [h: type = json.get(params, "Type")]
 [h: zone = json.get(params, "Zone")]
 [h: multiplier = json.get(params, "Multiplier")]
-[h: undoMacro = json.get(params, "Undo")]
+[h: before = json.get(params, "Before")]
+[h: after = json.get(params, "After")]
 [h,if(mod >= 0): damageFormula = baseDamage + "+" + abs(mod); signedMod = baseDamage + "-" + abs(mod)]
 
 [h,if(IsNumber(baseDamage)),Code:
@@ -63,12 +64,14 @@
 data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/sufferDamage.png"))]
 
 [h: undoIcon = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/undo.png")]
-[h: undoMacro = encode(undoMacro)]
+[h: before = encode(before)]
+[h: after = encode(after)]
 [h: undo = strformat("
 <td style='margin-left: 12px' valign=middle>
 	<form action='%{undoLink}' method='json'>
 		<input type='submit' value='<html><img height=24 width=24 src=%{undoIcon}/></html>'/>
-		<input type='hidden' name='undo' value='%{undoMacro}'/>
+		<input type='hidden' name='before' value='%{before}'/>
+		<input type='hidden' name='after' value='%{after}'>
 		<input type='hidden' name='chat' value='%{chat}'/>
 		<input type='hidden' name='token' value='%{tok}'/>
 	</form>

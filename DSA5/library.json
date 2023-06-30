@@ -1,17 +1,17 @@
 {
-  "name": "DSA5",
-  "version": "0.1",
+  "name": "DSA5 Regelsatz",
+  "version": "1.4.0",
   "website": "",
   "gitUrl": "https://github.com/Lector/DSA5maptool",
   "authors": [
     "Lector",
     "Naxos84"
   ],
-  "license": "MIT",
   "namespace": "com.github.lector.dsa5maptool",
-  "description": "None",
-  "shortDescription": "None",
+  "description": "Mit diesem Modul werden die Spielregeln von 'Das schwarze Auge' in der 5. Edition umgesetzt.\r\nFertigkeitsproben, Kampfhandlungen und vieles mehr kann durch einfache und übersichtliche Weise abgehandelt werden.",
+  "shortDescription": "Regelunterstützung für DSA5",
   "allowsUriAccess": true,
-  "licenseFile": "",
-  "readMeFile": ""
+  "license": "Test",
+  "licenseFile": "License.txt",
+  "readMeFile": "ReadMe.md"
 }

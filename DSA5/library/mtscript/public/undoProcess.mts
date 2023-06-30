@@ -1,9 +1,11 @@
 [h: params = macro.args]
 
-[h: undo = decode(json.get(params, "undo"))]
+[h: tok = json.get(params, "token")]
+[h: before = decode(json.get(params, "before"))]
+[h: after = decode(json.get(params, "after"))]
 [h: chat = json.get(params, "chat")]
 
-[h: evalMacro(undo)]
+[h: undoDamage(tok, before, after)]
 
 [h: ausgabe = border("Schaden rückgängig gemacht", strformat("
 
@@ -13,7 +15,7 @@
 			<img src='%s'>
 		</td>
 		<td valign='middle'>
-			Token-Zustand erfolgreich wiederhergestellt! Die Rückgängigfunktion hat den Schaden rückgängig gemacht und alle Zustände und Stati des Tokens zum Zeitpunkt unmittelbar vor dem Schaden wiederhergestellt.
+			Der Schaden würde rückgängig gemacht. Alle Zustände und Stati des Tokens zum Zeitpunkt unmittelbar vor dem Schaden wurden wiederhergestellt.
 		</td>
 	</tr>
 </table>",

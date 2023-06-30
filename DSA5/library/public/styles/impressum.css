@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Horizontal zentrieren */
+    font-size: 12pt;
+    color: #87827d;
+    text-align: center;
+    padding-top: 200px;
+}
+
+a {
+    color: #eee5c8;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.heading {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    font-size: 18pt;
+    width: calc(100% - 200px);
+    border-top: 1px solid #87827d;
+    border-bottom: 1px solid #87827d;
+    padding: 3px 10px 3px 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.licence {
+    font-size: 9px;
+    width: calc(100% - 200px);
+}

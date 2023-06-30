@@ -8,11 +8,23 @@
 [h,if(json.length(macro.args) > 6): status = arg(6); status = "[]"]
 [h,if(json.length(macro.args) > 7): failText = arg(7); failText = ""]
 
-<!-- Create a miniscript for undoing all changes -->
-[h: undo = strformat("[h,token('%{tok}'),Code:{[h: LeP = %{LeP}][Haupthand = %{Haupthand}][Nebenhand = %{Nebenhand}][VTinKR = %{VTinKR}]")]
+<!-- Save old states and health for undo -->
 [h: states = getTokenStates("json")]
-[h,foreach(s, states, ""): undo = undo + strformat("[h: setState('%{s}', %s)]", getState(s))]
-[h: undo = undo + "[h:checkZustand(currentToken())]}]"]
+[h: oldStates = "{}"]
+[h,foreach(s, states, ""): oldStates = json.set(oldStates, s, getState(s))]
+[h: oldData = json.set("{}",
+"Life", LeP,
+"States", oldStates,
+"Pain", SchmerzMod,
+"Encumbrance", BelastungMod,
+"Confusion", Verwirrung,
+"Paralysis", Paralyse,
+"Fear", Furcht,
+"Stupor", Betaeubung,
+"Mainhand", Haupthand,
+"Offhand", Nebenhand,
+"Defenses", VTinKR,
+"Round", getInitiativeRound())]
 
 <!-- Apply armor to reduce the damage -->
 [h: ruestung = resolveRS(currentToken(), getRuestung(Ruestungen, RuestungAktiv))]
@@ -73,6 +85,21 @@ default: {[rs = json.get(ruestung, "RS")]}]
 [h: LeP = LeP - schaden]
 [h: subResults = json.append(subResults, checkZustand(currentToken()))]
 
+<!-- Create the undo script depending on the changes of the token -->
+[h: newStates = "{}"]
+[h,foreach(s, states, ""): newStates = json.set(newStates, s, getState(s))]
+[h: newData = json.set("{}",
+"Life", LeP,
+"States", newStates,
+"Pain", SchmerzMod,
+"Encumbrance", BelastungMod,
+"Confusion", Verwirrung,
+"Paralysis", Paralyse,
+"Fear", Furcht,
+"Stupor", Betaeubung,
+"Mainhand", Haupthand,
+"Offhand", Nebenhand)]
+
 [h: macro.return = json.set("{}",
 "ResultType", "takeDamage",
 "SubResults", subResults,
@@ -86,4 +113,5 @@ default: {[rs = json.get(ruestung, "RS")]}]
 "Zone", zone,
 "Notification", failText,
 "Wound", wound,
-"Undo", undo)]
+"Before", oldData,
+"After", newData)]

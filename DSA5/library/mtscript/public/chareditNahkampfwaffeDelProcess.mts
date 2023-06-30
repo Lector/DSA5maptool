@@ -21,5 +21,5 @@
 
 [h: closeDialog("chareditWaffeDel")]
 
-[h,macro("noticeSelf@this"): "delWaffe"]
+[h: noticeSelf("delWaffe")]
 [h: refreshFrame(currentToken())]
