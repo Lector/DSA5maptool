@@ -1,29 +1,29 @@
-[h: uebergabe = macro.args]
+[h: uebergabe = arg(0)]
 
 [h: windowTitle = strformat("W%s Wurf", uebergabe)]
 [h: wTitle = strformat("Wurf mit W%s", uebergabe)]
 [h: wText = strformat("W%s", uebergabe)]
 
 [h,switch(uebergabe), Code:
-	case "3": {
+	case 3: {
 		[button = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/hand.png")]
 	};
-	case "4": {
+	case 4: {
 		[button = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/d4.png")]
 	};
-	case "6": {
+	case 6: {
 		[button = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/d6.png")]
 	};
-	case "8": {
+	case 8: {
 		[button = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/d8.png")]
 	};
-	case "10": {
+	case 10: {
 		[button = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/d10.png")]
 	};
-	case "12": {
+	case 12: {
 		[button = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/d12.png")]
 	};
-	case "20": {
+	case 20: {
 		[button = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/d20.png")]
 	}
 ]

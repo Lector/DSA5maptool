@@ -1,4 +1,4 @@
-[h: uebergabe = macro.args]
+[h: uebergabe = arg(0)]
 [h: dice = 2d6]
 [h,if(uebergabe == "nk"), Code:
 	{

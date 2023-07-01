@@ -1,4 +1,17 @@
-[h:switchToken(arg(0))]
+[h: id = arg(0)]
+[h,if(isGM() == 1 && hasImpersonated() == 0 && id == ""), Code:
+	{
+		[selectID = getSelected()]
+		[if(listCount(selectID) != 1), Code:
+			{
+				[h,macro("inputFail@this"): "gmSelectFail"]
+			};{}
+		]
+		[switchToken(selectID)]
+	};{}
+]
+
+[h,if(id != ""): switchToken(id)]
 
 [h: wert = INI]
 [h: modWert = getINI(currentToken())]

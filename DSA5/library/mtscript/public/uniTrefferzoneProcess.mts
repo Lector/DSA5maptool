@@ -1,8 +1,7 @@
 [h: uebergabe = macro.args]
 [h: closeDialog("uniTrefferzone")]
 [h: groesse = json.get(uebergabe, "groesse")]
-[h,macro("trefferzone@this"): groesse]
-[h: zone = macro.return]
+[h: zone = trefferzone(groesse)]
 
 [h: ausgabe = border("Trefferzone", strformat("
 	<table style='border-spacing: 0px; margin-top: 3px;'>
