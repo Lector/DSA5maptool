@@ -66,7 +66,7 @@
 							</td>
 						</tr>
 						}]
-						[r,if(listContains('Tier', Typus) > 0),Code:{
+						[r,if(listContains('Drache, Tier, Übernatürliches Wesen', Typus) > 0),Code:{
 						<tr>
 							<td>
 								[r: linkImprovePet]
