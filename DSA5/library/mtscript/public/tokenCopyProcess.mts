@@ -1,28 +1,12 @@
 [h: uebergabe = macro.args]
 
-[h: copyNum = getStrProp(uebergabe, "copyNum")]
-[h: tID = getStrProp(uebergabe, "tokenID")]
+[h: copyNum = json.get(uebergabe, "copyNum")]
+[h: tID = json.get(uebergabe, "tokenID")]
 
-[h,if(copyNum == ""), Code:
-	{
-		[h,macro("inputFail@this"): "noInput"]
-	};{}
-]
-[h,if(isNumber(copyNum) == 0), Code:
-	{
-		[h,macro("inputFail@this"): "numText"]
-	};{}
-]
-[h,if(copyNum != round(copyNum)), Code:
-	{
-		[h,macro("inputFail@this"): "numInteger"]
-	};{}
-]
-[h,if(copyNum < 0), Code:
-	{
-		[h,macro("inputFail@this"): "numNegative"]
-	};{}
-]
+[h,if(copyNum == ""): inputFail("noInput")]
+[h,if(isNumber(copyNum) == 0): inputFail("numText")]
+[h,if(copyNum != round(copyNum)): inputFail("numInteger")]
+[h,if(copyNum < 0): inputFail("numNegative")]
 [h: closeDialog("tokenCopy")]
 
 [h: tName = getName(tID)]
@@ -31,5 +15,5 @@
 [h: cloneNum = 0]
 [h: copyToken(tID, copyNum, "", updates)]
 
-[h,macro("noticeSelf@this"): "tokenCopy"]
-[h: refreshFrame(currentToken())]
+[h: noticeSelf("tokenCopy")]
+[h: refreshFrame(tID)]

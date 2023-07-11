@@ -1,4 +1,4 @@
-[h: uebergabe = macro.args]
+[h: uebergabe = arg(0)]
 
 [h,switch(uebergabe), Code:
 	case "playerOptions": {
@@ -149,9 +149,13 @@
 		[msgTitle = "Neues Jagdwild"]
 		[msgText = "Es wurde ein neues Token für die Jagd erzeugt."]
 	};
-	case "chareditImprovements": {
+	case "chareditImprovedSummon": {
 		[msgTitle = "Beschwörung verbessert"]
 		[msgText = "Die Verbesserungen wurden angewendet."]
+	};
+	case "chareditImprovedPet": {
+		[msgTitle = "Tier ausgebildet"]
+		[msgText = "Das Ausbildungspaket wurde angewendet."]
 	};
 ]
 

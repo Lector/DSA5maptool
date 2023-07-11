@@ -81,7 +81,6 @@
     [h: KK = KK + 2]
 }]
 
-[h: closeDialog("chareditImprovements")]
-
-[h,macro("noticeSelf@this"): "chareditImprovements"]
+[h: closeDialog("chareditImproveSummons")]
+[h: noticeSelf("chareditImprovedSummon")]
 [h: refreshFrame(currentToken())]

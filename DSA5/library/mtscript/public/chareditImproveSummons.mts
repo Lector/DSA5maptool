@@ -1,17 +1,7 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
+[h: switchToken(arg(0))]
 
-[h: actionLink = macroLinkText("chareditImprovementsProcess@this", "")]
-[dialog5("chareditImprovements", "width=600; height=470; temporary=1; closebutton=0; noframe=0"):{
+[h: actionLink = macroLinkText("chareditImproveSummonsProcess@this", "")]
+[dialog5("chareditImproveSummons", "width=600; height=470; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
 		<title>Beschwörung verbessern</title>
