@@ -17,6 +17,8 @@
 	[h,macro("inputFail@this"): "blutrausch"]
 };{}]
 
+[h,if(json.length(Nahkampfwaffen) == 0): inputFail("noMeleeWeapons")]
+
 [h: uebergabe = ""]
 [h,if(json.length(macro.args) > 1): uebergabe = arg(1)]
 [h: gluecklich = ""]
@@ -66,8 +68,7 @@
 	}]
 };
 {
-	[h: noMelee = noMeleeWeapon(currentToken())]
-	[h,foreach(weapon, Nahkampfwaffen),if(json.get(weapon, "ID") != noMelee): weapons = json.append(weapons, resolveNK(currentToken(), weapon))]
+	[h,foreach(weapon, Nahkampfwaffen): weapons = json.append(weapons, resolveNK(currentToken(), weapon))]
 }]
 
 [h: hWaffeCheck = ""]

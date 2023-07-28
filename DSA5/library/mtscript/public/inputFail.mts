@@ -8,12 +8,11 @@
 	case "kampfAU": msgText = "<i>Ausdauer im Kampf</i> ist nicht aktiviert, die Aktion <i>Atem holen</i> steht daher nicht zur Verfügung.";
 	case "impersonate": msgText = "Du musst erst einen Spielstein verkörpern, bevor du diese Funktion aufrufen kannst:<br><b>Rechtsklick auf Token &gt; Impersonate</b>";
 	case "gm": msgText = "Diese Funktion kann nur vom Spielleiter aufgerufen werden.";
-	case "atWaffe": msgText = "Bitte erst im Charakterbogen unter <i>&quot;Kampfbogen&quot;</i> eine Standard-Waffe für den Angriff festlegen.";
-	case "paWaffe": msgText = "Bitte erst im Charakterbogen unter <i>&quot;Kampfbogen&quot;</i> eine Standard-Waffe für die Verteidigung festlegen.";
+	case "noMeleeWeapons": msgText = "Dieser Charakter verfügt über keine Nahkampfangriffe.";
 	case "fkWaffe": msgText = "Bitte erst im Charakterbogen unter <i>&quot;Kampfbogen&quot;</i> eine Standard-Waffe für den Fernkampf festlegen.";
 	case "orientieren": msgText = "Vor dem Kampf ist kein Orientieren möglich. Bitte erst Initiative würfeln.";
-	case "aeChange": msgText = "ändern der Astralenergie mit diesem Charakter nicht möglich.";
-	case "keChange": msgText = "ändern der Karmaenergie mit diesem Charakter nicht möglich.";
+	case "aeChange": msgText = "Ändern der Astralenergie mit diesem Charakter nicht möglich.";
+	case "keChange": msgText = "Ändern der Karmaenergie mit diesem Charakter nicht möglich.";
 	case "wundenSystem": msgText = "Nicht ausführbar, da die Einstellungen für das Wundensystem zwischenzeitlich geändert wurden. Bitte das Fenster<i>&quot;Wunden&quot;</i> neu öffnen.";
 	case "wundenAus": msgText = "Das Wundensystem wurde vom Spielleiter deaktiviert.";
 	case "keFail": msgText = "Ohne Karmaenergie ist das Wirken von Mirakeln und Liturgien nicht möglich.";

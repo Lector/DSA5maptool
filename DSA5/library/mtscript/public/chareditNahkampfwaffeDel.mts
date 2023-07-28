@@ -20,24 +20,23 @@
 	<body>
 		<div class="border">
 			[r: header("Waffe löschen")]
-			<table style='border-spacing: 0px; margin: 0px auto 10px auto;'>
+			<table style='border-spacing: 4px; margin: 0px auto 10px auto;'>
 				<tr>
 					<td style='text-align: center; padding-bottom: 5px;'>
 						Wähle eine Nahkampfwaffe zum löschen aus:
 					</td>
 				</tr>
-				[h: baum = json.remove(Nahkampfwaffen, 0)]
-				[h: index = 1]
+				[h: baum = Nahkampfwaffen]
+				[h: index = 0]
 				[Foreach(waffe, baum, ""), CODE:
-					{
-						<tr>
-							<td style='text-align: center;'>
-								<span style='color: #441e13; text-decoration: none;'>[r: macroLink(json.get(waffe, "Name"), "chareditNahkampfwaffeDelProcess@this", "", index)]</span>
-								[h: index = index + 1]
-							</td>
-						</tr>
-					}
-				]
+				{
+					<tr>
+						<td style='text-align: center;'>
+							<span style='color: #441e13; text-decoration: none;'>[r: macroLink(json.get(waffe, "Name"), "chareditNahkampfwaffeDelProcess@this", "", index)]</span>
+							[h: index = index + 1]
+						</td>
+					</tr>
+				}]
 			</table>
 		</div>
 	</body>
