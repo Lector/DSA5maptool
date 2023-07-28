@@ -4,7 +4,7 @@
 		{
 			"label": "Build library",
 			"type": "process",
-			"command": "${workspaceFolder}\\build.sh",
+			"command": "${workspaceFolder}//build.bat",
 			"echoCommand": true,
 			"problemMatcher": [],
 			"group": {
