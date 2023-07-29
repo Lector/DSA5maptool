@@ -4,12 +4,18 @@
 		{
 			"label": "Build library",
 			"type": "process",
-			"command": "${workspaceFolder}//build.bat",
+			"command": "node",
+			"args": [
+				"${workspaceFolder}/build.js"
+			],
 			"echoCommand": true,
 			"problemMatcher": [],
 			"group": {
 				"kind": "build",
 				"isDefault": true
+			},
+			"options": {
+				"cwd": "${workspaceFolder}" // Set the working directory for the task
 			}
 		}
 	]
