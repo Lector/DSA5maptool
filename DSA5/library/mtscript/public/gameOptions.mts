@@ -20,7 +20,7 @@
 	<body>
 		<div class="border">
 			<form action="[r:actionLink]">
-				[r: header("Spiel-Einstellungen")]
+				[r: header("Einstellungen")]
 				<table style='border-spacing: 0px; font-weight: bold;'>
 					<tr>
 						<td>

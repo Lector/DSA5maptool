@@ -36,7 +36,7 @@
 	[h: manName = strformat("%{manName} auf <a style='color: #441e13' href='%s'>%s</a>", link, targetName)]
 
 	[h: hasIni = hasInitiative(currentToken())]
-	[h,if(getLibProperty("OptFacing", "com.github.lector.dsa5maptool") != 0 && hasIni == 1),Code:
+	[h,if(getLibProperty("OptFacing", "com.github.lector.dsa5maptool") == 1 && hasIni == 1),Code:
 	{
 		[h: vector = lookAt(currentToken(), target)]
 		[h: direction = math.atan2(-json.get(vector, "Y"), json.get(vector, "X"))]
