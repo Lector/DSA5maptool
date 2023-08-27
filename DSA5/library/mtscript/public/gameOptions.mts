@@ -59,7 +59,7 @@
 							<input type='checkbox' name='fNSCAction' value='1' [r: cNSCAction]>
 						</td>
 						<td>
-							Verdecktes Würfeln bei NSCs vorselektieren/anwenden
+							Verdecktes Würfeln bei NSCs vorselektieren
 						</td>
 					</tr>
 					<tr>

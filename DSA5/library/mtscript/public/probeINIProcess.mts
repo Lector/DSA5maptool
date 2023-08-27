@@ -34,7 +34,7 @@
 
 [h: mod = bonus - malus]
 [h: aktWert = getINI(currentToken())]
-[h: resultDice = roll(1, 6)]
+[h: resultDice = roll(INIDiceCount, 6)]
 [h: result = resultDice + aktWert + mod]
 
 
@@ -105,7 +105,7 @@
 		</td>
 	</tr>
 </table>",
-data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/initiative.png"), iniColor, aktWert, modColor, modOutput, 1, resultDice, result))] 
+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/initiative.png"), iniColor, aktWert, modColor, modOutput, INIDiceCount, resultDice, result))] 
 
 [h,if(isNPC() == 1 && getLibProperty("OptHideNSCAction","com.github.lector.dsa5maptool") == 1): recipient = "Gm"; recipient = "Public"]
 [h: sendTo(recipient, ausgabe)]

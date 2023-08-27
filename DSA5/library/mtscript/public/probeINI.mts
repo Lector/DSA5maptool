@@ -16,7 +16,7 @@
 [h: wert = INI]
 [h: modWert = getINI(currentToken())]
 
-[h: wuerfel = 1]
+[h: wuerfel = INIDiceCount]
 
 [h: actionLink = macroLinkText("probeINIProcess@this", "")]
 [dialog5("probeINI", "width=587; height=360; temporary=1; closebutton=0; noframe=0"):{

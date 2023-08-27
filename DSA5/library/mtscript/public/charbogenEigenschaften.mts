@@ -33,7 +33,7 @@
 						<div style='color: [r: eigColor];'>[r: aktSK]</div>
 
 						<div>Zähigkeit:</div>
-						[h: aktZK = getZK(currentToken())]												
+						[h: aktZK = getZK(currentToken())]
 						[h,if(aktZK < ZK): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 						[h,if(aktZK > ZK): eigColor = "#0099ff"]
 						<div style='color: [r: eigColor];'>[r: aktZK]</div>
@@ -44,7 +44,7 @@
 						[h,if(aktINI > INI): eigColor = "#0099ff"]
 						[h: link = strformat("<a title='Initiative ermitteln' href='%s'>", macroLinkText("probeINI@this", "", currentToken()))]
 						<div>[r:link]Initiative:</a></div>
-						<div style='color: [r: eigColor];' >[r: link][r: aktINI]+1W6</a></div>
+						<div style='color: [r: eigColor];' >[r: link][r: aktINI]+[r: INIDiceCount]W6</a></div>
 
 						<div>Geschwindigkeit:</div>
 						[h: aktGS = getGS(currentToken())]												

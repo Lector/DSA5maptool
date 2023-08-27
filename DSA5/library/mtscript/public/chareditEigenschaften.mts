@@ -189,15 +189,19 @@
 								</tr>
 								<tr>
 									<td>
-										INI:
+										Initiative:
 									</td>
 									<td>
-										<input type='text' name='oINI' size='2' maxlength='2' value='[r: INI]'>
+										<input type='text' name='oINI' size='2' maxlength='2' value='[r: INI]'>+
+										<select size='1' name='INIDice'>
+											<option value="1">1d6</option>
+											<option value="2" [r,if(INIDiceCount == 2): "selected"]>2d6</option>
+										</select>
 									</td>
 								</tr>
 								<tr>
 									<td>
-										GS:
+										Geschwindigkeit:
 									</td>
 									<td>
 										<input type='text' name='oGS' size='2' maxlength='5' value='[r: GS]'>
@@ -256,6 +260,7 @@
 						</td>
 					</tr>
 				</table>
+				<input type="hidden" name="token" value="[r: currentToken()]"/>
 			</form>
 		</div>
 	</body>

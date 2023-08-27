@@ -35,7 +35,7 @@
 		[foreach(id, idList), Code:
 			{
 				[switchToken(id)]
-				[h: wuerfel = 1]
+				[h: wuerfel = INIDiceCount]
 				[h: grundwert = INI]
 				[h: aktWert = getINI(id)]
 				[h: mod = 0]
