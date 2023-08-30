@@ -12,7 +12,7 @@
 
 [h: uebergabe = macro.args]
 [h: attacker = json.get(uebergabe, "attacker")]
-[h: waffe = json.get(uebergabe, "waffe")]
+[h: waffe = decode(json.get(uebergabe, "waffe"))]
 
 [h,macro("probeVerteidigungMods@this"): uebergabe]
 

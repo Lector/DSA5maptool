@@ -1,4 +1,4 @@
-[h,if(macro.args == ""): default = 0; default = macro.args]
+[h,if(macro.args == ""): default = 0; default = arg(0)]
 <td class="probe">
 	Probe:
 </td>

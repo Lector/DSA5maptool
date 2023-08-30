@@ -305,7 +305,7 @@
 							<table style='border-spacing: 0px;' cellpadding='1'>
 								[r,macro("probeVorteilPosition@this"): json.append(currentToken(), target, "at")]
 								[r,macro("probeCramped@this"): json.append(currentToken(), weapons, target, "at")]
-								[r,macro("probeWasser@this"): ""]
+								[r,macro("probeWasser@this"): currentToken()]
 							</table>
 						</td>
 						<td width='20'>

@@ -17,7 +17,7 @@
 	[h,macro("inputFail@this"): "blutrausch"]
 };{}]
 
-[h,if(json.length(Nahkampfwaffen) == 0): inputFail("noMeleeWeapons")]
+[h,if(json.length(Nahkampfwaffen) == 0 && getProperty("AW") == 0): inputFail("noMeleeWeapons")]
 
 [h: uebergabe = ""]
 [h,if(json.length(macro.args) > 1): uebergabe = arg(1)]
@@ -43,7 +43,12 @@
 	[h: status = json.get(uebergabe, "Status")]
 	[h: failText = json.get(uebergabe, "FailText")]
 	[h: attacker = json.get(uebergabe, "Attacker")]
-};{}]
+}]
+
+<!-- determine values of defense options -->
+[h: weapons = "[]"]
+[h: dodge = getAW(currentToken())]
+[h,if(dodge > 0): weapons = json.append(weapons, dodge)]
 
 [h: hWaffe = resolveNK(currentToken(), getNahkampfwaffe(HauptHand))]
 [h,if(NebenHand == HauptHand),Code:
@@ -57,7 +62,6 @@
 	[wname = json.get(hWaffe, "Name") + " &amp; " + json.get(nWaffe, "Name")]
 }]
 
-[h: weapons = "[]"]
 [h: hands = usesHands(currentToken())]
 [h,if(hands != 0),Code:
 {
@@ -71,6 +75,8 @@
 	[h,foreach(weapon, Nahkampfwaffen): weapons = json.append(weapons, resolveNK(currentToken(), weapon))]
 }]
 
+<!-- preselect a defense option -->
+
 [h: hWaffeCheck = ""]
 [h: nWaffeCheck = ""]
 [h,if(json.get(hWaffe, "PA") > json.get(nWaffe, "PA")),Code:
@@ -83,6 +89,23 @@
 	 [nWaffeCheck = "checked='checked'"]
 }]
 
+[h: js = strformat("
+function setMacro() {
+    const weapon = Array.from(document.getElementsByName('waffe')).find(w => w.checked)?.value || 0;
+    var macro = '';
+    if(isNumber(weapon)) macro = 'probePAMods@this' else macro = 'probeAWMods@this';
+    document.getElementByName('modMacro').value = macro;
+}")]
+
+[h: js = js + "
+window.addEventListener('load', function(evt) {
+	setMacro();"]
+[h,for(i, 0, json.length(weapons), 1, ""): js = js + strformat("
+	document.getElementById('waffe%{i}').addEventListener('change', function(evt) {
+		setMacro();
+	});")]
+[h: js = js + "});"]
+
 [h: actionLink = macroLinkText("verteidigungSchadenProcess@this", "")]
 [dialog5("probe", "width=1125; height=629; temporary=1; closebutton=0; noframe=0"):{
 <html>
@@ -90,6 +113,7 @@
 		<title>Parade</title>
 		[r: linkGoogleFonts()]
 		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
+        <script>[r: js]</script>
 	</head>
 	<body>
 		<div class="border">
@@ -105,7 +129,7 @@
 						<td>
 							<table class="probe">
 								<tr>
-									[r,macro("probeMod@this"): probe]
+									[r: probeMod(probe)]
 								</tr>
 								<tr>
 									<td>
@@ -132,7 +156,7 @@
 						</td>
 					</tr>
 				</table>
-				[r,macro("probeChat@this"): currentToken()]
+				[r: probeChat(currentToken())]
 				<hr/>
 				<table style='border-spacing: 0px; margin: 0px auto 0px auto;'>
 					<tr>
@@ -151,7 +175,10 @@
 										<input type="radio" name="waffe" id="waffe[r:i]" value="[r: encode(weapon)]" [r,if(i==0):"checked"]/>
 									</td>
 									<td>
-										[r: strformat("%s (%s)", json.get(weapon, "Name"), json.get(weapon, "PA"))]
+										[r,if(isNumber(weapon)):
+                                            strformat("Ausweichen (%s)", weapon);
+                                            strformat("%s (%s)", json.get(weapon, "Name"), json.get(weapon, "PA"))
+                                        ]
 									</td>
 								</tr>
 								[h: i = i + 1]
@@ -161,11 +188,11 @@
 						<td width='20'>
 							&nbsp;
 						</td>
-						[r,macro("schadensart@this"): uebergabe]
+						[r: schadensart(uebergabe)]
 						<td width='20'>
 							&nbsp;
 						</td>
-						[r,macro("probeFKAbwehr@this"): fkabwehr]
+						[r: probeFKAbwehr(fkabwehr)]
 						<td width='20'>
 							&nbsp;
 						</td>
@@ -190,7 +217,7 @@
 				<hr/>
 				<table style='border-spacing: 0px; margin: 0px auto 6px auto;'>
 					<tr>
-						[r,macro("probeSicht@this"): "pa"]
+						[r: probeSicht("vt")]
 									
 						<td width='20'>
 							&nbsp;
@@ -202,9 +229,9 @@
 						</td>
 						<td style='padding-left: 1px;' valign='top'>
 							<table style='border-spacing: 0px;' cellpadding='1'>
-								[r,macro("probeVorteilPosition@this"): json.append(currentToken(), attacker, "pa")]
-								[r,macro("probeCramped@this"): json.append(currentToken(), weapons, attacker, "pa")]
-								[r,macro("probeWasser@this"): currentToken()]
+								[r: probeVorteilPosition(currentToken(), attacker, "pa")]
+								[r: probeCramped(currentToken(), weapons, attacker, "pa")]
+								[r: probeWasser(currentToken())]
 							</table>
 						</td>
 						<td width='20'>
@@ -218,10 +245,10 @@
 						</td>
 						<td style='padding-left: 1px;' valign='top'>
 							<table style='border-spacing: 0px;' cellpadding='1'>
-								[r,macro("probeVTinKR@this"): currentToken()]
+								[r: probeVTinKR(currentToken())]
 								<tr>
 									<td>
-										[r,macro("probeLiegend@this"): "-2"]
+										[r: probeLiegend(-2)]
 									</td>
 									<td>
 										Liegend (-2)
@@ -235,7 +262,9 @@
 										Angriff von Hinten (-4)
 									</td>
 								</tr>
-								[r,macro("probeGottgefaellig@this"): ""]
+                                [r: probeBound(currentToken(), weapons)]
+                                <!-- TODO: Gottgefaellig nur bei PA -->
+								[r: probeGottgefaellig()]
 								<tr>
 									<td>
 										<input type='checkbox' name='kritisch' [r:gluecklich]>

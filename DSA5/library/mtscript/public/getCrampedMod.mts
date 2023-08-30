@@ -3,7 +3,9 @@
 [h: target = arg(2)]
 [h: action = arg(3)]
 
-[h,if(json.get(waffe, "Technik") == "Schilde"),Code:
+[h,if(isNumber(waffe)): return(0,0)]
+[h: tech = json.get(waffe, "Technik")]
+[h,if(tech == "Schilde"),Code:
 {
 	[h: unresolved = getNahkampfwaffe(json.get(waffe, "ID"))]
 	<!-- Erschwert um 2 pro Schildgroesse. Da wir die momentan nicht verwalten errechnen wir sie aus PA-Bonus * 2.

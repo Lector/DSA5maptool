@@ -23,6 +23,10 @@
 		[text4 = "AW sinkt auf 1"]
 		[dunkel4 = "=1"]
 	};
+	case "vt":{
+		[text4 = "VT sinkt auf 1"]
+		[dunkel4 = "=1"]
+	};
 	case "fk":{
 		[text4 = "FK sinkt auf 1"]
 		[dunkel4 = "=1"]

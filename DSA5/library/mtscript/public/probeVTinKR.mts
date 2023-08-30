@@ -1,4 +1,4 @@
-[h: switchToken(macro.args)]
+[h: switchToken(arg(0))]
 [h: hasIni = hasInitiative(currentToken())]
 [r,if(hasIni != 0),Code:{
 <tr>
