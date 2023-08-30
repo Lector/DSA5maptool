@@ -48,6 +48,8 @@
 <!-- determine values of defense options -->
 [h: weapons = "[]"]
 [h: dodge = getAW(currentToken())]
+[h: maxDefense = dodge]
+[h: maxDefenseId = 0]
 [h,if(dodge > 0): weapons = json.append(weapons, dodge)]
 
 [h: hWaffe = resolveNK(currentToken(), getNahkampfwaffe(HauptHand))]
@@ -72,29 +74,25 @@
 	}]
 };
 {
-	[h,foreach(weapon, Nahkampfwaffen): weapons = json.append(weapons, resolveNK(currentToken(), weapon))]
+	[h,foreach(weapon, Nahkampfwaffen),Code: {
+        [h: weapons = json.append(weapons, resolveNK(currentToken(), weapon))]
+    }]
 }]
 
 <!-- preselect a defense option -->
-
-[h: hWaffeCheck = ""]
-[h: nWaffeCheck = ""]
-[h,if(json.get(hWaffe, "PA") > json.get(nWaffe, "PA")),Code:
-{
-	[waffe = hWaffe]
-	[hWaffeCheck = "checked='checked'"]
-};
-{
-	 [waffe = nWaffe]
-	 [nWaffeCheck = "checked='checked'"]
+[h: id = 0]
+[h,foreach(weapon, weapons),Code: {
+    [h,if(isNumber(weapon)): defense = weapon; defense = json.get(weapon, "PA")]
+    [h,if(defense > maxDefense): maxDefenseId = id]
+    [h: id = id + 1]
 }]
 
 [h: js = strformat("
 function setMacro() {
     const weapon = Array.from(document.getElementsByName('waffe')).find(w => w.checked)?.value || 0;
     var macro = '';
-    if(isNumber(weapon)) macro = 'probePAMods@this' else macro = 'probeAWMods@this';
-    document.getElementByName('modMacro').value = macro;
+    if(isNaN(weapon)) macro = 'probePAMods@this'; else macro = 'probeAWMods@this';
+    document.getElementById('modMacro').value = macro;
 }")]
 
 [h: js = js + "
@@ -172,7 +170,7 @@ window.addEventListener('load', function(evt) {
 								{
 								<tr>
 									<td>
-										<input type="radio" name="waffe" id="waffe[r:i]" value="[r: encode(weapon)]" [r,if(i==0):"checked"]/>
+										<input type="radio" name="waffe" id="waffe[r:i]" value="[r: encode(weapon)]" [r,if(i == maxDefenseId): "checked"]/>
 									</td>
 									<td>
 										[r,if(isNumber(weapon)):
@@ -279,7 +277,7 @@ window.addEventListener('load', function(evt) {
 				</table>
 				<input type="hidden" name="image" value=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/shield.png")]/>
 				<input type="hidden" name="kritText" value="Du darfst sofort einen Passierschlag gegen den Gegner ausführen"/>
-				<input type="hidden" name="modMacro" value="probePAMods@this"/>
+				<input type="hidden" name="modMacro" id="modMacro"/>
 				<input type="hidden" name="status" value='[r: status]'/>
 				<input type="hidden" name="failText" value="[r: failText]"/>
 				<input type="hidden" name="token" value="[r: currentToken()]"/>

@@ -7,16 +7,15 @@
         <input type='checkBox' name='fixiert' value='-4' [r,if(bound == 1): 'checked']/>
     </td>
     <td>
-        Fixiert (<label id='cramped'></label>)
+        Fixiert (<label id='bound'>0</label>)
     </td>
 </tr>
 
 [h: js = strformat("
 function labelBound() {
     const weapon = Array.from(document.getElementsByName('waffe')).find(w => w.checked)?.value || 0;
-    var mod = 0;
-    if(isNumber(weapon)) mod = -4;
-    document.getElementById('cramped').innerText = mod;
+    const label = document.getElementById('bound');
+    if(isNaN(weapon)) label.innerText = 0; else label.innerText = -4;
 }")]
 
 [h: js = js + "
