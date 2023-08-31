@@ -81,9 +81,22 @@
 
 <!-- preselect a defense option -->
 [h: id = 0]
+<!-- attackerSize is determined to check if the defense option is legally preselected
+Ranged attacks are considered as attacker size of large because large enemies and projectiles can only be evaded or parried with a shield -->
+[h,if(attacker != ""): attackerSize = scale(getSize(attacker)); attackerSize = 1]
+[h,if(fkabwehr != 0): attackerSize = 2]
+
 [h,foreach(weapon, weapons),Code: {
-    [h,if(isNumber(weapon)): defense = weapon; defense = json.get(weapon, "PA")]
-    [h,if(defense > maxDefense): maxDefenseId = id]
+    [h,if(isNumber(weapon)),Code:{
+		<!-- Dodgeing is possible for every attack -->
+		[defense = weapon]
+		[defenseSize = 100]
+	};{
+		[defense = json.get(weapon, "PA")]
+		<!-- Shields can parry large opponents and projectiles -->
+		[h,if(json.get(weapon, "Technik") == "Schilde"): defenseSize = 2; defenseSize = 1]
+	}]
+    [h,if(defense > maxDefense && defenseSize >= attackerSize): maxDefenseId = id]
     [h: id = id + 1]
 }]
 
