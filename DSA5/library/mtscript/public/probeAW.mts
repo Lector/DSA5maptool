@@ -145,7 +145,7 @@
 						<td valign='top'>
 							<table>
 								[r,macro("probeVorteilPosition@this"): json.append(currentToken(), attacker, "aw")]
-								[r,macro("probeWasser@this"): ""]
+								[r,macro("probeWasser@this"): currentToken()]
 							</table>
 						</td>
 						<td width='20'>
@@ -203,7 +203,6 @@
 						</td>
 					</tr>
 				</table>
-			<input type="hidden" name="Name" value="Ausweichen"/>
 			<input type="hidden" name="Wert" value="[r: wert]"/>
 			<input type="hidden" name="image" value=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/dodge.png")]/>
 			<input type="hidden" name="kritText" value="Du darfst sofort einen Passierschlag gegen den Gegner ausführen"/>

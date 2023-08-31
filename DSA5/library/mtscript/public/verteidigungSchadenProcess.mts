@@ -1,5 +1,5 @@
 [h: uebergabe = arg(0)]
-[h: uebergabe = json.set(uebergabe, "waffe", decode(json.get(uebergabe, "waffe")))]
+[h: weapon = decode(json.get(uebergabe, "waffe"))]
 
 [h: switchToken(json.get(uebergabe, "token"))]
 [h: chat = json.get(uebergabe, "chat")]
@@ -38,18 +38,18 @@
 "modMacroParams", uebergabe))]
 
 [h: defenseResult = rollDefense(currentToken(),
-	json.get(uebergabe, "waffe"),
+	weapon,
 	0,
 	damage,
 	manoever,
 	params)]
 
 [h: title = json.get(uebergabe, "Name")]
-[h,if(json.get(defenseResult, "Weapon") != ""): manName = "PA "; manName = ""]
+[h,if(json.type(weapon) == "OBJECT"): manName = "PA "; manName = "Ausweichen"]
 [h,foreach(man, manoever),if(man != ""),Code:{
-	
 	[manName = json.get(man, "Name") + " "]
 }]
+[h,if(json.type(weapon) == "OBJECT"): manName = manName + "mit "+json.get(weapon, "Name")]
 [h: title = manName + title]
 
 [h: output = show(json.set(defenseResult, "Chat", chat))]

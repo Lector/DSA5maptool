@@ -6,8 +6,8 @@
 [h: manoever = arg(4)]
 [h: params = arg(5)]
 
-[h,if(weapon == ""),Code:{
-	[def = getAW(currentToken())]
+[h,if(json.type(weapon) == "UNKNOWN"),Code:{
+	[if(isNumber(weapon)): def = weapon; def = getAW(currentToken())]
 	[type = "dodge"]
 	[skill = "Ausweichen"]
 };{
@@ -38,6 +38,14 @@
 [h: modMacroParams = json.set(modMacroParams, "Skill", skill)]
 [h: params = json.set(params, "modMacroParams", modMacroParams)]
 
+[h: patzerTabelle = "patzerWaffenlos"]
+[h,if(type == "parry" && weapon != ""),Code:
+{
+	[h: technik = json.get(weapon, "Technik")]
+	[h,if(technik != "Raufen" && technik != ""): patzerTabelle = "patzerNahkampf"]
+	[h: params = json.set(params, "rerollConfirm", hasTrait("Vorteile", "Waffenbegabung ("+technik+")", 1, tok))]
+}]
+
 <!-- Zuerst wird eine Verteidigung gewürfelt. -->
 [h: rollResult = roll1d20(currentToken(), def, mod, params)]
 [h: success = json.get(rollResult, "success")]
@@ -51,13 +59,6 @@ und geben diesen in die noch offene Tabelle aus -->
 {
 	[h: damageResult = takeDamage(currentToken(), damage, 0, zone, damageType, multiplier, status, failText)]
 	[h: subResults = json.append(subResults, damageResult))]
-};{}]
-
-[h: patzerTabelle = "patzerWaffenlos"]
-[h,if(type == "parry" && weapon != ""),Code:
-{
-	[h: technik = json.get(weapon, "Technik")]
-	[h,if(technik != "Raufen" && technik != ""): patzerTabelle = "patzerNahkampf"]
 };{}]
 
 <!-- Wir zählen den VT-Tracker 1 hoch falls wir in der INI sind -->

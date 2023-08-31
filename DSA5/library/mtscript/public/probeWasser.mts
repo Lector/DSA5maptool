@@ -1,28 +1,19 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
+[h: tok = arg(0)]
+[h: switchToken(tok)]
 
 [h: imWasser = -2]
 [h: unterWasser = -6]
-[h,if(hasTrait("KampfSF", "Kampf im Wasser") != 0), Code:
+[h,if(hasTrait("KampfSF", "Kampf im Wasser", 1, tok) != 0), Code:
 {
 	[h: imWasser = 0]
 	[h: unterWasser = -4]
 };{}]
-[h,if(hasTrait("KampfSF", "Unterwasserkampf") != 0), Code:
+[h,if(hasTrait("KampfSF", "Unterwasserkampf", 1, tok) != 0), Code:
 {
 	[h: imWasser = 0]
 	[h: unterWasser = 0]
 };{}]
-[h,if(hasTrait("KampfSF", "Prem-Stil") != 0), Code:
+[h,if(hasTrait("KampfSF", "Prem-Stil", 1, tok) != 0), Code:
 {
 	[h: imWasser = min(0, imWasser + 4)]
 	[h: unterWasser = min(0, unterWasser + 4)]

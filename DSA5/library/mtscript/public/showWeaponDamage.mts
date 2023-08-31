@@ -15,7 +15,7 @@
 
 [h: reactionParams = json.get(params, "ReactionParams")]
 
-[h: paradeLink = macroLinkText("probePA@this", "", json.append("[]", "", reactionParams))]
+[h: paradeLink = macroLinkText("probeVT@this", "", json.append("[]", "", reactionParams))]
 [h: awLink = macroLinkText("probeAW@this", "", json.append("[]", "", reactionParams))]
 [h: schadenLink = macroLinkText("schadenErhalten@this", "", json.append("[]", "", reactionParams))]
 
@@ -26,12 +26,6 @@
 			<td>
 				<form action='%{paradeLink}'>
 					<input type='submit' value='<html><img src=asset://ec6b375da49ed204f5df318b749173bf/></html>'/>
-				</form>
-			</td>
-			<td style='width: 20;'> &nbsp; </td>
-			<td>
-				<form action='%{awLink}'>
-					<input type='submit' value='<html><img src=asset://b97c6577fd79f146c38cf98ada1d1824/></html>'/>
 				</form>
 			</td>
 			<td style='width: 20;'> &nbsp; </td>

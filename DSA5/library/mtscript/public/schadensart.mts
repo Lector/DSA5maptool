@@ -10,7 +10,7 @@
 	};{}
 ]
 
-[h: uebergabe = macro.args]
+[h: uebergabe = arg(0)]
 
 [h: typ = "TP"]
 [h: zone = "zufall"]
