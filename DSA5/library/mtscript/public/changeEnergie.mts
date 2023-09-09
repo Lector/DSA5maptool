@@ -12,41 +12,42 @@
 	};{}
 ]
 
-[h: uebergabe = macro.args]
-
-[button = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/hand.png")]
-[h,switch(uebergabe), Code:
+[h: button = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/hand.png")]
+[h,switch(arg(0)), Code:
 	case "lePlus": {
-			[dialogTitle = "Lebensenergie hinzufügen"]
-			[title = "LE Gewinn"]
-			[buttonText = "LE hinzufügen"]
-		};
+		[dialogTitle = "Lebensenergie hinzufügen"]
+		[title = "LE Gewinn"]
+		[buttonText = "LE hinzufügen"]
+	};
 	case "leMinus": {
-			[dialogTitle = "Lebensenergie abziehen"]
-			[title = "LE Verlust"]
-			[buttonText = "LE abziehen"]
-		};
+		[dialogTitle = "Lebensenergie abziehen"]
+		[title = "LE Verlust"]
+		[buttonText = "LE abziehen"]
+	};
 	case "aePlus": {
-			[dialogTitle = "Astralenergie hinzufügen"]
-			[title = "AE Gewinn"]
-			[buttonText = "AE hinzufügen"]
-
-		};
+		[h,if(MaxAsP <= 0): inputFail("aeChange")]
+		[dialogTitle = "Astralenergie hinzufügen"]
+		[title = "AE Gewinn"]
+		[buttonText = "AE hinzufügen"]
+	};
 	case "aeMinus": {
-			[dialogTitle = "Astralenergie abziehen"]
-			[title = "AE Verlust"]
-			[buttonText = "AE abziehen"]
-		};
+		[h,if(MaxAsP <= 0): inputFail("aeChange")]
+		[dialogTitle = "Astralenergie abziehen"]
+		[title = "AE Verlust"]
+		[buttonText = "AE abziehen"]
+	};
 	case "kePlus": {
-			[dialogTitle = "Karmaenergie hinzufügen"]
-			[title = "KE Gewinn"]
-			[buttonText = "KE hinzufügen"]
-		};
+		[h,if(MaxKaP <= 0): inputFail("keChange")]
+		[dialogTitle = "Karmaenergie hinzufügen"]
+		[title = "KE Gewinn"]
+		[buttonText = "KE hinzufügen"]
+	};
 	case "keMinus": {
-			[dialogTitle = "Karmaenergie abziehen"]
-			[title = "KE Verlust"]
-			[buttonText = "KE abziehen"]
-		}
+		[h,if(MaxKaP <= 0): inputFail("keChange")]
+		[dialogTitle = "Karmaenergie abziehen"]
+		[title = "KE Verlust"]
+		[buttonText = "KE abziehen"]
+	}
 ]
 
 [h: actionLink = macroLinkText("changeEnergieProcess@this", "")]
@@ -175,7 +176,7 @@
 					</tr>
 				</table>
 				[r,macro("probeChat@this"): json.append(currentToken(), 0)]
-				<input type="hidden" name="energieTyp" value="[r: uebergabe]">
+				<input type="hidden" name="energieTyp" value="[r: arg(0)]">
 			</form>
 		</div>
 	</body>

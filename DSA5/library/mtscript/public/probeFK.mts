@@ -1,11 +1,26 @@
-[h: switchToken(arg(0))]
+[h: id = arg(0)]
+[h,if(isGM() == 1 && hasImpersonated() == 0 && id == ""), Code:
+	{
+		[selectID = getSelected()]
+		[if(listCount(selectID) != 1), Code:
+			{
+				[h,macro("inputFail@this"): "gmSelectFail"]
+			};{}
+		]
+		[switchToken(selectID)]
+	};{}
+]
 
 [h,if(getState("Blutrausch") == 1),Code:
 {
-	[h,macro("inputFail@this"): "blutrausch"]
+	[h: inputFail("blutrausch")]
+}]
+[h,if(FKWaffe == -1), Code:
+{
+	[h: inputFail("fkWaffe")]
 }]
 
-[h: waffe = resolveFK(currentToken(), getFernkampfwaffe(arg(1)))]
+[h: waffe = resolveFK(currentToken(), getFernkampfwaffe(FKWaffe))]
 
 [h: wname = json.get(waffe, "Name")]
 [h: wert = json.get(waffe, "FK")]

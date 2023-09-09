@@ -1,4 +1,4 @@
-[h: uebergabe = macro.args]
+[h: uebergabe = arg(0)]
 [h: idList = getSelected()]
 [h,if(idList == ""), Code:
 	{

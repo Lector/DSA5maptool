@@ -13,6 +13,11 @@
 [h: uebergabe = macro.args]
 
 [h: value = json.get(uebergabe, "Wert")]
+
+[h,if(value == ""): inputFail("noInput")]
+[h,if(isNumber(value) == 0): inputFail("numText")]
+[h,if(value != round(value)): inputFail("numInteger")]
+
 [h: value = value + 10]
 [h: uebergabe = json.set(uebergabe, "E1", value)]
 [h: uebergabe = json.set(uebergabe, "E2", value)]

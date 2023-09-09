@@ -1,3 +1,4 @@
+[h,macro("abfrageImpersonate@Lib:com.github.lector.dsa5maptool"): ""]
 [h: id = arg(0)]
 [h,if(isGM() == 1 && hasImpersonated() == 0 && id == ""), Code:
 	{

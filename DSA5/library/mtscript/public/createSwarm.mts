@@ -1,7 +1,8 @@
+[h: abfrageImpersonate()]
 [h,if(isGM() == 0),Code:
 {
 	[h,macro("inputFail@this"): "gm"]
-};{}]
+}]
 
 [h,if(hasImpersonated() == 0), Code:
 	{

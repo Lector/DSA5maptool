@@ -19,8 +19,6 @@
 
 [h,if(json.length(Nahkampfwaffen) == 0 && getProperty("AW") == 0): inputFail("noMeleeWeapons")]
 
-[h: uebergabe = ""]
-[h,if(json.length(macro.args) > 1): uebergabe = arg(1)]
 [h: gluecklich = ""]
 [h: hinten = ""]
 [h: probe = 0]
@@ -31,6 +29,8 @@
 [h: status = "[]"]
 [h: failText = ""]
 [h: attacker = ""]
+[h: uebergabe = ""]
+[h,if(json.length(macro.args) > 1): uebergabe = arg(1)]
 [h,if(uebergabe != ""),Code:
 {
 	[h: probe = json.get(uebergabe, "Probe")]
@@ -101,6 +101,7 @@ Ranged attacks are considered as attacker size of large because large enemies an
 		<!-- Shields can parry large opponents and projectiles -->
 		[h,if(json.get(weapon, "Technik") == "Schilde"): defenseSize = 2; defenseSize = 1]
 		[h,if(defense > maxParry && defenseSize >= attackerSize): maxParryId = id]
+		[h,if(defense > maxParry && defenseSize >= attackerSize): maxParry = defense]
 	}]
     [h,if(defense > maxDefense && defenseSize >= attackerSize): maxDefenseId = id]
     [h: id = id + 1]
@@ -137,7 +138,7 @@ window.addEventListener('load', function(evt) {
 [dialog5("probe", "width=1200; height=635; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
-		<title>Parade</title>
+		<title>Verteidigung</title>
 		[r: linkGoogleFonts()]
 		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
         <script>[r: js]</script>
@@ -145,7 +146,7 @@ window.addEventListener('load', function(evt) {
 	<body>
 		<div class="border">
 			<form action="[r:actionLink]">
-				[r: header("Parade")]
+				[r: header("Verteidigung")]
 				[r,if(hands != 0),Code:{
 				<div class="title">
 					[r: wname]

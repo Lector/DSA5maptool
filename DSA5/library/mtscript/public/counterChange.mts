@@ -1,3 +1,4 @@
+[h: abfrageImpersonate()]
 [h,if(isGM() == 1 && hasImpersonated() == 0), Code:
 	{
 		[selectID = getSelected()]
@@ -10,7 +11,7 @@
 	};{}
 ]
 
-[h: uebergabe = macro.args]
+[h: uebergabe = arg(0)]
 
 [h: titel = getStrProp(MiscMod, "counterTitle")]
 [h: wert = getStrProp(MiscMod, "counter")]
