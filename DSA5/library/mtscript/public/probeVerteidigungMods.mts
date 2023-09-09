@@ -36,12 +36,6 @@
 [h,if(vonhinten != 0 && vonhinten != ""): modtext = modtext + modReason(vonhinten, "wegen Angriff von Hinten")]
 [h: mod = mod + vonhinten]
 
-[h: kritisch = json.get(uebergabe, "kritisch")]
-[h,if(kritisch == "on"),Code:
-{
-	[h: bonus = bonus -floor(json.get(uebergabe, "Wert") / 2.0)]
-};{}]
-
 <!-- Cendrash-Stil gibt +1 auf die Verteidigung gegen Größere -->
 [h: attacker = json.get(uebergabe, "attacker")]
 [h: cendrasch = hasTrait("KampfSF", "Cendrasch-Stil")]

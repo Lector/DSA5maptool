@@ -50,6 +50,8 @@
 [h: dodge = getAW(currentToken())]
 [h: maxDefense = dodge]
 [h: maxDefenseId = 0]
+[h: maxParry = 0]
+[h: maxParryId = -1]
 [h,if(dodge > 0): weapons = json.append(weapons, dodge)]
 
 [h: hWaffe = resolveNK(currentToken(), getNahkampfwaffe(HauptHand))]
@@ -86,18 +88,32 @@ Ranged attacks are considered as attacker size of large because large enemies an
 [h,if(attacker != ""): attackerSize = scale(getSize(attacker)); attackerSize = 1]
 [h,if(fkabwehr != 0): attackerSize = 2]
 
+[h: dodgeID = 0]
+[h: parryID = 0]
 [h,foreach(weapon, weapons),Code: {
     [h,if(isNumber(weapon)),Code:{
 		<!-- Dodgeing is possible for every attack -->
 		[defense = weapon]
 		[defenseSize = 100]
+		[dodgeID = id]
 	};{
 		[defense = json.get(weapon, "PA")]
 		<!-- Shields can parry large opponents and projectiles -->
 		[h,if(json.get(weapon, "Technik") == "Schilde"): defenseSize = 2; defenseSize = 1]
+		[h,if(defense > maxParry && defenseSize >= attackerSize): maxParryId = id]
 	}]
     [h,if(defense > maxDefense && defenseSize >= attackerSize): maxDefenseId = id]
     [h: id = id + 1]
+}]
+
+<!-- Select the dodge / highest parry if a specific mode is selected -->
+[h,if(json.length(macro.args) > 2), Code:{
+	[h: mode = lower(arg(2))]
+	[switch(mode),Code:
+		case "dodge": { [maxDefenseId = 0] };
+		case "parry": { [maxDefenseId = maxParryId] };
+		default: {}
+	]
 }]
 
 [h: js = strformat("
@@ -118,7 +134,7 @@ window.addEventListener('load', function(evt) {
 [h: js = js + "});"]
 
 [h: actionLink = macroLinkText("verteidigungSchadenProcess@this", "")]
-[dialog5("probe", "width=1125; height=629; temporary=1; closebutton=0; noframe=0"):{
+[dialog5("probe", "width=1200; height=635; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
 		<title>Parade</title>
@@ -173,7 +189,7 @@ window.addEventListener('load', function(evt) {
 					<tr>
 						<td valign='top'>
 							<div class='label'>
-								Parade
+								Verteidigung
 							</div>
 						</td>
 						<td valign='top'>

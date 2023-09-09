@@ -25,6 +25,12 @@
 [h,if(beengt != 0): modtext = modtext + modReason(beengt, "wegen beengter Umgebung")]
 [h: mod = mod + beengt]
 
+[h: kritisch = json.get(uebergabe, "kritisch")]
+[h,if(kritisch == "on"),Code:
+{
+	[h: bonus = bonus -floor(json.get(decode(json.get(uebergabe, "waffe")), "PA") / 2.0)]
+}]
+
 [h: ergebnis = json.set(uebergabe, "mod", mod)]
 [h: ergebnis = json.set(ergebnis, "bonus", bonus)]
 [h: ergebnis = json.set(ergebnis, "modtext", modtext)]

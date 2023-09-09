@@ -28,6 +28,12 @@
 	[mod = mod - 2]
 }]
 
+[h: kritisch = json.get(uebergabe, "kritisch")]
+[h,if(kritisch == "on"),Code:
+{
+	[h: bonus = bonus -floor(json.get(uebergabe, "waffe") / 2.0)]
+}]
+
 [h: ergebnis = json.set(uebergabe, "mod", mod)]
 [h: ergebnis = json.set(ergebnis, "bonus", bonus)]
 [h: ergebnis = json.set(ergebnis, "modtext", modtext)]
