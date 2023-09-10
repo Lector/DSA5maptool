@@ -148,11 +148,6 @@ window.addEventListener('load', function(evt) {
 		<div class="border">
 			<form action="[r:actionLink]">
 				[r: header("Verteidigung")]
-				[r,if(hands != 0),Code:{
-				<div class="title">
-					[r: wname]
-				</div>
-				}]
 				<table style='border-spacing: 0px; padding: 5px; margin: 0px auto 0px auto'>
 					<tr>
 						<td>
