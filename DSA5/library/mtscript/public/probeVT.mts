@@ -77,7 +77,8 @@
 };
 {
 	[h,foreach(weapon, Nahkampfwaffen),Code: {
-        [h: weapons = json.append(weapons, resolveNK(currentToken(), weapon))]
+		[h: resolved = resolveNK(currentToken(), weapon)]
+        [h,if(json.get(resolved, "PA") > 0): weapons = json.append(weapons, resolved)]
     }]
 }]
 
