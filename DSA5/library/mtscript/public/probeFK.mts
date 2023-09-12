@@ -1,4 +1,5 @@
 [h: id = arg(0)]
+[h,if(id != ""): switchToken(id)]
 [h,if(isGM() == 1 && hasImpersonated() == 0 && id == ""), Code:
 	{
 		[selectID = getSelected()]
@@ -15,12 +16,13 @@
 {
 	[h: inputFail("blutrausch")]
 }]
-[h,if(FKWaffe == -1), Code:
+[h,if(FKWaffe == -1 && json.length(macro.args) < 2), Code:
 {
 	[h: inputFail("fkWaffe")]
 }]
 
-[h: waffe = resolveFK(currentToken(), getFernkampfwaffe(FKWaffe))]
+[h,if(json.length(macro.args) > 1): currentWeapon = arg(1); currentWeapon = FKWaffe]
+[h: waffe = resolveFK(currentToken(), getFernkampfwaffe(currentWeapon))]
 
 [h: wname = json.get(waffe, "Name")]
 [h: wert = json.get(waffe, "FK")]

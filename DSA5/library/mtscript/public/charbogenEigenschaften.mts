@@ -24,7 +24,12 @@
 			[r,macro("eigLeiste@this"): currentToken()]
 			<div class="row-container" style="justify-content: space-between; gap: 0;">
 				<div class="panel-round">
-					<div class="heading">Werte</div>
+					<div class="heading heading-additional">
+						Werte
+						<a href="[r: macroLinkText('chareditEigenschaften@this', '', currentToken())]">
+							<image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesEdit.png")]' border="0" alt="Basiswerte editieren"></image>
+						</a>
+					</div>
 					<div class="stat-table">
 						<div>Seelenkraft:</div>
 						[h: aktSK = getSK(currentToken())]
