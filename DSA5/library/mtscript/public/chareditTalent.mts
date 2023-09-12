@@ -283,10 +283,7 @@
 							[r,if(delete == 1),Code:
 							{
 							<td>
-								[h: params = setStrProp("", "list", uebergabe)]
-								[h: params = setStrProp(params, "index", num)]
-								[h: params = setStrProp(params, "frame", "chareditTalent@this")]
-								[h: params = setStrProp(params, "noticeKey", "chareditTraitDel")]
+								[h: params = json.set("{}", "token", currentToken(), "list", uebergabe, "index", num, "frame", "chareditTalent@this")]
 								[h: link = macroLink("<img src='"+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/minus.png")+"' border=0 alt='Eintrag löschen'/>", "chareditTraitDelProcess@this", "", params)]
 								[r: link]
 							</td>

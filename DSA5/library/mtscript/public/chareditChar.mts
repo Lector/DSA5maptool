@@ -1,9 +1,9 @@
 [h: switchToken(arg(0))]
 
-[h: linkEigenschaften = macroLink('Basis- &amp; Eigenschaftswerte', 'chareditEigenschaften@this', '')]
+[h: linkEigenschaften = macroLink('Basis- &amp; Eigenschaftswerte', 'chareditEigenschaften@this', '', currentToken())]
 [h: linkImproveSummons = macroLink('Beschwörung verbessern', 'chareditImproveSummons@this', '', currentToken())]
 [h: linkImprovePet = macroLink('Ausbildungsaufsatz', 'chareditImprovePet@this', '', currentToken())]
-[h: linkTraitAdd =  macroLink('Vorteil / Nachteil / SF hinzufügen', 'chareditTraitAdd@this', '')]
+[h: linkTraitAdd =  macroLink('Vorteil / Nachteil / SF hinzufügen', 'chareditTraitAdd@this', '', json.append("[]", currentToken()))]
 [h: linkVorteile = macroLink('Vorteile', 'chareditTrait@this', '', 'Vorteile')]
 [h: linkNachteile = macroLink('Nachteile', 'chareditTrait@this', '', 'Nachteile')]
 [h: linkSFAllgemein = macroLink('Allgemeine Sonderfertigkeiten', 'chareditTrait@this', '', 'AllgemeineSF')]

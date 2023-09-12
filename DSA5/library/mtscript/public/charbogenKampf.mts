@@ -73,11 +73,14 @@
 			</div>
 
 			<div class="panel-ornament">
-				<div class="heading">
+				<div class="heading heading-additional">
 					Kampfsonderfertigkeiten
+					<a href="[r: macroLinkText('chareditTraitAdd@this', '', json.append('[]', currentToken(), 'KampfSF'))]">
+						<image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesAdd.png")]' border="0" alt="Eine neue Kampfsonderfertigkeit hinzufügen"></image>
+					</a>
 				</div>
 				<div>
-					[r,macro("charbogenTraits@this"): KampfSF]
+					[r: charbogenTraits(currentToken(), "KampfSF")]
 				</div>
 			</div>
 		</div>

@@ -29,12 +29,22 @@
 			[r, macro("charsheetSpell@this"): json.append(currentToken(), "ceremony")]
 		</div>
 		<div class="panel-ornament">
-			<div class="heading">Karmale Sonderfertigkeiten</div>
-			[r,macro("charbogenTraits@this"): KarmaleSF]
+			<div class="heading heading-additional">
+				Karmale Sonderfertigkeiten
+				<a href="[r: macroLinkText('chareditTraitAdd@this', '', json.append('[]', currentToken(), 'KarmaleSF'))]">
+					<image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesAdd.png")]' border="0" alt="Eine neue karmale Sonderfertigkeit hinzufügen"></image>
+				</a>
+			</div>
+			[r: charbogenTraits(currentToken(), "KarmaleSF")]
 		</div>
 		<div class="panel-ornament">
-			<div class="heading">Segnungen</div>
-			[r,macro("charbogenTraits@this"): Segnungen]
+			<div class="heading heading-additional">
+				Segnungen
+				<a href="[r: macroLinkText('chareditTraitAdd@this', '', json.append('[]', currentToken(), 'Segnungen'))]">
+					<image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesAdd.png")]' border="0" alt="Eine neue Segnung hinzufügen"></image>
+				</a>
+			</div>
+			[r: charbogenTraits(currentToken(), "Segnungen")]
 		</div>
 	</div>
 	<div class="footer"/>

@@ -1,14 +1,5 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
+[h: switchToken(arg(0))]
+[h,if(json.length(macro.args) > 1): group = arg(1); group = ""]
 
 [h: actionLink = macroLinkText("chareditTraitAddProcess@this", "")]
 [dialog5("chareditTraitAdd", "width=425; height=350; temporary=1; closebutton=0; noframe=0"):{
@@ -21,7 +12,7 @@
 	<body>
 		<div class="border">
 			<form action="[r:actionLink]">
-				[r: header("Element hinzufügen")]
+				[r: header("Neues Element")]
 				<table style='border-spacing: 0px; margin: 0px auto 0px auto;'>
 					<tr>
 						<td>
@@ -29,14 +20,14 @@
 						</td>
 						<td>
 							<select name='Typ' size='1'>
-								<option value="Vorteile">Vorteil</option>
-								<option value="Nachteile">Nachteil</option>
-								<option value="AllgemeineSF">Allgemeine SF</option>
-								<option value="KampfSF">Kampf SF</option>
-								<option value="MagieSF">Magische SF</option>
-								<option value="KarmaleSF">Karmale SF</option>
-								<option value="Zaubertricks">Zaubertrick</option>
-								<option value="Segnungen">Segnung</option>
+								<option value="Vorteile" [r,if(group == "Vorteile"): "selected"]>Vorteil</option>
+								<option value="Nachteile" [r,if(group == "Nachteile"): "selected"]>Nachteil</option>
+								<option value="AllgemeineSF" [r,if(group == "AllgemeineSF"): "selected"]>Allgemeine SF</option>
+								<option value="KampfSF" [r,if(group == "KampfSF"): "selected"]>Kampf SF</option>
+								<option value="MagieSF" [r,if(group == "MagieSF"): "selected"]>Magische SF</option>
+								<option value="KarmaleSF" [r,if(group == "KarmaleSF"): "selected"]>Karmale SF</option>
+								<option value="Zaubertricks" [r,if(group == "Zaubertricks"): "selected"]>Zaubertrick</option>
+								<option value="Segnungen" [r,if(group == "Segnungen"): "selected"]>Segnung</option>
 							</select>
 						</td>
 					</tr>

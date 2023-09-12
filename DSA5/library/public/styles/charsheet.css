@@ -29,6 +29,14 @@ ul {
     padding-left: 20px;
 }
 
+li {
+    margin-bottom: 6px;
+}
+
+li a{
+    margin-left: 6px;
+}
+
 .debug {
     border: 1px dotted red !important;
 }

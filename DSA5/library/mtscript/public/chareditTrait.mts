@@ -79,10 +79,7 @@
 								</select>
 							</td>
 							<td>
-								[h: params = setStrProp("", "list", uebergabe)]
-								[h: params = setStrProp(params, "index", num)]
-								[h: params = setStrProp(params, "frame", "chareditTrait@this")]
-								[h: params = setStrProp(params, "noticeKey", "chareditTraitDel")]
+								[h: params = json.set("{}", "token", currentToken(), "list", uebergabe, "index", num, "frame", "chareditTrait@this")]
 								[h: link = macroLink("<img src='"+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/minus.png")+"' border=0 alt='Eintrag löschen'/>", "chareditTraitDelProcess@this", "", params)]
 								[r: link]
 							</td>
@@ -96,7 +93,7 @@
 							<button type="submit">
 								<table>
 									<tr>
-										<td><img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/wings.png")]/></td>
+										<td><img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/hand.png")]/></td>
 										<td>Jetzt ändern</td>
 									</tr>
 								</table>

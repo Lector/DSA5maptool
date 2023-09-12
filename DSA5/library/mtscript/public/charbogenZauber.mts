@@ -30,12 +30,22 @@
 				[r, macro("charsheetSpell@this"): json.append(currentToken(), "magic")]
 			</div>
 			<div class="panel-ornament">
-				<div class="heading">Magische Sonderfertigkeiten</div>
-				[r,macro("charbogenTraits@this"): MagieSF]
+				<div class="heading heading-additional">
+					Magische Sonderfertigkeiten
+					<a href="[r: macroLinkText('chareditTraitAdd@this', '', json.append('[]', currentToken(), 'MagieSF'))]">
+						<image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesAdd.png")]' border="0" alt="Eine neue magische Sonderfertigkeit hinzufügen"></image>
+					</a>
+				</div>
+				[r: charbogenTraits(currentToken(), "MagieSF")]
 			</div>
 			<div class="panel-ornament">
-				<div class="heading">Zaubertricks</div>
-				[r,macro("charbogenTraits@this"): Zaubertricks]
+				<div class="heading heading-additional">
+					Zaubertricks
+					<a href="[r: macroLinkText('chareditTraitAdd@this', '', json.append('[]', currentToken(), 'Zaubertricks'))]">
+						<image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesAdd.png")]' border="0" alt="Einen neuen Zaubertrick hinzufügen"></image>
+					</a>
+				</div>
+				[r: charbogenTraits(currentToken(), "Zaubertricks")]
 			</div>
 			
 		</div>
