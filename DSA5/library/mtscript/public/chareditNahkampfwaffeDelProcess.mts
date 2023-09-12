@@ -1,16 +1,5 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
-
-[h: index = macro.args]
+[h: switchToken(arg(0))]
+[h: index = arg(1)]
 
 [h: id = json.get(json.get(Nahkampfwaffen, index), "ID")]
 

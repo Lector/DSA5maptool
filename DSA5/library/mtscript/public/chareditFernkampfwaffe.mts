@@ -1,14 +1,4 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
+[h: switchToken(arg(0))]
 
 [dialog5("chareditWaffe", "width=425; height=342; temporary=1; closebutton=0; noframe=0"):{
 <html>
@@ -32,7 +22,7 @@
 						<tr>
 							<td style='text-align: center;'>
 								[h: id = json.get(waffe, "ID")]
-								<span style='color: #441e13; text-decoration: none;'>[r: macroLink(json.get(waffe, "Name"), "quickeditFernkampfwaffe@this", "", id)]</span>
+								<span style='color: #441e13; text-decoration: none;'>[r: macroLink(json.get(waffe, "Name"), "quickeditFernkampfwaffe@this", "", json.append(currentToken(), id))]</span>
 							</td>
 						</tr>
 					}

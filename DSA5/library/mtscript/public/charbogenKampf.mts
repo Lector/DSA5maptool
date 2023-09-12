@@ -75,9 +75,11 @@
 			<div class="panel-ornament">
 				<div class="heading heading-additional">
 					Kampfsonderfertigkeiten
-					<a href="[r: macroLinkText('chareditTraitAdd@this', '', json.append('[]', currentToken(), 'KampfSF'))]">
-						<image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesAdd.png")]' border="0" alt="Eine neue Kampfsonderfertigkeit hinzufügen"></image>
-					</a>
+					<div title="Neue Kampfsonderfertigkeit hinzufügen">
+						<a href="[r: macroLinkText('chareditTraitAdd@this', '', json.append('[]', currentToken(), 'KampfSF'))]">
+							<image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesAdd.png")]' border="0" alt="Eine neue Kampfsonderfertigkeit hinzufügen"></image>
+						</a>
+					</div>
 				</div>
 				<div>
 					[r: charbogenTraits(currentToken(), "KampfSF")]

@@ -8,12 +8,9 @@
 	[h: name = json.get(trait, "Name")]
 	[h: delete = macroLinkText('chareditTraitDelProcess@this', '', json.set('{}', "token", currentToken(), "list", arg(1), "index", i))]
 	[h: deleteIcon = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesRemoveSmall.png")]
-	[h: ausgabe = strformat("<li>%{name} %{level} <a href='%{delete}'>
+	[h: ausgabe = strformat("<li>%{name} %{level} <span title='%{name} %{level} löschen'><a href='%{delete}'>
 	<image src='%{deleteIcon}' border='0' alt='%{name} löschen'></image>
-	</a></li>")]
-
-
-
+	</a></span></li>")]
 
 	[h: list = list + ausgabe]
 	[h: i = i + 1]

@@ -1,14 +1,4 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
+[h: switchToken(arg(0))]
 
 [h,if(isDialogVisible("chareditRS") == 1), Code:
 	{
@@ -16,7 +6,7 @@
 	};{}
 ]
 
-[h: id = macro.args]
+[h: id = arg(1)]
 
 [h: ruestung = getRuestung(Ruestungen, id)]
 

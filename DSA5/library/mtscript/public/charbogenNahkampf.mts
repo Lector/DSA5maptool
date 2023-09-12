@@ -33,6 +33,10 @@
 			<span [r: nebenTitle]>[r: nebenLink]</span>
 		</div>
 		}]
+		<div class="tableAdd" title="Neue Nahkampfwaffe hinzufügen">
+			[h: addLink = macroLinkText("chareditNahkampfwaffeAdd@this", "", currentToken())]
+			<a href="[r: addLink]"><image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesAdd.png")]' border="0" alt="add"></image></a>
+		</div>
 		[r, Foreach(waffe, Nahkampfwaffen, ""), Code:
 		{
 		[h: waffe = resolveNK(currentToken(), waffe)]
@@ -44,8 +48,7 @@
 		[h: wAT = json.get(waffe, "AT")]
 		[h: wPA = json.get(waffe, "PA")]
 		<div>
-			[h: namefield = macroLink(wName, "quickeditNahkampfwaffe@this", "", wID)]
-			<span title='Diese Waffe editieren'>[r: namefield]</span>
+			[r: wName]
 		</div>
 		<div>
 			[h: rwtext = ""]
@@ -53,7 +56,7 @@
 			[h,if(wRW == 2): rwtext = "Mittel"]
 			[h,if(wRW == 3): rwtext = "Lang"]
 			[h,if(wRW == 4): rwtext = "Überlang"]
-				<span style='text-decoration: none;'>[r: rwtext]</span>
+			[r: rwtext]
 		</div>
 		<div>
 			[h: tpParams = json.append(currentToken(), setStrProp("typ=nk", "id", wID))]
@@ -103,6 +106,14 @@
 			<span style='color: [r: fc];' [r: linkTitle]>[r: link]</span>
 		</div>
 		}]
+		<div title="[r: wName] editieren">
+			[h: editLink = macroLinkText("quickeditNahkampfwaffe@this", "", json.append("[]", currentToken(), wID))]
+			<a href="[r: editLink]"><image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesEditSmall.png")]' border="0" alt="edit"></image></a>
+		</div>
+		<div title="[r: wName] löschen">
+			[h: deleteLink = macroLinkText("chareditNahkampfwaffeDelProcess@this", "", json.append("[]", currentToken(), wID))]
+			<a href="[r: deleteLink]"><image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesRemoveSmall.png")]' border="0" alt="del"></image></a>
+		</div>
 		}]
 	</div>
 </div>

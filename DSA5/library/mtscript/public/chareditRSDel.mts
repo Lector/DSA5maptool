@@ -1,14 +1,4 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
+[h: switchToken(arg(0))]
 
 [dialog5("chareditRSDel", "width=425; height=342; temporary=1; input=0; noframe=0"):{
 <html>
@@ -32,7 +22,7 @@
 					{
 							<tr>
 								<td style='text-align: center;'>
-									<span style='color: #441e13; text-decoration: none;'>[r: macroLink(json.get(rs, "Name"), "chareditRSDelProcess@this", "", index)]</span>
+									<span style='color: #441e13; text-decoration: none;'>[r: macroLink(json.get(rs, "Name"), "chareditRSDelProcess@this", "", json.append("[]", currentToken(), index))]</span>
 									[h: index = index + 1]
 								</td>
 							</tr>

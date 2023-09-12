@@ -1,14 +1,4 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
+[h: switchToken(arg(0))]
 
 [h: actionLink = macroLinkText("chareditRSAddProcess@this", "")]
 [dialog5("chareditRSAdd", "width=467; height=355; temporary=1; closebutton=0; noframe=0"):{
@@ -92,6 +82,7 @@
 					</tr>
 				</table>
 				<input type="hidden" name="typ" value="gesamt"/>
+				<input type="hidden" name="token" value="[r: currentToken()]"/>
 			</form>
 		</div>
 	</body>

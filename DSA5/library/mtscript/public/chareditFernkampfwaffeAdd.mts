@@ -1,14 +1,4 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
+[h: switchToken(arg(0))]
 
 [h: actionLink = macroLinkText("chareditFernkampfwaffeAddProcess@this", "")]
 [dialog5("chareditWaffeAdd", "width=425; height=443; temporary=1; closebutton=0; noframe=0"):{
@@ -158,6 +148,7 @@
 						</td>
 					</tr>
 				</table>
+				<input type="hidden" name="token" value="[r: currentToken()]"/>
 			</form>
 		</div>
 	</body>

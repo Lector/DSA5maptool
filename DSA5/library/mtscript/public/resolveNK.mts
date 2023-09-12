@@ -5,6 +5,11 @@
 [h: at = json.get(waffe, "AT")]
 [h: pa = json.get(waffe, "PA")]
 [h: tp = json.get(waffe, "TP")]
+[h: damageDiceCount = substring(tp, 0, 1)]
+[h: damageDiceType = substring(tp, 2, 3)]
+[h: sign = max(indexof(tp, "+"), indexof(tp, "-"))]
+[h,if(sign != -1): damageFlat = number(substring(tp, sign)); damageFlat = 0]
+
 [h: rw = json.get(waffe, "RW")]
 [h: wName = json.get(waffe, "Name")]
 
@@ -19,10 +24,13 @@
 	[if(pa < 0): pa = pa + 1]
 }]
 
+[h: tpbonus = 0]
+[h: pabonus = 0]
+
 <!-- Falls man eine Stangenwaffe einhändig führt gibt es gewisse Abzüge -->
 [h,if(technikName == "Stangenwaffen" && HauptHand != NebenHand && (HauptHand == id || NebenHand == id)),Code:
 {
-	[h: tp = tp + "-1"]
+	[h: tpbonus = tpbonus - 1]
 	[h: pa = pa - 1]
 	[rw = min(2, rw)]
 }]
@@ -39,8 +47,6 @@ deren Gesamt AT/PA bereits in der Waffe eingetragen ist-->
 [h: at = at + getStrProp(TempMod, "at")]
 [h: pa = pa + getStrProp(TempMod, "pa")]
 
-[h: tpbonus = 0]
-[h: pabonus = 0]
 [h, Foreach(ls, json.get(waffe, "LS"), ""), Code:
 {
 	[h: lwert = 0]
@@ -144,10 +150,8 @@ beidhaendig == 0): pa = pa - 4]
 	[h: tpbonus = tpbonus + min(5, bonus)]
 };{}]
 
-[h,if(tpbonus > 0): tp = tp + "+" + tpbonus]
-
 [h: waffe = json.set(waffe, "AT", at)]
 [h: waffe = json.set(waffe, "PA", pa)]
-[h: waffe = json.set(waffe, "TP", tp)]
+[h: waffe = json.set(waffe, "TP", strformat("%{damageDiceCount}d%{damageDiceType}%+d", damageFlat + tpbonus))]
 [h: waffe = json.set(waffe, "RW", rw)]
 [h: macro.return = waffe]
