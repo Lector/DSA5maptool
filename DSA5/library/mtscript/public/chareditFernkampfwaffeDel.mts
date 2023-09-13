@@ -22,7 +22,7 @@
 					{
 						<tr>
 							<td style='text-align: center;'>
-								<span style='color: #441e13; text-decoration: none;'>[r: macroLink(json.get(waffe, "Name"), "chareditFernkampfwaffeDelProcess@this", "", json.append("[]", currentToken(), index))]</span>
+								<span style='color: #441e13; text-decoration: none;'>[r: macroLink(json.get(waffe, "Name"), "chareditFernkampfwaffeDelProcess@this", "", json.append("[]", currentToken(), json.get(waffe, "ID")))]</span>
 								[h: index = index + 1]
 							</td>
 						</tr>

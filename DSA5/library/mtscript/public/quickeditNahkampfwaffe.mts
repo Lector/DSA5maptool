@@ -10,15 +10,10 @@
 
 [h: waffe = ""]
 [h: baum = eval("Nahkampfwaffen")]
-[Foreach(wa, baum,""), CODE:
-	{
-		[if(json.get(wa, "ID") == id), Code:
-			{
-				[waffe = wa]
-			}; {}
-		]
-	}
-]
+[h,foreach(wa, baum,""), CODE:
+{
+	[if(json.get(wa, "ID") == id): waffe = wa]
+}]
 
 [h: tp = json.get(waffe, "TP")]
 [h,if(tp == 0), Code:

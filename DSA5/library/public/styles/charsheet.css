@@ -198,7 +198,7 @@ li a{
 }
 .table[id="ranged"],
 .table[id="armor"] {
-    grid-template-columns: 1fr auto auto auto auto 30px;
+    grid-template-columns: 1fr auto auto auto auto auto auto auto;
 }
 .table[id="mount"] {
     grid-template-columns: auto 1fr auto auto 30px;
@@ -241,16 +241,20 @@ li a{
 
 .table[id="melee"] > div:not(:nth-last-child(-n + 9)),
 .table[id="meleeNoHands"] > div:not(:nth-last-child(-n + 7)),
-.table[id="ranged"] > div:not(:nth-last-child(-n + 6)),
-.table[id="armor"] > div:not(:nth-last-child(-n + 6)),
+.table[id="ranged"] > div:not(:nth-last-child(-n + 8)),
+.table[id="armor"] > div:not(:nth-last-child(-n + 8)),
 .table[id="mount"] > div:not(:nth-last-child(-n + 5)) {
     border-bottom: 1px solid #eee5c8;
 }
 
 .table[id="melee"] > div:nth-child(9n - 1),
+.table[id="melee"] > div:first-child,
 .table[id="meleeNoHands"] > div:nth-child(7n - 1),
-.table[id="ranged"] > div:nth-child(6n + 1),
-.table[id="armor"] > div:nth-child(6n + 1),
+.table[id="meleeNoHands"] > div:first-child,
+.table[id="ranged"] > div:nth-child(8n),
+.table[id="ranged"] > div:first-child,
+.table[id="armor"] > div:nth-child(8n),
+.table[id="armor"] > div:first-child,
 .table[id="mount"] > div:nth-child(5n + 2),
 .table[id="skill"] > div:nth-child(4n + 1),
 .table[id="combatTechnique"] > div:nth-child(5n + 1),

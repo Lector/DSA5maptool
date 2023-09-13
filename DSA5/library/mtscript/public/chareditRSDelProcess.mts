@@ -1,7 +1,16 @@
 [h: switchToken(arg(0))]
-[h: index = arg(1)]
-[h: entry = json.get(Ruestungen, index)]
-[h: id = json.get(entry, "ID")]
+[h: id = arg(1)]
+[h: entry = ""]
+[h: i = 0]
+[h: index = -1]
+[h,foreach(wa, Ruestungen, ""), CODE:
+{
+	[if(json.get(wa, "ID") == id),Code:{
+        [entry = wa]
+        [index = i]
+    }]
+    [h: i = i + 1]
+}]
 
 [h: name = json.get(entry, "Name")]
 [h: confirmLabel = strformat("'%{name}' wirklich löschen?")]

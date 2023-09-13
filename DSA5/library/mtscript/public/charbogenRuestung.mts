@@ -107,6 +107,10 @@
 		<div>
 			&nbsp;
 		</div>
+		<div class="colspan2" title="Neue Rüstung hinzufügen">
+			[h: addLink = macroLinkText("chareditRSAdd@this", "", currentToken())]
+			<a href="[r: addLink]"><image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesAdd.png")]' border="0" alt="add"></image></a>
+		</div>
 		[r, Foreach(ruestung, Ruestungen, ""), Code:
 		{
 			[h: rName = json.get(ruestung, "Name")]
@@ -115,9 +119,8 @@
 			[h: rINI = json.get(ruestung, "INI")]
 			[h: rGS = json.get(ruestung, "GS")]
 			[h: rID = json.get(ruestung, "ID")]
-			[h: editMacroLink = macroLink(rName, "quickeditRS@this", "", rID)]
 			<div>
-				<span title='Diese Rüstung editieren'>[r: editMacroLink]</span>
+				[r: rName]
 			</div>
 			<div>
 				[r: rRS]
@@ -142,6 +145,14 @@
 			}]
 			<div class="[r: class]">
 				<span [r: linkTitle]>[r: link]</span>
+			</div>
+			<div title="[r: rName] editieren">
+				[h: editLink = macroLinkText("quickeditRS@this", "", json.append("[]", currentToken(), rID))]
+				<a href="[r: editLink]"><image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesEditSmall.png")]' border="0" alt="edit"></image></a>
+			</div>
+			<div title="[r: rName] löschen">
+				[h: deleteLink = macroLinkText("chareditRSDelProcess@this", "", json.append("[]", currentToken(), rID))]
+				<a href="[r: deleteLink]"><image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesRemoveSmall.png")]' border="0" alt="del"></image></a>
 			</div>
 		}]
 	</div>
