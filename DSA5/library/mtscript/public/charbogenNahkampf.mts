@@ -12,28 +12,10 @@
 		<div>TP</div>
 		<div>AT</div>
 		<div>PA</div>
-		[h,if(Linkshaender == 1),Code:
-		{
-			[h: hauptTitle = "title='Der Held ist Linkshänder'"]
-			[h: nebenTitle = "title='Den Helden zum Rechtshänder machen'"]
-			[h: hauptLink = "Links"]
-			[h: nebenLink = macroLink("Rechts", "changeLinkshaender@this", "", currentToken())]
-		};
-		{
-			[h: hauptTitle = "title='Der Held ist Rechtshänder'"]
-			[h: nebenTitle = "title='Den Helden zum Linkshänder machen'"]
-			[h: hauptLink = "Rechts"]
-			[h: nebenLink = macroLink("Links", "changeLinkshaender@this", "", currentToken())]
-		}]
-		[r,if(hands),Code:{
-		<div class='equipped'>
-			<span [r: hauptTitle]>[r: hauptLink]</span>
+		<div class="colspan2" title="Waffen ausrüsten. Links Haupthand. Rechts Nebenhand">
+			<!--<image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/swordAndShield.png")]' alt="equip"></image>-->
 		</div>
-		<div>
-			<span [r: nebenTitle]>[r: nebenLink]</span>
-		</div>
-		}]
-		<div class="tableAdd" title="Neue Nahkampfwaffe hinzufügen">
+		<div class="colspan2" title="Neue Nahkampfwaffe hinzufügen">
 			[h: addLink = macroLinkText("chareditNahkampfwaffeAdd@this", "", currentToken())]
 			<a href="[r: addLink]"><image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesAdd.png")]' border="0" alt="add"></image></a>
 		</div>

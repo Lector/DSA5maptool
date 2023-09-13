@@ -186,7 +186,7 @@ li a{
     gap: 4px;
 }
 
-.tableAdd {
+.colspan2 {
     grid-column: span 2;
 }
 
@@ -218,8 +218,8 @@ li a{
     grid-template-columns: 1fr;
 }
 
-.table[id="melee"] > div:nth-child(-n + 8),
-.table[id="meleeNoHands"] > div:nth-child(-n + 7),
+.table[id="melee"] > div:nth-child(-n + 7),
+.table[id="meleeNoHands"] > div:nth-child(-n + 6),
 .table[id="ranged"] > div:nth-child(-n + 6),
 .table[id="armor"] > div:nth-child(-n + 6),
 .table[id="mount"] > div:nth-child(-n + 5) {
@@ -247,8 +247,8 @@ li a{
     border-bottom: 1px solid #eee5c8;
 }
 
-.table[id="melee"] > div:nth-child(9n + 1),
-.table[id="meleeNoHands"] > div:nth-child(7n + 1),
+.table[id="melee"] > div:nth-child(9n - 1),
+.table[id="meleeNoHands"] > div:nth-child(7n - 1),
 .table[id="ranged"] > div:nth-child(6n + 1),
 .table[id="armor"] > div:nth-child(6n + 1),
 .table[id="mount"] > div:nth-child(5n + 2),

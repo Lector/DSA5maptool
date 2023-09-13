@@ -1,7 +1,12 @@
 [h: switchToken(arg(0))]
 [h: index = arg(1)]
+[h: entry = json.get(Nahkampfwaffen, index)]
+[h: id = json.get(entry, "ID")]
 
-[h: id = json.get(json.get(Nahkampfwaffen, index), "ID")]
+[h: name = json.get(entry, "Name")]
+[h: confirmLabel = strformat("'%{name}' wirklich löschen?")]
+[h: confirm = input(strformat("junk|%{confirmLabel}||LABEL|SPAN=TRUE"))]
+[h: abort(confirm)]
 
 [h: Nahkampfwaffen = json.remove(Nahkampfwaffen, index)]
 
