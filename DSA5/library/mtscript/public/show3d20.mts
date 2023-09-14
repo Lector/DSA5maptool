@@ -16,6 +16,7 @@
 [h: mod = json.get(params, "mod")]
 [h: modText = json.get(params, "modText")]
 [h: bonusText = json.get(params, "bonusText")]
+[h,if(success <= 0): bonusText = ""]
 [h: rerollResult = json.get(params, "reroll")]
 
 [h,if(isNumber(E1)),Code:{ [e1title = ""] };{ [e1title = strformat("

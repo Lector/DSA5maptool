@@ -30,8 +30,8 @@
 [h: mod = mod - eisen]
 [h,if(eisen != 0): modtext = modtext + modReason(eisen, "wegen Bann des Eisens")]
 
-
 [h: merkmal = json.get(uebergabe, "Merkmal")]
+[h: name = json.get(uebergabe, "Name")]
 
 [h,if(merkmal == "Antimagie" && hasTrait("MagieSF", "Erfahrener Antimagier") > 0),Code:
 {
@@ -88,6 +88,11 @@
 	[fpbonus = fpbonus + 1]
 	[bonustext = bonustext + modReason(1, "wegen Unübertroffener Verwandler")]
 };{}]
+
+[h,if(hasTrait("MagieSF", "Lieblingszauber ("+name+")") > 0),Code:{
+	[fpbonus = fpbonus + 2]
+	[bonustext = bonustext + modReason(2, "wegen Lieblingszauber")]
+}]
 
 [h: ergebnis = json.set("", "mod", mod)]
 [h: ergebnis = json.set(ergebnis, "bonus", bonus)]
