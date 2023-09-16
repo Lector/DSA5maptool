@@ -11,7 +11,7 @@
 ]
 
 [h: actionLink = macroLinkText("probeUniProcess@this", "")]
-[dialog5("probe", "width=507; height=448; temporary=1; closebutton=0; noframe=0"):{
+[dialog5("probe", "width=507; height=420; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
 		<title>Universelle Fertigkeitsprobe würfeln</title>
@@ -22,10 +22,10 @@
 		<div class="border">
 			<form action="[r:actionLink]">
 				[r: header("Universelle Probe")]
-				<table style='border-spacing: 0px; margin: 0px auto 0px auto;'>
+				<table style='margin: 0px auto 0px auto;'>
 					<tr>
 						<td>
-							<table style='border-spacing: 0px; font-size: 12pt;'>
+							<table>
 								<tr>
 									<td>
 										Name:
@@ -131,7 +131,7 @@
 					</tr>
 				</table>
 				[r,macro("probeChat@this"): currentToken()]
-				<input type="hidden" name="image" value="3"/>
+				<input type="hidden" name="image" value=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/book.png")]/>
 				<input type="hidden" name="modMacro" value="probe3w20Mods@this"/>
 		</form>
 	</body>
