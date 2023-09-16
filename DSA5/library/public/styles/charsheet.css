@@ -249,7 +249,7 @@ li a{
 
 .table[id="melee"] > div:nth-child(9n - 1),
 .table[id="melee"] > div:first-child,
-.table[id="meleeNoHands"] > div:nth-child(7n - 1),
+.table[id="meleeNoHands"] > div:nth-child(7n),
 .table[id="meleeNoHands"] > div:first-child,
 .table[id="ranged"] > div:nth-child(8n),
 .table[id="ranged"] > div:first-child,

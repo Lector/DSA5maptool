@@ -12,9 +12,11 @@
 		<div>TP</div>
 		<div>AT</div>
 		<div>PA</div>
+		[r,if(hands),Code:{
 		<div class="colspan2" title="Waffen ausrüsten. Links Haupthand. Rechts Nebenhand">
 			<!--<image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/swordAndShield.png")]' alt="equip"></image>-->
 		</div>
+		}]
 		<div class="colspan2" title="Neue Nahkampfwaffe hinzufügen">
 			[h: addLink = macroLinkText("chareditNahkampfwaffeAdd@this", "", currentToken())]
 			<a href="[r: addLink]"><image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesAdd.png")]' border="0" alt="add"></image></a>
