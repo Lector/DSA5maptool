@@ -204,10 +204,10 @@ li a{
     grid-template-columns: auto 1fr auto auto 30px;
 }
 .table[id="skill"] {
-    grid-template-columns: 1fr auto auto auto;
+    grid-template-columns: 1fr auto auto auto auto;
 }
 .table[id="combatTechnique"] {
-    grid-template-columns: 1fr auto auto auto auto;
+    grid-template-columns: 1fr auto auto auto auto auto;
 }
 .table[id="spell"] {
     grid-template-columns: 1fr auto auto auto auto auto;
@@ -226,8 +226,8 @@ li a{
     font-weight: bold;
     white-space: nowrap;
 }
-.table[id="skill"] > div:nth-child(-n + 4),
-.table[id="combatTechnique"] > div:nth-child(-n + 5),
+.table[id="skill"] > div:nth-child(-n + 5),
+.table[id="combatTechnique"] > div:nth-child(-n + 6),
 .table[id="spell"] > div:nth-child(-n + 6),
 .table[id="notes"] > div:nth-child(-n + 1),
 .table[id="gmnotes"] > div:nth-child(-n + 1),
@@ -256,8 +256,8 @@ li a{
 .table[id="armor"] > div:nth-child(8n),
 .table[id="armor"] > div:first-child,
 .table[id="mount"] > div:nth-child(5n + 2),
-.table[id="skill"] > div:nth-child(4n + 1),
-.table[id="combatTechnique"] > div:nth-child(5n + 1),
+.table[id="skill"] > div:nth-child(5n + 1),
+.table[id="combatTechnique"] > div:nth-child(6n + 1),
 .table[id="spell"] > div:nth-child(5n + 7),
 .table[id="spell"] > div:first-child,
 .table[id="notes"] > div:nth-child(n + 1),

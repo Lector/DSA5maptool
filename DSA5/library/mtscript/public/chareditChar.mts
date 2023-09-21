@@ -15,7 +15,7 @@
 [h: linkHandwerk = macroLink('Handwerkliche Fertigkeiten', 'chareditTalent@this', '', json.append(currentToken(), 'Handwerk'))]
 [h: linkCopyTokenData =  macroLink('Tokendaten von anderem<br>Token übertragen', 'copyTokenData@this', '')]
 [h: linkJagd = macroLink('Jagdwerte', 'editTier@this', '', currentToken())]
-[h: linkEditKampf = macroLink('Kampftechniken editieren', 'chareditKampftechnik@this', '', '')]
+[h: linkEditKampf = macroLink('Kampftechniken editieren', 'chareditKampftechnik@this', '', currentToken())]
 [h: linkSFKampf = macroLink('Kampfsonderfertigkeiten', 'chareditTrait@this', '', json.append(currentToken(), 'KampfSF'))]
 [h: linkAddNK =  macroLink('Nahkampfwaffe hinzufügen', 'chareditNahkampfwaffeAdd@this', '', currentToken())]
 [h: linkEditNK = macroLink('Nahkampfwaffe editieren', 'chareditNahkampfwaffe@this', '', currentToken())]

@@ -16,6 +16,10 @@
 		<div>
 			FW
 		</div>
+		<div>
+			[h: editLink = macroLinkText("chareditTalent@this", "", json.append(currentToken(), group))]
+			<a href="[r: editLink]"><image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesEdit.png")]' border="0" alt="edit"></image></a>
+		</div>
 
 	[h: tBaum = eval(group)]
 	[Foreach(tDaten, tBaum,""), CODE:
@@ -51,6 +55,8 @@
 		</div>
 		<div>
 			<span title='Probe auf &quot;[r: tName]&quot; ablegen'>[r: macroLink(tWert, "probeTalent@this", "", tUebergabe)]</span>
+		</div>
+		<div>
 		</div>
 	}]
 	</div>

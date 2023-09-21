@@ -19,6 +19,10 @@
 		<div>
 			PA
 		</div>
+		<div>
+			[h: editLink = macroLinkText("chareditKampftechnik@this", "", currentToken())]
+			<a href="[r: editLink]"><image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesEdit.png")]' border="0" alt="edit"></image></a>
+		</div>
 		[h: tBaum = eval(group)]
 		[Foreach(tDaten, tBaum,""), CODE:
 		{
@@ -50,6 +54,7 @@
 			<div>
 				[r: pa]
 			</div>
+			<div></div>
 		}]
 	</div>
 </div>
