@@ -1,16 +1,5 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
-
-[h: uebergabe = macro.args]
+[h: switchToken(arg(0))]
+[h: uebergabe = arg(1)]
 
 [h: fSpecial = ""]
 [h: delete = 0]
@@ -283,7 +272,7 @@
 							[r,if(delete == 1),Code:
 							{
 							<td>
-								[h: params = json.set("{}", "token", currentToken(), "list", uebergabe, "index", num, "frame", "chareditTalent@this")]
+								[h: params = json.set("{}", "token", currentToken(), "list", uebergabe, "index", num, "name", "Talent", "frame", "chareditTalent@this")]
 								[h: link = macroLink("<img src='"+data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/minus.png")+"' border=0 alt='Eintrag löschen'/>", "chareditTraitDelProcess@this", "", params)]
 								[r: link]
 							</td>

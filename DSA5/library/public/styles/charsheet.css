@@ -210,7 +210,7 @@ li a{
     grid-template-columns: 1fr auto auto auto auto;
 }
 .table[id="spell"] {
-    grid-template-columns: auto 1fr auto auto;
+    grid-template-columns: 1fr auto auto auto auto auto;
 }
 .table[id="notes"],
 .table[id="gmnotes"],
@@ -228,7 +228,7 @@ li a{
 }
 .table[id="skill"] > div:nth-child(-n + 4),
 .table[id="combatTechnique"] > div:nth-child(-n + 5),
-.table[id="spell"] > div:nth-child(-n + 4),
+.table[id="spell"] > div:nth-child(-n + 6),
 .table[id="notes"] > div:nth-child(-n + 1),
 .table[id="gmnotes"] > div:nth-child(-n + 1),
 .table[id="handouts"] > div:nth-child(-n + 1) {
@@ -258,7 +258,8 @@ li a{
 .table[id="mount"] > div:nth-child(5n + 2),
 .table[id="skill"] > div:nth-child(4n + 1),
 .table[id="combatTechnique"] > div:nth-child(5n + 1),
-.table[id="spell"] > div:nth-child(4n + 2),
+.table[id="spell"] > div:nth-child(5n + 7),
+.table[id="spell"] > div:first-child,
 .table[id="notes"] > div:nth-child(n + 1),
 .table[id="gmnotes"] > div:nth-child(n + 1),
 .table[id="handouts"] > div:nth-child(n + 1) {

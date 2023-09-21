@@ -1,16 +1,5 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
-
-[h: typ = arg(0)]
+[h: switchToken(arg(0))]
+[h: typ = arg(1)]
 
 [h,switch(typ),Code:
 
