@@ -34,9 +34,9 @@
 [h: linkAddMagischeHandlung = macroLink(MagischeHandlungenSingular+' hinzufügen', 'chareditMagieAdd@this', '', json.append(currentToken(), 'MagischeHandlungen'))]
 [h: linkEditMagischeHandlung = macroLink(MagischeHandlungenPlural+' editieren', 'chareditTalent@this', '', json.append(currentToken(), 'MagischeHandlungen'))]
 [h: linkSFMagie = macroLink('Magische Sonderfertigkeiten', 'chareditTrait@this', '', json.append(currentToken(), 'MagieSF'))]
-[h: linkAddLiturgie = macroLink('Liturgie hinzufügen', 'chareditLiturgieAdd@this', '')]
+[h: linkAddLiturgie = macroLink('Liturgie hinzufügen', 'chareditLiturgieAdd@this', '', currentToken())]
 [h: linkEditLiturgie = macroLink('Liturgien editieren', 'chareditTalent@this', '', json.append(currentToken(), 'Liturgien'))]
-[h: linkAddZeremonie = macroLink('Zeremonie hinzufügen', 'chareditZeremonienAdd@this', '')]
+[h: linkAddZeremonie = macroLink('Zeremonie hinzufügen', 'chareditZeremonienAdd@this', '', currentToken())]
 [h: linkEditZeremonie = macroLink('Zeremonien editieren', 'chareditTalent@this', '', json.append(currentToken(), 'Zeremonien'))]
 [h: linkSFKarmal = macroLink('Karmale Sonderfertigkeiten', 'chareditTrait@this', '', json.append(currentToken(), 'KarmaleSF'))]
 
