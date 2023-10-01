@@ -17,6 +17,8 @@
 [h: mod = json.get(macro.return, "mod")]
 [h: bonus = json.get(macro.return, "bonus")]
 [h: modtext = json.get(macro.return, "modtext")]
+[h: fpbonus = json.get(macro.return, "fpbonus")]
+[h: bonustext = json.get(macro.return, "bonustext")]
 
 [h: ritualplatz = json.get(uebergabe, "Ritualplatz")]
 [h,if(json.get(uebergabe, "hilfsmittelKleidung") == 1): hilfsmittelKleidung = 1; hilfsmittelKleidung = 0]
@@ -31,5 +33,7 @@
 [h: ergebnis = json.set("", "mod", mod)]
 [h: ergebnis = json.set(ergebnis, "bonus", bonus)]
 [h: ergebnis = json.set(ergebnis, "modtext", modtext)]
+[h: ergebnis = json.set(ergebnis, "fpbonus", fpbonus)]
+[h: ergebnis = json.set(ergebnis, "bonustext", bonustext)]
 
 [h: macro.return = ergebnis]
