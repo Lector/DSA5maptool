@@ -50,8 +50,10 @@ Kampfsystem
 -----------
 
 Das Kampfsystem enthält ein Zielsystem um einen Schlagabtausch schneller abzuhandeln. Wenn man ein Token verkörpert ist es möglich ein weiteres Token als Ziel auszuwählen um dieses zu attackieren. Viele Modifikationen (AT von Hinten?, Entfernung im Fernkampf, Reichweitenunterschied von Nahkampfwaffen) werden somit automatisch erkannt und in die Eingabemaske eingetragen.
+
 Damit das gut funktioniert beachtet bitte dass ihr immer im Chat auf die Verteidigung klickt. Dadurch wird automatisch erkannt wen ihr pariert oder ausweicht und evtl. Schaden und Zustände werden automatisch berechnet und eingetragen.
-Den Spielleitern empfehle ich im Kampf den Shortcut F9 für "nächste Initiativphase" zu nutzen. Wenn die Initiative auf einen NPC wechselt verkörpert ihr automatisch den nächsten Kampfteilnehmer und ihr könnt mit 2 weiteren Klicks euren Kontrahenten anwählen und ihn attackieren.
+Den Spielleitern empfehle ich im Kampf den Shortcut F9 für "nächste Initiativphase" zu nutzen. Wenn die Initiative auf wechselt verkörpert automatisch der Spieler/SL den aktuellen Kampfteilnehmer und ihr könnt mit 2 weiteren Klicks euren Kontrahenten anwählen und ihn attackieren. Ob ein Token vom SL oder von einem Spieler verkörpert wird hängt davon ab ob der Token als PC oder NPC eingestellt ist. Um das zu ändern Doppelklick auf das Token und dann oben rechts im Dropdown umwählen.
+
 Kämpfe laufen dadurch sehr viel schneller ab als bei DSA üblich.
 
 -----------------------------------------------------

@@ -110,7 +110,7 @@
 		[h: checked4 = ""]
 		[h: illumination = 0]
 		[h: target = getTarget(currentToken())]
-		[h,if(target != ""): illumination = getIllumination(target, currentToken())]
+		[h,if(target != ""): illumination = getVisibilityMod(target, currentToken())]
 		[h,if(getState("Blind") == 1 || hasTrait("Nachteile", "Blind") == 1): illumination = 4]
 		[h,switch(illumination):
 			case 0: checked0 = "checked";

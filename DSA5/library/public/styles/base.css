@@ -87,8 +87,8 @@ button[type="submit"] table tr td {
 .border {
     margin: 0px;
     padding: 20px;
-    height: calc(100% - 46px);
-    max-height: calc(100% - 46px);
+    height: calc(100% - 40px);
+    max-height: calc(100% - 40px);
     overflow: scroll;
     border-image-source: url("lib://com.github.lector.dsa5maptool/styles/border.png");
     border-image-repeat: round;
