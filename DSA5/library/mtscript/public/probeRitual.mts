@@ -17,6 +17,7 @@
 [h: wert = json.get(uebergabe, 4)]
 [h: modWert = wert]
 [h: wiki = json.get(uebergabe, 5)]
+[h: merkmal = json.get(uebergabe, 6)]
 
 [h,if(hasTrait("MagieSF", "Improvisiertes Ritual") == 1), Code:
 	{
@@ -246,6 +247,7 @@
 						</td>
 					</tr>
 				</table>
+				<input type="hidden" name="Merkmal" value="[r: merkmal]"/>
 				<input type="hidden" name="Wiki" value="[r: wiki]"/>
 				<input type="hidden" name="Name" value="[r: name]"/>
 				<input type="hidden" name="Wert" value="[r: wert]"/>
