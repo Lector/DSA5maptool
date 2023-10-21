@@ -11,7 +11,7 @@
   "description": "Mit diesem Modul werden die Spielregeln von 'Das schwarze Auge' in der 5. Edition umgesetzt.\r\nFertigkeitsproben, Kampfhandlungen und vieles mehr kann durch einfache und übersichtliche Weise abgehandelt werden.",
   "shortDescription": "Regelunterstützung für DSA5",
   "allowsUriAccess": true,
-  "license": "Test",
+  "license": "",
   "licenseFile": "License.txt",
   "readMeFile": "ReadMe.md"
 }

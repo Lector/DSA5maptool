@@ -63,6 +63,7 @@ Folgende Vorteile/Nachteile und SFs berechnet das Framework automatisch:
 - Kampf generell: Belastungsgewöhnung, Waffenbegabung, Dunkelsicht, Nachtblind, Blindkampf, Kampf im Wasser, Unterwasserkampf
 - Alle Kampfmanöver aus dem Basisregelwerk.
 - Folgendes aus Kompendium I und II:
+
 ✓ Blindkampf
 ✓ Gezielter Angriff
 ✓ Gezielter Schuss
@@ -89,14 +90,15 @@ Folgende Vorteile/Nachteile und SFs berechnet das Framework automatisch:
 ✓ Herunterstoßen
 ✓ Klingensturm
 ✓ Sprungtritt
+
 Andere Manöver können durch manuelle Eingabe von Erschwernissen abgebildet werden.
 
 - Wundeffekte: Eisern, Zerbrechlich, Hart im Nehmen, Verweichlicht
 - Regeneration: Verbesserte Regeneration, Schlechte Regeneration, Magische Regeneration, Karmale Regeneration, Meisterliche Regeneration, Stabile Regeneration
 - Talente: Richtungssinn, Unfähig
-- Magie und Karmal: Improvisationszauberei (Formel/Geste), Improvisierte Liturgie (Gebet/Geste), Parallelzauberei, Routinierte Zauberwiderholung/Liturgiewiderholung, Schwacher Astralkörper, Lästige Mindergeister, alle SFs die bei bestimmten Merkmalen +1 FP geben
+- Magie und Karmal: Improvisationszauberei (Formel/Geste), Improvisierte Liturgie (Gebet/Geste), Parallelzauberei, Routinierte Zauberwiderholung/Liturgiewiderholung, Schwacher Astralkörper, Lästige Mindergeister, Lieblingszauber/-liturgie, alle magischen SFs die bei bestimmten Merkmalen +1 FP geben
 - Natur und Wildnis: Sammler, Jäger, Erfolgreicher Jäger, Weg des Jägers, Weg des Fallenstellers
-- Sonstiges: Krankheitsanfällig/resistenz, Giftanfällig/resistenz
+- Sonstiges: Krankheitsanfällig/-resistenz, Giftanfällig/-resistenz
 
 -------------------------
 Optolith MapTool-Exporter
