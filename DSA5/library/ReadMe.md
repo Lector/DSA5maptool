@@ -43,7 +43,7 @@ Technik
 
 Dieses Framework nutzt große Makros und viele Grafiken, die größtenteils erst bei Nutzung und nicht bereits bei Spielstart geladen werden. Je nach Verbindung zum Server und dessen Uploadrate kann das erstmalige Aufrufen der verschiedenen Fenster (z. B. Attacke oder Parade oder auch die Anzeige einer Probe im Chat) etwas länger dauern. Anschließend sollten sich die Daten jedoch im Speicher befinden und die Fenster somit schnell abrufbar sein.
 
-Der Regelsatz ist getestet mit Maptool in der Version 1.3.2.
+Der Regelsatz ist getestet mit Maptool in der Version 1.13.2.
 
 -----------
 Kampfsystem
