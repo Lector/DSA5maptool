@@ -49,7 +49,7 @@
 };
 {
 	[wMod = wBonus - wMalus]
-	[if(wMod >= 0): schaden = wAnzahl+"d"+wTyp]
+	[schaden = wAnzahl+"d"+wTyp]
 }]
 [h: mul = 1]
 [h,if(json.get(uebergabe, "kritischDK") == "1"): mul = mul * 2]

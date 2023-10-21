@@ -10,7 +10,7 @@
 [h: multiplier = json.get(params, "Multiplier")]
 [h: before = json.get(params, "Before")]
 [h: after = json.get(params, "After")]
-[h,if(mod >= 0): damageFormula = baseDamage + "+" + abs(mod); signedMod = baseDamage + "-" + abs(mod)]
+[h,if(mod >= 0): damageFormula = baseDamage + "+" + mod; damageFormula = baseDamage + "-" + abs(mod)]
 
 [h,if(IsNumber(baseDamage)),Code:
 {
