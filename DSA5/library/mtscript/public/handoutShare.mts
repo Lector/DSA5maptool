@@ -11,22 +11,22 @@
 [h,if(hTitle == ""): hTitle = "Handout"]
 [h: hNum = substring(hTokenName, lastIndexOf(hTokenName, " ")+1, length(hTokenName))]
 
-[h: hShared = getLibProperty("SharedHandouts","com.github.lector.dsa5maptool")]
-[h: hItem = listFind(hShared, hNum)]
+[h: hShared = getLibProperty("VisibleHandouts")]
+[h: hItem = json.indexOf(hShared, hNum)]
 [h,if(hItem == -1), Code:
 {
-	[hShared = listAppend(hShared, hNum)]
+	[hShared = json.append(hShared, hNum)]
 	[chatTitleText = "Handout freigegeben"]
 	[chatText = strformat("Der Spielleiter hat ein Handout freigegeben (<span style='color: #000000;'>%s</span>):", macroLink("<span title='Neues Handout aufrufen'>Jetzt anzeigen</span>", "handoutShow@this", "", id))]
 	[recipient = "all"]
 };
 {
-	[hShared = listDelete(hShared, hItem)]
+	[hShared = json.remove(hShared, hItem)]
 	[chatTitleText = "Handout gesperrt"]
 	[chatText = "Der Spielleiter hat ein Handout gesperrt:"]
 	[recipient = "gm"]
 }]
-[h: setLibProperty("SharedHandouts", hShared, "lib:com.github.lector.dsa5maptool")]
+[h: setLibProperty("VisibleHandouts", hShared)]
 
 [h: ausgabe = strformat("
 <table style='border-spacing: 0px; margin-top: 3px; font-weight:bold'>

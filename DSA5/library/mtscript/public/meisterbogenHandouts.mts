@@ -18,7 +18,7 @@
 		</div>
 		<div class="content">
 			
-			[h: hShared = getLibProperty("SharedHandouts","com.github.lector.dsa5maptool")]
+			[h: hShared = getLibProperty("VisibleHandouts")]
 			[h: hHidden = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/hidden.png")]
 			[h: hVisible = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/visible.png")]
 			[h: hEdit = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/handoutEdit.png")]
@@ -45,7 +45,7 @@
 								<span>[r,if(hShort == ""): output = "Keine Beschreibung verfügbar"; output = hShort]</span>
 							</td>
 							<td style='padding: 0px 1px 0px 1px;'>
-								[r,if(listFind(hShared, num) != -1):
+								[r,if(json.indexOf(hShared, num) != -1):
 									hShareLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout ist für Spieler freigegeben - Klicken zum Sperren'></image></a>", macroLinkText("handoutShare@this", "", id), hVisible);
 									hShareLink = strformat("<a href='%s'><image src='%s' border='0' alt='Handout ist für Spieler gesperrt - Klicken zum Freigeben'></image></a>", macroLinkText("handoutShare@this", "", id), hHidden)]
 							</td>

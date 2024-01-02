@@ -10,12 +10,12 @@
 [h: hTitle = getLabel()]
 [h: hNum = substring(hTokenName, lastIndexOf(hTokenName, " ")+1, length(hTokenName))]
 
-[h: hShared = getLibProperty("SharedHandouts","com.github.lector.dsa5maptool")]
-[h: hItem = listFind(hShared, hNum)]
+[h: hShared = getLibProperty("VisibleHandouts")]
+[h: hItem = json.indexOf(hShared, hNum)]
 [h,if(hItem != -1), Code:
 	{
-		[hShared = listDelete(hShared, hItem)]
-		[setLibProperty("SharedHandouts", hShared, "lib:com.github.lector.dsa5maptool")]
+		[hShared = json.remove(hShared, hItem)]
+		[setLibProperty("VisibleHandouts", hShared)]
 		[chatNotice = 1]
 		[chatTextTitle = "Handout gesperrt"]
 		[chatText = "Der Spielleiter hat ein Handout gesperrt:"]

@@ -26,14 +26,6 @@ Neu hier? Hier gehts zum <a href='https://www.youtube.com/watch?v=1GhtRMBgSWY'>V
 	</tr>
 	<tr>
 		<th>
-			Shift + F3
-		</th>
-		<td valign=middle>
-			Schaden im Nahkampf
-		</td>
-	</tr>
-	<tr>
-		<th>
 			F4
 		</th>
 		<td valign=middle>
@@ -42,26 +34,10 @@ Neu hier? Hier gehts zum <a href='https://www.youtube.com/watch?v=1GhtRMBgSWY'>V
 	</tr>
 	<tr>
 		<th>
-			Shift + F4
-		</th>
-		<td valign=middle>
-			Schaden im Fernkampf
-		</td>
-	</tr>
-	<tr>
-		<th>
 			F5
 		</th>
 		<td valign=middle>
-			Parade
-		</td>
-	</tr>
-	<tr>
-		<th>
-			F6
-		</th>
-		<td valign=middle>
-			Ausweichen
+			Verteidigung
 		</td>
 	</tr>
 	<tr>

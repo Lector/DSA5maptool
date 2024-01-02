@@ -66,9 +66,9 @@ data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/handout
 
 [h: ausgabePublic = border("Handout geändert", ausgabePublic)]
 
-[h: publicHandouts = getLibProperty("SharedHandouts","com.github.lector.dsa5maptool")]
+[h: publicHandouts = getLibProperty("VisibleHandouts")]
 
-[h,if(listFind(publicHandouts, hNum) == -1), Code:
+[h,if(json.indexOf(publicHandouts, hNum) == -1), Code:
 	{
 		[broadcast(ausgabe, "gm")]
 	};
@@ -76,7 +76,7 @@ data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/handout
 		[broadcast(ausgabePublic)]
 	}
 ]
-[h,if(isFrameVisible("meisterbogen") == 1 && getLibProperty("SLframe","com.github.lector.dsa5maptool") == 5), Code:
+[h,if(isFrameVisible("meisterbogen") == 1 && getLibProperty("SLframe") == 5), Code:
 	{
 		[h,macro("meisterbogenHandouts@this"): ""]
 	};{}

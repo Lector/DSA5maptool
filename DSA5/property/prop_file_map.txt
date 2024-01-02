@@ -1,4 +1,4 @@
-prop_1.txt => SharedHandouts
+prop_1.txt => VisibleHandouts
 prop_2.txt => OptRestrictMovement
 prop_3.txt => SLframe
 prop_4.txt => OptHideNSCAction

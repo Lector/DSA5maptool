@@ -23,13 +23,13 @@
 
 			<div class="table" id="handouts">
 				<div>Handouts</div>
-				[h: hShared = getLibProperty("SharedHandouts", "com.github.lector.dsa5maptool")]
-				[h: hCount = listCount(hShared)]
+				[h: hShared = getLibProperty("VisibleHandouts")]
+				[h: hCount = json.length(hShared)]
 				[h: hAusgabe = ""]
 				[h: num = 0]
 				[h,count(hCount, ""), Code:
 				{
-					[hNum = listGet(hShared, num)]
+					[hNum = json.get(hShared, num)]
 					[hTokenName = strformat("Handout %s", hNum)]
 					[id = findToken(hTokenName, "Spieltisch")]
 
