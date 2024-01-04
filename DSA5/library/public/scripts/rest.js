@@ -24,7 +24,7 @@ if (typeof LOGGER === "undefined") {
 async function getData(URI, data, mockedData) {
   if (MapTool.mocked) {
     LOGGER.log("Using Mocked Data");
-    return JSON.stringify(mockedData);
+    return mockedData;
   }
   const payload = JSON.stringify(data);
   LOGGER.log(`Fetching Data from ${URI} with payload ${payload}`);

@@ -127,7 +127,7 @@
 						<td>
 							<table class="probe">
 								<tr>
-									[r,macro("probeMod@this"): ""]
+									[r: probeMod("probeMod", "Probe:", "")]
 								</tr>
 								<tr>
 									[r,macro("probeSchadenMod@this"): ""]
