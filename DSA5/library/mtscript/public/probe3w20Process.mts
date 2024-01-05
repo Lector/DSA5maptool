@@ -31,6 +31,7 @@ Dies soll von den unterschiedlichen Aufrufskripten alles mit übergeben werden
 [h: wiki = json.get(uebergabe, "Wiki")]
 [h,if(wiki == ""): title = pName; title = "<a style='color: #441e13' href='"+wiki+"'>"+pName+"</a>"]
 [h: patzerTabelle = json.get(uebergabe, "patzerTabelle")]
+[h: successText = decode(json.get(uebergabe, "successText"))]
 [h: kritText = json.get(uebergabe, "kritText")]
 [h: image = json.get(uebergabe, "image")]
 [h: modMacro = json.get(uebergabe, "modMacro")]
@@ -42,6 +43,10 @@ Dies soll von den unterschiedlichen Aufrufskripten alles mit übergeben werden
 [h: ergebnis = roll3d20(currentToken(), E1, E2, E3, Wert, 0, params)]
 [h: success = json.get(ergebnis, "success")]
 
+[h,if(success >= 1), Code:
+{
+	[if(successText != ""): subtext = subtext + replace(successText, "__QS__", json.get(ergebnis, "qs")) + "<br/>"]
+}]
 [h,if(success >= 2), Code:
 {
 	[if(kritText != ""): subtext = subtext + kritText + "<br/>"]

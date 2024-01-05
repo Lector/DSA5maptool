@@ -1,11 +1,11 @@
-[h: switchToken(arg(0))]
-[h: airborne = isAirborne(currentToken())]
+[h: animalForm = arg(0)]
+[h: shapeShifter = arg(1)]
 
 [h: actionLink = macroLinkText("impersonateAnimalFormProcess@this", "")]
 [dialog5("chareditImpersonateAnimalForm", "width=500; height=600; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
-		<title>[r: getName(currentToken())] verkörpern</title>
+		<title>Tierform verkörpern</title>
 		[r: linkGoogleFonts()]
 		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 	</head>
@@ -16,7 +16,7 @@
                 <table style='border-spacing: 0px; margin: 0px auto 0px auto;'>
 					<tr>
                         <td>
-                            Wer schlüpft in die Tiergestalt?
+                            Gestaltwandler:
                         </td>
 						<td>
 							<select size="1" name="shapeShifter">
@@ -33,17 +33,36 @@
                                     [h,if(isGM() == 1 || (visible == 1 && directlyOwned > 0)): hasRights = 1; hasRights = 0]
                                     [r,if(getProperty("Typus", tok) == "Kulturschaffend" && hasRights == 1),Code:
                                     {
-                                        <option value="[r: tok]">[r: getName(tok)]</option>
+                                        <option value="[r: tok]" [r,if(tok == shapeShifter || getName(tok) == shapeShifter): "selected"]>[r: getName(tok)]</option>
                                     }]
                                 }]
                             </select>
 						</td>
 					</tr>
+                    <tr>
+                        <td>
+                            Tiergestalt:
+                        </td>
+                        <td>
+                            <select size="1" name="animalForm">
+                                [h: conditions = json.set("{}", "layer", "Token")]
+                                [h: tokens = getTokens("json", conditions)]
+                                [r,foreach(tok, tokens, ""),Code:{
+                                    [r,if(getProperty("Typus", tok) == "Tiergestalt"),Code:
+                                    {
+                                        <option value="[r: tok]" [r,if(tok == animalForm || getName(tok) == animalForm): "selected"]>[r: getName(tok)]</option>
+                                    }]
+                                }]
+                            </select>
+                        </td>
+                    </tr>
 				</table>
                 <table style='border-spacing: 0px; margin: 12px auto 0px auto;'>
                     <tr>
                         <td>
-                            QS*2 Punkte dürfen noch auf körperliche Eigenschaften verteilt werden.
+                            [h: label = "QS * 2 Punkte"]
+                            [h,if(json.length(macro.args) >= 3): label = "<b>"+arg(2)*2+" Punkte</b> (QS*2)"]
+                            Auf die körperliche Eigenschaften der Tiergestalt dürfen insgesamt noch [r: label] verteilt werden:
                         </td>
                     </tr>
                 </table>
@@ -54,8 +73,12 @@
 						<td>
                             [r: upper(prop)]:
                         </td>
+                        [r,if(findToken(animalForm) != ""),Code:{
                         <td>
-                            [r: getProperty(prop, currentToken())]
+                            [r: getProperty(prop, animalForm)]
+                        </td>
+                        }]
+                        <td>
                         </td>
                         <td>
                             <select name='[r: lower(prop)]'>
@@ -74,7 +97,7 @@
 							<button type="submit">
 								<table>
 									<tr>
-										<td><img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/hand.png")]/></td>
+										<td><img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/wings.png")]/></td>
 										<td>Tiergestalt verkörpern</td>
 									</tr>
 								</table>
@@ -82,7 +105,6 @@
 						</td>
 					</tr>
 				</table>
-				<input type="hidden" name="token" value="[r: currentToken()]">
 			</form>
 		</div>
 	</body>

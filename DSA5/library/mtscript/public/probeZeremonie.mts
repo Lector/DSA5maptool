@@ -270,6 +270,13 @@
 				<input type="hidden" name="modMacro" value="probeZeremonieMods@this"/>
 				<input type="hidden" name="image" value=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/divine.png")]/>
 				<input type="hidden" name="kritText" value="Die KE-Kosten werden halbiert.<br/>Auf die FP dürfen weitere 1W6 Punkte aufaddiert werden"/>
+				[r,if(listContains("Delphingestalt, Eidechsengestalt, Eisbärgestalt, Elsterngestalt, Falkengestalt, Flugechsengestalt, Fuchsgestalt, Gänsegestalt, Hundegestalt, Jaguargestalt, Löwengestalt, Luchsgestalt, Mungogestalt, Panthergestalt, Paradiesvogelgestalt, Pferdegestalt, Rabengestalt, Schattenrochengestalt, Schlangengestalt, Schmetterlingsgestalt, Schwanengestalt, Storchengestalt, Taubengestalt, Widdergestalt, Wolfsgestalt, Zwergwalgestalt", name) > 0),Code:{
+					[h: subtext = "Tiergestalt wurde erfolgreich gewürfelt."]
+					[h: recipients = json.append(getGMNames(), getPlayerName())]
+					[h: link = macroLinkText("impersonateAnimalForm@this", "none", json.append("[]", name, currentToken(), "__QS__"), currentToken())]
+					[h: subtext = subtext + onlyFor(" <a href='"+ link +"'>Token in Tierform verwandeln</a>", recipients)]
+				<input type="hidden" name="successText" value='[r: encode(subtext)]'/>
+				}]
 			</form>
 		</div>
 	</body>

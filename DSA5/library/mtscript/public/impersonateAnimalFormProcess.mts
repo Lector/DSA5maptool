@@ -1,8 +1,8 @@
 [h: params = macro.args]
-[h: animalForm = json.get(params, "token")]
+[h: animalForm = json.get(params, "animalForm")]
 [h: shapeShifter = json.get(params, "shapeShifter")]
 [h: animal = copyToken(animalForm)]
-[h: setName(getName(shapeShifter)+ " in Tiergestalt", animal)]
+[h: setName(getName(shapeShifter)+ " in " + getName(animalForm), animal)]
 [h: switchToken(animal)]
 
 [h: setVisible(getVisible(shapeShifter), animal)]
@@ -10,8 +10,11 @@
 [h,if(isPC(shapeShifter)): setPC(animal); setNPC(animal))]
 [h: moveToken(getTokenX(1, shapeShifter), getTokenY(1, shapeShifter), 1, animal)]
 [h: setHasSight(hasSight(shapeShifter), animal)]
+[h,if(isGM() == 0): setOwners(getOwners("json", shapeShifter), animal)]
 
 <!-- Transfer data from the shapeShifter to the animal -->
+[h: Typus = "Tier"]
+
 [h: MaxLeP = getProperty("MaxLeP", shapeShifter)]
 [h: MaxAsP = getProperty("MaxAsP", shapeShifter)]
 [h: MaxKaP = getProperty("MaxKaP", shapeShifter)]
@@ -70,12 +73,23 @@
 
 <!-- Verbesserungen eintragen -->
 
-[h: FF = FF + json.get(params, "ff")]
-[h: GE = GE + json.get(params, "ge")]
-[h: KO = KO + json.get(params, "ko")]
-[h: KK = KK + json.get(params, "kk")]
+[h: ffPlus = json.get(params, "ff")]
+[h: gePlus = json.get(params, "ge")]
+[h: koPlus = json.get(params, "ko")]
+[h: kkPlus = json.get(params, "kk")]
+[h: statSum = ffPlus + gePlus + koPlus + kkPlus]
+[h: FF = FF + ffPlus]
+[h: GE = GE + gePlus]
+[h: KO = KO + koPlus]
+[h: KK = KK + kkPlus]
+[h: setGMNotes(
+    strformat("Werte wurden wie folgt verbessert: FF%+d GE%+d KO%+d KK%+d
+Es wurden %d Punkte verteilt. Dazu wäre eine QS von %d notwendig.",
+    ffPlus, gePlus, koPlus, kkPlus, statSum, ceil(statSum/2.0)
+    ),
+animal)]
 
 [h: checkZustand(currentToken())]
 [h: closeDialog("chareditImpersonateAnimalForm")]
 [h,macro("noticeSelf@this"): "chareditAnimalFormProcess"]
-[h: impersonate(currentToken())]
+[h,if(isGM() == 0): impersonate(currentToken())]
