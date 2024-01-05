@@ -17,7 +17,7 @@
 		<div class="border">
 			<form action="[r:actionLink]">
 				[r: header("Daten übertragen")]
-				<table style='border-spacing: 0px;' width='330'>
+				<table style='border-spacing: 0px; margin: 0px auto 0px auto;' width='330'>
 					<tr>
 						<td>
 							Bitte wähle die zu kopierenden Daten aus, die du von einem anderen Token auf diesen Token übertragen möchtest.
@@ -26,7 +26,7 @@
 						</td>
 					</tr>
 				</table>
-				<table style='border-spacing: 0px; margin-top: 10px;'>
+				<table style='border-spacing: 0px; margin: 10px auto 0px auto;'>
 					<tr>
 						<td>
 							<input type='checkbox' name='cTokenbilder' value='1' checked='checked'>
@@ -108,7 +108,7 @@
 						</td>
 					</tr>
 				</table>
-				<table style='border-spacing: 0px; margin-top: 10px;' width='300'>
+				<table style='border-spacing: 0px;  margin: 10px auto 0px auto;' width='300'>
 					<tr>
 						<td style='text-align: center; font-weight: bold;'>
 							Achtung!

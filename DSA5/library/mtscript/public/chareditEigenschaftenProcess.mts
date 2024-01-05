@@ -29,7 +29,6 @@
 [h,if(json.get(uebergabe, "oAE") == ""): nAE = MaxAsP; nAE = json.get(uebergabe, "oAE")]
 [h,if(json.get(uebergabe, "oKE") == ""): nKE = MaxKaP; nKE = json.get(uebergabe, "oKE")]
 [h,if(json.get(uebergabe, "oSchipsMax") == ""): nSchipsMax = SchipsMax; nSchipsMax = json.get(uebergabe, "oSchipsMax")]
-[h: checkZustand(currentToken())]
 
 [h,if(isNumber(nMU) == 0 || isNumber(nGS) == 0 || isNumber(nINI) == 0 || isNumber(nINIDiceCount) == 0 || isNumber(nAW) == 0 || isNumber(nSchipsMAX) == 0 || isNumber(nKL) == 0 || isNumber(nIN) == 0 || isNumber(nCH) == 0 || isNumber(nFF) == 0 || isNumber(nGE) == 0 || isNumber(nKO) == 0 || isNumber(nKK) == 0 || isNumber(nSK) == 0 || isNumber(nZK) == 0 || isNumber(nAPgesamt) == 0 || isNumber(nAPverfuegbar) == 0 || isNumber(nLE) == 0 || isNumber(nAPausgegeben) == 0 || isNumber(nAE) == 0 || isNumber(nKE) == 0), Code:
 	{
@@ -83,5 +82,6 @@
 [h: AsP = min(AsP, MaxAsP)]
 [h: KaP = min(KaP, MaxKaP)]
 
+[h: checkZustand(currentToken())]
 [h,macro("noticeSelf@this"): "chareditEigenschaften"]
 [h: refreshFrame(currentToken())]

@@ -16,7 +16,7 @@
 [h,if(LeP <= schmerz4): schmerz = schmerz + 1]
 
 <!-- Bestimmte Wesen sind von Schmerz nicht betroffen. Manuelle Schmerzen kann man trotzdem eintragen -->
-[h,if(listContains("Dämon, Elementar, Geist, Golem, Golemid", Typus) == 1),Code:
+[h,if(listContains("Dämon, Elementar, Geist, Golem, Golemid, Tiergestalt", Typus) == 1),Code:
 {
 	[h: schmerz = 0]
 }]
@@ -30,18 +30,25 @@
 }]
 
 [h: currentKO = getKO(tokenID)]
-[h,if(LeP <= 0 && LeP > -currentKO), Code:
+[h,if(MaxLeP > 0),Code:
 {
-	[h: setState("Sterbend", 1)]
-	[h: meldung = strformat("<b>Lebensbedrohlich verletzt</b><br>Du liegst im Sterben. In %s Kampfrunden bist du tot.", currentKO)]
-};{}]
-[h,if(LeP > 0): setState("Sterbend", 0)]
-[h,if(LeP < -currentKO), Code:
-{
-	[h: setState("Sterbend", 0)]
-	[h: setState("Tot", 1)]
-	[h: meldung = "<b>(Hoffentlich) Heldenhafter Tot</b><br>Du bist gerade gestorben. Ruhe in Frieden."]
+	[h,if(LeP <= 0 && LeP > -currentKO), Code:
+	{
+		[h: setState("Sterbend", 1)]
+		[h: meldung = strformat("<b>Lebensbedrohlich verletzt</b><br>Du liegst im Sterben. In %s Kampfrunden bist du tot.", currentKO)]
+	}]
+	[h,if(LeP > 0): setState("Sterbend", 0)]
+	[h,if(LeP < -currentKO), Code:
+	{
+		[h: setState("Sterbend", 0)]
+		[h: setState("Tot", 1)]
+		[h: meldung = "<b>(Hoffentlich) Heldenhafter Tot</b><br>Du bist gerade gestorben. Ruhe in Frieden."]
+	};{
+		[h: setState("Tot", 0)]
+	}]
 };{
+	<!-- If MaxLP is 0 it does not make sense for a token to be dead or dying -->
+	[h: setState("Sterbend", 0)]
 	[h: setState("Tot", 0)]
 }]
 
@@ -50,7 +57,6 @@
 [h,if(hasTrait("Vorteile", "Zäher Hund", 1, tokenID) != 0 && schmerz != 4): mod = mod - 1]
 [h: Schmerz = max(0, min(4, schmerz + mod))]
 
-[h: state = "Handlungsunfähig"]
 [h,if(Schmerz >= 4 && SchmerzAlt < 4 && meldung == ""),Code:
 {
 	<!-- Wenn man auf Schmerz 4 fällt wird Selbstbeherrschung gewürfelt ob man stehen bleibt -->
@@ -61,7 +67,7 @@
 		[h: meldung = "Probe auf <b>Selbstbeherrschung (Handlungsfähigkeit bewahren)</b> gelungen!<br>Du bleibst <b>handlungsfähig</b>!"]
 	};{
 		[h: meldung = "Probe auf <b>Selbstbeherrschung (Handlungsfähigkeit bewahren)</b> misslungen!<br>Du bist <b>handlungsunfähig</b>!"]
-		[h: setState(state, 1)]
+		[h: setState("Handlungsunfähig", 1)]
 	}]
 }]
 
@@ -78,15 +84,14 @@
 [h,if(Furcht >= 4 || Trance >= 4 || Verwirrung >= 4 || Betaeubung >= 4 || Belastung >= 4): zustandKritisch = 1; zustandKritisch = 0]
 [h,if(zustandKritisch == 1 && LeP > 0), Code:
 {
-	[h: setState(state, 1)]
+	[h: setState("Handlungsunfähig", 1)]
 }]
 [h,if(zustandKritisch == 0 && LeP > schmerz4), Code:
 {
-	[h: setState(state, 0)]
+	[h: setState("Handlungsunfähig", 0)]
 }]
 
-[h: state = "Bewegungsunfähig"]
-[h,if(Paralyse >= 4): setState(state, 1)]
+[h,if(Paralyse >= 4): setState("Bewegungsunfähig", 1)]
 
 [h,if(LeP >= MaxLeP): setBarVisible("LE", 0); setBarVisible("LE", 1)]
 [h,if(AsP >= MaxAsP): setBarVisible("AE", 0); setBarVisible("AE", 1)]

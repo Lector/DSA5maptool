@@ -157,6 +157,10 @@
 		[msgTitle = "Tier ausgebildet"]
 		[msgText = "Das Ausbildungspaket wurde angewendet."]
 	};
+	case "chareditAnimalFormProcess": {
+		[msgTitle = "Tierform verkörpert"]
+		[msgText = "Die Tierform wurde erfolgreich verkörpert."]
+	}
 ]
 
 [h: ausgabe = border(msgTitle, strformat("
