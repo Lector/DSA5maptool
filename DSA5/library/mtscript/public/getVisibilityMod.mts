@@ -35,8 +35,8 @@ For this, we temporarily set the vision to magical vision so that only walls and
 	[h,switch(point),Code:
 		case "CENTER":
 		{
-			[x = x + (width / 2.0)]
-			[y = y + (height / 2.0)]
+			[x = x + round(width / 2.0)]
+			[y = y + round(height / 2.0)]
 		};
 		case "TOP_LEFT":
 		{
