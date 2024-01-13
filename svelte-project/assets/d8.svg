@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 512 512"
+   style="height: 512px; width: 512px;"
+   version="1.1"
+   id="svg16"
+   sodipodi:docname="dice-eight-faces-eight.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs20" />
+  <sodipodi:namedview
+     id="namedview18"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.6347656"
+     inkscape:cx="256.30585"
+     inkscape:cy="256.30585"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg16" />
+  <g
+     class=""
+     transform="translate(0,0)"
+     style=""
+     id="g14">
+    <path
+       d="M 256,37.143 77.896,343.853 H 434.104 Z M 230.154,49.79 72,164.233 v 157.91 z m 51.69,0 L 440,322.144 V 164.232 Z M 88.7,359.852 256,480.912 423.3,359.852 Z"
+       fill="#9013fe"
+       fill-opacity="1"
+       id="path12"
+       sodipodi:nodetypes="cccccccccccccccc" />
+  </g>
+</svg>
