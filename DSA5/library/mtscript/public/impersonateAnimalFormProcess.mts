@@ -10,7 +10,7 @@
 [h,if(isPC(shapeShifter)): setPC(animal); setNPC(animal))]
 [h: moveToken(getTokenX(1, shapeShifter), getTokenY(1, shapeShifter), 1, animal)]
 [h: setHasSight(hasSight(shapeShifter), animal)]
-[h,if(isGM() == 0): setOwners(getOwners("json", shapeShifter), animal)]
+[h: setOwner(getOwners("json", shapeShifter), animal)]
 
 <!-- Transfer data from the shapeShifter to the animal -->
 [h: Typus = "Tier"]
@@ -18,9 +18,11 @@
 [h: MaxLeP = getProperty("MaxLeP", shapeShifter)]
 [h: MaxAsP = getProperty("MaxAsP", shapeShifter)]
 [h: MaxKaP = getProperty("MaxKaP", shapeShifter)]
+[h: SchipsMax = getProperty("SchipsMax", shapeShifter)]
 [h: LeP = getProperty("LeP", shapeShifter)]
 [h: AsP = getProperty("AsP", shapeShifter)]
 [h: KaP = getProperty("KaP", shapeShifter)]
+[h: SchipsAktuell = getProperty("SchipsAktuell", shapeShifter)]
 
 [h: MU = getProperty("MU", shapeShifter)]
 [h: KL = getProperty("KL", shapeShifter)]
