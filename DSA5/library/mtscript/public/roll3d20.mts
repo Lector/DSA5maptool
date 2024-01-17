@@ -80,6 +80,7 @@ Dieses Skript kann dann die unterschiedlichen Parameter aus der Übergabe ausles
 [h: checkResult3 = dice3 - (aktE3wert + mod)]
 
 [h: rerollResult = "{}"]
+[h: toReroll = -1]
 [h,if(reroll == "best"),Code:
 {
 	[toReroll = min(checkResult1, checkResult2, checkResult3)]
@@ -89,22 +90,57 @@ Dieses Skript kann dann die unterschiedlichen Parameter aus der Übergabe ausles
 		[h: rerollResult = json.set(rerollResult, "oldValue", dice1)]
 		[h: dice1 = 1d20]
 		[h: checkResult1 = dice1 - (aktE1wert + mod)]
-	};{}]
-	[if(toReroll == checkResult2),Code:
+	}]
+	[if(toReroll == checkResult2 && rerollResult == "{}"),Code:
 	{
 		[h: rerollResult = json.set(rerollResult, "index", 1)]
 		[h: rerollResult = json.set(rerollResult, "oldValue", dice2)]
 		[h: dice2 = 1d20]
 		[h: checkResult2 = dice2 - (aktE2wert + mod)]
-	};{}]
-	[if(toReroll == checkResult3),Code:
+	}]
+	[if(toReroll == checkResult3 && rerollResult == "{}"),Code:
 	{
 		[h: rerollResult = json.set(rerollResult, "index", 2)]
 		[h: rerollResult = json.set(rerollResult, "oldValue", dice3)]
 		[h: dice3 = 1d20]
 		[h: checkResult3 = dice3 - (aktE3wert + mod)]
-	};{}]
-};{}]
+	}]
+}]
+[h,if(reroll == "worst"),Code:
+{
+	[h: label = json.append(
+		strformat("<html><b>%{dice1}</b> gewürfelt auf <b>%{e1} (%{aktE1wert})</b></html>"),
+		strformat("<html><b>%{dice2}</b> gewürfelt auf <b>%{e2} (%{aktE2wert})</b></html>"),
+		strformat("<html><b>%{dice3}</b> gewürfelt auf <b>%{e3} (%{aktE3wert})</b></html>")
+	)]
+
+	[h: confirm = input(
+		"junk|<html>Der Vorteil Begabung erlaubt dir einen Würfel neu zu werfen.<br>Es zählt das bessere Ergebnis!<br><br></html>|-|LABEL|SPAN=TRUE",
+		strformat('toReroll|%{label}|Neu würfeln|RADIO|DELIMITER=JSON')
+	)]
+
+	[h,if(confirm == 1 && toReroll == 0),Code:{
+		[h: rerollResult = json.set(rerollResult, "index", 0)]
+		[h: newDice = 1d20]
+		[h: rerollResult = json.set(rerollResult, "oldValue", max(newDice, dice1))]
+		[h: dice1 = min(newDice, dice1)]
+		[h: checkResult1 = dice1 - (aktE1wert + mod)]
+	}]
+	[h,if(confirm == 1 && toReroll == 1),Code:{
+		[h: rerollResult = json.set(rerollResult, "index", 1)]
+		[h: newDice = 1d20]
+		[h: rerollResult = json.set(rerollResult, "oldValue", max(newDice, dice2))]
+		[h: dice2 = min(newDice, dice2)]
+		[h: checkResult2 = dice2 - (aktE2wert + mod)]
+	}]
+	[h,if(confirm == 1 && toReroll == 2),Code:{
+		[h: rerollResult = json.set(rerollResult, "index", 2)]
+		[h: newDice = 1d20]
+		[h: rerollResult = json.set(rerollResult, "oldValue", max(newDice, dice3))]
+		[h: dice3 = min(newDice, dice3)]
+		[h: checkResult3 = dice3 - (aktE3wert + mod)]
+	}]
+}]
 
 [h: fp = Wert - max(0, checkResult1) - max(0, checkResult2) - max(0, checkResult3)]
 

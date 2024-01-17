@@ -157,7 +157,10 @@
 				Bei einer Begabung kann man sich den Wuerfel zum rerollen aussuchen.-->
 				[r,if(hasTrait("Nachteile", "Unfähig ("+tname+")") == 1),Code:{
 					<input type="hidden" name="reroll" value="best"/>
-				};{}]
+				}]
+				[r,if(hasTrait("Vorteile", "Begabung ("+tname+")") == 1),Code:{
+					<input type="hidden" name="reroll" value="worst"/>
+				}]
 			</form>
 		</div>
 	</body>
