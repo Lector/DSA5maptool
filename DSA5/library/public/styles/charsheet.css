@@ -491,6 +491,7 @@ input[type="text"] {
     display: flex;
     flex-flow: column nowrap;
     gap: 8px;
+    margin: 12px;
 }
 .linkListing > div {
     display: flex;

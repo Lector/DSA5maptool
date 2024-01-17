@@ -10,7 +10,7 @@
 		<div class="border">
 			<form action="[r:actionLink]" method="json">
 				[r: header("Neuer Link")]
-				<table style='border-spacing: 0px;'>
+				<table style='border-spacing: 0px; padding: 5px; margin: 0px auto 0px auto'>
 					<tr>
 						<td valign='middle'>
 							Linktitel:
@@ -28,7 +28,7 @@
 						</td>
 					</tr>
 				</table>
-				<table style='border-spacing: 0px; margin: 9px 0px 8px 0px;'>
+				<table style='border-spacing: 0px; margin: 9px auto 8px auto;'>
 					<tr>
 						<td>
 							<button type="submit">

@@ -3,9 +3,11 @@
 [h,if(arg(0) == "pc"),Code:{
 	[h: tokenList = getTokens("json", json.set(conditions, "npc", 0, "pc", 1))]
 	[h: setLibProperty("SLframe", 3, "lib:com.github.lector.dsa5maptool")]
+	[h: header = "Spielercharaktere"]
 };{
 	[h: tokenList = getTokens("json", json.set(conditions, "npc", 1, "pc", 0))]
 	[h: setLibProperty("SLframe", 4, "lib:com.github.lector.dsa5maptool")]
+	[h: header = "Meistercharaktere"]
 }]
 
 [h: fTokenList = "[]"]
@@ -26,7 +28,7 @@
 <html>
 	<head>
 		<title>
-			Meisterbogen - Spielercharaktere II
+			Meisterbogen - [r: header] II
 		</title>
 		[r: linkGoogleFonts()]
 		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/charsheet.css?cachelib=false'/>
@@ -34,7 +36,7 @@
 	<body>
 		<div class="header">
 			<div class="charactername">
-				Spielercharaktere II
+				[r: header] II
 			</div>
 			[h,if(arg(0) == "pc"): tab = 1; tab = 3]
 			[r: gmsheetNavigation(tab)]
