@@ -60,7 +60,7 @@
 [h,if(Schmerz >= 4 && SchmerzAlt < 4 && meldung == ""),Code:
 {
 	<!-- Wenn man auf Schmerz 4 fällt wird Selbstbeherrschung gewürfelt ob man stehen bleibt -->
-	[h: res = rollSkill(currentToken(), "Selbstbeherrschung", 0, json.set("{}", "spec", "Handlungsfähigkeit bewahren"))]
+	[h: res = rollSkill(currentToken(), "Selbstbeherrschung", 0, json.set("{}", "Name", "Selbstbeherrschung (Schmerz IV)", "spec", "Handlungsfähigkeit bewahren"))]
 	[h: res = json.set(res, "Header", "Schmerz IV", "ResultType", "schmerz4")]
 	[h: success = json.get(res, "success")]
 	[h,if(success >= 1),Code:{
@@ -106,5 +106,5 @@
 	[h: scatter(currentToken())]
 }]
 
-[h: res = json.set(res, "Notification", meldung)]
+[h: res = json.set(res, "Notification", json.get(res, "Notification") + meldung)]
 [h: macro.return = res]

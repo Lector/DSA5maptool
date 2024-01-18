@@ -6,7 +6,7 @@
 [h: createTable("randomHerbTable", 1, 1)]
 [h,foreach(krautinlist, allHerbs),code:
 {
-	[h: gelsuch = getProperty(gelaendeKey, krautinlist, "Spieltisch")]
+	[h: gelsuch = getProperty(gelaendeKey, krautinlist, tokenMap(krautinlist))]
 	[h,if(gelsuch > 0),Code:
 	{
 		[h: addTableEntry("randomHerbTable", herbHaufCount, herbHaufCount + gelsuch, krautinlist)]

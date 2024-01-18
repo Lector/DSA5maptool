@@ -21,7 +21,7 @@
 [h: gelaende = json.get(uebergabe, "gelaende")]
 
 <!-- Für diverse Erschwer/Erleichterungen kümmert sich kraeutersucheMods -->
-[h: probeParams = json.set("", "modMacroParams", uebergabe, "modMacro", "kraeutersucheMods@this")]
+[h: probeParams = json.set("", "Name", "Pflanzenkunde", "modMacroParams", uebergabe, "modMacro", "kraeutersucheMods@this")]
 
 [h: closeDialog("kraeutersucheSpeziell")]
 
@@ -30,6 +30,7 @@
 <!-- Endergebnisse werden auf sinnvollen Startwert belegt -->
 [h: funde = "{}"]
 [h: resString = strformat("Es wurde in <b>%{suchDauer} Stunden</b> leider nichts gefunden.")]
+[h: resultSinnesschaerfe = ""]
 
 <!-- -------------------------------------------- -->
 <!-- Jetzt die eigentliche Abfrage für die Proben -->
@@ -94,7 +95,7 @@ skillRollTitle("Pflanzenkunde"), data.getStaticData("com.github.lector.dsa5mapto
 	um die gewünschte Maximal-Suchdauer aus der Eingabemaske einzuhalten.
 	Den Modifikator, wenden wie immer unser ModMacro an.-->
 	[h: uebergabe = json.set(uebergabe, "verkuerzen",  min(0, suchDauer - (basisDauer - zeitErsparnis)) / 2)]
-	[h: probeParams = json.set(probeParams, "spec", "Suche", "modMacroParams", uebergabe)]
+	[h: probeParams = json.set(probeParams, "Name", "Sinnesschärfe", "spec", "Suche", "modMacroParams", uebergabe)]
 
 	<!-- würfel Sinnesschärfe-Probe -->
 	[h: resultSinnesschaerfe = rollSkill(currentToken(), "Sinnesschärfe", 0, probeParams)]
@@ -150,6 +151,9 @@ skillRollTitle("Pflanzenkunde"), data.getStaticData("com.github.lector.dsa5mapto
 		</tr>
 	</table>")]
 }]
+
+[h,if(resultSinnesschaerfe != ""): resString = json.get(resultSinnesschaerfe, "Notification") + resString]
+[h: resString = json.get(resultPflanzenkunde, "Notification") + resString]
 
 <!-- Am Schluss wird die Tabelle geschlossen und das Ergebnis angehängt -->
 [h: outString = outString + "</table>" + subtext(resString)]

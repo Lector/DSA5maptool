@@ -27,7 +27,6 @@
 		
 		[h,if(hasTrait("Nachteile", "Unfähig ("+skill+")") >= 1): params = json.set(params, "reroll", "best")]
 		[h,if(hasTrait("Vorteile", "Begabung ("+skill+")") >= 1): params = json.set(params, "reroll", "worst")]
-		[h: broadcast(params)]
 		[h: Spec = json.get(params, "spec")]
 		[h: SpecSF = "Fertigkeitsspezialisierung ("+skill+": "+Spec+")"]
 		[h,if(Spec != ""), if(hasTrait("AllgemeineSF", SpecSF)): FPBonus = FPBonus + 2]

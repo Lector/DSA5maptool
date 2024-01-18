@@ -21,8 +21,9 @@
 <!-- debugging-Ausgabe wird wahlweise am Ende ausgegeben-->
 [h: outString = ""]
 [h: nahrung = 0]
+[h: resultSinnesschaerfe = ""]
 
-[h: probeParams = json.set(probeParams, "spec", "Nutzpflanzen")]
+[h: probeParams = json.set(probeParams, "Name", "Pflanzenkunde", "spec", "Nutzpflanzen")]
 <!-- würfel Probe -->
 [h: resultPflanzenkunde = rollSkill(currentToken(), "Pflanzenkunde", 0, probeParams)]
 [h: outString = strformat("
@@ -49,7 +50,7 @@ skillRollTitle("Pflanzenkunde"), data.getStaticData("com.github.lector.dsa5mapto
 	[h: uebergabe = json.set(uebergabe, "verkuerzen", -(verkuerzen/2))]
 
 	[h: uebergabe = json.set(uebergabe, "qs", qsPk)]
-	[h: probeParams = json.set(probeParams, "spec", "Suchen", "modMacroParams", uebergabe)]
+	[h: probeParams = json.set(probeParams, "Name", "Sinnesschärfe", "spec", "Suchen", "modMacroParams", uebergabe)]
 	[h: resultSinnesschaerfe = rollSkill(currentToken(), "Sinnesschärfe", 0, probeParams)]
 	[h: qsSs = number(json.get(resultSinnesschaerfe, "qs"))]
 	[h: outString = outString + strformat("
@@ -70,9 +71,12 @@ skillRollTitle("Pflanzenkunde"), data.getStaticData("com.github.lector.dsa5mapto
 	}]
 }]
 
+[h:resString = json.get(resultPflanzenkunde, "Notification")]
+[h,if(resultSinnesschaerfe != ""): resString = resString + json.get(resultSinnesschaerfe, "Notification")]
+
 [h,if(nahrung > 0):
-	resString = strformat("Es wurden <b>%{nahrung} Rationen</b> in <b>%{suchDauer} Stunden</b> gefunden.");
-	resString = strformat("Es wurde in <b>%{suchDauer} Stunden</b> leider nichts gefunden.")]
+	resString = resString + strformat("Es wurden <b>%{nahrung} Rationen</b> in <b>%{suchDauer} Stunden</b> gefunden.");
+	resString = resString + strformat("Es wurde in <b>%{suchDauer} Stunden</b> leider nichts gefunden.")]
 [h: outString = outString + "</table>" + subtext(resString)]
 
 [h: sendTo(chat, border("Nahrungssuche", outString)) ]

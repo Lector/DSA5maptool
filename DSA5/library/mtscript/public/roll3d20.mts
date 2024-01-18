@@ -14,13 +14,13 @@
 [h: name = ""]
 [h,if(params != ""),Code:
 {
+	[h: name = json.get(params, "Name")]
 	[h: reroll = json.get(params, "reroll")]
 	[h: FPBonus = json.get(params, "FPBonus")]
 	[h,if(FPBonus == ""): FPBonus = 0]
 	[h: patzer19 = json.get(params, "patzer19")]
 	[h: modMacro = json.get(params, "modMacro")]
 	[h: modMacroParams = json.get(params, "modMacroParams")]
-	[h: name = json.get(modMacroParams, "Name")]
 }]
 
 <!-- Hier loesen wir MU KL oder aehnliches in den Eigenschaftswert auf
@@ -151,10 +151,13 @@ In future version is would be great to determine a default selection of the rero
 		strformat("<html><b>%{dice3}</b> gewürfelt auf <b>%{e3} (%{aktE3wert})</b></html>")
 	)]
 
+	[h: checkResults = json.get(ergebnis, "checkResults")]
+	[h: worstCheckResult = max(checkResult1, checkResult2, checkResult3)]
+	[h: worstIndex = json.indexOf(checkResults, worstCheckResult)]
 	[h: confirm = input(
 		"junk|<html>Der Vorteil Begabung erlaubt dir einen Würfel neu zu werfen.<br>Es zählt das bessere Ergebnis!<br><br></html>|-|LABEL|SPAN=TRUE",
 		strformat("junk|<html>%{display}</html>|Voräufiges Würfelergebnis|LABEL|SPAN=TRUE"),
-		strformat('toReroll|%{label}|Neu würfeln|LIST|DELIMITER=JSON')
+		strformat('toReroll|%{label}|Neu würfeln|LIST|SELECT=%{worstIndex} DELIMITER=JSON')
 	)]
 
 	[h,if(confirm == 1 && toReroll == 0),Code:{
@@ -180,7 +183,7 @@ In future version is would be great to determine a default selection of the rero
 		[h: ergebnis = json.set(ergebnis,
 			"checkResults", json.append(checkResult1, checkResult2, checkResult3),
 			"dice", json.append(dice1, dice2, dice3),
-			"Notification", json.get(ergebnis, "Notification") + strformat("Wegen Begabung wurde der %d. Würfel wiederholt.<br/>", toReroll+1),
+			"Notification", json.get(ergebnis, "Notification") + strformat("Wegen <b>Begabung</b<>> wurde der %d. Würfel der <b>%{name}</b>-Probe wiederholt.<br/>", toReroll+1),
 			"reroll", rerollResults
 		)]
 		[h: ergebnis = calc3d20(ergebnis, FPBonus, patzer19)]
@@ -192,7 +195,9 @@ In future version is would be great to determine a default selection of the rero
 
 <!-- Fate points can be used to reroll any number of dice -->
 <!-- We only annoy the user if rerolling can result into an advantage -->
-[h,if(fw + FPBonus > fp): offerReroll = 1; offerReroll = 0]
+[h: possibleQS = ceil((fw + FPBonus) / 3)]
+[h: currentQS = ceil(fp / 3)]
+[h,if(possibleQS > currentQS): offerReroll = 1; offerReroll = 0]
 [h,if(success >= 0 && SchiPsAktuell > 0 && offerReroll == 1),Code:{
 	[h: display = show3d20(ergebnis)]
 	[h: display = strformat("
@@ -234,7 +239,7 @@ In future version is would be great to determine a default selection of the rero
 			"checkResults", json.append(checkResult1, checkResult2, checkResult3),
 			"dice", json.append(dice1, dice2, dice3),
 			"reroll", rerollResults,
-			"Notification", json.get(ergebnis, "Notification") + "Mit 1 SchiP neu gewürfelt (bereits abgezogen)<br/>")]
+			"Notification", json.get(ergebnis, "Notification") + strformat("<b>%d Würfel</b> der <b>%{name}</b>-Probe wurden mit <b>1 SchiP</b> neu gewürfelt (bereits abgezogen)<br/>", reroll1 + reroll2 + reroll3))]
 		[h: ergebnis = calc3d20(ergebnis, FPBonus, patzer19)]
 		[h: success = json.get(ergebnis, "success")]
 		[h: fw = json.get(ergebnis, "fw")]
@@ -258,10 +263,10 @@ In future version is would be great to determine a default selection of the rero
 	[h: useFate = 0]
 	[h: confirm = input(
 		strformat("junk|<html>%{display}</html>|Vorläufiges Würfelergebnis|LABEL|SPAN=TRUE"),
-		strformat("useFate|%{useFate}|<html>1 von %{SchiPsAktuell} SchiPs ausgeben um die QS der Probe von %{qs} auf %{nextQS} zu erhöhen.</html>|CHECK|")
+		strformat("useFate|%{useFate}|<html>1 von %{SchiPsAktuell} SchiPs ausgeben um die QS der Probe %{nextQS} zu erhöhen.</html>|CHECK|")
 	)]
 	[h,if(confirm == 1 && useFate == 1),Code:{
-		[h: ergebnis = json.set(ergebnis, "qs", qs + 1, "Notification", json.get(ergebnis, "Notification")+"QS wurde mit 1 SchiP erhöht (bereits abgezogen)<br/>")]
+		[h: ergebnis = json.set(ergebnis, "qs", qs + 1, "Notification", json.get(ergebnis, "Notification") + strformat("Die <b>QS</b> der <b>%{name}</b>-Probe wurde mit <b>1 SchiP</b> erhöht (bereits abgezogen)<br/>"))]
 		[h: SchiPsAktuell = SchiPsAktuell - 1]
 	}]
 }]

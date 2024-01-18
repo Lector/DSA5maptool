@@ -23,15 +23,17 @@
 [h: typ = json.get(uebergabe, "typ")]
 [h: image = json.get(uebergabe, "image")]
 [h: outTitle = typ]
-[h: resString = "Es wurde leider nichts erjagt."]
+[h: resString = ""]
 
 <!-- Vorbereitung der Probenwürfe-->
 [h: probeParams = json.set("{}",
+	"Name", skill1,
 	"modMacroParams", uebergabe,
 	"modMacro", "jagdMods@this",
 	"spec", spec1)]
 <!-- würfel Probe -->
 [h: result1 = rollSkill(currentToken(), skill1, 0, probeParams)]
+[h: result2 = ""]
 
 [h: qs1 = number(json.get(result1, "qs"))]
 [h: jaeger = hasTrait("AllgemeineSF", "Erfolgreicher Jäger", 1, currentToken())]
@@ -62,7 +64,7 @@ skillRollTitle(skill1), show3d20(result1))]
 	Den Modifikator, wenden wie immer unser ModMacro an.-->
 	[h: uebergabe = json.set(uebergabe, "verkuerzen",  min(0, aktSuchDauer - (basisDauer - zeitErsparnis)) / 2)]
 	[h: uebergabe = json.set(uebergabe, "qs", qs1)]
-	[h: probeParams = json.set(probeParams, "modMacroParams", uebergabe, "spec", spec2)]
+	[h: probeParams = json.set(probeParams, "Name", skill2, "modMacroParams", uebergabe, "spec", spec2)]
 	<!-- würfel Verbergen-Probe -->
 	[h: result2 = rollSkill(currentToken(), skill2, 0, probeParams)]
 	
@@ -151,7 +153,9 @@ skillRollTitle(skill1), show3d20(result1))]
 	[h: resString = strformat("In <b>%{aktSuchDauer} Stunden</b> wurde leider nichts erjagt.")]
 }]
 
-[h: outString = outString + "</table>" + subtext(resString)]
+[h: notif = json.get(result1, "Notification")]
+[h,if(result2 != ""): notif = notif + json.get(result2, "Notification")]
+[h: outString = outString + "</table>" + subtext(notif + resString)]
 [h: sendTo(chat, border(outTitle, outString))]
 
 [h: closeDialog("jagd")]

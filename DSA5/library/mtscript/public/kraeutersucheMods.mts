@@ -27,8 +27,8 @@
 {
 	[h: kraut = json.get(uebergabe, "krautSelection")]
 	[h,if(kraut != ""),Code:{
-		[krautMod = getProperty("Suchschwierigkeit", kraut, "Spieltisch")]
-		[modtext = modtext + modReason(krautMod, "wegen Suchschwierigkeit von " + getName(kraut, "Spieltisch"))]
+		[krautMod = getProperty("Suchschwierigkeit", kraut, tokenMap(kraut))]
+		[modtext = modtext + modReason(krautMod, "wegen Suchschwierigkeit von " + getName(kraut, tokenMap(kraut)))]
 		[mod = mod + krautMod]
 	};
 	{
