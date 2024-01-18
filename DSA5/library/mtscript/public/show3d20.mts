@@ -1,9 +1,9 @@
 [h: params = arg(0)]
 
 [h: propertyNames = json.get(params, "propertyNames")]
-[h: E1 = listGet(propertyNames, 0)]
-[h: E2 = listGet(propertyNames, 1)]
-[h: E3 = listGet(propertyNames, 2)]
+[h: E1 = json.get(propertyNames, 0)]
+[h: E2 = json.get(propertyNames, 1)]
+[h: E3 = json.get(propertyNames, 2)]
 [h: fw = json.get(params, "fw")]
 [h: success = json.get(params, "success")]
 [h: dice = json.get(params, "dice")]
@@ -17,14 +17,14 @@
 [h: modText = json.get(params, "modText")]
 [h: bonusText = json.get(params, "bonusText")]
 [h,if(success <= 0): bonusText = ""]
-[h: rerollResult = json.get(params, "reroll")]
+[h: rerollResults = json.get(params, "reroll")]
 
 [h,if(isNumber(E1)),Code:{ [e1title = ""] };{ [e1title = strformat("
 <td style='padding: 1px 0px 1px 0px;'>
 	%{E1}
 </td>
 <td style='padding: 1px 5px 1px 5px;'>
-	|
+	&#124;
 </td>")]
 }]
 [h,if(isNumber(E2)),Code:{ [e2title = ""] };{ [e2title = strformat("
@@ -32,7 +32,7 @@
 	%{E2}
 </td>
 <td style='padding: 1px 5px 1px 5px;'>
-	|
+	&#124;
 </td>")]
 }]
 [h,if(isNumber(E3)),Code:{ [e3title = ""] };{ [e3title = strformat("
@@ -40,7 +40,7 @@
 	%{E3}
 </td>
 <td style='padding: 1px 5px 1px 5px;'>
-	|
+	&#124;
 </td>")]
 }]
 
@@ -65,31 +65,31 @@
 [h,if(mod == 0 && modText == ""): modOutput = ""]
 
 <!--Hier werden Farben und Formatierungen für die Ausgabefelder bestimmt-->
-[h: diceOutputs = ""]
-[h: propertyOutputs = ""]
+[h: diceOutputs = "[]"]
+[h: propertyOutputs = "[]"]
 [h,for(i, 0, 3),Code:
 {
-	[h: currentColor = dieColor(listGet(checkResults, i), 0)]
-	[h: diceOutputs = listAppend(diceOutputs, strformat("<span style='color: %s'>%s</span>", currentColor, listGet(dice, i)))]
-	[h: currentPropertyColor = propertyColor(listGet(currentProperties, i), listGet(properties, i), "#441e13")]
-	[h: propertyOutputs = listAppend(propertyOutputs, strformat("<span style='color:%s'>%s</span>", currentPropertyColor, listGet(currentProperties, i)))]
+	[h: currentColor = dieColor(json.get(checkResults, i), 0)]
+	[h: diceOutputs = json.append(diceOutputs, strformat("<span style='color: %s'>%s</span>", currentColor, json.get(dice, i)))]
+	[h: currentPropertyColor = propertyColor(json.get(currentProperties, i), json.get(properties, i), "#441e13")]
+	[h: propertyOutputs = json.append(propertyOutputs, strformat("<span style='color:%s'>%s</span>", currentPropertyColor, json.get(currentProperties, i)))]
 }]
 
-[h,if(rerollResult != "" && rerollResult != "{}"),Code:
+[h,foreach(rerollResult, rerollResults),Code:
 {
 	[h: index = json.get(rerollResult, "index")]
 	[h: oldValue = json.get(rerollResult, "oldValue")]
-	[h: diceOutputs = listReplace(diceOutputs, index,
-		strformat("<s><span style='color: %s'>&nbsp;%s&nbsp;</span></s>&nbsp;%s", dieColor(oldValue, listGet(currentProperties, index)), oldValue, listGet(diceOutputs, index))
+	[h: diceOutputs = json.set(diceOutputs, index,
+		strformat("<s><span style='color: %s'>&nbsp;%{oldValue}&nbsp;</span></s>&nbsp;%s", dieColor(oldValue, json.get(currentProperties, index)), json.get(diceOutputs, index))
 	)]
-};{}]
+}]
 
-[h: diceOutput1 = listGet(diceOutputs, 0)]
-[h: diceOutput2 = listGet(diceOutputs, 1)]
-[h: diceOutput3 = listGet(diceOutputs, 2)]
-[h: p1 = listGet(propertyOutputs, 0)]
-[h: p2 = listGet(propertyOutputs, 1)]
-[h: p3 = listGet(propertyOutputs, 2)]
+[h: diceOutput1 = json.get(diceOutputs, 0)]
+[h: diceOutput2 = json.get(diceOutputs, 1)]
+[h: diceOutput3 = json.get(diceOutputs, 2)]
+[h: p1 = json.get(propertyOutputs, 0)]
+[h: p2 = json.get(propertyOutputs, 1)]
+[h: p3 = json.get(propertyOutputs, 2)]
 
 [h,if(qs > 0): qualitaetTitle = "Die maximale Erschwernis, mit der die Probe noch gelungen wäre"; qualitaetTitle = "Die minimale Erleichterung, die notwendig wäre um die Probe zu schaffen"]
 
@@ -102,7 +102,7 @@
 					%{p1}%{modOutput}
 				</td>
 				<td style='padding: 1px 5px 1px 5px'>
-					|
+					&#124;
 				</td>
 				<td style='padding: 1px 0px 1px 0px; white-space: nowrap;'>
 					%{diceOutput1}
@@ -114,7 +114,7 @@
 					%{p2}%{modOutput}
 				</td>
 				<td style='padding: 1px 5px 1px 5px;'>
-					|
+					&#124;
 				</td>
 				<td style='padding: 1px 0px 1px 0px; white-space: nowrap;'>
 					%{diceOutput2}
@@ -126,7 +126,7 @@
 					%{p3}%{modOutput}
 				</td>
 				<td style='padding: 1px 5px 1px 5px;'>
-					|
+					&#124;
 				</td>
 				<td style='padding: 1px 0px 1px 0px; white-space: nowrap;'>
 					%{diceOutput3}

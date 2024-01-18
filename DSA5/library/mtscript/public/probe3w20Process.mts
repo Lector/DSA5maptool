@@ -37,10 +37,11 @@ Dies soll von den unterschiedlichen Aufrufskripten alles mit übergeben werden
 [h: modMacro = json.get(uebergabe, "modMacro")]
 [h: patzer19 = json.get(uebergabe, "patzer19")]
 [h: reroll = json.get(uebergabe, "reroll")]
-[h: subtext = ""]
 [h: params = json.set("{}", "patzer19", json.get(uebergabe, "patzer19"), "reroll", reroll, "modMacro", modMacro, "modMacroParams", uebergabe)]
 
 [h: ergebnis = roll3d20(currentToken(), E1, E2, E3, Wert, 0, params)]
+[h: subtext = json.get(ergebnis, "Notification")]
+
 [h: success = json.get(ergebnis, "success")]
 
 [h,if(success >= 1), Code:

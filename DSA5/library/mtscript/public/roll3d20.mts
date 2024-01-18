@@ -11,6 +11,7 @@
 [h: patzer19 = 0]
 [h: modMacro = ""]
 [h: params = arg(6)]
+[h: name = ""]
 [h,if(params != ""),Code:
 {
 	[h: reroll = json.get(params, "reroll")]
@@ -19,7 +20,8 @@
 	[h: patzer19 = json.get(params, "patzer19")]
 	[h: modMacro = json.get(params, "modMacro")]
 	[h: modMacroParams = json.get(params, "modMacroParams")]
-};{}]
+	[h: name = json.get(modMacroParams, "Name")]
+}]
 
 <!-- Hier loesen wir MU KL oder aehnliches in den Eigenschaftswert auf
 Es werden auch die aktuellen Eigenschaften ermittelt. Durch temporaere Effekte oder Zustaende koennen sie geaendert sein -->
@@ -63,7 +65,7 @@ Dieses Skript kann dann die unterschiedlichen Parameter aus der Übergabe ausles
 	[FWBonus = json.get(macro.return, "bonus")]
 	[if(FWBonus != ""): Wert = Wert + FWBonus]
 	[FPBonus = json.get(macro.return, "fpbonus")]
-	[if(FPBonus != ""): params = json.set(params, "FPBonus", FPBonus)]
+	[if(FPBonus != ""): params = json.set(params, "FPBonus", FPBonus); FPBonus = 0]
 	[bonustext = json.get(macro.return, "bonustext")]
 	[if(bonustext != ""): bonustext = "title='" + bonustext + "'"]
 	[modtext = json.get(macro.return, "modtext")]
@@ -79,35 +81,70 @@ Dieses Skript kann dann die unterschiedlichen Parameter aus der Übergabe ausles
 [h: checkResult2 = dice2 - (aktE2wert + mod)]
 [h: checkResult3 = dice3 - (aktE3wert + mod)]
 
-[h: rerollResult = "{}"]
+[h: rerollResults = "[]"]
 [h: toReroll = -1]
 [h,if(reroll == "best"),Code:
 {
 	[toReroll = min(checkResult1, checkResult2, checkResult3)]
 	[if(toReroll == checkResult1),Code:
 	{
-		[h: rerollResult = json.set(rerollResult, "index", 0)]
-		[h: rerollResult = json.set(rerollResult, "oldValue", dice1)]
+		[h: rerollResults = json.append(rerollResults, json.set("{}", "index", 0, "oldValue", dice1))]
 		[h: dice1 = 1d20]
 		[h: checkResult1 = dice1 - (aktE1wert + mod)]
 	}]
 	[if(toReroll == checkResult2 && rerollResult == "{}"),Code:
 	{
-		[h: rerollResult = json.set(rerollResult, "index", 1)]
-		[h: rerollResult = json.set(rerollResult, "oldValue", dice2)]
+		[h: rerollResults = json.append(rerollResults, json.set("{}", "index", 1, "oldValue", dice2))]
 		[h: dice2 = 1d20]
 		[h: checkResult2 = dice2 - (aktE2wert + mod)]
 	}]
 	[if(toReroll == checkResult3 && rerollResult == "{}"),Code:
 	{
-		[h: rerollResult = json.set(rerollResult, "index", 2)]
-		[h: rerollResult = json.set(rerollResult, "oldValue", dice3)]
+		[h: rerollResults = json.append(rerollResults, json.set("{}", "index", 2, "oldValue", dice3))]
 		[h: dice3 = 1d20]
 		[h: checkResult3 = dice3 - (aktE3wert + mod)]
 	}]
 }]
-[h,if(reroll == "worst"),Code:
+
+[h: ergebnis = json.set("{}",
+"ResultType", "3d20",
+"mod", mod,
+"fw", Wert,
+"dice", json.append(dice1, dice2, dice3),
+"properties", json.append(e1wert, e2wert, e3wert),
+"currentProperties", json.append(aktE1Wert, aktE2Wert, aktE3Wert),
+"checkResults", json.append(checkResult1, checkResult2, checkResult3),
+"propertyNames", json.append(E1, E2, E3),
+"modText", modtext,
+"bonusText", bonustext,
+"reroll", rerollResults)]
+
+[h: ergebnis = calc3d20(ergebnis, FPBonus, patzer19)]
+[h: success = json.get(ergebnis, "success")]
+[h: fw = json.get(ergebnis, "fw")]
+[h: fp = json.get(ergebnis, "fp")]
+
+<!-- Rerolling the 'worst' die is a bit tricky because there is no rational way to determine what the 'worst' die is.
+Determing the die that should be rerolled often depends on preferences on risk and reward. Thats why we open a prompt here
+In future version is would be great to determine a default selection of the rerolling die -->
+
+<!-- we only annoy the user with the aptitude dialog if using it can result into an advantage -->
+<!-- only offer the aptitude if at least one skill point got lost due to the dice -->
+[h,if(fw + FPBonus > fp): useAptitude = 1; useAptitude = 0]
+<!-- If we have rolled a 1 we always offer the aptitude. This could enforce a critical success -->
+[h: dice = json.get(ergebnis, "dice")]
+[h,if(json.contains(dice, 1) > 0): useAptitude = 1)]
+[h,if(reroll == "worst" && success >= 0 && useAptitude == 1),Code:
 {
+	[h: display = show3d20(ergebnis)]
+	[h: display = strformat("
+	<table style='border-spacing: 0px; margin-top: 3px; font-weight: bold;'>
+		<tr>
+			%{display}
+		</tr>
+	</table>")]
+	[h: display = border(name, display)]
+
 	[h: label = json.append(
 		strformat("<html><b>%{dice1}</b> gewürfelt auf <b>%{e1} (%{aktE1wert})</b></html>"),
 		strformat("<html><b>%{dice2}</b> gewürfelt auf <b>%{e2} (%{aktE2wert})</b></html>"),
@@ -116,102 +153,117 @@ Dieses Skript kann dann die unterschiedlichen Parameter aus der Übergabe ausles
 
 	[h: confirm = input(
 		"junk|<html>Der Vorteil Begabung erlaubt dir einen Würfel neu zu werfen.<br>Es zählt das bessere Ergebnis!<br><br></html>|-|LABEL|SPAN=TRUE",
-		strformat('toReroll|%{label}|Neu würfeln|RADIO|DELIMITER=JSON')
+		strformat("junk|<html>%{display}</html>|Voräufiges Würfelergebnis|LABEL|SPAN=TRUE"),
+		strformat('toReroll|%{label}|Neu würfeln|LIST|DELIMITER=JSON')
 	)]
 
 	[h,if(confirm == 1 && toReroll == 0),Code:{
-		[h: rerollResult = json.set(rerollResult, "index", 0)]
 		[h: newDice = 1d20]
-		[h: rerollResult = json.set(rerollResult, "oldValue", max(newDice, dice1))]
+		[h: rerollResults = json.append(rerollResults, json.set("{}", "index", 0, "oldValue", max(newDice, dice1)))]
 		[h: dice1 = min(newDice, dice1)]
 		[h: checkResult1 = dice1 - (aktE1wert + mod)]
 	}]
 	[h,if(confirm == 1 && toReroll == 1),Code:{
-		[h: rerollResult = json.set(rerollResult, "index", 1)]
 		[h: newDice = 1d20]
-		[h: rerollResult = json.set(rerollResult, "oldValue", max(newDice, dice2))]
+		[h: rerollResults = json.append(rerollResults, json.set("{}", "index", 1, "oldValue", max(newDice, dice2)))]
 		[h: dice2 = min(newDice, dice2)]
 		[h: checkResult2 = dice2 - (aktE2wert + mod)]
 	}]
 	[h,if(confirm == 1 && toReroll == 2),Code:{
-		[h: rerollResult = json.set(rerollResult, "index", 2)]
 		[h: newDice = 1d20]
-		[h: rerollResult = json.set(rerollResult, "oldValue", max(newDice, dice3))]
+		[h: rerollResults = json.append(rerollResults, json.set("{}", "index", 2, "oldValue", max(newDice, dice3)))]
 		[h: dice3 = min(newDice, dice3)]
 		[h: checkResult3 = dice3 - (aktE3wert + mod)]
 	}]
+
+	[h,if(confirm == 1),Code:{
+		[h: ergebnis = json.set(ergebnis,
+			"checkResults", json.append(checkResult1, checkResult2, checkResult3),
+			"dice", json.append(dice1, dice2, dice3),
+			"Notification", json.get(ergebnis, "Notification") + strformat("Wegen Begabung wurde der %d. Würfel wiederholt.<br/>", toReroll+1),
+			"reroll", rerollResults
+		)]
+		[h: ergebnis = calc3d20(ergebnis, FPBonus, patzer19)]
+		[h: success = json.get(ergebnis, "success")]
+		[h: fw = json.get(ergebnis, "fw")]
+		[h: fp = json.get(ergebnis, "fp")]
+	}]
 }]
 
-[h: fp = Wert - max(0, checkResult1) - max(0, checkResult2) - max(0, checkResult3)]
+<!-- Fate points can be used to reroll any number of dice -->
+<!-- We only annoy the user if rerolling can result into an advantage -->
+[h,if(fw + FPBonus > fp): offerReroll = 1; offerReroll = 0]
+[h,if(success >= 0 && SchiPsAktuell > 0 && offerReroll == 1),Code:{
+	[h: display = show3d20(ergebnis)]
+	[h: display = strformat("
+	<table style='border-spacing: 0px; margin-top: 3px; font-weight: bold;'>
+		<tr>
+			%{display}
+		</tr>
+	</table>")]
+	[h: display = border(name, display)]
+	[h: reroll1 = 0]
+	[h: reroll2 = 0]
+	[h: reroll3 = 0]
+	[h: confirm = input(
+		strformat("junk|<html>Für 1 von %{SchiPsAktuell} SchiPs können beliebig viele Würfe wiederholt werden.<br>Das neue Ergebnis ist bindend!</html>|Vorläufiges Würfelergebnis|LABEL|SPAN=TRUE"),
+		strformat("junk|<html>%{display}</html>|Vorläufiges Würfelergebnis|LABEL|SPAN=TRUE"),
+		strformat("reroll1|%{reroll1}|<html><b>%{e1} (%{aktE1wert})</b> gewürfelt <b>%{dice1}</b> neu würfeln</html>|CHECK|"),
+		strformat("reroll2|%{reroll2}|<html><b>%{e2} (%{aktE2wert})</b> gewürfelt <b>%{dice2}</b> neu würfeln</html>|CHECK|"),
+		strformat("reroll3|%{reroll3}|<html><b>%{e3} (%{aktE3wert})</b> gewürfelt <b>%{dice3}</b> neu würfeln</html>|CHECK|")
+	)]
 
-<!--Hier berechnen wir die Qualität der Probe. Das ist mit DSA5-Regeln etwas komplexer als bei 4.1-->
-<!--Die Qualität gibt an um wie viel (eine misslungene Probe erleichtert / eine gelungene Probe erschwert) sein müsste damit sie gerade so gelingen würde-->
-[h, if(fp < 0), Code:
-{
-	[success = 0]
-	[repair = fp]
-	[reqBonus = 0]
-	[while(repair < 0), Code:
-	{
-		[if(checkResult1 - reqBonus > 0): repair = repair + 1]
-		[if(checkResult2 - reqBonus > 0): repair = repair + 1]
-		[if(checkResult3 - reqBonus > 0): repair = repair + 1]
-		[reqBonus = reqBonus + 1]
+	[h,if(confirm == 1 && reroll1 == 1),Code:{
+		[h: rerollResults = json.append(rerollResults, json.set("{}", "index", 0, "oldValue", dice1))]
+		[dice1 = 1d20]
+		[h: checkResult1 = dice1 - (aktE1wert + mod)]
 	}]
-	[maxMalus = 0]
-	[quali = -reqBonus]
-	[qs = 0]
-};
-{
-	[success = 1]
-	[reqBonus = 0]
-	[destroy = fp]
-	[maxMalus = 0]
-	[while(destroy >= 0), Code:
-	{
-		[maxMalus = maxMalus + 1]
-		[if(checkResult1 + maxMalus > 0): destroy = destroy - 1]
-		[if(checkResult2 + maxMalus > 0): destroy = destroy - 1]
-		[if(checkResult3 + maxMalus > 0): destroy = destroy - 1]
+	[h,if(confirm == 1 && reroll2 == 1),Code:{
+		[h: rerollResults = json.append(rerollResults, json.set("{}", "index", 1, "oldValue", dice2))]
+		[dice2 = 1d20]
+		[h: checkResult2 = dice2 - (aktE2wert + mod)]
 	}]
-	[quali = maxMalus - 1]
-	[fp = fp + FPBonus]
-	[qs = min(6, max(1, ceil(fp / 3)))]
+	[h,if(confirm == 1 && reroll3 == 1),Code:{
+		[h: rerollResults = json.append(rerollResults, json.set("{}", "index", 2, "oldValue", dice3))]
+		[dice3 = 1d20]
+		[h: checkResult3 = dice3 - (aktE3wert + mod)]
+	}]
+	[h,if(confirm == 1 && reroll1 + reroll2 + reroll3 > 0),Code:
+	{
+		[h: ergebnis = json.set(ergebnis,
+			"checkResults", json.append(checkResult1, checkResult2, checkResult3),
+			"dice", json.append(dice1, dice2, dice3),
+			"reroll", rerollResults,
+			"Notification", json.get(ergebnis, "Notification") + "Mit 1 SchiP neu gewürfelt (bereits abgezogen)<br/>")]
+		[h: ergebnis = calc3d20(ergebnis, FPBonus, patzer19)]
+		[h: success = json.get(ergebnis, "success")]
+		[h: fw = json.get(ergebnis, "fw")]
+		[h: fp = json.get(ergebnis, "fp")]
+		[h: SchiPsAktuell = SchiPsAktuell - 1]
+	}]
 }]
 
-[h: dice = dice1 + ", " + dice2 + ", " + dice3]
-
-<!--Kritische Erfolge gelingen immer. Patzer gelingen nie-->
-[h,if(listContains(dice, "1") >= 2), Code:
-{
-	[fp = Wert]
-	[qs = max(1, min(6, ceil(fp / 3)))]
-	[success = listContains(dice, "1")]
-};{}]
-[h: patzerZahlen = listContains(dice, "20")]
-[h,if(patzer19 == 1): patzerZahlen = patzerZahlen + listContains(dice, "19")]
-[h,if(patzerZahlen >= 2), Code:
-{
-	[fp = 0]
-	[qs = 0]
-	[success = 1 - patzerZahlen]
-};{}]
-
-[h: ergebnis = json.set("{}",
-"ResultType", "3d20",
-"success", success,
-"mod", mod,
-"fw", Wert,
-"fp", fp,
-"qs", qs,
-"quality", quali,
-"dice", dice,
-"properties", e1wert + ", " + e2wert + ", " + e3wert,
-"currentProperties", aktE1Wert + ", " + aktE2Wert + ", " + aktE3Wert,
-"checkResults", checkResult1 + ", " + checkResult2 + ", " + checkResult3,
-"propertyNames", E1 + ", " + E2 + ", " + E3,
-"modText", modtext,
-"bonusText", bonustext,
-"reroll", rerollResult)]
+<!-- Fate points can be used to increase the quality of a successful check by 1 -->
+[h,if(success == 1 && SchiPsAktuell > 0),Code:{
+	[h: qs = json.get(ergebnis, "qs")]
+	[h: nextQS = qs + 1]
+	[h: display = show3d20(ergebnis)]
+	[h: display = strformat("
+	<table style='border-spacing: 0px; margin-top: 3px; font-weight: bold;'>
+		<tr>
+			%{display}
+		</tr>
+	</table>")]
+	[h: display = border(name, display)]
+	[h: useFate = 0]
+	[h: confirm = input(
+		strformat("junk|<html>%{display}</html>|Vorläufiges Würfelergebnis|LABEL|SPAN=TRUE"),
+		strformat("useFate|%{useFate}|<html>1 von %{SchiPsAktuell} SchiPs ausgeben um die QS der Probe von %{qs} auf %{nextQS} zu erhöhen.</html>|CHECK|")
+	)]
+	[h,if(confirm == 1 && useFate == 1),Code:{
+		[h: ergebnis = json.set(ergebnis, "qs", qs + 1, "Notification", json.get(ergebnis, "Notification")+"QS wurde mit 1 SchiP erhöht (bereits abgezogen)<br/>")]
+		[h: SchiPsAktuell = SchiPsAktuell - 1]
+	}]
+}]
 
 [h: macro.return = ergebnis]
