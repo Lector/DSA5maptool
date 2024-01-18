@@ -4,7 +4,7 @@
 [h,if(json.length(macro.args) > 3): modMacroParams = arg(3); modMacroParams = ""]
 
 [h,if(zone == "Kopf" || zone == "Torso"): spec = "Handlungsfähigkeit bewahren"; spec = "Störungen ignorieren"]
-[h: skillParams = json.set("{}", "Name", "Selbstbeherrschung (Wundeffekt)", "modMacro", "probeTalentMods@this", "modMacroParams", modMacroParams, "spec", spec)]
+[h: skillParams = json.set("{}", "Name", "Selbstbeherrschung (Wundeffekt)", "modMacro", "probeTalentMods@this", "modMacroParams", modMacroParams, "spec", spec, "QSMatter", 0)]
 [h: skillResult = rollSkill(currentToken(), "Selbstbeherrschung", -wound, skillParams)]
 [h: success = json.get(skillResult, "success")]
 [h,if(success > 0),Code:{

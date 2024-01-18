@@ -1,3 +1,4 @@
+[h: switchToken(arg(0))]
 [h: map = tokenMap(arg(0))]
 [h: E1 = arg(1)]
 [h: E2 = arg(2)]
@@ -12,6 +13,7 @@
 [h: modMacro = ""]
 [h: params = arg(6)]
 [h: name = ""]
+[h: qsmatter = 1]
 [h,if(params != ""),Code:
 {
 	[h: name = json.get(params, "Name")]
@@ -21,8 +23,11 @@
 	[h: patzer19 = json.get(params, "patzer19")]
 	[h: modMacro = json.get(params, "modMacro")]
 	[h: modMacroParams = json.get(params, "modMacroParams")]
+	[h: qsmatter = json.get(params, "QSMatter")]
+	[h,if(qsmatter == ""): qsmatter = 1]
 }]
 
+[h: SchiPsInitial = SchiPsAktuell]
 <!-- Hier loesen wir MU KL oder aehnliches in den Eigenschaftswert auf
 Es werden auch die aktuellen Eigenschaften ermittelt. Durch temporaere Effekte oder Zustaende koennen sie geaendert sein -->
 [h,if(isNumber(e1)),Code:{
@@ -131,6 +136,8 @@ In future version is would be great to determine a default selection of the rero
 <!-- we only annoy the user with the aptitude dialog if using it can result into an advantage -->
 <!-- only offer the aptitude if at least one skill point got lost due to the dice -->
 [h,if(fw + FPBonus > fp): useAptitude = 1; useAptitude = 0]
+<!-- If QS wont matter we do not annoy the user if we already succeeded -->
+[h,if(fp >= 0 && qsmatter == 0): useAptitude = 0]
 <!-- If we have rolled a 1 we always offer the aptitude. This could enforce a critical success -->
 [h: dice = json.get(ergebnis, "dice")]
 [h,if(json.contains(dice, 1) > 0): useAptitude = 1)]
@@ -198,6 +205,8 @@ In future version is would be great to determine a default selection of the rero
 [h: possibleQS = ceil((fw + FPBonus) / 3)]
 [h: currentQS = ceil(fp / 3)]
 [h,if(possibleQS > currentQS): offerReroll = 1; offerReroll = 0]
+<!-- If QS wont matter we do not annoy the user if we already succeeded -->
+[h,if(fp >= 0 && qsmatter == 0): offerReroll = 0]
 [h,if(success >= 0 && SchiPsAktuell > 0 && offerReroll == 1),Code:{
 	[h: display = show3d20(ergebnis)]
 	[h: display = strformat("
@@ -248,8 +257,12 @@ In future version is would be great to determine a default selection of the rero
 	}]
 }]
 
+<!-- If QS wont matter we do not annoy the user if we already succeeded -->
 <!-- Fate points can be used to increase the quality of a successful check by 1 -->
-[h,if(success == 1 && SchiPsAktuell > 0),Code:{
+
+[h: schicksalsmacht = hasTrait("AllgemeineSF", "Schicksalsmacht", 1, currentToken())]
+[h,if(schicksalsmacht == 0 && SchiPsInitial > SchiPsAktuell): offerQSPlus = 0; offerQSPlus = 1]
+[h,if(success == 1 && SchiPsAktuell > 0 && qsmatter == 1 && offerQSPlus),Code:{
 	[h: qs = json.get(ergebnis, "qs")]
 	[h: nextQS = qs + 1]
 	[h: display = show3d20(ergebnis)]
