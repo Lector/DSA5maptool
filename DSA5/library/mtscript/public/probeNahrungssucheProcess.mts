@@ -23,7 +23,7 @@
 [h: nahrung = 0]
 [h: resultSinnesschaerfe = ""]
 
-[h: probeParams = json.set(probeParams, "Name", "Pflanzenkunde", "spec", "Nutzpflanzen")]
+[h: probeParams = json.set(probeParams, "Name", "Pflanzenkunde", "spec", "Nutzpflanzen", "QSMatter", 1)]
 <!-- würfel Probe -->
 [h: resultPflanzenkunde = rollSkill(currentToken(), "Pflanzenkunde", 0, probeParams)]
 [h: outString = strformat("
@@ -50,7 +50,7 @@ skillRollTitle("Pflanzenkunde"), data.getStaticData("com.github.lector.dsa5mapto
 	[h: uebergabe = json.set(uebergabe, "verkuerzen", -(verkuerzen/2))]
 
 	[h: uebergabe = json.set(uebergabe, "qs", qsPk)]
-	[h: probeParams = json.set(probeParams, "Name", "Sinnesschärfe", "spec", "Suchen", "modMacroParams", uebergabe)]
+	[h: probeParams = json.set(probeParams, "Name", "Sinnesschärfe", "spec", "Suchen", "modMacroParams", uebergabe, "QSMatter", 1)]
 	[h: resultSinnesschaerfe = rollSkill(currentToken(), "Sinnesschärfe", 0, probeParams)]
 	[h: qsSs = number(json.get(resultSinnesschaerfe, "qs"))]
 	[h: outString = outString + strformat("

@@ -13,7 +13,7 @@
 [h: modMacro = ""]
 [h: params = arg(6)]
 [h: name = ""]
-[h: qsmatter = 1]
+[h: qsmatter = 0]
 [h,if(params != ""),Code:
 {
 	[h: name = json.get(params, "Name")]
@@ -24,7 +24,7 @@
 	[h: modMacro = json.get(params, "modMacro")]
 	[h: modMacroParams = json.get(params, "modMacroParams")]
 	[h: qsmatter = json.get(params, "QSMatter")]
-	[h,if(qsmatter == ""): qsmatter = 1]
+	[h,if(qsmatter == ""): qsmatter = 0]
 }]
 
 [h: SchiPsInitial = SchiPsAktuell]
@@ -136,8 +136,6 @@ In future version is would be great to determine a default selection of the rero
 <!-- we only annoy the user with the aptitude dialog if using it can result into an advantage -->
 <!-- only offer the aptitude if at least one skill point got lost due to the dice -->
 [h,if(fw + FPBonus > fp): useAptitude = 1; useAptitude = 0]
-<!-- If QS wont matter we do not annoy the user if we already succeeded -->
-[h,if(fp >= 0 && qsmatter == 0): useAptitude = 0]
 <!-- If we have rolled a 1 we always offer the aptitude. This could enforce a critical success -->
 [h: dice = json.get(ergebnis, "dice")]
 [h,if(json.contains(dice, 1) > 0): useAptitude = 1)]
@@ -190,7 +188,7 @@ In future version is would be great to determine a default selection of the rero
 		[h: ergebnis = json.set(ergebnis,
 			"checkResults", json.append(checkResult1, checkResult2, checkResult3),
 			"dice", json.append(dice1, dice2, dice3),
-			"Notification", json.get(ergebnis, "Notification") + strformat("Wegen <b>Begabung</b<>> wurde der %d. Würfel der <b>%{name}</b>-Probe wiederholt.<br/>", toReroll+1),
+			"Notification", json.get(ergebnis, "Notification") + strformat("Wegen <b>Begabung</b> wurde der %d. Würfel der <b>%{name}</b>-Probe wiederholt.<br/>", toReroll+1),
 			"reroll", rerollResults
 		)]
 		[h: ergebnis = calc3d20(ergebnis, FPBonus, patzer19)]
@@ -262,7 +260,7 @@ In future version is would be great to determine a default selection of the rero
 
 [h: schicksalsmacht = hasTrait("AllgemeineSF", "Schicksalsmacht", 1, currentToken())]
 [h,if(schicksalsmacht == 0 && SchiPsInitial > SchiPsAktuell): offerQSPlus = 0; offerQSPlus = 1]
-[h,if(success == 1 && SchiPsAktuell > 0 && qsmatter == 1 && offerQSPlus),Code:{
+[h,if(success == 1 && SchiPsAktuell > 0 && qsmatter == 1 && offerQSPlus == 1),Code:{
 	[h: qs = json.get(ergebnis, "qs")]
 	[h: nextQS = qs + 1]
 	[h: display = show3d20(ergebnis)]

@@ -21,7 +21,7 @@
 [h: gelaende = json.get(uebergabe, "gelaende")]
 
 <!-- Für diverse Erschwer/Erleichterungen kümmert sich kraeutersucheMods -->
-[h: probeParams = json.set("", "Name", "Pflanzenkunde", "modMacroParams", uebergabe, "modMacro", "kraeutersucheMods@this")]
+[h: probeParams = json.set("", "Name", "Pflanzenkunde", "modMacroParams", uebergabe, "modMacro", "kraeutersucheMods@this", "QSMatter", 1)]
 
 [h: closeDialog("kraeutersucheSpeziell")]
 
@@ -95,7 +95,7 @@ skillRollTitle("Pflanzenkunde"), data.getStaticData("com.github.lector.dsa5mapto
 	um die gewünschte Maximal-Suchdauer aus der Eingabemaske einzuhalten.
 	Den Modifikator, wenden wie immer unser ModMacro an.-->
 	[h: uebergabe = json.set(uebergabe, "verkuerzen",  min(0, suchDauer - (basisDauer - zeitErsparnis)) / 2)]
-	[h: probeParams = json.set(probeParams, "Name", "Sinnesschärfe", "spec", "Suche", "modMacroParams", uebergabe)]
+	[h: probeParams = json.set(probeParams, "Name", "Sinnesschärfe", "spec", "Suche", "modMacroParams", uebergabe, "QSMatter", 0)]
 
 	<!-- würfel Sinnesschärfe-Probe -->
 	[h: resultSinnesschaerfe = rollSkill(currentToken(), "Sinnesschärfe", 0, probeParams)]
