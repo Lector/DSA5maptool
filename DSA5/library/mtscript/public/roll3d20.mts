@@ -274,7 +274,7 @@ In future version is would be great to determine a default selection of the rero
 	[h: useFate = 0]
 	[h: confirm = input(
 		strformat("junk|<html>%{display}</html>|Vorläufiges Würfelergebnis|LABEL|SPAN=TRUE"),
-		strformat("useFate|%{useFate}|<html>1 von %{SchiPsAktuell} SchiPs ausgeben um die QS der Probe %{nextQS} zu erhöhen.</html>|CHECK|")
+		strformat("useFate|%{useFate}|<html>1 von %{SchiPsAktuell} SchiPs ausgeben um die QS der Probe auf %{nextQS} zu erhöhen.</html>|CHECK|")
 	)]
 	[h,if(confirm == 1 && useFate == 1),Code:{
 		[h: ergebnis = json.set(ergebnis, "qs", qs + 1, "Notification", json.get(ergebnis, "Notification") + strformat("Die <b>QS</b> der <b>%{name}</b>-Probe wurde mit <b>1 SchiP</b> erhöht (bereits abgezogen)<br/>"))]
