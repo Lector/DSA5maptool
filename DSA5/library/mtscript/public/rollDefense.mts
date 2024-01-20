@@ -28,7 +28,7 @@
 	[damageType = json.get(params, "damageType")]
 	[multiplier = json.get(params, "multiplier")]
 	[zone = json.get(params, "zone")]
-};{}]
+}]
 [h,if(status == ""): status = "[]"]
 [h,if(damageType == ""): damageType = "TP"]
 [h,if(multiplier == ""): multiplier = 1]
@@ -43,7 +43,7 @@
 {
 	[h: technik = json.get(weapon, "Technik")]
 	[h,if(technik != "Raufen" && technik != ""): patzerTabelle = "patzerNahkampf"]
-	[h: params = json.set(params, "rerollConfirm", hasTrait("Vorteile", "Waffenbegabung ("+technik+")", 1, tok))]
+	[h: params = json.set(params, "Name", "Verteidigung", "rerollConfirm", hasTrait("Vorteile", "Waffenbegabung ("+technik+")", 1, tok))]
 }]
 
 <!-- Zuerst wird eine Verteidigung gewürfelt. -->
@@ -59,7 +59,7 @@ und geben diesen in die noch offene Tabelle aus -->
 {
 	[h: damageResult = takeDamage(currentToken(), damage, 0, zone, damageType, multiplier, status, failText)]
 	[h: subResults = json.append(subResults, damageResult))]
-};{}]
+}]
 
 <!-- Wir zählen den VT-Tracker 1 hoch falls wir in der INI sind -->
 [h: hasIni = hasInitiative(currentToken())]

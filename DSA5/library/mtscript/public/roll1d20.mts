@@ -6,11 +6,14 @@
 [h: params = ""]
 [h: modMacro = ""]
 [h: modText = ""]
+                 
 [h: pruefwurf = 1]
 [h: pruefReroll = 0]
 [h: patzer19 = 0]
+[h: name = ""]
 [h,if(json.length(macro.args) > 3),Code:{
-	[params = arg(3)]
+	[h: params = arg(3)]
+	[h: name = json.get(params, "Name")]
 	[h: modMacro = json.get(params, "modMacro")]
 	[h: modMacroParams = json.get(params, "modMacroParams")]
 	[h,if(json.contains(params, "confirm")): pruefwurf = json.get(params, "confirm")]
@@ -24,7 +27,7 @@
 	[h: origProp = eval(property)]
 	[h,macro("probeGetAktWert@this"): property]
 	[h: property = macro.return]
-};{}]
+}]
 
 [h,if(modMacro != ""), Code:
 {
@@ -41,37 +44,41 @@
 [h: dice2 = 1d20]
 [h: dice3 = 1d20]
 
-[h: quali = (property+mod) - dice1]
-
-[h: dice = dice1]
-
-[h,if(pruefwurf == 1 && (dice1 == 1 || dice1 >= critFail)): dice = listAppend(dice1, dice2)]
-[h,if(pruefReroll == 1),Code:{
-	[dicePruef = min(dice2, dice3)]
-	[h,if(dice1 == 1 || dice1 >= critFail): dice = listAppend(dice, dice3)]
-};{
-	[dicePruef = dice2]
-}]
-[h,if(quali >= 0 && dice1 < critFail): success = 1; success = 0]
-[h,if(pruefwurf == 1 && dice1 >= critFail && dicePruef > property + mod), Code:
-{
-	[if(dicePruef >= critFail): success = -2; success = -1]
-}]
-[h,if(pruefwurf == 1 && dice1 == 1), Code:
-{
-	[if(dicePruef <= property + mod): success = 3; success = 2]
-}]
-
 [h: ergebnis = json.set("{}",
 "ResultType", "1d20",
-"success", success,
 "mod", mod,
-"quality", quali,
-"dice", dice,
+"dice", json.append(dice1, dice2, dice3),
 "property", origProp,
 "currentProperty", property,
 "modText", modtext,
 "pruefwurf", pruefwurf,
-"pruefreroll", pruefreroll)]
+"pruefreroll", pruefreroll,
+"critFail", critFail)]
+
+[h: ergebnis = calc1d20(ergebnis)]
+
+[h: success = json.get(ergebnis, "success")]
+
+[h,if(SchiPsAktuell > 0 && success == 0 && name != ""),Code:{
+	[h: display = show1d20(ergebnis)]
+	[h: display = strformat("
+	<table style='border-spacing: 0px; margin-top: 3px; font-weight: bold;'>
+		<tr>
+			%{display}
+		</tr>
+	</table>")]
+	[h: display = border(name, display)]
+	[h: useFate = 0]
+	[h: confirm = input(
+		strformat("junk|<html>%{display}</html>|Vorläufiges Würfelergebnis|LABEL|SPAN=TRUE"),
+		strformat("useFate|%{useFate}|<html>1 von %{SchiPsAktuell} SchiPs ausgeben um erneut zu würfeln.</html>|CHECK|")
+	)]
+	[h,if(confirm == 1 && useFate == 1),Code:{
+		[h: ergebnis = calc1d20(json.set(ergebnis, "dice", json.append("[]", 1d20, 1d20, 1d20)))]
+		[h: ergebnis = json.set(ergebnis, "Notification", json.get(ergebnis, "Notification") + strformat("Die <b>%{name}</b>-Probe wurde mit <b>1 SchiP</b> neu gewürfelt (bereits abgezogen)<br/>"))]
+		[h: SchiPsAktuell = SchiPsAktuell - 1]
+		[h: refreshFrame(currentToken())]
+	}]
+}]
 
 [h: macro.return = ergebnis]

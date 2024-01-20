@@ -252,6 +252,7 @@ In future version is would be great to determine a default selection of the rero
 		[h: fw = json.get(ergebnis, "fw")]
 		[h: fp = json.get(ergebnis, "fp")]
 		[h: SchiPsAktuell = SchiPsAktuell - 1]
+		[h: refreshFrame(currentToken())]
 	}]
 }]
 
@@ -279,6 +280,7 @@ In future version is would be great to determine a default selection of the rero
 	[h,if(confirm == 1 && useFate == 1),Code:{
 		[h: ergebnis = json.set(ergebnis, "qs", qs + 1, "Notification", json.get(ergebnis, "Notification") + strformat("Die <b>QS</b> der <b>%{name}</b>-Probe wurde mit <b>1 SchiP</b> erhöht (bereits abgezogen)<br/>"))]
 		[h: SchiPsAktuell = SchiPsAktuell - 1]
+		[h: refreshFrame(currentToken())]
 	}]
 }]
 

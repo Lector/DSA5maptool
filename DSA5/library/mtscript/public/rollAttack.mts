@@ -40,7 +40,7 @@
 [h: isBehind = 0]
 [h,if(target != ""): isBehind = isBehind(currentToken(), target)]
 
-[h: params = json.set(params, "rerollConfirm", hasTrait("Vorteile", "Waffenbegabung (" + technik + ")", 1, currentToken()))]
+[h: params = json.set(params, "Name", "Attacke", "rerollConfirm", hasTrait("Vorteile", "Waffenbegabung (" + technik + ")", 1, currentToken()))]
 
 [h,if(json.contains(weapon, "AT")): value = json.get(weapon, "AT"); value = json.get(weapon, "FK")]
 [h: modMacroParams = json.get(params, "modMacroParams")]
@@ -90,7 +90,7 @@
 		[h,if(listContains("Armbrüste, Blasrohre, Bögen", technik) > 0): fkabwehr = 2]
 		[h,if(technik == "Fechtwaffen"): VTMod = VTMod - 1]
 		[h,if(technik == "Kettenwaffen"): VTMod = VTMod - 2]
-	};{}]
+	}]
 
 	[h: reactionParams = json.set("{}", "Probe", VTMod, "Gluecklich", gluecklich, "Zone", zone, "FKAbwehr", fkabwehr, "VonHinten", isBehind, "Status", opponentStatus, "FailText", opponentText, "Attacker", currentToken())]
 	

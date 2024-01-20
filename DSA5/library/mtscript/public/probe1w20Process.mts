@@ -47,7 +47,7 @@ Dies wird von den unterschiedlichen Aufrufskripten alles mit übergeben werden
 [h: image = json.get(uebergabe, "image")]
 [h: modMacro = json.get(uebergabe, "modMacro")]
 
-[h: params = json.set("{}", "patzer19", json.get(uebergabe, "patzer19"), "confirm", pruefwurf, "rerollConfirm", pruefReroll, "modMacro", modMacro, "modMacroParams", uebergabe)]
+[h: params = json.set("{}", "patzer19", json.get(uebergabe, "patzer19"), "confirm", pruefwurf, "rerollConfirm", pruefReroll, "modMacro", modMacro, "modMacroParams", uebergabe, "Name", pName)]
 
 [h: ergebnis = roll1d20(currentToken(), Wert, 0, params)]
 [h: success = json.get(ergebnis, "success")]
@@ -63,10 +63,11 @@ Dies wird von den unterschiedlichen Aufrufskripten alles mit übergeben werden
 }]
 
 <!-- Falls wir Subtext haben formatieren wir ihn entsprechend -->
-[h,if(subtext != ""): subtext = subtext(subtext)]
+[h,if(subtext != ""): ergebnis = json.set(ergebnis, "Notification", subtext + json.get(ergebnis, "Notification"))]
 
 <!--Und hier die Ausgabe-->
-[h: output = show1d20(ergebnis)]
+[h: output = show(ergebnis)]
+
 [h: output = strformat("
 <table style='border-spacing: 0px; margin-top: 3px; font-weight: bold;'>
 	<tr>

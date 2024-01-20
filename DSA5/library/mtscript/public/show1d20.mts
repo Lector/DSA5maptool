@@ -11,15 +11,16 @@
 [h: pruefwurf = json.get(params, "pruefwurf")]
 [h: pruefReroll = json.get(params, "pruefreroll")]
 
-[h: dice1 = listGet(dice, 0)]
+[h: dice1 = json.get(dice, 0)]
 [h: dice1Color = dieColor(dice1, currentProperty + mod)]
-[h: diceOutput = strformat("<span style='text-align: center; font-size: 20pt; padding-top: 3px; color: %s;'>&nbsp;%s&nbsp;</span>", dice1Color, listGet(dice, 0))]
+
+[h: diceOutput = strformat("<span style='text-align: center; font-size: 20pt; padding-top: 3px; color: %s;'>&nbsp;%s&nbsp;</span>", dice1Color, dice1)]
 
 [h: separatorOutput = "<span style='text-align: center; font-size: 20pt; padding-top: 3px;'>&middot;</span>"]
-[h,if(listCount(dice) == 3),Code:
+[h,if(json.length(dice) == 3),Code:
 {
-	[h: dice2 = listGet(dice, 1)]
-	[h: dice3 = listGet(dice, 2)]
+	[h: dice2 = json.get(dice, 1)]
+	[h: dice3 = json.get(dice, 2)]
 	[h: dicePruef = min(dice2, dice3)]
 	[h,if(dicePruef == dice2),Code:
 	{
@@ -33,16 +34,18 @@
 		[h: dice3decor = ""]
 	}]
 	
-	[h: pruefOutput = separatorOutput + strformat("<span style='text-align: center; font-size: 20pt; padding-top: 3px; color: %s; %{dice2decor}'>&nbsp;%s&nbsp;</span>", dieColor(listGet(dice, 1), currentProperty + mod), dice2)]
-	[h: pruefOutput = pruefOutput + separatorOutput + strformat("<span style='text-align: center; font-size: 20pt; padding-top: 3px; color: %s; %{dice3decor}'>&nbsp;%s&nbsp;</span>", dieColor(listGet(dice, 2), currentProperty + mod), dice3)]
+	[h: pruefOutput = separatorOutput + strformat("<span style='text-align: center; font-size: 20pt; padding-top: 3px; color: %s; %{dice2decor}'>&nbsp;%s&nbsp;</span>", dieColor(dice2, currentProperty + mod), dice2)]
+	[h: pruefOutput = pruefOutput + separatorOutput + strformat("<span style='text-align: center; font-size: 20pt; padding-top: 3px; color: %s; %{dice3decor}'>&nbsp;%s&nbsp;</span>", dieColor(dice3, currentProperty + mod), dice3)]
 
 };
 {
-	[h: dice2 = listGet(dice, 1)]
-	[h,if(listCount(dice) == 2): pruefOutput = separatorOutput + strformat("<span style='text-align: center; font-size: 20pt; padding-top: 3px; color: %s;'>&nbsp;%s&nbsp;</span>", dieColor(listGet(dice, 1), currentProperty + mod), dice2)]
+	[h,if(json.length(dice) == 2),Code: {
+		[h: dice2 = json.get(dice, 1)]
+		[pruefOutput = separatorOutput + strformat("<span style='text-align: center; font-size: 20pt; padding-top: 3px; color: %s;'>&nbsp;%s&nbsp;</span>", dieColor(dice2, currentProperty + mod), dice2)]
+	}]
 }]
 
-[h,if(listCount(dice) > 1): diceOutput = diceOutput + pruefOutput]
+[h,if(json.length(dice) > 1): diceOutput = diceOutput + pruefOutput]
 
 [h: gluecklichImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/success.png")]
 [h: kritImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/luckySuccess.png")]
@@ -52,7 +55,7 @@
 	[h,if(json.contains(outputParams, "luckyImage")): gluecklichImage = json.get(outputParams, "luckyImage")]
 	[h,if(json.contains(outputParams, "critImage")): kritImage = json.get(outputParams, "critImage")]
 	[h,if(json.contains(outputParams, "botchImage")): patzerImage = json.get(outputParams, "botchImage")]
-};{}]
+}]
 [h,switch(success),Code:
 	case -2: {[h: erfolgImage = patzerImage]};
 	case -1: {[h: erfolgImage = patzerImage]};
@@ -110,5 +113,7 @@
 		%{quali}
 	</td>
 ", mod)]
+
+
 
 [h: macro.return = ausgabe]
