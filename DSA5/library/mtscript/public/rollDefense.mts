@@ -51,7 +51,7 @@
 [h: success = json.get(rollResult, "success")]
 
 [h: subResults = "[]"]
-[h: notification = ""]
+[h: notification = json.get(rollResult, "Notification")]
 
 <!-- Falls die Verteidigung misslingt handeln wir noch den Schaden ab
 und geben diesen in die noch offene Tabelle aus -->
