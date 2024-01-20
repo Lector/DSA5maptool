@@ -7,7 +7,7 @@
 [h,if(json.length(macro.args) > 4): multiplier = arg(4)]
 [h: reactionParams = ""]
 [h,if(json.length(macro.args) > 5): reactionParams = arg(5); reactionParams = "{}"]
-[h: baseTP = json.get(waffe, "TP")]
+[h: baseTP = getDamage(waffe)]
 
 [h,if(hasTrait("KampfSF", "Hruruzat") > 0 && json.get(waffe, "Technik") == "Raufen"),Code:
 {

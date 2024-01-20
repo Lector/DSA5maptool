@@ -9,7 +9,7 @@
 	<div class="table" id=[r,if(hands): "melee"; "meleeNoHands"]>
 		<div>Nahkampfwaffe</div>
 		<div>RW</div>
-		<div>TP</div>
+		<div>Schaden</div>
 		<div>AT</div>
 		<div>PA</div>
 		[r,if(hands),Code:{
@@ -28,7 +28,9 @@
 		[h: wName = json.get(waffe, "Name")]
 		[h,if(json.get(waffe, "Zweihand") != 0): wName = wName + " (2h)"]
 		[h: wRW = json.get(waffe, "RW")]
-		[h: wTP = replace(json.get(waffe, "TP"),"d","W")]
+		[h: wTP = replace(getDamage(waffe),"d","W")]
+		[h: wTP = replace(wTP,"\\+0","")]
+		[h: damageType = getDamageType(waffe)]
 		[h: wAT = json.get(waffe, "AT")]
 		[h: wPA = json.get(waffe, "PA")]
 		<div>
@@ -44,7 +46,7 @@
 		</div>
 		<div>
 			[h: tpParams = json.append(currentToken(), setStrProp("typ=nk", "id", wID))]
-			[h: tpLink = macroLink(wTP, "schadenWaffe@this", "", tpParams)]
+			[h: tpLink = macroLink(wTP + " " + damageType, "schadenWaffe@this", "", tpParams)]
 			[h: linkTitle = "Schaden mit dieser Waffe verursachen"]
 			<span title='[r: linkTitle]'>[r: tpLink]</span>
 		</div>

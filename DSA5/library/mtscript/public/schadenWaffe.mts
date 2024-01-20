@@ -37,6 +37,7 @@
 				}]
 				[h: wName = json.get(waffe, "Name")]
 				[h: tp = json.get(waffe, "TP")]
+				[h: damageType = getDamageType(waffe)]
 				<table style='border-spacing: 0px; margin: 0px auto 0px auto;'>
 					<tr>
 						<td style='text-align: center; font-size: 14pt; font-weight: bold; color: #482902; border-top: 1px solid #7b5547; border-bottom: 1px solid #7b5547; margin-bottom: 5px;' width='350'>
@@ -84,7 +85,7 @@
 										<table style='border-spacing: 0px;' cellpadding='1'>
 											<tr>
 												<td>
-													<input type='radio' name='schadenArt' value='TP' checked='checked'>
+													<input type='radio' name='schadenArt' value='TP' [r,if(damageType == "TP"): "checked"]>
 												</td>
 												<td>
 													Trefferpunkte (TP)
@@ -92,7 +93,7 @@
 											</tr>
 											<tr>
 												<td>
-													<input type='radio' name='schadenArt' value='SP'>
+													<input type='radio' name='schadenArt' value='SP' [r,if(damageType == "SP"): "checked"]>
 												</td>
 												<td>
 													Schadenspunkte (SP)

@@ -81,7 +81,7 @@
 								</tr>
 								<tr>
 									<td style='padding-right: 3px;'>
-										Trefferpunkte:
+										Schaden:
 									</td>
 									<td>
 										<table style='border-spacing: 0px; margin-top: 3px;' cellpadding='1'>
@@ -103,6 +103,12 @@
 												</td>
 												<td>
 													<input type='text' name='TPMod' size='2' maxlength='2' value=''/>
+												</td>
+												<td>
+													<select size=1 name='damageType'>
+														<option value="TP" selected='selected'>TP</option>
+														<option value="SP">SP</option>
+													</select>
 												</td>
 											</tr>
 										</table>

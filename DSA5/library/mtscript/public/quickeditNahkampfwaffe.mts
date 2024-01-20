@@ -1,10 +1,6 @@
 [h: switchToken(arg(0))]
 
-[h,if(isDialogVisible("chareditWaffe") == 1), Code:
-	{
-		[closeDialog("chareditWaffe")]
-	};{}
-]
+[h,if(isDialogVisible("chareditWaffe") == 1): closeDialog("chareditWaffe")]
 
 [h: id = arg(1)]
 
@@ -15,7 +11,7 @@
 	[if(json.get(wa, "ID") == id): waffe = wa]
 }]
 
-[h: tp = json.get(waffe, "TP")]
+[h: tp = getDamage(waffe)]
 [h,if(tp == 0), Code:
 {
 	[h: tpwAnzahl = 0]
@@ -46,6 +42,7 @@
 		[minusActive = "selected='selected'"]
 	}
 ]
+[h: damageType = getDamageType(waffe)]
 [h: wRW = json.get(waffe, "RW")]
 [h: RWKurzAktiv = ""]
 [h: RWMittelAktiv = ""]
@@ -205,7 +202,7 @@
 								</tr>
 								<tr>
 									<td style='padding-right: 3px;'>
-										Trefferpunkte:
+										Schaden:
 									</td>
 									<td>
 										<table style='border-spacing: 0px; margin-top: 3px;' cellpadding='1'>
@@ -227,6 +224,12 @@
 												</td>
 												<td>
 													<input type='text' name='TPMod' size='2' maxlength='2' value='[r: tpwMod]'>
+												</td>
+												<td>
+													<select size=1 name='damageType'>
+														<option value="TP">TP</option>
+														<option value="SP" [r,if(damageType == "SP"): "selected"]>SP</option>
+													</select>
 												</td>
 											</tr>
 										</table>

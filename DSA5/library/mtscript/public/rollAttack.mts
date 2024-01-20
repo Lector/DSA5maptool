@@ -66,13 +66,13 @@
 [h,if(success >= 1),Code:
 {
 	[h: manoeverTP = 0]
-	[h: schadensTyp = "TP"]
+	[h: schadensTyp = getDamageType(weapon)]
 	[h: opponentStatus = "[]"]
 	[h: opponentText = ""]
 	[h,if(json.get(weapon, "Improvisiert") == 1 && improMeister == 0): VTMod = 2; VTMod = 0]
 	[h,if(json.get(weapon, "Name") == "Anderthalbhänder" && hasTrait("KampfSF", "Adersin-Stil") > 0): VTMod = VTMod - 1]
 	[h,foreach(man, manoever),if(man != ""),Code:{
-		[h,if(json.contains(man, "TP")): weapon = json.set(weapon, "TP", json.get(man, "TP"))]
+		[h,if(json.contains(man, "TP")): weapon = json.set(weapon, schaden, json.get(man, "TP"))]
 		[h,if(json.contains(man, "TPMod")): manoeverTP = eval(manoeverTP + json.get(man, "TPMod"))]
 		[h,if(json.contains(man, "SchadensTyp")): schadenArt = json.get(man, "SchandensTyp")]
 		[h,if(json.contains(man, "OpponentStatus")): opponentStatus = json.get(man, "OpponentStatus")]
