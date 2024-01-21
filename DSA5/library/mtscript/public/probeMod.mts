@@ -1,8 +1,8 @@
 [h,if(macro.args == ""): default = 0; default = arg(0)]
-<td class="probe">
+<td>
 	Probe:
 </td>
-<td class="probe">
+<td>
 	<select name="probemod" size="1" value="[r: default]">
 		[r,for(i,-10,11,1,""),Code:{
 			[h: i = -i]

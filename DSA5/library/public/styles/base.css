@@ -115,3 +115,24 @@ button[type="submit"] table tr td {
     border-bottom: 1px solid #eee5c8;
     padding: 3px 10px 3px 10px;
 }
+
+.table-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 6px;
+    row-gap: 6px;
+    padding: 0px;
+}
+
+.table-container > div {
+    align-items: center;
+    display: flex;
+}
+
+.table-container > div:nth-child(2n) {
+    justify-content: flex-start;
+}
+
+.table-container > div:nth-child(2n+1) {
+    justify-content: flex-end;
+}

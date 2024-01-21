@@ -164,6 +164,10 @@
 	case "editCheck": {
 		[msgTitle = "Probe bearbeitet"]
 		[msgText = "Die Probe wurde erfolgreich editiert."]
+	};
+	case "checkDel": {
+		[msgTitle = "Probe gelöscht"]
+		[msgText = "Die Probe wurde erfolgreich gelöscht."]
 	}
 ]
 
