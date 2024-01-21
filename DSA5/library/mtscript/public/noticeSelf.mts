@@ -160,6 +160,10 @@
 	case "chareditAnimalFormProcess": {
 		[msgTitle = "Tierform verkörpert"]
 		[msgText = "Die Tierform wurde erfolgreich verkörpert."]
+	};
+	case "editCheck": {
+		[msgTitle = "Probe bearbeitet"]
+		[msgText = "Die Probe wurde erfolgreich editiert."]
 	}
 ]
 
