@@ -4,10 +4,7 @@
 
 [h: checks = getProperty("Checks", currentToken())]
 [h,if(check != ""),Code:{
-    [h: broadcast(checks)]
-    [h: broadcast(check)]
     [h: index = json.indexOf(checks, check)]
-    [h: broadcast(index)]
     [h: checks = json.remove(checks, index)]
 }]
 

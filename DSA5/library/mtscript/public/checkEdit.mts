@@ -1,18 +1,19 @@
 [h: switchToken(arg(0))]
 [h,if(json.length(macro.args) > 1): check = arg(1); check = ""]
+[h,if(check == ""): verb = "anlegen"; verb = "bearbeiten"]
 
 [h: actionLink = macroLinkText("checkEditProcess@this", "")]
-[dialog5("checkEdit", "width=600; height=800; temporary=1; closebutton=0; noframe=0"):{
+[dialog5("checkEdit", "width=600; height=850; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
-		<title>[r: getName(currentToken())] Probe hinzufügen</title>
+		<title>[r: getName(currentToken())] - Probe [r: verb]</title>
 		[r: linkGoogleFonts()]
 		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 	</head>
 	<body>
 		<div class="border">
 			<form action="[r:actionLink]" method="json">
-				[r: header("Neue Probe")]
+				[r: header("Probe "+verb)]
 				<div class="table-container">
 					<div>Talent:</div>
 					<div>
@@ -61,7 +62,7 @@
 								<table>
 									<tr>
 										<td><img src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/hand.png")]/></td>
-										<td>Probe anlegen</td>
+										<td>Probe [r: verb]</td>
 									</tr>
 								</table>
 							</button>

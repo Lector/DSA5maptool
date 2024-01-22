@@ -39,6 +39,7 @@
 [h: actionLinkUhr = macroLinkText("uhrzeitProcess@this", "")]
 [h: actionLinkOptions = macroLinkText("kalenderOptions@this", "")]
 [h: actionLinkJahrNull = macroLinkText("kalenderJahrNullInfo@this", "")]
+[h: broadcast(actionLinkUhr)]
 [frame5("kalender", "width=280; height=450; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
@@ -49,7 +50,7 @@
 	<body>
 		[r,macro("kalZG@this"): ""]
 		<br>
-		<form action="[r:actionLinkUhr]">
+		<form action="[r:actionLinkUhr]" method="JSON">
 			<table style='border-spacing: 0px; margin: 0px auto 0px auto;'>
 				<tr>
 					<td style='font-weight: bold; text-align: center;'>
@@ -98,7 +99,7 @@
 				<tr>
 					<td style='text-align: center'>
 						[h: button = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/tools/time.png")]
-						<button type="submit" name="actionUhr" class="row-container">
+						<button type="submit" name="actionUhr">
 							<img src="[r: button]"/>
 							Uhrzeit ändern
 						</button>

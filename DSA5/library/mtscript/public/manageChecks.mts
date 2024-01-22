@@ -30,11 +30,8 @@
 			<div style="display: flex; flex-direction: column; align-items: center;">
 				[h: i = 0]
 				[r,foreach(check, checks, ""),Code:{
-					[h: skill = json.get(check, "Skill")]
-					[h: spec = json.get(check, "Spec")]
 					<div>
-						[h: label = skill]
-						[h,if(spec != ""): label = label + strformat(" (%{spec})")]
+						[h: label = checkLabel(check)]
 						[r: macroLink(label, "checkEdit@this", "", json.append("[]", currentToken(), check))]
 						[h: delete = macroLinkText('checkDelProcess@this', '', json.set('{}', "token", currentToken(), "index", i))]
 						[h: deleteIcon = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/forms/minus.png")]

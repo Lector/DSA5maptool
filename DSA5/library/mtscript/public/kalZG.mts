@@ -125,7 +125,7 @@
 
 		[h: actionLinkDatum = macroLinkText("kalZGDatumProcess@this", "")]
 		[h: actionLinkZeitrechnung = macroLinkText("kalZGSystemProcess@this", "")]
-		<form action="[r:actionLinkDatum]">
+		<form action="[r:actionLinkDatum]" method="json">
 			<table style='border-spacing: 0px; margin: 10px auto 0px auto;'>
 				<tr>
 					<td style='font-weight: bold; text-align: center;'>
@@ -197,9 +197,11 @@
 						</table>
 					</td>
 				</tr>
+			</table>
+			<table style='border-spacing: 0px; margin: 0px auto 0px auto;'>
 				<tr>
 					<td style='text-align: center'>
-						<button type="submit" class="row-container" name="actionDatum">
+						<button type="submit" name="actionDatum">
 							<img src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/tools/date.png")]'/>
 							Datum ändern
 						</button>
@@ -244,9 +246,11 @@
 						</table>
 					</td>				
 				</tr>
+			</table>
+			<table style='border-spacing: 0px; margin: 0px auto 0px auto;'>
 				<tr>
 					<td style='text-align: center'>
-						<button type="submit" class="row-container" name="actionSystem">
+						<button type="submit" name="actionSystem">
 						<img src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/tools/dateSystem.png")]'/>
 						System ändern
 					</button>
