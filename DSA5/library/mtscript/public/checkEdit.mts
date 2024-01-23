@@ -1,4 +1,16 @@
-[h: switchToken(arg(0))]
+[h,if(isGM() == 1 && hasImpersonated() == 0 && json.length(macro.args) == 0), Code:
+	{
+		[selectID = getSelected()]
+		[if(listCount(selectID) != 1), Code:
+			{
+				[h,macro("inputFail@this"): "gmSelectFail"]
+			};{}
+		]
+		[switchToken(selectID)]
+	};{}
+]
+
+[h,if(json.length(macro.args) > 0): switchToken(arg(0))]
 [h,if(json.length(macro.args) > 1): check = arg(1); check = ""]
 [h,if(check == ""): verb = "anlegen"; verb = "bearbeiten"]
 

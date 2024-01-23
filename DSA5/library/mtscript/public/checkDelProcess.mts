@@ -17,3 +17,4 @@
 
 [h: noticeSelf("checkDel")]
 [h,if(isDialogVisible("manageChecks")): manageChecks(currentToken())]
+[h: refreshFrame(currentToken())]

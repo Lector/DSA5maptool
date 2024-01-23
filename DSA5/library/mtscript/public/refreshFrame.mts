@@ -9,15 +9,12 @@
 			[h,macro("meisterbogen1@this"): "npc"]
 		};
 		case "3": {
-			[h,macro("meisterbogen2@this"): "pc"]
-		};
-		case "4": {
-			[h,macro("meisterbogen2@this"): "npc"]
+			[h,macro("meisterbogenProben@this"): ""]
 		};
 		default: {
 		}
 	]
-};{}]
+}]
 
 [h: switchToken(arg(0))]
 

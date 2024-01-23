@@ -39,7 +39,6 @@
 [h: actionLinkUhr = macroLinkText("uhrzeitProcess@this", "")]
 [h: actionLinkOptions = macroLinkText("kalenderOptions@this", "")]
 [h: actionLinkJahrNull = macroLinkText("kalenderJahrNullInfo@this", "")]
-[h: broadcast(actionLinkUhr)]
 [frame5("kalender", "width=280; height=450; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>

@@ -17,3 +17,4 @@
 [h: closeDialog("checkEdit")]
 [h,if(isDialogVisible("manageChecks")): manageChecks(currentToken())]
 [h,macro("noticeSelf@this"): "editCheck"]
+[h: refreshFrame(currentToken())]
