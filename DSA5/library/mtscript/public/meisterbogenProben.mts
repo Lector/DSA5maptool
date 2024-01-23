@@ -26,13 +26,13 @@
                 [h: checkTokens = "{}"]
 				[h: fields = "[]"]
                 [h,foreach(tok, tokens, ""),Code:{
-                    [h: checks = getProperty("Checks", tok)]
-					[h,if(checks != "" && checks != "[]"): fields = json.append(fields, checks)]
-                    [h,if(checks != "" && checks != "[]" && json.count(fields, checks) <= 1): checkTokens = json.set(checkTokens, tok, checks)]
+                    [h: tokenChecks = getProperty("Checks", tok)]
+					[h,if(tokenChecks != "" && tokenChecks != "[]"): fields = json.append(fields, tokenChecks)]
+                    [h,if(tokenChecks != "" && tokenChecks != "[]" && json.count(fields, tokenChecks) <= 1): checkTokens = json.set(checkTokens, tok, tokenChecks)]
                 }]
                 [h: fields = json.fields(checkTokens)]
                 [r,foreach(tok, fields, ""),Code:{
-                    [h: checks = json.get(checkTokens, tok)]
+                    [h: tokenChecks = json.get(checkTokens, tok)]
 					<div class="heading heading-additional">
 						[h: name = getName(tok)]
 						[r: name]
@@ -46,7 +46,7 @@
 					<div class="checks">
 						<img src="[r: getTokenImage(50, tok)]"/>
 						<ul>
-						[r,foreach(check, checks, ""):
+						[r,foreach(check, tokenChecks, ""):
 							strformat("
 							<li>
 								<a href='%s'>%s</a>
@@ -55,7 +55,7 @@
 							</li>",
 							macroLinkText("requestCheck@this", "none", check), checkLabel(check),
 							macroLinkText('checkEdit@this', '', json.append('[]', tok, check)), data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesEditSmall.png"),
-							macroLinkText('checkDelProcess@this', '', json.set('{}', "token", tok, "index", json.indexOf(checks, check))), data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesRemoveSmall.png"))
+							macroLinkText('checkDelProcess@this', '', json.set('{}', "token", tok, "index", json.indexOf(tokenChecks, check))), data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesRemoveSmall.png"))
 						]
 						</ul>
 					</div>

@@ -1,3 +1,5 @@
+[h: switchToken(arg(0))]
+
 [h,if(isFrameVisible("meisterbogen") == 1), Code:
 {
 	[frame = getLibProperty("SLframe", "com.github.lector.dsa5maptool")]
@@ -15,8 +17,6 @@
 		}
 	]
 }]
-
-[h: switchToken(arg(0))]
 
 [h,if(isFrameVisible("charbogen") == 1), Code:
 {

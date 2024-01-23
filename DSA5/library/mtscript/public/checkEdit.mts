@@ -12,7 +12,34 @@
 
 [h,if(json.length(macro.args) > 0): switchToken(arg(0))]
 [h,if(json.length(macro.args) > 1): check = arg(1); check = ""]
-[h,if(check == ""): verb = "anlegen"; verb = "bearbeiten"]
+[h: blind = 0]
+[h,if(check == ""),Code:{
+	[verb = "anlegen"]
+};{
+	[verb = "bearbeiten"]
+	[h,if(json.get(check, "Blind") == 1): blind = 1]
+}]
+
+[h: js = ""]
+[h,for(i, 0, 7, 1),Code:{
+	[h: js = js + strformat("
+	function resizeTextarea%{i}() {
+		var textarea = document.getElementById('text'+%{i});
+		textarea.style.height = 'auto';
+		textarea.style.height = (textarea.scrollHeight+2) + 'px';
+	}")]
+}]
+[h: js = js + "
+window.addEventListener('load', function(event) {
+	resizeTextarea0();
+	resizeTextarea1();
+	resizeTextarea2();
+	resizeTextarea3();
+	resizeTextarea4();
+	resizeTextarea5();
+	resizeTextarea6();
+});"]
+
 
 [h: actionLink = macroLinkText("checkEditProcess@this", "")]
 [dialog5("checkEdit", "width=600; height=850; temporary=1; closebutton=0; noframe=0"):{
@@ -21,6 +48,9 @@
 		<title>[r: getName(currentToken())] - Probe [r: verb]</title>
 		[r: linkGoogleFonts()]
 		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
+		<script>
+			[r: js]
+  		</script>
 	</head>
 	<body>
 		<div class="border">
@@ -53,6 +83,20 @@
 							}]
 						</select>
 					</div>
+				</div>
+				<div class="table-container">
+					<div>
+						Fehlschlag:
+					</div>
+					<div>
+						[h: label = ""]
+						[h,if(check != ""),Code:{
+							[h: fail = json.get(check, "Fail")]
+							[h: label = json.get(fail, "Info")]
+						}]
+						<textarea name="fail" id="text0" rows="1" cols="50" oninput="resizeTextarea0()"
+						placeholder="Was ein Held erfährt wenn seine Probe misslingt.">[r: label]</textarea>
+					</div>
 					[r,for(i,1,7,1,""),Code:{
 					<div>
 						QS[r:i]+:
@@ -63,9 +107,20 @@
 							[h: qs = json.get(check, strformat("QS%{i}"))]
 							[h: label = json.get(qs, "Info")]
 						}]
-						<textarea name="qs[r:i]" rows="4" cols="50">[r: label]</textarea>
-					</div>  
+						<textarea name="qs[r:i]" id="text[r:i]" rows="1" cols="50" oninput="resizeTextarea[r:i]()"
+						placeholder="Was ein Held erfährt wenn er mindestens QS[r:i] erwürfelt.">[r: label]</textarea>
+					</div>
                     }]
+				</div>
+				<div class="table-container">
+					<div>
+						<input type="checkbox" name="blind" [r,if(blind == 1): "checked"]/>
+					</div>
+					<div>
+						<span title="Geheime Proben werden verdeckt vom Spieler gewürfelt.
+Spieler bekommen die Probe nur angezeigt falls sie gelingt.
+Für fehlgeschlagene Proben können folglich auch keine SchiPs eingesetzt werden.">Geheime Probe</span>
+					</div>
 				</div>
 				<table style='border-spacing: 0px; margin: 11px auto 8px auto;'>
 					<tr>

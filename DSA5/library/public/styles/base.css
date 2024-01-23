@@ -119,8 +119,8 @@ button[type="submit"] table tr td {
 .table-container {
     display: grid;
     grid-template-columns: auto auto;
-    column-gap: 6px;
-    row-gap: 6px;
+    column-gap: 0px;
+    row-gap: 0px;
     padding: 0px;
 }
 

@@ -23,13 +23,13 @@
 		<div class="border">
 			[r: header("Proben")]
 
-            [h: checks = getProperty("Checks", currentToken())]
-            [h,if(checks == ""): setProperty("Checks", "[]", currentToken())]
-            [h: checks = getProperty("Checks", currentToken())]
+            [h: tokenChecks = getProperty("Checks", currentToken())]
+            [h,if(tokenChecks == ""): setProperty("Checks", "[]", currentToken())]
+            [h: tokenChecks = getProperty("Checks", currentToken())]
 
 			<div style="display: flex; flex-direction: column; align-items: center;">
 				[h: i = 0]
-				[r,foreach(check, checks, ""),Code:{
+				[r,foreach(check, tokenChecks, ""),Code:{
 					<div>
 						[h: label = checkLabel(check)]
 						[r: macroLink(label, "checkEdit@this", "", json.append("[]", currentToken(), check))]

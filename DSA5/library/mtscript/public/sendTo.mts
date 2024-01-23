@@ -41,4 +41,4 @@
 	};
 ]
 
-[h: sendToUsers(content, recipients, visibility)]
+[h: sendToUsers(content, recipients, visibility, tokenID)]

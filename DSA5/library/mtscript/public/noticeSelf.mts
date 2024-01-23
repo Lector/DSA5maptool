@@ -185,4 +185,4 @@
 </table>",
 data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/scroll.png")))]
 
-[h: sendTo("Self", ausgabe)]
+[h,if(json.length(macro.args) > 1): sendTo("Self", ausgabe, arg(1)); sendTo("Self", ausgabe)]
