@@ -40,7 +40,6 @@ window.addEventListener('load', function(event) {
 	resizeTextarea6();
 });"]
 
-
 [h: actionLink = macroLinkText("checkEditProcess@this", "")]
 [dialog5("checkEdit", "width=600; height=850; temporary=1; closebutton=0; noframe=0"):{
 <html>
@@ -57,32 +56,40 @@ window.addEventListener('load', function(event) {
 			<form action="[r:actionLink]" method="json">
 				[r: header("Probe "+verb)]
 				<div class="table-container">
-					<div>Talent:</div>
+					[r,for(j, 1, 3, 1, ""),Code:{
+					[h: subCheck = ""]
+					[h,if(check != ""),Code:{
+						[h: subChecks = json.get(check, "Checks")]
+						[h,if(json.length(subChecks) >= j): subCheck = json.get(subChecks, j-1)]
+					}]
+					[h: broadcast("HI "+subCheck)]
+					<div>[r,if(j==2): "Alternative "]Probe:</div>
 					<div>
-						<select size=1 name="skill">
-						[h: skills = getSkills()]
-						[h,if(check == ""): default = "Sinnesschärfe"; default = json.get(check, "Skill")]
-						[r,foreach(skill, skills, ""),Code:{
-							<option value="[r: skill]" [r,if(skill == default): "selected"]>[r: skill]</option>
-						}]
+						<select size=1 name="skill[r:j]">
+							[h: skills = getSkills()]
+							[h: defaultSkill = ""]
+							[h,if(j == 1): defaultSkill = "Sphärenkunde"]
+							[h,if(subCheck != ""): defaultSkill = json.get(subCheck, "Skill")]
+							[r,if(j > 1): '<option value="" [r,if("" == defaultSkill): "selected"]></option>']
+							[r,foreach(skill, skills, ""),Code:{
+								<option value="[r: skill]" [r,if(skill == defaultSkill): "selected"]>[r: skill]</option>
+							}]
 						</select>
-					</div>
-					<div>Anwendungsgebiet:</div>
-					<div>
-						<input type="text" name="spec" [r,if(check != ""): "value='"+json.get(check, "Spec")+"'"]/>
-					</div>		
-					<div>
-						Modifikator:
-					</div>
-					<div>
-						<select name="mod" size="1">
-							[h,if(check == ""): default = 0; default = json.get(check, "Mod")]
+
+						[h: defaultSpec = ""]
+						[h,if(j==1): defaultSpec = "Sphärenwesen"]
+						[h,if(subCheck != ""): defaultSpec = json.get(subCheck, "Spec")]
+						(<input type="text" name="spec[r:j]" value='[r: defaultSpec]'/>)
+
+						<select name="mod[r:j]" size="1">
+							[h,if(subCheck == ""): default = 0; default = json.get(subCheck, "Mod")]
 							[r,for(i,-10,11,1,""),Code:{
 								[h: i = -i]
 								<option value='[r:i]' [r,if(i==default):'selected']>[r: strformat("%+d",i)]</option>
 							}]
 						</select>
 					</div>
+					}]
 				</div>
 				<div class="table-container">
 					<div>

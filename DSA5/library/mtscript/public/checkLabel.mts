@@ -1,4 +1,5 @@
 [h: check = arg(0)]
+[h: check = json.path.read(check, "Checks.[0]")]
 
 [h: skill = json.get(check, "Skill")]
 [h: spec = json.get(check, "Spec")]
