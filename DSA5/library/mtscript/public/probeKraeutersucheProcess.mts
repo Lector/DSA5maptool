@@ -21,7 +21,7 @@
 [h: gelaende = json.get(uebergabe, "gelaende")]
 
 <!-- Für diverse Erschwer/Erleichterungen kümmert sich kraeutersucheMods -->
-[h: probeParams = json.set("", "Name", "Pflanzenkunde", "modMacroParams", uebergabe, "modMacro", "kraeutersucheMods@this", "QSMatter", 1)]
+[h: probeParams = json.set("", "Name", "Pflanzenkunde", "modMacroParams", uebergabe, "modMacro", "kraeutersucheMods@this", "QSMatter", 6)]
 
 [h: closeDialog("kraeutersucheSpeziell")]
 

@@ -41,7 +41,7 @@ window.addEventListener('load', function(event) {
 });"]
 
 [h: actionLink = macroLinkText("checkEditProcess@this", "")]
-[dialog5("checkEdit", "width=600; height=850; temporary=1; closebutton=0; noframe=0"):{
+[dialog5("checkEdit", "width=600; height=700; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
 		<title>[r: getName(currentToken())] - Probe [r: verb]</title>
@@ -62,7 +62,6 @@ window.addEventListener('load', function(event) {
 						[h: subChecks = json.get(check, "Checks")]
 						[h,if(json.length(subChecks) >= j): subCheck = json.get(subChecks, j-1)]
 					}]
-					[h: broadcast("HI "+subCheck)]
 					<div>[r,if(j==2): "Alternative "]Probe:</div>
 					<div>
 						<select size=1 name="skill[r:j]">

@@ -1,5 +1,7 @@
 [h: check = arg(0)]
-[h: check = json.path.read(check, "Checks.[0]")]
+[h: index = 0]
+[h,if(json.length(macro.args) > 1): index = arg(1)]
+[h: check = json.path.read(check, "Checks.[" + index + "]")]
 
 [h: skill = json.get(check, "Skill")]
 [h: spec = json.get(check, "Spec")]

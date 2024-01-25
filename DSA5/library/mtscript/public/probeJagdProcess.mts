@@ -31,7 +31,7 @@
 	"modMacroParams", uebergabe,
 	"modMacro", "jagdMods@this",
 	"spec", spec1,
-	"QSMatter", 1)]
+	"QSMatter", 6)]
 <!-- würfel Probe -->
 [h: result1 = rollSkill(currentToken(), skill1, 0, probeParams)]
 [h: result2 = ""]
@@ -65,7 +65,7 @@ skillRollTitle(skill1), show3d20(result1))]
 	Den Modifikator, wenden wie immer unser ModMacro an.-->
 	[h: uebergabe = json.set(uebergabe, "verkuerzen",  min(0, aktSuchDauer - (basisDauer - zeitErsparnis)) / 2)]
 	[h: uebergabe = json.set(uebergabe, "qs", qs1)]
-	[h: probeParams = json.set(probeParams, "Name", skill2, "modMacroParams", uebergabe, "spec", spec2, "QSMatter", 1)]
+	[h: probeParams = json.set(probeParams, "Name", skill2, "modMacroParams", uebergabe, "spec", spec2, "QSMatter", 6)]
 	<!-- würfel Verbergen-Probe -->
 	[h: result2 = rollSkill(currentToken(), skill2, 0, probeParams)]
 	

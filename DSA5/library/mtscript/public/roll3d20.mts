@@ -27,6 +27,8 @@
 	[h,if(qsmatter == ""): qsmatter = 0]
 }]
 
+[h: possibleQS = max(1, ceil((Wert + FPBonus) / 3))]
+
 [h: SchiPsInitial = SchiPsAktuell]
 <!-- Hier loesen wir MU KL oder aehnliches in den Eigenschaftswert auf
 Es werden auch die aktuellen Eigenschaften ermittelt. Durch temporaere Effekte oder Zustaende koennen sie geaendert sein -->
@@ -126,7 +128,7 @@ Dieses Skript kann dann die unterschiedlichen Parameter aus der Übergabe ausles
 
 [h: ergebnis = calc3d20(ergebnis, FPBonus, patzer19)]
 [h: success = json.get(ergebnis, "success")]
-[h: fw = json.get(ergebnis, "fw")]
+[h: qs = json.get(ergebnis, "qs")]
 [h: fp = json.get(ergebnis, "fp")]
 
 <!-- Rerolling the 'worst' die is a bit tricky because there is no rational way to determine what the 'worst' die is.
@@ -135,7 +137,7 @@ In future version is would be great to determine a default selection of the rero
 
 <!-- we only annoy the user with the aptitude dialog if using it can result into an advantage -->
 <!-- only offer the aptitude if at least one skill point got lost due to the dice -->
-[h,if(fw + FPBonus > fp): useAptitude = 1; useAptitude = 0]
+[h,if(Wert + FPBonus > fp): useAptitude = 1; useAptitude = 0]
 <!-- If we have rolled a 1 we always offer the aptitude. This could enforce a critical success -->
 [h: dice = json.get(ergebnis, "dice")]
 [h,if(json.contains(dice, 1) > 0): useAptitude = 1)]
@@ -193,18 +195,16 @@ In future version is would be great to determine a default selection of the rero
 		)]
 		[h: ergebnis = calc3d20(ergebnis, FPBonus, patzer19)]
 		[h: success = json.get(ergebnis, "success")]
-		[h: fw = json.get(ergebnis, "fw")]
+		[h: qs = json.get(ergebnis, "qs")]
 		[h: fp = json.get(ergebnis, "fp")]
 	}]
 }]
 
 <!-- Fate points can be used to reroll any number of dice -->
 <!-- We only annoy the user if rerolling can result into an advantage -->
-[h: possibleQS = ceil((fw + FPBonus) / 3)]
-[h: currentQS = ceil(fp / 3)]
-[h,if(possibleQS > currentQS): offerReroll = 1; offerReroll = 0]
+[h,if(possibleQS > qs): offerReroll = 1; offerReroll = 0]
 <!-- If QS wont matter we do not annoy the user if we already succeeded -->
-[h,if(fp >= 0 && qsmatter == 0): offerReroll = 0]
+[h,if(fp >= 0 && qsmatter <= qs): offerReroll = 0]
 [h,if(success >= 0 && SchiPsAktuell > 0 && offerReroll == 1),Code:{
 	[h: display = show3d20(ergebnis)]
 	[h: display = strformat("
@@ -249,7 +249,7 @@ In future version is would be great to determine a default selection of the rero
 			"Notification", json.get(ergebnis, "Notification") + strformat("<b>%d Würfel</b> der <b>%{name}</b>-Probe wurden mit <b>1 SchiP</b> neu gewürfelt (bereits abgezogen)<br/>", reroll1 + reroll2 + reroll3))]
 		[h: ergebnis = calc3d20(ergebnis, FPBonus, patzer19)]
 		[h: success = json.get(ergebnis, "success")]
-		[h: fw = json.get(ergebnis, "fw")]
+		[h: qs = json.get(ergebnis, "qs")]
 		[h: fp = json.get(ergebnis, "fp")]
 		[h: SchiPsAktuell = SchiPsAktuell - 1]
 		[h: refreshFrame(currentToken())]
@@ -261,7 +261,7 @@ In future version is would be great to determine a default selection of the rero
 
 [h: schicksalsmacht = hasTrait("AllgemeineSF", "Schicksalsmacht", 1, currentToken())]
 [h,if(schicksalsmacht == 0 && SchiPsInitial > SchiPsAktuell): offerQSPlus = 0; offerQSPlus = 1]
-[h,if(success == 1 && SchiPsAktuell > 0 && qsmatter == 1 && offerQSPlus == 1),Code:{
+[h,if(success == 1 && SchiPsAktuell > 0 && qsmatter > qs && offerQSPlus == 1),Code:{
 	[h: qs = json.get(ergebnis, "qs")]
 	[h: nextQS = qs + 1]
 	[h: display = show3d20(ergebnis)]

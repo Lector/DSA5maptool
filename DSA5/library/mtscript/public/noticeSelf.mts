@@ -168,6 +168,10 @@
 	case "checkDel": {
 		[msgTitle = "Probe gelöscht"]
 		[msgText = "Die Probe wurde erfolgreich gelöscht."]
+	};
+	case "checkRequested": {
+		[msgTitle = "Probe angefordert"]
+		[msgText = "Die ausgewählten Spieler wurden zur Probe aufgefordert. Solbald sie fertig gewürfelt haben erscheint das Ergebnis im Chat."]
 	}
 ]
 

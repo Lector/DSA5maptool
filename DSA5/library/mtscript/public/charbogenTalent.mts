@@ -37,6 +37,7 @@
 		[h: tUebergabe = listAppend(tUebergabe, tEigenschaft3)]
 		[h: tUebergabe = listAppend(tUebergabe, tWert)]
 		[h: tUebergabe = listAppend(tUebergabe, group)]
+		[h: tUebergabe = json.append("[]", currentToken(), tUebergabe)]
 		<div>
 			<span title='Probe auf &quot;[r: tName]&quot; ablegen'>[r: macroLink(tName, "probeTalent@this", "", tUebergabe)]</span>
 		</div>
