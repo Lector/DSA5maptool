@@ -1,6 +1,6 @@
 [h: params = macro.args]
 
-[h: check = decode(json.get(params, "check"))]
+[h: check = checkFromForm(params)]
 [h: playerNames = decode(json.get(params, "playerNames"))]
 [h,foreach(player, playerNames),if(json.get(params, player) != ""),Code:{
 
