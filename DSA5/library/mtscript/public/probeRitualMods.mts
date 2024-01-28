@@ -20,15 +20,35 @@
 [h: fpbonus = json.get(macro.return, "fpbonus")]
 [h: bonustext = json.get(macro.return, "bonustext")]
 
-[h: ritualplatz = json.get(uebergabe, "Ritualplatz")]
-[h,if(json.get(uebergabe, "hilfsmittelKleidung") == 1): hilfsmittelKleidung = 1; hilfsmittelKleidung = 0]
-[h,if(json.get(uebergabe, "hilfsmittelGeraetschaften") == 1): hilfsmittelGeraetschaften = 1; hilfsmittelGeraetschaften = 0]
-[h: zeit = json.get(uebergabe, "Zeit")]
 
-[h: mod = mod + hilfsmittelKleidung
-			+ ritualplatz
-			+ hilfsmittelGeraetschaften
-			+ zeit]
+[h: ritualplatz = json.get(uebergabe, "Ritualplatz")]
+[h,if(ritualplatz == ""): ritualplatz = 0]
+[h,if(ritualplatz != 0), Code:
+{
+	[h: modtext = modtext + modReason(ritualplatz, "wegen Ritualplatz")]
+	[h: mod = mod + ritualplatz]
+}]
+
+[h: kleidung = json.get(uebergabe, "hilfsmittelKleidung")]
+[h,if(kleidung == ""): kleidung = 0]
+[h,if(kleidung != 0),Code:{
+	[h: modtext = modtext + modReason(kleidung, "wegen passender Kleidung")]
+	[h: mod = mod + kleidung]
+}]
+
+[h: hilfsmittelGeraetschaften = json.get(uebergabe, "hilfsmittelGeraetschaften")]
+[h,if(hilfsmittelGeraetschaften == ""): hilfsmittelGeraetschaften = 0]
+[h,if(hilfsmittelGeraetschaften != 0),Code:{
+	[h: modtext = modtext + modReason(hilfsmittelGeraetschaften, "wegen passender Gerätschaften")]
+	[h: mod = mod + hilfsmittelGeraetschaften]
+}]
+
+[h: zeit = json.get(uebergabe, "Zeit")]
+[h,if(zeit == ""): zeit = 0]
+[h,if(zeit != 0),Code:{
+	[h: modtext = modtext + modReason(zeit, "wegen besonderer Sternenkonstellation")]
+	[h: mod = mod + zeit]
+}]
 
 [h: ergebnis = json.set("", "mod", mod)]
 [h: ergebnis = json.set(ergebnis, "bonus", bonus)]

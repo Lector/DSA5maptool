@@ -8,7 +8,7 @@
     [h: info = json.path.read(check, "QS"+i+".Info")]
     [h,if(info != "" && qsmatter == 0): qsmatter = i]
 }]
-[h: params = json.set("{}", "spec", json.path.read(check, "Checks.[0].Spec"), "QSMatter", qsmatter))]
+[h: params = json.set("{}", "spec", json.path.read(check, "Checks.[0].Spec"), "QSMatter", qsmatter)]
 [h: skillResult = rollSkill(currentToken(), skill, json.path.read(check, "Checks.[0].Mod"), params)]
 [h: qs = json.get(skillResult, "qs")]
 [h: note = json.get(skillResult, "Notification")]
@@ -20,5 +20,6 @@
     [h,if(info != ""): note = note + info + "<br>"]
 }]
 
-[h: skillResult = json.set(skillResult, "Notification", note)]
+[h: recipients = json.append(getGMNames(), getPlayerName())]
+[h: skillResult = json.set(skillResult, "Notification", json.get(skillResult, "Notification") + onlyFor(note + "<br>", recipients))]
 [h: sendTo("GmAndSelf", border(skill, show(skillResult)))]
