@@ -16,11 +16,12 @@
 				[r: checkForm(check)]
 				
 				<br>
+				<div class="header" style="text-align: center;">
+					<br>Wähle die Spieler aus, welche die Probe würfeln dürfen:<br>
+				</div>
 					
 				<div class="table-container">
-					<div class="header">
-						<br>Wähle die Spieler aus, welche die Probe würfeln dürfen:<br>
-					</div>
+					
 					[h: players = getAllPlayerNames("json")]
 					[r,foreach(player, players, ""),if(!isGM(player)),Code:{
 					<div>

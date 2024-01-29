@@ -55,8 +55,7 @@ window.addEventListener('load', function(event) {
         <select name="mod[r:j]" size="1">
             [h,if(subCheck == ""): default = 0; default = json.get(subCheck, "Mod")]
             [r,for(i,-10,11,1,""),Code:{
-                [h: i = -i]
-                <option value='[r:i]' [r,if(i==default):'selected']>[r: strformat("%+d",i)]</option>
+                <option value='[r:-i]' [r,if(-i==default):'selected']>[r: strformat("%+d",-i)]</option>
             }]
         </select>
     </div>

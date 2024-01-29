@@ -1,5 +1,6 @@
 [h: params = macro.args]
 [h: check = decode(json.get(params, "check"))]
+[h: gmName = json.get(params, "gmName")]
 [h,if(isDialogVisible("chooseRequestedCheck")): closeDialog("chooseRequestedCheck"))]
 [h: skill = json.path.read(check, "Checks.[0].Skill")]
 [h: qsmatter = 0]
@@ -21,5 +22,5 @@
 }]
 
 [h: recipients = json.append(getGMNames(), getPlayerName())]
-[h: skillResult = json.set(skillResult, "Notification", json.get(skillResult, "Notification") + onlyFor(note + "<br>", recipients))]
-[h: sendTo("GmAndSelf", border(skill, show(skillResult)))]
+[h,if(note != ""): skillResult = json.set(skillResult, "Notification", json.get(skillResult, "Notification") + onlyFor(note, recipients))]
+[h: sendTo("GmAndSelf", border(skill, show(skillResult)), currentToken(), gmName)]

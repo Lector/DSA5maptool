@@ -35,6 +35,7 @@
                             </td>
                         </tr>
                     </table>
+                    <input type="hidden" name="gmName" value="[r: arg(1)]">
                 </form>
             </div>
         </body>

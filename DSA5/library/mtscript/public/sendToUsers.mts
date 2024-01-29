@@ -4,6 +4,14 @@
 
 [h,if(json.length(macro.args) > 3): avatar = chatAvatar(arg(3)); avatar = chatAvatar()]
 
+[h,if(json.length(macro.args) > 4),Code:{
+	[sender = arg(4)]
+	[h,if(sender != ""),Code:{
+		[h: execFunction("sendToUsers", json.append("[]", content, recipients, visibility, arg(3)), 0, sender)]
+		[h: abort(0)]
+	}]
+}]
+
 [h,if(visibility != ""):
 	visibility = strformat("<br><img src='%s' alt='Sichtbarkeit'><span style='font-weight: normal;'>&nbsp;%{visibility}</span>",
 	data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/visibility.png"))]

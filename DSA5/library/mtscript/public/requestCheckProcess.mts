@@ -4,7 +4,7 @@
 [h: playerNames = decode(json.get(params, "playerNames"))]
 [h,foreach(player, playerNames),if(json.get(params, player) != ""),Code:{
 
-    [h: execLink(macroLinkText("rollRequestedCheck@this", "none", check), 1, player)]
+    [h: execLink(macroLinkText("rollRequestedCheck@this", "none", json.append("[]",check, getPlayerName())), 1, player)]
 }]
 
 [h: closeDialog("requestCheck")]
