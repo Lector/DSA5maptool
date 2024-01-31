@@ -1,22 +1,6 @@
 [h: switchToken(arg(0))]
 
-[h,if(isFrameVisible("meisterbogen") == 1), Code:
-{
-	[frame = getLibProperty("SLframe", "com.github.lector.dsa5maptool")]
-	[switch(frame), code:
-		case "1": {
-			[h,macro("meisterbogen1@this"): "pc"]
-		};
-		case "2": {
-			[h,macro("meisterbogen1@this"): "npc"]
-		};
-		case "3": {
-			[h,macro("meisterbogenProben@this"): ""]
-		};
-		default: {
-		}
-	]
-}]
+[h,if(isFrameVisible("meisterbogen") == 1): meisterbogen()]
 
 [h,if(isFrameVisible("charbogen") == 1), Code:
 {

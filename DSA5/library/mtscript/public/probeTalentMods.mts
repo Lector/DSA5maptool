@@ -25,6 +25,7 @@
 [h,if(json.get(uebergabe, "MirakelTalent"+skill) == 2): bonus = bonus + 2]
 
 [h: stand = json.get(uebergabe, "stand")]
+[h,if(stand == ""): stand = 0]
 [h,if(stand > 0),Code:{
 	[h: modtext = modtext + modReason(stand, "wegen sozialen Standes")]
 	[h: mod = mod + stand]
