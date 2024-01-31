@@ -136,7 +136,7 @@ skillRollTitle("Pflanzenkunde"), data.getStaticData("com.github.lector.dsa5mapto
 		[h: anw = listGet(krautAnw, json.get(funde, krautToken) - 1)]
 		[h: krautImage = strformat("<img style='vertical-align: middle;' src='%s'/>", getTokenImage(50, krautToken, map))]
 		[h: krautName = getName(krautToken, map)]
-		[h: link = strformat("https://ulisses-regelwiki.de/suche.html?keywords=%s", replace(krautName, " ", "+"))]
+		[h: link = strformat("https://dsa.ulisses-regelwiki.de/suche.html?keywords=%s", replace(krautName, " ", "+"))]
 		[h: gms = getGMNames()]
 		[h: krautLink = 
 			onlyFor(strformat("<a style='font-weight: bold; color: #441e13;' href='%{link}'>"), gms) + krautName + onlyFor("</a>",gms)]

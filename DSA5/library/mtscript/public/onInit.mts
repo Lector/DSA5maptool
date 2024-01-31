@@ -1,6 +1,24 @@
 [h,macro("defineFunctions@this"): ""]
 
-[h: message = "
+[h,if(isGM()): gmInfos = 
+"<tr>
+	<th>
+		F9
+	</th>
+	<td valign=middle>
+		Zur nächsten Initiative-Phase
+	</td>
+</tr>
+<tr>
+	<th>
+		F10
+	</th>
+	<td valign=middle>
+		Zur nächsten Initiative-Runde
+	</td>
+</tr>"; gmInfos = ""]
+
+[h: message = strformat("
 <h1>Willkommen beim DSA5 Regelsatz für maptools</h1><br>
 Neu hier? Hier gehts zum <a href='https://www.youtube.com/watch?v=1GhtRMBgSWY'>Videotutorial</a>. Dort wird alles erklärt.<br/><br>
 <b>Für Spieler</b>: Unter <b>Fenster &#8594; Kampagne</b> findet ihr eure Würfelfunktionen<br>
@@ -40,14 +58,7 @@ Neu hier? Hier gehts zum <a href='https://www.youtube.com/watch?v=1GhtRMBgSWY'>V
 			Verteidigung
 		</td>
 	</tr>
-	<tr>
-		<th>
-			F9
-		</th>
-		<td valign=middle>
-			Zur nächsten Initiative-Phase
-		</td>
-	</tr>
-</table>"]
+	%{gmInfos}
+</table>")]
 
 [h: broadcast(message, getPlayerName())]

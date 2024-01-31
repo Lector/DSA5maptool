@@ -28,18 +28,18 @@ window.addEventListener('load', function(event) {
     [r: js]
 </script>
 <div class="table-container">
-    [r,for(j, 1, 3, 1, ""),Code:{
+    [r,for(j, 1, 4, 1, ""),Code:{
     [h: subCheck = ""]
     [h,if(check != ""),Code:{
         [h: subChecks = json.get(check, "Checks")]
         [h,if(json.length(subChecks) >= j): subCheck = json.get(subChecks, j-1)]
     }]
-    <div>[r,if(j==2): "Alternative "]Probe:</div>
+    <div>[r,if(j>1): "oder:"; "Probe:"]</div>
     <div>
         <select size=1 name="skill[r:j]">
             [h: skills = getSkills()]
             [h: defaultSkill = ""]
-            [h,if(j == 1): defaultSkill = "Sphärenkunde"]
+            [h,if(j == 1): defaultSkill = "Sinnesschärfe"]
             [h,if(subCheck != ""): defaultSkill = json.get(subCheck, "Skill")]
             [r,if(j > 1): '<option value="" [r,if("" == defaultSkill): "selected"]></option>']
             [r,foreach(skill, skills, ""),Code:{
@@ -48,9 +48,9 @@ window.addEventListener('load', function(event) {
         </select>
 
         [h: defaultSpec = ""]
-        [h,if(j==1): defaultSpec = "Sphärenwesen"]
+        [h,if(j==1): defaultSpec = ""]
         [h,if(subCheck != ""): defaultSpec = json.get(subCheck, "Spec")]
-        (<input type="text" name="spec[r:j]" value='[r: defaultSpec]'/>)
+        (<input type="text" name="spec[r:j]" value='[r: defaultSpec]' placeholder='Anwendungsgebiet'/>)
 
         <select name="mod[r:j]" size="1">
             [h,if(subCheck == ""): default = 0; default = json.get(subCheck, "Mod")]
@@ -88,14 +88,4 @@ window.addEventListener('load', function(event) {
         placeholder="Was ein Held erfährt wenn er mindestens QS[r:i] erwürfelt.">[r: label]</textarea>
     </div>
     }]
-</div>
-<div class="table-container">
-    <div>
-        <input type="checkbox" name="blind" [r,if(blind == 1): "checked"]/>
-    </div>
-    <div>
-        <span title="Geheime Proben werden verdeckt vom Spieler gewürfelt.
-Spieler bekommen die Probe nur angezeigt falls sie gelingt.
-Für fehlgeschlagene Proben können folglich auch keine SchiPs eingesetzt werden.">Geheime Probe</span>
-    </div>
 </div>

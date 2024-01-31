@@ -1,11 +1,12 @@
-[h: check = arg(0)]
-[h: label = checkLabel(check)]
+[h: check = ""]
+[h,if(json.length(macro.args) > 0): check = arg(0)]
+[h,if(check == ""): label = ""; label = checkLabel(check) + " - "]
 
 [h: actionLink = macroLinkText("requestCheckProcess@this", "")]
 [dialog5("requestCheck", "width=600; height=740; temporary=1; closebutton=0; noframe=0"):{
 <html>
 	<head>
-		<title>[r: label] - Spieler zur Probe auffordern</title>
+		<title>[r: label]Spieler zur Probe auffordern</title>
 		[r: linkGoogleFonts()]
 		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/base.css?cachelib=false'/>
 	</head>

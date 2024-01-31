@@ -1,4 +1,6 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0 && json.length(macro.args) == 0), Code:
+[h,if(isGM() == 0): inputFail("gm")]]
+
+[h,if(json.length(macro.args) == 0), Code:
 	{
 		[selectID = getSelected()]
 		[if(listCount(selectID) != 1), Code:
@@ -7,10 +9,11 @@
 			};{}
 		]
 		[switchToken(selectID)]
-	};{}
+	};{
+		[switchToken(arg(0))]
+	}
 ]
 
-[h,if(json.length(macro.args) > 0): switchToken(arg(0))]
 
 [dialog5("manageChecks", "width=425; height=342; temporary=1; closebutton=0; noframe=0"):{
 <html>
