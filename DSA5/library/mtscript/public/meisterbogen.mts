@@ -1,10 +1,10 @@
 [frame = getLibProperty("SLframe", "com.github.lector.dsa5maptool")]
 [switch(frame), code:
     case "1": {
-        [h: meisterbogen1("pc")]
+        [h: meisterbogen2("pc")]
     };
     case "2": {
-        [h: meisterbogen1("npc")]
+        [h: meisterbogen2("npc")]
     };
     case "3": {
         [h: meisterbogenProben()]
