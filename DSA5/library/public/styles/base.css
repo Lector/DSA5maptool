@@ -115,3 +115,57 @@ button[type="submit"] table tr td {
     border-bottom: 1px solid #eee5c8;
     padding: 3px 10px 3px 10px;
 }
+
+.table-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 0px;
+    row-gap: 0px;
+    padding: 0px;
+}
+
+.table-container > * {
+    align-items: center;
+    display: flex;
+}
+
+.table-container > *:nth-child(2n) {
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.table-container > *:nth-child(2n+1) {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.header {
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+.column-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+}
+
+.text-table {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 4px;
+    row-gap: 0px;
+}
+
+.text-table > div:nth-child(2n) {
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.text-table > div:nth-child(2n+1) {
+    justify-content: flex-end;
+    text-align: right;
+}

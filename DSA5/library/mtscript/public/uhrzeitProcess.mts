@@ -173,7 +173,7 @@
 [h,if(getStrProp(options, "uhrChat") == 1), code:
 {
 	[h: sendTo("Public", ausgabe)]
-}}
+}]
 [h,if(isFrameVisible("kalender") == 1), code:
 {
 	[h,macro("kalenderMain@this"): ""]

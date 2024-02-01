@@ -1,0 +1,20 @@
+[h: uebergabe = macro.args]
+[h: switchToken(json.get(uebergabe, "token"))]
+[h: index = json.get(uebergabe, "index")]
+[h: tokenChecks = getProperty("Checks", currentToken())]
+[h: check = json.get(tokenChecks, index)]
+[h: skill = json.get(check, "Skill")]
+[h: spec = json.get(check, "Spec")]
+[h: label = skill]
+[h,if(spec != ""): label = strformat("%{label} (%{spec})")]
+
+[h: confirmLabel = strformat("%{label} - Probe wirklich vom Token %s entfernen?", getName(currentToken()))]
+[h: confirm = input(strformat("junk|%{confirmLabel}||LABEL|SPAN=TRUE"))]
+[h: abort(confirm)]
+
+[h: tokenChecks = json.remove(tokenChecks, index)]
+[h: setProperty("Checks", tokenChecks, currentToken())]
+
+[h: noticeSelf("checkDel", currentToken())]
+[h,if(isDialogVisible("manageChecks")): manageChecks(currentToken())]
+[h: refreshFrame(currentToken())]

@@ -1,16 +1,6 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
+[h: switchToken(arg(0))]
 
-[h: uebergabe = macro.args]
+[h: uebergabe = arg(1)]
 
 [h: tname = listGet(uebergabe, 0)]
 [h: e1 = listGet(uebergabe, 1)]
@@ -18,15 +8,19 @@
 [h: e3 = listGet(uebergabe, 3)]
 
 [h,if(e1 == "--" || e2 == "--" || e3 == "--"), Code:
-	{
-		[h,macro("inputFail@this"): "3W20Fail"]
-	};{}
-]
+{
+	[h,macro("inputFail@this"): "3W20Fail"]
+}]
 
 <!-- Hier loesen wir MU KL oder aehnliches in den Eigenschaftswert auf -->
 [h: e1wert = eval(e1)]
 [h: e2wert = eval(e2)]
 [h: e3wert = eval(e3)]
+<!-- Es werden die aktuellen Eigenschaften ermittelt. Durch temporaere Effekte oder Zustaende koennen sie geaendert sein -->
+[h: aktE1wert = probeGetAktWert(e1)]
+[h: aktE2wert = probeGetAktWert(e2)]
+[h: aktE3wert = probeGetAktWert(e3)]
+
 [h: wert = listGet(uebergabe, 4)]
 [h: gruppe = listGet(uebergabe, 5)]
 
@@ -34,15 +28,7 @@
 [h,if(getState("Blutrausch") == 1 && gruppe != "Koerper" && tname != "Einschüchtern"),Code:
 {
 	[h,macro("inputFail@this"): "blutrausch"]
-};{}]
-
-<!-- Es werden die aktuellen Eigenschaften ermittelt. Durch temporaere Effekte oder Zustaende koennen sie geaendert sein -->
-[h,macro("probeGetAktWert@this"): e1]
-[h: aktE1wert = macro.return]
-[h,macro("probeGetAktWert@this"): e2]
-[h: aktE2wert = macro.return]
-[h,macro("probeGetAktWert@this"): e3]
-[h: aktE3wert = macro.return]
+}]
 
 [h: actionLink = macroLinkText("probe3w20Process@this", "")]
 [dialog5("probe", "width=750; height=476; temporary=1; closebutton=0; noframe=0"):{

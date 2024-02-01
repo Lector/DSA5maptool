@@ -1,7 +1,8 @@
-[h,if(json.length(macro.args) > 2): tokenID = arg(2); tokenID = ""]
-
 [h: target = arg(0)]
 [h: content = arg(1)]
+
+[h,if(json.length(macro.args) > 2): tokenID = arg(2); tokenID = ""]
+[h,if(json.length(macro.args) > 3): sender = arg(3); sender = ""]]
 
 [h: player = getPlayerName()]
 
@@ -41,4 +42,4 @@
 	};
 ]
 
-[h: sendToUsers(content, recipients, visibility)]
+[h: sendToUsers(content, recipients, visibility, tokenID, sender)]

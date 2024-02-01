@@ -160,6 +160,18 @@
 	case "chareditAnimalFormProcess": {
 		[msgTitle = "Tierform verkörpert"]
 		[msgText = "Die Tierform wurde erfolgreich verkörpert."]
+	};
+	case "editCheck": {
+		[msgTitle = "Probe bearbeitet"]
+		[msgText = "Die Probe wurde erfolgreich editiert."]
+	};
+	case "checkDel": {
+		[msgTitle = "Probe gelöscht"]
+		[msgText = "Die Probe wurde erfolgreich gelöscht."]
+	};
+	case "checkRequested": {
+		[msgTitle = "Probe angefordert"]
+		[msgText = "Die ausgewählten Spieler wurden zur Probe aufgefordert. Solbald sie fertig gewürfelt haben erscheint das Ergebnis im Chat."]
 	}
 ]
 
@@ -177,4 +189,4 @@
 </table>",
 data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/scroll.png")))]
 
-[h: sendTo("Self", ausgabe)]
+[h,if(json.length(macro.args) > 1): sendTo("Self", ausgabe, arg(1)); sendTo("Self", ausgabe)]

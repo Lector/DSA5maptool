@@ -69,7 +69,7 @@
 	{
 		[options = setStrProp(options, "uhr", "1")]
 		[setLibProperty("KalenderOpt", options, "com.github.lector.dsa5maptool")]
-		[nUebergabe = json.set("{}", "fUhr", getStrProp(options, "uhrzeit"))]
+		[nUebergabe = json.set("{}", "fUhr", json.get(options, "uhrzeit"))]
 		[h,macro("uhrzeitProcess@this"): nUebergabe]
 	}
 ]

@@ -16,7 +16,7 @@
 	</head>
 	<body>
 		<div class="border">
-			<form action="[r:actionLink]">
+			<form action="[r:actionLink]" method="JSON">
 				[r: header("Kalenderoptionen")]
 				<table style='border-spacing: 0px; font-weight: bold;'>
 					<tr>
@@ -39,7 +39,7 @@
 							<input type='checkbox' name='fKalChat' value='1' [r: cKalChat]>
 						</td>
 						<td>
-							änderungen des Datums im Chat ausgeben
+							Änderungen des Datums im Chat ausgeben
 						</td>
 					</tr>
 					<tr>
@@ -72,7 +72,7 @@
 							<input type='checkbox' name='fUhrChat' value='1' [r: cUhrChat]>
 						</td>
 						<td>
-							änderungen der Uhrzeit im Chat ausgeben
+							Änderungen der Uhrzeit im Chat ausgeben
 						</td>
 					</tr>
 				</table>

@@ -32,7 +32,7 @@
 		[h,if(Spec != ""), if(hasTrait("AllgemeineSF", SpecSF)): FPBonus = FPBonus + 2]
 		[h: modMacroParams = json.get(params, "modMacroParams")]
 		[h: modMacroParams = json.set(modMacroParams, "Skill", skill)]
-		[h: params = json.set(params, "modMacroParams", modMacroParams)]
+		[h: params = json.set(params, "Name", skill, "modMacroParams", modMacroParams)]
 		[h: return(0, roll3d20(arg(0), e1, e2, e3, json.get(item, "Talentwert") + FPBonus, mod, params))]
 	}]
 }]

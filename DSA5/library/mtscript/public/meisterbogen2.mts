@@ -2,13 +2,14 @@
 
 [h,if(arg(0) == "pc"),Code:{
 	[h: tokenList = getTokens("json", json.set(conditions, "npc", 0, "pc", 1))]
-	[h: setLibProperty("SLframe", 3, "lib:com.github.lector.dsa5maptool")]
+	[h: tab = 1]
 	[h: header = "Spielercharaktere"]
 };{
 	[h: tokenList = getTokens("json", json.set(conditions, "npc", 1, "pc", 0))]
-	[h: setLibProperty("SLframe", 4, "lib:com.github.lector.dsa5maptool")]
+	[h: tab = 2]
 	[h: header = "Meistercharaktere"]
 }]
+[h: setLibProperty("SLframe", tab, "lib:com.github.lector.dsa5maptool")]
 
 [h: fTokenList = "[]"]
 [h,foreach(tID, tokenList),Code:
@@ -19,7 +20,6 @@
 		[lCount = length(tName)]
 		[if(substring(tName, 0, 1) == " " || substring(tName, lCount-1, lCount) == " "): setName(trim(tName), tID)]
 		[fTokenList = json.append(fTokenList, json.set("{}", "id", tID, "name", tName))]
-	};{
 	}]
 }]
 [h: fTokenList = json.sort(fTokenList, "a", "name")]
@@ -28,7 +28,7 @@
 <html>
 	<head>
 		<title>
-			Meisterbogen - [r: header] II
+			Meisterbogen - [r: header]
 		</title>
 		[r: linkGoogleFonts()]
 		<link rel='stylesheet' type='text/css' href='lib://com.github.lector.dsa5maptool/styles/charsheet.css?cachelib=false'/>
@@ -36,10 +36,9 @@
 	<body>
 		<div class="header">
 			<div class="charactername">
-				[r: header] II
+				[r: header]
 			</div>
-			[h,if(arg(0) == "pc"): tab = 1; tab = 3]
-			[r: gmsheetNavigation(tab)]
+			[r: gmsheetNavigation(tab-1)]
 		</div>
 		<div class="content">		
 			<table style='border-spacing: 0px;' width='500'>

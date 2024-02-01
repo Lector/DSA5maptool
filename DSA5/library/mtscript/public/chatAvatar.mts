@@ -32,9 +32,10 @@
 {
     [h,if(arg(0) != ""),Code:
     {
-        [switchToken(arg(0))]
-        [tokenImage = getTokenImage(50)]
-        [tokenName = getName()]
+        [h: tok = arg(0)]
+        [h: map = tokenMap(tok)]
+        [tokenImage = getTokenImage(50, tok, map)]
+        [tokenName = getName(tok, map)]
     }]
 }]
 

@@ -24,7 +24,13 @@
 [h,if(json.get(uebergabe, "Spezialisierung"+skill) == 2): bonus = bonus + 2]
 [h,if(json.get(uebergabe, "MirakelTalent"+skill) == 2): bonus = bonus + 2]
 
-[h: mod = mod + json.get(uebergabe, "stand")]
+[h: stand = json.get(uebergabe, "stand")]
+[h,if(stand == ""): stand = 0]
+[h,if(stand > 0),Code:{
+	[h: modtext = modtext + modReason(stand, "wegen sozialen Standes")]
+	[h: mod = mod + stand]
+}]
+
 
 [h: typ = getProperty("Typus", tok, map)]
 [h,if(listContains("Dämon, Elementar, Geist, Golem, Golemid, Untoter", typ) == 0),Code:
