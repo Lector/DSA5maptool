@@ -75,9 +75,12 @@
 			<div class="panel-ornament">
 				<div class="heading heading-additional">
 					Kampfsonderfertigkeiten
-					<div title="Neue Kampfsonderfertigkeit hinzufügen">
-						<a href="[r: macroLinkText('chareditTraitAdd@this', '', json.append('[]', currentToken(), 'KampfSF'))]">
+					<div>
+						<a title="Neue Kampfsonderfertigkeit hinzufügen" href="[r: macroLinkText('chareditTraitAdd@this', '', json.append('[]', currentToken(), 'KampfSF'))]">
 							<image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesAdd.png")]' border="0" alt="Eine neue Kampfsonderfertigkeit hinzufügen"></image>
+						</a>
+						<a title="Kampfsonderfertigkeiten ändern" href="[r: macroLinkText('chareditTrait@this', '', json.append('[]', currentToken(), 'KampfSF'))]">
+							<image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesEdit.png")]' border="0" alt="Kampfsonderfertigkeiten ändern"></image>
 						</a>
 					</div>
 				</div>

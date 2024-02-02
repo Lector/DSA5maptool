@@ -487,6 +487,12 @@ input[type="text"] {
     justify-content: space-between;
 }
 
+.heading-additional > div {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
 .linkListing {
     display: flex;
     flex-flow: column nowrap;

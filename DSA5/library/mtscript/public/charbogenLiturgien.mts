@@ -31,9 +31,12 @@
 		<div class="panel-ornament">
 			<div class="heading heading-additional">
 				Karmale Sonderfertigkeiten
-				<div title="Neue karmale Sonderfertigkeit hinzufügen">
-					<a href="[r: macroLinkText('chareditTraitAdd@this', '', json.append('[]', currentToken(), 'KarmaleSF'))]">
+				<div>
+					<a title="Neue karmale Sonderfertigkeit hinzufügen" href="[r: macroLinkText('chareditTraitAdd@this', '', json.append('[]', currentToken(), 'KarmaleSF'))]">
 						<image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesAdd.png")]' border="0" alt="Eine neue karmale Sonderfertigkeit hinzufügen"></image>
+					</a>
+					<a title="Karmale Sonderfertigkeiten ändern" href="[r: macroLinkText('chareditTrait@this', '', json.append('[]', currentToken(), 'KarmaleSF'))]">
+						<image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesEdit.png")]' border="0" alt="Karmale Sonderfertigkeiten ändern"></image>
 					</a>
 				</div>
 			</div>
@@ -42,9 +45,12 @@
 		<div class="panel-ornament">
 			<div class="heading heading-additional">
 				Segnungen
-				<div title="Neue Segnung hinzufügen">
-					<a href="[r: macroLinkText('chareditTraitAdd@this', '', json.append('[]', currentToken(), 'Segnungen'))]">
+				<div>
+					<a title="Neue Segnung hinzufügen" href="[r: macroLinkText('chareditTraitAdd@this', '', json.append('[]', currentToken(), 'Segnungen'))]">
 						<image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesAdd.png")]' border="0" alt="Eine neue Segnung hinzufügen"></image>
+					</a>
+					<a title="Segnungen ändern" href="[r: macroLinkText('chareditTrait@this', '', json.append('[]', currentToken(), 'Segnungen'))]">
+						<image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesEdit.png")]' border="0" alt="Segnungen ändern"></image>
 					</a>
 				</div>
 			</div>

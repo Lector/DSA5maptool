@@ -19,7 +19,7 @@
 		<div class="content">
             <div class="column-container">
 
-                [r: macroLink("Neue Proben im aktuell ausgewählten Token anlegen", "checkEdit@this")]
+                [r: macroLink("Neue Proben im aktuell ausgewählten Token anlegen", "checkEdit@this", "", currentToken())]
 				[r: macroLink("Spontane Probe würfeln lassen", "requestCheck@this")]
 				<br>
 

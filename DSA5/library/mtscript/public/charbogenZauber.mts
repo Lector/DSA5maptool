@@ -32,9 +32,12 @@
 			<div class="panel-ornament">
 				<div class="heading heading-additional">
 					Magische Sonderfertigkeiten
-					<div title="Neue magische Sonderfertigkeit hinzufügen">
-						<a href="[r: macroLinkText('chareditTraitAdd@this', '', json.append('[]', currentToken(), 'MagieSF'))]">
+					<div>
+						<a title="Neue magische Sonderfertigkeit hinzufügen" href="[r: macroLinkText('chareditTraitAdd@this', '', json.append('[]', currentToken(), 'MagieSF'))]">
 							<image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesAdd.png")]' border="0" alt="Eine neue magische Sonderfertigkeit hinzufügen"></image>
+						</a>
+						<a title="Magische Sonderfertigkeiten ändern" href="[r: macroLinkText('chareditTrait@this', '', json.append('[]', currentToken(), 'MagieSF'))]">
+							<image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesEdit.png")]' border="0" alt="Magische Sonderfertigkeiten ändern"></image>
 						</a>
 					</div>
 				</div>
@@ -43,9 +46,12 @@
 			<div class="panel-ornament">
 				<div class="heading heading-additional">
 					Zaubertricks
-					<div title="Neuen Zaubertrick hinzufügen">
-						<a href="[r: macroLinkText('chareditTraitAdd@this', '', json.append('[]', currentToken(), 'Zaubertricks'))]">
+					<div>
+						<a title="Neuen Zaubertrick hinzufügen" href="[r: macroLinkText('chareditTraitAdd@this', '', json.append('[]', currentToken(), 'Zaubertricks'))]">
 							<image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesAdd.png")]' border="0" alt="Einen neuen Zaubertrick hinzufügen"></image>
+						</a>
+						<a title="Zaubertricks ändern" href="[r: macroLinkText('chareditTrait@this', '', json.append('[]', currentToken(), 'Zaubertricks'))]">
+							<image src='[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/notesEdit.png")]' border="0" alt="Zaubertricks ändern"></image>
 						</a>
 					</div>
 				</div>
