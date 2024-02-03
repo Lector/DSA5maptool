@@ -1,17 +1,6 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
-
 [h: uebergabe = macro.args]
 [h: tok = json.get(uebergabe, "self")]
+[h: switchToken(tok)]
 [h: map = tokenMap(tok)]
 [h: skill = json.get(uebergabe, "Skill")]
 
@@ -20,9 +9,15 @@
 [h: mod = json.get(macro.return, "mod")]
 [h: bonus = json.get(macro.return, "bonus")]
 [h: modtext = json.get(macro.return, "modtext")]
+[h: notification = json.get(macro.return, "notification")]
 
 [h,if(json.get(uebergabe, "Spezialisierung"+skill) == 2): bonus = bonus + 2]
-[h,if(json.get(uebergabe, "MirakelTalent"+skill) == 2): bonus = bonus + 2]
+[h,if(json.get(uebergabe, "MirakelTalent"+skill) == 2),Code: {
+	[h: bonus = bonus + 2]
+	[h: KaP = KaP - 4]
+	[h: checkZustand(tok)]
+	[h: notification = notification + "<b>Mirakel:</b> Der Fertigkeitswerte wurde für 4 KaP um 2 Punkte erhöht. (bereits abgezogen)<br>"]
+}]
 
 [h: stand = json.get(uebergabe, "stand")]
 [h,if(stand == ""): stand = 0]
@@ -70,5 +65,6 @@
 [h: ergebnis = json.set("", "mod", mod)]
 [h: ergebnis = json.set(ergebnis, "bonus", bonus)]
 [h: ergebnis = json.set(ergebnis, "modtext", modtext)]
+[h: ergebnis = json.set(ergebnis, "notification", notification)]
 
 [h: macro.return = ergebnis]

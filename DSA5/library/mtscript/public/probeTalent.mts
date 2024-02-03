@@ -118,13 +118,13 @@
 						</td>
 						<td valign='top'>
 							<table>
-								[r,macro("probeFWPlus@this"): json.append(currentToken(), tname)]
-								[r,macro("probeSpezialisierung@this"): tname]
-								[r,macro("probeBelastung@this"): tname]
-								[r,macro("probeParalyse@this"): json.append(gruppe, tname)]
-								[r,macro("probeSozialerStand@this"): tname]
-								[r,macro("probeMirakel@this"): tname]
-								[r,macro("probeGottgefaellig@this"): tname]
+								[r: probeFWPlus(currentToken(), tname)]
+								[r: probeSpezialisierung(tname)]
+								[r: probeBelastung(currentToken(), tname)]
+								[r: probeParalyse(currentToken(), gruppe, tname)]
+								[r: probeSozialerStand(currentToken(), tname)]
+								[r: probeMirakel(currentToken(), tname)]
+								[r: probeGottgefaellig(currentToken(), tname)]
 							</table>
 						</td>
 					</tr>

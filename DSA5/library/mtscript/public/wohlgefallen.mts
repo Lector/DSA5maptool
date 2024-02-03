@@ -42,6 +42,7 @@
 	case "Mohaschamanen": skills = "Heilkunde Krankheit, Heilkunde Seele, Heilkunde Wunden, Körperbeherrschung, Kraftakt, Orientierung, Pflanzenkunde, Selbstbeherrschung, Tanzen, Verbergen, Wildnisleben";
 	case "Nivesenschamanen": skills = "Fährtensuchen, Heilkunde Krankheit, Heilkunde Seele, Heilkunde Wunden, Körperbeherrschung, Kraftakt, Orientierung, Selbstbeherrschung, Tierkunde, Wildnisleben";
 	case "Trollzackerschamanen": skills = "Einschüchtern, Heilkunde Krankheit, Heilkunde Seele, Heilkunde Wunden, Klettern, Körperbeherrschung, Kraftakt, Orientierung, Selbstbeherrschung, Steinbearbeitung, Wildnisleben";
+	case "Shinxirkult": skills = "Dolche, Fächer, Fechtwaffen, Hiebwaffen, Kettenwaffen, Lanzen, Peitschen, Raufen, Schilde, Schwerter, Spießwaffen, Stangenwaffen, Zweihandhiebwaffen, Zweihandschwerter, Armbrüste, Blasrohre, Bögen, Diskusse, Feuerspeien, Schleudern, Wurfwaffen, Götter & Kulte, Körperbeherrschung, Kraftakt, Kriegskunst, Willenskraft";
 	default: skills = ""
 ]
 

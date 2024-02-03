@@ -1,20 +1,10 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
-
-[h: skill = arg(0)]
+[h: switchToken(arg(0))]
+[h: skill = arg(1)]
 
 <!-- Falls der Held KaP hat gehen wir davon aus dass er das Talent Mirakeln kann und
 bieten eine Checkbox hierfuer an. KaP werden (noch) NICHT automatisch abgezogen. -->
-[if(MaxKaP > 0), Code:
+[h: gefallen = wohlgefallen(currentToken(), skill)]
+[if(KaP >= 4 && gefallen > 0), Code:
 {
 	<tr>
 		<td>

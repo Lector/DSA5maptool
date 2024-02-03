@@ -2,6 +2,7 @@
 
 [h: check = checkFromForm(params)]
 [h: playerNames = decode(json.get(params, "playerNames"))]
+[h: playerNames = json.intersection(playerNames, getAllPlayerNames("json"))]
 [h,foreach(player, playerNames),if(json.get(params, player) != ""),Code:{
 
     [h: execLink(macroLinkText("rollRequestedCheck@this", "none", json.append("[]",check, getPlayerName())), 1, player)]

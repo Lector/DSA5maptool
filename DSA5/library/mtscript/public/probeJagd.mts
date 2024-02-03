@@ -224,16 +224,16 @@ window.addEventListener('load', function(evt) {
 							</div>
 						</td>
 						<td valign=top style="white-space: nowrap;">
-							[r,macro("probeInfo@this"): json.append(currentToken(), skill1, spec1)]
+							[r: probeInfo(currentToken(), skill1, spec1)]
 						</td>
 						<td width=20>&nbsp;</td>
 						
 						<td valign=top style="white-space: nowrap;">
 							<table><tr>
-							[r,macro("probeBelastung@this"): skill1]
-							[r,macro("probeParalyse@this"): json.append("Natur", skill1)]
-							[r,macro("probeMirakel@this"): skill1]
-							[r,macro("probeGottgefaellig@this"): skill1]
+							[r: probeBelastung(currentToken(), skill1)]
+							[r: probeParalyse(currentToken(), "Natur", skill1)]
+							[r: probeMirakel(currentToken(), skill1)]
+							[r: probeGottgefaellig(currentToken(), skill1)]
 							</tr></table>
 						</td>
 					</tr>
@@ -249,16 +249,16 @@ window.addEventListener('load', function(evt) {
 							</div>
 						</td>
 						<td valign=top style="white-space: nowrap;">
-							[r,macro("probeInfo@this"): json.append(currentToken(), skill2, spec2)]
+							[r: probeInfo(currentToken(), skill2, spec2)]
 						</td>
 						<td width=20>&nbsp;</td>
 						
 						<td valign=top style="white-space: nowrap;">
 							<table><tr>
-							[r,macro("probeBelastung@this"): skill2]
-							[r,macro("probeParalyse@this"): json.append("Natur", skill2)]
-							[r,macro("probeMirakel@this"): skill2]
-							[r,macro("probeGottgefaellig@this"): skill2]
+							[r: probeBelastung(currentToken(), skill2)]
+							[r: probeParalyse(currentToken(), "Natur", skill2)]
+							[r: probeMirakel(currentToken(), skill2)]
+							[r: probeGottgefaellig(currentToken(), skill2)]
 							</tr></table>
 						</td>
 					</tr>
@@ -321,8 +321,8 @@ window.addEventListener('load', function(evt) {
 										</select>
 									</td>
 								</tr>
-								[r,macro("probeGelaendekunde@this"): json.append(currentToken(), encode("[]"))]
-								[r,macro("probeWetter@this"): ""]
+								[r: probeGelaendekunde(currentToken(), encode("[]"))]
+								[r: probeWetter()]
 								[r,if(typ == "Angeln"),Code:
 								{
 								<tr>

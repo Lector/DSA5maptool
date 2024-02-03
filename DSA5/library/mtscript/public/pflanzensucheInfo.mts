@@ -13,16 +13,16 @@
 			</div>
 		</td>
 		<td valign=top style="white-space: nowrap;">
-			[r,macro("probeInfo@this"): json.append(currentToken(), "Pflanzenkunde")]
+			[r: probeInfo(currentToken(), "Pflanzenkunde")]
 		</td>
 		
 		<td valign=top style="padding-left: 20; white-space: nowrap;">
 			<table>
 				<tr>
-					[r,macro("probeBelastung@this"): "Pflanzenkunde"]
-					[r,macro("probeParalyse@this"): json.append("Natur", "Pflanzenkunde")]
-					[r,macro("probeMirakel@this"): "Pflanzenkunde"]
-					[r,macro("probeGottgefaellig@this"): "Pflanzenkunde"]
+					[r: probeBelastung(currentToken(), "Pflanzenkunde")]
+					[r: probeParalyse(currentToken(), "Natur", "Pflanzenkunde")]
+					[r: probeMirakel(currentToken(), "Pflanzenkunde")]
+					[r: probeGottgefaellig(currentToken(), "Pflanzenkunde")]
 				</tr>
 			</table>
 		</td>
@@ -39,16 +39,16 @@
 			</div>
 		</td>
 		<td valign=top style="white-space: nowrap;">
-			[r,macro("probeInfo@this"): json.append(currentToken(), "Sinnesschärfe")]
+			[r: probeInfo(currentToken(), "Sinnesschärfe")]
 		</td>
 		
 		<td valign=top style="padding-left: 20; white-space: nowrap;">
 			<table>
 				<tr>
-					[r,macro("probeBelastung@this"): "Sinnesschärfe"]
-					[r,macro("probeParalyse@this"): json.append("Koerper", "Sinnesschärfe")]
-					[r,macro("probeMirakel@this"): "Sinnesschärfe"]
-					[r,macro("probeGottgefaellig@this"): "Sinnesschärfe"]
+					[r: probeBelastung(currentToken(), "Sinnesschärfe")]
+					[r: probeParalyse(currentToken(), "Koerper", "Sinnesschärfe")]
+					[r: probeMirakel(currentToken(), "Sinnesschärfe")]
+					[r: probeGottgefaellig(currentToken(), "Sinnesschärfe")]
 				</tr>
 			</table>
 		</td>

@@ -61,6 +61,7 @@ Es werden auch die aktuellen Eigenschaften ermittelt. Durch temporaere Effekte o
 Dieses Skript kann dann die unterschiedlichen Parameter aus der Übergabe auslesen und entsprechend auf den Gesamtmodifikator aufaddieren-->
 [h: modtext = ""]
 [h: bonustext = ""]
+[h: notification = ""]
 [h,if(modMacro != ""), Code:
 {
 	[h: modMacroParams = json.set(modMacroParams, "self", arg(0))]
@@ -77,6 +78,7 @@ Dieses Skript kann dann die unterschiedlichen Parameter aus der Übergabe ausles
 	[if(bonustext != ""): bonustext = "title='" + bonustext + "'"]
 	[modtext = json.get(macro.return, "modtext")]
 	[if(modtext != ""): modtext = "title='" + modtext + "'"]
+	[notification = json.get(macro.return, "notification")]
 }]
 
 [h: dice1 = 1d20]
@@ -124,7 +126,8 @@ Dieses Skript kann dann die unterschiedlichen Parameter aus der Übergabe ausles
 "propertyNames", json.append(E1, E2, E3),
 "modText", modtext,
 "bonusText", bonustext,
-"reroll", rerollResults)]
+"reroll", rerollResults,
+"Notification", notification)]
 
 [h: ergebnis = calc3d20(ergebnis, FPBonus, patzer19)]
 [h: success = json.get(ergebnis, "success")]

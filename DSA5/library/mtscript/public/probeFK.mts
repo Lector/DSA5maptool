@@ -412,7 +412,7 @@
 										Kampfgetümmel (-2)
 									</td>
 								</tr>
-								[r,macro("probeGottgefaellig@this"): ""]
+								[r: probeGottgefaellig(currentToken(), "")]
 							</table>
 						</td>
 					</tr>

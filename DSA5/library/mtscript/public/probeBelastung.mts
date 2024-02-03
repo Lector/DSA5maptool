@@ -1,16 +1,5 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
-
-[h: tname = arg(0)]
+[h: switchToken(arg(0))]
+[h: tname = arg(1)]
 
 <!-- Die aktuelle Stufe der Belastung bieten wir als Erschwernis an
 und machen den Haken falls es beim Talent ueblicherweise relevant ist -->

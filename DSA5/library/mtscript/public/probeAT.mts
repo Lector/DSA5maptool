@@ -285,7 +285,7 @@
 										(keine Manöver erlaubt<br>keine Patzer oder kritische Erfolge)
 									</td>
 								</tr>
-								[r,macro("probeGottgefaellig@this"): ""]
+								[r: probeGottgefaellig(currentToken(), "")]
 							</table>
 						</td>
 						<td width='20'>

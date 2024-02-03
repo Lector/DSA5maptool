@@ -1,17 +1,6 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
-
-[h: gruppe = arg(0)]
-[h: skill = arg(1)]
+[h: switchToken(arg(0))]
+[h: gruppe = arg(1)]
+[h: skill = arg(2)]
 <!-- Falls Bewegung oder Sprache wichtig sind wird die Paralyse-Stufe als Erschwernis gegeben.
 Dies wird vorausgewaehlt falls es ein Koerper oder Gesellschaftstalent ist.-->
 [if(Paralyse > 0), Code:

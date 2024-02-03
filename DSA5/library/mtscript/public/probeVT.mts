@@ -288,7 +288,7 @@ window.addEventListener('load', function(evt) {
 								</tr>
                                 [r: probeBound(currentToken(), weapons)]
                                 <!-- TODO: Gottgefaellig nur bei PA -->
-								[r: probeGottgefaellig()]
+								[r: probeGottgefaellig(currentToken(), "")]
 								<tr>
 									<td>
 										<input type='checkbox' name='kritisch' [r:gluecklich]>

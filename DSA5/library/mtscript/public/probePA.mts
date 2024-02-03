@@ -235,7 +235,7 @@
 										Angriff von Hinten (-4)
 									</td>
 								</tr>
-								[r,macro("probeGottgefaellig@this"): ""]
+								[r: probeGottgefaellig(currentToken(), "")]
 								<tr>
 									<td>
 										<input type='checkbox' name='kritisch' [r:gluecklich]>

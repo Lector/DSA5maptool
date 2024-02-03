@@ -1,20 +1,10 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
+[h: switchToken(arg(0))]
 
 <!-- Da wir im Falle von Entrueckung Erschwerleichternisse geben je nachdem
 ob das Talent der Gottheit gefaellt machen wir hier einen Haken
 in dem wir letztes eintragen koennen -->
 
-[h: skill = arg(0)]
+[h: skill = arg(1)]
 [h: gefallen = wohlgefallen(currentToken(), skill)]
 [h: checked = ""]
 [h,if(gefallen == 1): checked = "checked='checked'"]

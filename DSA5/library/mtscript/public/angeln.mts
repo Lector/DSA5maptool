@@ -54,16 +54,16 @@
 							</div>
 						</td>
 						<td valign=top style="white-space: nowrap;">
-							[r,macro("probeInfo@this"): json.append(currentToken(), "Fischen & Angeln")]
+							[r: probeInfo(currentToken(), "Fischen & Angeln")]
 						</td>
 						<td width=20>&nbsp;</td>
 						
 						<td valign=top style="white-space: nowrap;">
 							<table><tr>
-							[r,macro("probeBelastung@this"): "Fischen & Angeln"]
-							[r,macro("probeParalyse@this"): json.append("Natur", "Fischen & Angeln")]
-							[r,macro("probeMirakel@this"): "Fischen & Angeln"]
-							[r,macro("probeGottgefaellig@this"): "Fischen & Angeln"]
+							[r: probeBelastung(currentToken(), "Fischen & Angeln")]
+							[r: probeParalyse(currentToken(), "Natur", "Fischen & Angeln")]
+							[r: probeMirakel(currentToken(), "Fischen & Angeln")]
+							[r: probeGottgefaellig(currentToken(), "Fischen & Angeln")]
 							</tr></table>
 						</td>
 					</tr>
@@ -79,16 +79,16 @@
 							</div>
 						</td>
 						<td valign=top style="white-space: nowrap;">
-							[r,macro("probeInfo@this"): json.append(currentToken(), "Verbergen")]
+							[r: probeInfo(currentToken(), "Verbergen")]
 						</td>
 						<td width=20>&nbsp;</td>
 						
 						<td valign=top style="white-space: nowrap;">
 							<table><tr>
-							[r,macro("probeBelastung@this"): "Verbergen"]
-							[r,macro("probeParalyse@this"): json.append("Koerper", "Verbergen")]
-							[r,macro("probeMirakel@this"): "Verbergen"]
-							[r,macro("probeGottgefaellig@this"): "Verbergen"]
+							[r: probeBelastung(currentToken(), "Verbergen")]
+							[r: probeParalyse(currentToken(), "Koerper", "Verbergen")]
+							[r: probeMirakel(currentToken(), "Verbergen")]
+							[r: probeGottgefaellig(currentToken(), "Verbergen")]
 							</tr></table>
 						</td>
 					</tr>
