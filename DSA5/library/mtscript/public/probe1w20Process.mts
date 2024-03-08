@@ -1,15 +1,3 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
-
 <!--
 Dieses Skript handelt alle möglichen 1W20-Proben ab.
 Icons, Patzertabellen unterscheiden sich teilweise stark, je nach Probe.
@@ -17,6 +5,7 @@ Dies wird von den unterschiedlichen Aufrufskripten alles mit übergeben werden
 -->
 
 [h: uebergabe = macro.args]
+[h: switchToken(json.get(uebergabe, "token"))]
 
 [h: chat = json.get(uebergabe, "chat")]
 [h: pName = json.get(uebergabe, "Name")]
@@ -31,6 +20,8 @@ Dies wird von den unterschiedlichen Aufrufskripten alles mit übergeben werden
 [h,if(pruefwurf == ""): pruefwurf = 1]
 [h: pruefReroll = json.get(uebergabe, "pruefreroll")]
 [h,if(pruefreroll == ""): pruefReroll = 0]
+[h: allowImprovement = json.get(uebergabe, "allowImprovement")]
+[h,if(allowImprovement == ""): allowImprovement = 0]
 
 [h: kritText = json.get(uebergabe, "kritText")]
 [h: kritImage = json.get(uebergabe, "kritImage")]
@@ -47,7 +38,7 @@ Dies wird von den unterschiedlichen Aufrufskripten alles mit übergeben werden
 [h: image = json.get(uebergabe, "image")]
 [h: modMacro = json.get(uebergabe, "modMacro")]
 
-[h: params = json.set("{}", "patzer19", json.get(uebergabe, "patzer19"), "confirm", pruefwurf, "rerollConfirm", pruefReroll, "modMacro", modMacro, "modMacroParams", uebergabe, "Name", pName)]
+[h: params = json.set("{}", "patzer19", json.get(uebergabe, "patzer19"), "confirm", pruefwurf, "rerollConfirm", pruefReroll, "allowImprovement", allowImprovement, "modMacro", modMacro, "modMacroParams", uebergabe, "Name", pName)]
 
 [h: ergebnis = roll1d20(currentToken(), Wert, 0, params)]
 [h: success = json.get(ergebnis, "success")]

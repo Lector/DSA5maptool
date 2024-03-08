@@ -15,7 +15,7 @@
 [h,if(getState("Blutrausch") == 1),Code:
 {
 	[h,macro("inputFail@this"): "blutrausch"]
-};{}]
+}]
 
 [h,if(json.length(Nahkampfwaffen) == 0 && getProperty("AW") == 0): inputFail("noMeleeWeapons")]
 

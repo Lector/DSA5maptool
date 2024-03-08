@@ -10,10 +10,12 @@
 	[if(isNumber(weapon)): def = weapon; def = getAW(currentToken())]
 	[type = "dodge"]
 	[skill = "Ausweichen"]
+	[allowImprovement = hasTrait("AllgemeineSF", "Ausweichen verbessern", 1, currentToken())]
 };{
 	[def = json.get(weapon, "PA")]
 	[type = "parry"]
 	[skill = json.get(weapon, "Technik")]
+	[allowImprovement = hasTrait("AllgemeineSF", "Parade verbessern", 1, currentToken())]
 }]
 
 [h: status = ""]
@@ -45,6 +47,8 @@
 	[h,if(technik != "Raufen" && technik != ""): patzerTabelle = "patzerNahkampf"]
 	[h: params = json.set(params, "Name", "Verteidigung", "rerollConfirm", hasTrait("Vorteile", "Waffenbegabung ("+technik+")", 1, tok))]
 }]
+
+[h: params = json.set(params, "Name", "Verteidigung", "allowImprovement", allowImprovement)]
 
 <!-- Zuerst wird eine Verteidigung gewürfelt. -->
 [h: rollResult = roll1d20(currentToken(), def, mod, params)]

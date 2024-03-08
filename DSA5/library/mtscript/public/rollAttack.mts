@@ -42,14 +42,20 @@
 
 [h: params = json.set(params, "Name", "Attacke", "rerollConfirm", hasTrait("Vorteile", "Waffenbegabung (" + technik + ")", 1, currentToken()))]
 
-[h,if(json.contains(weapon, "AT")): value = json.get(weapon, "AT"); value = json.get(weapon, "FK")]
+
 [h: modMacroParams = json.get(params, "modMacroParams")]
 [h: modMacroParams = json.set(modMacroParams, "Skill", technik)]
 [h: params = json.set(params, "modMacroParams", modMacroParams)]
 [h,if(technik == "Kettenwaffen"): params = json.set(params, "patzer19", 1)]
 [h: improMeister = hasTrait("KampfSF", "Meister der improvisierten Waffen")]
 [h,if(json.get(weapon, "Improvisiert") == 1 && improMeister == 0): params = json.set(params, "patzer19", 1)]
-
+[h,if(json.contains(weapon, "AT")),Code:{
+	[value = json.get(weapon, "AT")]
+	[h: params = json.set(params, "allowImprovement", hasTrait("AllgemeineSF", "Attacke verbessern", 1, currentToken()))]
+};{
+	[value = json.get(weapon, "FK")]
+	[h: params = json.set(params, "allowImprovement", hasTrait("AllgemeineSF", "Fernkampf verbessern", 1, currentToken()))]
+}]  
 [h: rollResult = roll1d20(currentToken(), value, mod, params)]
 [h: subResults = json.append(subResults, json.set(rollResult, "ResultType", "attack", "Weapon", weapon, "Technik", technik))]
 [h: success = json.get(rollResult, "success")]

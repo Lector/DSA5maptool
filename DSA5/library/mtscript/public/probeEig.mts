@@ -93,10 +93,12 @@ case "KK": eigName = "Körperkraft"
 						</td>
 					</tr>
 				</table>
+				<input type="hidden" name="token" value="[r: currentToken()]"/>
 				<input type="hidden" name="Name" value="[r: eigName]"/>
 				<input type="hidden" name="Wert" value="[r: eigenschaft]"/>
 				<input type="hidden" name="modMacro" value="probe1w20Mods@this"/>
 				<input type="hidden" name="pruefwurf" value="0"/>
+				<input type="hidden" name="allowImprovement" value=[r: hasTrait("AllgemeineSF", "Eigenschaft verbessern", 1, currentToken())]>
 				<input type="hidden" name="image" value="[r: data.getStaticData('com.github.lector.dsa5maptool', '/public/images/chat/d20.png')]"/>
 			</form>
 		</div>

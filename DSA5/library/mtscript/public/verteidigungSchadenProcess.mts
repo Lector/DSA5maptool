@@ -1,6 +1,5 @@
 [h: uebergabe = arg(0)]
 [h: weapon = decode(json.get(uebergabe, "waffe"))]
-
 [h: switchToken(json.get(uebergabe, "token"))]
 [h: chat = json.get(uebergabe, "chat")]
 [h: manoever = json.get(uebergabe, "spezial")]

@@ -13,7 +13,6 @@
 [if(stand != "0"), Code:
 {
 	<!-- Bei gewissen Vorteilen wird der Haken vorbelegt -->
-	<!-- TODO: Gildenmagier werden nicht erkannt weil noch ihr Spezialzauber im Namen der SF steht... -->
 	[h: checked = ""]
 	[h: trait =
 		hasTrait("Vorteile", "Adel", 1, currentToken()) +
@@ -21,6 +20,14 @@
 		hasTrait("Vorteile", "Basiliskentöter", 1, currentToken()) +
 		hasTrait("Vorteile", "Geweihter", 1, currentToken())
 	]
+
+	<!-- Gildenmagier werden auch erkannt obwohl noch ihr Spezialzauber im Namen der SF steht... -->
+	[h: magisch = getProperty("MagischeSF", currentToken(), tokenMap(currentToken()))]
+	[h,foreach(sf, magisch),Code:{
+		[h: sf = json.get(sf, "Name")]
+		[if(startsWith(sf, "Tradition (Gildenmagier)")): trait = 1]
+	}]
+
 	[h,if(trait > 0): checked = "checked"]
 	[h,if(trait == 0), foreach(sf, MagieSF, ""),Code:{
 		[h: sfName = json.get(sf, "Name")]
