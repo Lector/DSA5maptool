@@ -21,7 +21,7 @@
 				[r: header("Nahrung sammeln")]
 				<table style='margin: 5px auto 7px auto;'>
 					<tr>
-						[r,macro("probeMod@this"): ""]
+						[r: probeMod()]
 						<td>
 							<button type="submit">
 								<table>

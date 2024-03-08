@@ -43,7 +43,7 @@ case "KK": eigName = "Körperkraft"
 				</div>
 				<table style='padding: 5px; margin: 0px auto 0px auto;'>
 					<tr>
-						[r,macro("probeMod@this"): ""]
+						[r: probeMod()]
 						<td width='10px'>
 							&nbsp;
 						</td>

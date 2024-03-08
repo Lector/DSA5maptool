@@ -6,8 +6,6 @@
 [h: found = ""]
 [h,foreach(list, lists),Code:{
 	[h,foreach(item, eval(list), ""), if(json.get(item, "Talent") == skillName), Code:{
-		[h: found = item]
+		[h: return(0, json.append("[]", item, list))]
 	}]
 }]
-
-[h: macro.return = found]

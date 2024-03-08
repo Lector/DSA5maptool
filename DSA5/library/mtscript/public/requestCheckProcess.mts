@@ -1,11 +1,12 @@
 [h: params = macro.args]
 
 [h: check = checkFromForm(params)]
+[h: check = json.set(check, "GMName", getPlayerName())]
 [h: playerNames = decode(json.get(params, "playerNames"))]
 [h: playerNames = json.intersection(playerNames, getAllPlayerNames("json"))]
 [h,foreach(player, playerNames),if(json.get(params, player) != ""),Code:{
 
-    [h: execLink(macroLinkText("rollRequestedCheck@this", "none", json.append("[]",check, getPlayerName())), 1, player)]
+    [h: execLink(macroLinkText("rollRequestedCheck@this", "none", json.append("[]", check)), 1, player)]
 }]
 
 [h: closeDialog("requestCheck")]

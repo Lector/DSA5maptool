@@ -2,6 +2,7 @@
 [h: skillName = arg(2)]
 [h: groupName = arg(1)]
 [h: skill = findSkill(arg(0), skillName)]
+[h: skill = json.get(skill, 0)]
 [h: group = eval(groupName)]
 [h: index = json.indexOf(group, skill)]
 [h: newSkill = json.set(skill, "Talentwert", json.get(skill, "Talentwert") + arg(3))]

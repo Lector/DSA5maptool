@@ -1,5 +1,6 @@
 [h: switchToken(arg(0))]
 [h: skill = findSkill(currentToken(), arg(1))]
+[h: skill = json.get(skill, 0)]
 [h: plus = ""]
 [h,if(json.length(macro.args) >= 3),Code:
 {

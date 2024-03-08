@@ -11,6 +11,7 @@
 ]
 
 [h: uebergabe = macro.args]
+[h: uebergabe = json.set(uebergabe, "Token", currentToken())]
 
 [h,macro("probeGetWert@this"): json.get(uebergabe, "E1")]
 [h: e1wert = macro.return]

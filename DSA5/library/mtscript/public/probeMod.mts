@@ -1,4 +1,4 @@
-[h,if(macro.args == ""): default = 0; default = arg(0)]
+[h,if(json.length(macro.args) > 0): default = arg(0); default = 0]
 <td>
 	Probe:
 </td>

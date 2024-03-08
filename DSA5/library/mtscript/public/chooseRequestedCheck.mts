@@ -1,7 +1,8 @@
-[h: check = arg(0)]
+[h: switchToken(arg(0))]
+[h: check = arg(1)]
 [h: subChecks = json.get(check, "Checks")]
 
-[h: actionLink = macroLinkText('rollRequestedCheckProcess@this', '')]
+[h: actionLink = macroLinkText('chooseRequestedCheckProcess@this', '')]
 [dialog5("chooseRequestedCheck", "width=400; height=400; temporary=1; closebutton=0; noframe=0"):{
     <html>
         <head>
@@ -35,7 +36,6 @@
                             </td>
                         </tr>
                     </table>
-                    <input type="hidden" name="gmName" value="[r: arg(1)]">
                 </form>
             </div>
         </body>

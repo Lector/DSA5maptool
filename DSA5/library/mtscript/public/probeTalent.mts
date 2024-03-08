@@ -1,11 +1,42 @@
 [h: switchToken(arg(0))]
 
-[h: uebergabe = arg(1)]
+[h,if(json.length(macro.args) == 2),Code:{
+	<!-- We have a specific check that was requested by the GM -->
+	[check = decode(arg(1))]
+	[mod = json.path.read(check, "Checks.[0].Mod")]
+	[tname = json.path.read(check, "Checks.[0].Skill")]
+	[findResult = findSkill(currentToken(), tname)]
+	[skill = json.get(findResult, 0)]
+	[group = json.get(findResult, 1)]
 
-[h: tname = listGet(uebergabe, 0)]
-[h: e1 = listGet(uebergabe, 1)]
-[h: e2 = listGet(uebergabe, 2)]
-[h: e3 = listGet(uebergabe, 3)]
+	[h: qsmatter = 0]
+	[h,for(i, 6, 0, -1),Code:
+	{
+		[h: info = json.path.read(check, "QS"+i+".Info")]
+		[h,if(info != "" && qsmatter == 0): qsmatter = i]
+	}]
+
+	[spec = json.path.read(check, "Checks.[0].Spec")]
+	[defaultSpec = getTraitLevel("AllgemeineSF", "Fertigkeitsspezialisierung ("+tname+": "+spec+")", currentToken())]
+};{
+	<!-- We roll by ourself -->
+	[check = ""]
+	[mod = 0]
+	[tname = arg(1)]
+	[group = arg(2)]
+	[skills = eval(group)]
+	[h,foreach(currentSkill, skills, ""),Code:{
+		[h: skillName = json.get(currentSkill, "Talent")]
+		[h,if(skillName == tname): skill = currentSkill]
+	}]
+	[defaultSpec = 0]
+	[qsmatter = 0]
+}]
+
+[h: e1 = json.path.read(skill, "Probe.Eigenschaft1")]
+[h: e2 = json.path.read(skill, "Probe.Eigenschaft2")]
+[h: e3 = json.path.read(skill, "Probe.Eigenschaft3")]
+[h: wert = json.get(skill, "Talentwert")]
 
 [h,if(e1 == "--" || e2 == "--" || e3 == "--"), Code:
 {
@@ -21,11 +52,8 @@
 [h: aktE2wert = probeGetAktWert(e2)]
 [h: aktE3wert = probeGetAktWert(e3)]
 
-[h: wert = listGet(uebergabe, 4)]
-[h: gruppe = listGet(uebergabe, 5)]
-
 <!-- Charaktere im Blutrausch können laut Regeln nur Körpertalente und Einschuechtern -->
-[h,if(getState("Blutrausch") == 1 && gruppe != "Koerper" && tname != "Einschüchtern"),Code:
+[h,if(getState("Blutrausch") == 1 && group != "Koerper" && tname != "Einschüchtern"),Code:
 {
 	[h,macro("inputFail@this"): "blutrausch"]
 }]
@@ -45,9 +73,9 @@
 				<div class='title'>
 					[r: tname]
 				</div>
-				<table style='border-spacing: 0px; padding: 5px; margin: 0px auto 0px auto;'>
+				<table style='border-spacing: 0px; padding: 5px; margin: 0px auto 0px auto;' class="probe">
 					<tr>
-						[r,macro("probeMod@this"): ""]
+						[r: probeMod(mod)]
 						<td width='10px'>
 							&nbsp;
 						</td>
@@ -63,7 +91,14 @@
 						</td>
 					</tr>
 				</table>
-				[r,macro("probeChat@this"): currentToken()]
+				<!-- If we roll a specific check with infos we only roll for GM&Self without giving options -->
+				[r,if(check != ""),Code:
+				{
+					<input type="hidden" name="chat" value="3">
+				};{
+					[r,macro("probeChat@this"): currentToken()]
+				}]
+				
 				<hr/>
 				<table style='border-spacing: 0px; margin: 0px auto 5px auto;'>
 					<tr>
@@ -119,9 +154,9 @@
 						<td valign='top'>
 							<table>
 								[r: probeFWPlus(currentToken(), tname)]
-								[r: probeSpezialisierung(tname)]
+								[r: probeSpezialisierung(tname, defaultSpec)]
 								[r: probeBelastung(currentToken(), tname)]
-								[r: probeParalyse(currentToken(), gruppe, tname)]
+								[r: probeParalyse(currentToken(), group, tname)]
 								[r: probeSozialerStand(currentToken(), tname)]
 								[r: probeMirakel(currentToken(), tname)]
 								[r: probeGottgefaellig(currentToken(), tname)]
@@ -129,6 +164,7 @@
 						</td>
 					</tr>
 				</table>
+				<input type="hidden" name="Token" value="[r: currentToken()]"/>
 				<input type="hidden" name="Name" value="[r: tname]"/>
 				<input type="hidden" name="Skill" value="[r: tname]"/>
 				<input type="hidden" name="Wert" value="[r: wert]"/>
@@ -137,7 +173,8 @@
 				<input type="hidden" name="E3" value="[r: e3]"/>
 				<input type="hidden" name="image" value=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/book.png")]/>
 				<input type="hidden" name="modMacro" value="probeTalentMods@this"/>
-				<input type="hidden" name="gruppe" value="[r: gruppe]"/>
+				<input type="hidden" name="gruppe" value="[r: group]"/>
+				<input type="hidden" name="check" value="[r: encode(check)]">
 				<!-- Bei einer Unfaehigkeit wird der beste Wuerfel neu gerollt.
 				Eine Begabung wird momentan nicht beachtet da hier eine Nutzereingabe erforderlich waere.
 				Bei einer Begabung kann man sich den Wuerfel zum rerollen aussuchen.-->

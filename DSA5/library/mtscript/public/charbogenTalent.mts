@@ -30,14 +30,7 @@
 		[h: tEigenschaft2 = json.get(tProbe, "Eigenschaft2")]
 		[h: tEigenschaft3 = json.get(tProbe, "Eigenschaft3")]
 		[h: tWert = json.get(tDaten, "Talentwert")]
-		[h: tUebergabe = ""]
-		[h: tUebergabe = listAppend(tUebergabe, tName)]
-		[h: tUebergabe = listAppend(tUebergabe, tEigenschaft1)]
-		[h: tUebergabe = listAppend(tUebergabe, tEigenschaft2)]
-		[h: tUebergabe = listAppend(tUebergabe, tEigenschaft3)]
-		[h: tUebergabe = listAppend(tUebergabe, tWert)]
-		[h: tUebergabe = listAppend(tUebergabe, group)]
-		[h: tUebergabe = json.append("[]", currentToken(), tUebergabe)]
+		[h: tUebergabe = json.append("[]", currentToken(), tName, group)]
 		<div>
 			<span title='Probe auf &quot;[r: tName]&quot; ablegen'>[r: macroLink(tName, "probeTalent@this", "", tUebergabe)]</span>
 		</div>

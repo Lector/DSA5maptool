@@ -43,7 +43,7 @@
 				</div>
 				<table style='border-spacing: 0px; padding: 5px; margin: 0px auto 0px auto;'>
 					<tr>
-						[r,macro("probeMod@this"): ""]
+						[r: probeMod()]
 						<td width='10px'>
 							&nbsp;
 						</td>
@@ -110,6 +110,7 @@
 						[r: probeSpruch(currentToken(), json.set("{}", "Wert", wert, "Bezeichnung", bezeichnung))]
 					</tr>
 				</table>
+				<input type="hidden" name="Token" value="[r: currentToken()]"/>
 				<input type="hidden" name="Merkmal" value="[r: merkmal]"/>
 				<input type="hidden" name="Wiki" value="[r: wiki]"/>
 				<input type="hidden" name="Name" value="[r: zname]"/>

@@ -1,7 +1,6 @@
 [h,if(getImpersonated() == ""): inputFail("impersonate")]
 
 [h: check = arg(0)]
-[h: gmName = arg(1)]
 [h: subChecks = json.get(check, "Checks")]
 
 
@@ -39,7 +38,7 @@ Thats why we group all SubChecks by Skill and then choose the most relevant spec
 
 [h: checkCount = json.length(subChecks)]
 [h,if(checkCount > 1),Code:{
-    [h: chooseRequestedCheck(check, gmName)]
+    [h: chooseRequestedCheck(getImpersonated(), check)]
 };{
-    [h,macro("rollRequestedCheckProcess@this"): json.set("{}", "check", encode(check), "gmName", gmName)]
+    [h,macro("probeTalent@this"): json.append("[]", getImpersonated(), encode(check))]
 }]

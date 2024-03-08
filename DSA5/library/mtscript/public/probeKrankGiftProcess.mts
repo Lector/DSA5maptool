@@ -11,7 +11,7 @@
 ]
 
 [h: uebergabe = macro.args]
-
+[h: uebergabe = json.set(uebergabe, "Token", currentToken())]
 [h: value = json.get(uebergabe, "Wert")]
 
 [h,if(value == ""): inputFail("noInput")]
