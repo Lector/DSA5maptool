@@ -17,12 +17,9 @@
 [h: e1wert = eval(e1)]
 [h: e2wert = eval(e2)]
 [h: e3wert = eval(e3)]
-[h,macro("probeGetAktWert@this"): e1]
-[h: aktE1wert = macro.return]
-[h,macro("probeGetAktWert@this"): e2]
-[h: aktE2wert = macro.return]
-[h,macro("probeGetAktWert@this"): e3]
-[h: aktE3wert = macro.return]
+[h: aktE1wert = probeGetAktWert(e1, currentToken())]
+[h: aktE2wert = probeGetAktWert(e2, currentToken())]
+[h: aktE3wert = probeGetAktWert(e3, currentToken())]
 
 <table >
 	<tr>

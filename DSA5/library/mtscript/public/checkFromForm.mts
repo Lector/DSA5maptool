@@ -10,4 +10,7 @@
 [h: check = json.set(check, "Fail", json.set("{}", "Info", string(json.get(params, "fail"))))]
 [h,for(i, 1, 7, 1, ""): check = json.set(check, "QS"+i, json.set("{}", "Info", string(json.get(params, "qs"+i))))]
 
+[h,if(json.get(params, "blind") != ""): blind = 1; blind = 0]
+[h: check = json.set(check, "Blind", blind)]
+
 [h: macro.return = check]

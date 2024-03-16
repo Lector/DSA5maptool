@@ -28,12 +28,9 @@
 	}
 ]
 
-[h,macro("probeGetAktWert@this"): e1]
-[h: aktE1wert = macro.return]
-[h,macro("probeGetAktWert@this"): e2]
-[h: aktE2wert = macro.return]
-[h,macro("probeGetAktWert@this"): e3]
-[h: aktE3wert = macro.return]
+[h: aktE1wert = probeGetAktWert(e1, currentToken())]
+[h: aktE2wert = probeGetAktWert(e2, currentToken())]
+[h: aktE3wert = probeGetAktWert(e3, currentToken())]
 
 [h: actionLink = macroLinkText("probe3w20Process@this", "")]
 [dialog5("probe", "width=1125; height=600; temporary=1; closebutton=0; noframe=0"):{

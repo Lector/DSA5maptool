@@ -13,25 +13,21 @@
 [h: uebergabe = macro.args]
 [h: uebergabe = json.set(uebergabe, "Token", currentToken())]
 
-[h,macro("probeGetWert@this"): json.get(uebergabe, "E1")]
-[h: e1wert = macro.return]
-[h,macro("probeGetAktWert@this"): json.get(uebergabe, "E1")]
-[h: e1aktwert = macro.return]
+[h: e1wert = probeGetWert(json.get(uebergabe, "E1"), currentToken())]
+[h: e2wert = probeGetWert(json.get(uebergabe, "E2"), currentToken())]
+[h: e3wert = probeGetWert(json.get(uebergabe, "E3"), currentToken())]
+
+[h: aktE1wert = probeGetAktWert(json.get(uebergabe, "E1"), currentToken())]
+[h: aktE2wert = probeGetAktWert(json.get(uebergabe, "E2"), currentToken())]
+[h: aktE3wert = probeGetAktWert(json.get(uebergabe, "E3"), currentToken())]
+
 [h: uebergabe = json.set(uebergabe, "E1Wert", e1wert)]
-[h: uebergabe = json.set(uebergabe, "E1AktWert", e1aktwert)]
+[h: uebergabe = json.set(uebergabe, "E1AktWert", aktE1wert)]
 
-[h,macro("probeGetWert@this"): json.get(uebergabe, "E2")]
-[h: e2wert = macro.return]
-[h,macro("probeGetAktWert@this"): json.get(uebergabe, "E2")]
-[h: e2aktwert = macro.return]
 [h: uebergabe = json.set(uebergabe, "E2Wert", e2wert)]
-[h: uebergabe = json.set(uebergabe, "E2AktWert", e2aktwert)]
+[h: uebergabe = json.set(uebergabe, "E2AktWert", aktE2wert)]
 
-[h,macro("probeGetWert@this"): json.get(uebergabe, "E3")]
-[h: e3wert = macro.return]
-[h,macro("probeGetAktWert@this"): json.get(uebergabe, "E3")]
-[h: e3aktwert = macro.return]
 [h: uebergabe = json.set(uebergabe, "E3Wert", e3wert)]
-[h: uebergabe = json.set(uebergabe, "E3AktWert", e3aktwert)]
+[h: uebergabe = json.set(uebergabe, "E3AktWert", aktE3wert)]
 
 [h,macro("probe3w20Process@this"): uebergabe]

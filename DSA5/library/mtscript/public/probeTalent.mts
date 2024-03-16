@@ -48,9 +48,9 @@
 [h: e2wert = eval(e2)]
 [h: e3wert = eval(e3)]
 <!-- Es werden die aktuellen Eigenschaften ermittelt. Durch temporaere Effekte oder Zustaende koennen sie geaendert sein -->
-[h: aktE1wert = probeGetAktWert(e1)]
-[h: aktE2wert = probeGetAktWert(e2)]
-[h: aktE3wert = probeGetAktWert(e3)]
+[h: aktE1wert = probeGetAktWert(e1, currentToken())]
+[h: aktE2wert = probeGetAktWert(e2, currentToken())]
+[h: aktE3wert = probeGetAktWert(e3, currentToken())]
 
 <!-- Charaktere im Blutrausch können laut Regeln nur Körpertalente und Einschuechtern -->
 [h,if(getState("Blutrausch") == 1 && group != "Koerper" && tname != "Einschüchtern"),Code:

@@ -1,14 +1,16 @@
+[h: tok = arg(0)]
+[h: switchToken(arg(0))]
 [h: skill = arg(1)]
 [h,if(json.length(macro.args) >= 3): mod = arg(2); mod = 0]
 [h,if(json.length(macro.args) >= 4): params = arg(3); params = "{}"]
 
-[h: map = json.get(getTokenMap(arg(0)), 0)]
+[h: map = json.get(getTokenMap(currentToken()), 0)]
 [h: FPBonus = 0]
 
 [h: lists = "[Koerper, Gesellschaft, Natur, Wissen, Handwerk, Zauber, Rituale, MagischeHandlungen, Liturgien, Zeremonien]"]
 
 [h,foreach(list, lists),Code:{
-	[h: skills = getProperty(list, arg(0), map)]
+	[h: skills = getProperty(list, currentToken(), map)]
 	[h,foreach(item, skills, ""), if(json.get(item, "Talent") == skill), Code:{
 		[h: probe = json.get(item, "Probe")]
 		[h: e1 = json.get(probe, "Eigenschaft1")]
@@ -25,8 +27,8 @@
 		]
 		[h,if(json.contains(params, "modMacro") == 0): params = json.set(params, "modMacro", modMacro)]
 		
-		[h,if(hasTrait("Nachteile", "Unfähig ("+skill+")") >= 1): params = json.set(params, "reroll", "best")]
-		[h,if(hasTrait("Vorteile", "Begabung ("+skill+")") >= 1): params = json.set(params, "reroll", "worst")]
+		[h,if(hasTrait("Nachteile", "Unfähig ("+skill+")", 1, tok) >= 1): params = json.set(params, "reroll", "best")]
+		[h,if(hasTrait("Vorteile", "Begabung ("+skill+")", 1, tok) >= 1): params = json.set(params, "reroll", "worst")]
 		[h: Spec = json.get(params, "spec")]
 		[h: SpecSF = "Fertigkeitsspezialisierung ("+skill+": "+Spec+")"]
 		[h,if(Spec != ""), if(hasTrait("AllgemeineSF", SpecSF)): FPBonus = FPBonus + 2]

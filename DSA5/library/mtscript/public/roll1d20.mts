@@ -28,8 +28,7 @@
 [h: origProp = property]
 [h,if(!isNumber(property)),Code:{
 	[h: origProp = eval(property)]
-	[h,macro("probeGetAktWert@this"): property]
-	[h: property = macro.return]
+	[h: property = probeGetAktWert(property, currentToken())]
 }]
 
 [h,if(modMacro != ""), Code:

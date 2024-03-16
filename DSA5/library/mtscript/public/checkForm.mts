@@ -89,3 +89,11 @@ window.addEventListener('load', function(event) {
     </div>
     }]
 </div>
+<div class="table-container" title="Spieler bekommen von der Probe nur die erwürfelten Informationen mit. SchiPs können nicht eingesetzt werden.">
+    <div>
+        <input type="checkbox" name="blind" value="1" [r,if(blind == 1): "checked"]/>
+    </div>
+    <div>
+        Verdeckte Probe
+    </div>
+</div>

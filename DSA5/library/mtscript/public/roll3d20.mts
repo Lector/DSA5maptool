@@ -14,6 +14,7 @@
 [h: params = arg(6)]
 [h: name = ""]
 [h: qsmatter = 0]
+[h: blind = 0]
 [h,if(params != ""),Code:
 {
 	[h: name = json.get(params, "Name")]
@@ -24,6 +25,7 @@
 	[h: modMacro = json.get(params, "modMacro")]
 	[h: modMacroParams = json.get(params, "modMacroParams")]
 	[h: qsmatter = json.get(params, "QSMatter")]
+	[h,if(json.contains(params, "Blind")): blind = json.get(params, "Blind")]
 	[h,if(qsmatter == ""): qsmatter = 0]
 }]
 
@@ -37,24 +39,21 @@ Es werden auch die aktuellen Eigenschaften ermittelt. Durch temporaere Effekte o
 	[h: aktE1wert = e1]
 };{
 	[h: e1wert = getProperty(e1, arg(0), map)]
-	[h,macro("probeGetAktWert@this"): json.append(e1, arg(0))]
-	[h: aktE1wert = macro.return]
+	[h: aktE1wert = probeGetAktWert(e1, currentToken())]
 }]
 [h,if(isNumber(e2)),Code:{
 	[h: e2wert = e2]
 	[h: aktE2wert = e2]
 };{
 	[h: e2wert = getProperty(e2, arg(0), map)]
-	[h,macro("probeGetAktWert@this"): json.append(e2, arg(0))]
-	[h: aktE2wert = macro.return]
+	[h: aktE2wert = probeGetAktWert(e2, currentToken())]
 }]
 [h,if(isNumber(e3)),Code:{
 	[h: e3wert = e3]
 	[h: aktE3wert = e3]
 };{
 	[h: e3wert = getProperty(e3, arg(0), map)]
-	[h,macro("probeGetAktWert@this"): json.append(e3, arg(0))]
-	[h: aktE3wert = macro.return]
+	[h: aktE3wert = probeGetAktWert(e3, currentToken())]
 }]
 
 <!--Da jede Art von Probe unterschiedliche Argumente mitbekommt, welche die Probe modifizieren wird hier ein übergebenes Skript aufgerufen.
@@ -144,7 +143,7 @@ In future version is would be great to determine a default selection of the rero
 <!-- If we have rolled a 1 we always offer the aptitude. This could enforce a critical success -->
 [h: dice = json.get(ergebnis, "dice")]
 [h,if(json.contains(dice, 1) > 0): useAptitude = 1)]
-[h,if(reroll == "worst" && success >= 0 && useAptitude == 1),Code:
+[h,if(reroll == "worst" && success >= 0 && useAptitude == 1 && blind == 0),Code:
 {
 	[h: display = show3d20(ergebnis)]
 	[h: display = strformat("
@@ -208,7 +207,7 @@ In future version is would be great to determine a default selection of the rero
 [h,if(possibleQS > qs): offerReroll = 1; offerReroll = 0]
 <!-- If QS wont matter we do not annoy the user if we already succeeded -->
 [h,if(fp >= 0 && qsmatter <= qs): offerReroll = 0]
-[h,if(success >= 0 && SchiPsAktuell > 0 && offerReroll == 1),Code:{
+[h,if(success >= 0 && SchiPsAktuell > 0 && offerReroll == 1 && blind == 0),Code:{
 	[h: display = show3d20(ergebnis)]
 	[h: display = strformat("
 	<table style='border-spacing: 0px; margin-top: 3px; font-weight: bold;'>
@@ -264,7 +263,7 @@ In future version is would be great to determine a default selection of the rero
 
 [h: schicksalsmacht = hasTrait("AllgemeineSF", "Schicksalsmacht", 1, currentToken())]
 [h,if(schicksalsmacht == 0 && SchiPsInitial > SchiPsAktuell): offerQSPlus = 0; offerQSPlus = 1]
-[h,if(success == 1 && SchiPsAktuell > 0 && qsmatter > qs && offerQSPlus == 1),Code:{
+[h,if(success == 1 && SchiPsAktuell > 0 && qsmatter > qs && offerQSPlus == 1 && blind == 0),Code:{
 	[h: qs = json.get(ergebnis, "qs")]
 	[h: nextQS = qs + 1]
 	[h: display = show3d20(ergebnis)]

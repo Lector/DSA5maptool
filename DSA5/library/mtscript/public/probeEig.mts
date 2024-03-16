@@ -22,8 +22,8 @@ case "KO": eigName = "Konstitution";
 case "KK": eigName = "Körperkraft"
 ]
 
-[h,macro("probeGetAktWert@this"): macro.args]
-[h: aktWert = macro.return]
+
+[h: aktWert = probeGetAktWert(macro.args, currentToken())]
 
 [h: actionLink = macroLinkText("probe1w20Process@this", "")]
 
