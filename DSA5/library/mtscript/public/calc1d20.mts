@@ -1,5 +1,5 @@
 [h: ergebnis = arg(0)]
-[h: property = json.get(ergebnis, "property")]
+[h: property = json.get(ergebnis, "currentProperty")]
 [h: mod = json.get(ergebnis, "mod")]
 [h: dice = json.get(ergebnis, "dice")]
 [h: pruefwurf = json.get(ergebnis, "pruefwurf")]

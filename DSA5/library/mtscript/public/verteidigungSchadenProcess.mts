@@ -1,5 +1,6 @@
 [h: uebergabe = arg(0)]
 [h: weapon = decode(json.get(uebergabe, "waffe"))]
+[h,if(isNumber(weapon)): uebergabe = json.set(uebergabe, "Wert", weapon); uebergabe = json.set(uebergabe, "Wert", json.get(weapon, "PA"))]
 [h: switchToken(json.get(uebergabe, "token"))]
 [h: chat = json.get(uebergabe, "chat")]
 [h: manoever = json.get(uebergabe, "spezial")]
@@ -34,7 +35,7 @@
 "damageType", json.get(uebergabe, "schadenArt"),
 "multiplier", multiplier,
 "zone", json.get(uebergabe, "zone"),
-"modMacroParams", uebergabe))]
+"modMacroParams", uebergabe)]
 
 [h: defenseResult = rollDefense(currentToken(),
 	weapon,
