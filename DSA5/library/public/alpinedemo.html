@@ -1,0 +1,48 @@
+<html>
+<head>
+    <!-- helper files -->
+    <script src="./scripts/utils/logger.js?cachelib=false"></script>
+    <script src="./scripts/rest.js?cachelib=false"></script>
+    <!-- MapTool Events -->
+    <link rel="onChangeSelection" type="macro" href="macro://showPage@lib:com.github.lector.dsa5maptool/self/impersonated?">
+
+    <!-- Functions used in this html document -->
+    <script>
+        function createDataRetriever() {
+            return {
+                tokenData: {},
+                async retrieveData() {
+                    const tokenId = await MapTool.getUserData();
+                    const URI = "macro:dataProvider@lib:com.github.lector.dsa5maptool"
+                    //from rest.js file
+                    getData(URI, { tokenId: tokenId }, { name: "MockedName", mu: 14, kl: 8 })
+                        .then((val) => {
+                            //from utils/logger.js file
+                            LOGGER.log("Fetched value", val);
+                            this.tokenData = val;
+                        })
+                        .catch((e) => {
+                            //from utils/logger.js file
+                            LOGGER.logError(`Error occured while fetching data from ${URI}`, e);
+                        });
+                }
+            }
+        }
+    </script>
+</head>
+<script>
+	// configure DEBUG flag for Logger
+	const DEBUG = true;
+</script>
+<body>
+    <!-- Inhalt der Seite -->
+    <div x-data="createDataRetriever()" x-init="retrieveData()">
+        <div x-text="'Name: ' + tokenData.name"></div>
+        <div x-text="'Mut: ' + tokenData.mu"></div>
+        <div x-text="'Klugheit: ' + tokenData.kl"></div>
+    </div>
+    
+    <!-- Javascript Framework URL -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+</html>
