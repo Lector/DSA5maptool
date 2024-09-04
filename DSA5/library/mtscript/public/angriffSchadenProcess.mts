@@ -18,7 +18,7 @@
 [h: attackResult = rollAttack(
 	currentToken(),
 	waffe,
-	json.get(uebergabe, "probemod"),
+	0,
 	json.get(uebergabe, "schadenmod"),
 	json.get(uebergabe, "Zone"),
 	manoever,

@@ -22,6 +22,7 @@
 	case "3W20Fail": msgText = "Es sind nicht alle Eigenschaften für diese Probe festgelegt. Bitte trage im Charakter-/Tokeneditor zuerst alle benötigten Eigenschaften der Probe ein. ";
 	case "noTokensSelected": msgText = "Keine Tokens ausgewählt.";
 	case "gmSelectFail": msgText = "Um als Spielleiter diese Funktion für einen Spielstein/Token auszuführen muss entweder 1 Token auf der Karte ausgewählt sein (nicht mehr und nicht weniger), oder ein Token verkörpert werden.";
+	case "gmSelectSingle": msgText = "Um als Spielleiter diese Funktion für einen Spielstein/Token auszuführen muss genau 1 Token auf der Karte ausgewählt sein (nicht mehr und nicht weniger).";
 	case "copyTokenDataOwner": msgText = "Du hast keine Besitzrechte an dem ausgewählten Token.";
 	case "copyTokenDataOption": msgText = "Es wurden keine Daten zum Kopieren ausgewählt.";
 	case "copyTokenDataSelect": msgText = "Es wurde kein Token oder mehr als 1 Token ausgewählt.";

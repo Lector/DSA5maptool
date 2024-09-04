@@ -16,7 +16,7 @@
 [h,if(LeP <= schmerz4): schmerz = schmerz + 1]
 
 <!-- Bestimmte Wesen sind von Schmerz nicht betroffen. Manuelle Schmerzen kann man trotzdem eintragen -->
-[h,if(listContains("Dämon, Elementar, Geist, Golem, Golemid, Tiergestalt", Typus) == 1),Code:
+[h,if(listContains("Dämon, Elementar, Geist, Golem, Golemid, Tiergestalt, Untoter", Typus) == 1),Code:
 {
 	[h: schmerz = 0]
 }]

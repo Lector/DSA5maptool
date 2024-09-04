@@ -1,5 +1,12 @@
-[h: switchToken(arg(0))]
+[h,if(json.length(macro.args) > 0): tok = arg(0); tok = getSelected()]
+[if(listCount(tok) != 1), Code:
+{
+	[h,macro("inputFail@this"): "gmSelectSingle"]
+}]
+[h: switchToken(tok)]
+
 [h,if(json.length(macro.args) > 1): check = arg(1); check = ""]
+
 [h: blind = 0]
 [h,if(check == ""),Code:{
 	[verb = "anlegen"]
