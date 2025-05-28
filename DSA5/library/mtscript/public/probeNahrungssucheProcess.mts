@@ -35,7 +35,7 @@
 		</td>
 		%s
 	<tr>",
-skillRollTitle("Pflanzenkunde"), data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/herb.png"), show3d20(resultPflanzenkunde))]
+skillRollTitle("Pflanzenkunde"), data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/herb.png"), show3d20(resultPflanzenkunde, chat))]
 
 [h,if(json.get(resultPflanzenkunde, "success") > 0),Code:
 {
@@ -59,7 +59,7 @@ skillRollTitle("Pflanzenkunde"), data.getStaticData("com.github.lector.dsa5mapto
 			<td rowspan=3></td>
 			%s
 		</tr>",
-	skillRollTitle("Sinnesschärfe"), show3d20(resultSinnesschaerfe))]
+	skillRollTitle("Sinnesschärfe"), show3d20(resultSinnesschaerfe, chat))]
 	[h,if(qsSs > 0),Code:
 	{
 		[h: nahrung = nahrung + verlaengern / 2]

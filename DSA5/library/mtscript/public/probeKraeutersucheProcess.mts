@@ -71,7 +71,7 @@
 		</td>
 		%s
 	</tr>",
-skillRollTitle("Pflanzenkunde"), data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/herb.png"), show3d20(resultPflanzenkunde))]
+skillRollTitle("Pflanzenkunde"), data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/herb.png"), show3d20(resultPflanzenkunde, chat))]
 
 [h:pkSuccess = number(json.get(resultPflanzenkunde, "success"))]
 [h,if(pkSuccess > 0),Code:
@@ -101,7 +101,7 @@ skillRollTitle("Pflanzenkunde"), data.getStaticData("com.github.lector.dsa5mapto
 	[h: resultSinnesschaerfe = rollSkill(currentToken(), "Sinnesschärfe", 0, probeParams)]
 
 	[h:ssSuccess = number(json.get(resultSinnesschaerfe, "success"))]
-	[h: outString = outString + skillRollTitle("Sinnesschärfe") +"<tr><td rowspan=3>&nbsp;</td>" + show3d20(resultSinnesschaerfe) + "</tr>"]
+	[h: outString = outString + skillRollTitle("Sinnesschärfe") +"<tr><td rowspan=3>&nbsp;</td>" + show3d20(resultSinnesschaerfe, chat) + "</tr>"]
 
 	<!-- Wenn wir Pflanzen finden bauen wir unsere Funde auf -->
 	[h,if(ssSuccess > 0),Code:

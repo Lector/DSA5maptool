@@ -377,6 +377,7 @@
 [h: schwungName = ""]
 [h,if(hasTrait("KampfSF", "Schwanzschwung") != 0): schwungName = "Schwanzschwung"]
 [h,if(hasTrait("KampfSF", "Tentakelschwung") != 0): schwungName = "Tentakelschwung"]
+[h,if(hasTrait("KampfSF", "Schwanz- oder Tentakelschwung") != 0): schwungName = "Schwanz- oder Tentakelschwung"]
 [h,if(schwungName != ""),Code:
 {
 	[manoever = json.set("{}",
@@ -387,7 +388,7 @@
 	{
 		[manoever = json.set(manoever,
 		"ID", id,
-		"Name", schwungName + " ("+i+" Gegner"+")",
+		"Name", schwungName + " ("+i+". Gegner"+")",
 		"Mod", -i*2)]
 		[id = id + 1]
 		[list = json.append(list, manoever)]

@@ -145,7 +145,7 @@ In future version is would be great to determine a default selection of the rero
 [h,if(json.contains(dice, 1) > 0): useAptitude = 1)]
 [h,if(reroll == "worst" && success >= 0 && useAptitude == 1 && blind == 0),Code:
 {
-	[h: display = show3d20(ergebnis)]
+	[h: display = show3d20(ergebnis, 1)]
 	[h: display = strformat("
 	<table style='border-spacing: 0px; margin-top: 3px; font-weight: bold;'>
 		<tr>
@@ -208,7 +208,7 @@ In future version is would be great to determine a default selection of the rero
 <!-- If QS wont matter we do not annoy the user if we already succeeded -->
 [h,if(fp >= 0 && qsmatter <= qs): offerReroll = 0]
 [h,if(success >= 0 && SchiPsAktuell > 0 && offerReroll == 1 && blind == 0),Code:{
-	[h: display = show3d20(ergebnis)]
+	[h: display = show3d20(ergebnis, 1)]
 	[h: display = strformat("
 	<table style='border-spacing: 0px; margin-top: 3px; font-weight: bold;'>
 		<tr>
@@ -266,7 +266,7 @@ In future version is would be great to determine a default selection of the rero
 [h,if(success == 1 && SchiPsAktuell > 0 && qsmatter > qs && offerQSPlus == 1 && blind == 0),Code:{
 	[h: qs = json.get(ergebnis, "qs")]
 	[h: nextQS = qs + 1]
-	[h: display = show3d20(ergebnis)]
+	[h: display = show3d20(ergebnis, 1)]
 	[h: display = strformat("
 	<table style='border-spacing: 0px; margin-top: 3px; font-weight: bold;'>
 		<tr>

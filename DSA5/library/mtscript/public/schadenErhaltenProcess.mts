@@ -58,8 +58,8 @@
 
 [h: damageResult = takeDamage(currentToken(), schaden, wMod, zone, schadensArt, mul, status, failText)]
 
-[h: damageResult =json.set(damageResult, "Chat", chat)]
+[h: damageResult = json.set(damageResult, "Chat", chat)]
 
-[h: sendTo(chat, border("Schaden erhalten", show(damageResult)))]
+[h: sendTo(chat, border("Schaden erhalten", show(damageResult, chat)))]
 
 [h: refreshFrame(currentToken())]

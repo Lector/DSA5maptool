@@ -1,4 +1,5 @@
 [h: params = arg(0)]
+[h: chatVisibility = arg(1)]
 [h: baseDamage = json.get(params, "BaseDamage")]
 [h: rolledDamage = json.get(params, "RolledDamage")]
 [h: damage = json.get(params, "Damage")]
@@ -39,6 +40,12 @@
 </td>
 ")]
 
+<!-- Wenn wir eine maskierte Ausgabe machen verdecken wir einige Werte -->
+[h,if(chatVisibility == "5"),Code:{
+	[h: gms = getGMNames()]
+	[h: players = getPlayerNames()]
+	[h: baseDamage = onlyFor(baseDamage, gms) + onlyFor("", players)]
+}]
 
 [h: output = strformat("
 	<td rowspan=3></td>

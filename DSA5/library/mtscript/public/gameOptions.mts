@@ -1,4 +1,3 @@
-[h,if(getLibProperty("OptHideNSCAction", "com.github.lector.dsa5maptool") == 1): cNSCAction = "checked"; cNSCAction = ""]
 [h,if(getLibProperty("RestoreFogOfWarOnMove", "com.github.lector.dsa5maptool") != 1): cKeepFOW = "checked"; cKeepFOW = ""]
 [h,if(getLibProperty("WildnisSpieltisch", "com.github.lector.dsa5maptool") == 1): cSpieltisch = "checked"; cSpieltisch = ""]
 
@@ -56,10 +55,15 @@
 					</tr> -->
 					<tr>
 						<td>
-							<input type='checkbox' name='fNSCAction' value='1' [r: cNSCAction]>
+							<!--<input type='checkbox' name='fNSCAction' value='1' -->
 						</td>
 						<td>
-							Verdecktes Würfeln bei NSCs vorselektieren
+							Sichtbarkeit von NSC-Proben vorselektieren:
+							<select name='fNSCAction' size='1'>
+								<option value='1' [r,if(getLibProperty("OptHideNSCAction", "com.github.lector.dsa5maptool") == 1): "selected"]>Offen</option>
+								<option value='2' [r,if(getLibProperty("OptHideNSCAction", "com.github.lector.dsa5maptool") == 2): "selected"]>Maskiert</option>
+								<option value='3' [r,if(getLibProperty("OptHideNSCAction", "com.github.lector.dsa5maptool") == 3): "selected"]>Verdeckt</option>
+							</select>
 						</td>
 					</tr>
 					<tr>

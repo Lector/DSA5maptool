@@ -86,12 +86,12 @@ Thats why we group all SubChecks by Skill and then choose the most relevant spec
         [h: sendTo("GmAndSelf", border(
             onlyFor(skill, getGMNames()) +
             onlyFor("Verdeckte Probe", getPlayerName()),
-            onlyFor(show(skillResult), getGMNames()) + subtext(checkNote),
+            onlyFor(show(skillResult, 1), getGMNames()) + subtext(checkNote),
             currentToken(), gmName)
         )]
     };{
         <!-- if we do not have infos we only send the GM the skillResult -->
-        [h: sendTo("Gm", border(skill, show(skillResult)), currentToken(), gmName)]
+        [h: sendTo("Gm", border(skill, show(skillResult, 1)), currentToken(), gmName)]
     }]
 
 };{

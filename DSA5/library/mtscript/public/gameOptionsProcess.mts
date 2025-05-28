@@ -1,7 +1,7 @@
 [h: uebergabe = macro.args]
 [h: closeDialog("gameOptions")]
 
-[h,if(json.get(uebergabe, "fNSCAction") == ""): setLibProperty("OptHideNSCAction", 0); setLibProperty("OptHideNSCAction", 1)]
+[h: setLibProperty("OptHideNSCAction", json.get(uebergabe, "fNSCAction"))]
 
 [h,if(json.get(uebergabe, "fWunden") == "1"): setLibProperty("OptWunden", 1); setLibProperty("OptWunden", 0)]
 [h,if(json.get(uebergabe, "fRestrictMovement") == "1"): setLibProperty("OptRestrictMovement", 1); setLibProperty("OptRestrictMovement", 0)]

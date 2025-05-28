@@ -74,7 +74,7 @@
 	<!-- If we fail and have fate points left we continue offering fate options -->
 
 	<!-- Build a display for the current roll -->
-	[h: display = show1d20(ergebnis)]
+	[h: display = show1d20(ergebnis, 1)]
 	[h: display = strformat("
 	<table style='border-spacing: 0px; margin-top: 3px; font-weight: bold;'>
 		<tr>

@@ -50,7 +50,7 @@
 		%s
 	</tr>
 	",
-skillRollTitle(skill1), show3d20(result1))]
+skillRollTitle(skill1), show3d20(result1, chat))]
 [h: success1 = number(json.get(result1, "success"))]
 [h: success2 = 0]
 [h: rat = 0]
@@ -71,14 +71,14 @@ skillRollTitle(skill1), show3d20(result1))]
 	
 	[h: qs2 = number(json.get(result2, "qs"))]
 	
-	[h: outString = outString + skillRollTitle(skill2) + "<tr><td rowspan=3></td>" + show3d20(result2) + "</tr>"]
+	[h: outString = outString + skillRollTitle(skill2) + "<tr><td rowspan=3></td>" + show3d20(result2, chat) + "</tr>"]
 	[h: success2 = number(json.get(result2, "success"))]
 
 	<!-- Falls wir ein konkretes Tier jagen steht diesem eine Vergleichsprobe auf Sinnesschärfe zu -->
 	[h,if(tier != ""),Code:
 	{
 		[h: sinnesresult = rollSkill(tier, "Sinnesschärfe")]
-		[h: outString = outString + skillRollTitle("Jagdwild: Sinnesschärfe") + "<tr><td rowspan=3 style='text-align:center; padding: 0px 12px 0px 8px' valign='middle'><img src='"+getTokenImage(50, tier, tiermap)+"'/></td>" + show3d20(sinnesresult) + "</tr>"]
+		[h: outString = outString + skillRollTitle("Jagdwild: Sinnesschärfe") + "<tr><td rowspan=3 style='text-align:center; padding: 0px 12px 0px 8px' valign='middle'><img src='"+getTokenImage(50, tier, tiermap)+"'/></td>" + show3d20(sinnesresult, chat) + "</tr>"]
 	}]
 }]
 [h,if(success2 > 0 && tier == ""), CODE:
@@ -128,7 +128,7 @@ skillRollTitle(skill1), show3d20(result1))]
 	[h: probeParams = json.set(probeParams, "modMacroParams", uebergabe)]
 	[h: result3 = rollAttack(currentToken(), waffe, 0, 0, "gesamt", "[]", probeParams)]
 	[h: result3 = json.get(json.get(result3, "SubResults"), 0)]
-	[h: outString = outString + skillRollTitle("Attacke mit " + json.get(waffe, "Name")) + "<tr>" + showAttack(result3) + "</tr>"]
+	[h: outString = outString + skillRollTitle("Attacke mit " + json.get(waffe, "Name")) + "<tr>" + showAttack(result3, chat) + "</tr>"]
 	[h: success3 = json.get(result3, "success")]
 }]
 [h,if(success3 > 0 || waffe == ""): flag = 1; flag = 0]

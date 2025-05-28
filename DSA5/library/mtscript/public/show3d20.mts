@@ -1,4 +1,5 @@
 [h: params = arg(0)]
+[h: chatVisibility = arg(1)]
 
 [h: propertyNames = json.get(params, "propertyNames")]
 [h: E1 = json.get(propertyNames, 0)]
@@ -92,6 +93,21 @@
 [h: p3 = json.get(propertyOutputs, 2)]
 
 [h,if(qs > 0): qualitaetTitle = "Die maximale Erschwernis, mit der die Probe noch gelungen wäre"; qualitaetTitle = "Die minimale Erleichterung, die notwendig wäre um die Probe zu schaffen"]
+
+<!-- We hide some properties from the chat output if "Masked" was selected -->
+[h,if(chatVisibility == 5),Code:{
+	[h: gms = getGMNames()]
+	[h: players = getPlayerNames()]
+	[h: p1 = onlyFor(p1, gms) + onlyFor("?", players)]
+	[h: p2 = onlyFor(p2, gms) + onlyFor("?", players)]
+	[h: p3 = onlyFor(p3, gms) + onlyFor("?", players)]
+	[h: diceOutput1 = onlyFor(diceOutput1, gms) + onlyFor(strformat("<span style='color: %s'>?</span>", dieColor(json.get(checkResults, 0), 0)), players)]
+	[h: diceOutput2 = onlyFor(diceOutput2, gms) + onlyFor(strformat("<span style='color: %s'>?</span>", dieColor(json.get(checkResults, 1), 0)), players)]
+	[h: diceOutput3 = onlyFor(diceOutput3, gms) + onlyFor(strformat("<span style='color: %s'>?</span>", dieColor(json.get(checkResults, 2), 0)), players)]
+	[h: fw = onlyFor(fw, gms) + onlyFor("?", players)]
+	[h: fp = onlyFor(fp, gms) + onlyFor("?", players)]
+	[h: quali = onlyFor(quali, gms) + onlyFor("?", players)]
+}]
 
 [h: macro.return = strformat("
 	<td rowspan=3 style='margin: 0px 8px 0px 0px'>

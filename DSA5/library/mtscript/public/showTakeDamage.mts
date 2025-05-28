@@ -1,4 +1,5 @@
 [h: params = arg(0)]
+[h: chatVisibility = arg(1)]
 [h: tok = json.get(params, "Token")]
 [h: chat = json.get(params, "Chat")]
 [h: baseDamage = json.get(params, "BaseDamage")]

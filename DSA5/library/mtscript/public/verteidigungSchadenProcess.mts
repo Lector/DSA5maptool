@@ -52,7 +52,7 @@
 [h,if(json.type(weapon) == "OBJECT"): manName = manName + "mit "+json.get(weapon, "Name")]
 [h: title = manName + title]
 
-[h: output = show(json.set(defenseResult, "Chat", chat))]
+[h: output = show(json.set(defenseResult, "Chat", chat), chat)]
 [h: output = border(title, output)]
 [h: sendTo(chat, output)]
 

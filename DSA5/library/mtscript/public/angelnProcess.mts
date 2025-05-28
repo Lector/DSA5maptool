@@ -33,7 +33,7 @@
 		%s
 	</tr>
 	",
-skillRollTitle("Fischen & Angeln"), data.getStaticData("com.github.lector.dsa5maptool", "public/images/fish.png"), show3d20(resultAngeln))]
+skillRollTitle("Fischen & Angeln"), data.getStaticData("com.github.lector.dsa5maptool", "public/images/fish.png"), show3d20(resultAngeln, chat))]
 [h: faSuccess = number(json.get(resultAngeln, "success"))]
 [if(faSuccess>0), CODE:
 {
@@ -44,7 +44,7 @@ skillRollTitle("Fischen & Angeln"), data.getStaticData("com.github.lector.dsa5ma
 	[h: resultVerbergen = rollSkill(currentToken(), "Verbergen", probeMod, probeParams)]
 	
 	[h: qsVb = number(json.get(resultVerbergen, "qs"))]
-	[h: outString = outString + skillRollTitle("Verbergen") + "<tr><td rowspan=3></td>" + show3d20(resultVerbergen)+"</tr>"]
+	[h: outString = outString + skillRollTitle("Verbergen") + "<tr><td rowspan=3></td>" + show3d20(resultVerbergen, chat)+"</tr>"]
 	[h: fsSuccess = number(json.get(resultVerbergen, "success"))]
 	[if(fsSuccess > 0), CODE:
 	{

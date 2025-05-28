@@ -79,7 +79,7 @@ Dies soll von den unterschiedlichen Aufrufskripten alles mit übergeben werden
 [h,if(subtext != ""): subtext = subtext(subtext)]
 
 <!--Und hier die Ausgabe-->
-[h: output = show3d20(ergebnis)]
+[h: output = show3d20(ergebnis, chat)]
 [h: output = strformat("
 <table style='border-spacing: 0px; margin-top: 3px; font-weight: bold;'>
 	<tr>

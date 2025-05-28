@@ -3,6 +3,7 @@
 [h: waffe = arg(2)]
 [h: target = arg(3)]
 
+[h: chat = json.get(uebergabe, "chat")]
 [h: basis = json.get(uebergabe, "basis")]
 [h: spezial = json.get(uebergabe, "spezial")]
 [h: manoever = "[]"]
@@ -44,6 +45,6 @@
 	}]
 }]
 
-[h: sendTo(json.get(uebergabe, "chat"), border(manName, show(attackResult)))]
+[h: sendTo(chat, border(manName, show(attackResult, chat)))]
 
 [h: closeDialog("probe")]

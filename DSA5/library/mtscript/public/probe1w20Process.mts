@@ -57,7 +57,7 @@ Dies wird von den unterschiedlichen Aufrufskripten alles mit übergeben werden
 [h,if(subtext != ""): ergebnis = json.set(ergebnis, "Notification", subtext + json.get(ergebnis, "Notification"))]
 
 <!--Und hier die Ausgabe-->
-[h: output = show(ergebnis)]
+[h: output = show(ergebnis, chat)]
 
 [h: output = strformat("
 <table style='border-spacing: 0px; margin-top: 3px; font-weight: bold;'>

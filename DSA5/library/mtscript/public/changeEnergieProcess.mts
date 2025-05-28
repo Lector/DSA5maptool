@@ -174,7 +174,7 @@
 </table>",
 chatImage, chatText, chatColor, ergebnisTitle, ergebnis, chatTyp)]
 
-[h: ausgabe = ausgabe + subtext + show(checkZustand(currentToken()))]
+[h: ausgabe = ausgabe + subtext + show(checkZustand(currentToken()), chat)]
 
 [h: ausgabe = border(chatTitle, ausgabe)]
 

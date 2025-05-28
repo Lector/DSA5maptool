@@ -1,5 +1,5 @@
 [h: attackResult = arg(0)]
-
+[h: chatVisibility = arg(1)]
 [h: weapon = json.get(attackResult, "Weapon")]
 [h: technik = json.get(attackResult, "Technik")]
 [h: success = json.get(attackResult, "success")]
@@ -18,7 +18,7 @@
 }]
 
 [h: rowspan = 6]
-[h,if(success < 1): rowspan=3]
+[h,if(success < 1): rowspan = 3]
 [h: output = strformat("
 <td style='text-align:center; padding: 0px 12px 0px 8px' valign='middle' rowspan=%{rowspan}>
 	<img src=%{image}/>
@@ -36,5 +36,5 @@ Je nach Art sind die Krit- und Patzerbilder etwas anders -->
 "botchImage", data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/botch.png")
 )]
 
-[h: output = output + show1d20(attackResult, params) + "</tr>"]
+[h: output = output + show1d20(attackResult, chatVisibility, params) + "</tr>"]
 [h: macro.return = output]

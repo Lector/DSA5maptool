@@ -1,4 +1,5 @@
 [h: params = arg(0)]
+[h: chatVisibility = arg(1)]
 
 [h: success = json.get(params, "success")]
 [h: dice = json.get(params, "dice")]
@@ -50,8 +51,8 @@
 [h: gluecklichImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/success.png")]
 [h: kritImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/luckySuccess.png")]
 [h: patzerImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/botch.png")]
-[h,if(json.length(macro.args) > 1),Code:{
-	[h: outputParams = arg(1)]
+[h,if(json.length(macro.args) > 2),Code:{
+	[h: outputParams = arg(2)]
 	[h,if(json.contains(outputParams, "luckyImage")): gluecklichImage = json.get(outputParams, "luckyImage")]
 	[h,if(json.contains(outputParams, "critImage")): kritImage = json.get(outputParams, "critImage")]
 	[h,if(json.contains(outputParams, "botchImage")): patzerImage = json.get(outputParams, "botchImage")]
@@ -70,6 +71,15 @@
 [h,if(mod > 0): modColor = "#1d5c2f"; modColor = "#441e13"]
 [h,if(mod < 0): modColor = "#a42b1e"]
 [h: propColor = propertyColor(currentProperty, property, "#441e13")]
+
+<!-- We hide some properties from the chat output if "Masked" was selected -->
+[h,if(chatVisibility == 5),Code:{
+	[h: gms = getGMNames()]
+	[h: players = getPlayerNames()]
+	[h: currentProperty = onlyFor(currentProperty, gms) + onlyFor("?", players)]
+	[h: diceOutput = onlyFor(diceOutput, gms) + onlyFor(strformat("<span style='text-align: center; font-size: 20pt; padding-top: 3px; color: %s;'>&nbsp;?&nbsp;</span>", dice1Color), players)]
+	[h: quali = onlyFor(quali, gms) + onlyFor("?", players)]
+}]
 
 [h: ausgabe = strformat("
 	<td rowspan=3></td>

@@ -78,6 +78,6 @@
 		%s
 	</tr>
 </table>",
-showWeaponDamage(damageResult, reactionParams))]
+showWeaponDamage(damageResult, chat))]
 
 [h: sendTo(chat, border(title, output))]

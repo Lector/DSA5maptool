@@ -19,6 +19,9 @@
 	case "4": {
 		[target = "Self"]
 	};
+	case "5": {
+		[target = "Public"]
+	};
 	default: {}
 ]
 

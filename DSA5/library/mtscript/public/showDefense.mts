@@ -1,4 +1,5 @@
 [h: defenseParams = arg(0)]
+[h: chatVisibility = arg(1)]
 
 [h: resultType = json.get(defenseParams, "ResultType")]
 [h: success = json.get(defenseParams, "success")]
@@ -22,7 +23,7 @@
 "botchImage", botchImage
 )]
 
-[h: show1d20 = show1d20(defenseParams, params)]
+[h: show1d20 = show1d20(defenseParams, chatVisibility, params)]
 
 [h: output = strformat("
 	<td style='text-align:center; padding: 0px 12px 0px 8px' valign='middle' rowspan=3>
