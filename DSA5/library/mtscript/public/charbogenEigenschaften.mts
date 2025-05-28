@@ -60,7 +60,7 @@
 						[h: aktAW = getAW(currentToken())]
 						[h,if(aktAW < AW): eigColor = "#ff3333"; eigColor = "#eee5c8"]
 						[h,if(aktAW > AW): eigColor = "#0099ff"]
-						[h: link = strformat("<a href='%s'>", macroLinkText("probeAW@this", "", currentToken()))]
+						[h: link = strformat("<a href='%s'>", macroLinkText("probeVT@this", "", json.append("[]", currentToken(), "", "dodge")))]
 						[h: hands = usesHands(currentToken())]
 						<div>[r: link][r,if(hands != 0):"Ausweichen";"Verteidigung"]:</a></div>
 						<div style='color: [r: eigColor];'>[r: link][r: aktAW]</a></div>
