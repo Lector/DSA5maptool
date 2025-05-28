@@ -79,19 +79,26 @@ Thats why we group all SubChecks by Skill and then choose the most relevant spec
         [h,if(info != ""): checkNote = strformat("%{checkNote}<li style='magin: 0 0 0 0;'>%{info}</li>")]
     }]
 
+    [h: skillDisplay = strformat("<table style='font-weight: bold;'>
+        <td style='text-align:center; padding: 0px 12px 0px 8px' valign='middle' rowspan=3>
+            <img src='%s'/>
+        </td>
+        %s</table>",
+        data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/book.png"), show3d20(skillResult, 1))]
+
     [h,if(checkNote != ""),Code:{
         <!-- if we have infos we send it to the player with a HIDDEN check only the player sees. -->
         [h: checkNote = strformat("<ul style='margin: 0 0 0 0;'>%{checkNote}</ul>")]
         [h: recipients = json.append(getGMNames(), getPlayerName())]
         [h: sendTo("GmAndSelf", border(
-            onlyFor(skill, getGMNames()) +
-            onlyFor("Verdeckte Probe", getPlayerName()),
-            onlyFor(show(skillResult, 1), getGMNames()) + subtext(checkNote),
+            "Verdeckte Probe - " + skill,
+            onlyFor(skillDisplay, recipients) + subtext(checkNote),
             currentToken(), gmName)
         )]
+
     };{
         <!-- if we do not have infos we only send the GM the skillResult -->
-        [h: sendTo("Gm", border(skill, show(skillResult, 1)), currentToken(), gmName)]
+        [h: sendTo("Gm", border(skill, skillDisplay), currentToken(), gmName)]
     }]
 
 };{
