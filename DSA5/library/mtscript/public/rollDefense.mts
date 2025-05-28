@@ -20,6 +20,7 @@
 
 [h: status = ""]
 [h: failText = ""]
+[h: kritText = ""]
 [h: damageType = ""]
 [h: multiplier = ""]
 [h: zone = ""]
@@ -27,6 +28,7 @@
 {
 	[status = json.get(params, "status")]
 	[failText = json.get(params, "failText")]
+	[kritText = decode(json.get(params, "kritText"))]
 	[damageType = json.get(params, "damageType")]
 	[multiplier = json.get(params, "multiplier")]
 	[zone = json.get(params, "zone")]
@@ -70,7 +72,6 @@ und geben diesen in die noch offene Tabelle aus -->
 [h,if(hasIni != 0): VTinKR = VTinKR + 1]
 
 <!-- Diverse Meldungen akkumulieren wir in der Variable subtext, welche wir am Ende mit ausgeben -->
-[h: kritText = "Du darfst sofort einen Passierschlag gegen den Gegner ausführen"]
 [h,if(success < 0): notification = listAppend(notification, table(patzerTabelle), "<br>")]
 [h,if(success >= 3 && kritText != ""): notification = listAppend(notification, kritText, "<br>")]
 [h: rollResult = json.set(rollResult,

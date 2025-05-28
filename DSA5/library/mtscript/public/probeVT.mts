@@ -45,6 +45,21 @@
 	[h: attacker = json.get(uebergabe, "Attacker")]
 }]
 
+
+
+
+
+[h: opportunityAttack = "Passierschlag gegen den Gegner"]
+[h,if(attacker != ""),Code:
+{
+	[h: passierschlagParams = json.set("", "Passierschlag", "1", "Target", attacker)]
+	[h: passierschlagParams = json.append("[]", currentToken(), passierschlagParams)]
+	[h: passierschlagLink = macroLinkText("probeAT@this", "none", passierschlagParams)]
+	[h: attackerName = getName(attacker)]
+	[h: opportunityAttack = strformat("<a style='color: #441e13' href='%{passierschlagLink}'>Passierschlag gegen %{attackerName}</a>")]
+}]
+[h: kritText = strformat("Du darfst sofort einen %{opportunityAttack} ausführen")]
+
 <!-- determine values of defense options -->
 [h: weapons = "[]"]
 [h: dodge = getAW(currentToken())]
@@ -302,7 +317,7 @@ window.addEventListener('load', function(evt) {
 					</tr>
 				</table>
 				<input type="hidden" name="image" value=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/chat/shield.png")]/>
-				<input type="hidden" name="kritText" value="Du darfst sofort einen Passierschlag gegen den Gegner ausführen"/>
+				<input type="hidden" name="kritText" value='[r: encode(kritText)]'/>
 				<input type="hidden" name="modMacro" id="modMacro"/>
 				<input type="hidden" name="status" value='[r: status]'/>
 				<input type="hidden" name="failText" value="[r: failText]"/>

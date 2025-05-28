@@ -32,6 +32,7 @@
 "rerollConfirm", json.get(uebergabe, "pruefreroll"),
 "status", json.get(uebergabe, "status"),
 "failText", json.get(uebergabe, "failText"),
+"kritText", json.get(uebergabe, "kritText"),
 "damageType", json.get(uebergabe, "schadenArt"),
 "multiplier", multiplier,
 "zone", json.get(uebergabe, "zone"),
