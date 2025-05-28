@@ -63,7 +63,7 @@
 											<td style='font-weight: bold;' width='312'>
 												[r: getName()]
 											</td>
-											<td style='text-align: right;' width='70'>
+											<!--<td style='text-align: right;' width='70'>
 												<a href="[r: macroLinkText("meisterbogenTokenSF@this", "", id)]">
 													<image src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/bookS.png")] border="0" alt="Sonderfertigkeiten aufrufen"></image>
 												</a>&nbsp;
@@ -73,7 +73,7 @@
 												<a href="[r: macroLinkText("meisterbogenTokenInventar@this", "", id))]">
 													<image src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/bag.png")] border="0" alt="Inventar &amp; Vermögen aufrufen"></image>
 												</a>
-											</td>
+											</td>-->
 										</tr>
 									</table>
 									<table style='border-spacing: 0px; border-bottom: 1px solid #eee5c8; padding: 0px 0px 4px 0px;' width='400'>
