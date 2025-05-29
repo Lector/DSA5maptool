@@ -15,6 +15,7 @@
 [h: linkWissen = macroLink('Wissensfertigkeiten', 'chareditTalent@this', '', json.append(currentToken(), 'Wissen'))]
 [h: linkHandwerk = macroLink('Handwerkliche Fertigkeiten', 'chareditTalent@this', '', json.append(currentToken(), 'Handwerk'))]
 [h: linkCopyTokenData =  macroLink('Tokendaten von anderem<br>Token übertragen', 'copyTokenData@this', '')]
+[h: linkPDFImport = macroLink('Tokendaten aus Salazas<br>ausfüllbarer PDF importieren', 'pdfImport@this', '', currentToken())]
 [h: linkJagd = macroLink('Jagdwerte', 'editTier@this', '', currentToken())]
 [h: linkEditKampf = macroLink('Kampftechniken editieren', 'chareditKampftechnik@this', '', currentToken())]
 [h: linkSFKampf = macroLink('Kampfsonderfertigkeiten', 'chareditTrait@this', '', json.append(currentToken(), 'KampfSF'))]
@@ -144,6 +145,11 @@
 						<tr>
 							<td>
 								[r: linkCopyTokenData]
+							</td>
+						</tr>
+						<tr>
+							<td>
+								[r: linkPDFImport]
 							</td>
 						</tr>
 					</table>

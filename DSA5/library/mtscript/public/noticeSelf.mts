@@ -172,6 +172,10 @@
 	case "checkRequested": {
 		[msgTitle = "Probe angefordert"]
 		[msgText = "Die ausgewählten Spieler wurden zur Probe aufgefordert. Solbald sie fertig gewürfelt haben erscheint das Ergebnis im Chat."]
+	};
+	case "pdfImport": {
+		[msgTitle = "PDF importiert"]
+		[msgText = "Die Werte aus der PDF wurden erfolgreich übernommen."]
 	}
 ]
 
