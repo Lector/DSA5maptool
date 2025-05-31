@@ -1,5 +1,6 @@
 [h: p = macro.args]
 [h: switchToken(json.get(p,"token"))]
+[h: setName(json.get(p,"oHeld_Name"))]
 
 [h: MU = number(json.get(p,"oMU"))]
 [h: KL = number(json.get(p,"oKL"))]
@@ -35,6 +36,10 @@
 [h: AW = number(json.get(p,'oAW'))]
 [h: INI = number(json.get(p,'oINI'))]
 [h: GS = number(json.get(p,'oGS'))]
+
+[h: APgesamt = number(json.get(p,'oAP_gesamt'))]
+[h: APausgegeben = number(json.get(p,'oAP_ausgegeben'))]
+[h: APverfuegbar = APgesamt - APausgegeben]
 
 <!-- Talente -->
 [h: catKeys = "[Koerper,Gesellschaft,Natur,Wissen,Handwerk]"]
@@ -73,10 +78,19 @@
 <!-- Nahkampfwaffen -->
 
 [h: Nahkampfwaffen = json.get(p, "oNKWaffen")]
+[h: HauptHand = 0]
+[h: NebenHand = 0]
 
 <!-- Fernkampfwaffen -->
 
 [h: Fernkampfwaffen = json.get(p,"oFKWaffen")]
+[h,if(json.length(Fernkampfwaffen) > 0): FKWaffe = 0; FKWaffe = -1]
+
+<!-- Rüstungen -->
+
+[h: Ruestungen = json.get(p, "oRuestungen")]
+[h,if(json.length(Fernkampfwaffen) > 1): Ruestung = 1; Ruestung = 0]
+
 
 <!-- Zauber & Rituale -->
 [h: inZ   = json.get(p,"oZauber")]
@@ -114,8 +128,20 @@
 [h: newL  = json.sort(newL, "asc", "Talent")]
 [h: setProperty("Liturgien", newL)]
 
+<!-- Traits -->
 
+[h: Segnungen = json.get(p, "oSegnungen")]
+[h: Zaubertricks = json.get(p, "oZaubertricks")]
+[h: Vorteile = json.get(p, "oVorteile")]
+[h: Nachteile = json.get(p, "oNachteile")]
+[h: AllgemeineSF = json.get(p, "oAllgemeineSF")]
+[h: KampfSF = json.get(p, "oKampfSF")]
+[h: MagieSF = json.get(p, "oMagieSF")]
+[h: KarmaleSF = json.get(p, "oKarmaleSF")]
 
+<!-- Inventar -->
+[h: Inventar = json.get(p, "oInventar")]
+[h: InventarMisc = json.get(p, "oInventarMisc")]
 
 [h: closeDialog("pdfImport")]
 [h: checkZustand(currentToken())]

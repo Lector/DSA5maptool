@@ -1,14 +1,14 @@
 [h: switchToken(arg(0))]
 [h: ruestung = arg(1)]
 
-[h: temp = getStrProp(TempMod, "rs")]
+[h: temp = number(getStrProp(TempMod, "rs"))]
 
-[h: rs = json.get(ruestung, "RS") + temp]
-[h: rstorso = json.get(ruestung, "RSTorso") + temp]
-[h: rsarmlinks = json.get(ruestung, "RSArmLinks") + temp]
-[h: rsarmrechts =  json.get(ruestung, "RSArmRechts") + temp]
-[h: rsbeinlinks =  json.get(ruestung, "RSBeinLinks") + temp]
-[h: rsbeinrechts =  json.get(ruestung, "RSBeinRechts") + temp]
+[h: rs = number(json.get(ruestung, "RS")) + temp]
+[h: rstorso = number(json.get(ruestung, "RSTorso")) + temp]
+[h: rsarmlinks = number(json.get(ruestung, "RSArmLinks")) + temp]
+[h: rsarmrechts =  number(json.get(ruestung, "RSArmRechts")) + temp]
+[h: rsbeinlinks =  number(json.get(ruestung, "RSBeinLinks")) + temp]
+[h: rsbeinrechts =  number(json.get(ruestung, "RSBeinRechts")) + temp]
 
 [h: bel = json.get(ruestung, "BE")]
 [h: rini = json.get(ruestung, "INI")]
