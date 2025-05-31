@@ -33,7 +33,7 @@
 	"ID", id,
 	"Name", "Finte "+romanNumeral(i),
 	"Mod", -i,
-	"VT", "-"+i*2,
+	"VT", "-"+(i*2 + hasTrait("KampfSF", "Amazonen-Stil")),
 	"Techniken", "[Dolche, Fechtwaffen, Hiebwaffen, Peitschen, Raufen, Schwerter, Stangenwaffen, Zweihandhiebwaffen, Zweihandschwerter]")]
 	[id = id + 1]
 	[list = json.append(list, manoever)]
