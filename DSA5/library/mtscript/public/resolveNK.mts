@@ -4,11 +4,18 @@
 [h: id = json.get(waffe, "ID")]
 [h: at = json.get(waffe, "AT")]
 [h: pa = json.get(waffe, "PA")]
+
 [h: tp = getDamage(waffe)]
-[h: damageDiceCount = substring(tp, 0, 1)]
-[h: damageDiceType = substring(tp, 2, 3)]
-[h: sign = max(indexof(tp, "+"), indexof(tp, "-"))]
-[h,if(sign != -1): damageFlat = number(substring(tp, sign)); damageFlat = 0]
+[h: damageDiceCount = 0]
+[h: damageDiceType = 6]
+[h: damageFlat = tp]
+[h,if(!isNumber(tp)),Code:
+{
+	[h: damageDiceCount = substring(tp, 0, 1)]
+	[h: damageDiceType = substring(tp, 2, 3)]
+	[h: sign = max(indexof(tp, "+"), indexof(tp, "-"))]
+	[h,if(sign != -1): damageFlat = number(substring(tp, sign)); damageFlat = 0]
+}]
 
 [h: rw = json.get(waffe, "RW")]
 [h: wName = json.get(waffe, "Name")]
