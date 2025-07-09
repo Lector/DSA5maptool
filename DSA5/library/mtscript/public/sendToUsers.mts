@@ -20,14 +20,12 @@
 {
 	[h: myContent = content]
 	[h: find = strfind(content, "<recipients ids='([^']*(,\\s*[^']+)*)'>([\\s\\S]*?)</recipients>")]
-	[h: broadcast("Rec: "+recipient+" Find: "+find)]
 	[h: findCount = getFindCount(find)]
 	[h,for(i, 1, findCount+1),Code:{
 		[h: groupCount = getGroupCount(find)]
 		[h: match = getGroup(find, i, 0)]
 		[h: ids = getGroup(find, i, 1)]
 		[h: findContent = getGroup(find, i, groupCount)]
-		[h: broadcast("Match: "+match+" IDs: "+ids+" Content: "+findContent)]
 		[h: match = "\\Q"+match+"\\E"]
 		[h,if(listContains(ids, recipient) == 0):
 			myContent = replace(myContent, match, "");

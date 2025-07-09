@@ -21,7 +21,7 @@
 	waffe,
 	0,
 	json.get(uebergabe, "schadenmod"),
-	json.get(uebergabe, "Zone"),
+	json.get(uebergabe, "zone"),
 	manoever,
 	params,
 	target)]
