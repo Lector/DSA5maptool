@@ -15,8 +15,8 @@
 	[h: sf = strformat("Geländekunde (%{gel})")]
 	[h: trait = hasTrait("AllgemeineSF", sf)]
 	[h,if(trait > 0):
-		snippet = snippet + "true;");
-		snippet = snippet + "false;")]
+		snippet = snippet + "true;";
+		snippet = snippet + "false;"]
 }]
 
 [h: js = strformat("

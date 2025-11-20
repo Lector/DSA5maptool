@@ -64,7 +64,7 @@ und geben diesen in die noch offene Tabelle aus -->
 [h,if(success < 1 && (damage > 0 || status != "[]")),Code:
 {
 	[h: damageResult = takeDamage(currentToken(), damage, 0, zone, damageType, multiplier, status, failText)]
-	[h: subResults = json.append(subResults, damageResult))]
+	[h: subResults = json.append(subResults, damageResult)]
 }]
 
 <!-- Wir zählen den VT-Tracker 1 hoch falls wir in der INI sind -->

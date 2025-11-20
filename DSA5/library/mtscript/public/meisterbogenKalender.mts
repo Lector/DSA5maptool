@@ -1,6 +1,6 @@
 [h: setLibProperty("SLframe", 4, "lib:com.github.lector.dsa5maptool")]
 
-[frame5("meisterbogen", "width=525; height=500; temporary=1; input=0; noframe=0"):{
+[frame5("meisterbogen", "width=525; height=500; temporary=1; noframe=0"):{
 <html>
 	<head>
 		<title>

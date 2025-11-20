@@ -9,11 +9,9 @@
 [h: moonphaseImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/moonphases/mada_29_off.png")]
 [h: clockImage = data.getStaticData("com.github.lector.dsa5maptool", "/public/images/clock/clock_disabled.png")]
 
-[h: sendTo("Self", moonphaseImage+" "+clockImage+" Uebergabe:'"+uebergabe+"'")]
-
 [h: idClock = findToken("Aktuelle Uhrzeit")]
 [h: mapClock = getCurrentMapName()]
-[h,if(idClock == ""),Code:
+[h,if(idClock == ""),code:
 {
 	[mapClock = "Spieltisch"]
 	[idClock = findToken("Aktuelle Uhrzeit", mapClock)]
@@ -21,7 +19,7 @@
 
 [h: idDate = findToken("Aktuelles Datum")]
 [h: mapDate = getCurrentMapName()]
-[h,if(idDate == ""),Code:
+[h,if(idDate == ""),code:
 {
 	[mapDate = "Spieltisch"]
 	[idDate = findToken("Aktuelles Datum", mapDate)]
@@ -29,7 +27,7 @@
 
 [h: idMada = findToken("Madaphase")]
 [h: mapMada = getCurrentMapName()]
-[h,if(idMada == ""),Code:
+[h,if(idMada == ""),code:
 {
 	[mapMada = "Spieltisch"]
 	[idMada = findToken("Madaphase", mapMada)]
@@ -69,7 +67,7 @@
 	{
 		[options = setStrProp(options, "uhr", "1")]
 		[setLibProperty("KalenderOpt", options, "com.github.lector.dsa5maptool")]
-		[nUebergabe = json.set("{}", "fUhr", json.get(options, "uhrzeit"))]
+		[nUebergabe = json.set("{}", "fUhr", getStrProp(options, "uhrzeit"))]
 		[h,macro("uhrzeitProcess@this"): nUebergabe]
 	}
 ]

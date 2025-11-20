@@ -11,7 +11,7 @@
 
 [h: options = setStrProp(options, "uhrzeit", uhrNeu)]
 [h: setLibProperty("KalenderOpt", options, "com.github.lector.dsa5maptool")]
-[h: kalender = "Zwoelfgoettlicher Kalender")]
+[h: kalender = "Zwoelfgoettlicher Kalender"]
 
 [h: tableIndex = number(substring(uhrNeu, 0, 2))]
 [h: tableIndex = math.mod(tableIndex, 12)]

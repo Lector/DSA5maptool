@@ -70,7 +70,7 @@
 												<a href="[r: macroLinkText("meisterbogenTokenTalente@this", "", strformat("%s, Koerper", id))]">
 													<image src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/bookT.png")] border="0" alt="Talente aufrufen"></image>
 												</a>&nbsp;
-												<a href="[r: macroLinkText("meisterbogenTokenInventar@this", "", id))]">
+												<a href="[r: macroLinkText("meisterbogenTokenInventar@this", "", id)]">
 													<image src=[r: data.getStaticData("com.github.lector.dsa5maptool", "/public/images/mainTheme/bag.png")] border="0" alt="Inventar &amp; Vermögen aufrufen"></image>
 												</a>
 											</td>-->

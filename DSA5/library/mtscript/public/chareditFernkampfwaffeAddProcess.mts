@@ -13,7 +13,7 @@
 [h: uebergabe = macro.args]
 
 [h: wName = json.get(uebergabe, "Name")]
-[h,if(wName == ""): wName = "Unbekannte Waffe"; wName = wName)]
+[h,if(wName == ""): wName = "Unbekannte Waffe"; wName = wName]
 [h: technik = json.get(uebergabe, "technik")]
 [h: fk = json.get(uebergabe, "fk")]
 [h,if(fk == ""): fk = 0]

@@ -7,7 +7,7 @@
 
 [h: setVisible(getVisible(shapeShifter), animal)]
 [h: setTokenSnapToGrid(isSnapToGrid(shapeShifter), animal)]
-[h,if(isPC(shapeShifter)): setPC(animal); setNPC(animal))]
+[h,if(isPC(shapeShifter)): setPC(animal); setNPC(animal)]
 [h: moveToken(getTokenX(1, shapeShifter), getTokenY(1, shapeShifter), 1, animal)]
 [h: setHasSight(hasSight(shapeShifter), animal)]
 [h: setOwner(getOwners("json", shapeShifter), animal)]

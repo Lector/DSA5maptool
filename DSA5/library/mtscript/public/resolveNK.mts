@@ -54,7 +54,7 @@ deren Gesamt AT/PA bereits in der Waffe eingetragen ist-->
 [h: at = at + getStrProp(TempMod, "at")]
 [h: pa = pa + getStrProp(TempMod, "pa")]
 
-[h, Foreach(ls, json.get(waffe, "LS"), ""), Code:
+[h, foreach(ls, json.get(waffe, "LS"), ""), Code:
 {
 	[h: lwert = 0]
 	[h: l = json.get(ls, "L")]
@@ -124,7 +124,7 @@ deren Gesamt AT/PA bereits in der Waffe eingetragen ist-->
 		[h: parierWaffeBonus = json.get(nWaffe, "Parierwaffe")]
 		[h,if(parierWaffeBonus != 0): parierSchildBonus = parierWaffeBonus + hasTrait("KampfSF", "Klingenfänger", 1, currentToken())]
 	}]
-	[h: pa = pa + parierSchildBonus)]
+	[h: pa = pa + parierSchildBonus]
 };{}]
 
 <!-- Sofern man nicht Beidhaendig ist, ist die Parade mit der Nebenhand um 4 erschwert.

@@ -53,7 +53,7 @@
 }]
 [h: mul = 1]
 [h,if(json.get(uebergabe, "kritischDK") == "1"): mul = mul * 2]
-[h,if(json.get(uebergabe, "Schadensresistenz") == "1"): mul = mul * 0.5)]
+[h,if(json.get(uebergabe, "Schadensresistenz") == "1"): mul = mul * 0.5]
 [h: schadensArt = json.get(uebergabe, "schadenArt")]
 
 [h: damageResult = takeDamage(currentToken(), schaden, wMod, zone, schadensArt, mul, status, failText)]

@@ -23,7 +23,7 @@
 [h: closeDialog("uniDice")]
 
 [h: mod = bonus - malus]
-[h,if(diceTyp == 3): dTable = "d6"; dTable = "d"+diceTyp)]
+[h,if(diceTyp == 3): dTable = "d6"; dTable = "d"+diceTyp]
 [h: summe = 0]
 [h: diceList = ""]
 [h,count(anzahl, ""), Code:

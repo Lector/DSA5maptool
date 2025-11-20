@@ -61,7 +61,7 @@
 	"Name", "Unterlaufen "+romanNumeral(i),
 	"Mod", "+min(-getStrProp(uebergabe, 'rw'), "+i*2+")",
 	"Passierschlag", "1"),
-	"Techniken", "[Dolche, Fechtwaffen, Hiebwaffen, Kettenwaffen, Raufen, Schilde, Schwerter, Zweihandhiebwaffen, Zweihandschwerter]")]
+	"Techniken", "[Dolche, Fechtwaffen, Hiebwaffen, Kettenwaffen, Raufen, Schilde, Schwerter, Zweihandhiebwaffen, Zweihandschwerter]"]
 	[id = id + 1]
 	[list = json.append(list, manoever)]
 }]

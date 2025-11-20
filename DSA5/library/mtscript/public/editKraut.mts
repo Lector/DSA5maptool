@@ -58,7 +58,7 @@
 										[h, for(i, -10, 11),Code:{
 											[selected = ""]
 											[h,if(i == Suchschwierigkeit): selected = "selected"]
-											[options = "<option value="+i+" "+selected+">"+i+"</option>" + options)]
+											[options = "<option value="+i+" "+selected+">"+i+"</option>" + options]
 										}]
 										<select name='[r: kraut]_such'>[r: options]</select>
 									</td>
@@ -78,7 +78,7 @@
 										[h, for(i, -10, 11),Code:{
 											[selected = ""]
 											[h,if(i == Bestimmungsschwierigkeit): selected = "selected"]
-											[options = "<option value="+i+" "+selected+">"+i+"</option>" + options)]
+											[options = "<option value="+i+" "+selected+">"+i+"</option>" + options]
 										}]
 										<select name='[r: kraut]_bestimmung'>[r: options]</select>
 									</td>
@@ -94,37 +94,37 @@
 						[h, for(i, 1, 11),Code:{
 							[selected = ""]
 							[h,if(i == listGet(Anwendungen, 0)): selected = "selected"]
-							[options1 = options1 + "<option value="+i+" "+selected+">"+i+"</option>")]
+							[options1 = options1 + "<option value="+i+" "+selected+">"+i+"</option>"]
 						}]
 						[h: options2 = ""]
 						[h, for(i, 1, 11),Code:{
 							[selected = ""]
 							[h,if(i == listGet(Anwendungen, 1)): selected = "selected"]
-							[options2 = options2 + "<option value="+i+" "+selected+">"+i+"</option>")]
+							[options2 = options2 + "<option value="+i+" "+selected+">"+i+"</option>"]
 						}]
 						[h: options3 = ""]
 						[h, for(i, 1, 11),Code:{
 							[selected = ""]
 							[h,if(i == listGet(Anwendungen, 2)): selected = "selected"]
-							[options3 = options3 + "<option value="+i+" "+selected+">"+i+"</option>")]
+							[options3 = options3 + "<option value="+i+" "+selected+">"+i+"</option>"]
 						}]
 						[h: options4 = ""]
 						[h, for(i, 1, 11),Code:{
 							[selected = ""]
 							[h,if(i == listGet(Anwendungen, 3)): selected = "selected"]
-							[options4 = options4 + "<option value="+i+" "+selected+">"+i+"</option>")]
+							[options4 = options4 + "<option value="+i+" "+selected+">"+i+"</option>"]
 						}]
 						[h: options5 = ""]
 						[h, for(i, 1, 11),Code:{
 							[selected = ""]
 							[h,if(i == listGet(Anwendungen, 4)): selected = "selected"]
-							[options5 = options5 + "<option value="+i+" "+selected+">"+i+"</option>")]
+							[options5 = options5 + "<option value="+i+" "+selected+">"+i+"</option>"]
 						}]
 						[h: options6 = ""]
 						[h, for(i, 1, 11),Code:{
 							[selected = ""]
 							[h,if(i == listGet(Anwendungen, 5)): selected = "selected"]
-							[options6 = options6 + "<option value="+i+" "+selected+">"+i+"</option>")]
+							[options6 = options6 + "<option value="+i+" "+selected+">"+i+"</option>"]
 						}]
 						<td>
 							<table>

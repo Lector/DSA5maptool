@@ -142,7 +142,7 @@ In future version is would be great to determine a default selection of the rero
 [h,if(Wert + FPBonus > fp): useAptitude = 1; useAptitude = 0]
 <!-- If we have rolled a 1 we always offer the aptitude. This could enforce a critical success -->
 [h: dice = json.get(ergebnis, "dice")]
-[h,if(json.contains(dice, 1) > 0): useAptitude = 1)]
+[h,if(json.contains(dice, 1) > 0): useAptitude = 1]
 [h,if(reroll == "worst" && success >= 0 && useAptitude == 1 && blind == 0),Code:
 {
 	[h: display = show3d20(ergebnis, 1)]

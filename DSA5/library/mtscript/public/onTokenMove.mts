@@ -10,7 +10,7 @@
 [h: hasIni = hasInitiative(currentToken())]
 [h,if(getLibProperty("OptFacing", "com.github.lector.dsa5maptool") == 1 && hasIni == 1),Code:
 {
-	[h: smoothed = smoothPath(macro.args, max(cellWidth, cellHeight) / 2.0))]
+	[h: smoothed = smoothPath(macro.args, max(cellWidth, cellHeight) / 2.0)]
 	[h: from = json.get(smoothed, json.length(smoothed) - 2)]
 	[h: to = json.get(smoothed, json.length(smoothed) - 1)]
 	[h,if(from == to && json.length(macro.args) >= 2),Code:

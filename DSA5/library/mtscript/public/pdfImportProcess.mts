@@ -29,7 +29,7 @@
 [newValue = number(json.get(p, 'oSP'))]
 [diff = newValue - SchipsMax]
 [SchipsMax = newValue]
-[SchipsAktuell = min(SchipsMax, max(0, SchipsAktuell + diff)))]
+[SchipsAktuell = min(SchipsMax, max(0, SchipsAktuell + diff))]
 
 [h: SK = number(json.get(p,'oSK'))]
 [h: ZK = number(json.get(p,'oZK'))]
