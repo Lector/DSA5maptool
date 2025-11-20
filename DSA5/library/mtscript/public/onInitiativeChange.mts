@@ -1,13 +1,14 @@
 [h: oldInfo = json.get(macro.args, "old")]
 [h: newInfo = json.get(macro.args, "new")]
 
-<!-- When we enter a new round we clear all -->
+<!-- When we enter a new round we clear all counted defenses of the last round-->
 [h: iniList = getInitiativeList()]
-[h, if(json.get(newInfo, "round") != json.get(oldInfo, "round") && json.get(macro.args, "direction") == "NEXT"),
-	foreach(tok, json.get(iniList, "tokens"), ""),Code:{
-
-	[h: id = json.get(tok, "tokenId")]
-	[h,token(id): VTinKR = 0]
+[h, if(json.get(newInfo, "round") != json.get(oldInfo, "round") && json.get(macro.args, "direction") == "NEXT"),Code:{
+	[h: broadcast("========== KAMPFRUNDE " + json.get(newInfo, "round") + " ==========")]
+	[foreach(tok, json.get(iniList, "tokens"), ""),Code:{
+		[h: id = json.get(tok, "tokenId")]
+		[h,token(id): VTinKR = 0]
+	}]
 }]
 
 [h: newToken = json.get(newInfo, "token")]
