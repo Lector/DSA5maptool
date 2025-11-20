@@ -1,6 +1,8 @@
 [h: p = macro.args]
 [h: switchToken(json.get(p,"token"))]
-[h: setName(json.get(p,"oHeld_Name"))]
+
+[h: newName = json.get(p, "oHeld_Name")]
+[h,if(newName != ""): setName(newName)]
 
 [h: MU = number(json.get(p,"oMU"))]
 [h: KL = number(json.get(p,"oKL"))]
