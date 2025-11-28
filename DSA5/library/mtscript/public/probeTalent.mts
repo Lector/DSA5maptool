@@ -37,6 +37,8 @@
 [h: e2 = json.path.read(skill, "Probe.Eigenschaft2")]
 [h: e3 = json.path.read(skill, "Probe.Eigenschaft3")]
 [h: wert = json.get(skill, "Talentwert")]
+[h: hwkSF = "Handwerkskunst ("+tname+")"]
+[h,if(hasTrait("AllgemeineSF", hwkSF)): wert = wert + 1]
 
 [h,if(e1 == "--" || e2 == "--" || e3 == "--"), Code:
 {

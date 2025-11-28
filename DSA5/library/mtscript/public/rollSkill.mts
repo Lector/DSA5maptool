@@ -32,6 +32,8 @@
 		[h: Spec = json.get(params, "spec")]
 		[h: SpecSF = "Fertigkeitsspezialisierung ("+skill+": "+Spec+")"]
 		[h,if(Spec != ""), if(hasTrait("AllgemeineSF", SpecSF)): FPBonus = FPBonus + 2]
+		[h: hwkSF = "Handwerkskunst ("+skill+")"]
+		[h,if(hasTrait("AllgemeineSF", hwkSF)): FPBonus = FPBonus + 1]
 		[h: modMacroParams = json.get(params, "modMacroParams")]
 		[h: modMacroParams = json.set(modMacroParams, "Skill", skill)]
 		[h: params = json.set(params, "Name", skill, "modMacroParams", modMacroParams)]
