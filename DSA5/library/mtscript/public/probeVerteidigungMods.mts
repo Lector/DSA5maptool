@@ -20,8 +20,8 @@
 
 [h: vtcount = json.get(uebergabe, "VTinKR")]
 [h,if(vtcount != 0 && vtcount != ""):
-	modtext = modtext + modReason(vtcount*-3, "wegen "+(number(vtcount)+1)+". Verteidigung")]
-[h: mod = mod + vtcount * -3]
+	modtext = modtext + modReason(vtcount, "wegen mehrfacher Verteidigung in dieser KR")]
+[h: mod = mod + vtcount]
 
 [h: vonhinten = json.get(uebergabe, "vonhinten")]
 [h,if(vonhinten != 0 && vonhinten != ""): modtext = modtext + modReason(vonhinten, "wegen Angriff von Hinten")]

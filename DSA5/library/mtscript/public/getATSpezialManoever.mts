@@ -319,7 +319,25 @@
 	[id = id + 1]
 	[list = json.append(list, manoever)]
 }]
-					
+
+					<!-- Aventurisches Kompendium II -->
+
+[h: level = getTraitLevel("KampfSF", "Durchgezogener Tritt")]
+[h,if(level != 0 && mount == ""),Code:
+{
+	[manoever = json.set("{}",
+	"ID", id,
+	"Name", "Durchgezogener Tritt",
+	"Mod", 0,
+	"TPMod", "+"+level,
+	"OpponentText", "Du musst eine Probe auf Körperbeherrschung (Balance) -"+level+" ablegen um nicht umgetreten zu werden (Status Liegend).",
+	"Techniken", "[Raufen]")]
+	[id = id + 1]
+	[list = json.append(list, manoever)]
+}]
+
+
+
 					<!-- Aventurisches Bestiarium I -->
 
 

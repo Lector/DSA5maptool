@@ -17,36 +17,32 @@
 [h: tList = '[]']
 [h: num = 0]
 [h,count(tAnzahl, ""), Code:
+{
+	[tName = json.get(uebergabe, strformat("f%sName", num))]
+	[tName = upper(tName, 1)]
+	[tName = replace(tName, ",", "")]
+	[tE1 = json.get(uebergabe, strformat("f%sE1", num))]
+	[tE2 = json.get(uebergabe, strformat("f%sE2", num))]
+	[tWert = json.get(uebergabe, strformat("f%sWert", num))]
+	[if(tWert == ""): tWert = 6]
+	[if(tName == ""), Code:
 	{
-		[tName = json.get(uebergabe, strformat("f%sName", num))]
-		[tName = upper(tName, 1)]
-		[tName = replace(tName, ",", "")]
-		[tE1 = json.get(uebergabe, strformat("f%sE1", num))]
-		[tE2 = json.get(uebergabe, strformat("f%sE2", num))]
-		[tWert = json.get(uebergabe, strformat("f%sWert", num))]
-		[if(tWert == ""): tWert = 6]
-		[if(tName == ""), Code:
-			{
-				[h,macro("inputFail@this"): "noInput"]
-			};{}
-		]
-		[if(isNumber(tWert) == 0), Code:
-			{
-				[h,macro("inputFail@this"): "numText"]
-			};{}
-		]
-		[if(tWert != round(tWert)), Code:
-			{
-				[h,macro("inputFail@this"): "numInteger"]
-			};{}
-		]
-		[h: leit = json.append("[]", tE1)]
-		[h,if(tE2 != "--"): leit = json.append(leit, tE2)]
-		[h: newTechnik = json.set("{}", "FW", tWert, "L", leit, "Name", tName)]
-		[h: tList = json.append(tList, newTechnik)]
-		[num = num + 1]
-	}
-]
+		[h,macro("inputFail@this"): "noInput"]
+	}]
+	[if(isNumber(tWert) == 0), Code:
+	{
+		[h,macro("inputFail@this"): "numText"]
+	}]
+	[if(tWert != round(tWert)), Code:
+	{
+		[h,macro("inputFail@this"): "numInteger"]
+	}]
+	[h: leit = json.append("[]", tE1)]
+	[h,if(tE2 != "--"): leit = json.append(leit, tE2)]
+	[h: newTechnik = json.set("{}", "FW", tWert, "L", leit, "Name", tName)]
+	[h: tList = json.append(tList, newTechnik)]
+	[num = num + 1]
+}]
 
 [h: closeDialog("chareditKampftechnik")]
 

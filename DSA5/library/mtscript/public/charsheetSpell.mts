@@ -29,7 +29,7 @@ case "magic": {
     [label = MagischeHandlungenPlural]
     [list = MagischeHandlungen]
     [listName = "MagischeHandlungen"]
-    [wikiLink = "https://dsa.ulisses-regelwiki.de/" + MagischeHandlungenSingular + ".html?" + MagischeHandlungenSingular + "=%s"]
+    [wikiLink = "https://dsa.ulisses-regelwiki.de/" + lower(MagischeHandlungenSingular) + ".html?" + lower(MagischeHandlungenSingular) + "=%s"]
     [mac = "probeZauber"]
     [addLink = macroLinkText("chareditMagieAdd@this", "", json.append(currentToken(), "MagischeHandlungen"))]
     [editLink = macroLinkText("chareditTalent@this", "", json.append(currentToken(), "MagischeHandlungen"))]

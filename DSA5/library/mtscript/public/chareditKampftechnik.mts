@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<div class="border">
-			<form action="[r:actionLink]">
+			<form action="[r:actionLink]" method="json">
 				[r: header("Kampftechniken")]
 				<table style='border-spacing: 0px; margin: 0px auto 0px auto;'>
 					[h: num = 0]
@@ -108,6 +108,7 @@
 						}
 					]
 				</table>
+				<input type='hidden' name='tAnzahl' value='[r: num]'>
 				<table style='border-spacing: 0px; margin: 10px auto 10px auto;'>
 					<tr>
 						<td>
@@ -123,7 +124,6 @@
 					</tr>
 				</table>
 			</div>
-			<input type='hidden' name='tAnzahl' value='[r: num]'>
 		</form>
 	</body>
 </html>

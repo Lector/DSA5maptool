@@ -30,7 +30,8 @@ case "Rechtes Bein": {
 	[mod = -8]
 };
 default: {
-	[mod = 0]
+	[h: index = indexOf(arg(0), "bein")]
+	[h, if(index == -1): mod = 0; mod = -8]
 }]
 
 [h,if(arg(1) == "nk" && hasTrait("KampfSF", "Gezielter Angriff") != 0): mod = mod / 2]

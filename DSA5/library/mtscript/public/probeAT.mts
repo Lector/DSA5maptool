@@ -67,11 +67,21 @@
 [h,if(hands != 0),Code:
 {
 	[h: weapons = json.append(weapons, json.set(hWaffe, "Wield", "0"))]
+	[h: dual = ""]
 	[h,if(HauptHand != NebenHand),Code:
 	{
 		[h: weapons = json.append(weapons, nWaffe)]
-		[h: weapons = json.append(weapons, json.append("[]", hWaffe, nWaffe))]
+		[h: dual = json.append("[]", hWaffe, nWaffe)]
 	}]
+
+	[h: firstWeapon = getNahkampfwaffe(0)]
+	[h,if(json.get(hWaffe, "Name") != "Waffenlos" && json.get(nWaffe, "Name") != "Waffenlos" && json.get(firstWeapon, "Name") == "Waffenlos"),Code:
+	{
+		[h: firstWeapon = resolveNK(currentToken(), firstWeapon)]
+		[h: weapons = json.append(weapons, firstWeapon)]
+	}]
+
+	[h,if(dual != ""): weapons = json.append(weapons, dual)]
 };
 {
 	[h,foreach(weapon, Nahkampfwaffen): weapons = json.append(weapons, resolveNK(currentToken(), weapon))]
@@ -186,7 +196,7 @@
 							</div>
 						</td>
 
-						[h: techniken = json.append("[]", json.get(hWaffe, "Technik"), json.get(nWaffe, "Technik"))]
+						[h: techniken = json.append("['Raufen']", json.get(hWaffe, "Technik"), json.get(nWaffe, "Technik"))]
 						<td valign='top'>
 							<table style='border-spacing: 0px;' cellpadding='1'>
 								<tr>
