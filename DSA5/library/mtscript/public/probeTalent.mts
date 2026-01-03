@@ -37,8 +37,15 @@
 [h: e2 = json.path.read(skill, "Probe.Eigenschaft2")]
 [h: e3 = json.path.read(skill, "Probe.Eigenschaft3")]
 [h: wert = json.get(skill, "Talentwert")]
-[h: hwkSF = "Handwerkskunst ("+tname+")"]
-[h,if(hasTrait("AllgemeineSF", hwkSF)): wert = wert + 1]
+[h,switch(group),Code:
+	case "Körper": {[SFplus1 = "Körperliches Geschick"]};
+	case "Gesellschaft": {[SFplus1 = "Soziale Kompetenz"]};
+	case "Natur": {[SFplus1 = "Kind der Natur"]};
+	case "Wissen": {[SFplus1 = "Universalgenie"]};
+	case "Handwerk": {[SFplus1 = "Handwerkskunst"]};
+]
+[h: SFplus1 = SFplus1 + " ("+tname+")"]
+[h,if(hasTrait("AllgemeineSF", SFplus1)): wert = wert + 1]
 
 [h,if(e1 == "--" || e2 == "--" || e3 == "--"), Code:
 {
