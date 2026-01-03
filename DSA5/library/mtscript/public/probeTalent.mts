@@ -38,7 +38,7 @@
 [h: e3 = json.path.read(skill, "Probe.Eigenschaft3")]
 [h: wert = json.get(skill, "Talentwert")]
 [h,switch(group),Code:
-	case "Körper": {[SFplus1 = "Körperliches Geschick"]};
+	case "Koerper": {[SFplus1 = "Körperliches Geschick"]};
 	case "Gesellschaft": {[SFplus1 = "Soziale Kompetenz"]};
 	case "Natur": {[SFplus1 = "Kind der Natur"]};
 	case "Wissen": {[SFplus1 = "Universalgenie"]};
