@@ -231,7 +231,7 @@
 				<hr/>
 				<table style='border-spacing: 0px; margin: 0px auto 0px auto;'>
 					<tr>
-						[r,macro("probeSicht@this"): "at"]
+						[r: probeSicht(currentToken(), "at")]
 						<td width='20'>
 							&nbsp;
 						</td>

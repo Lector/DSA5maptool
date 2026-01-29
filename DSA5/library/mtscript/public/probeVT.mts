@@ -45,10 +45,6 @@
 	[h: attacker = json.get(uebergabe, "Attacker")]
 }]
 
-
-
-
-
 [h: opportunityAttack = "Passierschlag gegen den Gegner"]
 [h,if(attacker != ""),Code:
 {
@@ -250,13 +246,13 @@ window.addEventListener('load', function(evt) {
 						</td>
 						<td width='20'>
 							&nbsp;
-						</td>						
+						</td>
 					</tr>
 				</table>
 				<hr/>
 				<table style='border-spacing: 0px; margin: 0px auto 6px auto;'>
 					<tr>
-						[r: probeSicht("vt")]
+						[r: probeSicht(currentToken(), "vt", attacker)]
 									
 						<td width='20'>
 							&nbsp;

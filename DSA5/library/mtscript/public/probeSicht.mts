@@ -1,16 +1,9 @@
-[h,if(isGM() == 1 && hasImpersonated() == 0), Code:
-	{
-		[selectID = getSelected()]
-		[if(listCount(selectID) != 1), Code:
-			{
-				[h,macro("inputFail@this"): "gmSelectFail"]
-			};{}
-		]
-		[switchToken(selectID)]
-	};{}
-]
+[h,if(arg(0) != ""),Code:
+{
+	[switchToken(arg(0))]
+}]
 
-[h,switch(arg(0)),Code:
+[h,switch(arg(1)),Code:
 	case "at":{
 		[text4 = "AT halbiert"]
 		[dunkel4 = "/2"]
@@ -32,7 +25,11 @@
 		[dunkel4 = "=1"]
 	}
 ]
-[h,if(arg(0) == "fk"): mul = 2; mul = 1]
+[h,if(arg(1) == "fk"): mul = 2; mul = 1]
+
+[h,if(json.length(macro.args) > 2): target = arg(2); target = ""]
+[h,if(target == ""): target = getTarget(currentToken())]
+
 <td valign=top>
 	<div class="label">
 		Sicht
@@ -74,7 +71,7 @@
 			[h: text3 = dunkel3 * mul]
 		}]
 
-		[h,if(arg(0) != "fk"),Code:
+		[h,if(arg(1) != "fk"),Code:
 		{
 			[h,switch(getTraitLevel("KampfSF", "Blindkampf")),Code:
 			case 1:
@@ -109,7 +106,6 @@
 		[h: checked3 = ""]
 		[h: checked4 = ""]
 		[h: illumination = 0]
-		[h: target = getTarget(currentToken())]
 		[h,if(target != ""): illumination = getVisibilityMod(target, currentToken())]
 		[h,if(getState("Blind") == 1 || hasTrait("Nachteile", "Blind") == 1): illumination = 4]
 		[h,switch(illumination):
@@ -119,7 +115,6 @@
 			case 3: checked3 = "checked";
 			case 4: checked4 = "checked";
 		]
-		
 		
 		<tr>
 			<td>

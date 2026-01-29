@@ -139,8 +139,8 @@
 	};
 ]
 
-[h: sightfk = "<table><tr>"+probeSicht('fk')+"</tr></table>"]
-[h: sightnk = "<table><tr>"+probeSicht('at')+"</tr></table>"]
+[h: sightfk = "<table><tr>"+probeSicht(currentToken(), 'fk')+"</tr></table>"]
+[h: sightnk = "<table><tr>"+probeSicht(currentToken(), 'at')+"</tr></table>"]
 
 [h: js = strformat("
 function showHideFKOptions() {

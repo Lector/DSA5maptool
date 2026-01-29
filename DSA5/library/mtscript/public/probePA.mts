@@ -190,7 +190,7 @@
 				<hr/>
 				<table style='border-spacing: 0px; margin: 0px auto 6px auto;'>
 					<tr>
-						[r,macro("probeSicht@this"): "pa"]
+						[r: probeSicht(currentToken(), "pa", attacker)]
 									
 						<td width='20'>
 							&nbsp;
